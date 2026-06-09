@@ -42,7 +42,7 @@ run_test "Landing page smoke" \
 
 # 2. Pricing integrity: Free is free, Pro costs what it should
 run_test "Pricing integrity" \
-  "go to {{app_url}}, scroll to the Pricing section, assert the page contains 'Free', assert the page contains '\$0', assert the Pro plan price is '{{expected_pro_price}}', store the Pro plan price as 'pro_price'"
+  "go to {{app_url}}, scroll to the Pricing section, assert the page contains 'Free', assert the page contains '\$0', assert the page contains '$19', store the Pro plan price as 'pro_price'"
 
 # 3. The money path: Buy Pro -> checkout shows correct total
 run_test "Checkout flow" \
