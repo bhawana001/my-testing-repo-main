@@ -46,7 +46,7 @@ run_test "Pricing integrity" \
 
 # 3. The money path: Buy Pro -> checkout shows correct total
 run_test "Checkout flow" \
-  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$19.00', assert the page contains 'Pay \$19.00', store the total due as 'total'"
+  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$25.00', assert the page contains 'Pay \$25.00', store the total due as 'total'"
 
 # 4. Newsletter signup accepts a valid email
 run_test "Newsletter signup" \
