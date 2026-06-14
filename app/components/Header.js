@@ -27,6 +27,9 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
+          <Link href="/login" className="btn btn--ghost nav__login">
+            Login
+          </Link>
         </nav>
 
         {/* Hamburger — shown only under 640px via CSS */}
@@ -58,6 +61,9 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
+            <Link href="/login" onClick={() => setOpen(false)}>
+              Login
+            </Link>
           </nav>
         </>
       )}
