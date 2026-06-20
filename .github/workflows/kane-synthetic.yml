@@ -26,19 +26,22 @@ jobs:
           chmod +x ./tests/synthetic.sh
           ./tests/synthetic.sh
 
-      - name: Alert Slack on failure
+      - name: Email alert on failure
         if: failure()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          if [ -n "$SLACK_WEBHOOK_URL" ]; then
-            RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-            curl -sf -X POST -H 'Content-type: application/json' \
-              --data "{\"text\":\"🚨 Synthetic monitor FAILED — a critical prod journey is broken on the Acme app.\nRun: $RUN_URL\"}" \
-              "$SLACK_WEBHOOK_URL"
-          else
-            echo "SLACK_WEBHOOK_URL not set — skipping Slack alert (GitHub still emails the repo owner on scheduled failures)."
-          fi
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: bhawana.official01@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          subject: "🚨 Synthetic monitor FAILED — Acme app prod journey broken"
+          to: bhawana.official01@gmail.com
+          from: Synthetic Monitor <bhawana.official01@gmail.com>
+          body: |
+            A critical production journey failed on the Acme app.
+
+            Run details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Upload Kane evidence
         if: always()
