@@ -1,0 +1,48 @@
+name: Synthetic Monitoring
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Install Kane CLI
+        run: npm install -g @testmuai/kane-cli
+      - name: Monitor critical journeys
+        env:
+          CI: 'true'
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        run: |
+          chmod +x ./tests/synthetic.sh
+          ./tests/synthetic.sh
+
+      - name: Alert Slack on failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK_URL" ]; then
+            RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            curl -sf -X POST -H 'Content-type: application/json' \
+              --data "{\"text\":\"🚨 Synthetic monitor FAILED — a critical prod journey is broken on the Acme app.\nRun: $RUN_URL\"}" \
+              "$SLACK_WEBHOOK_URL"
+          else
+            echo "SLACK_WEBHOOK_URL not set — skipping Slack alert (GitHub still emails the repo owner on scheduled failures)."
+          fi
+
+      - name: Upload Kane evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-monitor-logs
+          path: /home/runner/.testmuai/kaneai/sessions/
