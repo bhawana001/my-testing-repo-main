@@ -4,7 +4,7 @@ export default async function Checkout({ searchParams }) {
   const params = await searchParams;
   const plan = params?.plan || "Pro";
 
-  const price = plan === "Pro" ? "$19.00" : "$0.00";
+  const price = plan === "Pro" ? "$29.00" : "$0.00";
 
   return (
     <div className="checkout">

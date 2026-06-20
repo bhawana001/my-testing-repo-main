@@ -49,7 +49,7 @@ export default function Home() {
               <div className="card card--featured">
                 <p className="card__name">Pro</p>
                 <p className="card__price">
-                  $19<span> / mo</span>
+                  $29<span> / mo</span>
                 </p>
                 <ul className="card__features">
                   <li>Unlimited projects</li>
