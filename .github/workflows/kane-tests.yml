@@ -24,9 +24,13 @@ jobs:
       - name: Run browser flows against THIS push's preview deploy
         env:
           CI: 'true'
-          # The preview URL Vercel built for this exact commit — the pushed code,
-          # publicly reachable so the LambdaTest cloud browser can hit it (no tunnel).
+          # The preview URL Vercel built for this exact commit — the pushed code.
+          # The preview is behind Vercel Deployment Protection, so smoke.sh appends
+          # the automation bypass token below to let the cloud browser through.
           APP_URL: ${{ github.event.deployment_status.environment_url }}
+          # Protection Bypass for Automation secret (Vercel project setting), stored
+          # as a GitHub Actions secret. Masked in logs automatically.
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
           LT_USERNAME: ${{ secrets.LT_USERNAME }}
           LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
         run: |

@@ -6,6 +6,19 @@
 # (e.g. http://localhost:3000) so we test what was pushed, not what's already live.
 APP_URL="${APP_URL:-https://my-testing-repo-main.vercel.app}"
 
+# Vercel preview deploys sit behind Deployment Protection (SSO). When a Protection
+# Bypass for Automation secret is available, append it to the URL so the browser
+# reaches the app instead of Vercel's login page. set-bypass-cookie=true makes the
+# bypass stick for in-app navigations (e.g. Buy Pro -> /checkout) after the first hit.
+# Public/prod URLs ignore these params, so this is a no-op when the secret is unset.
+if [[ -n "$VERCEL_AUTOMATION_BYPASS_SECRET" ]]; then
+  SEP="?"; [[ "$APP_URL" == *"?"* ]] && SEP="&"
+  APP_URL="${APP_URL}${SEP}x-vercel-protection-bypass=${VERCEL_AUTOMATION_BYPASS_SECRET}&x-vercel-set-bypass-cookie=true"
+  echo "Vercel protection bypass: enabled"
+else
+  echo "Vercel protection bypass: not set (ok if the target is public/prod)"
+fi
+
 # Build a runtime variables file with app_url pointed at APP_URL.
 VARS="./tests/variables.ci.json"
 TEST_EMAIL="qa@example.com"
@@ -17,7 +30,8 @@ cat > "$VARS" <<JSON
   "expected_pro_price": { "value": "$EXPECTED_PRO_PRICE" }
 }
 JSON
-echo "Testing against: $APP_URL"
+# Print only the base URL — never echo the bypass token to logs.
+echo "Testing against: ${APP_URL%%\?*}"
 
 # In CI, force headless. Locally, leave the browser visible so you can watch it.
 HEADLESS_FLAG=""
