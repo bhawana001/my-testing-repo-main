@@ -1,10 +1,15 @@
 # .github/workflows/kane-tests.yml
 name: Browser Tests
 
-on: [push, pull_request]
+# Run when Vercel reports a deployment status (i.e. the PR/branch preview is ready),
+# so we always test the freshly-built code for THIS push, not whatever is live.
+on:
+  deployment_status
 
 jobs:
   kane-tests:
+    # Only run once the deployment actually succeeded and is reachable.
+    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,15 +18,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
-
       - name: Install Kane CLI
         run: npm install -g @testmuai/kane-cli
 
-      - name: Run browser flows against the live deploy
+      - name: Run browser flows against THIS push's preview deploy
         env:
           CI: 'true'
+          # The preview URL Vercel built for this exact commit — the pushed code,
+          # publicly reachable so the LambdaTest cloud browser can hit it (no tunnel).
+          APP_URL: ${{ github.event.deployment_status.environment_url }}
           LT_USERNAME: ${{ secrets.LT_USERNAME }}
           LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
         run: |

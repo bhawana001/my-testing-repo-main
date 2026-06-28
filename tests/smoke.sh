@@ -2,8 +2,22 @@
 # Kane CLI smoke suite for the Acme landing page.
 # Runs locally (visible browser) and in CI (headless). Exits non-zero if any flow fails.
 
-APP_URL="https://my-testing-repo-main.vercel.app"
-VARS="./tests/variables.json"
+# APP_URL defaults to live prod, but CI overrides it to the freshly-built PR code
+# (e.g. http://localhost:3000) so we test what was pushed, not what's already live.
+APP_URL="${APP_URL:-https://my-testing-repo-main.vercel.app}"
+
+# Build a runtime variables file with app_url pointed at APP_URL.
+VARS="./tests/variables.ci.json"
+TEST_EMAIL="qa@example.com"
+EXPECTED_PRO_PRICE="\$19"
+cat > "$VARS" <<JSON
+{
+  "app_url": { "value": "$APP_URL" },
+  "test_email": { "value": "$TEST_EMAIL" },
+  "expected_pro_price": { "value": "$EXPECTED_PRO_PRICE" }
+}
+JSON
+echo "Testing against: $APP_URL"
 
 # In CI, force headless. Locally, leave the browser visible so you can watch it.
 HEADLESS_FLAG=""
