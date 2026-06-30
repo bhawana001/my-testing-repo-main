@@ -59,8 +59,7 @@ export default function Home() {
                 </ul>
                 <Link
                   href="/checkout?plan=Pro"
-                  className="btn btn--primary btn--block"
-                >
+                  className="cta-buy-pro">
                   Buy Pro
                 </Link>
               </div>
