@@ -1,0 +1,844 @@
+/* ------------------------------------------------------------------ */
+/* CRMforce — Salesforce Lightning-inspired light theme.               */
+/* Everything is scoped under .crmforce so it never touches the dark   */
+/* landing page in app/globals.css.                                    */
+/* ------------------------------------------------------------------ */
+.crmforce {
+  --cf-bg: #f3f3f8;
+  --cf-surface: #ffffff;
+  --cf-ink: #16192c;
+  --cf-muted: #5c6280;
+  --cf-border: #e3e5ee;
+  --cf-brand: #0176d3;
+  --cf-brand-strong: #014486;
+  --cf-brand-soft: #eaf4fd;
+  --cf-accent: #7f56d9;
+  --cf-green: #2e844a;
+  --cf-green-soft: #e5f5ea;
+  --cf-amber: #b9770a;
+  --cf-amber-soft: #fdf3e0;
+  --cf-red: #ba0517;
+  --cf-red-soft: #fde8ea;
+  --cf-radius: 12px;
+  --cf-shadow: 0 1px 3px rgba(16, 24, 64, 0.08), 0 6px 20px rgba(16, 24, 64, 0.06);
+
+  min-height: 100vh;
+  background: var(--cf-bg);
+  color: var(--cf-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.crmforce * {
+  box-sizing: border-box;
+}
+
+/* ---------------- App shell ---------------- */
+.cf-shell {
+  display: grid;
+  grid-template-columns: 236px 1fr;
+  min-height: 100vh;
+}
+
+.cf-sidebar {
+  background: linear-gradient(180deg, #032d60 0%, #0b1f3a 100%);
+  color: #dbe7f5;
+  padding: 18px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.cf-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #fff;
+  padding: 6px 8px 16px;
+  letter-spacing: -0.02em;
+}
+
+.cf-logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1ab7ff, #0176d3);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(26, 183, 255, 0.4);
+}
+
+.cf-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.cf-nav a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #c4d4ea;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.12s, color 0.12s;
+}
+
+.cf-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.cf-nav a.active {
+  background: rgba(26, 183, 255, 0.18);
+  color: #fff;
+}
+
+.cf-nav-ico {
+  width: 18px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cf-sidebar-foot {
+  margin-top: 20px;
+  padding: 12px 8px;
+  font-size: 11px;
+  color: #8fa6c4;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------- Main + topbar ---------------- */
+.cf-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cf-topbar {
+  height: 60px;
+  background: var(--cf-surface);
+  border-bottom: 1px solid var(--cf-border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 22px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.cf-search {
+  position: relative;
+  flex: 1;
+  max-width: 460px;
+}
+
+.cf-search input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid var(--cf-border);
+  border-radius: 22px;
+  padding: 0 16px 0 40px;
+  font-size: 14px;
+  background: #f6f7fb;
+  color: var(--cf-ink);
+  outline: none;
+}
+
+.cf-search input:focus {
+  border-color: var(--cf-brand);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--cf-brand-soft);
+}
+
+.cf-search-ico {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cf-muted);
+  font-size: 14px;
+}
+
+.cf-search-results {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--cf-border);
+  border-radius: 12px;
+  box-shadow: var(--cf-shadow);
+  overflow: hidden;
+  z-index: 40;
+}
+
+.cf-search-results a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--cf-border);
+}
+
+.cf-search-results a:last-child {
+  border-bottom: none;
+}
+
+.cf-search-results a:hover {
+  background: var(--cf-brand-soft);
+}
+
+.cf-search-empty {
+  padding: 12px 14px;
+  color: var(--cf-muted);
+  font-size: 13px;
+}
+
+.cf-topbar-spacer {
+  flex: 1;
+}
+
+.cf-poweredby {
+  font-size: 12px;
+  color: var(--cf-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cf-poweredby b {
+  color: var(--cf-accent);
+}
+
+.cf-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cf-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7f56d9, #0176d3);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cf-content {
+  padding: 24px 26px 48px;
+  min-width: 0;
+}
+
+/* ---------------- Page header ---------------- */
+.cf-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cf-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cf-brand);
+}
+
+.cf-page-head h1 {
+  margin: 2px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cf-page-head p {
+  margin: 4px 0 0;
+  color: var(--cf-muted);
+  font-size: 14px;
+}
+
+/* ---------------- Buttons ---------------- */
+.cf-btn {
+  appearance: none;
+  border: 1px solid var(--cf-border);
+  background: #fff;
+  color: var(--cf-ink);
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.05s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cf-btn:hover {
+  background: #f4f6fb;
+}
+
+.cf-btn:active {
+  transform: translateY(1px);
+}
+
+.cf-btn-primary {
+  background: var(--cf-brand);
+  border-color: var(--cf-brand);
+  color: #fff;
+}
+
+.cf-btn-primary:hover {
+  background: var(--cf-brand-strong);
+}
+
+.cf-btn-sm {
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+
+.cf-btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--cf-brand);
+}
+
+.cf-btn-ghost:hover {
+  background: var(--cf-brand-soft);
+}
+
+.cf-btn-danger {
+  color: var(--cf-red);
+  border-color: transparent;
+  background: transparent;
+}
+
+.cf-btn-danger:hover {
+  background: var(--cf-red-soft);
+}
+
+/* ---------------- Cards ---------------- */
+.cf-card {
+  background: var(--cf-surface);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius);
+  box-shadow: var(--cf-shadow);
+}
+
+.cf-card-pad {
+  padding: 18px;
+}
+
+.cf-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--cf-border);
+}
+
+.cf-card-head h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ---------------- KPI tiles ---------------- */
+.cf-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.cf-kpi {
+  background: var(--cf-surface);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius);
+  box-shadow: var(--cf-shadow);
+  padding: 16px 18px;
+}
+
+.cf-kpi-label {
+  font-size: 12.5px;
+  color: var(--cf-muted);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cf-kpi-value {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+}
+
+.cf-kpi-sub {
+  font-size: 12.5px;
+  color: var(--cf-muted);
+  margin-top: 2px;
+}
+
+/* ---------------- Tables ---------------- */
+.cf-table-wrap {
+  overflow-x: auto;
+}
+
+.cf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.cf-table th {
+  text-align: left;
+  padding: 11px 16px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cf-muted);
+  border-bottom: 1px solid var(--cf-border);
+  background: #fafbfe;
+  white-space: nowrap;
+}
+
+.cf-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cf-border);
+  vertical-align: middle;
+}
+
+.cf-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cf-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.cf-table .cf-strong {
+  font-weight: 600;
+  color: var(--cf-brand-strong);
+}
+
+.cf-row-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+/* ---------------- Badges ---------------- */
+.cf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  border: 1px solid transparent;
+}
+
+.cf-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.cf-badge-blue { color: var(--cf-brand); background: var(--cf-brand-soft); }
+.cf-badge-green { color: var(--cf-green); background: var(--cf-green-soft); }
+.cf-badge-amber { color: var(--cf-amber); background: var(--cf-amber-soft); }
+.cf-badge-red { color: var(--cf-red); background: var(--cf-red-soft); }
+.cf-badge-gray { color: var(--cf-muted); background: #eef0f6; }
+.cf-badge-purple { color: var(--cf-accent); background: #f3edfd; }
+
+/* ---------------- Select (inline) ---------------- */
+.cf-select {
+  appearance: none;
+  border: 1px solid var(--cf-border);
+  border-radius: 8px;
+  padding: 5px 28px 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235c6280' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 9px center;
+  color: var(--cf-ink);
+  cursor: pointer;
+}
+
+.cf-select:focus {
+  outline: none;
+  border-color: var(--cf-brand);
+  box-shadow: 0 0 0 3px var(--cf-brand-soft);
+}
+
+/* ---------------- Kanban pipeline ---------------- */
+.cf-kanban {
+  display: grid;
+  /* All 6 stage columns fit the viewport — equal widths that shrink below
+     content size (minmax(0, …)) so the board never needs horizontal scroll. */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.cf-kan-col {
+  background: #eef1f7;
+  border-radius: var(--cf-radius);
+  padding: 9px 8px;
+  min-height: 200px;
+  min-width: 0; /* allow the column to shrink inside the grid track */
+}
+
+.cf-kan-col.cf-dragover {
+  background: var(--cf-brand-soft);
+  outline: 2px dashed var(--cf-brand);
+}
+
+.cf-kan-col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  row-gap: 2px;
+  padding: 4px 4px 10px;
+}
+
+.cf-kan-col-title {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.cf-kan-col-total {
+  font-size: 11px;
+  color: var(--cf-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cf-kan-card {
+  background: #fff;
+  border: 1px solid var(--cf-border);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 64, 0.06);
+  cursor: grab;
+}
+
+.cf-kan-card-name {
+  overflow-wrap: anywhere;
+}
+
+.cf-kan-card:active {
+  cursor: grabbing;
+}
+
+.cf-kan-card-name {
+  font-weight: 600;
+  font-size: 13.5px;
+  margin-bottom: 5px;
+}
+
+.cf-kan-card-amt {
+  font-weight: 700;
+  color: var(--cf-green);
+  font-size: 14px;
+}
+
+.cf-kan-card-meta {
+  font-size: 11.5px;
+  color: var(--cf-muted);
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.cf-kan-card-meta span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cf-kan-card-meta span:last-child {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---------------- Activity timeline ---------------- */
+.cf-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+
+.cf-timeline li {
+  position: relative;
+  padding: 0 0 16px 26px;
+  border-left: 2px solid var(--cf-border);
+  margin-left: 8px;
+}
+
+.cf-timeline li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.cf-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cf-brand);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--cf-border);
+}
+
+.cf-timeline li.cf-ev-updated::before { background: var(--cf-accent); }
+
+.cf-tl-msg {
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.cf-tl-time {
+  font-size: 12px;
+  color: var(--cf-muted);
+  margin-top: 2px;
+}
+
+/* ---------------- Pipeline bars ---------------- */
+.cf-bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 90px;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  font-size: 13px;
+}
+
+.cf-bar-track {
+  height: 10px;
+  background: #eef1f7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cf-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #1ab7ff, #0176d3);
+}
+
+.cf-bar-val {
+  text-align: right;
+  font-weight: 700;
+}
+
+/* ---------------- Modal ---------------- */
+.cf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 64, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.cf-modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 60px rgba(16, 24, 64, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.cf-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--cf-border);
+}
+
+.cf-modal-head h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cf-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--cf-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.cf-modal-body {
+  padding: 20px;
+}
+
+.cf-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--cf-border);
+}
+
+/* ---------------- Forms ---------------- */
+.cf-field {
+  margin-bottom: 14px;
+}
+
+.cf-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--cf-ink);
+}
+
+.cf-field input,
+.cf-field select,
+.cf-field textarea {
+  width: 100%;
+  border: 1px solid var(--cf-border);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 14px;
+  color: var(--cf-ink);
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+}
+
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+  border-color: var(--cf-brand);
+  box-shadow: 0 0 0 3px var(--cf-brand-soft);
+}
+
+.cf-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ---------------- Utilities ---------------- */
+.cf-grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.cf-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cf-muted);
+  font-size: 14px;
+}
+
+.cf-loading {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cf-muted);
+  font-size: 14px;
+}
+
+.cf-error {
+  background: var(--cf-red-soft);
+  color: var(--cf-red);
+  border: 1px solid #f3c2c7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.cf-muted { color: var(--cf-muted); }
+.cf-mono { font-variant-numeric: tabular-nums; }
+
+/* ---------------- Login ---------------- */
+.cf-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 600px at 50% -10%, #0b3d78, #04223f);
+  padding: 20px;
+}
+
+.cf-login-card {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  padding: 34px 32px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.cf-login-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.cf-login-sub {
+  color: var(--cf-muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.cf-login-hint {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: var(--cf-muted);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .cf-shell { grid-template-columns: 1fr; }
+  .cf-sidebar { position: static; height: auto; }
+  .cf-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .cf-grid-2 { grid-template-columns: 1fr; }
+}
