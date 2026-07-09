@@ -1,0 +1,10 @@
+# Project and folder configuration
+project_id: "01KX3EGHPPYAZNTY1PJTCQHBV7"
+folder_id: "01KX3EGJN70ERFNVYDPC20PWKX"
+
+# Test Run configuration
+assignee: 2465689
+configuration_id: your_test_run_configuration_id
+
+# Test URL for automation
+test_url: "https://my-testing-repo-main.vercel.app/"
