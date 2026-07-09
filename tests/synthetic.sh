@@ -24,7 +24,7 @@ run_test "Login page reachable" \
   "go to {{app_url}}, assert the page contains 'Ship your idea faster', assert the navigation contains 'Pricing'"
 
 run_test "Money path: checkout total" \
-  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$19.00'"
+  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$24.00'"
 
 echo ""
 echo "All critical journeys healthy."

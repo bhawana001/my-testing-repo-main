@@ -22,7 +22,7 @@ fi
 # Build a runtime variables file with app_url pointed at APP_URL.
 VARS="./tests/variables.ci.json"
 TEST_EMAIL="qa@example.com"
-EXPECTED_PRO_PRICE="\$19"
+EXPECTED_PRO_PRICE="\$24"
 cat > "$VARS" <<JSON
 {
   "app_url": { "value": "$APP_URL" },
@@ -70,11 +70,11 @@ run_test "Landing page smoke" \
 
 # 2. Pricing integrity: Free is free, Pro costs what it should
 run_test "Pricing integrity" \
-  "go to {{app_url}}, scroll to the Pricing section, assert the page contains 'Free', assert the page contains '\$0', assert the page contains '$19', store the Pro plan price as 'pro_price'"
+  "go to {{app_url}}, scroll to the Pricing section, assert the page contains 'Free', assert the page contains '\$0', assert the page contains '\$24', store the Pro plan price as 'pro_price'"
 
 # 3. The money path: Buy Pro -> checkout shows correct total
 run_test "Checkout flow" \
-  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$19.00', assert the page contains 'Pay \$19.00', store the total due as 'total'"
+  "go to {{app_url}}, click the 'Buy Pro' button, assert the page contains 'Total due today', assert the total due today shows '\$24.00', assert the page contains 'Pay \$24.00', store the total due as 'total'"
 
 # 4. Newsletter signup accepts a valid email
 run_test "Newsletter signup" \

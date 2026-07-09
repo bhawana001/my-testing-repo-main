@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const PRICE = 19;
+const PRICE = 24;
 
 export default function CartDemo() {
   const [cartCount, setCartCount] = useState(0);

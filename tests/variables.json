@@ -1,5 +1,5 @@
 {
   "app_url": { "value": "https://my-testing-repo-main.vercel.app" },
   "test_email": { "value": "qa@example.com" },
-  "expected_pro_price": { "value": "$19" }
+  "expected_pro_price": { "value": "$24" }
 }
