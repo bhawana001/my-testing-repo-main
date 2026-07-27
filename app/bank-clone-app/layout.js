@@ -1,5 +1,6 @@
 import "./bank.css";
 import { demo } from "./demo";
+import BackToEvals from "../BackToEvals";
 
 export const metadata = {
   title: "GO Money Rates — Banking, Calculators & Savings",
@@ -13,5 +14,10 @@ export default function BankLayout({ children }) {
   // primary CTAs render invisible (button color == background). Playwright
   // passes green; a visual layer catches it.
   const cls = "bank" + (demo.visual ? " b-demo-visual" : "");
-  return <div className={cls}>{children}</div>;
+  return (
+    <div className={cls}>
+      <BackToEvals />
+      {children}
+    </div>
+  );
 }

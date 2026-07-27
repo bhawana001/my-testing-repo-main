@@ -1,0 +1,86 @@
+/* evals.css: the "Real Evals" landing page. Scoped under .evals so it does not
+   collide with globals.css or any clone theme. */
+.evals {
+  --e-ink: #2a1a3e;
+  --e-ink-soft: #4a3a5e;
+  min-height: 100vh;
+  width: 100%;
+  color: var(--e-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Warm "aura" glow near the top, fading into a lavender base that fills the
+     whole (tall) page, matches the reference aura. No fixed attachment so it
+     covers the full scroll height. */
+  background-color: #bd8cf0;
+  background-image: radial-gradient(
+    1100px 820px at 50% 300px,
+    #ff5964 0%,
+    #ff7a52 12%,
+    #ffab48 23%,
+    #ffd66b 33%,
+    #ff9f7f 46%,
+    #f98ec9 64%,
+    rgba(189, 140, 240, 0) 82%
+  );
+  background-repeat: no-repeat;
+}
+.evals * { box-sizing: border-box; }
+.evals a { text-decoration: none; color: inherit; }
+.evals .e-wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* Top bar */
+.evals .e-topbar { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+.evals .e-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
+.evals .e-brand .dot { width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff, #ffd66b 40%, #ff5964 100%); box-shadow: 0 0 12px rgba(255,120,90,.7); }
+.evals .e-ghbtn { display: inline-flex; align-items: center; gap: 8px; background: rgba(20,10,30,.78); color: #fff; padding: 9px 16px; border-radius: 999px; font-weight: 700; font-size: 14px; border: 1px solid rgba(255,255,255,.25); }
+.evals .e-ghbtn:hover { background: rgba(20,10,30,.92); }
+
+/* Hero */
+.evals .e-hero { text-align: center; padding: 40px 0 34px; }
+.evals .e-hero h1 { font-size: 60px; line-height: 1.02; margin: 0 0 16px; color: #fff; text-shadow: 0 3px 22px rgba(120,30,60,.35); letter-spacing: -0.02em; }
+.evals .e-hero p { font-size: 19px; max-width: 640px; margin: 0 auto 20px; color: #3a1f42; font-weight: 500; }
+.evals .e-stats { display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.evals .e-stat { background: rgba(255,255,255,.5); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.6); border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 700; color: var(--e-ink); }
+
+/* Section heading */
+.evals .e-h2 { font-size: 15px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.2); margin: 34px 0 18px; }
+
+/* Clone grid */
+.evals .e-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.evals .e-card {
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+  box-shadow: 0 8px 26px rgba(90,30,70,.14);
+}
+.evals .e-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.9); box-shadow: 0 16px 40px rgba(90,30,70,.22); }
+.evals .e-card__ic { font-size: 30px; }
+.evals .e-card__ind { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #b0466a; margin-top: 10px; }
+.evals .e-card__brand { font-size: 19px; font-weight: 800; color: var(--e-ink); margin: 2px 0 2px; }
+.evals .e-card__clone { font-size: 12px; color: var(--e-ink-soft); }
+.evals .e-card__slug { margin-top: auto; font-size: 12px; font-weight: 700; color: #7b3fb0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; padding-top: 12px; }
+.evals .e-card__api { font-size: 11px; color: var(--e-ink-soft); margin-top: 4px; }
+
+/* About / usage */
+.evals .e-about { background: rgba(255,255,255,.68); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.7); border-radius: 18px; padding: 26px 28px; margin-top: 30px; }
+.evals .e-about h3 { margin: 0 0 8px; font-size: 20px; }
+.evals .e-about p { margin: 0 0 12px; color: var(--e-ink-soft); font-size: 15px; }
+.evals .e-about code { background: rgba(42,26,62,.1); border-radius: 6px; padding: 2px 7px; font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.evals .e-about a { color: #7b3fb0; font-weight: 700; }
+
+/* Footer */
+.evals .e-footer { text-align: center; margin-top: 40px; color: #4a2a52; font-size: 13px; font-weight: 600; }
+.evals .e-footer a { color: #3a1f42; text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .evals .e-grid { grid-template-columns: repeat(2, 1fr); }
+  .evals .e-hero h1 { font-size: 42px; }
+}
+@media (max-width: 520px) {
+  .evals .e-grid { grid-template-columns: 1fr; }
+}
