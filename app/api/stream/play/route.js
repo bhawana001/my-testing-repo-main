@@ -1,4 +1,4 @@
-// Start a stream — #3 seed, #11 E2E. Drives the /watch player.
+// Start a stream — use case #12 (act on a filtered result). Drives the /watch player.
 // POST /api/stream/play  body: { titleId, videoUrl? }
 // Echoes back a play session; streamUrl is the caller-supplied videoUrl (so you
 // can stream ANY video, e.g. a kane-cli demo recording) or a stub manifest.

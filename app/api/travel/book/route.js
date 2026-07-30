@@ -1,4 +1,4 @@
-// Create a booking — #3 seed-then-verify, #8 curl, #11 E2E. Drives the /pay UI.
+// Create a booking — use cases #3 (seed data) and #11 (cross-endpoint consistency). Drives the /pay UI.
 import { LISTINGS } from "../../../travel-clone-app/data";
 
 export async function POST(request) {

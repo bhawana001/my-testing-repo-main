@@ -1,4 +1,4 @@
-// Services/topics — #4 schema/field validation. GET /api/gov/services[?topic=taxes]
+// Services/topics — extra API surface (filtered list). GET /api/gov/services[?topic=taxes]
 const SERVICES = [
   { id: "taxes", topic: "taxes", name: "File federal taxes", agency: "IRS" },
   { id: "refund", topic: "taxes", name: "Check tax refund status", agency: "IRS" },

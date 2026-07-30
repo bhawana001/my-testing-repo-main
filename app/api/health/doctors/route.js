@@ -1,4 +1,4 @@
-// Doctors listing — Use case #4 (schema / field validation).
+// Doctors listing — use case #2 (the protected call after login).
 // GET /api/health/doctors[?specialty=Dermatologist]
 const DOCTORS = [
   { id: "doc_101", name: "Dr. Aastha Jain", specialty: "Gynecologist", fee: 649, rating: 4.8, experience: 8, verified: true },

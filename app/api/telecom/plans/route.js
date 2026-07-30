@@ -1,4 +1,4 @@
-// Plans listing — #4 schema/field validation. GET /api/telecom/plans[?type=fiber]
+// Plans listing — use case #7 (latency / SLA gate). GET /api/telecom/plans[?type=fiber]
 const PLANS = [
   { id: "fiber100", name: "Fiber 100", type: "fiber", speed: "100 Mbps", price: 799 },
   { id: "fiber200", name: "Fiber 200", type: "fiber", speed: "200 Mbps", price: 1199 },

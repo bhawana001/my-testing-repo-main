@@ -1,4 +1,4 @@
-// Smoke-test endpoint — Use case #1.
+// Smoke-test endpoint — same shape as use case #1 (liveness / smoke).
 // GET /api/health/health -> service liveness.
 export async function GET() {
   return Response.json(

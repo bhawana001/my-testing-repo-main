@@ -1,4 +1,4 @@
-// Locate a claim — #3 seed-then-verify, #11 E2E. Drives the /claim UI.
+// Locate a claim — extra API surface (lookup by claim number). Drives the /claim UI.
 export async function POST(request) {
   let body = {};
   try {

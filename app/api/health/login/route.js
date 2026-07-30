@@ -1,4 +1,4 @@
-// Demo auth endpoint — Use cases #2 (auth chaining) and #6 (negative paths).
+// Demo auth endpoint — use case #2 (auth-token chaining). Fabricated token, no real secrets.
 // POST /api/health/login  body: { email, password }
 // Valid creds -> 200 with a demo bearer token; bad creds -> 401.
 // NOTE: fabricated demo token only — no real secrets, no user database.

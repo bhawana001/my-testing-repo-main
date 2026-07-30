@@ -1,4 +1,4 @@
-// Demo auth endpoint — Use cases #2 (auth chaining) and #6 (negative paths).
+// Demo auth endpoint — use case #10 (step 1 of the multi-step transaction). Fabricated token only.
 // POST /api/shop/login  body: { email, password }  -> 200 token / 401 invalid.
 // NOTE: fabricated demo token only — no real secrets, no user database.
 export async function POST(request) {

@@ -1,4 +1,4 @@
-// Product listing — Use case #4 (schema / field validation).
+// Product listing — use case #4 (schema / count / field values).
 // GET /api/shop/products[?category=gaming][?q=headset]
 import { PRODUCTS } from "../../../shop-clone-app/data";
 
