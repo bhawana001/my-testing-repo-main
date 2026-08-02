@@ -1,4 +1,4 @@
-// Book a consultation — Use cases #3 (seed-then-verify), #8 (curl), #11 (E2E).
+// Book a consultation — use case #5 (server-side business logic: symptom -> specialty). Drives the consult modal.
 // Also drives the "Consult with a Doctor" UI modal.
 // POST /api/health/consult  body: { symptom, phone, doctorId? }
 // Valid -> 201 with a booking; invalid input -> 400.

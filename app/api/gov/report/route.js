@@ -1,4 +1,4 @@
-// Submit a fraud report — #3 seed, #6 negative, #8 curl, #11 E2E. Drives the form.
+// Submit a fraud report — use case #9 (input validation: 400 then 201). Drives the report-fraud form.
 // POST /api/gov/report  body: { category, details }
 export async function POST(request) {
   let body = {};

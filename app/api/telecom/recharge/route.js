@@ -1,4 +1,4 @@
-// Recharge / pay bill — #3 seed, #8 curl, #11 E2E. Drives /recharge and /bill-payment.
+// Recharge / pay bill — use case #8 (a curl pasted verbatim). Drives /recharge and /bill-payment.
 // POST /api/telecom/recharge  body: { mobile, amount, type }
 export async function POST(request) {
   let body = {};

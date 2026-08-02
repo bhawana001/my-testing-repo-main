@@ -1,4 +1,4 @@
-// Smoke-test endpoint — Use case #1.
+// Smoke-test endpoint — use case #1 (liveness / smoke).
 export async function GET() {
   return Response.json(
     {

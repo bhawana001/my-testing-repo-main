@@ -1,4 +1,4 @@
-// Demo auth — #2 auth chaining, #6 negative paths. Fabricated token, no real secrets.
+// Demo auth — use case #6 (negative path, 401). Fabricated token, no real secrets.
 export async function POST(request) {
   let body = {};
   try {

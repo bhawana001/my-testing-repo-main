@@ -1,4 +1,4 @@
-// Listings — #4 schema/field validation. GET /api/travel/listings[?city=Rishikesh]
+// Listings — use case #11 (cross-endpoint price consistency). GET /api/travel/listings[?city=Rishikesh]
 import { LISTINGS } from "../../../travel-clone-app/data";
 
 export async function GET(request) {

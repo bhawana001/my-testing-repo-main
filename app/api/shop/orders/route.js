@@ -1,4 +1,4 @@
-// Place an order (checkout) — Use cases #3, #11 (E2E). Drives the checkout modal.
+// Place an order (checkout) — use case #10 (step 3: order placed, item count). Drives the checkout modal.
 // POST /api/shop/orders  body: { items: [{ productId, qty }], total }
 // Non-empty cart -> 201 with an order id; empty -> 400.
 export async function POST(request) {

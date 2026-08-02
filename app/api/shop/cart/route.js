@@ -1,4 +1,4 @@
-// Add to cart — Use cases #3 (seed-then-verify), #8 (curl). Also drives the UI.
+// Add to cart — use case #10 (step 2: server-computed line total). Also drives the UI.
 // POST /api/shop/cart  body: { productId, qty }
 // Valid product -> 201 with line total; unknown/invalid -> 400.
 import { PRODUCTS } from "../../../shop-clone-app/data";

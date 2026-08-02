@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auralis — Sound, Sculpted in Space</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --bg:#000000;--bg-elev:#0a0807;--fg:#f5f1ec;--muted:#7a7066;
+  --amber:#ff8a2b;--amber-deep:#b8540f;--violet:#8b5cf6;--violet-deep:#4c1d95;
+  --border:rgba(255,255,255,.08);
+}
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+html,body{background:var(--bg);color:var(--fg);}
+body{font-family:'Manrope',sans-serif;overflow-x:hidden;}
+.font-display{font-family:'Syne',sans-serif;letter-spacing:-.02em;}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#000;}
+::-webkit-scrollbar-thumb{background:rgba(255,138,43,.2);border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,138,43,.4);}
+::selection{background:rgba(255,138,43,.3);color:#fff;}
+
+/* Grain textures */
+.grain{position:absolute;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;opacity:.55;
+}
+.grain-global{position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;opacity:.06;
+}
+
+/* Sound bloom */
+.sound-bloom{position:absolute;bottom:-42%;left:50%;
+  transform:translateX(-50%);width:115vw;height:115vw;
+  max-width:1500px;max-height:1500px;pointer-events:none;z-index:1;
+  background:radial-gradient(circle at 50% 50%,
+    rgba(255,138,43,.6) 0%,
+    rgba(255,138,43,.28) 18%,
+    rgba(139,92,246,.22) 42%,
+    transparent 65%);
+  filter:blur(60px);
+  animation:bloom-pulse 6s ease-in-out infinite;
+}
+@keyframes bloom-pulse{
+  0%,100%{transform:translateX(-50%) scale(.92);opacity:.65;}
+  20%{transform:translateX(-50%) scale(1);opacity:.95;}
+  40%{transform:translateX(-50%) scale(.96);opacity:.7;}
+  60%{transform:translateX(-50%) scale(1.04);opacity:1;}
+  80%{transform:translateX(-50%) scale(.98);opacity:.8;}
+}
+.sound-bloom-cta{position:absolute;top:-50%;right:-15%;
+  width:75vw;height:75vw;max-width:1100px;max-height:1100px;
+  pointer-events:none;z-index:1;
+  background:radial-gradient(circle at 50% 50%,
+    rgba(255,138,43,.45) 0%,
+    rgba(184,84,15,.2) 30%,
+    rgba(139,92,246,.22) 55%,
+    transparent 70%);
+  filter:blur(70px);
+  animation:bloom-pulse-2 9s ease-in-out infinite;
+}
+@keyframes bloom-pulse-2{
+  0%,100%{transform:scale(.92) rotate(-2deg);opacity:.6;}
+  50%{transform:scale(1.05) rotate(2deg);opacity:.95;}
+}
+
+/* Hero kinetic lines */
+.hero-line{display:block;overflow:hidden;}
+.hero-line>span{display:inline-block;transform:translateY(110%);opacity:0;}
+body.loaded .hero-line>span{transition:transform 1s cubic-bezier(.16,1,.3,1),opacity 1s cubic-bezier(.16,1,.3,1);}
+body.loaded .hero-line>span{transform:translateY(0);opacity:1;}
+body.loaded .hero-line:nth-child(1)>span{transition-delay:.15s;}
+body.loaded .hero-line:nth-child(2)>span{transition-delay:.3s;}
+body.loaded .hero-line:nth-child(3)>span{transition-delay:.45s;}
+body.loaded .hero-line:nth-child(4)>span{transition-delay:.65s;}
+body.loaded .hero-line:nth-child(5)>span{transition-delay:.85s;}
+
+.gradient-text{background:linear-gradient(135deg,#ff8a2b 0%,#ff6b1a 40%,#8b5cf6 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* CTAs */
+.cta-pill{display:inline-flex;align-items:center;gap:.75rem;
+  padding:1rem 1.75rem;border-radius:999px;cursor:pointer;border:none;
+  background:linear-gradient(135deg,#ff8a2b 0%,#ff6b1a 100%);
+  color:#0a0500;font-weight:600;font-size:.95rem;
+  position:relative;transition:all .4s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 0 30px rgba(255,138,43,.25),0 0 60px rgba(255,138,43,.1);
+}
+.cta-pill:hover{
+  box-shadow:0 0 60px rgba(255,138,43,.55),0 0 120px rgba(255,138,43,.25);
+  transform:translateY(-2px);
+}
+.cta-pill-outline{background:transparent;color:var(--fg);
+  border:1px solid rgba(255,255,255,.15);box-shadow:none;}
+.cta-pill-outline:hover{border-color:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.04);
+  box-shadow:0 0 30px rgba(255,255,255,.06);}
+
+/* Gallery cards */
+.gallery-card{position:absolute;border-radius:1rem;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);background:#0a0807;
+  opacity:0;transform:scale(.9);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,opacity .8s ease;
+}
+.gallery-card.in-view{opacity:1;transform:scale(1);}
+.gallery-card:hover{transform:scale(1.04)!important;
+  box-shadow:0 25px 70px rgba(0,0,0,.6),0 0 40px rgba(255,138,43,.18);
+  z-index:20;border-color:rgba(255,138,43,.25);}
+.gallery-card img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.25) contrast(1.08) brightness(.78);
+  transition:filter .5s ease;}
+.gallery-card:hover img{filter:grayscale(0) contrast(1.05) brightness(.95);}
+.gallery-card .caption{position:absolute;bottom:0;left:0;right:0;
+  padding:.85rem 1rem;
+  background:linear-gradient(to top,rgba(0,0,0,.95),transparent);
+  font-size:.7rem;color:rgba(245,241,236,.92);
+  letter-spacing:.15em;text-transform:uppercase;font-weight:500;}
+.gallery-card .badge{position:absolute;top:.75rem;left:.75rem;
+  padding:.25rem .6rem;border-radius:999px;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,138,43,.9);font-weight:600;}
+
+/* Pinned section */
+.pinned-section{position:relative;min-height:100vh;background:#000;overflow:hidden;}
+.bg-amber-layer,.bg-violet-layer{position:absolute;inset:0;opacity:0;
+  pointer-events:none;z-index:0;will-change:opacity;}
+.bg-amber-layer{background:radial-gradient(ellipse 80% 60% at 25% 50%,rgba(255,138,43,.22),transparent 70%);}
+.bg-violet-layer{background:radial-gradient(ellipse 80% 60% at 75% 50%,rgba(139,92,246,.25),transparent 70%);}
+.pinned-content{position:relative;z-index:2;display:flex;align-items:center;
+  justify-content:center;min-height:100vh;padding:6rem 8%;}
+.pinned-text{font-family:'Syne',sans-serif;font-weight:700;
+  font-size:clamp(1.9rem,4.8vw,4.8rem);line-height:1.18;
+  letter-spacing:-.025em;text-align:left;max-width:1100px;}
+.pinned-word{display:inline-block;color:#2a2520;opacity:.45;
+  transition:color .2s ease,opacity .2s ease;}
+.pinned-kicker{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(255,138,43,.6);margin-bottom:2rem;display:block;}
+
+/* Feature cards */
+.feature-card{position:relative;border-radius:1.5rem;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);padding:3rem;min-height:520px;
+  display:flex;flex-direction:column;justify-content:space-between;}
+.feature-amber{background:
+  radial-gradient(circle at 30% 20%,rgba(255,138,43,.55),transparent 50%),
+  radial-gradient(circle at 80% 80%,rgba(184,84,15,.38),transparent 55%),
+  linear-gradient(135deg,#1a0900,#0a0400);
+  background-size:200% 200%,200% 200%,100% 100%;
+  animation:amber-drift 14s ease-in-out infinite;}
+.feature-violet{background:
+  radial-gradient(circle at 30% 20%,rgba(139,92,246,.42),transparent 60%),
+  radial-gradient(circle at 70% 80%,rgba(99,102,241,.32),transparent 55%),
+  linear-gradient(135deg,#0a0518,#050010);
+  background-size:200% 200%,200% 200%,100% 100%;
+  animation:violet-drift 18s ease-in-out infinite;}
+@keyframes amber-drift{
+  0%,100%{background-position:0% 0%,100% 100%,0 0;}
+  50%{background-position:100% 50%,0% 50%,0 0;}
+}
+@keyframes violet-drift{
+  0%,100%{background-position:0% 0%,100% 100%,0 0;}
+  50%{background-position:50% 100%,50% 0%,0 0;}
+}
+
+/* Marquee */
+.marquee{overflow:hidden;position:relative;
+  mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent);
+  -webkit-mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent);}
+.marquee-track{display:flex;gap:1.25rem;width:max-content;
+  animation:marquee 60s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.quote-card{flex-shrink:0;width:340px;padding:1.75rem;
+  border-radius:1.25rem;border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));
+  transition:all .4s ease;}
+.quote-card:hover{border-color:rgba(255,138,43,.25);
+  background:linear-gradient(180deg,rgba(255,138,43,.04),rgba(255,255,255,.005));}
+
+/* Pricing */
+.tier-card{position:relative;border-radius:1.5rem;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#0c0807,#050302);
+  padding:2.5rem;transition:all .4s cubic-bezier(.2,.8,.2,1);}
+.tier-card:hover{transform:translateY(-6px);
+  border-color:rgba(255,138,43,.3);
+  box-shadow:0 25px 70px rgba(0,0,0,.5),0 0 60px rgba(255,138,43,.12);}
+.tier-card.featured{background:linear-gradient(180deg,#1a0e02,#0a0500);
+  border-color:rgba(255,138,43,.3);}
+.tier-card.featured::before{content:'';position:absolute;inset:-1px;
+  border-radius:1.5rem;padding:1px;
+  background:linear-gradient(180deg,rgba(255,138,43,.5),transparent 50%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+
+/* Scroll indicator */
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;
+  transform:translateX(-50%);display:flex;flex-direction:column;
+  align-items:center;gap:.5rem;color:var(--muted);
+  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  animation:scroll-bob 2.4s ease-in-out infinite;z-index:10;}
+@keyframes scroll-bob{
+  0%,100%{transform:translateX(-50%) translateY(0);opacity:.6;}
+  50%{transform:translateX(-50%) translateY(8px);opacity:1;}
+}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:rgba(0,0,0,.55);border-bottom:1px solid var(--border);
+  transition:background .3s ease;}
+.nav-link{position:relative;}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;
+  background:linear-gradient(90deg,#ff8a2b,#8b5cf6);
+  transition:width .35s cubic-bezier(.2,.8,.2,1);}
+.nav-link:hover::after{width:100%;}
+
+/* Waveform */
+#waveform{width:100%;height:240px;display:block;}
+.spec-icon{width:44px;height:44px;border-radius:.7rem;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(255,138,43,.15),rgba(139,92,246,.08));
+  border:1px solid var(--border);color:var(--amber);font-size:1.05rem;}
+
+/* Footer */
+.footer-link{color:var(--muted);transition:color .3s ease;
+  display:block;padding:.4rem 0;font-size:.9rem;}
+.footer-link:hover{color:var(--fg);}
+.social-icon{width:38px;height:38px;border-radius:999px;
+  border:1px solid var(--border);display:flex;align-items:center;
+  justify-content:center;color:var(--muted);transition:all .35s ease;}
+.social-icon:hover{color:var(--amber);border-color:rgba(255,138,43,.4);
+  transform:translateY(-2px);box-shadow:0 0 20px rgba(255,138,43,.15);}
+
+/* Reveal helper */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+/* Mobile gallery */
+@media (max-width:768px){
+  #gallery{height:auto!important;}
+  #gallery .sticky-wrap{position:relative!important;height:auto!important;padding:6rem 0 4rem;}
+  .gallery-card{position:relative!important;top:auto!important;left:auto!important;
+    width:calc(100% - 3rem)!important;max-width:320px;height:240px!important;
+    margin:0 auto 1.25rem;transform:none!important;}
+  .pinned-text{font-size:clamp(1.5rem,7vw,2.5rem);}
+  .pinned-word{opacity:1;color:var(--fg);}
+  .feature-card{padding:2rem;min-height:420px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;}
+  .hero-line>span{transform:none!important;opacity:1!important;}
+  .pinned-word{opacity:1!important;color:var(--fg)!important;}
+}
+</style>
+</head>
+<body class="font-body">
+
+<!-- Global grain -->
+<div class="grain-global"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full relative overflow-hidden" style="background:radial-gradient(circle at 35% 35%,#ff8a2b,#8b5cf6);">
+        <div class="absolute inset-1.5 rounded-full bg-black"></div>
+        <div class="absolute inset-[10px] rounded-full" style="background:radial-gradient(circle,#ff8a2b,transparent 70%);"></div>
+      </div>
+      <span class="font-display font-bold text-lg tracking-[.18em]">AURALIS</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+      <a href="#features" class="nav-link hover:text-white transition-colors">Sound</a>
+      <a href="#specs" class="nav-link hover:text-white transition-colors">Technology</a>
+      <a href="#gallery" class="nav-link hover:text-white transition-colors">Stories</a>
+      <a href="#pricing" class="nav-link hover:text-white transition-colors">Shop</a>
+    </div>
+    <button class="cta-pill !py-2 !px-5 !text-xs tracking-wider">
+      Pre-order
+      <i class="fas fa-arrow-right text-[10px]"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+  <div class="sound-bloom"></div>
+  <div class="grain"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto text-center pt-24">
+    <span class="hero-line block">
+      <span class="inline-flex items-center gap-2.5 px-4 py-1.5 mb-10 rounded-full border border-white/10 text-[.7rem] tracking-[.3em] uppercase text-zinc-400 bg-white/[.02] backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-500" style="box-shadow:0 0 10px #ff8a2b;animation:scroll-bob 2s ease-in-out infinite;"></span>
+        Spatial Audio · 2025 Release
+      </span>
+    </span>
+
+    <h1 class="font-display font-extrabold leading-[.95] tracking-tight text-white" style="font-size:clamp(3rem,9vw,8.5rem)">
+      <span class="hero-line block"><span>Sound,</span></span>
+      <span class="hero-line block"><span class="gradient-text italic font-medium">sculpted</span></span>
+      <span class="hero-line block"><span>in space.</span></span>
+    </h1>
+
+    <p class="hero-line mt-10 max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed">
+      <span>Auralis recreates the geometry of a live performance inside your head — every reflection, every breath, every direction preserved.</span>
+    </p>
+
+    <div class="hero-line mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <span class="contents">
+        <button class="cta-pill">
+          Experience Auralis
+          <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+        <button class="cta-pill cta-pill-outline">
+          <i class="fas fa-play text-[10px]"></i>
+          Watch the film
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down text-[10px]"></i>
+  </div>
+</section>
+
+<!-- FLOATING PARALLAX GALLERY -->
+<section id="gallery" class="relative bg-black" style="height:220vh;">
+  <div class="sticky-wrap sticky top-0 h-screen overflow-hidden">
+    <div class="absolute top-12 left-1/2 -translate-x-1/2 z-30 text-center pointer-events-none">
+      <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500/70 mb-2">The Sessions</div>
+      <div class="font-display text-2xl md:text-3xl text-zinc-300 font-semibold">Moments, in three dimensions</div>
+    </div>
+
+    <div class="gallery-card" data-speed="0.14" style="top:16%;left:4%;width:230px;height:290px;">
+      <img src="https://picsum.photos/seed/auralis-studio-warm/460/580.jpg" alt="Studio session">
+      <span class="badge">01</span>
+      <div class="caption">Studio · 03:00 AM</div>
+    </div>
+    <div class="gallery-card" data-speed="0.26" style="top:9%;left:36%;width:200px;height:250px;">
+      <img src="https://picsum.photos/seed/auralis-driver-detail/400/500.jpg" alt="Driver detail">
+      <span class="badge">02</span>
+      <div class="caption">50mm Beryllium</div>
+    </div>
+    <div class="gallery-card mobile-hide" data-speed="0.38" style="top:58%;left:10%;width:240px;height:190px;">
+      <img src="https://picsum.photos/seed/auralis-night-drive/480/380.jpg" alt="Night drive">
+      <span class="badge">03</span>
+      <div class="caption">Late Night Drive</div>
+    </div>
+    <div class="gallery-card" data-speed="0.48" style="top:22%;left:66%;width:250px;height:310px;">
+      <img src="https://picsum.photos/seed/auralis-headphone-portrait/500/620.jpg" alt="Headphone portrait">
+      <span class="badge">04</span>
+      <div class="caption">Forged Aluminum</div>
+    </div>
+    <div class="gallery-card mobile-hide" data-speed="0.20" style="top:72%;left:46%;width:210px;height:260px;">
+      <img src="https://picsum.photos/seed/auralis-vinyl-warmth/420/520.jpg" alt="Vinyl">
+      <span class="badge">05</span>
+      <div class="caption">Vinyl · 33 ⅓ RPM</div>
+    </div>
+    <div class="gallery-card mobile-hide" data-speed="0.32" style="top:42%;left:84%;width:170px;height:230px;">
+      <img src="https://picsum.photos/seed/auralis-concert-hall/340/460.jpg" alt="Concert hall">
+      <span class="badge">06</span>
+      <div class="caption">Vienna Hall</div>
+    </div>
+    <div class="gallery-card mobile-hide" data-speed="0.42" style="top:76%;left:78%;width:180px;height:200px;">
+      <img src="https://picsum.photos/seed/auralis-ear-cup-detail/360/400.jpg" alt="Ear cup detail">
+      <span class="badge">07</span>
+      <div class="caption">Memory Foam</div>
+    </div>
+    <div class="gallery-card mobile-hide" data-speed="0.18" style="top:48%;left:32%;width:220px;height:280px;">
+      <img src="https://picsum.photos/seed/auralis-listener-portrait/440/560.jpg" alt="Listener">
+      <span class="badge">08</span>
+      <div class="caption">The Listener</div>
+    </div>
+  </div>
+</section>
+
+<!-- PINNED SCRUBBED HEADLINE -->
+<section id="pinned" class="pinned-section">
+  <div class="bg-amber-layer"></div>
+  <div class="bg-violet-layer"></div>
+  <div class="grain"></div>
+
+  <div class="pinned-content">
+    <div>
+      <span class="pinned-kicker">Engineering Philosophy</span>
+      <p class="pinned-text" id="pinned-statement"><span class="pinned-word">We</span> <span class="pinned-word">started</span> <span class="pinned-word">with</span> <span class="pinned-word">silence.</span><br><span class="pinned-word">Then</span> <span class="pinned-word">carved</span> <span class="pinned-word">frequency</span> <span class="pinned-word">into</span> <span class="pinned-word">architecture.</span><br><span class="pinned-word">Each</span> <span class="pinned-word">driver</span> <span class="pinned-word">tuned</span> <span class="pinned-word">by</span> <span class="pinned-word">hand.</span><br><span class="pinned-word">Each</span> <span class="pinned-word">resonance</span> <span class="pinned-word">placed</span> <span class="pinned-word">with</span> <span class="pinned-word">precision.</span><br><span class="pinned-word">This</span> <span class="pinned-word">is</span> <span class="pinned-word">not</span> <span class="pinned-word">audio.</span><br><span class="pinned-word">This</span> <span class="pinned-word">is</span> <span class="pinned-word">spatial</span> <span class="pinned-word">truth.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT FEATURE SHOWCASE -->
+<section id="features" class="relative bg-black py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16 max-w-2xl reveal">
+      <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500 mb-4">Two philosophies</div>
+      <h2 class="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.02]">One instrument.<br><span class="gradient-text italic font-medium">Two voices.</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="feature-card feature-amber reveal">
+        <div class="grain"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-7">
+            <div class="spec-icon" style="color:#ff8a2b;"><i class="fas fa-fire"></i></div>
+            <span class="text-[.7rem] tracking-[.3em] uppercase text-amber-300/80">Warmth · 01</span>
+          </div>
+          <h3 class="font-display font-bold text-3xl md:text-5xl mb-5 text-white leading-tight">The voice of<br>the room.</h3>
+          <p class="text-zinc-300/80 leading-relaxed max-w-md text-[.95rem]">A 50mm beryllium driver voiced to reproduce the harmonic density of a properly tuned listening room. Bass that breathes. Mids with flesh. Treble without edges.</p>
+        </div>
+        <div class="relative z-10 mt-8 flex items-center gap-4">
+          <button class="cta-pill">
+            Hear the warmth
+            <i class="fas fa-arrow-right text-xs"></i>
+          </button>
+          <div class="text-xs text-zinc-500 font-mono">+0.02% THD</div>
+        </div>
+      </div>
+
+      <div class="feature-card feature-violet reveal">
+        <div class="grain"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-7">
+            <div class="spec-icon" style="color:#a78bfa;"><i class="fas fa-wave-square"></i></div>
+            <span class="text-[.7rem] tracking-[.3em] uppercase text-violet-300/80">Precision · 02</span>
+          </div>
+          <h3 class="font-display font-bold text-3xl md:text-5xl mb-5 text-white leading-tight">The geometry<br>of sound.</h3>
+          <p class="text-zinc-300/80 leading-relaxed max-w-md text-[.95rem]">A dedicated spatial DSP renders a 360-degree soundfield in real time. Instruments occupy volume, not pan positions. Close your eyes and the room appears.</p>
+        </div>
+        <div class="relative z-10 mt-8 flex items-center gap-4">
+          <button class="cta-pill cta-pill-outline" style="border-color:rgba(167,139,250,.35);">
+            See the geometry
+            <i class="fas fa-arrow-right text-xs"></i>
+          </button>
+          <div class="text-xs text-zinc-500 font-mono">&lt;8ms latency</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS + WAVEFORM -->
+<section id="specs" class="relative bg-black py-28 lg:py-36 px-6 lg:px-10 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div class="reveal">
+        <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500 mb-4">Engineered</div>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">A spectrum<br>you can feel.</h2>
+        <p class="text-zinc-400 leading-relaxed mb-10 max-w-md">Move your cursor across the visualization. Each frequency band is rendered in real time, modeled on the actual impulse response of the Auralis driver array.</p>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-5 rounded-xl border border-white/[.06] bg-white/[.015] hover:border-amber-500/20 transition-colors">
+            <div class="spec-icon mb-3"><i class="fas fa-bolt"></i></div>
+            <div class="text-2xl font-display font-bold">5Hz<span class="text-zinc-500 text-base font-normal"> – 40kHz</span></div>
+            <div class="text-[.7rem] text-zinc-500 mt-1 uppercase tracking-[.15em]">Frequency response</div>
+          </div>
+          <div class="p-5 rounded-xl border border-white/[.06] bg-white/[.015] hover:border-amber-500/20 transition-colors">
+            <div class="spec-icon mb-3"><i class="fas fa-microchip"></i></div>
+            <div class="text-2xl font-display font-bold">50mm</div>
+            <div class="text-[.7rem] text-zinc-500 mt-1 uppercase tracking-[.15em]">Beryllium driver</div>
+          </div>
+          <div class="p-5 rounded-xl border border-white/[.06] bg-white/[.015] hover:border-amber-500/20 transition-colors">
+            <div class="spec-icon mb-3"><i class="fas fa-battery-full"></i></div>
+            <div class="text-2xl font-display font-bold">60<span class="text-zinc-500 text-base font-normal"> hours</span></div>
+            <div class="text-[.7rem] text-zinc-500 mt-1 uppercase tracking-[.15em]">Battery life</div>
+          </div>
+          <div class="p-5 rounded-xl border border-white/[.06] bg-white/[.015] hover:border-amber-500/20 transition-colors">
+            <div class="spec-icon mb-3"><i class="fas fa-stopwatch"></i></div>
+            <div class="text-2xl font-display font-bold">&lt;8ms</div>
+            <div class="text-[.7rem] text-zinc-500 mt-1 uppercase tracking-[.15em]">Spatial latency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal">
+        <div class="absolute -inset-8 rounded-3xl pointer-events-none" style="background:radial-gradient(circle at 50% 50%,rgba(255,138,43,.12),rgba(139,92,246,.06) 40%,transparent 70%);"></div>
+        <div class="relative p-6 md:p-8 rounded-2xl border border-white/[.06] bg-gradient-to-b from-white/[.025] to-transparent backdrop-blur-sm">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-amber-500" style="box-shadow:0 0 10px #ff8a2b;animation:scroll-bob 1.8s ease-in-out infinite;"></span>
+              <span class="text-[.7rem] tracking-[.25em] uppercase text-zinc-400">Live impulse response</span>
+            </div>
+            <span class="text-[.7rem] text-zinc-600 font-mono">48kHz / 24bit</span>
+          </div>
+          <canvas id="waveform"></canvas>
+          <div class="flex justify-between mt-4 text-[.65rem] text-zinc-600 font-mono">
+            <span>20Hz</span>
+            <span>250Hz</span>
+            <span>2kHz</span>
+            <span>10kHz</span>
+            <span>20kHz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="relative bg-black py-28 lg:py-36 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 mb-14">
+    <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500 mb-4 reveal">In their words</div>
+    <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl reveal">Trusted by the people who chase sound for a living.</h2>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- Set 1 -->
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"I've spent twenty years chasing the room. Auralis brought the room to me."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">LC</div>
+          <div>
+            <div class="text-sm font-medium text-white">Lior Cassel</div>
+            <div class="text-xs text-zinc-500">Mastering Engineer · Bedrock</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"The first time I heard my own mix on these, I heard decisions I didn't remember making. That's fidelity."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">PM</div>
+          <div>
+            <div class="text-sm font-medium text-white">Priya Marchetti</div>
+            <div class="text-xs text-zinc-500">Producer · Vault Records</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"It's not headphones. It's a portal. You stop hearing the music and start standing inside it."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">EV</div>
+          <div>
+            <div class="text-sm font-medium text-white">Eitan Voss</div>
+            <div class="text-xs text-zinc-500">Composer · Skywalker</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"I tracked an entire EP on tour with these. Zero compromises, zero fatigue, zero doubt."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">SR</div>
+          <div>
+            <div class="text-sm font-medium text-white">Sana Reuel</div>
+            <div class="text-xs text-zinc-500">Recording Artist</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"Spatial mode made me hear the reverb tails on a record I've mixed a hundred times. I'd been missing a ghost."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">MF</div>
+          <div>
+            <div class="text-sm font-medium text-white">Marco Fields</div>
+            <div class="text-xs text-zinc-500">Mix Engineer</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"Build quality you can feel before you can hear it. Then you hear it, and the build quality makes sense."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">YT</div>
+          <div>
+            <div class="text-sm font-medium text-white">Yuki Tanaka</div>
+            <div class="text-xs text-zinc-500">Industrial Designer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"I've spent twenty years chasing the room. Auralis brought the room to me."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">LC</div>
+          <div>
+            <div class="text-sm font-medium text-white">Lior Cassel</div>
+            <div class="text-xs text-zinc-500">Mastering Engineer · Bedrock</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"The first time I heard my own mix on these, I heard decisions I didn't remember making. That's fidelity."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">PM</div>
+          <div>
+            <div class="text-sm font-medium text-white">Priya Marchetti</div>
+            <div class="text-xs text-zinc-500">Producer · Vault Records</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"It's not headphones. It's a portal. You stop hearing the music and start standing inside it."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">EV</div>
+          <div>
+            <div class="text-sm font-medium text-white">Eitan Voss</div>
+            <div class="text-xs text-zinc-500">Composer · Skywalker</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"I tracked an entire EP on tour with these. Zero compromises, zero fatigue, zero doubt."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">SR</div>
+          <div>
+            <div class="text-sm font-medium text-white">Sana Reuel</div>
+            <div class="text-xs text-zinc-500">Recording Artist</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"Spatial mode made me hear the reverb tails on a record I've mixed a hundred times. I'd been missing a ghost."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">MF</div>
+          <div>
+            <div class="text-sm font-medium text-white">Marco Fields</div>
+            <div class="text-xs text-zinc-500">Mix Engineer</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <i class="fas fa-quote-left text-amber-500/40 text-2xl mb-5"></i>
+        <p class="text-zinc-300 text-[.95rem] leading-relaxed mb-6">"Build quality you can feel before you can hear it. Then you hear it, and the build quality makes sense."</p>
+        <div class="flex items-center gap-3 pt-5 border-t border-white/5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-violet-600 flex items-center justify-center font-display font-bold text-sm text-black">YT</div>
+          <div>
+            <div class="text-sm font-medium text-white">Yuki Tanaka</div>
+            <div class="text-xs text-zinc-500">Industrial Designer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + FINAL CTA -->
+<section id="pricing" class="relative bg-black py-28 lg:py-36 px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500 mb-4 reveal">Choose your Auralis</div>
+      <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-7xl leading-[1.02] reveal">Three instruments.<br><span class="gradient-text italic font-medium">One philosophy.</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-32">
+      <div class="tier-card reveal">
+        <div class="text-[.7rem] tracking-[.3em] uppercase text-zinc-500 mb-2">Auralis One</div>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="font-display font-bold text-5xl text-white">$499</span>
+          <span class="text-zinc-500 text-sm">USD</span>
+        </div>
+        <p class="text-zinc-400 text-sm mb-8 leading-relaxed">The spatial audio experience, distilled. For the daily listener who refuses compromise.</p>
+        <ul class="space-y-3 mb-10 text-sm text-zinc-300">
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>50mm beryllium drivers</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>40-hour battery life</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Adaptive spatial mode</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Bluetooth 5.4 + USB-C lossless</span></li>
+        </ul>
+        <button class="cta-pill cta-pill-outline w-full justify-center">Order now</button>
+      </div>
+
+      <div class="tier-card featured reveal">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[.65rem] tracking-[.2em] uppercase font-semibold" style="background:linear-gradient(135deg,#ff8a2b,#ff6b1a);color:#000;">Most Popular</div>
+        <div class="text-[.7rem] tracking-[.3em] uppercase text-amber-500 mb-2 mt-2">Auralis Studio</div>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="font-display font-bold text-5xl text-white">$799</span>
+          <span class="text-zinc-500 text-sm">USD</span>
+        </div>
+        <p class="text-zinc-400 text-sm mb-8 leading-relaxed">For the working engineer. Matched to the studio, voiced for the long session.</p>
+        <ul class="space-y-3 mb-10 text-sm text-zinc-300">
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Everything in One, plus:</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>53mm carbon-beryllium drivers</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>60-hour battery life</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Studio-grade spatial DSP</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>3 sets of swappable ear pads</span></li>
+        </ul>
+        <button class="cta-pill w-full justify-center">Order Studio</button>
+      </div>
+
+      <div class="tier-card reveal">
+        <div class="text-[.7rem] tracking-[.3em] uppercase text-zinc-500 mb-2">Auralis Signature</div>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="font-display font-bold text-5xl text-white">$1,299</span>
+          <span class="text-zinc-500 text-sm">USD</span>
+        </div>
+        <p class="text-zinc-400 text-sm mb-8 leading-relaxed">Hand-built. Individually numbered. For those who collect instruments, not devices.</p>
+        <ul class="space-y-3 mb-10 text-sm text-zinc-300">
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Everything in Studio, plus:</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Matched drivers (±0.3dB)</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Forged aluminum chassis</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Leather travel case</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check text-amber-500 mt-1 text-[10px]"></i><span>Lifetime calibration service</span></li>
+        </ul>
+        <button class="cta-pill cta-pill-outline w-full justify-center">Reserve Signature</button>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="relative rounded-3xl overflow-hidden p-12 md:p-20 lg:p-28 text-center border border-white/[.06] reveal">
+      <div class="sound-bloom-cta"></div>
+      <div class="grain"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="text-[.7rem] tracking-[.4em] uppercase text-amber-500 mb-6">Pre-orders open</div>
+        <h2 class="font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[.98] mb-7">Begin the<br><span class="gradient-text italic font-medium">session.</span></h2>
+        <p class="text-zinc-400 max-w-xl mx-auto mb-12 text-lg leading-relaxed">Pre-orders ship in 90 days. 60-night audition. Lifetime calibration. Built in Copenhagen.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button class="cta-pill">
+            Reserve yours
+            <i class="fas fa-arrow-right text-sm"></i>
+          </button>
+          <button class="cta-pill cta-pill-outline">
+            <i class="fas fa-headphones text-xs"></i>
+            Book a private audition
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative bg-black border-t border-white/[.05] pt-20 pb-10 px-6 lg:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 pb-16">
+      <div class="md:col-span-4">
+        <a href="#" class="flex items-center gap-2.5 mb-6">
+          <div class="w-8 h-8 rounded-full relative overflow-hidden" style="background:radial-gradient(circle at 35% 35%,#ff8a2b,#8b5cf6);">
+            <div class="absolute inset-1.5 rounded-full bg-black"></div>
+            <div class="absolute inset-[10px] rounded-full" style="background:radial-gradient(circle,#ff8a2b,transparent 70%);"></div>
+          </div>
+          <span class="font-display font-bold text-lg tracking-[.18em]">AURALIS</span>
+        </a>
+        <p class="text-zinc-500 text-sm max-w-xs leading-relaxed mb-7">Spatial audio, sculpted by hand in Copenhagen. Engineered for those who hear the room.</p>
+        <div class="flex gap-2.5">
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="text-[.7rem] uppercase tracking-[.25em] text-zinc-600 mb-5 font-medium">Product</h4>
+        <a href="#" class="footer-link">Auralis One</a>
+        <a href="#" class="footer-link">Auralis Studio</a>
+        <a href="#" class="footer-link">Auralis Signature</a>
+        <a href="#" class="footer-link">Accessories</a>
+        <a href="#" class="footer-link">Compare</a>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="text-[.7rem] uppercase tracking-[.25em] text-zinc-600 mb-5 font-medium">Company</h4>
+        <a href="#" class="footer-link">Philosophy</a>
+        <a href="#" class="footer-link">Engineering</a>
+        <a href="#" class="footer-link">Stories</a>
+        <a href="#" class="footer-link">Press</a>
+        <a href="#" class="footer-link">Careers</a>
+      </div>
+      <div class="md:col-span-4">
+        <h4 class="text-[.7rem] uppercase tracking-[.25em] text-zinc-600 mb-5 font-medium">The Field Notes</h4>
+        <p class="text-zinc-500 text-sm mb-5 leading-relaxed">Sessions, releases, and engineering notes. Monthly. No noise.</p>
+        <form class="flex gap-2" id="newsletter-form">
+          <input type="email" placeholder="your@email" required
+            class="flex-1 bg-white/[.04] border border-white/[.08] rounded-full px-4 py-2.5 text-sm focus:outline-none focus:border-amber-500/40 focus:bg-white/[.06] transition-colors placeholder:text-zinc-600">
+          <button type="submit" class="px-5 py-2.5 rounded-full bg-white text-black text-sm font-semibold hover:bg-amber-500 transition-colors whitespace-nowrap">Subscribe</button>
+        </form>
+        <div id="newsletter-msg" class="mt-4 text-sm text-amber-400 hidden"></div>
+        <div class="mt-5 flex items-center gap-2 text-xs text-zinc-600">
+          <i class="fas fa-shield-halved text-amber-500/50"></i>
+          <span>No spam. Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/[.05] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-xs text-zinc-600">© 2025 Auralis Audio · Designed in Copenhagen, built everywhere.</div>
+      <div class="flex gap-6 text-xs text-zinc-600">
+        <a href="#" class="hover:text-zinc-300 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-zinc-300 transition-colors">Terms</a>
+        <a href="#" class="hover:text-zinc-300 transition-colors">Warranty</a>
+        <a href="#" class="hover:text-zinc-300 transition-colors">Press Kit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Real Evals: back to the clone list (matches the pill every other clone carries) -->
+<a href="/" title="Take me back to the clone list"
+   style="position:fixed;bottom:16px;left:16px;z-index:2147483000;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,#ff5b6e 0%,#ff9a5a 45%,#b98cf0 100%);box-shadow:0 2px 10px rgba(0,0,0,0.28);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(4px);line-height:1;letter-spacing:0.01em;font-family:'Manrope',sans-serif;">← Clone list</a>
+
+<script>
+// ============== Setup ==============
+const hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
+
+// Trigger hero entrance
+window.addEventListener('load', () => {
+  setTimeout(() => document.body.classList.add('loaded'), 50);
+  if (hasGSAP) ScrollTrigger.refresh();
+});
+
+// ============== Canvas roundRect polyfill ==============
+if (!CanvasRenderingContext2D.prototype.roundRect) {
+  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+    if (typeof r === 'number') r = [r, r, r, r];
+    else if (Array.isArray(r) && r.length === 1) r = [r[0], r[0], r[0], r[0]];
+    this.beginPath();
+    this.moveTo(x + r[0], y);
+    this.lineTo(x + w - r[1], y);
+    this.quadraticCurveTo(x + w, y, x + w, y + r[1]);
+    this.lineTo(x + w, y + h - r[2]);
+    this.quadraticCurveTo(x + w, y + h, x + w - r[2], y + h);
+    this.lineTo(x + r[3], y + h);
+    this.quadraticCurveTo(x, y + h, x, y + h - r[3]);
+    this.lineTo(x, y + r[0]);
+    this.quadraticCurveTo(x, y, x + r[0], y);
+    this.closePath();
+    return this;
+  };
+}
+
+// ============== Waveform Canvas ==============
+(function setupWaveform() {
+  const canvas = document.getElementById('waveform');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let mouseX = 0.5, mouseY = 0.5;
+  let targetX = 0.5, targetY = 0.5;
+  let time = 0;
+  let raf;
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = Math.max(1, rect.width * dpr);
+    canvas.height = Math.max(1, rect.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  canvas.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    targetX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    targetY = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+  });
+  canvas.addEventListener('mouseleave', () => { targetX = 0.5; targetY = 0.5; });
+  canvas.addEventListener('touchmove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const t = e.touches[0];
+    targetX = Math.max(0, Math.min(1, (t.clientX - rect.left) / rect.width));
+    targetY = Math.max(0, Math.min(1, (t.clientY - rect.top) / rect.height));
+  }, { passive: true });
+
+  function animate() {
+    time += 0.022;
+    mouseX += (targetX - mouseX) * 0.06;
+    mouseY += (targetY - mouseY) * 0.06;
+
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    const barCount = isMobile ? 36 : 64;
+    const totalGap = w * 0.018;
+    const barWidth = Math.max(2, (w - totalGap * (barCount - 1)) / barCount);
+    const gap = totalGap;
+
+    for (let i = 0; i < barCount; i++) {
+      const x = i * (barWidth + gap);
+      const phase = time + i * 0.16;
+      // Multi-frequency mix for organic waveform
+      const a1 = Math.sin(phase) * 0.45 + 0.5;
+      const a2 = Math.sin(phase * 0.47 + 1.3) * 0.3 + 0.5;
+      const a3 = Math.sin(phase * 1.93 + 2.4) * 0.18 + 0.5;
+      let amp = a1 * 0.55 + a2 * 0.3 + a3 * 0.15;
+
+      // The cursor behaves like a resonance peak: bars near it swell,
+      // vertical position drives the overall gain.
+      const pos = barCount > 1 ? i / (barCount - 1) : 0.5;
+      const dist = pos - mouseX;
+      const focus = Math.exp(-(dist * dist) / 0.012);
+      amp *= 0.5 + (1 - mouseY) * 0.55 + focus * 0.9;
+
+      const barH = Math.max(3, Math.min(h - 4, amp * h * 0.82));
+      const y = (h - barH) / 2;
+
+      const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+      grad.addColorStop(0, 'rgba(255,138,43,' + (0.35 + focus * 0.6).toFixed(3) + ')');
+      grad.addColorStop(0.5, 'rgba(255,107,26,' + (0.3 + focus * 0.5).toFixed(3) + ')');
+      grad.addColorStop(1, 'rgba(139,92,246,' + (0.22 + pos * 0.45).toFixed(3) + ')');
+      ctx.fillStyle = grad;
+      ctx.shadowBlur = focus * 16;
+      ctx.shadowColor = 'rgba(255,138,43,.55)';
+      ctx.beginPath();
+      ctx.roundRect(x, y, barWidth, barH, barWidth / 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    raf = requestAnimationFrame(animate);
+  }
+
+  // Only burn frames while the canvas is actually on screen.
+  function start() { if (!raf) raf = requestAnimationFrame(animate); }
+  function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((en) => en.isIntersecting ? start() : stop());
+    }, { rootMargin: '150px' }).observe(canvas);
+  } else {
+    start();
+  }
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stop() : start();
+  });
+})();
+
+// ============== Floating parallax gallery ==============
+(function setupGallery() {
+  const section = document.getElementById('gallery');
+  const cards = Array.prototype.slice.call(document.querySelectorAll('.gallery-card'));
+  if (!section || !cards.length) return;
+
+  // Stagger the cards in once the gallery reaches the viewport.
+  function reveal() {
+    cards.forEach((card, i) => {
+      setTimeout(() => card.classList.add('in-view'), i * 70);
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { reveal(); obs.disconnect(); }
+      });
+    }, { threshold: 0.1 });
+    io.observe(section);
+  } else {
+    reveal();
+  }
+
+  if (isMobile || prefersReduced || !hasGSAP) return;
+
+  // Parallax drifts each card through margin-top rather than transform, so the
+  // scale-in and the :hover scale(1.04) rule keep working untouched.
+  cards.forEach((card) => {
+    const speed = parseFloat(card.dataset.speed || '0.2');
+    gsap.fromTo(card,
+      { marginTop: 0 },
+      {
+        marginTop: () => -(window.innerHeight * 1.2 * speed),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+  });
+})();
+
+// ============== Pinned, scrubbed headline ==============
+(function setupPinned() {
+  const section = document.getElementById('pinned');
+  const words = Array.prototype.slice.call(document.querySelectorAll('#pinned-statement .pinned-word'));
+  if (!section || !words.length) return;
+
+  const amberLayer = section.querySelector('.bg-amber-layer');
+  const violetLayer = section.querySelector('.bg-violet-layer');
+
+  function litAll() {
+    words.forEach((w) => { w.style.color = 'var(--fg)'; w.style.opacity = '1'; });
+    if (amberLayer) amberLayer.style.opacity = '.6';
+    if (violetLayer) violetLayer.style.opacity = '.5';
+  }
+
+  if (isMobile || prefersReduced || !hasGSAP) { litAll(); return; }
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top top',
+    end: '+=180%',
+    pin: true,
+    scrub: 0.5,
+    invalidateOnRefresh: true,
+    onUpdate: (self) => {
+      // The lit edge sweeps past the last word before the pin releases.
+      const head = self.progress * (words.length + 6) - 3;
+      words.forEach((word, i) => {
+        const d = head - i;
+        if (d >= 1.5) {
+          word.style.color = 'var(--fg)';
+          word.style.opacity = '1';
+        } else if (d >= 0) {
+          // Leading edge glows amber before settling to full white.
+          word.style.color = 'var(--amber)';
+          word.style.opacity = String(0.7 + (d / 1.5) * 0.3);
+        } else if (d > -2) {
+          word.style.color = '#4a4038';
+          word.style.opacity = String(0.45 + ((d + 2) / 2) * 0.25);
+        } else {
+          word.style.color = '#2a2520';
+          word.style.opacity = '.45';
+        }
+      });
+      const p = self.progress;
+      if (amberLayer) amberLayer.style.opacity = String(Math.min(1, p * 2.4));
+      if (violetLayer) violetLayer.style.opacity = String(Math.max(0, (p - 0.4) * 1.8));
+    },
+  });
+})();
+
+// ============== Scroll reveals ==============
+(function setupReveals() {
+  const items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (!items.length) return;
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in-view');
+      obs.unobserve(en.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  items.forEach((el) => io.observe(el));
+})();
+
+// ============== Nav: smooth scroll + solid background past the hero ==============
+(function setupNav() {
+  const nav = document.querySelector('.nav');
+  const links = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
+
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = nav ? nav.offsetHeight : 0;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  });
+
+  if (!nav) return;
+  function onScroll() {
+    nav.style.background = window.pageYOffset > 40 ? 'rgba(0,0,0,.82)' : 'rgba(0,0,0,.55)';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ============== Newsletter ==============
+(function setupNewsletter() {
+  const form = document.getElementById('newsletter-form');
+  const msg = document.getElementById('newsletter-msg');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const email = input ? input.value.trim() : '';
+    if (!email) return;
+    if (msg) {
+      msg.textContent = 'Subscribed. Field Notes will land at ' + email + ' monthly.';
+      msg.classList.remove('hidden');
+    }
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

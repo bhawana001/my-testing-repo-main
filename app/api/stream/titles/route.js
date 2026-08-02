@@ -1,4 +1,4 @@
-// Titles catalog — #4 schema/field validation. GET /api/stream/titles[?genre=Comedy]
+// Titles catalog — use case #12 (filtered query). GET /api/stream/titles[?genre=Comedy]
 import { TITLES } from "../../../stream-clone-app/data";
 
 export async function GET(request) {

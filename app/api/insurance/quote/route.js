@@ -1,4 +1,4 @@
-// Get an insurance quote — #3 seed, #4 schema, #8 curl. Drives the /quote UI.
+// Get an insurance quote — extra API surface (create + pricing logic). Drives the /quote UI.
 const BASE_RATE = {
   auto: 120, homeowners: 90, renters: 18, motorcycle: 45, boat: 60,
   commercial: 210, life: 35, umbrella: 25, travel: 40, pet: 30, jewelry: 15, flood: 55, bundle: 150,
