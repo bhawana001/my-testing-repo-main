@@ -27,6 +27,10 @@ Real Evals is a set of production-looking clones across 8 industries. Each clone
 
 Anyone can use it: drive the live UI, hit the APIs directly, clone the repo, run `npm run dev`, and open any app locally, or add your own industry.
 
+Alongside the eight clones there is one **interactive site**, Auralis (`/interactive-website`) — a
+motion-heavy product landing page with no API, there to exercise scroll-driven animation, canvas,
+parallax, pinned sections, and visual regression. See section 2.
+
 Every clone carries a small "Clone list" pill (bottom-left) that returns to the landing page.
 
 ---
@@ -43,6 +47,33 @@ Every clone carries a small "Clone list" pill (bottom-left) that returns to the 
 | 6 | Telecom | AirWave (Airtel) | `/telecom-clone-app` |
 | 7 | Streaming | StreamFlix (Netflix) | `/stream-clone-app` |
 | 8 | Government | USAServices (USAGov / IRS) | `/gov-clone-app` |
+
+### Plus one interactive site
+
+| # | Kind | Brand | Slug |
+|---|---|---|---|
+| 9 | Interactive / motion-heavy landing page | Auralis (spatial-audio headphones) | `/interactive-website` |
+
+Auralis is not an industry clone and has no API. It exists for the kinds of testing the
+eight clones cannot exercise: **scroll-driven animation, canvas rendering, parallax, pinned
+sections, reduced-motion behavior, and visual regression** on a page where almost everything
+moves. It is a single standalone HTML document (Tailwind + GSAP ScrollTrigger from CDN,
+inline canvas code), served verbatim from `public/interactive-website.html`.
+
+What is on the page, and what each part is good for testing:
+
+| Element | Behavior | Useful for |
+|---|---|---|
+| Hero | Staggered kinetic line reveal on `load` | Entrance-animation timing, first-paint visual regression |
+| Floating gallery | 8 cards parallaxing at per-card `data-speed`, scale-in on enter, hover zoom | Scroll-position assertions, hover state, sticky/pinned layout |
+| Philosophy statement | GSAP-pinned section, words light up scrubbed to scroll progress | Pin behavior, scrub progress, scroll-locked sections |
+| Waveform | Live `<canvas>` that reacts to cursor position | Canvas testing, pointer-move interaction, rAF-driven UI |
+| Testimonials | CSS marquee, pauses on hover | Infinite-loop animation, hover-to-pause |
+| Pricing + CTA | Reveal-on-scroll cards, three tiers | Reveal assertions, price/content checks |
+| Newsletter form | Client-side submit with inline confirmation | Form validation (`type="email"`, `required`), no-network form flow |
+
+The whole page also honors `prefers-reduced-motion` and collapses to a static stacked layout
+under 768px, so it doubles as a fixture for accessibility and responsive checks.
 
 ---
 
@@ -98,6 +129,13 @@ Prefix everything with `https://my-testing-repo-main.vercel.app` (or `http://loc
 /gov-clone-app/taxes
 /gov-clone-app/report-fraud
 /gov-clone-app/report-fraud/form
+
+# Interactive site  (single page, no API; in-page anchors only)
+/interactive-website
+/interactive-website#features
+/interactive-website#specs
+/interactive-website#gallery
+/interactive-website#pricing
 ```
 
 ### API routes
@@ -517,6 +555,25 @@ Live: https://my-testing-repo-main.vercel.app/ | Code: https://github.com/bhawan
 | Telecom | AirWave | recharge, bill payment | Developers, performance engineers |
 | Streaming | StreamFlix | play a title (any video via ?v=) | QA, media testers |
 | Government | USAServices | report-fraud form | QA, regulated-sector testers |
+| Interactive site | Auralis | scroll reveals, parallax gallery, live canvas | UI/visual, motion & accessibility testers |
+
+### UI starting points on Auralis (`/interactive-website`)
+
+Auralis has no API, so these are UI runs. In plain English for kane-cli:
+
+```bash
+# Scroll-driven reveal
+kane-cli run "Open https://my-testing-repo-main.vercel.app/interactive-website, scroll down to the section headed \"One instrument. Two voices.\" and confirm both feature cards are visible with the headings \"The voice of the room.\" and \"The geometry of sound.\""
+
+# Canvas interaction
+kane-cli run "Open https://my-testing-repo-main.vercel.app/interactive-website, scroll to the \"A spectrum you can feel.\" section, move the cursor across the live impulse response visualization, and confirm the waveform reacts to the cursor position"
+
+# Client-side form
+kane-cli run "Open https://my-testing-repo-main.vercel.app/interactive-website, scroll to the footer, enter \"qa@auralis.test\" in The Field Notes email field, click Subscribe, and confirm a confirmation message naming that email appears"
+```
+
+Unlike the twelve API commands in section 6, these three have not been run end to end against
+the live deployment yet — treat them as starting points, not verified runs.
 
 **Reusable hook formula for any new video:** "[Painful thing the audience does today]. Watch me do it in one sentence with kane-cli, on a real [industry] app."
 

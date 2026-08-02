@@ -12,6 +12,7 @@ const CLONES = [
   { ic: "📡", industry: "Telecom", brand: "AirWave", clone: "clone of Airtel", slug: "/telecom-clone-app", api: "/api/telecom/* · 4 routes" },
   { ic: "🎬", industry: "Streaming", brand: "StreamFlix", clone: "clone of Netflix", slug: "/stream-clone-app", api: "/api/stream/* · 4 routes" },
   { ic: "🏛️", industry: "Government", brand: "USAServices", clone: "clone of USAGov / IRS", slug: "/gov-clone-app", api: "/api/gov/* · 4 routes" },
+  { ic: "🎧", industry: "Interactive site", brand: "Auralis", clone: "motion-heavy product landing page", slug: "/interactive-website", api: "UI only · scroll, canvas, parallax" },
 ];
 
 export default function RealEvals() {
@@ -36,6 +37,7 @@ export default function RealEvals() {
           </p>
           <div className="e-stats">
             <span className="e-stat">8 industries</span>
+            <span className="e-stat">1 interactive motion site</span>
             <span className="e-stat">Any testing type</span>
             <span className="e-stat">Realistic UI flows</span>
             <span className="e-stat">30+ live API endpoints</span>
