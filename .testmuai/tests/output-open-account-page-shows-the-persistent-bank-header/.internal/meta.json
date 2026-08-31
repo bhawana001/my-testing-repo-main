@@ -1,0 +1,18 @@
+{
+  "test_id": "73f8a4e5-add0-46c6-b8ed-bdd84886ceb6",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "open-account-page-shows-the-persistent-bank-header",
+  "commit_id": "fe3d553b-5d90-4bd0-a57f-7829df162ac7",
+  "testcase_id": "01M11SRQ62GFDY2E5QPV1M6YT9",
+  "executions": [
+    {
+      "execution_id": "8994e6c4-e466-41a8-8b04-1bab12bb75e8",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-08-27T14:27:01.653Z"
+    }
+  ]
+}

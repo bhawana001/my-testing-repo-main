@@ -1,0 +1,18 @@
+{
+  "test_id": "53b764b4-34b4-42b9-8f1e-9ac21a9637f8",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "taxable-income-becomes-one-dollar-immediately-above-the",
+  "commit_id": "55d02480-f9cf-4dfd-8304-8f49075b1fe4",
+  "testcase_id": "01M11RWCMDEDJ7C2DVNXG1PBV7",
+  "executions": [
+    {
+      "execution_id": "1d46b490-1c97-4354-b44f-7f2b048492ff",
+      "run_kind": "author",
+      "status": "broken",
+      "valid": true,
+      "at": "2026-08-27T14:11:40.999Z"
+    }
+  ]
+}

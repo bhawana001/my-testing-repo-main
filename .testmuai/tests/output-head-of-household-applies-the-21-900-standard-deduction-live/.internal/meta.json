@@ -1,0 +1,18 @@
+{
+  "test_id": "8b2339cb-f9af-4c26-bce2-0053f572be04",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "head-of-household-applies-the-21-900-standard-deduction-live",
+  "commit_id": "7151c876-2d8a-47f5-9c24-484eab97f1d9",
+  "testcase_id": "01M11S62Q2CFF9Z3CED09BXZWS",
+  "executions": [
+    {
+      "execution_id": "50bfc505-bfce-410e-8b96-654f0359c7a6",
+      "run_kind": "author",
+      "status": "broken",
+      "valid": true,
+      "at": "2026-08-27T14:16:53.810Z"
+    }
+  ]
+}

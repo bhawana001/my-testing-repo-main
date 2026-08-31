@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"Changing a calculator input propagates an updated estimate without an explicit submit action.","kind":"propagation","risk":"med","derived":true,"expected_answer":{"operator":"exists","operand":"a changed calculator input updates the estimate panel while the user is typing"}}}

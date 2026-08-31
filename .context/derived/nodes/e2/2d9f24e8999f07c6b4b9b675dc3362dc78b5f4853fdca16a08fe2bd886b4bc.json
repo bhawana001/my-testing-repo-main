@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"The estimate panel shows the breakdown rows in this order: Gross income, Deductions, Taxable income, Tax liability, Taxes withheld.","kind":"absolute","risk":"med","derived":true,"expected_answer":{"operator":"equals","operand":"Gross income, Deductions, Taxable income, Tax liability, Taxes withheld"}}}

@@ -1,0 +1,9 @@
+anchor: ac-1
+combinatorial:
+  reason: Applied boundary value analysis to the floor-at-zero rule and isolated 14601 from the authority expansion around 14600 because the expected taxable income changes from zero to positive. Risk-judged interaction strength was 3 because money applies, but no covering array was used because this is a single boundary-crossing check on one calculation input.
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: Applied boundary value analysis to the floor-at-zero rule and isolated 14601 from the authority expansion around 14600 because the expected taxable income changes from zero to positive. Risk-judged interaction strength was 3 because money applies, but no covering array was used because this is a single boundary-crossing check on one calculation input.

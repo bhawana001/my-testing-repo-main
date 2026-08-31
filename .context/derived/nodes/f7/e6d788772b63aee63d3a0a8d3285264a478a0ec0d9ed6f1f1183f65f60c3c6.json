@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"Recalculation after an input change does not cause a full page reload.","kind":"forbidden-presence","risk":"med","derived":true,"expected_answer":{"operator":"exists","operand":"a full page reload after a calculator input changes"}}}

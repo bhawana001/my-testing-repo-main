@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"The Gross income row matches the annual income the user entered and displays it as US currency.","kind":"absolute","risk":"med","derived":true,"expected_answer":{"operator":"equals","operand":"the annual income value the user entered, displayed as US currency"}}}

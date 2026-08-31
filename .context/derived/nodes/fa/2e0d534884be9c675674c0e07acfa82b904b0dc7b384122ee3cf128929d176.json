@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"The Taxable income row equals gross income minus the active deduction, floored at zero, and is displayed as whole-dollar US currency.","kind":"absolute","risk":"med","derived":true,"expected_answer":{"operator":"equals","operand":"max(gross income minus the active deduction, 0), displayed as whole-dollar US currency"}}}

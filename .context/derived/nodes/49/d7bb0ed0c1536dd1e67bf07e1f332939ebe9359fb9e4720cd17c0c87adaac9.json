@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"The estimate panel total is labelled either \"Estimated refund\" or \"Estimated amount you owe\".","kind":"presence","risk":"med","derived":true,"expected_answer":{"operator":"exists","operand":"a total label that is either \"Estimated refund\" or \"Estimated amount you owe\""}}}

@@ -1,0 +1,9 @@
+anchor: ac-6
+combinatorial:
+  reason: Applied equivalence partitioning with a representative positive annual income of 85000 so the estimate panel is populated while isolating the filing-status effect. Risk-judged interaction strength was 3 because money applies, but no covering array was used because each filing status produces a distinct required deduction amount and therefore became its own scenario.
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: Applied equivalence partitioning with a representative positive annual income of 85000 so the estimate panel is populated while isolating the filing-status effect. Risk-judged interaction strength was 3 because money applies, but no covering array was used because each filing status produces a distinct required deduction amount and therefore became its own scenario.

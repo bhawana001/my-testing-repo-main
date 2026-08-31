@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"Choosing \"Itemized\" reveals an itemized deductions input.","kind":"presence","risk":"med","derived":true,"expected_answer":{"operator":"exists","operand":"an itemized deductions input after \"Itemized\" is chosen"}}}

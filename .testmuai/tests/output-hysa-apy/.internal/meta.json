@@ -1,0 +1,18 @@
+{
+  "commit_id": "75da8e54-3f37-43c1-a48a-79f5c5da9a04",
+  "test_id": "d849bdd1-6883-4d67-ad6c-91d624167b67",
+  "testcase_id": "01M07QEEGNF9QRH2FFQGK73Q0X",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "hysa-apy",
+  "executions": [
+    {
+      "execution_id": "eb605eca-408e-4f47-b6ec-8456cab287b1",
+      "run_kind": "replay",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-08-17T11:34:03.009Z"
+    }
+  ]
+}

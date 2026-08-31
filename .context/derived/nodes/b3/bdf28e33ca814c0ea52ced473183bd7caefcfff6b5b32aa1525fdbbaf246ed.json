@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"Displayed calculator amounts use whole-dollar US currency formatting.","kind":"presence","risk":"med","derived":true,"expected_answer":{"operator":"forall","operand":"each displayed calculator amount is formatted as whole-dollar US currency"}}}

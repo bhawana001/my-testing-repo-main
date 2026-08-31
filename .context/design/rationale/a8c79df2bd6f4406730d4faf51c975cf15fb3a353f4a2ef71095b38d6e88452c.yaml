@@ -1,0 +1,9 @@
+anchor: ac-17
+combinatorial:
+  reason: Used equivalence partitioning over the named page surfaces and isolated the Open Account page presence check because the source states presence on both pages but only specifies navigation from Calculators to Open Account. Negative, boundary, a11y, responsiveness, and i18n techniques were not minted because the evidence makes no promise in those families. No combinatorial coverage was needed because the path has no independent input dimensions; budget max_pairs=3 did not constrain this scenario set.
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: Used equivalence partitioning over the named page surfaces and isolated the Open Account page presence check because the source states presence on both pages but only specifies navigation from Calculators to Open Account. Negative, boundary, a11y, responsiveness, and i18n techniques were not minted because the evidence makes no promise in those families. No combinatorial coverage was needed because the path has no independent input dimensions; budget max_pairs=3 did not constrain this scenario set.

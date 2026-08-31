@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"With filing status set to Single and the standard deduction selected, the Deductions row shows $14,600.","kind":"absolute","risk":"med","derived":true,"expected_answer":{"operator":"equals","operand":"$14,600"}}}

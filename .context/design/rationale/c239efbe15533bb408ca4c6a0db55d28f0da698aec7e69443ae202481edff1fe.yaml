@@ -1,0 +1,9 @@
+anchor: ac-15
+combinatorial:
+  reason: Used equivalence partitioning over the two named site areas and selected the only outcome-changing navigation path the source states. State-flow techniques were applicable to the click-through navigation, but no additional branches or failure modes were specified. No combinatorial coverage was needed because the path has no independent input dimensions; budget max_pairs=3 did not constrain this scenario set.
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: Used equivalence partitioning over the two named site areas and selected the only outcome-changing navigation path the source states. State-flow techniques were applicable to the click-through navigation, but no additional branches or failure modes were specified. No combinatorial coverage was needed because the path has no independent input dimensions; budget max_pairs=3 did not constrain this scenario set.

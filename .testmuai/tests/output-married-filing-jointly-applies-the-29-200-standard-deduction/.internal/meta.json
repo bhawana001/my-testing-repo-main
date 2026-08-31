@@ -1,0 +1,18 @@
+{
+  "test_id": "9fd01afb-6011-4249-ac0c-90d9c0597f0e",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "married-filing-jointly-applies-the-29-200-standard-deduction",
+  "commit_id": "1ec18ed3-ef28-42db-81da-3bb54efdac48",
+  "testcase_id": "01M11S1884WFQWZ5JYW8XDQDPC",
+  "executions": [
+    {
+      "execution_id": "d756a58d-66af-4be7-be31-ceabcaf0bfc7",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-08-27T14:14:46.274Z"
+    }
+  ]
+}

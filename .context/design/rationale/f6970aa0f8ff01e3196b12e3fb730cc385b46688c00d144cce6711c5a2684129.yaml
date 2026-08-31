@@ -1,0 +1,9 @@
+anchor: ac-11
+combinatorial:
+  reason: Applied equivalence partitioning with a representative populated state and isolated deduction-type switching because it changes the visible controls rather than a numeric amount stated by the PRD. Risk-judged interaction strength was 3 because the calculator is money-related, but no covering array was used because the only outcome-changing variable under test here is deduction type.
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: Applied equivalence partitioning with a representative populated state and isolated deduction-type switching because it changes the visible controls rather than a numeric amount stated by the PRD. Risk-judged interaction strength was 3 because the calculator is money-related, but no covering array was used because the only outcome-changing variable under test here is deduction type.

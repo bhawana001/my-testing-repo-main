@@ -1,0 +1,18 @@
+{
+  "test_id": "52e4ac33-9b74-4230-982b-8290ab1a0aa8",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "taxable-income-stays-at-zero-for-single-incomes-at-and-below",
+  "commit_id": "53520aba-6697-4f81-a080-d35d9c77de81",
+  "testcase_id": "01M11RPFPZHP3N22SDKB9YW9FV",
+  "executions": [
+    {
+      "execution_id": "1b5a9455-b09d-4ac0-8e79-3418569484a8",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-08-27T14:09:28.414Z"
+    }
+  ]
+}

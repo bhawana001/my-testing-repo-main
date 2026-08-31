@@ -1,0 +1,9 @@
+anchor: ac-13
+combinatorial:
+  reason: 'Applied equivalence partitioning with the PRD''s representative annual income 85000 and filing status Single. Applied state/flow to cover live recalculation while typing. Risk-judged interaction strength was 3 because money applies, but no covering array was used: filing status and deduction type change expected outcomes and were split into separate scenarios. Negative validation, i18n, a11y, and responsiveness were not minted because this calculator source states no such promises and localization/mobile are explicit non-goals.'
+  strength: 2
+deferred_bindings: 0
+expected_how: 'expected_mode: authored'
+profile_family: unspecified
+surface_state: absent
+technique: 'Applied equivalence partitioning with the PRD''s representative annual income 85000 and filing status Single. Applied state/flow to cover live recalculation while typing. Risk-judged interaction strength was 3 because money applies, but no covering array was used: filing status and deduction type change expected outcomes and were split into separate scenarios. Negative validation, i18n, a11y, and responsiveness were not minted because this calculator source states no such promises and localization/mobile are explicit non-goals.'

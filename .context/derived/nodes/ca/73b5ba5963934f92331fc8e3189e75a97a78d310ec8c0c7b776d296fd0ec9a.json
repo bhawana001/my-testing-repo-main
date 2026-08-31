@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"Recalculation after an input change does not require a submit button.","kind":"forbidden-presence","risk":"med","derived":true,"expected_answer":{"operator":"exists","operand":"a submit button required to trigger calculator results"}}}

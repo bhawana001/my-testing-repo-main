@@ -1,0 +1,1 @@
+{"label":"ac","content":{"text":"From the Calculators page, the header link to Open Account resolves to `/bank-clone-app/open-account`.","kind":"absolute","risk":"low","derived":true,"expected_answer":{"operator":"equals","operand":"/bank-clone-app/open-account"}}}

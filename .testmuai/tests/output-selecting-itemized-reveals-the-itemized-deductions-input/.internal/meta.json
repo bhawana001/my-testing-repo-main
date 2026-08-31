@@ -1,0 +1,16 @@
+{
+  "test_id": "8a1f17ad-eba6-48cf-a853-abf2b1f7e189",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "selecting-itemized-reveals-the-itemized-deductions-input",
+  "executions": [
+    {
+      "execution_id": "1a53c4b1-0c0f-4f00-bb29-5e13b0850544",
+      "run_kind": "author",
+      "status": "broken",
+      "valid": true,
+      "at": "2026-08-27T14:18:30.500Z"
+    }
+  ]
+}

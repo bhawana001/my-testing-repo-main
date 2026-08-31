@@ -1,0 +1,18 @@
+{
+  "test_id": "fa3e0d84-f3b8-45fe-a54f-be46c4ff83ba",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "calculators-header-link-navigates-to-open-account",
+  "commit_id": "efbcef65-3e7c-44ed-b58c-a72d7d11f7cd",
+  "testcase_id": "01M11SHA3VB3VPVKWWHYATNMTX",
+  "executions": [
+    {
+      "execution_id": "7c6c5231-aab4-4109-9c6b-0c8a142f40b4",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-08-27T14:24:50.361Z"
+    }
+  ]
+}

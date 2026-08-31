@@ -1,0 +1,18 @@
+{
+  "test_id": "ac269659-b06e-4d85-be92-c64788c5010c",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "single-standard-deduction-example-recalculates-live-and",
+  "commit_id": "b39931e0-fa08-46f5-a599-6ee9d0d7a642",
+  "testcase_id": "01M11REKN1TSFXVGZZHKKM6CBW",
+  "executions": [
+    {
+      "execution_id": "d459a2c4-6770-433b-954a-f1c7222625ff",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-08-27T14:06:14.935Z"
+    }
+  ]
+}
