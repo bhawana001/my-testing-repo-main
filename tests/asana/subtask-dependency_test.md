@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/asana/subtask-dependency?reset=true
-max_steps: 30
+max_steps: 45
 tags: [asana, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Asanah 40.3: Subtask and dependency
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Asana · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: add a subtask and mark a dependency.
+Key assertion: the dependency blocks completion correctly.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/asana/subtask-dependency?reset=true and verify the text "Use case 40.3" and "Subtask and dependency" are visible at the top of the page.
+## Add a subtask
+Go to https://my-testing-repo-main.vercel.app/asana/subtask-dependency?reset=true, type "Schedule social posts" into "Add subtask", click "Add", and verify it appears under Subtasks.
 
-## Objective
-Add a subtask and mark dependency.
+## Set the dependency
+Select "Finalize ad copy" in "Mark as blocked by…", click "Set dependency", and verify "Blocked by: Finalize ad copy".
 
-## Key assertion
-Verify: Dependency blocks completion correctly.
+## Try to complete the blocked task
+Click "Mark complete" on "Launch campaign" and verify "“Launch campaign” is blocked by “Finalize ad copy”. Complete it first." and that it is not completed.
+
+## Complete the blocker, then the task
+Click "Mark complete" on "Finalize ad copy", then click "Mark complete" on "Launch campaign", and verify "“Launch campaign” marked complete." and "Blocked by: Finalize ad copy (done)".

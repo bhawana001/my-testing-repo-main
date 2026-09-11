@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 144 | 11 |
+| 209 | 161 | 13 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -43,9 +43,9 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 4.1 | Store pickup selection | [/walmart/store-pickup](https://my-testing-repo-main.vercel.app/walmart/store-pickup) | [tests/walmart/store-pickup_test.md](../tests/walmart/store-pickup_test.md) | live | draft |
-| 4.2 | Grocery substitution | [/walmart/grocery-substitution](https://my-testing-repo-main.vercel.app/walmart/grocery-substitution) | [tests/walmart/grocery-substitution_test.md](../tests/walmart/grocery-substitution_test.md) | live | draft |
-| 4.3 | Membership upsell | [/walmart/membership-upsell](https://my-testing-repo-main.vercel.app/walmart/membership-upsell) | [tests/walmart/membership-upsell_test.md](../tests/walmart/membership-upsell_test.md) | live | draft |
+| 4.1 | Store pickup selection | [/walmart/store-pickup](https://my-testing-repo-main.vercel.app/walmart/store-pickup) | [tests/walmart/store-pickup_test.md](../tests/walmart/store-pickup_test.md) | live | verified |
+| 4.2 | Grocery substitution | [/walmart/grocery-substitution](https://my-testing-repo-main.vercel.app/walmart/grocery-substitution) | [tests/walmart/grocery-substitution_test.md](../tests/walmart/grocery-substitution_test.md) | live | verified |
+| 4.3 | Membership upsell | [/walmart/membership-upsell](https://my-testing-repo-main.vercel.app/walmart/membership-upsell) | [tests/walmart/membership-upsell_test.md](../tests/walmart/membership-upsell_test.md) | live | failed |
 | 4.4 | Reorder from history | [/walmart/reorder-from-history](https://my-testing-repo-main.vercel.app/walmart/reorder-from-history) | [tests/walmart/reorder-from-history_test.md](../tests/walmart/reorder-from-history_test.md) | live | draft |
 
 ## 5. Etsily (Etsy) · E-commerce
@@ -71,7 +71,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | live | draft |
-| 7.2 | Replacement preferences | [/instacart/replacement-preferences](https://my-testing-repo-main.vercel.app/instacart/replacement-preferences) | [tests/instacart/replacement-preferences_test.md](../tests/instacart/replacement-preferences_test.md) | day 11 | draft |
+| 7.2 | Replacement preferences | [/instacart/replacement-preferences](https://my-testing-repo-main.vercel.app/instacart/replacement-preferences) | [tests/instacart/replacement-preferences_test.md](../tests/instacart/replacement-preferences_test.md) | live | draft |
 | 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | live | draft |
 | 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | live | draft |
 
@@ -357,38 +357,38 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 38.1 | Page creation with blocks | [/notion/page-blocks](https://my-testing-repo-main.vercel.app/notion/page-blocks) | [tests/notion/page-blocks_test.md](../tests/notion/page-blocks_test.md) | day 11 | draft |
-| 38.2 | Database filter and sort | [/notion/database-filter-sort](https://my-testing-repo-main.vercel.app/notion/database-filter-sort) | [tests/notion/database-filter-sort_test.md](../tests/notion/database-filter-sort_test.md) | day 11 | draft |
-| 38.3 | Share to web publish | [/notion/share-to-web](https://my-testing-repo-main.vercel.app/notion/share-to-web) | [tests/notion/share-to-web_test.md](../tests/notion/share-to-web_test.md) | day 11 | draft |
-| 38.4 | Template duplication | [/notion/template-duplication](https://my-testing-repo-main.vercel.app/notion/template-duplication) | [tests/notion/template-duplication_test.md](../tests/notion/template-duplication_test.md) | day 11 | draft |
-| 38.5 | Comment and mention | [/notion/comment-mention](https://my-testing-repo-main.vercel.app/notion/comment-mention) | [tests/notion/comment-mention_test.md](../tests/notion/comment-mention_test.md) | day 11 | draft |
+| 38.1 | Page creation with blocks | [/notion/page-blocks](https://my-testing-repo-main.vercel.app/notion/page-blocks) | [tests/notion/page-blocks_test.md](../tests/notion/page-blocks_test.md) | live | draft |
+| 38.2 | Database filter and sort | [/notion/database-filter-sort](https://my-testing-repo-main.vercel.app/notion/database-filter-sort) | [tests/notion/database-filter-sort_test.md](../tests/notion/database-filter-sort_test.md) | live | draft |
+| 38.3 | Share to web publish | [/notion/share-to-web](https://my-testing-repo-main.vercel.app/notion/share-to-web) | [tests/notion/share-to-web_test.md](../tests/notion/share-to-web_test.md) | live | draft |
+| 38.4 | Template duplication | [/notion/template-duplication](https://my-testing-repo-main.vercel.app/notion/template-duplication) | [tests/notion/template-duplication_test.md](../tests/notion/template-duplication_test.md) | live | draft |
+| 38.5 | Comment and mention | [/notion/comment-mention](https://my-testing-repo-main.vercel.app/notion/comment-mention) | [tests/notion/comment-mention_test.md](../tests/notion/comment-mention_test.md) | live | draft |
 
 ## 39. Airtably (Airtable) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 39.1 | Grid record CRUD | [/airtable/grid-crud](https://my-testing-repo-main.vercel.app/airtable/grid-crud) | [tests/airtable/grid-crud_test.md](../tests/airtable/grid-crud_test.md) | live | verified |
-| 39.2 | Form view submission | [/airtable/form-view-submission](https://my-testing-repo-main.vercel.app/airtable/form-view-submission) | [tests/airtable/form-view-submission_test.md](../tests/airtable/form-view-submission_test.md) | day 11 | draft |
-| 39.3 | Kanban stage drag | [/airtable/kanban-drag](https://my-testing-repo-main.vercel.app/airtable/kanban-drag) | [tests/airtable/kanban-drag_test.md](../tests/airtable/kanban-drag_test.md) | day 11 | draft |
-| 39.4 | Automation run | [/airtable/automation-run](https://my-testing-repo-main.vercel.app/airtable/automation-run) | [tests/airtable/automation-run_test.md](../tests/airtable/automation-run_test.md) | day 11 | draft |
+| 39.2 | Form view submission | [/airtable/form-view-submission](https://my-testing-repo-main.vercel.app/airtable/form-view-submission) | [tests/airtable/form-view-submission_test.md](../tests/airtable/form-view-submission_test.md) | live | draft |
+| 39.3 | Kanban stage drag | [/airtable/kanban-drag](https://my-testing-repo-main.vercel.app/airtable/kanban-drag) | [tests/airtable/kanban-drag_test.md](../tests/airtable/kanban-drag_test.md) | live | draft |
+| 39.4 | Automation run | [/airtable/automation-run](https://my-testing-repo-main.vercel.app/airtable/automation-run) | [tests/airtable/automation-run_test.md](../tests/airtable/automation-run_test.md) | live | draft |
 
 ## 40. Asanah (Asana) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 40.1 | Task creation with assignee | [/asana/task-creation](https://my-testing-repo-main.vercel.app/asana/task-creation) | [tests/asana/task-creation_test.md](../tests/asana/task-creation_test.md) | day 11 | draft |
-| 40.2 | Project board move | [/asana/board-move](https://my-testing-repo-main.vercel.app/asana/board-move) | [tests/asana/board-move_test.md](../tests/asana/board-move_test.md) | day 11 | draft |
-| 40.3 | Subtask and dependency | [/asana/subtask-dependency](https://my-testing-repo-main.vercel.app/asana/subtask-dependency) | [tests/asana/subtask-dependency_test.md](../tests/asana/subtask-dependency_test.md) | day 11 | draft |
-| 40.4 | My Tasks sort | [/asana/my-tasks-sort](https://my-testing-repo-main.vercel.app/asana/my-tasks-sort) | [tests/asana/my-tasks-sort_test.md](../tests/asana/my-tasks-sort_test.md) | day 11 | draft |
+| 40.1 | Task creation with assignee | [/asana/task-creation](https://my-testing-repo-main.vercel.app/asana/task-creation) | [tests/asana/task-creation_test.md](../tests/asana/task-creation_test.md) | live | draft |
+| 40.2 | Project board move | [/asana/board-move](https://my-testing-repo-main.vercel.app/asana/board-move) | [tests/asana/board-move_test.md](../tests/asana/board-move_test.md) | live | draft |
+| 40.3 | Subtask and dependency | [/asana/subtask-dependency](https://my-testing-repo-main.vercel.app/asana/subtask-dependency) | [tests/asana/subtask-dependency_test.md](../tests/asana/subtask-dependency_test.md) | live | draft |
+| 40.4 | My Tasks sort | [/asana/my-tasks-sort](https://my-testing-repo-main.vercel.app/asana/my-tasks-sort) | [tests/asana/my-tasks-sort_test.md](../tests/asana/my-tasks-sort_test.md) | live | draft |
 
 ## 41. Jirah (Jira) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 41.1 | Issue creation with fields | [/jira/issue-creation](https://my-testing-repo-main.vercel.app/jira/issue-creation) | [tests/jira/issue-creation_test.md](../tests/jira/issue-creation_test.md) | day 11 | draft |
-| 41.2 | Sprint board drag | [/jira/sprint-board-drag](https://my-testing-repo-main.vercel.app/jira/sprint-board-drag) | [tests/jira/sprint-board-drag_test.md](../tests/jira/sprint-board-drag_test.md) | day 11 | draft |
-| 41.3 | JQL filter search | [/jira/jql-filter](https://my-testing-repo-main.vercel.app/jira/jql-filter) | [tests/jira/jql-filter_test.md](../tests/jira/jql-filter_test.md) | day 11 | draft |
-| 41.4 | Workflow transition validation | [/jira/transition-validation](https://my-testing-repo-main.vercel.app/jira/transition-validation) | [tests/jira/transition-validation_test.md](../tests/jira/transition-validation_test.md) | day 11 | draft |
+| 41.1 | Issue creation with fields | [/jira/issue-creation](https://my-testing-repo-main.vercel.app/jira/issue-creation) | [tests/jira/issue-creation_test.md](../tests/jira/issue-creation_test.md) | live | draft |
+| 41.2 | Sprint board drag | [/jira/sprint-board-drag](https://my-testing-repo-main.vercel.app/jira/sprint-board-drag) | [tests/jira/sprint-board-drag_test.md](../tests/jira/sprint-board-drag_test.md) | live | draft |
+| 41.3 | JQL filter search | [/jira/jql-filter](https://my-testing-repo-main.vercel.app/jira/jql-filter) | [tests/jira/jql-filter_test.md](../tests/jira/jql-filter_test.md) | live | draft |
+| 41.4 | Workflow transition validation | [/jira/transition-validation](https://my-testing-repo-main.vercel.app/jira/transition-validation) | [tests/jira/transition-validation_test.md](../tests/jira/transition-validation_test.md) | live | draft |
 
 ## 42. Mondayly (Monday.com) · Work collab
 

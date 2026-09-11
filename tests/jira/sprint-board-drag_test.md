@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/jira/sprint-board-drag?reset=true
-max_steps: 30
+max_steps: 45
 tags: [jira, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Jirah 41.2: Sprint board drag
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Jira · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: move an issue to In Progress on the sprint board.
+Key assertion: the status transition is applied with history.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/jira/sprint-board-drag?reset=true and verify the text "Use case 41.2" and "Sprint board drag" are visible at the top of the page.
+## Open the board
+Go to https://my-testing-repo-main.vercel.app/jira/sprint-board-drag?reset=true and verify "WEB-121" (Checkout button misaligned on Safari) is in "To Do".
 
-## Objective
-Move an issue to In Progress on sprint board.
+## Drag
+Drag the WEB-121 card into the "In Progress" column.
 
-## Key assertion
-Verify: Status transition applied with history.
+## Verify status and history
+Click the WEB-121 card and verify Status "In Progress" and History "Demo User changed the Status from To Do to In Progress".

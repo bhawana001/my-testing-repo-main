@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/jira/issue-creation?reset=true
-max_steps: 30
+max_steps: 45
 tags: [jira, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Jirah 41.1: Issue creation with fields
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Jira · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: create a bug with priority and component.
+Key assertion: an issue key is generated with the fields set.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/jira/issue-creation?reset=true and verify the text "Use case 41.1" and "Issue creation with fields" are visible at the top of the page.
+## Open Create
+Go to https://my-testing-repo-main.vercel.app/jira/issue-creation?reset=true, click "Create", and verify the "Create issue" dialog with Issue type "Bug".
 
-## Objective
-Create a bug with priority and component.
+## Missing component
+Type "Cart total wrong after coupon removal" into Summary, select "High" priority, click "Create", and verify "Component is required for Bugs."
 
-## Key assertion
-Verify: Issue key generated with fields set.
+## Create
+Select "Payments" as Component, click "Create", and verify "WEB-128 has been created".
+
+## Verify the issue
+Verify the issue view shows Key "WEB-128", Type "Bug", Priority "High", Component "Payments" and Status "To Do".

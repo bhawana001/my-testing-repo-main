@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/notion/share-to-web?reset=true
-max_steps: 30
+max_steps: 45
 tags: [notion, work-collab, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Notionly 38.3: Share to web publish
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Notion · Industry: Work collab · Pattern: Custom -->
+Catalog objective: publish a page to the web and open the public link.
+Key assertion: the public page renders without auth.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/notion/share-to-web?reset=true and verify the text "Use case 38.3" and "Share to web publish" are visible at the top of the page.
+## Open Share
+Go to https://my-testing-repo-main.vercel.app/notion/share-to-web?reset=true, click "Share", and verify a Publish panel with a "Publish to web" switch that is off.
 
-## Objective
-Publish a page to web and open the public link.
+## Publish
+Turn on "Publish to web" and verify the badge "🌐 Published" and the public link "https://demo.notionly.site/q3-roadmap-8a1f".
 
-## Key assertion
-Verify: Public page renders without auth.
+## Open the public link
+Click "Open public link" and verify the URL now contains "public=q3-roadmap-8a1f".
+
+## Verify the public page
+Verify the badge "Public page · viewing without signing in", the content "🚀 Q3 Roadmap" with "Self-serve onboarding", and that the workspace sidebar and Share button are not shown.

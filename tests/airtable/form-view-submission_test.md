@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/airtable/form-view-submission?reset=true
-max_steps: 30
+max_steps: 45
 tags: [airtable, work-collab, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Airtably 39.2: Form view submission
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Airtable · Industry: Work collab · Pattern: Form wizard -->
+Catalog objective: submit the shared form and verify a row is created.
+Key assertion: a new record with the form values.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/airtable/form-view-submission?reset=true and verify the text "Use case 39.2" and "Form view submission" are visible at the top of the page.
+## Invalid email
+Go to https://my-testing-repo-main.vercel.app/airtable/form-view-submission?reset=true, type "Sam Lee" into Name and "sam@acme" into Email, choose rating 5, click "Submit", and verify "Please enter a valid email."
 
-## Objective
-Submit the shared form and verify row created.
+## Submit
+Change Email to "sam@acme.test", type "Great onboarding." into Feedback, click "Submit", and verify "Thanks for submitting the form!"
 
-## Key assertion
-Verify: New record with form values.
+## Verify the new record
+Click "Grid view" and verify "2 records" with a new row "rec-2", "Sam Lee", "sam@acme.test", "5 ★", "Great onboarding." and source "Form".

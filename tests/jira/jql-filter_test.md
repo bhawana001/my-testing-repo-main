@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/jira/jql-filter?reset=true
-max_steps: 30
+max_steps: 45
 tags: [jira, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Jirah 41.3: JQL filter search
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Jira · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: run a JQL query and save the filter.
+Key assertion: results match the query and the filter is saved.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/jira/jql-filter?reset=true and verify the text "Use case 41.3" and "JQL filter search" are visible at the top of the page.
+## Invalid field
+Go to https://my-testing-repo-main.vercel.app/jira/jql-filter?reset=true, type "project = WEB AND prio = High" into the JQL box, click "Search", and verify "Field 'prio' does not exist".
 
-## Objective
-Run a JQL query and save the filter.
+## Valid query
+Replace the query with "project = WEB AND priority = High AND status != Done", click "Search", and verify "2 issues": WEB-121 (High, To Do) and WEB-125 (High, In Progress).
 
-## Key assertion
-Verify: Results match query and filter saved.
+## Save the filter
+Click "Save filter", type "High priority open", click "Save", and verify "Filter “High priority open” saved." and that it appears under Starred filters with that JQL.

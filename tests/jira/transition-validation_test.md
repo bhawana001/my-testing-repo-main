@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/jira/transition-validation?reset=true
-max_steps: 30
+max_steps: 45
 tags: [jira, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Jirah 41.4: Workflow transition validation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Jira · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: attempt to close an issue that is missing a required field.
+Key assertion: validation blocks it with a clear message.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/jira/transition-validation?reset=true and verify the text "Use case 41.4" and "Workflow transition validation" are visible at the top of the page.
+## Open the issue
+Go to https://my-testing-repo-main.vercel.app/jira/transition-validation?reset=true and verify WEB-123 has Status "In Review", Resolution "Unresolved" and Fix version/s "None".
 
-## Objective
-Attempt closing an issue missing required field.
+## Attempt Done without fields
+Click "Done", then click "Done" in the transition screen, and verify "Resolution is required.", "Fix version/s is required to close a Bug." and "This transition is blocked until the required fields are completed." with the status still "In Review".
 
-## Key assertion
-Verify: Validation blocks with clear message.
+## Complete the fields
+Select "Fixed" for Resolution and "2026.09" for Fix version/s, click "Done", and verify Status "Done" and Resolution "Fixed".

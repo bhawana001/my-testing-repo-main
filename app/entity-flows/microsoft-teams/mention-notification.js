@@ -30,7 +30,7 @@ export default function Flow({ flow }) {
           <div className="ee-divider" />
           <div style={{ position: "relative" }}>
             <Textarea ref={ta} value={text} onChange={(e) => setText(e.target.value)} placeholder="Start a post. Type @ to mention someone" aria-label="New post" />
-            {picks.length > 0 && <div className="ee-card ee-card--tight" style={{ position: "absolute", bottom: "100%", left: 0, zIndex: 5 }} data-testid="mention-picker">{picks.map((p) => <button key={p} type="button" className="ee-link" style={{ display: "block", padding: 4 }} onClick={() => { const next = text.slice(0, atIdx) + "@" + p.replace(" ", "") + " "; setText(next); requestAnimationFrame(() => { const el = ta.current; if (el) { el.focus(); el.setSelectionRange(next.length, next.length); } }); }} data-testid={`mention-${p.split(" ")[0].toLowerCase()}`}>{p}</button>)}</div>}
+            {picks.length > 0 && <div className="ee-card ee-card--tight" style={{ position: "absolute", bottom: "100%", left: 0, zIndex: 5 }} data-testid="mention-picker">{picks.map((p) => <button key={p} type="button" className="ee-link" style={{ display: "block", padding: 4 }} onClick={() => { const next = text.slice(0, atIdx) + "@" + p.replace(" ", "") + " "; setText(next); }} onMouseDown={(e) => e.preventDefault()} data-testid={`mention-${p.split(" ")[0].toLowerCase()}`}>{p}</button>)}</div>}
           </div>
           <div className="ee-row ee-row--end" style={{ marginTop: 8 }}><Btn onClick={post} disabled={!text.trim()} data-testid="post-btn">Post</Btn></div>
         </Card>

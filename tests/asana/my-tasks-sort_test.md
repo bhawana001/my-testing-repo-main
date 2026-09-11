@@ -1,26 +1,17 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/asana/my-tasks-sort?reset=true
-max_steps: 30
+max_steps: 45
 tags: [asana, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Asanah 40.4: My Tasks sort
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 11). -->
-<!-- Catalog entity: Asana · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: verify My Tasks groups by due date.
+Key assertion: tasks appear in the correct sections.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/asana/my-tasks-sort?reset=true and verify the text "Use case 40.4" and "My Tasks sort" are visible at the top of the page.
+## Open My Tasks
+Go to https://my-testing-repo-main.vercel.app/asana/my-tasks-sort?reset=true and verify "Group: Due date" is selected and the note "Today is Monday, September 14, 2026".
 
-## Objective
-Verify My Tasks groups by due date.
-
-## Key assertion
-Verify: Tasks appear in correct sections.
+## Verify sections
+Verify "Overdue" contains "Send invoice to Globex" (2026-09-11), "Today" contains "Review PR #482" and "1:1 prep with Priya", "This week" contains "Draft Q4 OKRs" (2026-09-17), "Later" contains "Renew SSL certificate" (2026-09-29), and "No due date" contains "Read design doc".
