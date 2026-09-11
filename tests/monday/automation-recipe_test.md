@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/monday/automation-recipe?reset=true
-max_steps: 30
+max_steps: 45
 tags: [monday, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Mondayly 42.2: Automation recipe
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Monday.com · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: set a status-change notify automation and trigger it.
+Key assertion: a notification is generated on change.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/monday/automation-recipe?reset=true and verify the text "Use case 42.2" and "Automation recipe" are visible at the top of the page.
+## Create the automation
+Go to https://my-testing-repo-main.vercel.app/monday/automation-recipe?reset=true, keep the recipe "When Status changes to Done, notify Priya Nair", click "Create automation", and verify it is listed as "Active".
 
-## Objective
-Set status change notify automation and trigger it.
+## Trigger it
+Change the Status of "Design review" to "Done" and verify the dropdown shows "Done".
 
-## Key assertion
-Verify: Notification generated on change.
+## Verify the notification
+Click "Priya" in the top bar and verify the bell shows "1" and "Automation: “Design review” status changed to Done".

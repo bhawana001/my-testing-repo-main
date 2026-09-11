@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/monday/dashboard-widget?reset=true
-max_steps: 30
+max_steps: 45
 tags: [monday, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Mondayly 42.3: Dashboard widget
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Monday.com · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: add a chart widget on board data.
+Key assertion: the chart reflects board numbers.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/monday/dashboard-widget?reset=true and verify the text "Use case 42.3" and "Dashboard widget" are visible at the top of the page.
+## Open the dashboard
+Go to https://my-testing-repo-main.vercel.app/monday/dashboard-widget?reset=true and verify "No widgets yet" and a source table "Board: Marketing plan" with 7 items (3 Done, 2 Working on it, 1 Stuck, 1 Not started).
 
-## Objective
-Add a chart widget on board data.
+## Add the chart
+Click "+ Add widget", keep "Chart" selected, click "Add to dashboard", and verify a widget "Chart · Items by Status (Marketing plan)" appears.
 
-## Key assertion
-Verify: Chart reflects board numbers.
+## Verify the chart matches the board
+Verify the chart legend reads "Done: 3", "Working on it: 2", "Stuck: 1" and "Not started: 1", matching the board table.

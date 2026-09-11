@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/google-drive/share-permission-levels?reset=true
-max_steps: 30
+max_steps: 45
 tags: [google-drive, docs-productivity, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Drively 45.1: Doc share with permission levels
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Google Drive · Industry: Docs productivity · Pattern: CRUD table / board -->
+Catalog objective: share a doc as commenter and verify the access level.
+Key assertion: the recipient can comment but not edit.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/google-drive/share-permission-levels?reset=true and verify the text "Use case 45.1" and "Doc share with permission levels" are visible at the top of the page.
+## Share as commenter
+Go to https://my-testing-repo-main.vercel.app/google-drive/share-permission-levels?reset=true, click "Share", type "sam@acme.test" into Add people, keep "Commenter", click "Send", and verify "sam@acme.test · Commenter" under People with access.
 
-## Objective
-Share a doc as commenter and verify access level.
+## View as the recipient
+Click "View as Sam" and verify the banner "You can comment on this file, but not edit it" and "Editing disabled (read-only)".
 
-## Key assertion
-Verify: Recipient can comment but not edit.
+## Comment as the recipient
+Type "Looks good" into "Add a comment", click "Comment", and verify "Sam Lee: Looks good" appears.

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/dropbox/version-history?reset=true
-max_steps: 30
+max_steps: 45
 tags: [dropbox, docs-productivity, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Dropboxy 44.4: Version history restore
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Dropbox · Industry: Docs productivity · Pattern: CRUD table / board -->
+Catalog objective: restore an older version of a file.
+Key assertion: the file content reverts to the selected version.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/dropbox/version-history?reset=true and verify the text "Use case 44.4" and "Version history restore" are visible at the top of the page.
+## Open history
+Go to https://my-testing-repo-main.vercel.app/dropbox/version-history?reset=true and verify the current content (v3) reads "Starter: $12/mo", "Pro: $35/mo", "Business: $120/mo" and versions v3, v2, v1 are listed.
 
-## Objective
-Restore an older version of a file.
+## Preview v1
+Click "Preview" on v1 and verify the preview shows "Starter: $9/mo".
 
-## Key assertion
-Verify: File content reverts to selected version.
+## Restore v1
+Click "Restore" on v1 and verify "Restored version 1. It's now the current version (v4)."
+
+## Verify the content reverted
+Verify the current content reads "Starter: $9/mo", "Pro: $29/mo" and "Business: $99/mo".

@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/monday/board-item?reset=true
-max_steps: 30
+max_steps: 45
 tags: [monday, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Mondayly 42.1: Board item creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Monday.com · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: add an item with status and person columns.
+Key assertion: the item row is saved with its values.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/monday/board-item?reset=true and verify the text "Use case 42.1" and "Board item creation" are visible at the top of the page.
+## Open the board
+Go to https://my-testing-repo-main.vercel.app/monday/board-item?reset=true and verify "Marketing plan · Main table" lists "Write press release" and "Book venue".
 
-## Objective
-Add an item with status and person columns.
+## Add an item
+Type "Launch webinar" into "+ Add item", select "Priya Nair" as person, "Working on it" as status, set date 2026-09-24, click "Add", and verify a row "Launch webinar" appears.
 
-## Key assertion
-Verify: Item row saved with values.
+## Verify after reload
+Reload the page without the reset parameter and verify the "Launch webinar" row shows Person "Priya Nair", Status "Working on it" and Date "2026-09-24".

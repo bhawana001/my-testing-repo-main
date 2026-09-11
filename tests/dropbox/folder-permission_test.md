@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/dropbox/folder-permission?reset=true
-max_steps: 30
+max_steps: 45
 tags: [dropbox, docs-productivity, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Dropboxy 44.2: Folder permission change
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Dropbox · Industry: Docs productivity · Pattern: CRUD table / board -->
+Catalog objective: change a folder to team edit access.
+Key assertion: a member can edit after the change.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/dropbox/folder-permission?reset=true and verify the text "Use case 44.2" and "Folder permission change" are visible at the top of the page.
+## Check the member before the change
+Go to https://my-testing-repo-main.vercel.app/dropbox/folder-permission?reset=true, click "View as Priya", and verify "You have view-only access" and the "New file name" box is disabled.
 
-## Objective
-Change folder to team edit access.
+## Change team access
+Click "Owner (Demo)", select "Can edit" for Team · Acme, and verify "Team · Acme can now edit “Marketing”."
 
-## Key assertion
-Verify: Member can edit after change.
+## Edit as the member
+Click "View as Priya", type "Priya-notes.txt" into "New file name", click "Add file", and verify "Priya-notes.txt" is listed and "You can edit this folder" is shown.

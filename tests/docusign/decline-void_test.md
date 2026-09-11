@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/docusign/decline-void?reset=true
-max_steps: 30
+max_steps: 45
 tags: [docusign, docs-productivity, tracker]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # DocuSigned 43.4: Decline and void handling
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: DocuSign · Industry: Docs productivity · Pattern: Tracker timeline -->
+Catalog objective: decline as the signer and verify the sender notification.
+Key assertion: the envelope status shows declined with the reason.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/docusign/decline-void?reset=true and verify the text "Use case 43.4" and "Decline and void handling" are visible at the top of the page.
+## Open decline
+Go to https://my-testing-repo-main.vercel.app/docusign/decline-void?reset=true as "Signer (Sam Lee)", click "Other actions ▾ Decline to sign", and verify a "Decline to sign" dialog.
 
-## Objective
-Decline as signer and verify sender notification.
+## Decline without a reason
+Click "Decline to sign" in the dialog and verify "A reason is required to decline."
 
-## Key assertion
-Verify: Envelope status shows declined with reason.
+## Decline with a reason
+Type "Payment terms changed" into the reason, click "Decline to sign", and verify "You declined to sign this document."
+
+## Verify the sender side
+Click "Sender (Demo User)" and verify the status badge "Declined", "Reason: Payment terms changed", and the inbox email "Sam Lee declined to sign Vendor-Agreement.pdf".

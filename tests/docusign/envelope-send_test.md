@@ -1,26 +1,29 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/docusign/envelope-send?reset=true
-max_steps: 30
+max_steps: 45
 tags: [docusign, docs-productivity, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # DocuSigned 43.1: Envelope send for signature
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: DocuSign · Industry: Docs productivity · Pattern: Form wizard -->
+Catalog objective: send a document for signature with two fields.
+Key assertion: the recipient receives a signing link.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/docusign/envelope-send?reset=true and verify the text "Use case 43.1" and "Envelope send for signature" are visible at the top of the page.
+## Add the document
+Go to https://my-testing-repo-main.vercel.app/docusign/envelope-send?reset=true, click "+ Add sample Mutual-NDA.pdf", and verify "Mutual-NDA.pdf · 2 pages" is added.
 
-## Objective
-Send a doc for signature with two fields.
+## Add the recipient
+Click "Continue", type "Sam Lee" into Recipient name and "sam@acme.test" into Recipient email, click "Continue", and verify the "Place fields on page 2" step.
 
-## Key assertion
-Verify: Recipient receives signing link.
+## Try without a signature field
+Click "Continue" and verify "Place a Signature field for the signer."
+
+## Place two fields
+Tick "Signature" and "Date Signed", click "Continue", and verify the "Email subject and message" step with subject "Please DocuSign: Mutual-NDA.pdf".
+
+## Send
+Click "Continue", then click "Send", and verify "Your envelope was sent" with status "Sent" and fields "Signature, Date Signed".
+
+## Verify the recipient's signing link
+Verify the recipient inbox for sam@acme.test shows "Please DocuSign: Mutual-NDA.pdf" with a "Review document" link.

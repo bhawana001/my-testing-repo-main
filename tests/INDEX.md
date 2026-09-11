@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 161 | 13 |
+| 209 | 178 | 16 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -46,15 +46,15 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 4.1 | Store pickup selection | [/walmart/store-pickup](https://my-testing-repo-main.vercel.app/walmart/store-pickup) | [tests/walmart/store-pickup_test.md](../tests/walmart/store-pickup_test.md) | live | verified |
 | 4.2 | Grocery substitution | [/walmart/grocery-substitution](https://my-testing-repo-main.vercel.app/walmart/grocery-substitution) | [tests/walmart/grocery-substitution_test.md](../tests/walmart/grocery-substitution_test.md) | live | verified |
 | 4.3 | Membership upsell | [/walmart/membership-upsell](https://my-testing-repo-main.vercel.app/walmart/membership-upsell) | [tests/walmart/membership-upsell_test.md](../tests/walmart/membership-upsell_test.md) | live | failed |
-| 4.4 | Reorder from history | [/walmart/reorder-from-history](https://my-testing-repo-main.vercel.app/walmart/reorder-from-history) | [tests/walmart/reorder-from-history_test.md](../tests/walmart/reorder-from-history_test.md) | live | draft |
+| 4.4 | Reorder from history | [/walmart/reorder-from-history](https://my-testing-repo-main.vercel.app/walmart/reorder-from-history) | [tests/walmart/reorder-from-history_test.md](../tests/walmart/reorder-from-history_test.md) | live | verified |
 
 ## 5. Etsily (Etsy) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 5.1 | Personalized item purchase | [/etsy/personalized-item](https://my-testing-repo-main.vercel.app/etsy/personalized-item) | [tests/etsy/personalized-item_test.md](../tests/etsy/personalized-item_test.md) | live | draft |
+| 5.1 | Personalized item purchase | [/etsy/personalized-item](https://my-testing-repo-main.vercel.app/etsy/personalized-item) | [tests/etsy/personalized-item_test.md](../tests/etsy/personalized-item_test.md) | live | verified |
 | 5.2 | Shop search and favorite | [/etsy/shop-search-favorite](https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite) | [tests/etsy/shop-search-favorite_test.md](../tests/etsy/shop-search-favorite_test.md) | day 14 | draft |
-| 5.3 | Cart with multiple sellers | [/etsy/multi-seller-cart](https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart) | [tests/etsy/multi-seller-cart_test.md](../tests/etsy/multi-seller-cart_test.md) | live | draft |
+| 5.3 | Cart with multiple sellers | [/etsy/multi-seller-cart](https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart) | [tests/etsy/multi-seller-cart_test.md](../tests/etsy/multi-seller-cart_test.md) | live | verified |
 | 5.4 | Review submission | [/etsy/review-submission](https://my-testing-repo-main.vercel.app/etsy/review-submission) | [tests/etsy/review-submission_test.md](../tests/etsy/review-submission_test.md) | day 14 | draft |
 
 ## 6. eBidz (eBay) · E-commerce
@@ -81,7 +81,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 8.1 | Size guide and selection | [/nike/size-guide](https://my-testing-repo-main.vercel.app/nike/size-guide) | [tests/nike/size-guide_test.md](../tests/nike/size-guide_test.md) | live | draft |
 | 8.2 | Member exclusive access | [/nike/member-exclusive](https://my-testing-repo-main.vercel.app/nike/member-exclusive) | [tests/nike/member-exclusive_test.md](../tests/nike/member-exclusive_test.md) | live | draft |
-| 8.3 | SNKRS draw entry | [/nike/snkrs-draw](https://my-testing-repo-main.vercel.app/nike/snkrs-draw) | [tests/nike/snkrs-draw_test.md](../tests/nike/snkrs-draw_test.md) | day 12 | draft |
+| 8.3 | SNKRS draw entry | [/nike/snkrs-draw](https://my-testing-repo-main.vercel.app/nike/snkrs-draw) | [tests/nike/snkrs-draw_test.md](../tests/nike/snkrs-draw_test.md) | live | draft |
 | 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | live | draft |
 
 ## 9. Stripely (Stripe) · Payments infra
@@ -394,37 +394,37 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 42.1 | Board item creation | [/monday/board-item](https://my-testing-repo-main.vercel.app/monday/board-item) | [tests/monday/board-item_test.md](../tests/monday/board-item_test.md) | day 12 | draft |
-| 42.2 | Automation recipe | [/monday/automation-recipe](https://my-testing-repo-main.vercel.app/monday/automation-recipe) | [tests/monday/automation-recipe_test.md](../tests/monday/automation-recipe_test.md) | day 12 | draft |
-| 42.3 | Dashboard widget | [/monday/dashboard-widget](https://my-testing-repo-main.vercel.app/monday/dashboard-widget) | [tests/monday/dashboard-widget_test.md](../tests/monday/dashboard-widget_test.md) | day 12 | draft |
-| 42.4 | Guest board sharing | [/monday/guest-board-sharing](https://my-testing-repo-main.vercel.app/monday/guest-board-sharing) | [tests/monday/guest-board-sharing_test.md](../tests/monday/guest-board-sharing_test.md) | day 12 | draft |
+| 42.1 | Board item creation | [/monday/board-item](https://my-testing-repo-main.vercel.app/monday/board-item) | [tests/monday/board-item_test.md](../tests/monday/board-item_test.md) | live | draft |
+| 42.2 | Automation recipe | [/monday/automation-recipe](https://my-testing-repo-main.vercel.app/monday/automation-recipe) | [tests/monday/automation-recipe_test.md](../tests/monday/automation-recipe_test.md) | live | draft |
+| 42.3 | Dashboard widget | [/monday/dashboard-widget](https://my-testing-repo-main.vercel.app/monday/dashboard-widget) | [tests/monday/dashboard-widget_test.md](../tests/monday/dashboard-widget_test.md) | live | draft |
+| 42.4 | Guest board sharing | [/monday/guest-board-sharing](https://my-testing-repo-main.vercel.app/monday/guest-board-sharing) | [tests/monday/guest-board-sharing_test.md](../tests/monday/guest-board-sharing_test.md) | live | draft |
 
 ## 43. DocuSigned (DocuSign) · Docs productivity
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 43.1 | Envelope send for signature | [/docusign/envelope-send](https://my-testing-repo-main.vercel.app/docusign/envelope-send) | [tests/docusign/envelope-send_test.md](../tests/docusign/envelope-send_test.md) | day 12 | draft |
-| 43.2 | Signing ceremony completion | [/docusign/signing-ceremony](https://my-testing-repo-main.vercel.app/docusign/signing-ceremony) | [tests/docusign/signing-ceremony_test.md](../tests/docusign/signing-ceremony_test.md) | day 12 | draft |
-| 43.3 | Template reuse | [/docusign/template-reuse](https://my-testing-repo-main.vercel.app/docusign/template-reuse) | [tests/docusign/template-reuse_test.md](../tests/docusign/template-reuse_test.md) | day 12 | draft |
-| 43.4 | Decline and void handling | [/docusign/decline-void](https://my-testing-repo-main.vercel.app/docusign/decline-void) | [tests/docusign/decline-void_test.md](../tests/docusign/decline-void_test.md) | day 12 | draft |
+| 43.1 | Envelope send for signature | [/docusign/envelope-send](https://my-testing-repo-main.vercel.app/docusign/envelope-send) | [tests/docusign/envelope-send_test.md](../tests/docusign/envelope-send_test.md) | live | draft |
+| 43.2 | Signing ceremony completion | [/docusign/signing-ceremony](https://my-testing-repo-main.vercel.app/docusign/signing-ceremony) | [tests/docusign/signing-ceremony_test.md](../tests/docusign/signing-ceremony_test.md) | live | draft |
+| 43.3 | Template reuse | [/docusign/template-reuse](https://my-testing-repo-main.vercel.app/docusign/template-reuse) | [tests/docusign/template-reuse_test.md](../tests/docusign/template-reuse_test.md) | live | draft |
+| 43.4 | Decline and void handling | [/docusign/decline-void](https://my-testing-repo-main.vercel.app/docusign/decline-void) | [tests/docusign/decline-void_test.md](../tests/docusign/decline-void_test.md) | live | draft |
 
 ## 44. Dropboxy (Dropbox) · Docs productivity
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 44.1 | File upload and share link | [/dropbox/upload-share-link](https://my-testing-repo-main.vercel.app/dropbox/upload-share-link) | [tests/dropbox/upload-share-link_test.md](../tests/dropbox/upload-share-link_test.md) | day 12 | draft |
-| 44.2 | Folder permission change | [/dropbox/folder-permission](https://my-testing-repo-main.vercel.app/dropbox/folder-permission) | [tests/dropbox/folder-permission_test.md](../tests/dropbox/folder-permission_test.md) | day 12 | draft |
-| 44.3 | File request flow | [/dropbox/file-request](https://my-testing-repo-main.vercel.app/dropbox/file-request) | [tests/dropbox/file-request_test.md](../tests/dropbox/file-request_test.md) | day 12 | draft |
-| 44.4 | Version history restore | [/dropbox/version-history](https://my-testing-repo-main.vercel.app/dropbox/version-history) | [tests/dropbox/version-history_test.md](../tests/dropbox/version-history_test.md) | day 12 | draft |
+| 44.1 | File upload and share link | [/dropbox/upload-share-link](https://my-testing-repo-main.vercel.app/dropbox/upload-share-link) | [tests/dropbox/upload-share-link_test.md](../tests/dropbox/upload-share-link_test.md) | live | draft |
+| 44.2 | Folder permission change | [/dropbox/folder-permission](https://my-testing-repo-main.vercel.app/dropbox/folder-permission) | [tests/dropbox/folder-permission_test.md](../tests/dropbox/folder-permission_test.md) | live | draft |
+| 44.3 | File request flow | [/dropbox/file-request](https://my-testing-repo-main.vercel.app/dropbox/file-request) | [tests/dropbox/file-request_test.md](../tests/dropbox/file-request_test.md) | live | draft |
+| 44.4 | Version history restore | [/dropbox/version-history](https://my-testing-repo-main.vercel.app/dropbox/version-history) | [tests/dropbox/version-history_test.md](../tests/dropbox/version-history_test.md) | live | draft |
 
 ## 45. Drively (Google Drive) · Docs productivity
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 45.1 | Doc share with permission levels | [/google-drive/share-permission-levels](https://my-testing-repo-main.vercel.app/google-drive/share-permission-levels) | [tests/google-drive/share-permission-levels_test.md](../tests/google-drive/share-permission-levels_test.md) | day 12 | draft |
-| 45.2 | Real-time coedit | [/google-drive/realtime-coedit](https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit) | [tests/google-drive/realtime-coedit_test.md](../tests/google-drive/realtime-coedit_test.md) | day 12 | draft |
-| 45.3 | Search across drive | [/google-drive/drive-search](https://my-testing-repo-main.vercel.app/google-drive/drive-search) | [tests/google-drive/drive-search_test.md](../tests/google-drive/drive-search_test.md) | day 12 | draft |
-| 45.4 | Offline mode edit sync | [/google-drive/offline-sync](https://my-testing-repo-main.vercel.app/google-drive/offline-sync) | [tests/google-drive/offline-sync_test.md](../tests/google-drive/offline-sync_test.md) | day 12 | draft |
+| 45.1 | Doc share with permission levels | [/google-drive/share-permission-levels](https://my-testing-repo-main.vercel.app/google-drive/share-permission-levels) | [tests/google-drive/share-permission-levels_test.md](../tests/google-drive/share-permission-levels_test.md) | live | draft |
+| 45.2 | Real-time coedit | [/google-drive/realtime-coedit](https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit) | [tests/google-drive/realtime-coedit_test.md](../tests/google-drive/realtime-coedit_test.md) | live | draft |
+| 45.3 | Search across drive | [/google-drive/drive-search](https://my-testing-repo-main.vercel.app/google-drive/drive-search) | [tests/google-drive/drive-search_test.md](../tests/google-drive/drive-search_test.md) | live | draft |
+| 45.4 | Offline mode edit sync | [/google-drive/offline-sync](https://my-testing-repo-main.vercel.app/google-drive/offline-sync) | [tests/google-drive/offline-sync_test.md](../tests/google-drive/offline-sync_test.md) | live | draft |
 
 ## 46. Calendlee (Calendly) · Docs productivity
 

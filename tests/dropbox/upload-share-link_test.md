@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/dropbox/upload-share-link?reset=true
-max_steps: 30
+max_steps: 45
 tags: [dropbox, docs-productivity, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Dropboxy 44.1: File upload and share link
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Dropbox · Industry: Docs productivity · Pattern: CRUD table / board -->
+Catalog objective: upload a file and create a view-only link.
+Key assertion: the link opens for an anonymous viewer.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/dropbox/upload-share-link?reset=true and verify the text "Use case 44.1" and "File upload and share link" are visible at the top of the page.
+## Upload
+Go to https://my-testing-repo-main.vercel.app/dropbox/upload-share-link?reset=true, click "⬆ Upload sample Q3-report.pdf", and verify "Q3-report.pdf" appears in All files.
 
-## Objective
-Upload a file and create a view-only link.
+## Create a view-only link
+Click "Share" on Q3-report.pdf, keep "Can view", click "Create link", and verify the link "https://dropboxy.test/s/k3x9q2/Q3-report.pdf?dl=0" with the badge "Can view".
 
-## Key assertion
-Verify: Link opens for anonymous viewer.
+## Open as anonymous
+Click "Open link as anonymous viewer" and verify the URL contains "s=k3x9q2".
+
+## Verify the anonymous view
+Verify "Viewing as guest · Can view", a preview of Q3-report.pdf, and "Editing and deleting are not available on view-only links."

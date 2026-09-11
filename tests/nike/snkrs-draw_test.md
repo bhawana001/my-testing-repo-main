@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/nike/snkrs-draw?reset=true
-max_steps: 30
+max_steps: 45
 tags: [nike, e-commerce, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
-# Nyke 8.3: SNKRS draw entry
+# Nyke 8.3: SNKRZ draw entry
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Nike · Industry: E-commerce · Pattern: Custom -->
+Catalog objective: enter a draw on a launch product.
+Key assertion: the entry confirmed state is shown.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/nike/snkrs-draw?reset=true and verify the text "Use case 8.3" and "SNKRS draw entry" are visible at the top of the page.
+## Open the launch
+Go to https://my-testing-repo-main.vercel.app/nike/snkrs-draw?reset=true and verify "Air Stride '26 “Volt”" with the badge "Draw · Launches Sep 18" and an "Enter Draw" button.
 
-## Objective
-Enter a draw on a launch product.
+## Enter without a size
+Click "Enter Draw" and verify "Select a size to enter the draw."
 
-## Key assertion
-Verify: Entry confirmed state shown.
+## Pick a size and open confirmation
+Click "US 10", click "Enter Draw", and verify a "Confirm your entry" dialog showing Size "US 10" and "Visa •••• 4242".
+
+## Submit the entry
+Click "Submit entry" and verify "You're in the draw" with Size "US 10".
+
+## Verify after reload
+Reload the page without the reset parameter and verify "You're in the draw" is still shown and the button reads "Entered" and is disabled.

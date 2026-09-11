@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/docusign/signing-ceremony?reset=true
-max_steps: 30
+max_steps: 45
 tags: [docusign, docs-productivity, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # DocuSigned 43.2: Signing ceremony completion
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: DocuSign · Industry: Docs productivity · Pattern: Form wizard -->
+Catalog objective: open the signing link, adopt a signature and complete.
+Key assertion: the envelope is completed and the PDF sealed.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/docusign/signing-ceremony?reset=true and verify the text "Use case 43.2" and "Signing ceremony completion" are visible at the top of the page.
+## Agree to e-sign
+Go to https://my-testing-repo-main.vercel.app/docusign/signing-ceremony?reset=true, check "I agree to use electronic records and signatures.", click "Continue", and verify the document "Mutual Non-Disclosure Agreement" with a yellow "Sign" field.
 
-## Objective
-Open signing link, adopt signature, complete.
+## Try to finish unsigned
+Click "Finish" and verify "Sign the Signature field before finishing."
 
-## Key assertion
-Verify: Envelope completed and PDF sealed.
+## Adopt a signature
+Click the "Sign" field, keep the name "Demo User", click "Adopt and Sign", and verify the signature "Demo User" is placed and Date Signed reads "9/14/2026".
+
+## Finish
+Click "Finish" and verify "You're done signing" with status "Completed".
+
+## Download the sealed PDF
+Click "Download sealed PDF" and verify "Downloaded Mutual-NDA-completed.pdf" with "Certificate of Completion".

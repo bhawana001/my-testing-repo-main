@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit?reset=true
-max_steps: 30
+max_steps: 45
 tags: [google-drive, docs-productivity, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Drively 45.2: Real-time coedit
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 12). -->
-<!-- Catalog entity: Google Drive · Industry: Docs productivity · Pattern: Custom -->
+Catalog objective: two sessions edit a doc and verify there is no conflict.
+Key assertion: both edits are present with cursors shown.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit?reset=true and verify the text "Use case 45.2" and "Real-time coedit" are visible at the top of the page.
+## Session A edits
+Go to https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit?reset=true, type "Day 1: strategy" into the Session A input, click "Add line" in Session A, and verify both panes show "Day 1: strategy".
 
-## Objective
-Two sessions edit a doc and verify no conflict.
+## Session B edits
+Type "Day 2: team building" into the Session B input, click "Add line" in Session B, and verify both panes show "Day 2: team building".
 
-## Key assertion
-Verify: Both edits present with cursors shown.
+## Verify no conflict and cursors
+Verify both panes contain "Offsite agenda", "Day 1: strategy" and "Day 2: team building", Session A shows Priya's cursor label "▏Priya", Session B shows "▏Demo", and the header says "0 conflicts".
