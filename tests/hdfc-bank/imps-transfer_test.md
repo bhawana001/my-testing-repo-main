@@ -24,5 +24,6 @@ Click "Simulate 30 min elapsed" next to Karan Shah and verify his badge reads "A
 
 ## Send with OTP
 Click "Continue", type "123456" into the OTP field, click "Confirm transfer", and verify the message "Transfer successful" appears.
+
 ## Verify the reference and balance
 Verify a "Reference ID" starting with "IMPS" is shown and the Savings Account balance now reads "₹1,81,750.40".

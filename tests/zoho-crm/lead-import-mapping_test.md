@@ -18,6 +18,7 @@ Click "Next" and verify the mapping step shows Full Name â†’ Last Name, E-mail â
 
 ## Try to continue with a missing mandatory field
 Click "Next" and verify "Map the mandatory fields: Last Name and Company."
+
 ## Fix the mapping
 Select "Company" for the Org column, click "Next", and verify the preview lists Priya Raman, Jon Park and Lena Ortiz with companies Nimbus Labs, Vertex AI and Quanta Foods.
 

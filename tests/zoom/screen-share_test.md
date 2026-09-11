@@ -15,6 +15,7 @@ Go to https://my-testing-repo-main.vercel.app/zoom/screen-share?reset=true and v
 
 ## Start sharing
 Click "🖥️ Share screen", choose "Q3 Roadmap.pptx", click "Share", and verify the share picker closes.
+
 ## Verify the host indicator
 Verify the host view shows a green bar "You are sharing: Q3 Roadmap.pptx" with "Stop share".
 

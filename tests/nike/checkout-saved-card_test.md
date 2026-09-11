@@ -18,6 +18,7 @@ Click "Proceed to checkout" and verify the "Standard" shipping option is selecte
 
 ## Continue to payment
 Click "Continue to payment" and verify saved cards "Visa •••• 4242" (Default) and "Mastercard •••• 4444" are listed with Visa selected.
+
 ## Pay with the saved card
 Click the "Pay $149.08" button ($139.00 + $10.08 tax) and verify "Order placed" is shown.
 

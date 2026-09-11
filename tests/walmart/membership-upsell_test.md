@@ -18,6 +18,7 @@ Click "Proceed to checkout" and verify the delivery step with a "Continue to pay
 
 ## Go to payment
 Click "Continue to payment" and verify the Payment card form and the "Try Walmartly+ free" banner button are shown.
+
 ## Open the signup modal
 Click the "Try Walmartly+ free" button and verify a modal titled "Choose your Walmartly+ plan" opens.
 

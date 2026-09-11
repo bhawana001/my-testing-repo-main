@@ -21,5 +21,6 @@ Click "Confirm and pay" and verify the saved card "Visa •••• 4242" is se
 
 ## Pay
 Click the "Pay $197.00" button and verify "Order placed" is shown.
+
 ## Verify the confirmation
 Verify the confirmation shows an Order number starting with "EB-", the item "Vintage Film Camera · 35mm · Fully working" at "$185.00", "Payment" as "Visa •••• 4242" and "Order total" as "$197.00".

@@ -18,6 +18,7 @@ Click "+ front.jpg" and "+ back.jpg", and verify both photos are listed.
 
 ## Continue to details
 Click "Continue" and verify the "Item details" step is shown.
+
 ## Details
 Type "Mechanical Keyboard · Brown switches" into Title, choose "Used", type "Lightly used, all keys work." into Description, and click "Continue".
 

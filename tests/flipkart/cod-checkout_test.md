@@ -15,6 +15,7 @@ Go to https://my-testing-repo-main.vercel.app/flipkart/cod-checkout?reset=true a
 
 ## Proceed to checkout
 Click "Proceed to checkout" and verify the Delivery step shows a "Shipping address" card.
+
 ## Continue to payment
 Click "Continue to payment" and verify the payment options "UPI", "Credit / debit card" and "Cash on delivery" are listed.
 

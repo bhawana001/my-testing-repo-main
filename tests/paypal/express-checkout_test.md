@@ -18,6 +18,7 @@ Click "Pay with PayPally" and verify a popup window with the address "sandbox.pa
 
 ## Fail login once
 Type "demo@evals.dev" into Email and "wrongpass" into Password, click "Log In", and verify the message "Some of your info isn't correct" is shown.
+
 ## Log in correctly
 Clear the Password field, type "Demo123!", click "Log In", and verify the popup shows "Pay $89.99 to Trailhead Outfitters" with a "Pay Now" button.
 
