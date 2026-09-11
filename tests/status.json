@@ -1,5 +1,6 @@
 {
   "airtable/grid-crud": "verified",
+  "amazon/add-to-cart-variant": "verified",
   "amazon/order-tracking": "verified",
   "calendly/invitee-booking": "verified",
   "chase/login-2fa": "verified",

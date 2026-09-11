@@ -17,7 +17,7 @@ Go to https://my-testing-repo-main.vercel.app/netflix/playback-resume?reset=true
 Click the "Play" button and verify the player shows "Signal Lost" with a time counter.
 
 ## Stop playback
-Wait 3 seconds, then click "Stop and go back" and verify the "Signal Lost" card shows a line starting with "Resume from" and ending with "(saved from session A)".
+Click the "Stop and go back" button below the player and verify the "Signal Lost" card shows a line starting with "Resume from" and ending with "(saved from session A)".
 
 ## Record the resume point
 Store the time shown after "Resume from" as 'resume_a'.
