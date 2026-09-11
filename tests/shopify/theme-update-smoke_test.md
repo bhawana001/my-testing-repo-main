@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke?reset=true
-max_steps: 30
+max_steps: 45
 tags: [shopify, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Shopifly 2.5: Theme update smoke
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Shopify · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: after a theme publish, run homepage to checkout on a mobile viewport (mobile web equivalent: 390px preview).
+Key assertion: no broken layout and checkout is reachable.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke?reset=true and verify the text "Use case 2.5" and "Theme update smoke" are visible at the top of the page.
+## Publish the theme
+Go to https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke?reset=true, click "Publish Dawn-ish 2.0", and verify "Dawn-ish 2.0 is now your live theme." and "Mobile layout check: no horizontal overflow ✓".
 
-## Objective
-After theme publish, run homepage to checkout on mobile viewport.
+## Homepage to product
+In the 390px mobile preview, click "Shop now" and verify the product "Botanical Art Print A3" at "$35.00".
 
-## Key assertion
-Verify: No broken layout and checkout reachable.
+## Add to cart
+Click "Add to cart" and verify "Your cart" with "Botanical Art Print A3 × 1".
+
+## Reach checkout
+Click "Check out" and verify the badge "Checkout reachable" with "Contact · Shipping · Payment" and "Total $40.00", and that the layout check still reads "no horizontal overflow ✓".

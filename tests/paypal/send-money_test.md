@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paypal/send-money?reset=true
-max_steps: 30
+max_steps: 45
 tags: [paypal, payments-infra, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PayPally 10.3: Send money P2P
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: PayPal · Industry: Payments infra · Pattern: Form wizard -->
+Catalog objective: send money to a sandbox contact with a note.
+Key assertion: the recipient and amount are confirmed in activity.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paypal/send-money?reset=true and verify the text "Use case 10.3" and "Send money P2P" are visible at the top of the page.
+## Choose the contact
+Go to https://my-testing-repo-main.vercel.app/paypal/send-money?reset=true, choose "Priya Nair", click "Continue", and verify the "How much?" step.
 
-## Objective
-Send money to a sandbox contact with a note.
+## Amount and note
+Type "40" into Amount and "Dinner" into "Add a note", click "Continue", and verify the review lists "Priya Nair", "40" and "Dinner".
 
-## Key assertion
-Verify: Recipient and amount confirmed in activity.
+## Send
+Click "Send Payment Now" and verify "You sent $40.00 to Priya Nair".
+
+## Verify activity
+Verify Recent activity shows "You paid Priya Nair" with note "Dinner" and "−$40.00".

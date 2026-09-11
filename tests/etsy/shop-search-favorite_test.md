@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite?reset=true
-max_steps: 30
+max_steps: 45
 tags: [etsy, e-commerce, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Etsily 5.2: Shop search and favorite
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Etsy · Industry: E-commerce · Pattern: CRUD table / board -->
+Catalog objective: search a shop, favorite an item, verify it in the favorites list.
+Key assertion: the favorited item persists after reload.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite?reset=true and verify the text "Use case 5.2" and "Shop search and favorite" are visible at the top of the page.
+## Search the shop
+Go to https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite?reset=true, type "ClayWorks" into "Search for shops", click "Search", and verify "ClayWorks Studio" is listed.
 
-## Objective
-Search a shop, favorite an item, verify it in favorites list.
+## Open the shop
+Click "ClayWorks Studio" and verify items "Custom Name Ceramic Mug", "Speckled Pour-over Set" and "Mini Planter Trio".
 
-## Key assertion
-Verify: Favorited item persists after reload.
+## Favorite an item
+Click the heart on "Speckled Pour-over Set" and verify it turns filled (♥) and the tab reads "♥ Favorites (1)".
+
+## Verify after reload
+Reload the page without the reset parameter, click "♥ Favorites (1)", and verify "Speckled Pour-over Set · ClayWorks Studio" at "$58.00".

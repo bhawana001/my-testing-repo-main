@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/flipkart/search-with-filters?reset=true
-max_steps: 30
+max_steps: 45
 tags: [flipkart, e-commerce, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Flipmart 3.1: Search with filters
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Flipkart · Industry: E-commerce · Pattern: CRUD table / board -->
+Catalog objective: search for running shoes, filter by size and price band, open a result.
+Key assertion: the result respects the size and price filters.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/flipkart/search-with-filters?reset=true and verify the text "Use case 3.1" and "Search with filters" are visible at the top of the page.
+## Search
+Go to https://my-testing-repo-main.vercel.app/flipkart/search-with-filters?reset=true, type "running shoes" into the search box, click "Search", and verify "Showing 5 results for “running shoes”".
 
-## Objective
-Search for running shoes, filter by size and price band, open a result.
+## Filter by size
+Check "UK 9" and verify the count text includes "UK 9".
 
-## Key assertion
-Verify: Result respects size and price filters.
+## Filter by price
+Choose "₹1,500 – ₹3,000" and verify "Showing 2 results for “running shoes” · UK 9 · ₹1,500 – ₹3,000".
+
+## Open a result
+Click the first result's title and verify the product "Stride Runner 3".
+
+## Verify the filters are respected
+Verify the price reads "₹2,499.00" (within ₹1,500–₹3,000) and available sizes "7, 8, 9, 10" include 9.

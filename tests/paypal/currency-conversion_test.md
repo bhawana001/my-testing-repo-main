@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paypal/currency-conversion?reset=true
-max_steps: 30
+max_steps: 45
 tags: [paypal, payments-infra, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PayPally 10.5: Currency conversion display
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: PayPal · Industry: Payments infra · Pattern: Form wizard -->
+Catalog objective: send an international payment and verify the conversion rate shown.
+Key assertion: the rate and converted amount are displayed before confirming.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paypal/currency-conversion?reset=true and verify the text "Use case 10.5" and "Currency conversion display" are visible at the top of the page.
+## Enter the amount
+Go to https://my-testing-repo-main.vercel.app/paypal/currency-conversion?reset=true, keep "200" in "You send (USD)" to Asha Rao (India), click "Continue", and verify "Review before you send".
 
-## Objective
-Send an international payment and verify conversion rate shown.
+## Verify rate and amount before confirming
+Verify "Exchange rate" reads "1 USD = 81.54 INR" with the note about a 2% spread on 83.20, "Transfer fee" "$4.99", "Total you pay" "$204.99", and "Asha receives" "₹16,308.00", while the "Send now" button has not been clicked yet.
 
-## Key assertion
-Verify: Rate and converted amount displayed before confirm.
+## Confirm
+Click "Send now" and verify "You sent $200.00 · Asha receives ₹16,308.00".

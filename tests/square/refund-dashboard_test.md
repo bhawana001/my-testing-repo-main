@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/square/refund-dashboard?reset=true
-max_steps: 30
+max_steps: 45
 tags: [square, payments-infra, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Squarely 12.4: Refund from dashboard
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Square · Industry: Payments infra · Pattern: CRUD table / board -->
+Catalog objective: refund the latest payment partially from the dashboard.
+Key assertion: the refund is recorded and the balance updated.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/square/refund-dashboard?reset=true and verify the text "Use case 12.4" and "Refund from dashboard" are visible at the top of the page.
+## Open transactions
+Go to https://my-testing-repo-main.vercel.app/square/refund-dashboard?reset=true and verify Balance "$1,250.00" and the latest transaction "Bean There · Register 1" for "$64.50" marked "Completed".
 
-## Objective
-Refund the latest payment partially from dashboard.
+## Over-refund
+Click "Issue refund" on the $64.50 transaction, type "100", click "Refund", and verify "Refund can't exceed $64.50."
 
-## Key assertion
-Verify: Refund recorded and balance updated.
+## Partial refund
+Change the amount to "20", click "Refund", and verify "Refund of $20.00 issued for sq_T301."
+
+## Verify record and balance
+Verify the transaction status reads "Partially refunded $20.00" and Balance reads "$1,230.00".

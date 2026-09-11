@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true
-max_steps: 30
+max_steps: 45
 tags: [etsy, e-commerce, feed]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Etsily 5.4: Review submission
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Etsy · Industry: E-commerce · Pattern: Feed / messaging -->
+Catalog objective: leave a review with a photo on a delivered order.
+Key assertion: the review appears under the listing.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true and verify the text "Use case 5.4" and "Review submission" are visible at the top of the page.
+## Open the review form
+Go to https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true, click "Leave a review" next to "Custom Name Ceramic Mug", and verify star buttons and a review text box.
 
-## Objective
-Leave a review with photo on a delivered order.
+## Submit empty
+Click "Post review" and verify "Choose a star rating."
 
-## Key assertion
-Verify: Review appears under the listing.
+## Write the review
+Click the 5th star, type "Perfect gift, the name print is crisp." into the review box, click "+ Add sample photo", and verify "📷 mug-photo.jpg attached".
+
+## Post
+Click "Post review" and verify the listing's Reviews section opens.
+
+## Verify under the listing
+Verify the top review shows 5 stars, "Perfect gift, the name print is crisp.", a photo thumbnail, and "Demo U.".

@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/adyen/webhook-status-parity?reset=true
-max_steps: 30
+max_steps: 45
 tags: [adyen, payments-infra, tracker]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Adyenly 13.4: Payment status webhook parity
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 14). -->
-<!-- Catalog entity: Adyen · Industry: Payments infra · Pattern: Tracker timeline -->
+Catalog objective: after payment, verify the merchant order page shows the authorised status.
+Key assertion: the UI status equals the notification status.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/adyen/webhook-status-parity?reset=true and verify the text "Use case 13.4" and "Payment status webhook parity" are visible at the top of the page.
+## Open the order
+Go to https://my-testing-repo-main.vercel.app/adyen/webhook-status-parity?reset=true and verify order "NH-ORDER-5521" shows Payment status "Awaiting payment" and "No notifications yet."
 
-## Objective
-After payment, verify merchant order page shows authorised status.
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Pay €210.00", and wait until the webhook log shows a notification.
 
-## Key assertion
-Verify: UI status equals notification status.
+## Verify parity
+Verify the notification shows "eventCode": "AUTHORISATION" and "success": "true", the order page Payment status reads "Authorised", and the badge reads "In sync ✓ · UI status “Authorised” = notification AUTHORISATION success=true".
