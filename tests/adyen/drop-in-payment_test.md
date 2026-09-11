@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/adyen/drop-in-payment?reset=true
-max_steps: 30
+max_steps: 40
 tags: [adyen, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Adyenly 13.1: Drop-in payment
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Adyen · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: pay via the Adyenly drop-in with a test card and 3DS2.
+Key assertion: the Authorised result is surfaced to the shopper.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/adyen/drop-in-payment?reset=true and verify the text "Use case 13.1" and "Drop-in payment" are visible at the top of the page.
+## Open the drop-in
+Go to https://my-testing-repo-main.vercel.app/adyen/drop-in-payment?reset=true and verify "Pay Nordic Home" with amount "€210.00" and a "Drop-in" list containing "Credit or debit card", "iDEAL" and "PayPally" with the card form expanded.
 
-## Objective
-Pay via Adyenly drop-in with test card and 3DS2.
+## Pay with the 3DS2 card
+Type "4000 0000 0000 3220" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay €210.00" button, and verify a "Confirm this payment" challenge asking for a one-time code appears.
 
-## Key assertion
-Verify: Authorised result surfaced to shopper.
+## Complete the challenge
+Type "123456" into the One-time code field, click "Approve payment", and verify the heading "Result: Authorised" appears.
+
+## Verify the result
+Verify "3DS2" reads "Challenge completed", "Amount paid" reads "€210.00" and a "Payment ID" starting with "8836" is shown.

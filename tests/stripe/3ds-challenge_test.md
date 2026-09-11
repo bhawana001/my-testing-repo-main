@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/stripe/3ds-challenge?reset=true
-max_steps: 30
+max_steps: 40
 tags: [stripe, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Stripely 9.2: 3DS challenge
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Stripe · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: pay with a 3DS test card and approve the challenge.
+Key assertion: the challenge completes and the payment succeeds.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/stripe/3ds-challenge?reset=true and verify the text "Use case 9.2" and "3DS challenge" are visible at the top of the page.
+## Open the checkout
+Go to https://my-testing-repo-main.vercel.app/stripe/3ds-challenge?reset=true and verify the page shows "Pay Northwind Travel" with the amount "$120.00".
 
-## Objective
-Pay with a 3DS test card and approve the challenge iframe.
+## Pay with the 3DS card
+Type "4000 0000 0000 3220" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $120.00" button, and verify a "Bank verification · 3-D Secure" panel titled "Confirm this payment" appears asking for a one-time code.
 
-## Key assertion
-Verify: Challenge completes and payment succeeds.
+## Enter a wrong code
+Type "000000" into the One-time code field, click "Approve payment", and verify the error "Incorrect verification code" is shown.
+
+## Approve the challenge
+Clear the One-time code field, type "123456", click "Approve payment", and verify the heading "Payment successful" appears.
+
+## Verify the result
+Verify "3-D Secure" reads "Authenticated", "Amount paid" reads "$120.00" and "Status" reads "Succeeded".

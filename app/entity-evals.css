@@ -85,6 +85,7 @@
 .ee-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .ee-split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
 .ee-split--sidebar-left { grid-template-columns: 260px minmax(0, 1fr); }
+.ee-split--even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .ee-muted { color: var(--ee-muted); }
 .ee-small { font-size: 13px; }
 .ee-tiny { font-size: 12px; }
@@ -221,7 +222,7 @@
 
 /* Modal, toast, skeleton */
 .ee-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
-.ee-modal { background: var(--ee-surface); color: var(--ee-text); border-radius: 16px; width: 100%; max-width: 480px; box-shadow: 0 24px 60px rgba(0,0,0,.35); padding: 22px; max-height: 92vh; overflow: auto; }
+.ee-modal { max-width: min(480px, calc(100vw - 32px)); background: var(--ee-surface); color: var(--ee-text); border-radius: 16px; width: 100%; max-width: 480px; box-shadow: 0 24px 60px rgba(0,0,0,.35); padding: 22px; max-height: 92vh; overflow: auto; }
 .ee-modal--wide { max-width: 720px; }
 .ee-modal__title { font-size: 18px; font-weight: 800; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
 .ee-toast-wrap { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 120; }
@@ -295,7 +296,7 @@
 .ee-mobile-note { text-align: center; font-size: 12px; color: var(--ee-muted); margin: 10px 0; }
 
 @media (max-width: 900px) {
-  .ee-split, .ee-split--sidebar-left { grid-template-columns: 1fr; }
+  .ee-split, .ee-split--sidebar-left, .ee-split--even { grid-template-columns: 1fr; }
   .ee-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ee-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ee-shell { grid-template-columns: 1fr; }

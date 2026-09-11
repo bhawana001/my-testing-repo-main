@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paypal/guest-card-payment?reset=true
-max_steps: 30
+max_steps: 40
 tags: [paypal, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PayPally 10.2: Guest card payment
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: PayPal · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: choose pay by card without an account in the PayPally window.
+Key assertion: the card form completes and the payment succeeds.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paypal/guest-card-payment?reset=true and verify the text "Use case 10.2" and "Guest card payment" are visible at the top of the page.
+## Open the merchant page and the PayPally window
+Go to https://my-testing-repo-main.vercel.app/paypal/guest-card-payment?reset=true, click "PayPally Checkout", and verify a popup shows "Pay $42.00 to Paper & Ink Studio" with a "Pay with Debit or Credit Card" button.
 
-## Objective
-Choose pay by card without account in PayPally window.
+## Choose guest card
+Click "Pay with Debit or Credit Card" and verify the popup shows "Pay with debit or credit card" with the note "No PayPally account needed." and card fields.
 
-## Key assertion
-Verify: Card form completes and payment succeeds.
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $42.00" button, and verify the popup closes and the merchant page shows the heading "Payment complete".
+
+## Verify guest payment
+Verify "Payment method" reads "Guest card · Visa •••• 4242" and "Account" reads "None (guest)".

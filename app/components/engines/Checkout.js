@@ -129,7 +129,7 @@ export function AddressCard({ address = ADDRESSES.us, name = DEMO_USER.name, edi
  *  4242… success · 4000…0002 decline · 4000…3220 3DS challenge (OTP 123456)
  * Props: amount, currency, savedCards[], onSuccess(payment), allow3ds, methods (["card","cod","upi","wallet"]), method, onMethod
  */
-export function PaymentForm({ amount, currency = "USD", savedCards = [], onSuccess, buttonLabel, methods = ["card"], defaultMethod, allow3ds = true, extraMethodUI, testIdPrefix = "pay" }) {
+export function PaymentForm({ amount, currency = "USD", savedCards = [], onSuccess, onDecline, buttonLabel, methods = ["card"], defaultMethod, allow3ds = true, extraMethodUI, testIdPrefix = "pay" }) {
   const delay = useDelay();
   const [method, setMethod] = useState(defaultMethod || methods[0]);
   const [useSaved, setUseSaved] = useState(savedCards.length > 0 ? savedCards[0].id : null);
@@ -166,6 +166,7 @@ export function PaymentForm({ amount, currency = "USD", savedCards = [], onSucce
       setBusy(false);
       if (outcome === "decline") {
         setErr("Your card was declined. Try a different payment method.");
+        onDecline?.({ last4, brand });
         return;
       }
       if (outcome === "3ds" && allow3ds) {

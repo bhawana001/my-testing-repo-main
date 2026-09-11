@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse?reset=true
-max_steps: 30
+max_steps: 40
 tags: [adyen, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Adyenly 13.3: Stored card reuse
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Adyen · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: pay again using a previously stored card token.
+Key assertion: the one-click payment succeeds without card entry.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse?reset=true and verify the text "Use case 13.3" and "Stored card reuse" are visible at the top of the page.
+## Open the payment methods
+Go to https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse?reset=true and verify "Pay Nordic Home" with amount "€39.00" and a stored "Visa •••• 1111" option marked "Stored" that is already selected, with no card number field visible.
 
-## Objective
-Pay again using previously stored card token.
+## Pay with the stored card
+Click "Pay €39.00 with stored card" and verify the heading "Result: Authorised" appears.
 
-## Key assertion
-Verify: One-click payment succeeds without card entry.
+## Verify no card entry was needed
+Verify "Card entry" reads "Not required (token)", "Payment method" reads "Stored Visa •••• 1111" and "Amount paid" reads "€39.00".

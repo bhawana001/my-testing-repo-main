@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/square/tip-and-receipt?reset=true
-max_steps: 30
+max_steps: 40
 tags: [square, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Squarely 12.3: Tip and receipt screen
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Square · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: complete a payment with tip selection on web POS.
+Key assertion: the total includes the tip and a receipt is offered.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/square/tip-and-receipt?reset=true and verify the text "Use case 12.3" and "Tip and receipt screen" are visible at the top of the page.
+## Open the POS
+Go to https://my-testing-repo-main.vercel.app/square/tip-and-receipt?reset=true and verify the register shows "Subtotal" of "$24.00" and the question "Add a tip?" with 15%, 20%, 25% and "No tip" options.
 
-## Objective
-Complete a payment with tip selection on web POS.
+## Choose a 20% tip
+Click the "20%" tip option and verify "Tip" reads "$4.80" and "Total" reads "$28.80".
 
-## Key assertion
-Verify: Total includes tip and receipt offered.
+## Charge
+Click "Charge $28.80" and verify the message "Payment of $28.80 approved (includes $4.80 tip)" and the question "How would you like your receipt?" with "Email", "Text message" and "No receipt" options.
+
+## Choose an email receipt
+Click "Email" and verify the completion screen shows "Total charged" of "$28.80", "Tip" of "$4.80" and "Receipt" reading "Emailed to demo@evals.dev".

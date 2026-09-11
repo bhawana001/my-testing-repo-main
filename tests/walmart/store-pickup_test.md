@@ -11,7 +11,7 @@ Catalog objective: add an item, choose free pickup at a nearby store, reach chec
 Key assertion: the pickup store and time slot are shown in the order summary.
 
 ## Open the cart and proceed
-Go to https://my-testing-repo-main.vercel.app/walmart/store-pickup?reset=true, verify the cart contains "Vista 55\" 4K TV" at "$449.00", then click "Proceed to checkout" and verify the card "How do you want to get your order?" is shown.
+Go to https://my-testing-repo-main.vercel.app/walmart/store-pickup?reset=true, verify the cart contains the Vista 55-inch 4K TV at "$449.00", then click "Proceed to checkout" and verify the card "How do you want to get your order?" is shown.
 
 ## Choose free pickup
 Click the "Free pickup" option and verify a "Store" dropdown showing "Walmartly Supercenter, Market St · 1.2 mi" and "Pickup time" slots appear.

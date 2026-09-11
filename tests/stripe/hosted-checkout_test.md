@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/stripe/hosted-checkout?reset=true
-max_steps: 30
+max_steps: 40
 tags: [stripe, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Stripely 9.1: Hosted Checkout session
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Stripe · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: complete a Stripely Checkout payment with test card 4242.
+Key assertion: the success page is reached and the amount is correct.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/stripe/hosted-checkout?reset=true and verify the text "Use case 9.1" and "Hosted Checkout session" are visible at the top of the page.
+## Open the hosted checkout
+Go to https://my-testing-repo-main.vercel.app/stripe/hosted-checkout?reset=true and verify the page shows "Pay Acme Cloud" with the amount "$79.00" and a "TEST MODE" badge.
 
-## Objective
-Complete a Stripelyly Checkout payment with test card 4242.
+## Pay with the test card
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, then click the "Pay $79.00" button and verify the heading "Payment successful" appears.
 
-## Key assertion
-Verify: Success page reached and amount correct.
+## Verify the amount
+Verify "Amount paid" reads "$79.00", "Payment method" reads "Visa •••• 4242" and "Status" reads "Succeeded".

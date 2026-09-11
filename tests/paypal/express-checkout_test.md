@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paypal/express-checkout?reset=true
-max_steps: 30
+max_steps: 40
 tags: [paypal, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PayPally 10.1: Express checkout button
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: PayPal · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: pay on a merchant sandbox via the PayPally button and approve in the popup.
+Key assertion: popup approval returns to the merchant and the order completes.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paypal/express-checkout?reset=true and verify the text "Use case 10.1" and "Express checkout button" are visible at the top of the page.
+## Open the merchant page
+Go to https://my-testing-repo-main.vercel.app/paypal/express-checkout?reset=true and verify the page shows "Pay Trailhead Outfitters" with amount "$89.99" and a yellow "Pay with PayPally" button.
 
-## Objective
-Pay on a merchant sandbox via PayPally button and approve in popup.
+## Open the popup and fail login once
+Click "Pay with PayPally", verify a popup window with the address "sandbox.paypally.com/checkoutnow" opens, then type "demo@evals.dev" into Email and "wrongpass" into Password, click "Log In", and verify the message "Some of your info isn't correct" is shown.
 
-## Key assertion
-Verify: Popup approval returns and order completes.
+## Log in correctly
+Clear the Password field, type "Demo123!", click "Log In", and verify the popup shows "Pay $89.99 to Trailhead Outfitters" with a "Pay Now" button.
+
+## Approve
+Click "Pay Now" and verify the popup closes and the merchant page shows the heading "Order complete".
+
+## Verify the order
+Verify "Amount paid" reads "$89.99", "Merchant order" reads "TO-55019" and "Popup" reads "Approved and closed".

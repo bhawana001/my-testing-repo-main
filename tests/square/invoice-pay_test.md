@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/square/invoice-pay?reset=true
-max_steps: 30
+max_steps: 40
 tags: [square, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Squarely 12.2: Invoice pay flow
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Square · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: open an emailed invoice and pay it online.
+Key assertion: the invoice status flips to paid.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/square/invoice-pay?reset=true and verify the text "Use case 12.2" and "Invoice pay flow" are visible at the top of the page.
+## Open the inbox
+Go to https://my-testing-repo-main.vercel.app/square/invoice-pay?reset=true and verify the inbox shows an email from "Harbor Landscaping via Squarely" for "Invoice INV-2026-0142" with the status badge "Unpaid".
 
-## Objective
-Open an emailed invoice and pay it online.
+## Open the invoice
+Click the invoice email and verify the invoice page shows "Invoice INV-2026-0142", status "Unpaid" and "Amount due" of "$480.00".
 
-## Key assertion
-Verify: Invoice status flips to paid.
+## Pay the invoice
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $480.00 now" button, and verify the heading "Invoice paid" appears.
+
+## Verify the status flipped
+Verify the invoice status badge now reads "Paid", "Amount due" reads "$0.00" and "Paid on" reads "September 14, 2026".
+
+## Verify the inbox reflects it
+Click "Back to inbox" and verify the invoice email now shows the badge "Paid".

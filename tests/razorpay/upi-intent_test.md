@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/razorpay/upi-intent?reset=true
-max_steps: 30
+max_steps: 40
 tags: [razorpay, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Razorpaid 11.2: UPI intent flow
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Razorpay · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: choose UPI and verify the intent screen with VPA entry works.
+Key assertion: VPA validation and success state render.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/razorpay/upi-intent?reset=true and verify the text "Use case 11.2" and "UPI intent flow" are visible at the top of the page.
+## Open the payment page
+Go to https://my-testing-repo-main.vercel.app/razorpay/upi-intent?reset=true and verify "Pay QuickBite" with amount "₹349.00" and the "UPI" method selected with an "Enter UPI ID" option.
 
-## Objective
-Choose UPI, verify intent screen with VPA entry works.
+## Enter an invalid VPA
+Type "bad" into the UPI ID field, click "Verify UPI ID", and verify the error "Invalid UPI ID. Format: name@bank" is shown.
 
-## Key assertion
-Verify: VPA validation and success state render.
+## Enter a valid VPA
+Clear the UPI ID field, type "demo@okbank", click "Verify UPI ID", and verify a "Verified" badge with "demo@okbank · DEMO USER" appears.
+
+## Pay
+Click the "Pay ₹349.00" button and verify the heading "Payment successful" appears with "Status" reading "captured" and "Payment method" reading "UPI · demo@okbank".

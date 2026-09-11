@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/square/checkout-link?reset=true
-max_steps: 30
+max_steps: 40
 tags: [square, payments-infra, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Squarely 12.1: Online checkout link
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 4). -->
-<!-- Catalog entity: Square · Industry: Payments infra · Pattern: Checkout engine -->
+Catalog objective: complete a Squarely checkout link with a test card.
+Key assertion: the receipt page shows the correct amount.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/square/checkout-link?reset=true and verify the text "Use case 12.1" and "Online checkout link" are visible at the top of the page.
+## Open the checkout link
+Go to https://my-testing-repo-main.vercel.app/square/checkout-link?reset=true and verify "Pay Bean There Coffee" with amount "$35.00" and the note "Squarely Online Checkout link".
 
-## Objective
-Complete a Squarely checkout link with test card.
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $35.00" button, and verify the heading "Receipt" appears.
 
-## Key assertion
-Verify: Receipt page with correct amount.
+## Verify the receipt
+Verify "Amount paid" reads "$35.00", "Receipt #" reads "R-000731" and "Merchant" reads "Bean There Coffee".
