@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 8 | 0 |
+| 209 | 25 | 0 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -16,7 +16,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
 | 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | draft |
-| 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | day 3 | draft |
+| 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | draft |
 | 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | draft |
 | 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
 
@@ -24,9 +24,9 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 2.1 | Storefront guest checkout | [/shopify/guest-checkout](https://my-testing-repo-main.vercel.app/shopify/guest-checkout) | [tests/shopify/guest-checkout_test.md](../tests/shopify/guest-checkout_test.md) | day 3 | draft |
-| 2.2 | Discount code application | [/shopify/discount-code](https://my-testing-repo-main.vercel.app/shopify/discount-code) | [tests/shopify/discount-code_test.md](../tests/shopify/discount-code_test.md) | day 3 | draft |
-| 2.3 | Checkout extension render | [/shopify/checkout-extension](https://my-testing-repo-main.vercel.app/shopify/checkout-extension) | [tests/shopify/checkout-extension_test.md](../tests/shopify/checkout-extension_test.md) | day 3 | draft |
+| 2.1 | Storefront guest checkout | [/shopify/guest-checkout](https://my-testing-repo-main.vercel.app/shopify/guest-checkout) | [tests/shopify/guest-checkout_test.md](../tests/shopify/guest-checkout_test.md) | live | draft |
+| 2.2 | Discount code application | [/shopify/discount-code](https://my-testing-repo-main.vercel.app/shopify/discount-code) | [tests/shopify/discount-code_test.md](../tests/shopify/discount-code_test.md) | live | draft |
+| 2.3 | Checkout extension render | [/shopify/checkout-extension](https://my-testing-repo-main.vercel.app/shopify/checkout-extension) | [tests/shopify/checkout-extension_test.md](../tests/shopify/checkout-extension_test.md) | live | draft |
 | 2.4 | Admin order creation | [/shopify/admin-order-creation](https://my-testing-repo-main.vercel.app/shopify/admin-order-creation) | [tests/shopify/admin-order-creation_test.md](../tests/shopify/admin-order-creation_test.md) | day 14 | draft |
 | 2.5 | Theme update smoke | [/shopify/theme-update-smoke](https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke) | [tests/shopify/theme-update-smoke_test.md](../tests/shopify/theme-update-smoke_test.md) | day 14 | draft |
 
@@ -35,26 +35,26 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 3.1 | Search with filters | [/flipkart/search-with-filters](https://my-testing-repo-main.vercel.app/flipkart/search-with-filters) | [tests/flipkart/search-with-filters_test.md](../tests/flipkart/search-with-filters_test.md) | day 14 | draft |
-| 3.2 | Cart with exchange offer | [/flipkart/cart-exchange-offer](https://my-testing-repo-main.vercel.app/flipkart/cart-exchange-offer) | [tests/flipkart/cart-exchange-offer_test.md](../tests/flipkart/cart-exchange-offer_test.md) | day 3 | draft |
-| 3.3 | COD checkout | [/flipkart/cod-checkout](https://my-testing-repo-main.vercel.app/flipkart/cod-checkout) | [tests/flipkart/cod-checkout_test.md](../tests/flipkart/cod-checkout_test.md) | day 3 | draft |
+| 3.2 | Cart with exchange offer | [/flipkart/cart-exchange-offer](https://my-testing-repo-main.vercel.app/flipkart/cart-exchange-offer) | [tests/flipkart/cart-exchange-offer_test.md](../tests/flipkart/cart-exchange-offer_test.md) | live | draft |
+| 3.3 | COD checkout | [/flipkart/cod-checkout](https://my-testing-repo-main.vercel.app/flipkart/cod-checkout) | [tests/flipkart/cod-checkout_test.md](../tests/flipkart/cod-checkout_test.md) | live | draft |
 | 3.4 | SuperCoins balance | [/flipkart/supercoins-balance](https://my-testing-repo-main.vercel.app/flipkart/supercoins-balance) | [tests/flipkart/supercoins-balance_test.md](../tests/flipkart/supercoins-balance_test.md) | day 14 | draft |
 
 ## 4. Walmartly (Walmart) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 4.1 | Store pickup selection | [/walmart/store-pickup](https://my-testing-repo-main.vercel.app/walmart/store-pickup) | [tests/walmart/store-pickup_test.md](../tests/walmart/store-pickup_test.md) | day 3 | draft |
-| 4.2 | Grocery substitution | [/walmart/grocery-substitution](https://my-testing-repo-main.vercel.app/walmart/grocery-substitution) | [tests/walmart/grocery-substitution_test.md](../tests/walmart/grocery-substitution_test.md) | day 3 | draft |
-| 4.3 | Membership upsell | [/walmart/membership-upsell](https://my-testing-repo-main.vercel.app/walmart/membership-upsell) | [tests/walmart/membership-upsell_test.md](../tests/walmart/membership-upsell_test.md) | day 3 | draft |
-| 4.4 | Reorder from history | [/walmart/reorder-from-history](https://my-testing-repo-main.vercel.app/walmart/reorder-from-history) | [tests/walmart/reorder-from-history_test.md](../tests/walmart/reorder-from-history_test.md) | day 3 | draft |
+| 4.1 | Store pickup selection | [/walmart/store-pickup](https://my-testing-repo-main.vercel.app/walmart/store-pickup) | [tests/walmart/store-pickup_test.md](../tests/walmart/store-pickup_test.md) | live | draft |
+| 4.2 | Grocery substitution | [/walmart/grocery-substitution](https://my-testing-repo-main.vercel.app/walmart/grocery-substitution) | [tests/walmart/grocery-substitution_test.md](../tests/walmart/grocery-substitution_test.md) | live | draft |
+| 4.3 | Membership upsell | [/walmart/membership-upsell](https://my-testing-repo-main.vercel.app/walmart/membership-upsell) | [tests/walmart/membership-upsell_test.md](../tests/walmart/membership-upsell_test.md) | live | draft |
+| 4.4 | Reorder from history | [/walmart/reorder-from-history](https://my-testing-repo-main.vercel.app/walmart/reorder-from-history) | [tests/walmart/reorder-from-history_test.md](../tests/walmart/reorder-from-history_test.md) | live | draft |
 
 ## 5. Etsily (Etsy) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 5.1 | Personalized item purchase | [/etsy/personalized-item](https://my-testing-repo-main.vercel.app/etsy/personalized-item) | [tests/etsy/personalized-item_test.md](../tests/etsy/personalized-item_test.md) | day 3 | draft |
+| 5.1 | Personalized item purchase | [/etsy/personalized-item](https://my-testing-repo-main.vercel.app/etsy/personalized-item) | [tests/etsy/personalized-item_test.md](../tests/etsy/personalized-item_test.md) | live | draft |
 | 5.2 | Shop search and favorite | [/etsy/shop-search-favorite](https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite) | [tests/etsy/shop-search-favorite_test.md](../tests/etsy/shop-search-favorite_test.md) | day 14 | draft |
-| 5.3 | Cart with multiple sellers | [/etsy/multi-seller-cart](https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart) | [tests/etsy/multi-seller-cart_test.md](../tests/etsy/multi-seller-cart_test.md) | day 3 | draft |
+| 5.3 | Cart with multiple sellers | [/etsy/multi-seller-cart](https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart) | [tests/etsy/multi-seller-cart_test.md](../tests/etsy/multi-seller-cart_test.md) | live | draft |
 | 5.4 | Review submission | [/etsy/review-submission](https://my-testing-repo-main.vercel.app/etsy/review-submission) | [tests/etsy/review-submission_test.md](../tests/etsy/review-submission_test.md) | day 14 | draft |
 
 ## 6. eBidz (eBay) · E-commerce
@@ -62,7 +62,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | day 7 | draft |
-| 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | day 3 | draft |
+| 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | draft |
 | 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | day 8 | draft |
 | 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | day 10 | draft |
 
@@ -70,10 +70,10 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | day 3 | draft |
+| 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | live | draft |
 | 7.2 | Replacement preferences | [/instacart/replacement-preferences](https://my-testing-repo-main.vercel.app/instacart/replacement-preferences) | [tests/instacart/replacement-preferences_test.md](../tests/instacart/replacement-preferences_test.md) | day 11 | draft |
-| 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | day 3 | draft |
-| 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | day 3 | draft |
+| 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | live | draft |
+| 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | live | draft |
 
 ## 8. Nyke (Nike) · E-commerce
 
@@ -82,7 +82,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 8.1 | Size guide and selection | [/nike/size-guide](https://my-testing-repo-main.vercel.app/nike/size-guide) | [tests/nike/size-guide_test.md](../tests/nike/size-guide_test.md) | day 7 | draft |
 | 8.2 | Member exclusive access | [/nike/member-exclusive](https://my-testing-repo-main.vercel.app/nike/member-exclusive) | [tests/nike/member-exclusive_test.md](../tests/nike/member-exclusive_test.md) | day 7 | draft |
 | 8.3 | SNKRS draw entry | [/nike/snkrs-draw](https://my-testing-repo-main.vercel.app/nike/snkrs-draw) | [tests/nike/snkrs-draw_test.md](../tests/nike/snkrs-draw_test.md) | day 12 | draft |
-| 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | day 3 | draft |
+| 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | live | draft |
 
 ## 9. Stripely (Stripe) · Payments infra
 

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/nike/checkout-saved-card?reset=true
-max_steps: 30
+max_steps: 40
 tags: [nike, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Nyke 8.4: Checkout with saved card
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 3). -->
-<!-- Catalog entity: Nike · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: check out a cart item with saved payment.
+Key assertion: the order confirmation shows the correct size and price.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/nike/checkout-saved-card?reset=true and verify the text "Use case 8.4" and "Checkout with saved card" are visible at the top of the page.
+## Open the cart
+Go to https://my-testing-repo-main.vercel.app/nike/checkout-saved-card?reset=true and verify the cart contains "Velocity Racer" with "Size: US 10 · Color: Blue" at "$139.00".
 
-## Objective
-Checkout a cart item with saved payment in under the flow.
+## Proceed through delivery
+Click "Proceed to checkout", verify the "Standard" shipping option is selected at "Free", then click "Continue to payment" and verify saved cards "Visa •••• 4242" (Default) and "Mastercard •••• 4444" are listed with Visa selected.
 
-## Key assertion
-Verify: Order confirmation with correct size and price.
+## Pay with the saved card
+Click the "Pay $149.08" button ($139.00 + $10.08 tax) and verify "Order placed" is shown.
+
+## Verify size and price
+Verify the confirmation shows the item "Velocity Racer" with "Size: US 10 · Color: Blue" at "$139.00", "Payment" as "Visa •••• 4242" and "Order total" as "$149.08".

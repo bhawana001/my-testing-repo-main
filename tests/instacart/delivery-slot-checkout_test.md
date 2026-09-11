@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true
-max_steps: 30
+max_steps: 40
 tags: [instacart, e-commerce, booking]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Instakart 7.3: Delivery slot checkout
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 3). -->
-<!-- Catalog entity: Instacart · Industry: E-commerce · Pattern: Booking calendar -->
+Catalog objective: choose a priority slot and complete checkout with a test card.
+Key assertion: the confirmation shows the chosen window and fees.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true and verify the text "Use case 7.3" and "Delivery slot checkout" are visible at the top of the page.
+## Open the cart and proceed
+Go to https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true, click "Proceed to checkout", and verify a "Choose a delivery window" card lists "Priority", "Standard" and "Tomorrow morning" options.
 
-## Objective
-Choose a priority slot and complete checkout with test card.
+## Choose the priority slot
+Click the "Priority" option ("Today, within 60 minutes (2:00–3:00 PM)") and verify the "Fees" row reads "$4.49" ($1.50 service fee + $2.99 priority fee) and the "Order total" reads "$21.74".
 
-## Key assertion
-Verify: Confirmation shows chosen window and fees.
+## Pay
+Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+
+## Verify the window and fees
+Verify the confirmation shows "Delivery window" as "Today, within 60 minutes (2:00–3:00 PM)", "Order total" as "$21.74" and "Arrives" as "Today, within 60 minutes (2:00–3:00 PM)".

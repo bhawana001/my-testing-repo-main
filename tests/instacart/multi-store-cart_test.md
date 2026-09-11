@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true
-max_steps: 30
+max_steps: 40
 tags: [instacart, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Instakart 7.1: Multi-store cart
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 3). -->
-<!-- Catalog entity: Instacart · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: add items from two stores and verify separate delivery slots.
+Key assertion: each store cart has its own slot and fee.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true and verify the text "Use case 7.1" and "Multi-store cart" are visible at the top of the page.
+## Open the carts
+Go to https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true and verify items from two stores are listed: "Organic Whole Milk 1L" and "Bananas (bunch)" sold by "Green Grocer", and "Vitamin D3 1000 IU (90)" sold by "Corner Pharmacy".
 
-## Objective
-Add items from two stores and verify separate delivery slots.
+## Proceed and try to skip slots
+Click "Proceed to checkout", then click "Continue to payment" and verify the message "Pick a slot for every store." is shown.
 
-## Key assertion
-Verify: Each store cart has its own slot and fee.
+## Pick a slot per store
+Click "Today 6pm–8pm" under "Green Grocer · delivery window" and "Tomorrow 10am–12pm" under "Corner Pharmacy · delivery window", and verify the summary shows "Green Grocer slot" as "Today 6pm–8pm", "Corner Pharmacy slot" as "Tomorrow 10am–12pm" and a "Fees" row of "$6.98" ($3.99 + $2.99).
+
+## Pay
+Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+
+## Verify per-store slots and fees
+Verify the confirmation lists "Green Grocer" as "Today 6pm–8pm · fee $3.99" and "Corner Pharmacy" as "Tomorrow 10am–12pm · fee $2.99".

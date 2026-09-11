@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true
-max_steps: 30
+max_steps: 40
 tags: [walmart, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Walmartly 4.3: Membership upsell
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 3). -->
-<!-- Catalog entity: Walmart · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: trigger the Walmartly+ banner during checkout and open the signup modal.
+Key assertion: plan pricing renders and the modal closes cleanly.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true and verify the text "Use case 4.3" and "Membership upsell" are visible at the top of the page.
+## Open the cart and go to checkout
+Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true, verify a yellow banner "Walmartly+ members get free delivery on this order" is shown, then click "Proceed to checkout" and click "Continue to payment" and verify the Payment step is shown.
 
-## Objective
-Trigger the Walmartlyly+ banner during checkout and open the signup modal.
+## Open the signup modal
+Click the "Try Walmartly+ free" button and verify a modal titled "Choose your Walmartly+ plan" opens.
 
-## Key assertion
-Verify: Plan pricing renders and modal closes cleanly.
+## Verify plan pricing
+Verify the modal lists a "Monthly" plan at "$12.95/mo" and an "Annual" plan at "$98/yr".
+
+## Close the modal
+Click "No thanks" and verify the modal is no longer visible and the "Payment" card form is still shown with the Pay button enabled.

@@ -16,8 +16,11 @@ Go to https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant?reset=t
 ## Pick the variant
 Click the size chip "XL", then click the color chip "Olive". Verify the text "Size: XL" and "Color: Olive" are visible and the price shown near the title reads "$20.00".
 
-## Add to cart and open the cart
-Click the "Add to Cart" button, verify a green banner says "Added to cart: Size XL, Color Olive", then click the "Cart" button in the top bar.
+## Add to cart
+Click the "Add to Cart" button and verify a green banner says "Added to cart: Size XL, Color Olive".
+
+## Open the cart
+Click the "Cart" button in the top bar and verify the heading "Shopping Cart (1 item)" is visible.
 
 ## Verify the cart line
-Verify the cart shows "Shopping Cart (1 item)" with the line "Everyday Cotton Tee", the variant text "Size: XL · Color: Olive", the line price "$20.00", and the "Cart total" row reads "$20.00".
+Verify the cart line reads "Everyday Cotton Tee" with the variant text "Size: XL · Color: Olive", the line price "$20.00", and the "Cart total" row reads "$20.00".

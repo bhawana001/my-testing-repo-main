@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true
-max_steps: 30
+max_steps: 40
 tags: [amazon, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amazonia 1.3: One-click checkout
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 3). -->
-<!-- Catalog entity: Amazon · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: buy an item with saved address and payment, reach order confirmation.
+Key assertion: an order number is shown and the total matches the product page price.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true and verify the text "Use case 1.3" and "One-click checkout" are visible at the top of the page.
+## Open the 1-Click page
+Go to https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true and verify the item "AuraBuds Pro Wireless Earbuds" is listed and the note reads "Product page price: $129.00".
 
-## Objective
-Buy an item with saved address and payment, reach order confirmation.
+## Check the saved address and payment
+Verify the summary shows "Ship to: Demo User, 1200 Market St, San Francisco", "Pay with: Visa •••• 4242" and the "Order total" row reads "$129.00".
 
-## Key assertion
-Verify: Order number shown and total matches PDP price.
+## Place the order
+Click the "Place your order (1-Click)" button and verify the text "Order placed" is shown.
+
+## Verify the confirmation
+Verify an "Order number" starting with "112-" is displayed and the "Order total" on the confirmation reads "$129.00", matching the product page price.

@@ -8,3 +8,7 @@ npm-debug.log*
 .env*.local
 .vercel
 demo/loop/.runs/
+
+# kane-cli run artifacts (evidence packs are per-run; recordings in output-*/ are committed)
+.testmuai/evidence/
+tests/variables.ci.json
