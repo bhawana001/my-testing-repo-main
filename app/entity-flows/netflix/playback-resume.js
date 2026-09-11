@@ -7,7 +7,7 @@ import { Card, Btn, Badge } from "@/app/components/eval/ui";
 import { Player, fmtTime } from "@/app/components/engines/Media";
 
 const TITLE = { id: "t1", name: "Signal Lost", subtitle: "S1:E1 · Static", duration: 1500, poster: "🛰️" };
-const seed = () => ({ session: "A", a: { position: 0, playing: false }, b: { position: 0, playing: false }, saved: null, view: "browse" });
+const seed = () => ({ session: "A", a: { position: 0, playing: false }, b: { position: 0, playing: false }, saved: null, view: "browse", resumedFrom: null });
 
 export default function Flow({ flow }) {
   const ent = getEntity(flow.entitySlug);
@@ -56,11 +56,12 @@ export default function Flow({ flow }) {
                 <div className="ee-progress" style={{ height: 4, marginTop: 6, background: "var(--ee-border)" }}><span style={{ width: (resumePoint / TITLE.duration) * 100 + "%", background: ent.accent }} /></div>
                 <div className="ee-tiny ee-muted" data-testid="resume-label">{resumePoint > 0 ? `Resume from ${fmtTime(resumePoint)} (saved from session ${s.saved.from})` : "Not started"}</div>
               </div>
-              <Btn onClick={() => set({ ...s, view: "player", [s.session === "A" ? "a" : "b"]: { position: resumePoint, playing: true } })} data-testid="play-button">▶ {resumePoint > 0 ? "Resume" : "Play"}</Btn>
+              <Btn onClick={() => set({ ...s, view: "player", resumedFrom: resumePoint > 0 ? { position: resumePoint, session: s.session } : null, [s.session === "A" ? "a" : "b"]: { position: resumePoint, playing: true } })} data-testid="play-button">▶ {resumePoint > 0 ? "Resume" : "Play"}</Btn>
             </div>
           </Card>
         ) : (
           <div className="ee-stack" style={{ maxWidth: 760 }}>
+            {s.resumedFrom && <div className="ee-alert ee-alert--info" data-testid="resumed-from">Resumed on session {s.resumedFrom.session} from {fmtTime(s.resumedFrom.position)} (saved from session {s.saved?.from})</div>}
             <Player title={TITLE.name} subtitle={TITLE.subtitle} duration={TITLE.duration} position={cur.position} playing={cur.playing} onChange={onChange} poster={TITLE.poster} speed={8} />
             <div className="ee-row ee-row--between ee-small">
               <span className="ee-muted">Progress is saved to your account whenever you pause or stop.</span>

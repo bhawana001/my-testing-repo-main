@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate?reset=true
-max_steps: 30
+max_steps: 40
 tags: [phonepe, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PhonePay 21.2: Autopay mandate setup
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: PhonePe · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: create a UPI autopay mandate for a service (mobile web equivalent).
+Key assertion: the mandate is active with its cap amount.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate?reset=true and verify the text "Use case 21.2" and "Autopay mandate setup" are visible at the top of the page.
+## Open AutoPay
+Go to https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate?reset=true and verify "Your mandates" lists "Spotifly Premium" (up to ₹119.00 · Monthly) and the form is prefilled with Service "Netflixy", maximum ₹649 and Monthly.
 
-## Objective
-Create a UPI autopay mandate for a service.
+## Continue
+Click "Continue" and verify the summary shows "Netflixy" and "₹649.00 · Monthly" with a UPI PIN field.
 
-## Key assertion
-Verify: Mandate active with cap amount.
+## Authorise
+Type "1234" into UPI PIN, click "Authorise mandate", and verify the message "AutoPay for Netflixy is active. Max ₹649.00 monthly." appears.
+
+## Verify the mandate
+Verify "Your mandates" now lists "Netflixy" with "Up to ₹649.00 · Monthly" and the status "Active".

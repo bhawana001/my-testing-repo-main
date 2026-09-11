@@ -1,1 +1,7 @@
-{}
+{
+  "airtable/grid-crud": "verified",
+  "amazon/order-tracking": "verified",
+  "calendly/invitee-booking": "verified",
+  "chase/login-2fa": "verified",
+  "lemonade/instant-quote": "verified"
+}

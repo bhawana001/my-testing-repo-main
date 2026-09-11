@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed?reset=true
-max_steps: 30
+max_steps: 40
 tags: [venmo, consumer-fintech, feed]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Venmoo 22.4: Card transaction feed
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Venmo · Industry: Consumer fintech · Pattern: Feed / messaging -->
+Catalog objective: verify a card purchase appears with a cashback tag (mobile web equivalent).
+Key assertion: the transaction is listed with the correct merchant.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed?reset=true and verify the text "Use case 22.4" and "Card transaction feed" are visible at the top of the page.
+## Open the card feed
+Go to https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed?reset=true and verify "Cashback earned this month" reads "$1.45" and one transaction "You paid Trailhead Outfitters" tagged "3% cashback".
 
-## Objective
-Verify a card purchase appears with cashback tag.
+## Simulate a purchase
+Click "Simulate a $22.00 card purchase at Bean There Coffee".
 
-## Key assertion
-Verify: Transaction listed with correct merchant.
+## Verify the new transaction
+Verify the top transaction reads "You paid Bean There Coffee" for "−$22.00" with the tag "3% cashback" and the note "Venmoo Debit Card", and cashback now reads "$2.11".

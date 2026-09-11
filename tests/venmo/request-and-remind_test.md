@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/venmo/request-and-remind?reset=true
-max_steps: 30
+max_steps: 40
 tags: [venmo, consumer-fintech, feed]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Venmoo 22.2: Request and remind
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Venmo · Industry: Consumer fintech · Pattern: Feed / messaging -->
+Catalog objective: request money and send a reminder (mobile web equivalent).
+Key assertion: the request is pending with a reminder-sent state.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/venmo/request-and-remind?reset=true and verify the text "Use case 22.2" and "Request and remind" are visible at the top of the page.
+## Create a request
+Go to https://my-testing-repo-main.vercel.app/venmo/request-and-remind?reset=true, type "30" into Amount and "Dinner" into Note, click "Request", and verify an outgoing request "Priya Nair · $30.00 · Dinner" appears with status "Pending" and "No reminder sent".
 
-## Objective
-Request money and send a reminder.
+## Remind
+Click "Remind" on that request.
 
-## Key assertion
-Verify: Request pending with reminder sent state.
+## Verify the reminder state
+Verify the request still shows status "Pending" and the reminder line reads "Reminder sent (1) · Just now".

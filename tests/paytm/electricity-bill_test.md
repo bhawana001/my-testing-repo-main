@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paytm/electricity-bill?reset=true
-max_steps: 30
+max_steps: 40
 tags: [paytm, consumer-fintech, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Paytum 20.3: Bill payment electricity
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Paytm · Industry: Consumer fintech · Pattern: Checkout engine -->
+Catalog objective: fetch an electricity bill by consumer number and pay it (mobile web equivalent).
+Key assertion: the fetched amount matches the paid amount.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paytm/electricity-bill?reset=true and verify the text "Use case 20.3" and "Bill payment electricity" are visible at the top of the page.
+## Try an unknown consumer number
+Go to https://my-testing-repo-main.vercel.app/paytm/electricity-bill?reset=true, type "1111111111" into "Consumer number", click "Fetch bill", and verify the message "No pending bill found for this consumer number." is shown.
 
-## Objective
-Fetch an electricity bill by consumer number and pay.
+## Fetch the demo bill
+Clear the Consumer number field, type "1002003004", click "Fetch bill", and verify the "Bill fetched" card shows "Demo User · 1002003004", due date "20 Sep 2026" and "Bill amount" "₹1,842.00".
 
-## Key assertion
-Verify: Fetched amount matches paid amount.
+## Pay
+Click "Pay ₹1,842.00" and verify "Bill paid" is shown.
+
+## Verify amounts match
+Verify "Fetched amount" reads "₹1,842.00" and "Amount paid" reads "₹1,842.00".

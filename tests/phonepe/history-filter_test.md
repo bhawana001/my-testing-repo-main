@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/phonepe/history-filter?reset=true
-max_steps: 30
+max_steps: 40
 tags: [phonepe, consumer-fintech, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PhonePay 21.3: Transaction history filter
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: PhonePe · Industry: Consumer fintech · Pattern: CRUD table / board -->
+Catalog objective: filter history by month and category (mobile web equivalent).
+Key assertion: the filtered list matches the criteria.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/phonepe/history-filter?reset=true and verify the text "Use case 21.3" and "Transaction history filter" are visible at the top of the page.
+## Open history
+Go to https://my-testing-repo-main.vercel.app/phonepe/history-filter?reset=true and verify the text "7 transactions" with Month "All months" and Category "All categories".
 
-## Objective
-Filter history by month and category.
+## Filter by month
+Select "August 2026" in Month and verify "3 transactions matching filters" with every row dated in August.
 
-## Key assertion
-Verify: Filtered list matches criteria.
+## Filter by category
+Select "Food" in Category and verify "1 transaction matching filters".
+
+## Verify the result
+Verify the only row is "Swiggly" dated "11 Aug" in category "Food" for "−₹299.00".

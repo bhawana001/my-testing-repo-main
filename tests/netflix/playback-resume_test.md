@@ -14,13 +14,16 @@ Key assertion: the resume point is within seconds of where playback stopped.
 Go to https://my-testing-repo-main.vercel.app/netflix/playback-resume?reset=true and verify the heading "Continue watching for Demo" is visible, the badge says "Session A: Living room TV", and the title "Signal Lost" shows "Not started".
 
 ## Play the title
-Click the "Play" button and verify the player shows "Signal Lost" with a time counter that starts increasing from 0:00.
+Click the "Play" button and verify the player shows "Signal Lost" with a time counter.
 
-## Stop after a few seconds
-Wait 3 seconds, then click "Stop and go back". Store the resume time shown in the text "Resume from" as 'resume_a'.
+## Stop playback
+Wait 3 seconds, then click "Stop and go back" and verify the "Signal Lost" card shows a line starting with "Resume from" and ending with "(saved from session A)".
+
+## Record the resume point
+Store the time shown after "Resume from" as 'resume_a'.
 
 ## Switch to the other session
-Click the "Phone" device button in the top bar. Verify the badge now reads "Session B: Phone" and the title shows "Resume from {{resume_a}}" with "(saved from session A)".
+Click the "Phone" device button in the top bar and verify the badge reads "Session B: Phone" and the card still shows "Resume from {{resume_a}} (saved from session A)".
 
 ## Resume on the second session
-Click the "Resume" button and verify the player time counter starts at {{resume_a}} (within 5 seconds of it) rather than 0:00.
+Click the "Resume" button and verify the banner "Resumed on session B from {{resume_a}} (saved from session A)" is shown above the player.

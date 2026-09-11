@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/klarna/payment-schedule?reset=true
-max_steps: 30
+max_steps: 40
 tags: [klarna, payments-infra, tracker]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
-# Klarnah 14.3: Order in Klarna app
+# Klarnah 14.3: Order in Klarnah app
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Klarna · Industry: Payments infra · Pattern: Tracker timeline -->
+Catalog objective: verify the placed order appears with its payment schedule (mobile web equivalent).
+Key assertion: the first instalment date and amount are correct.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/klarna/payment-schedule?reset=true and verify the text "Use case 14.3" and "Order in Klarna app" are visible at the top of the page.
+## Open purchases
+Go to https://my-testing-repo-main.vercel.app/klarna/payment-schedule?reset=true and verify the purchase "Studio Lamps" ("Arc floor lamp · $180.00") appears with a "Pay in 4" badge.
 
-## Objective
-Verify placed order appears with payment schedule.
+## Open the order
+Click the Studio Lamps purchase and verify the order "KL-ORD-2201" shows "Total" of "$180.00" and a "Payment schedule" with four rows.
 
-## Key assertion
-Verify: First installment date and amount correct.
+## Verify the instalments
+Verify instalment 1 reads "Sep 14, 2026" "$45.00" marked "Paid", instalment 2 reads "Sep 28, 2026" "$45.00" marked "Upcoming", and "Next payment" reads "Sep 28, 2026 · $45.00".

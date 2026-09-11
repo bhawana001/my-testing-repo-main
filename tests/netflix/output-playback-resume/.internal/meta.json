@@ -1,0 +1,18 @@
+{
+  "test_id": "8255a28f-8496-4ae0-afe7-bf3ac664ae6b",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "playback-resume",
+  "commit_id": "d7ff16d2-83d3-4845-a771-bc40e9559027",
+  "testcase_id": "01M284C3SD1DQY89EXE2Q7TPPG",
+  "executions": [
+    {
+      "execution_id": "bf5ed3d9-9f9a-4bba-bf65-3ecdb633ba23",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-09-11T11:45:48.205Z"
+    }
+  ]
+}

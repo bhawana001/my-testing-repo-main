@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 59 | 0 |
+| 209 | 76 | 5 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -17,7 +17,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
 | 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | draft |
 | 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | draft |
-| 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | draft |
+| 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | verified |
 | 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
 
 ## 2. Shopifly (Shopify) · E-commerce
@@ -137,7 +137,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 14.1 | Pay in 4 selection | [/klarna/pay-in-4](https://my-testing-repo-main.vercel.app/klarna/pay-in-4) | [tests/klarna/pay-in-4_test.md](../tests/klarna/pay-in-4_test.md) | live | draft |
 | 14.2 | Credit decision decline path | [/klarna/credit-decline-fallback](https://my-testing-repo-main.vercel.app/klarna/credit-decline-fallback) | [tests/klarna/credit-decline-fallback_test.md](../tests/klarna/credit-decline-fallback_test.md) | live | draft |
-| 14.3 | Order in Klarna app | [/klarna/payment-schedule](https://my-testing-repo-main.vercel.app/klarna/payment-schedule) | [tests/klarna/payment-schedule_test.md](../tests/klarna/payment-schedule_test.md) | day 6 | draft |
+| 14.3 | Order in Klarna app | [/klarna/payment-schedule](https://my-testing-repo-main.vercel.app/klarna/payment-schedule) | [tests/klarna/payment-schedule_test.md](../tests/klarna/payment-schedule_test.md) | live | draft |
 | 14.4 | Return adjusts installments | [/klarna/return-adjusts-installments](https://my-testing-repo-main.vercel.app/klarna/return-adjusts-installments) | [tests/klarna/return-adjusts-installments_test.md](../tests/klarna/return-adjusts-installments_test.md) | day 7 | draft |
 
 ## 15. Wyse (Wise) · Payments infra
@@ -182,43 +182,43 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 19.1 | Card freeze unfreeze | [/revolut/card-freeze](https://my-testing-repo-main.vercel.app/revolut/card-freeze) | [tests/revolut/card-freeze_test.md](../tests/revolut/card-freeze_test.md) | live | draft |
-| 19.2 | Currency exchange | [/revolut/currency-exchange](https://my-testing-repo-main.vercel.app/revolut/currency-exchange) | [tests/revolut/currency-exchange_test.md](../tests/revolut/currency-exchange_test.md) | day 6 | draft |
-| 19.3 | Payment split bill | [/revolut/split-bill](https://my-testing-repo-main.vercel.app/revolut/split-bill) | [tests/revolut/split-bill_test.md](../tests/revolut/split-bill_test.md) | day 6 | draft |
-| 19.4 | Savings vault roundup | [/revolut/savings-vault](https://my-testing-repo-main.vercel.app/revolut/savings-vault) | [tests/revolut/savings-vault_test.md](../tests/revolut/savings-vault_test.md) | day 6 | draft |
+| 19.2 | Currency exchange | [/revolut/currency-exchange](https://my-testing-repo-main.vercel.app/revolut/currency-exchange) | [tests/revolut/currency-exchange_test.md](../tests/revolut/currency-exchange_test.md) | live | draft |
+| 19.3 | Payment split bill | [/revolut/split-bill](https://my-testing-repo-main.vercel.app/revolut/split-bill) | [tests/revolut/split-bill_test.md](../tests/revolut/split-bill_test.md) | live | draft |
+| 19.4 | Savings vault roundup | [/revolut/savings-vault](https://my-testing-repo-main.vercel.app/revolut/savings-vault) | [tests/revolut/savings-vault_test.md](../tests/revolut/savings-vault_test.md) | live | draft |
 
 ## 20. Paytum (Paytm) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 20.1 | UPI money transfer | [/paytm/upi-transfer](https://my-testing-repo-main.vercel.app/paytm/upi-transfer) | [tests/paytm/upi-transfer_test.md](../tests/paytm/upi-transfer_test.md) | day 6 | draft |
-| 20.2 | Mobile recharge | [/paytm/mobile-recharge](https://my-testing-repo-main.vercel.app/paytm/mobile-recharge) | [tests/paytm/mobile-recharge_test.md](../tests/paytm/mobile-recharge_test.md) | day 6 | draft |
-| 20.3 | Bill payment electricity | [/paytm/electricity-bill](https://my-testing-repo-main.vercel.app/paytm/electricity-bill) | [tests/paytm/electricity-bill_test.md](../tests/paytm/electricity-bill_test.md) | day 6 | draft |
-| 20.4 | Wallet to bank transfer | [/paytm/wallet-to-bank](https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank) | [tests/paytm/wallet-to-bank_test.md](../tests/paytm/wallet-to-bank_test.md) | day 6 | draft |
-| 20.5 | Movie ticket booking | [/paytm/movie-ticket](https://my-testing-repo-main.vercel.app/paytm/movie-ticket) | [tests/paytm/movie-ticket_test.md](../tests/paytm/movie-ticket_test.md) | day 6 | draft |
+| 20.1 | UPI money transfer | [/paytm/upi-transfer](https://my-testing-repo-main.vercel.app/paytm/upi-transfer) | [tests/paytm/upi-transfer_test.md](../tests/paytm/upi-transfer_test.md) | live | draft |
+| 20.2 | Mobile recharge | [/paytm/mobile-recharge](https://my-testing-repo-main.vercel.app/paytm/mobile-recharge) | [tests/paytm/mobile-recharge_test.md](../tests/paytm/mobile-recharge_test.md) | live | draft |
+| 20.3 | Bill payment electricity | [/paytm/electricity-bill](https://my-testing-repo-main.vercel.app/paytm/electricity-bill) | [tests/paytm/electricity-bill_test.md](../tests/paytm/electricity-bill_test.md) | live | draft |
+| 20.4 | Wallet to bank transfer | [/paytm/wallet-to-bank](https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank) | [tests/paytm/wallet-to-bank_test.md](../tests/paytm/wallet-to-bank_test.md) | live | draft |
+| 20.5 | Movie ticket booking | [/paytm/movie-ticket](https://my-testing-repo-main.vercel.app/paytm/movie-ticket) | [tests/paytm/movie-ticket_test.md](../tests/paytm/movie-ticket_test.md) | live | draft |
 
 ## 21. PhonePay (PhonePe) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 21.1 | UPI QR scan pay | [/phonepe/qr-scan-pay](https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay) | [tests/phonepe/qr-scan-pay_test.md](../tests/phonepe/qr-scan-pay_test.md) | day 6 | draft |
-| 21.2 | Autopay mandate setup | [/phonepe/autopay-mandate](https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate) | [tests/phonepe/autopay-mandate_test.md](../tests/phonepe/autopay-mandate_test.md) | day 6 | draft |
-| 21.3 | Transaction history filter | [/phonepe/history-filter](https://my-testing-repo-main.vercel.app/phonepe/history-filter) | [tests/phonepe/history-filter_test.md](../tests/phonepe/history-filter_test.md) | day 6 | draft |
-| 21.4 | Insurance purchase entry | [/phonepe/bike-insurance-quote](https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote) | [tests/phonepe/bike-insurance-quote_test.md](../tests/phonepe/bike-insurance-quote_test.md) | day 6 | draft |
+| 21.1 | UPI QR scan pay | [/phonepe/qr-scan-pay](https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay) | [tests/phonepe/qr-scan-pay_test.md](../tests/phonepe/qr-scan-pay_test.md) | live | draft |
+| 21.2 | Autopay mandate setup | [/phonepe/autopay-mandate](https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate) | [tests/phonepe/autopay-mandate_test.md](../tests/phonepe/autopay-mandate_test.md) | live | draft |
+| 21.3 | Transaction history filter | [/phonepe/history-filter](https://my-testing-repo-main.vercel.app/phonepe/history-filter) | [tests/phonepe/history-filter_test.md](../tests/phonepe/history-filter_test.md) | live | draft |
+| 21.4 | Insurance purchase entry | [/phonepe/bike-insurance-quote](https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote) | [tests/phonepe/bike-insurance-quote_test.md](../tests/phonepe/bike-insurance-quote_test.md) | live | draft |
 
 ## 22. Venmoo (Venmo) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 22.1 | P2P payment with emoji note | [/venmo/pay-with-note](https://my-testing-repo-main.vercel.app/venmo/pay-with-note) | [tests/venmo/pay-with-note_test.md](../tests/venmo/pay-with-note_test.md) | day 6 | draft |
-| 22.2 | Request and remind | [/venmo/request-and-remind](https://my-testing-repo-main.vercel.app/venmo/request-and-remind) | [tests/venmo/request-and-remind_test.md](../tests/venmo/request-and-remind_test.md) | day 6 | draft |
-| 22.3 | Cash out to bank | [/venmo/cash-out](https://my-testing-repo-main.vercel.app/venmo/cash-out) | [tests/venmo/cash-out_test.md](../tests/venmo/cash-out_test.md) | day 6 | draft |
-| 22.4 | Card transaction feed | [/venmo/card-transaction-feed](https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed) | [tests/venmo/card-transaction-feed_test.md](../tests/venmo/card-transaction-feed_test.md) | day 6 | draft |
+| 22.1 | P2P payment with emoji note | [/venmo/pay-with-note](https://my-testing-repo-main.vercel.app/venmo/pay-with-note) | [tests/venmo/pay-with-note_test.md](../tests/venmo/pay-with-note_test.md) | live | draft |
+| 22.2 | Request and remind | [/venmo/request-and-remind](https://my-testing-repo-main.vercel.app/venmo/request-and-remind) | [tests/venmo/request-and-remind_test.md](../tests/venmo/request-and-remind_test.md) | live | draft |
+| 22.3 | Cash out to bank | [/venmo/cash-out](https://my-testing-repo-main.vercel.app/venmo/cash-out) | [tests/venmo/cash-out_test.md](../tests/venmo/cash-out_test.md) | live | draft |
+| 22.4 | Card transaction feed | [/venmo/card-transaction-feed](https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed) | [tests/venmo/card-transaction-feed_test.md](../tests/venmo/card-transaction-feed_test.md) | live | draft |
 
 ## 23. Chaise Bank (Chase) · Banking
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 23.1 | Login with 2FA | [/chase/login-2fa](https://my-testing-repo-main.vercel.app/chase/login-2fa) | [tests/chase/login-2fa_test.md](../tests/chase/login-2fa_test.md) | live | draft |
+| 23.1 | Login with 2FA | [/chase/login-2fa](https://my-testing-repo-main.vercel.app/chase/login-2fa) | [tests/chase/login-2fa_test.md](../tests/chase/login-2fa_test.md) | live | verified |
 | 23.2 | Zelle transfer | [/chase/zelle-transfer](https://my-testing-repo-main.vercel.app/chase/zelle-transfer) | [tests/chase/zelle-transfer_test.md](../tests/chase/zelle-transfer_test.md) | live | draft |
 | 23.3 | Bill pay scheduling | [/chase/bill-pay-scheduling](https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling) | [tests/chase/bill-pay-scheduling_test.md](../tests/chase/bill-pay-scheduling_test.md) | live | draft |
 | 23.4 | Statement download | [/chase/statement-download](https://my-testing-repo-main.vercel.app/chase/statement-download) | [tests/chase/statement-download_test.md](../tests/chase/statement-download_test.md) | live | draft |
@@ -246,7 +246,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 26.1 | Instant quote flow | [/lemonade/instant-quote](https://my-testing-repo-main.vercel.app/lemonade/instant-quote) | [tests/lemonade/instant-quote_test.md](../tests/lemonade/instant-quote_test.md) | live | draft |
+| 26.1 | Instant quote flow | [/lemonade/instant-quote](https://my-testing-repo-main.vercel.app/lemonade/instant-quote) | [tests/lemonade/instant-quote_test.md](../tests/lemonade/instant-quote_test.md) | live | verified |
 | 26.2 | Policy purchase | [/lemonade/policy-purchase](https://my-testing-repo-main.vercel.app/lemonade/policy-purchase) | [tests/lemonade/policy-purchase_test.md](../tests/lemonade/policy-purchase_test.md) | day 8 | draft |
 | 26.3 | Claim filing video flow | [/lemonade/claim-filing](https://my-testing-repo-main.vercel.app/lemonade/claim-filing) | [tests/lemonade/claim-filing_test.md](../tests/lemonade/claim-filing_test.md) | day 8 | draft |
 | 26.4 | Coverage adjustment | [/lemonade/coverage-adjustment](https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment) | [tests/lemonade/coverage-adjustment_test.md](../tests/lemonade/coverage-adjustment_test.md) | day 8 | draft |
@@ -367,7 +367,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 39.1 | Grid record CRUD | [/airtable/grid-crud](https://my-testing-repo-main.vercel.app/airtable/grid-crud) | [tests/airtable/grid-crud_test.md](../tests/airtable/grid-crud_test.md) | live | draft |
+| 39.1 | Grid record CRUD | [/airtable/grid-crud](https://my-testing-repo-main.vercel.app/airtable/grid-crud) | [tests/airtable/grid-crud_test.md](../tests/airtable/grid-crud_test.md) | live | verified |
 | 39.2 | Form view submission | [/airtable/form-view-submission](https://my-testing-repo-main.vercel.app/airtable/form-view-submission) | [tests/airtable/form-view-submission_test.md](../tests/airtable/form-view-submission_test.md) | day 11 | draft |
 | 39.3 | Kanban stage drag | [/airtable/kanban-drag](https://my-testing-repo-main.vercel.app/airtable/kanban-drag) | [tests/airtable/kanban-drag_test.md](../tests/airtable/kanban-drag_test.md) | day 11 | draft |
 | 39.4 | Automation run | [/airtable/automation-run](https://my-testing-repo-main.vercel.app/airtable/automation-run) | [tests/airtable/automation-run_test.md](../tests/airtable/automation-run_test.md) | day 11 | draft |
@@ -430,7 +430,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 46.1 | Event booking as invitee | [/calendly/invitee-booking](https://my-testing-repo-main.vercel.app/calendly/invitee-booking) | [tests/calendly/invitee-booking_test.md](../tests/calendly/invitee-booking_test.md) | live | draft |
+| 46.1 | Event booking as invitee | [/calendly/invitee-booking](https://my-testing-repo-main.vercel.app/calendly/invitee-booking) | [tests/calendly/invitee-booking_test.md](../tests/calendly/invitee-booking_test.md) | live | verified |
 | 46.2 | Availability rules respected | [/calendly/availability-rules](https://my-testing-repo-main.vercel.app/calendly/availability-rules) | [tests/calendly/availability-rules_test.md](../tests/calendly/availability-rules_test.md) | day 13 | draft |
 | 46.3 | Reschedule flow | [/calendly/reschedule](https://my-testing-repo-main.vercel.app/calendly/reschedule) | [tests/calendly/reschedule_test.md](../tests/calendly/reschedule_test.md) | day 13 | draft |
 | 46.4 | Payment collection booking | [/calendly/paid-booking](https://my-testing-repo-main.vercel.app/calendly/paid-booking) | [tests/calendly/paid-booking_test.md](../tests/calendly/paid-booking_test.md) | day 13 | draft |

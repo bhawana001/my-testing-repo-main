@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paytm/mobile-recharge?reset=true
-max_steps: 30
+max_steps: 40
 tags: [paytm, consumer-fintech, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Paytum 20.2: Mobile recharge
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Paytm · Industry: Consumer fintech · Pattern: Checkout engine -->
+Catalog objective: recharge a prepaid number choosing a plan (mobile web equivalent).
+Key assertion: the plan amount is charged and a receipt is shown.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paytm/mobile-recharge?reset=true and verify the text "Use case 20.2" and "Mobile recharge" are visible at the top of the page.
+## Enter the number
+Go to https://my-testing-repo-main.vercel.app/paytm/mobile-recharge?reset=true, type "9876543210" into "Prepaid mobile number", click "Browse plans", and verify three plans are listed: ₹239.00, ₹479.00 and ₹719.00.
 
-## Objective
-Recharge a prepaid number choosing a plan.
+## Choose a plan
+Select the "₹479.00" plan ("1.5 GB/day · 56 days") and click "Proceed to pay ₹479.00", then verify the "Amount" row reads "₹479.00".
 
-## Key assertion
-Verify: Plan amount charged and receipt shown.
+## Pay
+Click "Pay ₹479.00" and verify "Recharge successful" is shown.
+
+## Verify the receipt
+Verify "Receipt" reads "RC4790914", "Number" reads "9876543210" and "Amount charged" reads "₹479.00".

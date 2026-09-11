@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true
-max_steps: 30
+max_steps: 40
 tags: [phonepe, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PhonePay 21.4: Insurance purchase entry
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: PhonePe · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: start a bike insurance quote journey (mobile web equivalent).
+Key assertion: the quote screen renders premium options.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true and verify the text "Use case 21.4" and "Insurance purchase entry" are visible at the top of the page.
+## Invalid registration
+Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type "123" into "Registration number", select "Honda-ish Activa 125" and "2022", click "Continue", and verify the message "Enter a valid registration like KA01AB1234." is shown.
 
-## Objective
-Start a bike insurance quote journey.
+## Valid bike details
+Clear the registration field, type "KA01AB1234", click "Continue", and verify the step "What cover do you need?" is shown.
 
-## Key assertion
-Verify: Quote screen renders premium options.
+## Choose cover
+Choose "Comprehensive" and click "Get quotes".
+
+## Verify premium options
+Verify the badge "Quotes for KA01AB1234 · Honda-ish Activa 125" and three plans: "Basic" at "₹1,820.00", "Plus" at "₹2,170.00" and "Max" at "₹2,540.00" per year.

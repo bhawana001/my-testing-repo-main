@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/revolut/split-bill?reset=true
-max_steps: 30
+max_steps: 40
 tags: [revolut, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Revolute 19.3: Payment split bill
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Revolut · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: split a transaction with a contact (mobile web equivalent).
+Key assertion: a request is created for half the amount.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/revolut/split-bill?reset=true and verify the text "Use case 19.3" and "Payment split bill" are visible at the top of the page.
+## Open the transaction
+Go to https://my-testing-repo-main.vercel.app/revolut/split-bill?reset=true and verify the transaction "Trattoria Roma" for "−$84.00" is shown with a "Split bill with" list of contacts.
 
-## Objective
-Split a transaction with a contact.
+## Pick one contact
+Check "Priya Nair" and verify the line "Split 2 ways" reads "$42.00 each".
 
-## Key assertion
-Verify: Request created for half the amount.
+## Send the request
+Click "Request $42.00 from 1 person" and verify the message "Requests sent." appears.
+
+## Verify the request amount
+Verify the requests list shows "Priya Nair" with "$42.00" (half of $84.00) and the status "Requested".

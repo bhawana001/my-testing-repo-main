@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank?reset=true
-max_steps: 30
+max_steps: 40
 tags: [paytm, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Paytum 20.4: Wallet to bank transfer
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Paytm · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: transfer the wallet balance to a linked bank (mobile web equivalent).
+Key assertion: the wallet is debited and the transfer shows an initiated state.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank?reset=true and verify the text "Use case 20.4" and "Wallet to bank transfer" are visible at the top of the page.
+## Open the wallet
+Go to https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank?reset=true and verify the wallet balance reads "₹3,250.00" and the linked bank is "HDFB Bank •••• 7712".
 
-## Objective
-Transfer wallet balance to linked bank.
+## Try more than the balance
+Type "5000" into "Amount (₹)", click "Transfer to bank", and verify the error "Amount exceeds your wallet balance." is shown.
 
-## Key assertion
-Verify: Wallet debited and transfer initiated state.
+## Transfer
+Clear the amount, type "1000", click "Transfer to bank", and verify the message "₹1,000.00 transfer initiated to HDFB Bank •••• 7712" appears.
+
+## Verify debit and state
+Verify the wallet balance now reads "₹2,250.00" and the Transfers list shows "WB1000" for "₹1,000.00" with status "Initiated".

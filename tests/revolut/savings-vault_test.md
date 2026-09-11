@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/revolut/savings-vault?reset=true
-max_steps: 30
+max_steps: 40
 tags: [revolut, consumer-fintech, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Revolute 19.4: Savings vault roundup
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 6). -->
-<!-- Catalog entity: Revolut · Industry: Consumer fintech · Pattern: Custom -->
+Catalog objective: enable the round-up vault and verify the rule is active (mobile web equivalent).
+Key assertion: the vault shows the round-up toggle on.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/revolut/savings-vault?reset=true and verify the text "Use case 19.4" and "Savings vault roundup" are visible at the top of the page.
+## Open the vault
+Go to https://my-testing-repo-main.vercel.app/revolut/savings-vault?reset=true and verify "Holiday Vault" shows "$240.50", the "Round-ups" switch is off and the status reads "Rule inactive".
 
-## Objective
-Enable roundup vault and verify rule active.
+## Enable round-ups
+Click the "Round-ups" switch and verify the status reads "Rule active · round-ups to Holiday Vault" and a "Multiplier" selector appears.
 
-## Key assertion
-Verify: Vault shows roundup toggle on.
+## Simulate a purchase
+Click "Simulate a $3.40 card purchase" and verify the vault balance reads "$241.10" and "Round-ups saved so far" reads "1 purchase".
+
+## Verify the rule persists
+Reload the page without the reset parameter and verify the status still reads "Rule active · round-ups to Holiday Vault" and the switch is on.
