@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking?reset=true
-max_steps: 30
+max_steps: 40
 tags: [hubspot, crm, booking]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # HubSpotty 29.4: Meeting link booking
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: HubSpot · Industry: CRM · Pattern: Booking calendar -->
+Catalog objective: book a slot on a meeting link as a prospect.
+Key assertion: the meeting is created and a confirmation is shown.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking?reset=true and verify the text "Use case 29.4" and "Meeting link booking" are visible at the top of the page.
+## Pick a day
+Go to https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking?reset=true, click September 16 in the calendar, and verify the times "9:00am", "2:00pm" and "3:00pm" are offered (10:00 and 11:00 are busy).
 
-## Objective
-Book a slot on a meeting link as prospect.
+## Pick a time
+Click "2:00pm" and verify a details form for "2:00pm · Wednesday, September 16, 2026".
 
-## Key assertion
-Verify: Meeting created and confirmation shown.
+## Enter details and confirm
+Type "Sam" into First name, "Lee" into Last name, "sam@acme.test" into Email, click "Confirm", and verify the badge "Booking confirmed".
+
+## Verify the meeting
+Verify "You're booked with Priya Nair", "When" reading "2:00pm · Wednesday, September 16, 2026" and "Meeting ID" reading "MTG-161400".

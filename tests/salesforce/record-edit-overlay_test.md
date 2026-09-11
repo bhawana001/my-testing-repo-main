@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?reset=true
-max_steps: 30
+max_steps: 40
 tags: [salesforce, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Salesforze 28.4: Record edit through overlay
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Salesforce · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: edit an account field and save through loading overlays.
+Key assertion: the saved value persists after reload.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?reset=true and verify the text "Use case 28.4" and "Record edit through overlay" are visible at the top of the page.
+## Open the account
+Go to https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?reset=true and verify the account "Globex Corporation" shows Phone "(555) 010-4400" and Industry "Manufacturing".
 
-## Objective
-Edit an account field and save through loading overlays.
+## Edit
+Click "Edit", wait for the "Loading record…" overlay to disappear, and verify the edit form with a Phone field is shown.
 
-## Key assertion
-Verify: Saved value persists after reload.
+## Change and save
+Change Phone to "(555) 010-9999", select "Technology" for Industry, click "Save", wait for the "Saving…" and "Refreshing…" overlays to finish, and verify the message "Account \"Globex Corporation\" was saved."
+
+## Verify after reload
+Reload the page without the reset parameter and verify Phone reads "(555) 010-9999" and Industry reads "Technology".

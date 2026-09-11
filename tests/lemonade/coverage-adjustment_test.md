@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment?reset=true
-max_steps: 30
+max_steps: 40
 tags: [lemonade, insurance, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Lemonaid 26.4: Coverage adjustment
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Lemonade · Industry: Insurance · Pattern: Form wizard -->
+Catalog objective: increase personal property coverage and verify the premium change.
+Key assertion: the new premium reflects the change.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment?reset=true and verify the text "Use case 26.4" and "Coverage adjustment" are visible at the top of the page.
+## Open coverage
+Go to https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment?reset=true and verify Personal property is "$20,000.00", "Current premium" and "New premium" both read "$15.00/mo", and "Save changes" is disabled.
 
-## Objective
-Increase personal property coverage and verify premium change.
+## Increase property coverage
+Select "$50,000.00" for Personal property and verify "New premium" reads "$27.00/mo" and "Change" reads "+$12.00/mo".
 
-## Key assertion
-Verify: New premium reflects the change.
+## Save
+Click "Save changes" and verify the message "Coverage updated. Your premium is now $27.00/month." and "Current premium" reads "$27.00/mo".

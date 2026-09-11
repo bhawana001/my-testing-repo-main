@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/hubspot/form-to-contact?reset=true
-max_steps: 30
+max_steps: 40
 tags: [hubspot, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # HubSpotty 29.1: Form to contact creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: HubSpot · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: submit a landing page form and verify the contact is created.
+Key assertion: the contact exists with the form field values.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/hubspot/form-to-contact?reset=true and verify the text "Use case 29.1" and "Form to contact creation" are visible at the top of the page.
+## Submit the landing page form
+Go to https://my-testing-repo-main.vercel.app/hubspot/form-to-contact?reset=true, type "Sam" into First name, "Lee" into Last name, "sam@acme.test" into Work email, "Acme Robotics" into Company, select "51–200" for Company size, click "Download now", and verify "Thanks! Check your inbox for the playbook."
 
-## Objective
-Submit a landing page form and verify contact created.
+## Open the CRM
+Click the "CRM" tab and verify the Contacts table lists "Sam Lee" with email "sam@acme.test", company "Acme Robotics" and original source "Form: Ebook download".
 
-## Key assertion
-Verify: Contact exists with form field values.
+## Verify the contact record
+Click "Sam Lee" and verify the record shows Email "sam@acme.test", Company "Acme Robotics", Company size "51–200" and Original source "Form: Ebook download".

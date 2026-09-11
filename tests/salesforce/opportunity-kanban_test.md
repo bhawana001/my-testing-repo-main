@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/salesforce/opportunity-kanban?reset=true
-max_steps: 30
+max_steps: 40
 tags: [salesforce, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Salesforze 28.2: Opportunity stage move
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Salesforce · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: drag an opportunity to the next stage in the kanban.
+Key assertion: the stage is updated and the probability changes.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/salesforce/opportunity-kanban?reset=true and verify the text "Use case 28.2" and "Opportunity stage move" are visible at the top of the page.
+## Open the kanban
+Go to https://my-testing-repo-main.vercel.app/salesforce/opportunity-kanban?reset=true and verify the card "Globex · 200 seats" sits in the Qualification column with probability "20%".
 
-## Objective
-Drag an opportunity to next stage in kanban.
+## Drag to the next stage
+Drag the "Globex · 200 seats" card into the "Proposal" column.
 
-## Key assertion
-Verify: Stage updated and probability changed.
+## Verify stage and probability
+Verify the message "Globex · 200 seats moved from Qualification to Proposal. Probability is now 50%.", the card now sits in the Proposal column showing "50%", and the Proposal column count reads 2.

@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/salesforce/report-filter?reset=true
-max_steps: 30
+max_steps: 40
 tags: [salesforce, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Salesforze 28.3: Report run and filter
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Salesforce · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: run a pipeline report filtered to this quarter.
+Key assertion: the report renders rows matching the filter.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/salesforce/report-filter?reset=true and verify the text "Use case 28.3" and "Report run and filter" are visible at the top of the page.
+## Open the report
+Go to https://my-testing-repo-main.vercel.app/salesforce/report-filter?reset=true and verify "Pipeline by Close Date" with the text "Set filters and click Run Report."
 
-## Objective
-Run a pipeline report filtered to this quarter.
+## Filter and run
+Select "Current FQ (Jul 1 – Sep 30, 2026)" for Close Date, click "Run Report", and verify "Report results · 3 records" with the badge "Close Date: Current FQ".
 
-## Key assertion
-Verify: Report renders rows matching filter.
+## Verify the rows
+Verify the rows are "Globex · 200 seats" (2026-09-22), "Initech · Renewal" (2026-08-30) and "Hooli · Expansion" (2026-07-18), all dated between July 1 and September 30, 2026, and "Grand Total (3)" reads "$131,000.00".

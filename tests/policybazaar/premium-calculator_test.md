@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator?reset=true
-max_steps: 30
+max_steps: 40
 tags: [policybazaar, insurance, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PolicyMart 27.4: Premium calculator
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Policybazaar · Industry: Insurance · Pattern: Custom -->
+Catalog objective: adjust age and cover in the calculator and verify the premium updates.
+Key assertion: the premium recalculates on each change.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator?reset=true and verify the text "Use case 27.4" and "Premium calculator" are visible at the top of the page.
+## Open the calculator
+Go to https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator?reset=true and verify age "30", cover "₹1Cr" and the premium "₹1,425.00" per year.
 
-## Objective
-Adjust age and cover in calculator and verify premium updates.
+## Increase age
+Click "+ Age" and verify the age reads "31" and the premium reads "₹1,475.00".
 
-## Key assertion
-Verify: Premium recalculates on each change.
+## Increase cover
+Click "₹2Cr" and verify the premium reads "₹2,950.00" and "Cover" reads "₹2,00,00,000.00".
+
+## Verify the recalculation log
+Verify "Recent recalculations" lists "Age 31, cover ₹100L → ₹1,475.00" and "Age 31, cover ₹200L → ₹2,950.00".

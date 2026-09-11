@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/hubspot/deal-pipeline-drag?reset=true
-max_steps: 30
+max_steps: 40
 tags: [hubspot, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # HubSpotty 29.2: Deal pipeline drag
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: HubSpot · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: move a deal across pipeline stages.
+Key assertion: the deal stage changes and the amount is preserved.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/hubspot/deal-pipeline-drag?reset=true and verify the text "Use case 29.2" and "Deal pipeline drag" are visible at the top of the page.
+## Open the pipeline
+Go to https://my-testing-repo-main.vercel.app/hubspot/deal-pipeline-drag?reset=true and verify "Globex · Marketing Hub" (Amount: $18,000.00) is in the "Qualified to buy" column.
 
-## Objective
-Move a deal across pipeline stages.
+## Drag to the next stage
+Drag the "Globex · Marketing Hub" card into the "Presentation scheduled" column and verify the message "Globex · Marketing Hub moved from “Qualified to buy” to “Presentation scheduled”. Amount $18,000.00 unchanged."
 
-## Key assertion
-Verify: Deal stage and amount preserved.
+## Verify after reload
+Reload the page without the reset parameter and verify the card is still in "Presentation scheduled" with "Amount: $18,000.00".

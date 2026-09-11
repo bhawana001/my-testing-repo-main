@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/policybazaar/term-comparison?reset=true
-max_steps: 30
+max_steps: 40
 tags: [policybazaar, insurance, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PolicyMart 27.1: Term insurance comparison
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Policybazaar · Industry: Insurance · Pattern: CRUD table / board -->
+Catalog objective: enter profile details and view the term plan comparison table.
+Key assertion: plans are listed with premiums and cover amounts.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/policybazaar/term-comparison?reset=true and verify the text "Use case 27.1" and "Term insurance comparison" are visible at the top of the page.
+## Enter profile
+Go to https://my-testing-repo-main.vercel.app/policybazaar/term-comparison?reset=true, type "Demo User" into Full name, set Date of birth to 1994-05-10, choose "Male", choose "No" for tobacco, select "₹10–15 lakh" income, click "Continue", and verify the step "How much cover?"
 
-## Objective
-Enter profile details and view term plan comparison table.
+## Choose cover
+Select "₹1 crore" life cover and "30 years", click "View plans", and verify the heading "4 term plans for Demo User".
 
-## Key assertion
-Verify: Plans listed with premiums and cover amounts.
+## Verify the comparison table
+Verify the table lists, cheapest first, "Tata AIAish" at "₹1,170.00", "Max Lifeline" at "₹1,210.00", "HDFB Life" at "₹1,289.00" and "ICICI Prudent" at "₹1,328.00" per year, each with life cover "₹1,00,00,000.00".

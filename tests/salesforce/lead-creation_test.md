@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/salesforce/lead-creation?reset=true
-max_steps: 30
+max_steps: 40
 tags: [salesforce, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Salesforze 28.1: Lead creation via LWC form
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Salesforce · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: create a lead through the Lightning form with required fields.
+Key assertion: the lead appears in the list view with the correct owner.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/salesforce/lead-creation?reset=true and verify the text "Use case 28.1" and "Lead creation via LWC form" are visible at the top of the page.
+## Open leads
+Go to https://my-testing-repo-main.vercel.app/salesforce/lead-creation?reset=true and verify "Leads · All Open Leads" lists Maria Chen (Globex) and Ahmed Khan (Initech).
 
-## Objective
-Create a lead through the Lightning form with required fields.
+## Save with missing fields
+Click "+ New Lead", click "Create" without filling anything, and verify the errors "*Last Name is required." and "*Company is required."
 
-## Key assertion
-Verify: Lead appears in list view with correct owner.
+## Fill required fields
+Type "Sam" into First Name, "Lee" into Last Name, "Acme Robotics" into Company, "sam@acme.test" into Email, then click "Create".
+
+## Verify list view and owner
+Verify the list view shows "Sam Lee" at the top with company "Acme Robotics", lead status "Open - Not Contacted" and Lead Owner "Demo User", and the count reads "3 of 3".

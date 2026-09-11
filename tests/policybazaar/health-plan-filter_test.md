@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/policybazaar/health-plan-filter?reset=true
-max_steps: 30
+max_steps: 40
 tags: [policybazaar, insurance, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # PolicyMart 27.3: Health plan filter
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 8). -->
-<!-- Catalog entity: Policybazaar · Industry: Insurance · Pattern: CRUD table / board -->
+Catalog objective: filter health plans by room rent limit and premium.
+Key assertion: results respect both filters.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/policybazaar/health-plan-filter?reset=true and verify the text "Use case 27.3" and "Health plan filter" are visible at the top of the page.
+## Open plans
+Go to https://my-testing-repo-main.vercel.app/policybazaar/health-plan-filter?reset=true and verify "6 plans found".
 
-## Objective
-Filter health plans by room rent limit and premium.
+## Filter by room rent
+Select "Single private room" for Room rent limit and verify "2 plans found", both showing "Room rent: Single private room".
 
-## Key assertion
-Verify: Results respect both filters.
+## Filter by premium
+Select "₹10,000 – ₹15,000" for Premium and verify "1 plan found".
+
+## Verify the result
+Verify the only plan is "Health Companion" by "Nivaish Bupa" with room rent "Single private room" and premium "₹11,800.00" per year.

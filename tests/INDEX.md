@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 93 | 6 |
+| 209 | 110 | 8 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -16,7 +16,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
 | 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | verified |
-| 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | draft |
+| 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | verified |
 | 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | verified |
 | 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
 
@@ -24,7 +24,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 2.1 | Storefront guest checkout | [/shopify/guest-checkout](https://my-testing-repo-main.vercel.app/shopify/guest-checkout) | [tests/shopify/guest-checkout_test.md](../tests/shopify/guest-checkout_test.md) | live | draft |
+| 2.1 | Storefront guest checkout | [/shopify/guest-checkout](https://my-testing-repo-main.vercel.app/shopify/guest-checkout) | [tests/shopify/guest-checkout_test.md](../tests/shopify/guest-checkout_test.md) | live | verified |
 | 2.2 | Discount code application | [/shopify/discount-code](https://my-testing-repo-main.vercel.app/shopify/discount-code) | [tests/shopify/discount-code_test.md](../tests/shopify/discount-code_test.md) | live | draft |
 | 2.3 | Checkout extension render | [/shopify/checkout-extension](https://my-testing-repo-main.vercel.app/shopify/checkout-extension) | [tests/shopify/checkout-extension_test.md](../tests/shopify/checkout-extension_test.md) | live | draft |
 | 2.4 | Admin order creation | [/shopify/admin-order-creation](https://my-testing-repo-main.vercel.app/shopify/admin-order-creation) | [tests/shopify/admin-order-creation_test.md](../tests/shopify/admin-order-creation_test.md) | day 14 | draft |
@@ -63,7 +63,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | live | draft |
 | 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | draft |
-| 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | day 8 | draft |
+| 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | live | draft |
 | 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | day 10 | draft |
 
 ## 7. Instakart (Instacart) · E-commerce
@@ -247,37 +247,37 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 26.1 | Instant quote flow | [/lemonade/instant-quote](https://my-testing-repo-main.vercel.app/lemonade/instant-quote) | [tests/lemonade/instant-quote_test.md](../tests/lemonade/instant-quote_test.md) | live | verified |
-| 26.2 | Policy purchase | [/lemonade/policy-purchase](https://my-testing-repo-main.vercel.app/lemonade/policy-purchase) | [tests/lemonade/policy-purchase_test.md](../tests/lemonade/policy-purchase_test.md) | day 8 | draft |
-| 26.3 | Claim filing video flow | [/lemonade/claim-filing](https://my-testing-repo-main.vercel.app/lemonade/claim-filing) | [tests/lemonade/claim-filing_test.md](../tests/lemonade/claim-filing_test.md) | day 8 | draft |
-| 26.4 | Coverage adjustment | [/lemonade/coverage-adjustment](https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment) | [tests/lemonade/coverage-adjustment_test.md](../tests/lemonade/coverage-adjustment_test.md) | day 8 | draft |
+| 26.2 | Policy purchase | [/lemonade/policy-purchase](https://my-testing-repo-main.vercel.app/lemonade/policy-purchase) | [tests/lemonade/policy-purchase_test.md](../tests/lemonade/policy-purchase_test.md) | live | draft |
+| 26.3 | Claim filing video flow | [/lemonade/claim-filing](https://my-testing-repo-main.vercel.app/lemonade/claim-filing) | [tests/lemonade/claim-filing_test.md](../tests/lemonade/claim-filing_test.md) | live | draft |
+| 26.4 | Coverage adjustment | [/lemonade/coverage-adjustment](https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment) | [tests/lemonade/coverage-adjustment_test.md](../tests/lemonade/coverage-adjustment_test.md) | live | draft |
 
 ## 27. PolicyMart (Policybazaar) · Insurance
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 27.1 | Term insurance comparison | [/policybazaar/term-comparison](https://my-testing-repo-main.vercel.app/policybazaar/term-comparison) | [tests/policybazaar/term-comparison_test.md](../tests/policybazaar/term-comparison_test.md) | day 8 | draft |
-| 27.2 | Lead form to callback | [/policybazaar/lead-callback](https://my-testing-repo-main.vercel.app/policybazaar/lead-callback) | [tests/policybazaar/lead-callback_test.md](../tests/policybazaar/lead-callback_test.md) | day 8 | draft |
-| 27.3 | Health plan filter | [/policybazaar/health-plan-filter](https://my-testing-repo-main.vercel.app/policybazaar/health-plan-filter) | [tests/policybazaar/health-plan-filter_test.md](../tests/policybazaar/health-plan-filter_test.md) | day 8 | draft |
-| 27.4 | Premium calculator | [/policybazaar/premium-calculator](https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator) | [tests/policybazaar/premium-calculator_test.md](../tests/policybazaar/premium-calculator_test.md) | day 8 | draft |
+| 27.1 | Term insurance comparison | [/policybazaar/term-comparison](https://my-testing-repo-main.vercel.app/policybazaar/term-comparison) | [tests/policybazaar/term-comparison_test.md](../tests/policybazaar/term-comparison_test.md) | live | draft |
+| 27.2 | Lead form to callback | [/policybazaar/lead-callback](https://my-testing-repo-main.vercel.app/policybazaar/lead-callback) | [tests/policybazaar/lead-callback_test.md](../tests/policybazaar/lead-callback_test.md) | live | draft |
+| 27.3 | Health plan filter | [/policybazaar/health-plan-filter](https://my-testing-repo-main.vercel.app/policybazaar/health-plan-filter) | [tests/policybazaar/health-plan-filter_test.md](../tests/policybazaar/health-plan-filter_test.md) | live | draft |
+| 27.4 | Premium calculator | [/policybazaar/premium-calculator](https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator) | [tests/policybazaar/premium-calculator_test.md](../tests/policybazaar/premium-calculator_test.md) | live | draft |
 
 ## 28. Salesforze (Salesforce) · CRM
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 28.1 | Lead creation via LWC form | [/salesforce/lead-creation](https://my-testing-repo-main.vercel.app/salesforce/lead-creation) | [tests/salesforce/lead-creation_test.md](../tests/salesforce/lead-creation_test.md) | day 8 | draft |
-| 28.2 | Opportunity stage move | [/salesforce/opportunity-kanban](https://my-testing-repo-main.vercel.app/salesforce/opportunity-kanban) | [tests/salesforce/opportunity-kanban_test.md](../tests/salesforce/opportunity-kanban_test.md) | day 8 | draft |
-| 28.3 | Report run and filter | [/salesforce/report-filter](https://my-testing-repo-main.vercel.app/salesforce/report-filter) | [tests/salesforce/report-filter_test.md](../tests/salesforce/report-filter_test.md) | day 8 | draft |
-| 28.4 | Record edit through overlay | [/salesforce/record-edit-overlay](https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay) | [tests/salesforce/record-edit-overlay_test.md](../tests/salesforce/record-edit-overlay_test.md) | day 8 | draft |
-| 28.5 | Flow screen completion | [/salesforce/screen-flow](https://my-testing-repo-main.vercel.app/salesforce/screen-flow) | [tests/salesforce/screen-flow_test.md](../tests/salesforce/screen-flow_test.md) | day 8 | draft |
+| 28.1 | Lead creation via LWC form | [/salesforce/lead-creation](https://my-testing-repo-main.vercel.app/salesforce/lead-creation) | [tests/salesforce/lead-creation_test.md](../tests/salesforce/lead-creation_test.md) | live | draft |
+| 28.2 | Opportunity stage move | [/salesforce/opportunity-kanban](https://my-testing-repo-main.vercel.app/salesforce/opportunity-kanban) | [tests/salesforce/opportunity-kanban_test.md](../tests/salesforce/opportunity-kanban_test.md) | live | draft |
+| 28.3 | Report run and filter | [/salesforce/report-filter](https://my-testing-repo-main.vercel.app/salesforce/report-filter) | [tests/salesforce/report-filter_test.md](../tests/salesforce/report-filter_test.md) | live | draft |
+| 28.4 | Record edit through overlay | [/salesforce/record-edit-overlay](https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay) | [tests/salesforce/record-edit-overlay_test.md](../tests/salesforce/record-edit-overlay_test.md) | live | draft |
+| 28.5 | Flow screen completion | [/salesforce/screen-flow](https://my-testing-repo-main.vercel.app/salesforce/screen-flow) | [tests/salesforce/screen-flow_test.md](../tests/salesforce/screen-flow_test.md) | live | draft |
 
 ## 29. HubSpotty (HubSpot) · CRM
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 29.1 | Form to contact creation | [/hubspot/form-to-contact](https://my-testing-repo-main.vercel.app/hubspot/form-to-contact) | [tests/hubspot/form-to-contact_test.md](../tests/hubspot/form-to-contact_test.md) | day 8 | draft |
-| 29.2 | Deal pipeline drag | [/hubspot/deal-pipeline-drag](https://my-testing-repo-main.vercel.app/hubspot/deal-pipeline-drag) | [tests/hubspot/deal-pipeline-drag_test.md](../tests/hubspot/deal-pipeline-drag_test.md) | day 8 | draft |
-| 29.3 | Email sequence enrollment | [/hubspot/sequence-enrollment](https://my-testing-repo-main.vercel.app/hubspot/sequence-enrollment) | [tests/hubspot/sequence-enrollment_test.md](../tests/hubspot/sequence-enrollment_test.md) | day 8 | draft |
-| 29.4 | Meeting link booking | [/hubspot/meeting-link-booking](https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking) | [tests/hubspot/meeting-link-booking_test.md](../tests/hubspot/meeting-link-booking_test.md) | day 8 | draft |
+| 29.1 | Form to contact creation | [/hubspot/form-to-contact](https://my-testing-repo-main.vercel.app/hubspot/form-to-contact) | [tests/hubspot/form-to-contact_test.md](../tests/hubspot/form-to-contact_test.md) | live | draft |
+| 29.2 | Deal pipeline drag | [/hubspot/deal-pipeline-drag](https://my-testing-repo-main.vercel.app/hubspot/deal-pipeline-drag) | [tests/hubspot/deal-pipeline-drag_test.md](../tests/hubspot/deal-pipeline-drag_test.md) | live | draft |
+| 29.3 | Email sequence enrollment | [/hubspot/sequence-enrollment](https://my-testing-repo-main.vercel.app/hubspot/sequence-enrollment) | [tests/hubspot/sequence-enrollment_test.md](../tests/hubspot/sequence-enrollment_test.md) | live | draft |
+| 29.4 | Meeting link booking | [/hubspot/meeting-link-booking](https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking) | [tests/hubspot/meeting-link-booking_test.md](../tests/hubspot/meeting-link-booking_test.md) | live | draft |
 
 ## 30. Zendeskly (Zendesk) · Support SaaS
 
