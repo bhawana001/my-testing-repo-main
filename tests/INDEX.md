@@ -8,16 +8,16 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 0 | 0 |
+| 209 | 8 | 0 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
-| 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | day 2 | draft |
+| 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | draft |
 | 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | day 3 | draft |
-| 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | day 2 | draft |
+| 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | draft |
 | 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
 
 ## 2. Shopifly (Shopify) · E-commerce
@@ -218,7 +218,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 23.1 | Login with 2FA | [/chase/login-2fa](https://my-testing-repo-main.vercel.app/chase/login-2fa) | [tests/chase/login-2fa_test.md](../tests/chase/login-2fa_test.md) | day 2 | draft |
+| 23.1 | Login with 2FA | [/chase/login-2fa](https://my-testing-repo-main.vercel.app/chase/login-2fa) | [tests/chase/login-2fa_test.md](../tests/chase/login-2fa_test.md) | live | draft |
 | 23.2 | Zelle transfer | [/chase/zelle-transfer](https://my-testing-repo-main.vercel.app/chase/zelle-transfer) | [tests/chase/zelle-transfer_test.md](../tests/chase/zelle-transfer_test.md) | day 5 | draft |
 | 23.3 | Bill pay scheduling | [/chase/bill-pay-scheduling](https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling) | [tests/chase/bill-pay-scheduling_test.md](../tests/chase/bill-pay-scheduling_test.md) | day 5 | draft |
 | 23.4 | Statement download | [/chase/statement-download](https://my-testing-repo-main.vercel.app/chase/statement-download) | [tests/chase/statement-download_test.md](../tests/chase/statement-download_test.md) | day 5 | draft |
@@ -246,7 +246,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 26.1 | Instant quote flow | [/lemonade/instant-quote](https://my-testing-repo-main.vercel.app/lemonade/instant-quote) | [tests/lemonade/instant-quote_test.md](../tests/lemonade/instant-quote_test.md) | day 2 | draft |
+| 26.1 | Instant quote flow | [/lemonade/instant-quote](https://my-testing-repo-main.vercel.app/lemonade/instant-quote) | [tests/lemonade/instant-quote_test.md](../tests/lemonade/instant-quote_test.md) | live | draft |
 | 26.2 | Policy purchase | [/lemonade/policy-purchase](https://my-testing-repo-main.vercel.app/lemonade/policy-purchase) | [tests/lemonade/policy-purchase_test.md](../tests/lemonade/policy-purchase_test.md) | day 8 | draft |
 | 26.3 | Claim filing video flow | [/lemonade/claim-filing](https://my-testing-repo-main.vercel.app/lemonade/claim-filing) | [tests/lemonade/claim-filing_test.md](../tests/lemonade/claim-filing_test.md) | day 8 | draft |
 | 26.4 | Coverage adjustment | [/lemonade/coverage-adjustment](https://my-testing-repo-main.vercel.app/lemonade/coverage-adjustment) | [tests/lemonade/coverage-adjustment_test.md](../tests/lemonade/coverage-adjustment_test.md) | day 8 | draft |
@@ -329,7 +329,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 35.1 | Message send with thread | [/slack/thread-reply](https://my-testing-repo-main.vercel.app/slack/thread-reply) | [tests/slack/thread-reply_test.md](../tests/slack/thread-reply_test.md) | day 2 | draft |
+| 35.1 | Message send with thread | [/slack/thread-reply](https://my-testing-repo-main.vercel.app/slack/thread-reply) | [tests/slack/thread-reply_test.md](../tests/slack/thread-reply_test.md) | live | draft |
 | 35.2 | File upload and preview | [/slack/file-upload-preview](https://my-testing-repo-main.vercel.app/slack/file-upload-preview) | [tests/slack/file-upload-preview_test.md](../tests/slack/file-upload-preview_test.md) | day 10 | draft |
 | 35.3 | Search across channels | [/slack/search-channels](https://my-testing-repo-main.vercel.app/slack/search-channels) | [tests/slack/search-channels_test.md](../tests/slack/search-channels_test.md) | day 10 | draft |
 | 35.4 | Huddle start | [/slack/huddle-start](https://my-testing-repo-main.vercel.app/slack/huddle-start) | [tests/slack/huddle-start_test.md](../tests/slack/huddle-start_test.md) | day 10 | draft |
@@ -367,7 +367,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 39.1 | Grid record CRUD | [/airtable/grid-crud](https://my-testing-repo-main.vercel.app/airtable/grid-crud) | [tests/airtable/grid-crud_test.md](../tests/airtable/grid-crud_test.md) | day 2 | draft |
+| 39.1 | Grid record CRUD | [/airtable/grid-crud](https://my-testing-repo-main.vercel.app/airtable/grid-crud) | [tests/airtable/grid-crud_test.md](../tests/airtable/grid-crud_test.md) | live | draft |
 | 39.2 | Form view submission | [/airtable/form-view-submission](https://my-testing-repo-main.vercel.app/airtable/form-view-submission) | [tests/airtable/form-view-submission_test.md](../tests/airtable/form-view-submission_test.md) | day 11 | draft |
 | 39.3 | Kanban stage drag | [/airtable/kanban-drag](https://my-testing-repo-main.vercel.app/airtable/kanban-drag) | [tests/airtable/kanban-drag_test.md](../tests/airtable/kanban-drag_test.md) | day 11 | draft |
 | 39.4 | Automation run | [/airtable/automation-run](https://my-testing-repo-main.vercel.app/airtable/automation-run) | [tests/airtable/automation-run_test.md](../tests/airtable/automation-run_test.md) | day 11 | draft |
@@ -430,7 +430,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 46.1 | Event booking as invitee | [/calendly/invitee-booking](https://my-testing-repo-main.vercel.app/calendly/invitee-booking) | [tests/calendly/invitee-booking_test.md](../tests/calendly/invitee-booking_test.md) | day 2 | draft |
+| 46.1 | Event booking as invitee | [/calendly/invitee-booking](https://my-testing-repo-main.vercel.app/calendly/invitee-booking) | [tests/calendly/invitee-booking_test.md](../tests/calendly/invitee-booking_test.md) | live | draft |
 | 46.2 | Availability rules respected | [/calendly/availability-rules](https://my-testing-repo-main.vercel.app/calendly/availability-rules) | [tests/calendly/availability-rules_test.md](../tests/calendly/availability-rules_test.md) | day 13 | draft |
 | 46.3 | Reschedule flow | [/calendly/reschedule](https://my-testing-repo-main.vercel.app/calendly/reschedule) | [tests/calendly/reschedule_test.md](../tests/calendly/reschedule_test.md) | day 13 | draft |
 | 46.4 | Payment collection booking | [/calendly/paid-booking](https://my-testing-repo-main.vercel.app/calendly/paid-booking) | [tests/calendly/paid-booking_test.md](../tests/calendly/paid-booking_test.md) | day 13 | draft |
@@ -440,7 +440,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 47.1 | Signup with plan selection | [/netflix/signup-plan](https://my-testing-repo-main.vercel.app/netflix/signup-plan) | [tests/netflix/signup-plan_test.md](../tests/netflix/signup-plan_test.md) | day 13 | draft |
-| 47.2 | Playback start and resume | [/netflix/playback-resume](https://my-testing-repo-main.vercel.app/netflix/playback-resume) | [tests/netflix/playback-resume_test.md](../tests/netflix/playback-resume_test.md) | day 2 | draft |
+| 47.2 | Playback start and resume | [/netflix/playback-resume](https://my-testing-repo-main.vercel.app/netflix/playback-resume) | [tests/netflix/playback-resume_test.md](../tests/netflix/playback-resume_test.md) | live | draft |
 | 47.3 | Profile switch with PIN | [/netflix/profile-pin](https://my-testing-repo-main.vercel.app/netflix/profile-pin) | [tests/netflix/profile-pin_test.md](../tests/netflix/profile-pin_test.md) | day 13 | draft |
 | 47.4 | Download for offline | [/netflix/offline-download](https://my-testing-repo-main.vercel.app/netflix/offline-download) | [tests/netflix/offline-download_test.md](../tests/netflix/offline-download_test.md) | day 13 | draft |
 | 47.5 | Cancel and rejoin | [/netflix/cancel-rejoin](https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin) | [tests/netflix/cancel-rejoin_test.md](../tests/netflix/cancel-rejoin_test.md) | day 13 | draft |

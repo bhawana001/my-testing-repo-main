@@ -3,24 +3,18 @@ mode: testing
 url: https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true
 max_steps: 30
 tags: [amazon, e-commerce, tracker]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amazonia 1.4: Order tracking
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 2). -->
-<!-- Catalog entity: Amazon · Industry: E-commerce · Pattern: Tracker timeline -->
+Catalog objective: open recent orders and check the delivery status of the latest order.
+Key assertion: the status timeline renders with a valid date.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true and verify the text "Use case 1.4" and "Order tracking" are visible at the top of the page.
+## Open recent orders
+Go to https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true and verify the heading "Your Orders" is visible with three order cards, the first one placed on "September 12, 2026" containing "AuraBuds Pro Wireless Earbuds".
 
-## Objective
-Open recent orders and check delivery status of the latest order.
+## Track the latest order
+Click the "Track package" button on the first (latest) order card. Verify the tracking view shows the status badge "Shipped" and the heading "Arriving Tuesday, September 15, 2026".
 
-## Key assertion
-Verify: Status timeline renders with a valid date.
+## Verify the timeline dates
+Verify the timeline lists the steps "Ordered", "Shipped", "Out for delivery" and "Delivered" in that order, that "Ordered" is marked complete, and that the "Shipped" step shows the date "Sunday, September 13, 2026 · 6:40 PM".

@@ -7,20 +7,24 @@ variables:
   demo_email: { value: "demo@evals.dev" }
   demo_password: { value: "Demo123!", secret: true }
   otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Chaise Bank 23.1: Login with 2FA
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 2). -->
-<!-- Catalog entity: Chase · Industry: Banking · Pattern: Auth engine -->
+Catalog objective: log in with an OTP challenge in the test environment.
+Key assertion: the dashboard loads with masked account numbers.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/chase/login-2fa?reset=true and verify the text "Use case 23.1" and "Login with 2FA" are visible at the top of the page.
+## Open the sign-in page
+Go to https://my-testing-repo-main.vercel.app/chase/login-2fa?reset=true and verify the heading "Sign in to Chaise Online" is visible with Email and Password fields.
 
-## Objective
-Log in with OTP challenge in test env.
+## Try a wrong password
+Type {{demo_email}} into the Email field and "wrongpass" into the Password field, click "Continue", and verify an error message containing "Incorrect email or password" is shown.
 
-## Key assertion
-Verify: Dashboard loads with masked accounts.
+## Sign in with the correct password
+Clear the Password field, type {{demo_password}}, click "Continue", and verify the heading "Verify it's you" with a "Verification code" field is shown.
+
+## Enter the one-time code
+Type {{otp}} into the Verification code field and click "Verify and continue".
+
+## Verify the dashboard
+Verify the heading "Welcome back, Demo" is visible, the text "Signed in as Demo User" is shown, and three account cards are listed with masked numbers "•••• 4821", "•••• 9930" and "•••• 1177" (no full account numbers are displayed).

@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/airtable/grid-crud?reset=true
-max_steps: 30
+max_steps: 40
 tags: [airtable, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Airtably 39.1: Grid record CRUD
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 2). -->
-<!-- Catalog entity: Airtable · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: create, edit, and delete a record in grid view.
+Key assertion: changes persist across reload.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/airtable/grid-crud?reset=true and verify the text "Use case 39.1" and "Grid record CRUD" are visible at the top of the page.
+## Open the grid
+Go to https://my-testing-repo-main.vercel.app/airtable/grid-crud?reset=true and verify the heading "Launch tasks" is visible and the grid lists 3 records: "Write launch blog post", "QA the checkout flow" and "Design onboarding email", with the count "3 of 3".
 
-## Objective
-Create, edit, and delete a record in grid view.
+## Create a record
+Click "+ Add record", type "Ship pilot flows" into "Name", select "In progress" for "Status", and click "Create". Verify a new row "rec-4" with name "Ship pilot flows" and status "In progress" appears and the count reads "4 of 4".
 
-## Key assertion
-Verify: Changes persist across reload.
+## Edit the record
+Click the "Edit" button on the "Ship pilot flows" row, change "Name" to "Ship pilot flows (edited)", and click "Save changes". Verify the row now reads "Ship pilot flows (edited)".
+
+## Delete a record
+Click the "Delete" button on the "Design onboarding email" row. Verify that row is gone and the count reads "3 of 3".
+
+## Verify persistence after reload
+Reload the page (without the reset parameter). Verify the grid still shows "Ship pilot flows (edited)" and does not show "Design onboarding email", with the count "3 of 3".
