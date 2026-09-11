@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen:registry": "python3 scripts/gen-registry.py",
+    "gen:tests": "node scripts/gen-tests.mjs",
+    "gen:plan": "node scripts/gen-plan.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.1",

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import "./evals.css";
+import "./entity-evals-home.css";
+import EntityEvals from "./components/EntityEvals";
 
 const GITHUB = "https://github.com/bhawana001/my-testing-repo-main";
 
@@ -58,6 +60,8 @@ export default function RealEvals() {
             </Link>
           ))}
         </div>
+
+        <EntityEvals />
 
         <div className="e-about">
           <h3>What is this?</h3>
