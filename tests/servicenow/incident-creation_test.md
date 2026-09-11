@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/servicenow/incident-creation?reset=true
-max_steps: 30
+max_steps: 45
 tags: [servicenow, itsm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # ServiceNowly 34.1: Incident creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: ServiceNow · Industry: ITSM · Pattern: CRUD table / board -->
+Catalog objective: create an incident with category and priority.
+Key assertion: an incident number is generated and assigned.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/servicenow/incident-creation?reset=true and verify the text "Use case 34.1" and "Incident creation" are visible at the top of the page.
+## Open a new incident
+Go to https://my-testing-repo-main.vercel.app/servicenow/incident-creation?reset=true, click "New", then click "Submit" with empty fields and verify "Category and Short description are mandatory."
 
-## Objective
-Create an incident with category and priority.
+## Fill the incident
+Select "Software" for Category, "1 - High" for Impact and "2 - Medium" for Urgency, and verify "Calculated priority" reads "2 - High".
 
-## Key assertion
-Verify: Incident number generated and assigned.
+## Submit
+Type "Email client crashes on launch" into Short description, click "Submit", and verify "Incident INC0010042 created and assigned to Application Support."
+
+## Verify the list
+Verify the incident list's first row reads "INC0010042", "Email client crashes on launch", "Software", "2 - High", "Application Support", state "New".

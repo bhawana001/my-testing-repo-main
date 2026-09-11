@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zoom/meeting-registration?reset=true
-max_steps: 30
+max_steps: 45
 tags: [zoom, work-collab, booking]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zoomly 37.1: Meeting schedule with registration
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: Zoom · Industry: Work collab · Pattern: Booking calendar -->
+Catalog objective: schedule a meeting requiring registration.
+Key assertion: a registration link is generated and the form works.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zoom/meeting-registration?reset=true and verify the text "Use case 37.1" and "Meeting schedule with registration" are visible at the top of the page.
+## Schedule
+Go to https://my-testing-repo-main.vercel.app/zoom/meeting-registration?reset=true, type "Product launch webinar" into Topic, keep "Registration required" checked, click "Save", and verify Registration "Required" and a registration link "https://zoomly.test/meeting/register/8512204".
 
-## Objective
-Schedule a meeting requiring registration.
+## Open the registration link
+Click "Open registration link" and verify a registration form for "Product launch webinar".
 
-## Key assertion
-Verify: Registration link generated and form works.
+## Incomplete registration
+Type "Sam" into First name, click "Register", and verify "First name, last name and a valid email are required."
+
+## Complete registration
+Type "Lee" into Last name and "sam@acme.test" into Email, click "Register", and verify "Registration approved" with "You're registered, Sam!" and a join link.
+
+## Verify on the host side
+Click "Back to meeting (host)" and verify "Registrants" reads 1.

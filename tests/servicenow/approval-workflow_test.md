@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/servicenow/approval-workflow?reset=true
-max_steps: 30
+max_steps: 45
 tags: [servicenow, itsm, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # ServiceNowly 34.2: Approval workflow
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: ServiceNow · Industry: ITSM · Pattern: Form wizard -->
+Catalog objective: submit a change request and approve it as the approver.
+Key assertion: the state moves to approved.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/servicenow/approval-workflow?reset=true and verify the text "Use case 34.2" and "Approval workflow" are visible at the top of the page.
+## Submit a change
+Go to https://my-testing-repo-main.vercel.app/servicenow/approval-workflow?reset=true, type "Upgrade database to v16" into Short description and "Security patches and performance." into Justification, click "Request approval", and verify "CHG0030017" with Approval "Requested" and State "Assess".
 
-## Objective
-Submit a change request and approve as approver.
+## Switch to the approver
+Click "As approver (Priya)" and verify "Approve" and "Reject" buttons appear.
 
-## Key assertion
-Verify: State moves to approved.
+## Approve
+Click "Approve" and verify Approval reads "Approved", State reads "Scheduled", and the approval history's top entry reads "Approved by Priya Nair".

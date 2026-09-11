@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/slack/workflow-form?reset=true
-max_steps: 30
+max_steps: 45
 tags: [slack, work-collab, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Slacky 35.5: Workflow form submission
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: Slack · Industry: Work collab · Pattern: Form wizard -->
+Catalog objective: trigger a workflow form and submit it.
+Key assertion: a confirmation message is posted.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/slack/workflow-form?reset=true and verify the text "Use case 35.5" and "Workflow form submission" are visible at the top of the page.
+## Open the workflow
+Go to https://my-testing-repo-main.vercel.app/slack/workflow-form?reset=true, click "⚡ Request time off", and verify a "Request time off" form with Start date, End date, Type and Reason.
 
-## Objective
-Trigger a workflow form and submit.
+## Invalid dates
+Set Start date to 2026-09-23 and End date to 2026-09-21, click "Submit", and verify "End date must be on or after the start date."
 
-## Key assertion
-Verify: Confirmation message posted.
+## Submit
+Change End date to 2026-09-25, type "Family trip" into Reason, click "Submit", and verify the form closes.
+
+## Verify the posted confirmation
+Verify the newest message in #general is from "Workflow Bot" and reads "✅ Demo User requested time off: 2026-09-23 to 2026-09-25 (Vacation) · “Family trip”. Manager: Priya Nair has been notified."

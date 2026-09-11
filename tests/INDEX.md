@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 127 | 10 |
+| 209 | 144 | 11 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -35,8 +35,8 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 3.1 | Search with filters | [/flipkart/search-with-filters](https://my-testing-repo-main.vercel.app/flipkart/search-with-filters) | [tests/flipkart/search-with-filters_test.md](../tests/flipkart/search-with-filters_test.md) | day 14 | draft |
-| 3.2 | Cart with exchange offer | [/flipkart/cart-exchange-offer](https://my-testing-repo-main.vercel.app/flipkart/cart-exchange-offer) | [tests/flipkart/cart-exchange-offer_test.md](../tests/flipkart/cart-exchange-offer_test.md) | live | draft |
-| 3.3 | COD checkout | [/flipkart/cod-checkout](https://my-testing-repo-main.vercel.app/flipkart/cod-checkout) | [tests/flipkart/cod-checkout_test.md](../tests/flipkart/cod-checkout_test.md) | live | draft |
+| 3.2 | Cart with exchange offer | [/flipkart/cart-exchange-offer](https://my-testing-repo-main.vercel.app/flipkart/cart-exchange-offer) | [tests/flipkart/cart-exchange-offer_test.md](../tests/flipkart/cart-exchange-offer_test.md) | live | verified |
+| 3.3 | COD checkout | [/flipkart/cod-checkout](https://my-testing-repo-main.vercel.app/flipkart/cod-checkout) | [tests/flipkart/cod-checkout_test.md](../tests/flipkart/cod-checkout_test.md) | live | failed |
 | 3.4 | SuperCoins balance | [/flipkart/supercoins-balance](https://my-testing-repo-main.vercel.app/flipkart/supercoins-balance) | [tests/flipkart/supercoins-balance_test.md](../tests/flipkart/supercoins-balance_test.md) | day 14 | draft |
 
 ## 4. Walmartly (Walmart) · E-commerce
@@ -64,7 +64,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | live | draft |
 | 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | draft |
 | 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | live | draft |
-| 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | day 10 | draft |
+| 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | live | draft |
 
 ## 7. Instakart (Instacart) · E-commerce
 
@@ -320,38 +320,38 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 34.1 | Incident creation | [/servicenow/incident-creation](https://my-testing-repo-main.vercel.app/servicenow/incident-creation) | [tests/servicenow/incident-creation_test.md](../tests/servicenow/incident-creation_test.md) | day 10 | draft |
-| 34.2 | Approval workflow | [/servicenow/approval-workflow](https://my-testing-repo-main.vercel.app/servicenow/approval-workflow) | [tests/servicenow/approval-workflow_test.md](../tests/servicenow/approval-workflow_test.md) | day 10 | draft |
-| 34.3 | Service catalog order | [/servicenow/catalog-order](https://my-testing-repo-main.vercel.app/servicenow/catalog-order) | [tests/servicenow/catalog-order_test.md](../tests/servicenow/catalog-order_test.md) | day 10 | draft |
-| 34.4 | Knowledge article search | [/servicenow/knowledge-search](https://my-testing-repo-main.vercel.app/servicenow/knowledge-search) | [tests/servicenow/knowledge-search_test.md](../tests/servicenow/knowledge-search_test.md) | day 10 | draft |
+| 34.1 | Incident creation | [/servicenow/incident-creation](https://my-testing-repo-main.vercel.app/servicenow/incident-creation) | [tests/servicenow/incident-creation_test.md](../tests/servicenow/incident-creation_test.md) | live | draft |
+| 34.2 | Approval workflow | [/servicenow/approval-workflow](https://my-testing-repo-main.vercel.app/servicenow/approval-workflow) | [tests/servicenow/approval-workflow_test.md](../tests/servicenow/approval-workflow_test.md) | live | draft |
+| 34.3 | Service catalog order | [/servicenow/catalog-order](https://my-testing-repo-main.vercel.app/servicenow/catalog-order) | [tests/servicenow/catalog-order_test.md](../tests/servicenow/catalog-order_test.md) | live | draft |
+| 34.4 | Knowledge article search | [/servicenow/knowledge-search](https://my-testing-repo-main.vercel.app/servicenow/knowledge-search) | [tests/servicenow/knowledge-search_test.md](../tests/servicenow/knowledge-search_test.md) | live | draft |
 
 ## 35. Slacky (Slack) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 35.1 | Message send with thread | [/slack/thread-reply](https://my-testing-repo-main.vercel.app/slack/thread-reply) | [tests/slack/thread-reply_test.md](../tests/slack/thread-reply_test.md) | live | draft |
-| 35.2 | File upload and preview | [/slack/file-upload-preview](https://my-testing-repo-main.vercel.app/slack/file-upload-preview) | [tests/slack/file-upload-preview_test.md](../tests/slack/file-upload-preview_test.md) | day 10 | draft |
-| 35.3 | Search across channels | [/slack/search-channels](https://my-testing-repo-main.vercel.app/slack/search-channels) | [tests/slack/search-channels_test.md](../tests/slack/search-channels_test.md) | day 10 | draft |
-| 35.4 | Huddle start | [/slack/huddle-start](https://my-testing-repo-main.vercel.app/slack/huddle-start) | [tests/slack/huddle-start_test.md](../tests/slack/huddle-start_test.md) | day 10 | draft |
-| 35.5 | Workflow form submission | [/slack/workflow-form](https://my-testing-repo-main.vercel.app/slack/workflow-form) | [tests/slack/workflow-form_test.md](../tests/slack/workflow-form_test.md) | day 10 | draft |
+| 35.2 | File upload and preview | [/slack/file-upload-preview](https://my-testing-repo-main.vercel.app/slack/file-upload-preview) | [tests/slack/file-upload-preview_test.md](../tests/slack/file-upload-preview_test.md) | live | draft |
+| 35.3 | Search across channels | [/slack/search-channels](https://my-testing-repo-main.vercel.app/slack/search-channels) | [tests/slack/search-channels_test.md](../tests/slack/search-channels_test.md) | live | draft |
+| 35.4 | Huddle start | [/slack/huddle-start](https://my-testing-repo-main.vercel.app/slack/huddle-start) | [tests/slack/huddle-start_test.md](../tests/slack/huddle-start_test.md) | live | draft |
+| 35.5 | Workflow form submission | [/slack/workflow-form](https://my-testing-repo-main.vercel.app/slack/workflow-form) | [tests/slack/workflow-form_test.md](../tests/slack/workflow-form_test.md) | live | draft |
 
 ## 36. Teamz (Microsoft Teams) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 36.1 | Meeting join from calendar | [/microsoft-teams/meeting-join](https://my-testing-repo-main.vercel.app/microsoft-teams/meeting-join) | [tests/microsoft-teams/meeting-join_test.md](../tests/microsoft-teams/meeting-join_test.md) | day 10 | draft |
-| 36.2 | Channel post with mention | [/microsoft-teams/mention-notification](https://my-testing-repo-main.vercel.app/microsoft-teams/mention-notification) | [tests/microsoft-teams/mention-notification_test.md](../tests/microsoft-teams/mention-notification_test.md) | day 10 | draft |
-| 36.3 | File coauthor open | [/microsoft-teams/file-coauthor](https://my-testing-repo-main.vercel.app/microsoft-teams/file-coauthor) | [tests/microsoft-teams/file-coauthor_test.md](../tests/microsoft-teams/file-coauthor_test.md) | day 10 | draft |
-| 36.4 | Tab app load | [/microsoft-teams/tab-app-load](https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load) | [tests/microsoft-teams/tab-app-load_test.md](../tests/microsoft-teams/tab-app-load_test.md) | day 10 | draft |
+| 36.1 | Meeting join from calendar | [/microsoft-teams/meeting-join](https://my-testing-repo-main.vercel.app/microsoft-teams/meeting-join) | [tests/microsoft-teams/meeting-join_test.md](../tests/microsoft-teams/meeting-join_test.md) | live | draft |
+| 36.2 | Channel post with mention | [/microsoft-teams/mention-notification](https://my-testing-repo-main.vercel.app/microsoft-teams/mention-notification) | [tests/microsoft-teams/mention-notification_test.md](../tests/microsoft-teams/mention-notification_test.md) | live | draft |
+| 36.3 | File coauthor open | [/microsoft-teams/file-coauthor](https://my-testing-repo-main.vercel.app/microsoft-teams/file-coauthor) | [tests/microsoft-teams/file-coauthor_test.md](../tests/microsoft-teams/file-coauthor_test.md) | live | draft |
+| 36.4 | Tab app load | [/microsoft-teams/tab-app-load](https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load) | [tests/microsoft-teams/tab-app-load_test.md](../tests/microsoft-teams/tab-app-load_test.md) | live | draft |
 
 ## 37. Zoomly (Zoom) · Work collab
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 37.1 | Meeting schedule with registration | [/zoom/meeting-registration](https://my-testing-repo-main.vercel.app/zoom/meeting-registration) | [tests/zoom/meeting-registration_test.md](../tests/zoom/meeting-registration_test.md) | day 10 | draft |
-| 37.2 | Join flow with waiting room | [/zoom/waiting-room](https://my-testing-repo-main.vercel.app/zoom/waiting-room) | [tests/zoom/waiting-room_test.md](../tests/zoom/waiting-room_test.md) | day 10 | draft |
-| 37.3 | Screen share | [/zoom/screen-share](https://my-testing-repo-main.vercel.app/zoom/screen-share) | [tests/zoom/screen-share_test.md](../tests/zoom/screen-share_test.md) | day 10 | draft |
-| 37.4 | Recording to cloud | [/zoom/cloud-recording](https://my-testing-repo-main.vercel.app/zoom/cloud-recording) | [tests/zoom/cloud-recording_test.md](../tests/zoom/cloud-recording_test.md) | day 10 | draft |
+| 37.1 | Meeting schedule with registration | [/zoom/meeting-registration](https://my-testing-repo-main.vercel.app/zoom/meeting-registration) | [tests/zoom/meeting-registration_test.md](../tests/zoom/meeting-registration_test.md) | live | draft |
+| 37.2 | Join flow with waiting room | [/zoom/waiting-room](https://my-testing-repo-main.vercel.app/zoom/waiting-room) | [tests/zoom/waiting-room_test.md](../tests/zoom/waiting-room_test.md) | live | draft |
+| 37.3 | Screen share | [/zoom/screen-share](https://my-testing-repo-main.vercel.app/zoom/screen-share) | [tests/zoom/screen-share_test.md](../tests/zoom/screen-share_test.md) | live | draft |
+| 37.4 | Recording to cloud | [/zoom/cloud-recording](https://my-testing-repo-main.vercel.app/zoom/cloud-recording) | [tests/zoom/cloud-recording_test.md](../tests/zoom/cloud-recording_test.md) | live | draft |
 
 ## 38. Notionly (Notion) · Work collab
 

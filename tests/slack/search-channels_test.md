@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/slack/search-channels?reset=true
-max_steps: 30
+max_steps: 45
 tags: [slack, work-collab, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Slacky 35.3: Search across channels
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: Slack · Industry: Work collab · Pattern: CRUD table / board -->
+Catalog objective: search a keyword and filter to a channel.
+Key assertion: results are scoped to the channel with highlights.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/slack/search-channels?reset=true and verify the text "Use case 35.3" and "Search across channels" are visible at the top of the page.
+## Search everywhere
+Go to https://my-testing-repo-main.vercel.app/slack/search-channels?reset=true, type "deploy" into "Search Acme Inc", click "Search", and verify "4 results for “deploy”" across #general, #release-train and #design.
 
-## Objective
-Search a keyword and filter to a channel.
+## Filter to a channel
+Select "In: #release-train" and verify "2 results for “deploy” in #release-train".
 
-## Key assertion
-Verify: Results scoped to channel with highlights.
+## Verify scope and highlights
+Verify both results are labelled "#release-train" ("Deploy 2026.09.11 is green on staging." and "Kicking off the production deploy now.") and the word "deploy" is highlighted in each.

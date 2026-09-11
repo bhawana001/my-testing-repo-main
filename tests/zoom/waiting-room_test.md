@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zoom/waiting-room?reset=true
-max_steps: 30
+max_steps: 45
 tags: [zoom, work-collab, media]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zoomly 37.2: Join flow with waiting room
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: Zoom · Industry: Work collab · Pattern: Media player -->
+Catalog objective: join as a guest and wait, then admit from the host side.
+Key assertion: the guest enters only after admission.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zoom/waiting-room?reset=true and verify the text "Use case 37.2" and "Join flow with waiting room" are visible at the top of the page.
+## Guest joins
+Go to https://my-testing-repo-main.vercel.app/zoom/waiting-room?reset=true, keep "Sam Lee" as the guest name, click "Join meeting" in the Guest view, and verify "Please wait, the meeting host will let you in soon."
 
-## Objective
-Join as guest and wait, admit from host side.
+## Guest is held
+Verify the guest view does not show "You're in the meeting", the Host view shows "Waiting room (1)" with "Sam Lee" and an "Admit" button, and "Participants: 1".
 
-## Key assertion
-Verify: Guest enters after admission only.
+## Admit
+Click "Admit" in the Host view and verify the Guest view shows "You're in the meeting" and the Host view shows "Participants: 2".

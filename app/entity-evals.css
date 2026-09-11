@@ -200,6 +200,7 @@
 .ee-kv { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 14px; }
 .ee-kv--total { border-top: 1px solid var(--ee-border); margin-top: 6px; padding-top: 12px; font-weight: 800; font-size: 16px; }
 .ee-kv__k { color: var(--ee-muted); }
+.ee-kv__v { min-width: 0; overflow-wrap: anywhere; text-align: right; }
 .ee-kv--discount .ee-kv__v { color: var(--ee-ok); font-weight: 700; }
 
 /* Stepper */

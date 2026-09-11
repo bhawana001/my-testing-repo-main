@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load?reset=true
-max_steps: 30
+max_steps: 45
 tags: [microsoft-teams, work-collab, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Teamz 36.4: Tab app load
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: Microsoft Teams · Industry: Work collab · Pattern: Custom -->
+Catalog objective: open a custom tab app in a channel.
+Key assertion: the app loads inside the tab without error.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load?reset=true and verify the text "Use case 36.4" and "Tab app load" are visible at the top of the page.
+## Open the channel
+Go to https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load?reset=true and verify tabs "Posts", "Files" and "Sprint Board" with Posts selected.
 
-## Objective
-Open a custom tab app in a channel.
+## Open the app tab
+Click "Sprint Board" and wait until the status badge changes from "Loading app…" to "App loaded · v2.3.1".
 
-## Key assertion
-Verify: App loads inside tab without error.
+## Verify the app content
+Verify the tab shows "Sprint 38 · Sep 14 – Sep 25" with To do, In progress and Done columns, and the message "Connected to Teamz as Demo User. No errors."

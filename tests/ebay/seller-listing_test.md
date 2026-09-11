@@ -1,26 +1,29 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true
-max_steps: 30
+max_steps: 45
 tags: [ebay, e-commerce, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # eBidz 6.4: Seller listing creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 10). -->
-<!-- Catalog entity: eBay · Industry: E-commerce · Pattern: Form wizard -->
+Catalog objective: create a listing with photos, condition and price, and publish it.
+Key assertion: the listing is live and searchable by title.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true and verify the text "Use case 6.4" and "Seller listing creation" are visible at the top of the page.
+## Photos step validation
+Go to https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true, click "Continue" on the "Add photos" step without adding photos, and verify "Add at least 2 photos."
 
-## Objective
-Create a listing with photos, condition, and price, publish it.
+## Add photos
+Click "+ front.jpg" and "+ back.jpg", verify both photos are listed, then click "Continue" and verify the "Item details" step.
 
-## Key assertion
-Verify: Listing live and searchable by title.
+## Details
+Type "Mechanical Keyboard · Brown switches" into Title, choose "Used", type "Lightly used, all keys work." into Description, and click "Continue".
+
+## Pricing
+Type "75" into "Buy It Now price (USD)", select "Free standard shipping", click "Continue", and verify the review step lists the title and "75".
+
+## Publish
+Click "List it" and verify "Your listing is live" with the title "Mechanical Keyboard · Brown switches" and price "$75.00".
+
+## Search for it
+Type "mechanical keyboard" into "Search for anything", click "Search", and verify "1 result for “mechanical keyboard”" showing "Mechanical Keyboard · Brown switches · Used" at "$75.00".
