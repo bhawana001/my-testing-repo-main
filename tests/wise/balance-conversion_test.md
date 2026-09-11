@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/wise/balance-conversion?reset=true
-max_steps: 30
+max_steps: 40
 tags: [wise, payments-infra, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Wyse 15.4: Multi-currency balance conversion
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: Wise · Industry: Payments infra · Pattern: Custom -->
+Catalog objective: convert between two balances at the shown rate.
+Key assertion: balances update by the exact converted amounts.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/wise/balance-conversion?reset=true and verify the text "Use case 15.4" and "Multi-currency balance conversion" are visible at the top of the page.
+## Open balances
+Go to https://my-testing-repo-main.vercel.app/wise/balance-conversion?reset=true and verify the balance cards show "USD balance" $1,200.00, "EUR balance" €300.00 and "GBP balance" £150.00, with the convert form prefilled with Amount 100, From USD, To EUR, "Rate" reading "1 USD = 0.92 EUR" and "You get" reading "€92.00".
 
-## Objective
-Convert between two balances at shown rate.
+## Convert
+Click "Convert" and verify the message "Converted $100.00 to €92.00 at 1 USD = 0.92 EUR. Balances updated." appears.
 
-## Key assertion
-Verify: Balances update by exact converted amounts.
+## Verify exact balances
+Verify the "USD balance" card now reads "$1,100.00" and the "EUR balance" card reads "€392.00", while "GBP balance" is unchanged at "£150.00".

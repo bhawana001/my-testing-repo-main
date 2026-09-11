@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer?reset=true
-max_steps: 30
+max_steps: 40
 tags: [hdfc-bank, banking, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # HDFB Bank 24.2: IMPS transfer
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: HDFC Bank · Industry: Banking · Pattern: Form wizard -->
+Catalog objective: add a beneficiary and send IMPS after a cooling-period simulation.
+Key assertion: transfer success with a reference id.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer?reset=true and verify the text "Use case 24.2" and "IMPS transfer" are visible at the top of the page.
+## Open fund transfer
+Go to https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer?reset=true and verify the "Savings Account" balance reads "₹1,84,250.40" and the Beneficiaries list shows "Meera Iyer" as "Active".
 
-## Objective
-Add a beneficiary and send IMPS after cooling period simulation.
+## Add a beneficiary
+Type "Karan Shah" into Beneficiary name, "998877665544" into Account number and "HDFC0009988" into IFSC, click "Add beneficiary", and verify "Karan Shah" appears in the list with the badge "Cooling period · 30 min".
 
-## Key assertion
-Verify: Transfer success with reference id.
+## Attempt IMPS during cooling
+Select "Karan Shah · 5544 (cooling)" in "To beneficiary", type "2500" into Amount (INR), click "Continue", and verify the error "This beneficiary is in the 30-minute cooling period. IMPS is not allowed yet." is shown.
+
+## Simulate the cooling period and send
+Click "Simulate 30 min elapsed" next to Karan Shah, verify his badge reads "Active", then click "Continue", type "123456" into the OTP field, click "Confirm transfer", and verify the message "Transfer successful" appears.
+
+## Verify the reference and balance
+Verify a "Reference ID" starting with "IMPS" is shown and the Savings Account balance now reads "₹1,81,750.40".

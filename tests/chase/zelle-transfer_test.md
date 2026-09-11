@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/chase/zelle-transfer?reset=true
-max_steps: 30
+max_steps: 40
 tags: [chase, banking, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
-# Chaise Bank 23.2: Zelle transfer
+# Chaise Bank 23.2: Zelly transfer
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: Chase · Industry: Banking · Pattern: Form wizard -->
+Catalog objective: send a Zelly payment to a saved contact.
+Key assertion: confirmation with a reference number.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/chase/zelle-transfer?reset=true and verify the text "Use case 23.2" and "Zelle transfer" are visible at the top of the page.
+## Open Zelly
+Go to https://my-testing-repo-main.vercel.app/chase/zelle-transfer?reset=true and verify the "Total Checking" card shows "$4,210.55" and the wizard step "Send money with Zelly" lists the contacts "Priya Nair" and "Tom Alvarez".
 
-## Objective
-Send a Zelly payment to saved contact.
+## Pick the recipient and amount
+Choose "Priya Nair", click "Continue", type "45" into Amount and "Dinner" into Memo, click "Continue", and verify the review step lists "Priya Nair", "45" and "Dinner".
 
-## Key assertion
-Verify: Confirmation with reference number.
+## Send
+Click "Send money" and verify the confirmation "You sent $45.00 to Priya Nair" with the badge "Sent".
+
+## Verify the reference and balance
+Verify a "Reference number" starting with "ZL-" is shown and the "Total Checking" balance now reads "$4,165.55".

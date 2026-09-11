@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/wise/transfer-quote?reset=true
-max_steps: 30
+max_steps: 40
 tags: [wise, payments-infra, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Wyse 15.1: International transfer quote
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: Wise · Industry: Payments infra · Pattern: Form wizard -->
+Catalog objective: create a USD to INR transfer quote and verify the fee breakdown.
+Key assertion: rate, fee and arrival estimate are displayed.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/wise/transfer-quote?reset=true and verify the text "Use case 15.1" and "International transfer quote" are visible at the top of the page.
+## Open the send page
+Go to https://my-testing-repo-main.vercel.app/wise/transfer-quote?reset=true and verify the "Send money" page shows "You send" prefilled with 1000, From "USD", To "INR" and an empty fee breakdown.
 
-## Objective
-Create a USD to INR transfer quote and verify fee breakdown.
+## Get a quote
+Click "Get quote" and verify the "Fee breakdown" card shows "You send" as "$1,000.00".
 
-## Key assertion
-Verify: Rate, fee, and arrival estimate displayed.
+## Verify rate, fee and arrival
+Verify the breakdown lists "Wyse fee (1.20 + 0.55%)" as "−$6.70", "Guaranteed rate (24h)" as "1 USD = 83.20 INR", "Recipient gets" as "₹82,642.56", and a green badge reading "Should arrive Tuesday, September 15 by 6:00 PM IST".

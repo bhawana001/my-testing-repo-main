@@ -1,0 +1,18 @@
+{
+  "test_id": "74b62b57-bd51-4a62-8292-1d63021d2b06",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "instant-quote",
+  "commit_id": "3ad4e2f6-de49-4d68-9375-b4d83c68e118",
+  "testcase_id": "01M283H0XV7RQC18DMTGQQ272C",
+  "executions": [
+    {
+      "execution_id": "7516c16b-2202-4463-9604-cf4753210c39",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T11:32:08.979Z"
+    }
+  ]
+}

@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/hdfc-bank/card-statement?reset=true
-max_steps: 30
+max_steps: 40
 tags: [hdfc-bank, banking, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # HDFB Bank 24.4: Credit card statement view
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: HDFC Bank · Industry: Banking · Pattern: CRUD table / board -->
+Catalog objective: open the card statement and verify the due date and minimum due.
+Key assertion: figures render and match the summary.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/hdfc-bank/card-statement?reset=true and verify the text "Use case 24.4" and "Credit card statement view" are visible at the top of the page.
+## Open the statement
+Go to https://my-testing-repo-main.vercel.app/hdfc-bank/card-statement?reset=true and verify the page "Credit card statement" for "Regalia Credit Card •••• 5520" shows a Transactions table with six rows including "INDIGO AIRWAYS" for "₹12,450.00" and a credit "PAYMENT RECEIVED - THANK YOU" of "₹15,000.00".
 
-## Objective
-Open card statement and verify due date and minimum due.
+## Verify the totals match
+Verify the table footer "Total amount due" reads "₹8,212.25" and the Summary card's "Total amount due" also reads "₹8,212.25".
 
-## Key assertion
-Verify: Figures render and match summary.
+## Verify due date and minimum due
+Verify the Summary shows "Payment due date" as "21 Sep 2026" and "Minimum amount due (5%)" as "₹410.61".

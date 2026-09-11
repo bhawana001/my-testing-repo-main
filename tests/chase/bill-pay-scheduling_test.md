@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling?reset=true
-max_steps: 30
+max_steps: 40
 tags: [chase, banking, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Chaise Bank 23.3: Bill pay scheduling
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: Chase · Industry: Banking · Pattern: Form wizard -->
+Catalog objective: schedule a future-dated bill payment.
+Key assertion: the payment is listed as scheduled with its date.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling?reset=true and verify the text "Use case 23.3" and "Bill pay scheduling" are visible at the top of the page.
+## Open bill pay
+Go to https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling?reset=true and verify the "Schedule a bill payment" form and a "Scheduled payments" table containing "Bay Internet" for "$59.99" on "2026-09-20".
 
-## Objective
-Schedule a future dated bill payment.
+## Try a past date
+Select "City Power & Light" as Payee, type "120.40" into Amount, set "Deliver by" to 2026-09-10, click "Schedule payment", and verify the error "Choose a future date (after September 14, 2026)." is shown.
 
-## Key assertion
-Verify: Payment listed as scheduled with date.
+## Schedule with a future date
+Set "Deliver by" to 2026-09-28, click "Schedule payment", and verify the message "Payment of $120.40 to City Power & Light scheduled for 2026-09-28." appears.
+
+## Verify the list
+Verify the "Scheduled payments" table now has a row "City Power & Light" with amount "$120.40", deliver-by date "2026-09-28" and status "Scheduled".

@@ -86,6 +86,9 @@
 .ee-split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
 .ee-split--sidebar-left { grid-template-columns: 260px minmax(0, 1fr); }
 .ee-split--even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.ee-split > *, .ee-grid > *, .ee-stack > * { min-width: 0; }
+.ee-card { min-width: 0; max-width: 100%; }
+.ee-table-wrap { max-width: 100%; }
 .ee-muted { color: var(--ee-muted); }
 .ee-small { font-size: 13px; }
 .ee-tiny { font-size: 12px; }

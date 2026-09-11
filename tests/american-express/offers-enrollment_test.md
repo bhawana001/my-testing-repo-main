@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/american-express/offers-enrollment?reset=true
-max_steps: 30
+max_steps: 40
 tags: [american-express, banking, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amerix 25.4: Offers enrollment
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: American Express · Industry: Banking · Pattern: CRUD table / board -->
+Catalog objective: add a merchant offer to the card.
+Key assertion: the offer shows as added.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/american-express/offers-enrollment?reset=true and verify the text "Use case 25.4" and "Offers enrollment" are visible at the top of the page.
+## Open offers
+Go to https://my-testing-repo-main.vercel.app/american-express/offers-enrollment?reset=true and verify four offers are listed including "Trailhead Outfitters" ("Get 10% back on purchases, up to $30") with an "Add to Card" button, and the text "0 offers added to Card".
 
-## Objective
-Add a merchant offer to card.
+## Add an offer
+Click "Add to Card" on the "Trailhead Outfitters" offer and verify that offer now shows "✓ Added to Card" and the text reads "1 offer added to Card".
 
-## Key assertion
-Verify: Offer shows as added.
+## Verify it persists
+Reload the page without the reset parameter and verify "Trailhead Outfitters" still shows "✓ Added to Card".

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/american-express/payment-scheduling?reset=true
-max_steps: 30
+max_steps: 40
 tags: [american-express, banking, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amerix 25.2: Card payment scheduling
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: American Express · Industry: Banking · Pattern: Form wizard -->
+Catalog objective: schedule a payment for the statement balance.
+Key assertion: a scheduled payment with the correct amount.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/american-express/payment-scheduling?reset=true and verify the text "Use case 25.2" and "Card payment scheduling" are visible at the top of the page.
+## Open payments
+Go to https://my-testing-repo-main.vercel.app/american-express/payment-scheduling?reset=true and verify the "Make a payment" page shows "Statement balance" $1,284.60 selected, "Minimum payment due" $40.00, and an empty "Scheduled payments" table.
 
-## Objective
-Schedule a payment for statement balance.
+## Try a date after the due date
+Set "Payment date" to 2026-09-30, click "Schedule payment of $1,284.60", and verify the error about choosing a date between September 15 and September 25, 2026 is shown.
 
-## Key assertion
-Verify: Scheduled payment with correct amount.
+## Schedule for a valid date
+Set "Payment date" to 2026-09-22, click "Schedule payment of $1,284.60", and verify the message "Payment of $1,284.60 scheduled for 2026-09-22." appears.
+
+## Verify the scheduled list
+Verify the "Scheduled payments" table has a row with amount "$1,284.60", date "2026-09-22" and status "Scheduled".

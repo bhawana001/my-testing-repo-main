@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 42 | 0 |
+| 209 | 59 | 0 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -144,10 +144,10 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 15.1 | International transfer quote | [/wise/transfer-quote](https://my-testing-repo-main.vercel.app/wise/transfer-quote) | [tests/wise/transfer-quote_test.md](../tests/wise/transfer-quote_test.md) | day 5 | draft |
-| 15.2 | Recipient add and verify | [/wise/add-recipient](https://my-testing-repo-main.vercel.app/wise/add-recipient) | [tests/wise/add-recipient_test.md](../tests/wise/add-recipient_test.md) | day 5 | draft |
-| 15.3 | Transfer status tracking | [/wise/transfer-tracking](https://my-testing-repo-main.vercel.app/wise/transfer-tracking) | [tests/wise/transfer-tracking_test.md](../tests/wise/transfer-tracking_test.md) | day 5 | draft |
-| 15.4 | Multi-currency balance conversion | [/wise/balance-conversion](https://my-testing-repo-main.vercel.app/wise/balance-conversion) | [tests/wise/balance-conversion_test.md](../tests/wise/balance-conversion_test.md) | day 5 | draft |
+| 15.1 | International transfer quote | [/wise/transfer-quote](https://my-testing-repo-main.vercel.app/wise/transfer-quote) | [tests/wise/transfer-quote_test.md](../tests/wise/transfer-quote_test.md) | live | draft |
+| 15.2 | Recipient add and verify | [/wise/add-recipient](https://my-testing-repo-main.vercel.app/wise/add-recipient) | [tests/wise/add-recipient_test.md](../tests/wise/add-recipient_test.md) | live | draft |
+| 15.3 | Transfer status tracking | [/wise/transfer-tracking](https://my-testing-repo-main.vercel.app/wise/transfer-tracking) | [tests/wise/transfer-tracking_test.md](../tests/wise/transfer-tracking_test.md) | live | draft |
+| 15.4 | Multi-currency balance conversion | [/wise/balance-conversion](https://my-testing-repo-main.vercel.app/wise/balance-conversion) | [tests/wise/balance-conversion_test.md](../tests/wise/balance-conversion_test.md) | live | draft |
 
 ## 16. Robinhoot (Robinhood) · Consumer fintech
 
@@ -181,7 +181,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 19.1 | Card freeze unfreeze | [/revolut/card-freeze](https://my-testing-repo-main.vercel.app/revolut/card-freeze) | [tests/revolut/card-freeze_test.md](../tests/revolut/card-freeze_test.md) | day 5 | draft |
+| 19.1 | Card freeze unfreeze | [/revolut/card-freeze](https://my-testing-repo-main.vercel.app/revolut/card-freeze) | [tests/revolut/card-freeze_test.md](../tests/revolut/card-freeze_test.md) | live | draft |
 | 19.2 | Currency exchange | [/revolut/currency-exchange](https://my-testing-repo-main.vercel.app/revolut/currency-exchange) | [tests/revolut/currency-exchange_test.md](../tests/revolut/currency-exchange_test.md) | day 6 | draft |
 | 19.3 | Payment split bill | [/revolut/split-bill](https://my-testing-repo-main.vercel.app/revolut/split-bill) | [tests/revolut/split-bill_test.md](../tests/revolut/split-bill_test.md) | day 6 | draft |
 | 19.4 | Savings vault roundup | [/revolut/savings-vault](https://my-testing-repo-main.vercel.app/revolut/savings-vault) | [tests/revolut/savings-vault_test.md](../tests/revolut/savings-vault_test.md) | day 6 | draft |
@@ -219,28 +219,28 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 23.1 | Login with 2FA | [/chase/login-2fa](https://my-testing-repo-main.vercel.app/chase/login-2fa) | [tests/chase/login-2fa_test.md](../tests/chase/login-2fa_test.md) | live | draft |
-| 23.2 | Zelle transfer | [/chase/zelle-transfer](https://my-testing-repo-main.vercel.app/chase/zelle-transfer) | [tests/chase/zelle-transfer_test.md](../tests/chase/zelle-transfer_test.md) | day 5 | draft |
-| 23.3 | Bill pay scheduling | [/chase/bill-pay-scheduling](https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling) | [tests/chase/bill-pay-scheduling_test.md](../tests/chase/bill-pay-scheduling_test.md) | day 5 | draft |
-| 23.4 | Statement download | [/chase/statement-download](https://my-testing-repo-main.vercel.app/chase/statement-download) | [tests/chase/statement-download_test.md](../tests/chase/statement-download_test.md) | day 5 | draft |
-| 23.5 | Credit card dispute | [/chase/card-dispute](https://my-testing-repo-main.vercel.app/chase/card-dispute) | [tests/chase/card-dispute_test.md](../tests/chase/card-dispute_test.md) | day 5 | draft |
+| 23.2 | Zelle transfer | [/chase/zelle-transfer](https://my-testing-repo-main.vercel.app/chase/zelle-transfer) | [tests/chase/zelle-transfer_test.md](../tests/chase/zelle-transfer_test.md) | live | draft |
+| 23.3 | Bill pay scheduling | [/chase/bill-pay-scheduling](https://my-testing-repo-main.vercel.app/chase/bill-pay-scheduling) | [tests/chase/bill-pay-scheduling_test.md](../tests/chase/bill-pay-scheduling_test.md) | live | draft |
+| 23.4 | Statement download | [/chase/statement-download](https://my-testing-repo-main.vercel.app/chase/statement-download) | [tests/chase/statement-download_test.md](../tests/chase/statement-download_test.md) | live | draft |
+| 23.5 | Credit card dispute | [/chase/card-dispute](https://my-testing-repo-main.vercel.app/chase/card-dispute) | [tests/chase/card-dispute_test.md](../tests/chase/card-dispute_test.md) | live | draft |
 
 ## 24. HDFB Bank (HDFC Bank) · Banking
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 24.1 | NetBanking login | [/hdfc-bank/netbanking-login](https://my-testing-repo-main.vercel.app/hdfc-bank/netbanking-login) | [tests/hdfc-bank/netbanking-login_test.md](../tests/hdfc-bank/netbanking-login_test.md) | day 5 | draft |
-| 24.2 | IMPS transfer | [/hdfc-bank/imps-transfer](https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer) | [tests/hdfc-bank/imps-transfer_test.md](../tests/hdfc-bank/imps-transfer_test.md) | day 5 | draft |
-| 24.3 | FD creation | [/hdfc-bank/fd-creation](https://my-testing-repo-main.vercel.app/hdfc-bank/fd-creation) | [tests/hdfc-bank/fd-creation_test.md](../tests/hdfc-bank/fd-creation_test.md) | day 5 | draft |
-| 24.4 | Credit card statement view | [/hdfc-bank/card-statement](https://my-testing-repo-main.vercel.app/hdfc-bank/card-statement) | [tests/hdfc-bank/card-statement_test.md](../tests/hdfc-bank/card-statement_test.md) | day 5 | draft |
+| 24.1 | NetBanking login | [/hdfc-bank/netbanking-login](https://my-testing-repo-main.vercel.app/hdfc-bank/netbanking-login) | [tests/hdfc-bank/netbanking-login_test.md](../tests/hdfc-bank/netbanking-login_test.md) | live | draft |
+| 24.2 | IMPS transfer | [/hdfc-bank/imps-transfer](https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer) | [tests/hdfc-bank/imps-transfer_test.md](../tests/hdfc-bank/imps-transfer_test.md) | live | draft |
+| 24.3 | FD creation | [/hdfc-bank/fd-creation](https://my-testing-repo-main.vercel.app/hdfc-bank/fd-creation) | [tests/hdfc-bank/fd-creation_test.md](../tests/hdfc-bank/fd-creation_test.md) | live | draft |
+| 24.4 | Credit card statement view | [/hdfc-bank/card-statement](https://my-testing-repo-main.vercel.app/hdfc-bank/card-statement) | [tests/hdfc-bank/card-statement_test.md](../tests/hdfc-bank/card-statement_test.md) | live | draft |
 
 ## 25. Amerix (American Express) · Banking
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 25.1 | Membership rewards redemption | [/american-express/rewards-redemption](https://my-testing-repo-main.vercel.app/american-express/rewards-redemption) | [tests/american-express/rewards-redemption_test.md](../tests/american-express/rewards-redemption_test.md) | day 5 | draft |
-| 25.2 | Card payment scheduling | [/american-express/payment-scheduling](https://my-testing-repo-main.vercel.app/american-express/payment-scheduling) | [tests/american-express/payment-scheduling_test.md](../tests/american-express/payment-scheduling_test.md) | day 5 | draft |
-| 25.3 | Dispute a charge | [/american-express/dispute-charge](https://my-testing-repo-main.vercel.app/american-express/dispute-charge) | [tests/american-express/dispute-charge_test.md](../tests/american-express/dispute-charge_test.md) | day 5 | draft |
-| 25.4 | Offers enrollment | [/american-express/offers-enrollment](https://my-testing-repo-main.vercel.app/american-express/offers-enrollment) | [tests/american-express/offers-enrollment_test.md](../tests/american-express/offers-enrollment_test.md) | day 5 | draft |
+| 25.1 | Membership rewards redemption | [/american-express/rewards-redemption](https://my-testing-repo-main.vercel.app/american-express/rewards-redemption) | [tests/american-express/rewards-redemption_test.md](../tests/american-express/rewards-redemption_test.md) | live | draft |
+| 25.2 | Card payment scheduling | [/american-express/payment-scheduling](https://my-testing-repo-main.vercel.app/american-express/payment-scheduling) | [tests/american-express/payment-scheduling_test.md](../tests/american-express/payment-scheduling_test.md) | live | draft |
+| 25.3 | Dispute a charge | [/american-express/dispute-charge](https://my-testing-repo-main.vercel.app/american-express/dispute-charge) | [tests/american-express/dispute-charge_test.md](../tests/american-express/dispute-charge_test.md) | live | draft |
+| 25.4 | Offers enrollment | [/american-express/offers-enrollment](https://my-testing-repo-main.vercel.app/american-express/offers-enrollment) | [tests/american-express/offers-enrollment_test.md](../tests/american-express/offers-enrollment_test.md) | live | draft |
 
 ## 26. Lemonaid (Lemonade) · Insurance
 

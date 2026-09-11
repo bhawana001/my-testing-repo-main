@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/chase/statement-download?reset=true
-max_steps: 30
+max_steps: 40
 tags: [chase, banking, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Chaise Bank 23.4: Statement download
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: Chase · Industry: Banking · Pattern: Custom -->
+Catalog objective: download last month's statement PDF.
+Key assertion: the PDF downloads and is non-empty.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/chase/statement-download?reset=true and verify the text "Use case 23.4" and "Statement download" are visible at the top of the page.
+## Open statements
+Go to https://my-testing-repo-main.vercel.app/chase/statement-download?reset=true and verify the statements table lists "August 2026" marked "Last month", "July 2026" and "June 2026", each with a "Download PDF" button, and the "Download status" panel says "No downloads yet."
 
-## Objective
-Download last month statement PDF.
+## Download last month
+Click the "Download PDF" button on the "August 2026" row and verify the Download status panel shows "Downloaded chaise-statement-2026-08.pdf".
 
-## Key assertion
-Verify: PDF downloads and is non-empty.
+## Verify the file is non-empty
+Verify the Download status message includes a size in KB greater than zero (it reads "1.8 KB, 1855 bytes") and the sentence "The file is a valid, non-empty PDF.", and the list below shows "chaise-statement-2026-08.pdf · 1855 bytes".

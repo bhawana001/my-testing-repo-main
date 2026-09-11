@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/american-express/rewards-redemption?reset=true
-max_steps: 30
+max_steps: 40
 tags: [american-express, banking, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amerix 25.1: Membership rewards redemption
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 5). -->
-<!-- Catalog entity: American Express · Industry: Banking · Pattern: Form wizard -->
+Catalog objective: redeem points for a statement credit.
+Key assertion: points are deducted and the credit shows as pending.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/american-express/rewards-redemption?reset=true and verify the text "Use case 25.1" and "Membership rewards redemption" are visible at the top of the page.
+## Open rewards
+Go to https://my-testing-repo-main.vercel.app/american-express/rewards-redemption?reset=true and verify the points balance badge reads "48,200" and the wizard offers "10,000 points", "25,000 points" and "40,000 points" for statement credit.
 
-## Objective
-Redeem points for a statement credit.
+## Choose 10,000 points
+Choose "10,000 points" ($60.00 statement credit), click "Continue", and verify the confirm step lists "10,000 points".
 
-## Key assertion
-Verify: Points deducted and credit pending shown.
+## Redeem
+Click "Redeem points" and verify the message "10,000 points redeemed" with the badge "Redemption submitted".
+
+## Verify deduction and pending credit
+Verify "Statement credit" reads "$60.00", the status reads "Pending · posts in 2–3 days", and the points balance badge in the top bar now reads "38,200".
