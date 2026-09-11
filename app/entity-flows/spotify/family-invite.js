@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { Topbar } from "@/app/components/eval/SkinChrome";
@@ -17,6 +18,7 @@ export default function Flow({ flow }) {
     if (s.members.some((m) => m.email === e)) { setErr("This person is already on your plan or invited."); return; }
     if (s.members.length >= 6) { setErr("Your Family plan is full (6 accounts)."); return; }
     setErr(null);
+    sendEmail({ to: e, subject: "Demo User invited you to Spotifly Premium Family", body: "Join the family plan: spotifly.test/family/join/F8K2", from: "no-reply@spotifly.evals.dev", flow: "spotify/family-invite" });
     set({ members: [...s.members, { email: e, name: e.split("@")[0], role: "Member", status: "Pending" }], emails: [{ to: e, subject: "Demo User invited you to Spotifly Premium Family", link: "spotifly.test/family/join/F8K2" }, ...s.emails] }); setEmail("");
   }
   return (

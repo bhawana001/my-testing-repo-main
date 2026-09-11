@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { Card, Btn, Field, Input, Alert } from "@/app/components/eval/ui";
@@ -23,6 +24,7 @@ export default function Flow({ flow }) {
       setErr("Enter your name and a valid email.");
       return;
     }
+    sendEmail({ to: email, subject: `Confirmed: ${EVENT.title} with ${EVENT.host}`, body: `September ${s.day}, 2026 · ${s.slot} New York time (your time zone: ${s.tz}).`, from: "notifications@calendlee.evals.dev", flow: "calendly/invitee-booking" });
     set({ ...s, booking: { title: EVENT.title, day: s.day, slot: s.slot, tz: s.tz, duration: EVENT.duration, ref: `CAL-${s.day}${s.slot.replace(":", "")}`, name, email }, step: "done" });
   }
 

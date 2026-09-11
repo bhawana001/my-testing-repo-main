@@ -1,5 +1,6 @@
 "use client";
 import { useFlowState, storageKey } from "@/lib/state";
+import { sendEmail } from "@/lib/inbox";
 import { Card, Btn, Badge, KV, Alert } from "@/app/components/eval/ui";
 import { Calendar, Slots, fmt12, dateLabel } from "@/app/components/engines/Booking";
 
@@ -9,7 +10,7 @@ const seed = () => ({ booking: { day: 15, slot: "09:00", ref: "CAL-150900" }, ta
 export default function Flow({ flow }) {
   const [s, set] = useFlowState(storageKey(flow.entitySlug, flow.slug), seed);
   const takenFor = (d) => [...(s.taken[d] || []), ...(s.booking.day === d ? [s.booking.slot] : [])];
-  function confirm() { const old = s.booking; set({ ...s, booking: { day: s.day, slot: s.slot, ref: `CAL-${s.day}${s.slot.replace(":", "")}` }, history: [{ from: old, to: { day: s.day, slot: s.slot } }, ...s.history], view: "done", day: null, slot: null }); }
+  function confirm() { sendEmail({ to: "demo@evals.dev", subject: "Updated: 30 Minute Meeting with Priya Nair", body: `New time: September ${s.day}, 2026 · ${s.slot} Eastern.`, from: "notifications@calendlee.evals.dev", flow: "calendly/reschedule" }); const old = s.booking; set({ ...s, booking: { day: s.day, slot: s.slot, ref: `CAL-${s.day}${s.slot.replace(":", "")}` }, history: [{ from: old, to: { day: s.day, slot: s.slot } }, ...s.history], view: "done", day: null, slot: null }); }
   const b = s.booking;
   return (
     <main className="ee-main">

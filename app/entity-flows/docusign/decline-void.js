@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { SaasShell } from "@/app/components/engines/SaasShell";
 import { Card, Btn, Badge, Modal, Textarea, Alert, Segment } from "@/app/components/eval/ui";
@@ -34,7 +35,7 @@ export default function Flow({ flow }) {
         <div className="ee-stack" data-testid="decline-modal">
           <Textarea value={reason} onChange={(e) => setReason(e.target.value)} placeholder="Please provide a reason" aria-label="Decline reason" />
           {err && <Alert tone="err">{err}</Alert>}
-          <Btn variant="danger" onClick={() => { if (!reason.trim()) { setErr("A reason is required to decline."); return; } setErr(null); set({ ...s, status: "Declined", reason: reason.trim() }); setOpen(false); }} data-testid="decline-confirm">Decline to sign</Btn>
+          <Btn variant="danger" onClick={() => { if (!reason.trim()) { setErr("A reason is required to decline."); return; } setErr(null); sendEmail({ to: "demo@evals.dev", subject: "Sam Lee declined to sign Vendor-Agreement.pdf", body: `Reason: ${reason.trim()}`, from: "dse@docusigned.evals.dev", flow: "docusign/decline-void" }); set({ ...s, status: "Declined", reason: reason.trim() }); setOpen(false); }} data-testid="decline-confirm">Decline to sign</Btn>
         </div>
       </Modal>
     </SaasShell>

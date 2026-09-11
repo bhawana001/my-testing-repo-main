@@ -35,7 +35,7 @@ export default function EntityEvals() {
         <p>
           {ENTITIES.length} real-world entities, {FLOWS.length} business-critical flows, each a working fictional-skin
           clone with a deterministic Reset and a matching Kane CLI <code>_test.md</code>. Routes:{" "}
-          <code>/{"{entity}"}/{"{flow}"}</code>. {liveCount} of {FLOWS.length} flows live.
+          <code>/{"{entity}"}/{"{flow}"}</code>. {liveCount} of {FLOWS.length} flows live. Simulated emails land in <Link href="/inbox" style={{ textDecoration: "underline" }}>/inbox</Link>.
         </p>
       </div>
       <div className="ee-home__controls">

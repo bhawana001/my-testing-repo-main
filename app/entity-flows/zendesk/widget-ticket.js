@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { Topbar } from "@/app/components/eval/SkinChrome";
@@ -16,6 +17,7 @@ export default function Flow({ flow }) {
     if (!f.name.trim() || !f.subject.trim() || !f.description.trim()) { setErr("Name, subject and description are required."); return; }
     if (!isValidEmail(f.email)) { setErr("Enter a valid email address."); return; }
     setErr(null);
+    sendEmail({ to: f.email.trim(), subject: `[Acme Cloud] Request received: ${f.subject.trim()}`, body: "We received your request and will reply soon.", from: "support@zendeskly.evals.dev", flow: "zendesk/widget-ticket" });
     const t = { id: 1041 + s.tickets.length + 1, subject: f.subject.trim(), requester: f.name.trim(), email: f.email.trim(), priority: f.priority, status: "New", channel: "Web widget", description: f.description.trim() };
     set({ ...s, tickets: [t, ...s.tickets], created: t }); setF({ name: "", email: "", subject: "", description: "", priority: "Normal" });
   }

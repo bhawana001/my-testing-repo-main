@@ -2,6 +2,7 @@
 // Store orchestrator: cart -> delivery -> payment -> confirmation, configured
 // per skin. Built from the Checkout engine pieces; all math via computeTotals.
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { ADDRESSES, DEMO_USER, money, isValidEmail } from "@/lib/seed";
@@ -62,6 +63,8 @@ export default function StoreCheckout({ flow, config: cfg, children }) {
   const ctx = { s, set, totals, cur, ent, go, count };
 
   function placeOrder(payment) {
+    const t0 = storeTotals(s, cfg);
+    sendEmail({ to: s.contact?.email || "demo@evals.dev", subject: `Your ${ent.skin} order ${orderNumber(cfg.orderPrefix || "ORD", 4471 + s.seq)} is confirmed`, body: `Thanks for your order!\n\n${s.cart.map((l) => `${l.qty || 1} × ${l.name}`).join("\n")}\n\nOrder total: ${t0.total.toFixed(2)} ${cur}`, from: `orders@${ent.skin.toLowerCase().replace(/[^a-z]/g, "")}.evals.dev`, flow: `${flow.entitySlug}/${flow.slug}` });
     set((st) => {
       const t = storeTotals(st, cfg);
       const ship = cfg.shippingOptions?.find((o) => o.id === st.shippingId);

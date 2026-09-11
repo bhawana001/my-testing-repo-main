@@ -1,5 +1,6 @@
 "use client";
 import { useFlowState, storageKey } from "@/lib/state";
+import { sendEmail } from "@/lib/inbox";
 import { SaasShell } from "@/app/components/engines/SaasShell";
 import { Wizard, SEED_WIZARD } from "@/app/components/engines/Wizard";
 import { Card, Badge, KV, Btn, Check } from "@/app/components/eval/ui";
@@ -19,7 +20,7 @@ export default function Flow({ flow }) {
     <SaasShell flow={flow} nav={["Home", "Agreements", "Templates", "Reports"]} active="Agreements" title="New envelope">
       <div style={{ maxWidth: 720 }}>
         <Wizard state={s.wiz} setState={(u) => set((st) => ({ ...st, wiz: typeof u === "function" ? u(st.wiz) : u }))} steps={STEPS} submitLabel="Send" testIdPrefix="envelope"
-          onSubmit={(v) => ({ id: "ENV-7F31A2", v })}
+          onSubmit={(v) => { sendEmail({ to: v.email, subject: v.subject, body: `${v.message || "Please review and sign this document."}\n\nReview document: /docusign/signing-ceremony?envelope=ENV-7F31A2`, from: "dse@docusigned.evals.dev", flow: "docusign/envelope-send" }); return { id: "ENV-7F31A2", v }; }}
           result={({ id, v }) => (
             <div className="ee-stack">
               <Card data-testid="envelope-sent"><Badge tone="ok" data-testid="envelope-status">Sent</Badge><h2 style={{ margin: "8px 0" }}>Your envelope was sent</h2><KV k="Envelope ID" v={<span className="ee-mono">{id}</span>} /><KV k="Recipient" v={`${v.name} <${v.email}> · ${v.role}`} /><KV k="Fields placed" v={v.fields.join(", ")} testId="envelope-fields" /></Card>

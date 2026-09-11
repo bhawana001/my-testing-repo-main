@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { Topbar } from "@/app/components/eval/SkinChrome";
@@ -11,7 +12,7 @@ export default function Flow({ flow }) {
   const ent = getEntity(flow.entitySlug);
   const [s, set] = useFlowState(storageKey(flow.entitySlug, flow.slug), seed);
   const [adopt, setAdopt] = useState(false); const [name, setName] = useState("Demo User"); const [style, setStyle] = useState("Script"); const [err, setErr] = useState(null);
-  function finish() { if (!s.signature) { setErr("Sign the Signature field before finishing."); return; } setErr(null); set({ ...s, stage: "done" }); }
+  function finish() { if (!s.signature) { setErr("Sign the Signature field before finishing."); return; } setErr(null); sendEmail({ to: "demo@evals.dev", subject: "Completed: Mutual-NDA.pdf", body: `All parties have completed Mutual-NDA.pdf. Signed by ${s.signature.name} on 9/14/2026.`, from: "dse@docusigned.evals.dev", flow: "docusign/signing-ceremony" }); set({ ...s, stage: "done" }); }
   function dl() { const bytes = downloadPdf("Mutual-NDA-completed.pdf", ["Mutual Non-Disclosure Agreement", "Signed by: " + s.signature.name + " on September 14, 2026", "Certificate of Completion", "Envelope ENV-7F31A2 · Status: Completed · Sealed by DocuSigned"]); set({ ...s, sealed: bytes }); }
   return (
     <>

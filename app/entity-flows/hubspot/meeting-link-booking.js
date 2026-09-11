@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { getEntity } from "@/lib/registry";
 import { Card, Btn, Field, Input, Alert, KV, Badge } from "@/app/components/eval/ui";
@@ -17,6 +18,7 @@ export default function Flow({ flow }) {
   function book() {
     if (!f.first || !f.last || !isValidEmail(f.email)) { setErr("Enter your first name, last name and a valid email."); return; }
     setErr(null);
+    sendEmail({ to: f.email, subject: "Invitation: Product demo with Priya Nair", body: `September ${s.day}, 2026 at ${s.slot} Eastern.`, from: "meetings@hubspotty.evals.dev", flow: "hubspot/meeting-link-booking" });
     const m = { id: "MTG-" + s.day + s.slot.replace(":", ""), who: `${f.first} ${f.last}`, email: f.email, day: s.day, slot: s.slot };
     set({ ...s, meetings: [m, ...s.meetings], step: "done" });
   }

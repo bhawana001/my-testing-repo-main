@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { SaasShell } from "@/app/components/engines/SaasShell";
 import { Card, Btn, Field, Input, Select, Check, Alert, KV, Badge } from "@/app/components/eval/ui";
@@ -14,7 +15,7 @@ export default function Flow({ flow }) {
   function register() {
     if (!r.first.trim() || !r.last.trim() || !isValidEmail(r.email)) { setRErr("First name, last name and a valid email are required."); return; }
     if (s.registrants.some((x) => x.email === r.email.trim())) { setRErr("This email is already registered."); return; }
-    setRErr(null); set({ ...s, registrants: [...s.registrants, { ...r, email: r.email.trim() }], view: "registered" });
+    setRErr(null); sendEmail({ to: r.email.trim(), subject: `Registration confirmed: ${m.topic}`, body: `Hi ${r.first}, you are registered for ${m.topic} on ${m.date} ${m.time}.\nJoin: zoomly.test/j/85122047731?tk=DEMO`, from: "no-reply@zoomly.evals.dev", flow: "zoom/meeting-registration" }); set({ ...s, registrants: [...s.registrants, { ...r, email: r.email.trim() }], view: "registered" });
   }
   const m = s.meeting;
   return (

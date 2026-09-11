@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { sendEmail } from "@/lib/inbox";
 import { useFlowState, storageKey } from "@/lib/state";
 import { SaasShell } from "@/app/components/engines/SaasShell";
 import { Card, Btn, Field, Input, Textarea, Alert, Table, Badge, Segment } from "@/app/components/eval/ui";
@@ -12,6 +13,7 @@ export default function Flow({ flow }) {
   function send() {
     if (!subject.trim() || !body.trim()) { setErr("Add a subject and a message."); return; }
     setErr(null);
+    sendEmail({ to: "support@acme.freshdeskly.test", subject: subject.trim(), body: body.trim(), from: "demo@evals.dev", flow: "freshdesk/email-to-ticket" });
     const t = { id: 2044 + s.tickets.length + 7, subject: subject.trim(), requester: "Demo User <demo@evals.dev>", source: "Email", status: "Open", body: body.trim() };
     set({ ...s, tickets: [t, ...s.tickets], sent: { subject: t.subject, id: t.id } }); setSubject(""); setBody("");
   }

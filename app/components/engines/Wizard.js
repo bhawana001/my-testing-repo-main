@@ -1,7 +1,7 @@
 "use client";
 // Form wizard engine: multi-step forms with per-step validation, branching,
 // review and a result screen. Values persist in the flow state slice.
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, Btn, Card, Check, Field, Input, KV, RadioCard, Select, Stepper, Textarea, useDelay } from "../eval/ui";
 
 /**
@@ -73,6 +73,12 @@ export function Wizard({ state, setState, steps, onSubmit, submitLabel = "Submit
   const delay = useDelay();
   const [errors, setErrors] = useState({});
   const [busy, setBusy] = useState(false);
+  // ?chaos=true: the first final submit hits a simulated session expiry; answers are kept and
+  // the user re-authenticates in place, then the submit goes through.
+  const [chaos, setChaos] = useState(false);
+  const [expired, setExpired] = useState(false);
+  const [expiredOnce, setExpiredOnce] = useState(false);
+  useEffect(() => { setChaos(new URLSearchParams(window.location.search).get("chaos") === "true"); }, []);
   const stepIdx = Math.min(state.step, steps.length - 1);
   const step = steps[stepIdx];
   const values = state.values;
@@ -91,6 +97,7 @@ export function Wizard({ state, setState, steps, onSubmit, submitLabel = "Submit
     setErrors(errs);
     if (Object.keys(errs).some((k) => errs[k])) return;
     if (stepIdx === steps.length - 1) {
+      if (chaos && !expiredOnce) { setExpired(true); setExpiredOnce(true); return; }
       setBusy(true);
       await delay(600);
       const res = await onSubmit(values);
@@ -120,6 +127,14 @@ export function Wizard({ state, setState, steps, onSubmit, submitLabel = "Submit
   }
 
   const ctx = { values, setValue, errors, ...ctxExtra };
+  if (expired) {
+    return (
+      <Card data-testid={`${testIdPrefix}-session-expired`}>
+        <Alert tone="warn" title="Your session expired">For your security you were signed out. Your answers were saved. Sign in again to finish.</Alert>
+        <Btn style={{ marginTop: 12 }} onClick={() => setExpired(false)} data-testid={`${testIdPrefix}-reauth`}>Sign in again and continue</Btn>
+      </Card>
+    );
+  }
   return (
     <Card data-testid={`${testIdPrefix}-step-${step.id}`}>
       {title && <h2 style={{ fontSize: 20, marginBottom: 12 }}>{title}</h2>}

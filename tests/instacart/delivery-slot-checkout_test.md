@@ -20,4 +20,4 @@ Click the "Priority" option ("Today, within 60 minutes (2:00–3:00 PM)") and ve
 Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
 
 ## Verify the window and fees
-Verify the confirmation shows "Delivery window" as "Today, within 60 minutes (2:00–3:00 PM)", "Order total" as "$21.74" and "Arrives" as "Today, within 60 minutes (2:00–3:00 PM)".
+Verify the confirmation's "Delivery window" row reads "Today, within 60 minutes (2:00–3:00 PM)" and its "Order total" row reads "$21.74".
