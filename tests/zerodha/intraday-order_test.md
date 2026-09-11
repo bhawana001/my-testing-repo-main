@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zerodha/intraday-order?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zerodha, consumer-fintech, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
-# Zerodhi 17.1: Kite order placement
+# Zerodhi 17.1: Kyte order placement
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Zerodha · Industry: Consumer fintech · Pattern: Custom -->
+Catalog objective: place an intraday limit order on a stock in the sandbox.
+Key assertion: the order appears in the orderbook as open.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zerodha/intraday-order?reset=true and verify the text "Use case 17.1" and "Kite order placement" are visible at the top of the page.
+## Open the terminal
+Go to https://my-testing-repo-main.vercel.app/zerodha/intraday-order?reset=true and verify the Marketwatch lists INFX at 1540.00 and the Orders panel says "You haven't placed any orders today".
 
-## Objective
-Place an intraday limit order on a stock in sandbox.
+## Open the buy window
+Click the "B" button next to INFX and verify a window "Buy INFX · NSE · LTP 1540.00" with "Intraday MIS" and "LIMIT" selected.
 
-## Key assertion
-Verify: Order appears in orderbook as open.
+## Enter a price outside the circuit
+Set Qty to 5 and Price to 1300, click "Buy", and verify the error "Price outside circuit limits (₹1,386.00 – ₹1,694.00). Order rejected."
+
+## Enter a valid limit
+Change Price to 1530, click "Buy", and verify the window closes.
+
+## Verify the orderbook
+Verify the Orders table lists BUY INFX, product "MIS", order "LIMIT", qty 5, price "1530.00" with status "OPEN".

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zerodha/funds-upi?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zerodha, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zerodhi 17.4: Funds transfer UPI
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Zerodha · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: add funds via the UPI test flow.
+Key assertion: available margin increases correctly.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zerodha/funds-upi?reset=true and verify the text "Use case 17.4" and "Funds transfer UPI" are visible at the top of the page.
+## Open funds
+Go to https://my-testing-repo-main.vercel.app/zerodha/funds-upi?reset=true and verify "Available margin" reads "₹25,000.00".
 
-## Objective
-Add funds via UPI test flow.
+## Start a UPI pay-in
+Type "5000" into Amount and "demo@okbank" into UPI ID, click "Continue", and verify a UPI collect window shows "Zerodhi Broking is requesting ₹5,000.00".
 
-## Key assertion
-Verify: Available margin increases correctly.
+## Approve
+Click "Approve" and verify the message "₹5,000.00 added via UPI. Available margin ₹25,000.00 → ₹30,000.00."
+
+## Verify margin
+Verify "Available margin" reads "₹30,000.00".

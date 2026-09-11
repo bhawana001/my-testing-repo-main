@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/robinhood/limit-order?reset=true
-max_steps: 30
+max_steps: 40
 tags: [robinhood, consumer-fintech, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Robinhoot 16.2: Limit order placement
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Robinhood · Industry: Consumer fintech · Pattern: Custom -->
+Catalog objective: place a limit buy below market and verify the pending state.
+Key assertion: an open order is listed with its limit price.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/robinhood/limit-order?reset=true and verify the text "Use case 16.2" and "Limit order placement" are visible at the top of the page.
+## Open the stock
+Go to https://my-testing-repo-main.vercel.app/robinhood/limit-order?reset=true and verify "Acme Industries (ACME)" at "$64.10" with an empty "Open orders" table.
 
-## Objective
-Place a limit buy below market and verify pending state.
+## Place a limit below market
+Leave Shares at 10, type "60" into "Limit price", click "Place limit order", and verify the message "Limit buy placed. It will fill if ACME drops to $60.00 or lower."
 
-## Key assertion
-Verify: Open order listed with limit price.
+## Verify the open order
+Verify the "Open orders" table lists an order for 10 shares with limit price "$60.00", expiry "Good for day" and status "Pending".

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zerodha, consumer-fintech, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zerodhi 17.2: GTT trigger creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Zerodha · Industry: Consumer fintech · Pattern: Custom -->
+Catalog objective: create a GTT with trigger and limit price.
+Key assertion: the GTT is listed active with the correct values.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger?reset=true and verify the text "Use case 17.2" and "GTT trigger creation" are visible at the top of the page.
+## Open GTT
+Go to https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger?reset=true and verify the "Create GTT" form with instrument "RELX · LTP 2912.50" and an empty GTT list.
 
-## Objective
-Create a GTT with trigger and limit price.
+## Trigger above LTP
+Type "2950" into Trigger price and "2955" into Limit price, click "Place GTT", and verify the error "For a BUY GTT the trigger must be below the LTP (2912.50)."
 
-## Key assertion
-Verify: GTT listed active with correct values.
+## Valid trigger
+Change Trigger price to 2850 and Limit price to 2855, click "Place GTT", and verify a new row appears in the GTT list.
+
+## Verify the GTT values
+Verify the row shows ID "GTT1044", instrument "RELX", type "Single · BUY", trigger "2850.00", limit "2855.00", qty "2" and status "Active".

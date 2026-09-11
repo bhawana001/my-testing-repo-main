@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/coinbase/crypto-buy?reset=true
-max_steps: 30
+max_steps: 40
 tags: [coinbase, consumer-fintech, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Coinbayse 18.1: Crypto buy with card
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Coinbase · Industry: Consumer fintech · Pattern: Checkout engine -->
+Catalog objective: buy a small BTC amount in the sandbox with a test card.
+Key assertion: purchase confirmation and the balance is credited.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/coinbase/crypto-buy?reset=true and verify the text "Use case 18.1" and "Crypto buy with card" are visible at the top of the page.
+## Open buy
+Go to https://my-testing-repo-main.vercel.app/coinbase/crypto-buy?reset=true and verify "BTC balance" reads "0.01250000 BTC", Amount is 50, "Coinbayse fee" reads "$0.99" and "You'll get" reads "0.00075400 BTC".
 
-## Objective
-Buy a small BTC amount in sandbox with test card.
+## Preview
+Click "Preview buy" and verify the summary lists "Buy 0.00075400 BTC", "Price $65,000.00" and "Total $50.00" with a card form.
 
-## Key assertion
-Verify: Purchase confirmation and balance credited.
+## Pay with the test card
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Buy now · $50.00", and verify "You bought 0.00075400 BTC" with the badge "Purchase complete".
+
+## Verify the credited balance
+Verify "New BTC balance" reads "0.01325400 BTC" and the top bar BTC balance also reads "0.01325400 BTC".

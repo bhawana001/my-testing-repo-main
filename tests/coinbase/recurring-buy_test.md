@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/coinbase/recurring-buy?reset=true
-max_steps: 30
+max_steps: 40
 tags: [coinbase, consumer-fintech, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Coinbayse 18.2: Recurring buy setup
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Coinbase · Industry: Consumer fintech · Pattern: Form wizard -->
+Catalog objective: schedule a weekly buy and verify the next run date.
+Key assertion: the recurring rule is active with the correct cadence.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/coinbase/recurring-buy?reset=true and verify the text "Use case 18.2" and "Recurring buy setup" are visible at the top of the page.
+## Open recurring buy
+Go to https://my-testing-repo-main.vercel.app/coinbase/recurring-buy?reset=true and verify the step "Recurring buy" with the note "Today is Monday, September 14, 2026." and an empty "Recurring buys" list.
 
-## Objective
-Schedule a weekly buy and verify next run date.
+## Set up weekly
+Type "25" into Amount (USD), choose "Weekly", select "Friday" as Day of week, click "Continue", and verify the review step lists "25", "Weekly" and "Friday".
 
-## Key assertion
-Verify: Recurring rule active with correct cadence.
+## Confirm
+Click "Confirm" and verify "$25.00 of BTC, weekly on Fridays" with the badge "Recurring buy active".
+
+## Verify the next run
+Verify "Next buy" reads "Friday, September 18, 2026" and the Recurring buys list shows "$25.00 BTC · Weekly (Friday)" as "Active".

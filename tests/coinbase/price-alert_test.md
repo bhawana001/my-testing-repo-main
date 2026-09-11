@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/coinbase/price-alert?reset=true
-max_steps: 30
+max_steps: 40
 tags: [coinbase, consumer-fintech, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Coinbayse 18.4: Price alert creation
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Coinbase · Industry: Consumer fintech · Pattern: CRUD table / board -->
+Catalog objective: set a price alert on ETH.
+Key assertion: the alert is saved with its target price.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/coinbase/price-alert?reset=true and verify the text "Use case 18.4" and "Price alert creation" are visible at the top of the page.
+## Open alerts
+Go to https://my-testing-repo-main.vercel.app/coinbase/price-alert?reset=true and verify the Ethereum price reads "$3,120.00" and the alerts table says "No alerts yet".
 
-## Objective
-Set a price alert on ETH.
+## Invalid target
+With "Price rises above" selected, type "3000" into Target price, click "Save alert", and verify the error "An “above” alert needs a target higher than the current price $3,120.00."
 
-## Key assertion
-Verify: Alert saved with target price.
+## Valid target
+Change the target to "3500", click "Save alert", and verify a row appears.
+
+## Verify the alert
+Verify the alerts table lists asset "ETH", "Above", target "$3,500.00" and status "Active".

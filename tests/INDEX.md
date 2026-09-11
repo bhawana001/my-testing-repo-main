@@ -8,14 +8,14 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 76 | 5 |
+| 209 | 93 | 6 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
-| 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | draft |
+| 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | verified |
 | 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | draft |
 | 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | verified |
 | 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
@@ -61,7 +61,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | day 7 | draft |
+| 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | live | draft |
 | 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | draft |
 | 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | day 8 | draft |
 | 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | day 10 | draft |
@@ -79,8 +79,8 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 8.1 | Size guide and selection | [/nike/size-guide](https://my-testing-repo-main.vercel.app/nike/size-guide) | [tests/nike/size-guide_test.md](../tests/nike/size-guide_test.md) | day 7 | draft |
-| 8.2 | Member exclusive access | [/nike/member-exclusive](https://my-testing-repo-main.vercel.app/nike/member-exclusive) | [tests/nike/member-exclusive_test.md](../tests/nike/member-exclusive_test.md) | day 7 | draft |
+| 8.1 | Size guide and selection | [/nike/size-guide](https://my-testing-repo-main.vercel.app/nike/size-guide) | [tests/nike/size-guide_test.md](../tests/nike/size-guide_test.md) | live | draft |
+| 8.2 | Member exclusive access | [/nike/member-exclusive](https://my-testing-repo-main.vercel.app/nike/member-exclusive) | [tests/nike/member-exclusive_test.md](../tests/nike/member-exclusive_test.md) | live | draft |
 | 8.3 | SNKRS draw entry | [/nike/snkrs-draw](https://my-testing-repo-main.vercel.app/nike/snkrs-draw) | [tests/nike/snkrs-draw_test.md](../tests/nike/snkrs-draw_test.md) | day 12 | draft |
 | 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | live | draft |
 
@@ -138,7 +138,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 14.1 | Pay in 4 selection | [/klarna/pay-in-4](https://my-testing-repo-main.vercel.app/klarna/pay-in-4) | [tests/klarna/pay-in-4_test.md](../tests/klarna/pay-in-4_test.md) | live | draft |
 | 14.2 | Credit decision decline path | [/klarna/credit-decline-fallback](https://my-testing-repo-main.vercel.app/klarna/credit-decline-fallback) | [tests/klarna/credit-decline-fallback_test.md](../tests/klarna/credit-decline-fallback_test.md) | live | draft |
 | 14.3 | Order in Klarna app | [/klarna/payment-schedule](https://my-testing-repo-main.vercel.app/klarna/payment-schedule) | [tests/klarna/payment-schedule_test.md](../tests/klarna/payment-schedule_test.md) | live | draft |
-| 14.4 | Return adjusts installments | [/klarna/return-adjusts-installments](https://my-testing-repo-main.vercel.app/klarna/return-adjusts-installments) | [tests/klarna/return-adjusts-installments_test.md](../tests/klarna/return-adjusts-installments_test.md) | day 7 | draft |
+| 14.4 | Return adjusts installments | [/klarna/return-adjusts-installments](https://my-testing-repo-main.vercel.app/klarna/return-adjusts-installments) | [tests/klarna/return-adjusts-installments_test.md](../tests/klarna/return-adjusts-installments_test.md) | live | draft |
 
 ## 15. Wyse (Wise) · Payments infra
 
@@ -153,29 +153,29 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 16.1 | Market buy order | [/robinhood/market-buy](https://my-testing-repo-main.vercel.app/robinhood/market-buy) | [tests/robinhood/market-buy_test.md](../tests/robinhood/market-buy_test.md) | day 7 | draft |
-| 16.2 | Limit order placement | [/robinhood/limit-order](https://my-testing-repo-main.vercel.app/robinhood/limit-order) | [tests/robinhood/limit-order_test.md](../tests/robinhood/limit-order_test.md) | day 7 | draft |
-| 16.3 | Portfolio value render | [/robinhood/portfolio-value](https://my-testing-repo-main.vercel.app/robinhood/portfolio-value) | [tests/robinhood/portfolio-value_test.md](../tests/robinhood/portfolio-value_test.md) | day 7 | draft |
-| 16.4 | Instant deposit flow | [/robinhood/instant-deposit](https://my-testing-repo-main.vercel.app/robinhood/instant-deposit) | [tests/robinhood/instant-deposit_test.md](../tests/robinhood/instant-deposit_test.md) | day 7 | draft |
-| 16.5 | Options chain display | [/robinhood/options-chain](https://my-testing-repo-main.vercel.app/robinhood/options-chain) | [tests/robinhood/options-chain_test.md](../tests/robinhood/options-chain_test.md) | day 7 | draft |
+| 16.1 | Market buy order | [/robinhood/market-buy](https://my-testing-repo-main.vercel.app/robinhood/market-buy) | [tests/robinhood/market-buy_test.md](../tests/robinhood/market-buy_test.md) | live | draft |
+| 16.2 | Limit order placement | [/robinhood/limit-order](https://my-testing-repo-main.vercel.app/robinhood/limit-order) | [tests/robinhood/limit-order_test.md](../tests/robinhood/limit-order_test.md) | live | draft |
+| 16.3 | Portfolio value render | [/robinhood/portfolio-value](https://my-testing-repo-main.vercel.app/robinhood/portfolio-value) | [tests/robinhood/portfolio-value_test.md](../tests/robinhood/portfolio-value_test.md) | live | draft |
+| 16.4 | Instant deposit flow | [/robinhood/instant-deposit](https://my-testing-repo-main.vercel.app/robinhood/instant-deposit) | [tests/robinhood/instant-deposit_test.md](../tests/robinhood/instant-deposit_test.md) | live | draft |
+| 16.5 | Options chain display | [/robinhood/options-chain](https://my-testing-repo-main.vercel.app/robinhood/options-chain) | [tests/robinhood/options-chain_test.md](../tests/robinhood/options-chain_test.md) | live | draft |
 
 ## 17. Zerodhi (Zerodha) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 17.1 | Kite order placement | [/zerodha/intraday-order](https://my-testing-repo-main.vercel.app/zerodha/intraday-order) | [tests/zerodha/intraday-order_test.md](../tests/zerodha/intraday-order_test.md) | day 7 | draft |
-| 17.2 | GTT trigger creation | [/zerodha/gtt-trigger](https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger) | [tests/zerodha/gtt-trigger_test.md](../tests/zerodha/gtt-trigger_test.md) | day 7 | draft |
-| 17.3 | Holdings P and L | [/zerodha/holdings-pnl](https://my-testing-repo-main.vercel.app/zerodha/holdings-pnl) | [tests/zerodha/holdings-pnl_test.md](../tests/zerodha/holdings-pnl_test.md) | day 7 | draft |
-| 17.4 | Funds transfer UPI | [/zerodha/funds-upi](https://my-testing-repo-main.vercel.app/zerodha/funds-upi) | [tests/zerodha/funds-upi_test.md](../tests/zerodha/funds-upi_test.md) | day 7 | draft |
+| 17.1 | Kite order placement | [/zerodha/intraday-order](https://my-testing-repo-main.vercel.app/zerodha/intraday-order) | [tests/zerodha/intraday-order_test.md](../tests/zerodha/intraday-order_test.md) | live | draft |
+| 17.2 | GTT trigger creation | [/zerodha/gtt-trigger](https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger) | [tests/zerodha/gtt-trigger_test.md](../tests/zerodha/gtt-trigger_test.md) | live | draft |
+| 17.3 | Holdings P and L | [/zerodha/holdings-pnl](https://my-testing-repo-main.vercel.app/zerodha/holdings-pnl) | [tests/zerodha/holdings-pnl_test.md](../tests/zerodha/holdings-pnl_test.md) | live | draft |
+| 17.4 | Funds transfer UPI | [/zerodha/funds-upi](https://my-testing-repo-main.vercel.app/zerodha/funds-upi) | [tests/zerodha/funds-upi_test.md](../tests/zerodha/funds-upi_test.md) | live | draft |
 
 ## 18. Coinbayse (Coinbase) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 18.1 | Crypto buy with card | [/coinbase/crypto-buy](https://my-testing-repo-main.vercel.app/coinbase/crypto-buy) | [tests/coinbase/crypto-buy_test.md](../tests/coinbase/crypto-buy_test.md) | day 7 | draft |
-| 18.2 | Recurring buy setup | [/coinbase/recurring-buy](https://my-testing-repo-main.vercel.app/coinbase/recurring-buy) | [tests/coinbase/recurring-buy_test.md](../tests/coinbase/recurring-buy_test.md) | day 7 | draft |
-| 18.3 | Send to address flow | [/coinbase/send-to-address](https://my-testing-repo-main.vercel.app/coinbase/send-to-address) | [tests/coinbase/send-to-address_test.md](../tests/coinbase/send-to-address_test.md) | day 7 | draft |
-| 18.4 | Price alert creation | [/coinbase/price-alert](https://my-testing-repo-main.vercel.app/coinbase/price-alert) | [tests/coinbase/price-alert_test.md](../tests/coinbase/price-alert_test.md) | day 7 | draft |
+| 18.1 | Crypto buy with card | [/coinbase/crypto-buy](https://my-testing-repo-main.vercel.app/coinbase/crypto-buy) | [tests/coinbase/crypto-buy_test.md](../tests/coinbase/crypto-buy_test.md) | live | draft |
+| 18.2 | Recurring buy setup | [/coinbase/recurring-buy](https://my-testing-repo-main.vercel.app/coinbase/recurring-buy) | [tests/coinbase/recurring-buy_test.md](../tests/coinbase/recurring-buy_test.md) | live | draft |
+| 18.3 | Send to address flow | [/coinbase/send-to-address](https://my-testing-repo-main.vercel.app/coinbase/send-to-address) | [tests/coinbase/send-to-address_test.md](../tests/coinbase/send-to-address_test.md) | live | draft |
+| 18.4 | Price alert creation | [/coinbase/price-alert](https://my-testing-repo-main.vercel.app/coinbase/price-alert) | [tests/coinbase/price-alert_test.md](../tests/coinbase/price-alert_test.md) | live | draft |
 
 ## 19. Revolute (Revolut) · Consumer fintech
 

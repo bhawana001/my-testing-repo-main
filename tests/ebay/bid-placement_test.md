@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/ebay/bid-placement?reset=true
-max_steps: 30
+max_steps: 40
 tags: [ebay, e-commerce, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # eBidz 6.1: Bid placement
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: eBay · Industry: E-commerce · Pattern: Custom -->
+Catalog objective: place a bid above the current price on an auction listing.
+Key assertion: the bid is registered and the user is shown as high bidder.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/ebay/bid-placement?reset=true and verify the text "Use case 6.1" and "Bid placement" are visible at the top of the page.
+## Open the auction
+Go to https://my-testing-repo-main.vercel.app/ebay/bid-placement?reset=true and verify the listing "Vintage Automatic Watch · 1974 · Serviced" shows "Current bid" "$120.00", "7 bids" and a high bidder other than you.
 
-## Objective
-Place a bid above current price on an auction listing.
+## Bid below the minimum
+Type "121" into "Your max bid", click "Place bid", and verify the message "Enter $122.50 or more." is shown.
 
-## Key assertion
-Verify: Bid registered and user shown as high bidder.
+## Bid above the rival
+Clear the bid field, type "130", click "Place bid", and verify the message "You're the high bidder at $127.50. Your maximum bid is $130.00." appears.
+
+## Verify the bid registered
+Verify "Current bid" reads "$127.50", the count reads "8 bids", "High bidder" shows the badge "You", and the bid history lists "You" at "$127.50".

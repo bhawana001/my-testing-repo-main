@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/robinhood/market-buy?reset=true
-max_steps: 30
+max_steps: 40
 tags: [robinhood, consumer-fintech, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Robinhoot 16.1: Market buy order
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Robinhood · Industry: Consumer fintech · Pattern: Custom -->
+Catalog objective: search a ticker and place a one-share market buy in the paper environment.
+Key assertion: the order is filled and the share count updates.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/robinhood/market-buy?reset=true and verify the text "Use case 16.1" and "Market buy order" are visible at the top of the page.
+## Search the ticker
+Go to https://my-testing-repo-main.vercel.app/robinhood/market-buy?reset=true, type "nova" into the search box, and verify a result "NOVA Nova Corp" at "$182.40" appears, with "Buying power" "$2,500.00" in the top bar.
 
-## Objective
-Search a ticker, place a one share market buy in paper env.
+## Open the stock
+Click the NOVA result and verify the page "Nova Corp (NOVA)" shows "$182.40" and "Shares" "5" in Your position.
 
-## Key assertion
-Verify: Order filled state with share count updated.
+## Review a 1-share market order
+Leave Shares at 1, click "Review order", and verify the message "You're buying 1 share of NOVA at market price for about $182.40."
+
+## Submit
+Click "Submit buy order" and verify the badge "Order filled" with "Bought 1 share of NOVA at $182.40".
+
+## Verify share count
+Verify "Shares owned" reads "6", the position "Shares" reads "6" and "Buying power" reads "$2,317.60".

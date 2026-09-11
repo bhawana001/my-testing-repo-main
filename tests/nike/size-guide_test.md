@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/nike/size-guide?reset=true
-max_steps: 30
+max_steps: 40
 tags: [nike, e-commerce, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Nyke 8.1: Size guide and selection
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 7). -->
-<!-- Catalog entity: Nike · Industry: E-commerce · Pattern: Checkout engine -->
+Catalog objective: open the size guide on a shoe, select a size, add to cart.
+Key assertion: the selected size is carried into the cart.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/nike/size-guide?reset=true and verify the text "Use case 8.1" and "Size guide and selection" are visible at the top of the page.
+## Open the product
+Go to https://my-testing-repo-main.vercel.app/nike/size-guide?reset=true and verify "Stride Runner 3" at "$89.00" with size chips US 7 to US 11 and a "Size guide" link.
 
-## Objective
-Open size guide on a shoe, select a size, add to cart.
+## Open the size guide
+Click "Size guide" and verify a modal "Size guide · Men's shoes" shows a table with US, UK, EU and foot length columns, including the row "US 9", "UK 8", "EU 42.5", "27 cm".
 
-## Key assertion
-Verify: Selected size carried into cart.
+## Select a size from the guide
+Click "Select US 9" in the guide and verify the modal closes and the text next to "Select size" reads "US 9".
+
+## Add to bag
+Click "Add to Bag" and verify the bag shows "Stride Runner 3" with "Size: US 9 · Color: Black" at "$89.00".
