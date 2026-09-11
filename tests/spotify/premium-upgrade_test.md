@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/spotify/premium-upgrade?reset=true
-max_steps: 30
+max_steps: 45
 tags: [spotify, streaming, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Spotifly 48.1: Premium upgrade flow
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Spotify · Industry: Streaming · Pattern: Checkout engine -->
+Catalog objective: upgrade to Premium with a test payment.
+Key assertion: ads are removed and the Premium badge is active.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/spotify/premium-upgrade?reset=true and verify the text "Use case 48.1" and "Premium upgrade flow" are visible at the top of the page.
+## Free with ads
+Go to https://my-testing-repo-main.vercel.app/spotify/premium-upgrade?reset=true and verify the "Free" badge, an "Advertisement" banner, and "Listening: With ads".
 
-## Objective
-Upgrade to premium with test payment.
+## Pick a plan
+Click "Upgrade to Premium", keep "Individual" ($10.99/mo), click "Continue", and verify the payment form "Premium Individual · $10.99/month".
 
-## Key assertion
-Verify: Ads removed and premium badge active.
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Buy Premium", and verify the Home screen returns.
+
+## Verify premium
+Verify the badge reads "Premium Individual", the advertisement banner is gone, and "Listening" reads "Ad-free ✓".

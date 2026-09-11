@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/amazon/search-to-product?reset=true
-max_steps: 30
+max_steps: 45
 tags: [amazon, e-commerce, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Amazonia 1.1: Search to product page
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Amazon · Industry: E-commerce · Pattern: CRUD table / board -->
+Catalog objective: search for wireless earbuds, apply brand and price filters, open the top result.
+Key assertion: the product page matches the filtered criteria.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/amazon/search-to-product?reset=true and verify the text "Use case 1.1" and "Search to product page" are visible at the top of the page.
+## Search
+Go to https://my-testing-repo-main.vercel.app/amazon/search-to-product?reset=true, type "wireless earbuds" into the search box, click the search button, and verify "4 results for “wireless earbuds”".
 
-## Objective
-Search for wireless earbuds, apply brand and price filters, open the top result.
+## Filter by brand
+Check the brand "Aura" and verify the result count shows "Brand: Aura".
 
-## Key assertion
-Verify: Product page matches the filtered criteria.
+## Filter by price
+Choose "$100 to $200" and verify "1 result for “wireless earbuds” · Brand: Aura · $100 to $200".
+
+## Open the top result
+Click the first result's title and verify the product page for "AuraBuds Pro Wireless Earbuds".
+
+## Verify it matches the filters
+Verify the product page shows "Brand: Aura", price "$129.00" (within $100–$200), and the badge "Matches your filters: Aura · $100 to $200".

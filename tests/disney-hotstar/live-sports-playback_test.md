@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/disney-hotstar/live-sports-playback?reset=true
-max_steps: 30
+max_steps: 45
 tags: [disney-hotstar, streaming, media]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Hotstarry 50.1: Live sports playback
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Disney+ Hotstar · Industry: Streaming · Pattern: Media player -->
+Catalog objective: open a live match stream and verify the player loads with a score overlay.
+Key assertion: the stream plays with a live indicator.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/disney-hotstar/live-sports-playback?reset=true and verify the text "Use case 50.1" and "Live sports playback" are visible at the top of the page.
+## Open the match
+Go to https://my-testing-repo-main.vercel.app/disney-hotstar/live-sports-playback?reset=true and verify the player "IND vs AUS · 2nd ODI" with a score overlay "IND 214/4" and "38.2 ov · Target 289".
 
-## Objective
-Open a live match stream and verify player loads with score overlay.
+## Play
+Click "▶ Play" and verify the red "● LIVE" indicator appears and the button reads "❚❚ Pause".
 
-## Key assertion
-Verify: Stream plays with live indicator.
+## Verify the live overlay updates
+Wait 5 seconds and verify the score overlay has advanced to "IND 215/4" and "38.3 ov".

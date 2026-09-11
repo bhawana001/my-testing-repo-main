@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement?reset=true
-max_steps: 30
+max_steps: 45
 tags: [youtube, streaming, auth]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # YouTubely 49.3: Premium background play
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: YouTube · Industry: Streaming · Pattern: Auth engine -->
+Catalog objective: verify the background playback entitlement on a Premium test account (mobile web equivalent).
+Key assertion: the feature is active for Premium only.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement?reset=true and verify the text "Use case 49.3" and "Premium background play" are visible at the top of the page.
+## Free account
+Go to https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement?reset=true and verify "Free test account" shows Membership "Free", entitlement "false", and Background play "Premium feature 🔒".
 
-## Objective
-Verify background playback entitlement flag on premium test account.
+## Free account in background
+Click "Lock screen / switch app" and verify playback reads "Paused (app in background)".
 
-## Key assertion
-Verify: Feature active for premium only.
+## Premium account
+Click "Premium test account", turn on the "Background play" switch, and verify entitlement "true" and Membership "Premium".
+
+## Premium in background
+Click "Lock screen / switch app" and verify playback reads "Playing (app in background)".

@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/spotify/cross-device-continue?reset=true
-max_steps: 30
+max_steps: 45
 tags: [spotify, streaming, media]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Spotifly 48.3: Cross-device continue
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Spotify · Industry: Streaming · Pattern: Media player -->
+Catalog objective: start on web and continue on a second session.
+Key assertion: playback state transfers.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/spotify/cross-device-continue?reset=true and verify the text "Use case 48.3" and "Cross-device continue" are visible at the top of the page.
+## Play on web
+Go to https://my-testing-repo-main.vercel.app/spotify/cross-device-continue?reset=true, click "▶ Play" in the Web Player panel, and verify "Playing on this device" with the time counter advancing.
 
-## Objective
-Start on web and continue on second session.
+## Pause on web
+After a few seconds, click "❚❚ Pause" in the Web Player and store the Web Player time as 'web_pos'.
 
-## Key assertion
-Verify: Playback state transfers.
+## Transfer to phone
+Click "Play on this device" in the Phone panel and verify the Phone panel shows "Paused on this device" and the Web Player shows "Listening on Phone".
+
+## Verify the state transferred
+Verify the Phone panel's time equals {{web_pos}}.

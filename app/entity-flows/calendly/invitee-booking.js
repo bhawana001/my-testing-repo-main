@@ -64,7 +64,7 @@ export default function Flow({ flow }) {
             ) : (
               <div className="ee-stack">
                 <h2 style={{ fontSize: 18 }}>Select a Date &amp; Time</h2>
-                <div className="ee-split" style={{ gridTemplateColumns: "minmax(0,1fr) 220px" }}>
+                <div className="ee-split ee-split--slots">
                   <div className="ee-stack">
                     <Calendar availableDays={AVAILABLE} selected={s.day} onSelect={(d) => set({ ...s, day: d, slot: null })} />
                     <TzPicker value={s.tz} onChange={(tz) => set({ ...s, tz })} />

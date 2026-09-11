@@ -43,7 +43,7 @@ export default function Flow({ flow }) {
             <div className="ee-row"><Btn variant="secondary" onClick={() => set({ ...s, step: "pick" })}>Back</Btn><Btn onClick={book} data-testid="confirm-meeting">Confirm</Btn></div>
           </div>
         ) : (
-          <div className="ee-split" style={{ gridTemplateColumns: "minmax(0,1fr) 240px" }}>
+          <div className="ee-split ee-split--slots">
             <Calendar availableDays={AVAIL} selected={s.day} onSelect={(d) => set({ ...s, day: d, slot: null })} />
             <div>{s.day ? (<><div className="ee-small ee-strong" style={{ marginBottom: 8 }} data-testid="slots-day">{dateLabel(s.day)}</div><Slots slots={SLOTS} busy={BUSY[s.day] || []} hostTz="America/New_York" viewerTz="America/New_York" selected={s.slot} onSelect={(slot) => set({ ...s, slot, step: "details" })} /></>) : <div className="ee-small ee-muted">Select a day to see times.</div>}</div>
           </div>

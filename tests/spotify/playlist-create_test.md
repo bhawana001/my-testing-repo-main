@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/spotify/playlist-create?reset=true
-max_steps: 30
+max_steps: 45
 tags: [spotify, streaming, media]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Spotifly 48.2: Playlist create and add
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Spotify · Industry: Streaming · Pattern: Media player -->
+Catalog objective: create a playlist and add three songs.
+Key assertion: the playlist persists with the correct tracks.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/spotify/playlist-create?reset=true and verify the text "Use case 48.2" and "Playlist create and add" are visible at the top of the page.
+## Create
+Go to https://my-testing-repo-main.vercel.app/spotify/playlist-create?reset=true, type "Road Trip" into the playlist name, click "Create", and verify "🎵 Road Trip" with "0 songs".
 
-## Objective
-Create a playlist and add three songs.
+## Add three songs
+Click "Add" next to "Midnight Drive", "Glass Harbor" and "Slow Satellite", and verify "3 songs".
 
-## Key assertion
-Verify: Playlist persists with correct tracks.
+## Try a duplicate
+Click "Add" next to "Midnight Drive" again and verify "“Midnight Drive” is already in this playlist." with the count still "3 songs".
+
+## Verify after reload
+Reload the page without the reset parameter and verify "Road Trip" still lists 1. Midnight Drive, 2. Glass Harbor, 3. Slow Satellite.

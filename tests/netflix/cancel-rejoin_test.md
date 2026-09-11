@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin?reset=true
-max_steps: 30
+max_steps: 45
 tags: [netflix, streaming, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Netflixy 47.5: Cancel and rejoin
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Netflix · Industry: Streaming · Pattern: Form wizard -->
+Catalog objective: cancel the membership and verify the end date, then restart.
+Key assertion: access-until date is shown and restart works.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin?reset=true and verify the text "Use case 47.5" and "Cancel and rejoin" are visible at the top of the page.
+## Cancel
+Go to https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin?reset=true, verify Status "Active", click "Cancel Membership", and verify "Your membership will end on October 14, 2026."
 
-## Objective
-Cancel membership and verify end date, then restart.
+## Finish cancellation
+Click "Finish Cancellation" and verify Status "Cancelled · access until October 14, 2026" and "You can still watch until October 14, 2026."
 
-## Key assertion
-Verify: Access until date shown and restart works.
+## Restart
+Click "Restart Membership" and verify Status "Active" and "Welcome back! Your membership continues. Next billing date: October 14, 2026."

@@ -8,17 +8,17 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 178 | 16 |
+| 209 | 196 | 18 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | day 13 | draft |
+| 1.1 | Search to product page | [/amazon/search-to-product](https://my-testing-repo-main.vercel.app/amazon/search-to-product) | [tests/amazon/search-to-product_test.md](../tests/amazon/search-to-product_test.md) | live | draft |
 | 1.2 | Add to cart with variant | [/amazon/add-to-cart-variant](https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant) | [tests/amazon/add-to-cart-variant_test.md](../tests/amazon/add-to-cart-variant_test.md) | live | verified |
 | 1.3 | One-click checkout | [/amazon/one-click-checkout](https://my-testing-repo-main.vercel.app/amazon/one-click-checkout) | [tests/amazon/one-click-checkout_test.md](../tests/amazon/one-click-checkout_test.md) | live | verified |
 | 1.4 | Order tracking | [/amazon/order-tracking](https://my-testing-repo-main.vercel.app/amazon/order-tracking) | [tests/amazon/order-tracking_test.md](../tests/amazon/order-tracking_test.md) | live | verified |
-| 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | day 13 | draft |
+| 1.5 | Return initiation | [/amazon/return-initiation](https://my-testing-repo-main.vercel.app/amazon/return-initiation) | [tests/amazon/return-initiation_test.md](../tests/amazon/return-initiation_test.md) | live | draft |
 
 ## 2. Shopifly (Shopify) · E-commerce
 
@@ -62,7 +62,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 6.1 | Bid placement | [/ebay/bid-placement](https://my-testing-repo-main.vercel.app/ebay/bid-placement) | [tests/ebay/bid-placement_test.md](../tests/ebay/bid-placement_test.md) | live | draft |
-| 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | draft |
+| 6.2 | Buy It Now checkout | [/ebay/buy-it-now](https://my-testing-repo-main.vercel.app/ebay/buy-it-now) | [tests/ebay/buy-it-now_test.md](../tests/ebay/buy-it-now_test.md) | live | verified |
 | 6.3 | Best Offer flow | [/ebay/best-offer](https://my-testing-repo-main.vercel.app/ebay/best-offer) | [tests/ebay/best-offer_test.md](../tests/ebay/best-offer_test.md) | live | draft |
 | 6.4 | Seller listing creation | [/ebay/seller-listing](https://my-testing-repo-main.vercel.app/ebay/seller-listing) | [tests/ebay/seller-listing_test.md](../tests/ebay/seller-listing_test.md) | live | draft |
 
@@ -70,7 +70,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | live | draft |
+| 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | live | verified |
 | 7.2 | Replacement preferences | [/instacart/replacement-preferences](https://my-testing-repo-main.vercel.app/instacart/replacement-preferences) | [tests/instacart/replacement-preferences_test.md](../tests/instacart/replacement-preferences_test.md) | live | draft |
 | 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | live | draft |
 | 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | live | draft |
@@ -431,40 +431,40 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 46.1 | Event booking as invitee | [/calendly/invitee-booking](https://my-testing-repo-main.vercel.app/calendly/invitee-booking) | [tests/calendly/invitee-booking_test.md](../tests/calendly/invitee-booking_test.md) | live | verified |
-| 46.2 | Availability rules respected | [/calendly/availability-rules](https://my-testing-repo-main.vercel.app/calendly/availability-rules) | [tests/calendly/availability-rules_test.md](../tests/calendly/availability-rules_test.md) | day 13 | draft |
-| 46.3 | Reschedule flow | [/calendly/reschedule](https://my-testing-repo-main.vercel.app/calendly/reschedule) | [tests/calendly/reschedule_test.md](../tests/calendly/reschedule_test.md) | day 13 | draft |
-| 46.4 | Payment collection booking | [/calendly/paid-booking](https://my-testing-repo-main.vercel.app/calendly/paid-booking) | [tests/calendly/paid-booking_test.md](../tests/calendly/paid-booking_test.md) | day 13 | draft |
+| 46.2 | Availability rules respected | [/calendly/availability-rules](https://my-testing-repo-main.vercel.app/calendly/availability-rules) | [tests/calendly/availability-rules_test.md](../tests/calendly/availability-rules_test.md) | live | draft |
+| 46.3 | Reschedule flow | [/calendly/reschedule](https://my-testing-repo-main.vercel.app/calendly/reschedule) | [tests/calendly/reschedule_test.md](../tests/calendly/reschedule_test.md) | live | draft |
+| 46.4 | Payment collection booking | [/calendly/paid-booking](https://my-testing-repo-main.vercel.app/calendly/paid-booking) | [tests/calendly/paid-booking_test.md](../tests/calendly/paid-booking_test.md) | live | draft |
 
 ## 47. Netflixy (Netflix) · Streaming
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 47.1 | Signup with plan selection | [/netflix/signup-plan](https://my-testing-repo-main.vercel.app/netflix/signup-plan) | [tests/netflix/signup-plan_test.md](../tests/netflix/signup-plan_test.md) | day 13 | draft |
+| 47.1 | Signup with plan selection | [/netflix/signup-plan](https://my-testing-repo-main.vercel.app/netflix/signup-plan) | [tests/netflix/signup-plan_test.md](../tests/netflix/signup-plan_test.md) | live | draft |
 | 47.2 | Playback start and resume | [/netflix/playback-resume](https://my-testing-repo-main.vercel.app/netflix/playback-resume) | [tests/netflix/playback-resume_test.md](../tests/netflix/playback-resume_test.md) | live | draft |
-| 47.3 | Profile switch with PIN | [/netflix/profile-pin](https://my-testing-repo-main.vercel.app/netflix/profile-pin) | [tests/netflix/profile-pin_test.md](../tests/netflix/profile-pin_test.md) | day 13 | draft |
-| 47.4 | Download for offline | [/netflix/offline-download](https://my-testing-repo-main.vercel.app/netflix/offline-download) | [tests/netflix/offline-download_test.md](../tests/netflix/offline-download_test.md) | day 13 | draft |
-| 47.5 | Cancel and rejoin | [/netflix/cancel-rejoin](https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin) | [tests/netflix/cancel-rejoin_test.md](../tests/netflix/cancel-rejoin_test.md) | day 13 | draft |
+| 47.3 | Profile switch with PIN | [/netflix/profile-pin](https://my-testing-repo-main.vercel.app/netflix/profile-pin) | [tests/netflix/profile-pin_test.md](../tests/netflix/profile-pin_test.md) | live | draft |
+| 47.4 | Download for offline | [/netflix/offline-download](https://my-testing-repo-main.vercel.app/netflix/offline-download) | [tests/netflix/offline-download_test.md](../tests/netflix/offline-download_test.md) | live | draft |
+| 47.5 | Cancel and rejoin | [/netflix/cancel-rejoin](https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin) | [tests/netflix/cancel-rejoin_test.md](../tests/netflix/cancel-rejoin_test.md) | live | draft |
 
 ## 48. Spotifly (Spotify) · Streaming
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 48.1 | Premium upgrade flow | [/spotify/premium-upgrade](https://my-testing-repo-main.vercel.app/spotify/premium-upgrade) | [tests/spotify/premium-upgrade_test.md](../tests/spotify/premium-upgrade_test.md) | day 13 | draft |
-| 48.2 | Playlist create and add | [/spotify/playlist-create](https://my-testing-repo-main.vercel.app/spotify/playlist-create) | [tests/spotify/playlist-create_test.md](../tests/spotify/playlist-create_test.md) | day 13 | draft |
-| 48.3 | Cross-device continue | [/spotify/cross-device-continue](https://my-testing-repo-main.vercel.app/spotify/cross-device-continue) | [tests/spotify/cross-device-continue_test.md](../tests/spotify/cross-device-continue_test.md) | day 13 | draft |
-| 48.4 | Family plan invite | [/spotify/family-invite](https://my-testing-repo-main.vercel.app/spotify/family-invite) | [tests/spotify/family-invite_test.md](../tests/spotify/family-invite_test.md) | day 13 | draft |
+| 48.1 | Premium upgrade flow | [/spotify/premium-upgrade](https://my-testing-repo-main.vercel.app/spotify/premium-upgrade) | [tests/spotify/premium-upgrade_test.md](../tests/spotify/premium-upgrade_test.md) | live | draft |
+| 48.2 | Playlist create and add | [/spotify/playlist-create](https://my-testing-repo-main.vercel.app/spotify/playlist-create) | [tests/spotify/playlist-create_test.md](../tests/spotify/playlist-create_test.md) | live | draft |
+| 48.3 | Cross-device continue | [/spotify/cross-device-continue](https://my-testing-repo-main.vercel.app/spotify/cross-device-continue) | [tests/spotify/cross-device-continue_test.md](../tests/spotify/cross-device-continue_test.md) | live | draft |
+| 48.4 | Family plan invite | [/spotify/family-invite](https://my-testing-repo-main.vercel.app/spotify/family-invite) | [tests/spotify/family-invite_test.md](../tests/spotify/family-invite_test.md) | live | draft |
 
 ## 49. YouTubely (YouTube) · Streaming
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 49.1 | Video upload and process | [/youtube/video-upload](https://my-testing-repo-main.vercel.app/youtube/video-upload) | [tests/youtube/video-upload_test.md](../tests/youtube/video-upload_test.md) | day 13 | draft |
-| 49.2 | Comment and moderation | [/youtube/comment-pin](https://my-testing-repo-main.vercel.app/youtube/comment-pin) | [tests/youtube/comment-pin_test.md](../tests/youtube/comment-pin_test.md) | day 13 | draft |
-| 49.3 | Premium background play | [/youtube/background-play-entitlement](https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement) | [tests/youtube/background-play-entitlement_test.md](../tests/youtube/background-play-entitlement_test.md) | day 13 | draft |
-| 49.4 | Channel membership join | [/youtube/channel-membership](https://my-testing-repo-main.vercel.app/youtube/channel-membership) | [tests/youtube/channel-membership_test.md](../tests/youtube/channel-membership_test.md) | day 13 | draft |
+| 49.1 | Video upload and process | [/youtube/video-upload](https://my-testing-repo-main.vercel.app/youtube/video-upload) | [tests/youtube/video-upload_test.md](../tests/youtube/video-upload_test.md) | live | draft |
+| 49.2 | Comment and moderation | [/youtube/comment-pin](https://my-testing-repo-main.vercel.app/youtube/comment-pin) | [tests/youtube/comment-pin_test.md](../tests/youtube/comment-pin_test.md) | live | draft |
+| 49.3 | Premium background play | [/youtube/background-play-entitlement](https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement) | [tests/youtube/background-play-entitlement_test.md](../tests/youtube/background-play-entitlement_test.md) | live | draft |
+| 49.4 | Channel membership join | [/youtube/channel-membership](https://my-testing-repo-main.vercel.app/youtube/channel-membership) | [tests/youtube/channel-membership_test.md](../tests/youtube/channel-membership_test.md) | live | draft |
 
 ## 50. Hotstarry (Disney+ Hotstar) · Streaming
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 50.1 | Live sports playback | [/disney-hotstar/live-sports-playback](https://my-testing-repo-main.vercel.app/disney-hotstar/live-sports-playback) | [tests/disney-hotstar/live-sports-playback_test.md](../tests/disney-hotstar/live-sports-playback_test.md) | day 13 | draft |
+| 50.1 | Live sports playback | [/disney-hotstar/live-sports-playback](https://my-testing-repo-main.vercel.app/disney-hotstar/live-sports-playback) | [tests/disney-hotstar/live-sports-playback_test.md](../tests/disney-hotstar/live-sports-playback_test.md) | live | draft |

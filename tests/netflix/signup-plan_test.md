@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/netflix/signup-plan?reset=true
-max_steps: 30
+max_steps: 45
 tags: [netflix, streaming, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Netflixy 47.1: Signup with plan selection
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Netflix · Industry: Streaming · Pattern: Checkout engine -->
+Catalog objective: sign up choosing the Standard plan with a test card.
+Key assertion: the account is active with the correct plan.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/netflix/signup-plan?reset=true and verify the text "Use case 47.1" and "Signup with plan selection" are visible at the top of the page.
+## Choose Standard
+Go to https://my-testing-repo-main.vercel.app/netflix/signup-plan?reset=true, keep "Standard" ($15.49/mo) selected, click "Next", and verify the "Create a password" step.
 
-## Objective
-Sign up choosing standard plan with test card.
+## Short password
+Type "demo@evals.dev" into Email and "short" into Password, click "Next", and verify "Password must be at least 8 characters."
 
-## Key assertion
-Verify: Account active with correct plan.
+## Valid account
+Change Password to "Demo123!", click "Next", and verify the payment step shows "Standard · $15.49/month".
+
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Start Membership", and verify "Membership active".
+
+## Verify the plan
+Verify "Your plan" reads "Standard" and "Price" reads "$15.49/month".

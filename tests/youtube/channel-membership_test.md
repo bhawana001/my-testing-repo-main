@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/youtube/channel-membership?reset=true
-max_steps: 30
+max_steps: 45
 tags: [youtube, streaming, checkout]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # YouTubely 49.4: Channel membership join
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: YouTube · Industry: Streaming · Pattern: Checkout engine -->
+Catalog objective: join a channel membership tier with a test payment.
+Key assertion: the badge is active and perks are listed.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/youtube/channel-membership?reset=true and verify the text "Use case 49.4" and "Channel membership join" are visible at the top of the page.
+## Choose a tier
+Go to https://my-testing-repo-main.vercel.app/youtube/channel-membership?reset=true, click "Join" on Code Kitchen, keep "Insider" ($4.99/mo), click "Continue", and verify the payment form "Insider · $4.99/month".
 
-## Objective
-Join a channel membership tier with test payment.
+## Pay
+Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Join", and verify the badge "🏅 Member · Insider".
 
-## Key assertion
-Verify: Badge active and perks listed.
+## Verify perks
+Verify "Your perks" lists "Loyalty badge next to your name", "Custom emoji in chat", "Members-only posts" and "Early access to videos", and billing "$4.99/month · Visa •••• 4242".

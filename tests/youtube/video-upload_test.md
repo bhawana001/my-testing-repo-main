@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/youtube/video-upload?reset=true
-max_steps: 30
+max_steps: 45
 tags: [youtube, streaming, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # YouTubely 49.1: Video upload and process
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: YouTube · Industry: Streaming · Pattern: Form wizard -->
+Catalog objective: upload a short video with title and visibility.
+Key assertion: the video processes and plays at the set visibility.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/youtube/video-upload?reset=true and verify the text "Use case 49.1" and "Video upload and process" are visible at the top of the page.
+## Select the file
+Go to https://my-testing-repo-main.vercel.app/youtube/video-upload?reset=true, click "Select sample demo-clip.mp4", and verify "demo-clip.mp4 · 00:42 · 18 MB".
 
-## Objective
-Upload a short video with title and visibility.
+## Details
+Click "Continue", type "My first edge deploy" into Title, choose "No, it's not made for kids", click "Continue", and verify the "Visibility" step.
 
-## Key assertion
-Verify: Video processes and plays at set visibility.
+## Visibility
+Choose "Unlisted", click "Publish", and wait for "Processing complete. Your video is unlisted."
+
+## Play
+Click the player's "Play" button and verify the time advances past 0:00 and the badge reads "Unlisted" with an "Anyone with the link" note.

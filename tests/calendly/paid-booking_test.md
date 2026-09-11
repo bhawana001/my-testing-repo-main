@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/calendly/paid-booking?reset=true
-max_steps: 30
+max_steps: 45
 tags: [calendly, docs-productivity, booking]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Calendlee 46.4: Payment collection booking
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Calendly · Industry: Docs productivity · Pattern: Booking calendar -->
+Catalog objective: book a paid event with a test card.
+Key assertion: the booking is confirmed with a payment receipt.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/calendly/paid-booking?reset=true and verify the text "Use case 46.4" and "Payment collection booking" are visible at the top of the page.
+## Pick a time
+Go to https://my-testing-repo-main.vercel.app/calendly/paid-booking?reset=true, verify "Strategy Consultation" costs "$75.00", click September 22, click "1:00pm", click "Next", and verify a payment form.
 
-## Objective
-Book a paid event with test card.
+## Declined card
+Type "4000 0000 0000 0002" into Card number, "12/29" into Expiry, "123" into CVC, click "Pay $75.00 and schedule", and verify "Your card was declined."
 
-## Key assertion
-Verify: Booking confirmed with payment receipt.
+## Pay with the test card
+Replace the card number with "4242 4242 4242 4242", click "Pay $75.00 and schedule", and verify "Booking confirmed".
+
+## Verify the receipt
+Verify "When" reads "1:00pm · Tuesday, September 22, 2026" and the Payment receipt shows Receipt # "RCPT-221300", Amount paid "$75.00" and Card "Visa •••• 4242".

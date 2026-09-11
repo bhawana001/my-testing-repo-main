@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/netflix/profile-pin?reset=true
-max_steps: 30
+max_steps: 45
 tags: [netflix, streaming, auth]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Netflixy 47.3: Profile switch with PIN
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Netflix · Industry: Streaming · Pattern: Auth engine -->
+Catalog objective: switch to a PIN-protected profile.
+Key assertion: the PIN gate is enforced and the profile content loads.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/netflix/profile-pin?reset=true and verify the text "Use case 47.3" and "Profile switch with PIN" are visible at the top of the page.
+## Pick the locked profile
+Go to https://my-testing-repo-main.vercel.app/netflix/profile-pin?reset=true, verify "Who's watching?" with Demo, Kids and Priya 🔒, click "Priya", and verify "Profile Lock is on for Priya".
 
-## Objective
-Switch to a PIN protected profile.
+## Wrong PIN
+Type "0000" into the PIN box, click "Unlock", and verify "Incorrect PIN. Try again."
 
-## Key assertion
-Verify: PIN gate enforced and profile content loads.
+## Correct PIN
+Type "1234", click "Unlock", and verify "Profile: Priya".
+
+## Verify profile content
+Verify "Continue watching for Priya" lists "The Long Con", "Midnight Kitchen" and "Northern Line".

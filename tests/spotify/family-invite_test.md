@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/spotify/family-invite?reset=true
-max_steps: 30
+max_steps: 45
 tags: [spotify, streaming, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Spotifly 48.4: Family plan invite
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 13). -->
-<!-- Catalog entity: Spotify · Industry: Streaming · Pattern: Form wizard -->
+Catalog objective: invite a member to the Family plan.
+Key assertion: the invite email is sent and a pending state is shown.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/spotify/family-invite?reset=true and verify the text "Use case 48.4" and "Family plan invite" are visible at the top of the page.
+## Invalid email
+Go to https://my-testing-repo-main.vercel.app/spotify/family-invite?reset=true, verify "Premium Family · 1 of 6 accounts", type "sam@acme" into Email address, click "Send invite", and verify "Enter a valid email address."
 
-## Objective
-Invite a member to family plan.
+## Send the invite
+Change the email to "sam@acme.test", click "Send invite", and verify "2 of 6 accounts".
 
-## Key assertion
-Verify: Invite email sent and pending state shown.
+## Verify pending state and email
+Verify sam@acme.test is listed as "Invite sent · Pending" and Sent emails shows "To: sam@acme.test" with "Demo User invited you to Spotifly Premium Family".
