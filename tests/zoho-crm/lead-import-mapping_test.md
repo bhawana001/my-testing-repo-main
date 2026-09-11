@@ -13,9 +13,11 @@ Key assertion: leads are created with the mapped fields.
 ## Load the CSV
 Go to https://my-testing-repo-main.vercel.app/zoho-crm/lead-import-mapping?reset=true, click "Load sample leads.csv", and verify "3 rows · columns: Full Name, E-mail, Org, Phone".
 
-## Map fields with a missing mandatory field
-Click "Next", verify the mapping step shows Full Name → Last Name, E-mail → Email, Org → "— Do not import —", Phone → Phone, then click "Next" and verify "Map the mandatory fields: Last Name and Company."
+## Open the mapping step
+Click "Next" and verify the mapping step shows Full Name → Last Name, E-mail → Email, Org → "— Do not import —", Phone → Phone.
 
+## Try to continue with a missing mandatory field
+Click "Next" and verify "Map the mandatory fields: Last Name and Company."
 ## Fix the mapping
 Select "Company" for the Org column, click "Next", and verify the preview lists Priya Raman, Jon Park and Lena Ortiz with companies Nimbus Labs, Vertex AI and Quanta Foods.
 

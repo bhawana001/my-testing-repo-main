@@ -19,5 +19,8 @@ Click "Sign in to unlock", type "demo@evals.dev" into Email and "Demo123!" into 
 ## Verify access
 Verify the members-only notice is gone, size chips "US 8", "US 9" and "US 10" are shown, and the button now reads "Add to Bag".
 
-## Buy
-Click "US 9", verify the "Add to Bag" button is enabled, click it, and verify the message "Added Stride Runner 3 · Member Edition (US 9) to your bag." appears.
+## Choose a size
+Click "US 9" and verify the "Add to Bag" button is enabled.
+
+## Add to bag
+Click "Add to Bag" and verify the message "Added Stride Runner 3 · Member Edition (US 9) to your bag." appears.

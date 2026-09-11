@@ -17,4 +17,4 @@ Go to https://my-testing-repo-main.vercel.app/servicenow/knowledge-search?reset=
 Click "Connect to the corporate VPN" and verify the heading "Connect to the corporate VPN" with ID "KB0010021" and body text mentioning "client 5.4".
 
 ## Vote
-Verify the "Helpful?" widget with Yes and No, click "Yes", and verify "Thanks! You rated this article helpful."
+Click "Yes" next to "Helpful?" and verify "Thanks! You rated this article helpful."

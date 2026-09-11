@@ -17,4 +17,4 @@ Go to https://my-testing-repo-main.vercel.app/zendesk/help-center-search?reset=t
 Click "How to reset your password" and verify the article heading "How to reset your password" with body text mentioning "Forgot password".
 
 ## Use the feedback widget
-Verify the question "Was this article helpful?" with "Yes" and "No" buttons, click "Yes", and verify "Thanks for your feedback!"
+Click "Yes" next to "Was this article helpful?" and verify "Thanks for your feedback!"

@@ -10,9 +10,14 @@ tags: [walmart, e-commerce, checkout]
 Catalog objective: trigger the Walmartly+ banner during checkout and open the signup modal.
 Key assertion: plan pricing renders and the modal closes cleanly.
 
-## Open the cart and go to checkout
-Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true, verify a yellow banner "Walmartly+ members get free delivery on this order" is shown, then click "Proceed to checkout" and click "Continue to payment" and verify the Payment step is shown.
+## Open the cart
+Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true and verify a yellow banner "Walmartly+ members get free delivery on this order" is shown.
 
+## Go to delivery
+Click "Proceed to checkout" and verify the delivery step with a "Continue to payment" button is shown.
+
+## Go to payment
+Click "Continue to payment" and verify the Payment card form and the "Try Walmartly+ free" banner button are shown.
 ## Open the signup modal
 Click the "Try Walmartly+ free" button and verify a modal titled "Choose your Walmartly+ plan" opens.
 

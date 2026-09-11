@@ -19,8 +19,10 @@ Type "Karan Shah" into Beneficiary name, "998877665544" into Account number and 
 ## Attempt IMPS during cooling
 Select "Karan Shah · 5544 (cooling)" in "To beneficiary", type "2500" into Amount (INR), click "Continue", and verify the error "This beneficiary is in the 30-minute cooling period. IMPS is not allowed yet." is shown.
 
-## Simulate the cooling period and send
-Click "Simulate 30 min elapsed" next to Karan Shah, verify his badge reads "Active", then click "Continue", type "123456" into the OTP field, click "Confirm transfer", and verify the message "Transfer successful" appears.
+## Simulate the cooling period
+Click "Simulate 30 min elapsed" next to Karan Shah and verify his badge reads "Active".
 
+## Send with OTP
+Click "Continue", type "123456" into the OTP field, click "Confirm transfer", and verify the message "Transfer successful" appears.
 ## Verify the reference and balance
 Verify a "Reference ID" starting with "IMPS" is shown and the Savings Account balance now reads "₹1,81,750.40".

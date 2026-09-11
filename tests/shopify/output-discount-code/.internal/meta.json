@@ -1,0 +1,18 @@
+{
+  "test_id": "a4f368d7-9798-4fcb-a4c8-5521339cc91d",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "discount-code",
+  "commit_id": "20b5c980-1874-4bac-92f2-8397a8ce7781",
+  "testcase_id": "01M28JWX4C7F2XT5A4H46W1C2Q",
+  "executions": [
+    {
+      "execution_id": "13d86a46-1bd9-40d7-b6fd-8ef79ea4c7a1",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T15:58:31.581Z"
+    }
+  ]
+}

@@ -1,8 +1,18 @@
 {
   "airtable/grid-crud": "verified",
   "amazon/add-to-cart-variant": "verified",
+  "amazon/one-click-checkout": "verified",
   "amazon/order-tracking": "verified",
   "calendly/invitee-booking": "verified",
   "chase/login-2fa": "verified",
-  "lemonade/instant-quote": "verified"
+  "flipkart/cart-exchange-offer": "verified",
+  "flipkart/cod-checkout": "failed",
+  "lemonade/instant-quote": "verified",
+  "shopify/checkout-extension": "verified",
+  "shopify/discount-code": "verified",
+  "shopify/guest-checkout": "verified",
+  "walmart/grocery-substitution": "verified",
+  "walmart/membership-upsell": "failed",
+  "walmart/reorder-from-history": "verified",
+  "walmart/store-pickup": "verified"
 }

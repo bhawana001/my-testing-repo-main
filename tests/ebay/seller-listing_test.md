@@ -14,8 +14,10 @@ Key assertion: the listing is live and searchable by title.
 Go to https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true, click "Continue" on the "Add photos" step without adding photos, and verify "Add at least 2 photos."
 
 ## Add photos
-Click "+ front.jpg" and "+ back.jpg", verify both photos are listed, then click "Continue" and verify the "Item details" step.
+Click "+ front.jpg" and "+ back.jpg", and verify both photos are listed.
 
+## Continue to details
+Click "Continue" and verify the "Item details" step is shown.
 ## Details
 Type "Mechanical Keyboard · Brown switches" into Title, choose "Used", type "Lightly used, all keys work." into Description, and click "Continue".
 

@@ -19,5 +19,11 @@ Click "■ Stop recording" and verify "Recording stopped. It will appear in Reco
 ## Check recordings
 Click "Recordings" and verify a row "Weekly sync · Sep 14, 2026 · 0:32" with status "Processing".
 
-## Finish processing and play
-Click "Simulate processing complete", verify the status reads "Ready", click "▶ Play", then click the player's "Play" button and verify the time counter advances from 0:00 toward 0:32.
+## Finish processing
+Click "Simulate processing complete" and verify the status reads "Ready".
+
+## Open the recording
+Click "▶ Play" and verify a player titled "Weekly sync · Sep 14, 2026" showing "0:00 / 0:32".
+
+## Play it
+Click the player's "Play" button and verify the time counter advances past 0:00.
