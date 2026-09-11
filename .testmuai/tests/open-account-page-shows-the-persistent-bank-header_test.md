@@ -1,15 +1,16 @@
 ---
 mode: testing
 max_steps: 30
+timeout: 60
 target: chrome
 variables:
   calculators_page_url:
-    value: "http://localhost:3000/bank-clone-app/calculators"
+    value: "http://localhost:3100/bank-clone-app/calculators"
   open_account_page_url:
-    value: "http://localhost:3000/bank-clone-app/open-account"
+    value: "http://localhost:3100/bank-clone-app/open-account"
 assurance:
   id: t-8
-  base: sha256:e505b24ff92d5be71929549edf57cb641e729de48f7aced7af0ea59b00833c4f
+  base: sha256:63ef910f76d9332da06c25c9788f69a3ffa01f90ed087dddc11a877767cb1750
 ---
 # Open Account page shows the persistent bank header
 

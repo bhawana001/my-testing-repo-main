@@ -1,0 +1,18 @@
+{
+  "test_id": "c7265f0a-3357-478a-bed9-10c0f813e4fd",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "safeguard-login-session",
+  "commit_id": "48ca6a94-d84d-4cca-9c45-f82e05111fd2",
+  "testcase_id": "01M1ENZJMS7GZHJGM84T0FWFQP",
+  "executions": [
+    {
+      "execution_id": "56231e8f-94ef-4a9d-94d6-283cab83e897",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-01T14:31:32.927Z"
+    }
+  ]
+}

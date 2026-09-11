@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import AmazonLogo from "./AmazonLogo";
 import { PRODUCTS, byCategory, GRID_CARDS, SLIDERS } from "./data";
-import { usd } from "./lib";
+import { BASE, usd } from "./lib";
 
 const HERO = [
   { emoji: "🎮", bg: "#2b2f45", label: "Gaming Store" },
@@ -35,7 +36,6 @@ export default function ShopApp() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [addressOpen, setAddressOpen] = useState(false);
   const [modalProduct, setModalProduct] = useState(null);
-  const [checkout, setCheckout] = useState(null); // receipt object
   const [location, setLocation] = useState("United States");
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("United States");
@@ -43,6 +43,7 @@ export default function ShopApp() {
   const [bounce, setBounce] = useState(false);
   const [busy, setBusy] = useState(false);
   const sliderRefs = useRef({});
+  const router = useRouter();
 
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
   const subtotal = cart.reduce((s, i) => s + i.product.price * i.qty, 0);
@@ -88,32 +89,23 @@ export default function ShopApp() {
     setCart((c) => c.filter((i) => i.product.id !== id));
   }
 
-  async function placeOrder() {
-    setBusy(true);
+  // Hand the cart to the payment page. The checkout route reads it back from
+  // sessionStorage, charges the card, and shows the confirmation.
+  function goToCheckout() {
+    const payload = cart.map((i) => ({
+      id: i.product.id,
+      title: i.product.title,
+      price: i.product.price,
+      emoji: i.product.emoji,
+      qty: i.qty,
+    }));
     try {
-      const res = await fetch("/api/shop/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: cart.map((i) => ({ productId: i.product.id, qty: i.qty })),
-          total: Number(subtotal.toFixed(2)),
-        }),
-      });
-      const data = await res.json();
-      setCheckout({
-        orderId: data.orderId || "ORD-DEMO",
-        items: cart,
-        total: subtotal,
-      });
-      setCart([]);
-      setCartOpen(false);
+      sessionStorage.setItem("shopkart_cart", JSON.stringify(payload));
     } catch {
-      setCheckout({ orderId: "ORD-DEMO", items: cart, total: subtotal });
-      setCart([]);
-      setCartOpen(false);
-    } finally {
-      setBusy(false);
+      // storage blocked — the checkout page falls back to a demo cart
     }
+    setCartOpen(false);
+    router.push(`${BASE}/checkout`);
   }
 
   function scrollSlider(key, dx) {
@@ -463,7 +455,7 @@ export default function ShopApp() {
           <button
             className="btn-checkout"
             disabled={cart.length === 0 || busy}
-            onClick={placeOrder}
+            onClick={goToCheckout}
           >
             Proceed to Checkout
           </button>
@@ -473,11 +465,10 @@ export default function ShopApp() {
       {/* ===== Overlay for modals ===== */}
       <div
         className={
-          "modal-overlay" + (modalProduct || checkout || addressOpen ? " active" : "")
+          "modal-overlay" + (modalProduct || addressOpen ? " active" : "")
         }
         onClick={() => {
           setModalProduct(null);
-          setCheckout(null);
           setAddressOpen(false);
         }}
       >
@@ -560,45 +551,6 @@ export default function ShopApp() {
                 Done
               </button>
             </div>
-          </div>
-        )}
-
-        {/* Checkout modal */}
-        {checkout && (
-          <div className="checkout-modal" onClick={(e) => e.stopPropagation()}>
-            <span className="modal-close" onClick={() => setCheckout(null)}>
-              ×
-            </span>
-            <div className="checkout-icon">✓</div>
-            <div className="checkout-title">Order Placed Successfully!</div>
-            <p>Thank you for shopping. Here is your mock receipt:</p>
-            <div className="checkout-receipt">
-              <div className="receipt-row">
-                <span>Order</span>
-                <span>{checkout.orderId}</span>
-              </div>
-              <div className="receipt-divider" />
-              {checkout.items.map((i) => (
-                <div className="receipt-row" key={i.product.id}>
-                  <span>
-                    {i.product.title} × {i.qty}
-                  </span>
-                  <span>{usd(i.product.price * i.qty)}</span>
-                </div>
-              ))}
-              <div className="receipt-divider" />
-              <div className="receipt-row receipt-total">
-                <span>Total</span>
-                <span>{usd(checkout.total)}</span>
-              </div>
-            </div>
-            <button
-              className="btn-address-submit"
-              style={{ width: "100%" }}
-              onClick={() => setCheckout(null)}
-            >
-              Done
-            </button>
           </div>
         )}
       </div>

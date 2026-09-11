@@ -97,6 +97,7 @@ Prefix everything with `https://my-testing-repo-main.vercel.app` (or `http://loc
 
 # E-commerce
 /shop-clone-app
+/shop-clone-app/checkout
 
 # Insurance
 /insurance-clone-app
@@ -142,7 +143,7 @@ Prefix everything with `https://my-testing-repo-main.vercel.app` (or `http://loc
 
 ```
 /api/health/health     /api/health/login     /api/health/doctors    /api/health/consult
-/api/shop/health       /api/shop/login       /api/shop/products     /api/shop/cart     /api/shop/orders
+/api/shop/health       /api/shop/login       /api/shop/products     /api/shop/cart     /api/shop/orders     /api/shop/pay
 /api/insurance/health  /api/insurance/login  /api/insurance/quote   /api/insurance/claim
 /api/travel/health     /api/travel/login     /api/travel/listings   /api/travel/book
 /api/telecom/health    /api/telecom/login    /api/telecom/plans     /api/telecom/recharge

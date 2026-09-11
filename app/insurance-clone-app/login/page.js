@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import InsHeader from "../InsHeader";
 import { BASE } from "../lib";
 
@@ -10,6 +11,7 @@ export default function InsLogin() {
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState(null);
   const [busy, setBusy] = useState(false);
+  const router = useRouter();
 
   async function submit(e) {
     e.preventDefault();
@@ -24,9 +26,12 @@ export default function InsLogin() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Login failed");
       setMsg({ ok: true, text: `Welcome back, ${data.user.name}! Redirecting to your policy…` });
+      // The API set an httpOnly safeguard_session cookie; the dashboard gates on it.
+      // Stay busy through the navigation so the button cannot be clicked mid-redirect.
+      router.push(`${BASE}/dashboard`);
+      return;
     } catch (err) {
       setMsg({ ok: false, text: err.message });
-    } finally {
       setBusy(false);
     }
   }

@@ -1287,3 +1287,184 @@
   background: var(--amazon-bg);
   color: var(--amazon-bg);
 }
+
+/* ============================ Checkout / payment page ============================ */
+.amz .pay-page {
+  min-height: 100vh;
+  background-color: var(--amazon-bg);
+  padding: 40px 20px 80px;
+}
+.amz .pay-grid {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .amz .pay-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.amz .pay-panel,
+.amz .pay-summary {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.amz .pay-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.amz .pay-sub {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.amz .pay-field {
+  display: block;
+  margin-bottom: 16px;
+}
+.amz .pay-field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.amz .pay-field input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #888c8c;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(15, 17, 17, 0.15) inset;
+}
+.amz .pay-field input:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+.amz .pay-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.amz .pay-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-color);
+  background: var(--amazon-btn-primary);
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.amz .pay-btn:hover {
+  background: var(--amazon-btn-primary-hover);
+}
+.amz .pay-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.amz .pay-btn--ghost {
+  background: var(--amazon-btn-secondary);
+  border-color: var(--border-color);
+  margin-top: 20px;
+}
+.amz .pay-processing {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.amz .pay-error {
+  background: #fff5f5;
+  border: 1px solid #d13212;
+  border-radius: 4px;
+  color: #b12704;
+  font-size: 14px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+.amz .pay-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+.amz .pay-summary h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.amz .pay-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  padding: 6px 0;
+}
+.amz .pay-row--total {
+  font-size: 17px;
+  font-weight: 700;
+  color: #b12704;
+  border-top: 1px solid var(--border-color);
+  margin-top: 8px;
+  padding-top: 12px;
+}
+.amz .pay-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 10px 0;
+}
+.amz .pay-back {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 14px;
+}
+.amz .pay-confirm {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.amz .pay-confirm-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #067d62;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 56px;
+}
+.amz .pay-confirm-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #067d62;
+  margin-bottom: 8px;
+}
+.amz .pay-confirm-sub {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.amz .pay-receipt {
+  text-align: left;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+}

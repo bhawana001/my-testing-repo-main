@@ -1,0 +1,349 @@
+{
+  "version": 1,
+  "read_basis": "sha256:f18cd73d7a0443fc21b31cc382518adfee2feabcf3f305f7cc238a88025a3ad3",
+  "source": {
+    "source_id": "prd-bank-savings",
+    "source_cid": "sha256:6adcb835bdbf0758e011b233731e88679fd4dcbcec812ef38df5e51faff83306"
+  },
+  "use_cases": [
+    {
+      "temp_ref": "n1",
+      "title": "Open a savings account online",
+      "description": "A prospective customer opens a savings account on the web without visiting a branch by moving through a four-step wizard that starts at Account type, proceeds through About you, Fund it, and Review, keeps step status visible, allows back-navigation from step two onward, and blocks progress from the identity step until required personal and contact details are complete and correctly formed; in this demo scope the flow ends at “Open account” without real KYC, credit checks, money movement, or session persistence between visits.",
+      "summary": "Open a savings account through the web wizard.",
+      "actors": [
+        "prospective customer"
+      ],
+      "value": "Acquires savings-account applications without a branch visit while screening out obviously invalid applicant data before downstream verification.",
+      "risk": "high",
+      "cite": {
+        "anchor": "L20-L20",
+        "quote": "A first-time visitor can open a savings account in under 5 minutes."
+      },
+      "cites": [
+        {
+          "anchor": "L20-L20",
+          "quote": "A first-time visitor can open a savings account in under 5 minutes."
+        },
+        {
+          "anchor": "L63-L63",
+          "quote": "The application is a four-step wizard with a visible stepper:"
+        },
+        {
+          "anchor": "L86-L86",
+          "quote": "Step two collects identity and contact details. We must not let an"
+        }
+      ],
+      "criteria": [
+        {
+          "text": "the onboarding wizard shows four steps in this order: Account type, About you, Fund it, and Review",
+          "cite": {
+            "anchor": "L64-L64",
+            "quote": "**Account type → About you → Fund it → Review**. The primary button reads"
+          }
+        },
+        {
+          "text": "the primary action reads \"Continue →\" on the first three steps and \"Open account\" on the final step",
+          "cite": {
+            "anchor": "L65-L65",
+            "quote": "\"Continue →\" on the first three steps and \"Open account\" on the final step."
+          }
+        },
+        {
+          "text": "a \"← Back\" control is available from step two onward",
+          "cite": {
+            "anchor": "L66-L66",
+            "quote": "A \"← Back\" control returns to the previous step from step two onward."
+          }
+        },
+        {
+          "text": "the stepper marks the current step and shows completed steps with a check",
+          "cite": {
+            "anchor": "L68-L69",
+            "quote": "The stepper always shows which step is current; completed steps are marked\nwith a check."
+          }
+        },
+        {
+          "text": "the Account type step is active on first load",
+          "cite": {
+            "anchor": "L79-L80",
+            "quote": "The Account type step is the active step when the page first\n  loads."
+          }
+        },
+        {
+          "text": "continuing from Account type with a selected product advances to About you",
+          "cite": {
+            "anchor": "L75-L76",
+            "quote": "With a product selected, clicking \"Continue →\" from the\n  Account type step advances to the \"About you\" step."
+          }
+        },
+        {
+          "text": "attempting to continue with invalid About you data keeps the user on the step and shows inline field errors",
+          "cite": {
+            "anchor": "L90-L91",
+            "quote": "Validation runs when the user attempts to continue. Invalid fields show an\ninline error message beneath the field, and the user stays on the step."
+          }
+        },
+        {
+          "text": "required identity fields are first name, last name, street address, city, and state",
+          "cite": {
+            "anchor": "L95-L95",
+            "quote": "- First name, last name, street address, city, and state are required."
+          }
+        },
+        {
+          "text": "email must be a well-formed address",
+          "cite": {
+            "anchor": "L96-L96",
+            "quote": "- Email must be a well-formed address."
+          }
+        },
+        {
+          "text": "malformed email such as `notanemail` shows the message \"Enter a valid email\"",
+          "cite": {
+            "anchor": "L108-L109",
+            "quote": "- **AC-C3** — Entering a malformed email such as `notanemail` and\n  continuing shows the message \"Enter a valid email\"."
+          }
+        },
+        {
+          "text": "phone must contain at least 10 digits",
+          "cite": {
+            "anchor": "L97-L97",
+            "quote": "- Phone must contain at least 10 digits."
+          }
+        },
+        {
+          "text": "SSN accepts exactly the last 4 digits",
+          "cite": {
+            "anchor": "L98-L98",
+            "quote": "- SSN field takes exactly the last 4 digits."
+          }
+        },
+        {
+          "text": "ZIP must be exactly 5 digits",
+          "cite": {
+            "anchor": "L99-L99",
+            "quote": "- ZIP must be exactly 5 digits."
+          }
+        }
+      ],
+      "depends_on_hint": [],
+      "matches_existing": {
+        "cid": "sha256:b82014c97d526751717a9e2a695614e3d693aef5b37f47d6b940e200596993a4",
+        "reason": "Same business goal for the same actor: the source reconfirms the web account-opening wizard, its step flow, and the identity-validation rules without moving the current use-case content."
+      }
+    },
+    {
+      "temp_ref": "n2",
+      "title": "Compare savings account products",
+      "description": "A prospective customer reviews the savings products offered on the Open Account page before entering personal data, sees each product’s APY and minimum opening deposit up front, knows all three products are fee-free, and can rely on High-Yield Savings being preselected while still changing the choice to another highlighted product.",
+      "summary": "Review and compare available savings products.",
+      "actors": [
+        "prospective customer"
+      ],
+      "value": "Lets visitors make an informed product choice before beginning the application.",
+      "risk": "med",
+      "cite": {
+        "anchor": "L13-L14",
+        "quote": "Prospective customers need to (a) compare our savings products and open an\naccount without visiting a branch, and (b) estimate their federal tax"
+      },
+      "cites": [
+        {
+          "anchor": "L13-L14",
+          "quote": "Prospective customers need to (a) compare our savings products and open an\naccount without visiting a branch, and (b) estimate their federal tax"
+        },
+        {
+          "anchor": "L21-L21",
+          "quote": "Rates and product terms are visible before any personal data is requested."
+        },
+        {
+          "anchor": "L35-L35",
+          "quote": "The Open Account page presents exactly three savings products."
+        }
+      ],
+      "criteria": [
+        {
+          "text": "the Open Account page offers exactly three products: High-Yield Savings, Everyday Savings, and Money Market",
+          "cite": {
+            "anchor": "L41-L43",
+            "quote": "| High-Yield Savings | 4.34% | $0 |\n| Everyday Savings | 3.10% | $0 |\n| Money Market | 4.00% | $100 |"
+          }
+        },
+        {
+          "text": "High-Yield Savings advertises 4.34% APY with a $0 minimum opening deposit",
+          "cite": {
+            "anchor": "L41-L41",
+            "quote": "| High-Yield Savings | 4.34% | $0 |"
+          }
+        },
+        {
+          "text": "Everyday Savings advertises 3.10% APY with a $0 minimum opening deposit",
+          "cite": {
+            "anchor": "L42-L42",
+            "quote": "| Everyday Savings | 3.10% | $0 |"
+          }
+        },
+        {
+          "text": "Money Market advertises 4.00% APY with a $100 minimum opening deposit",
+          "cite": {
+            "anchor": "L43-L43",
+            "quote": "| Money Market | 4.00% | $100 |"
+          }
+        },
+        {
+          "text": "all products are fee-free and show APY and minimum opening deposit before personal data is requested",
+          "cite": {
+            "anchor": "L35-L37",
+            "quote": "The Open Account page presents exactly three savings products. Every\nproduct is fee-free and shows its annual percentage yield and minimum\nopening deposit up front."
+          }
+        },
+        {
+          "text": "High-Yield Savings is selected by default on page load",
+          "cite": {
+            "anchor": "L45-L45",
+            "quote": "**High-Yield Savings is selected by default** when the page loads, since it"
+          }
+        },
+        {
+          "text": "selecting a different product highlights it as the chosen option",
+          "cite": {
+            "anchor": "L46-L47",
+            "quote": "is our most popular account. Selecting a different product highlights it as\nthe chosen option."
+          }
+        }
+      ],
+      "depends_on_hint": [],
+      "matches_existing": {
+        "cid": "sha256:79ba8cd1800dc7db3d304fd3530ac4add24a7d5d78ad182db0022643c286a896",
+        "reason": "Same business goal for the same actor: the source reconfirms comparing savings products, their visible terms, and the default selection behavior without changing the existing use-case meaning."
+      }
+    },
+    {
+      "temp_ref": "n3",
+      "title": "Calculate a federal income tax estimate",
+      "description": "A prospective customer uses the Federal Income Tax Calculator to estimate either a federal refund or an amount owed, with results recalculated live as inputs change and no submit action or page reload; the calculator presents an ordered estimate breakdown, applies filing-status-based standard deductions, floors taxable income at zero, reveals an itemized-deductions input when Itemized is chosen, and displays amounts as whole-dollar US currency.",
+      "summary": "Estimate a federal refund or amount owed live.",
+      "actors": [
+        "prospective customer"
+      ],
+      "value": "Helps visitors estimate tax outcome and decide how much they may want to deposit.",
+      "risk": "med",
+      "cite": {
+        "anchor": "L15-L16",
+        "quote": "refund so they can decide how much to deposit. This PRD covers the\n**Open Account** flow and the **Federal Income Tax Calculator**."
+      },
+      "cites": [
+        {
+          "anchor": "L15-L16",
+          "quote": "refund so they can decide how much to deposit. This PRD covers the\n**Open Account** flow and the **Federal Income Tax Calculator**."
+        },
+        {
+          "anchor": "L117-L119",
+          "quote": "At `/bank-clone-app/calculators`, the calculator estimates a federal refund\nor amount owed. It is a live calculation — results update as the user types,\nwith no submit button and no page reload."
+        }
+      ],
+      "criteria": [
+        {
+          "text": "the calculator updates as the user types, with no submit button and no page reload",
+          "cite": {
+            "anchor": "L118-L119",
+            "quote": "or amount owed. It is a live calculation — results update as the user types,\nwith no submit button and no page reload."
+          }
+        },
+        {
+          "text": "the estimate panel shows, in order, Gross income, Deductions, Taxable income, Tax liability, and Taxes withheld, then a total labelled either \"Estimated refund\" or \"Estimated amount you owe\"",
+          "cite": {
+            "anchor": "L121-L123",
+            "quote": "The estimate panel shows, in order: Gross income, Deductions, Taxable\nincome, Tax liability, and Taxes withheld, followed by a total labelled\neither \"Estimated refund\" or \"Estimated amount you owe\"."
+          }
+        },
+        {
+          "text": "standard deductions are Single $14,600, Married filing jointly $29,200, and Head of household $21,900",
+          "cite": {
+            "anchor": "L127-L128",
+            "quote": "- Filing status selects the standard deduction: Single $14,600, Married\n  filing jointly $29,200, Head of household $21,900."
+          }
+        },
+        {
+          "text": "gross income is the entered annual income shown as currency",
+          "cite": {
+            "anchor": "L129-L129",
+            "quote": "- Gross income is the annual income the user entered, shown as currency."
+          }
+        },
+        {
+          "text": "taxable income equals gross income minus the deduction, floored at zero",
+          "cite": {
+            "anchor": "L130-L130",
+            "quote": "- Taxable income is gross income minus the deduction, floored at zero."
+          }
+        },
+        {
+          "text": "choosing \"Itemized\" reveals an itemized deductions input",
+          "cite": {
+            "anchor": "L131-L131",
+            "quote": "- Choosing \"Itemized\" reveals an itemized deductions input."
+          }
+        },
+        {
+          "text": "displayed amounts use whole-dollar US currency",
+          "cite": {
+            "anchor": "L132-L132",
+            "quote": "- Amounts are displayed as whole-dollar US currency."
+          }
+        }
+      ],
+      "depends_on_hint": [],
+      "matches_existing": {
+        "cid": "sha256:41b18a75c0f5a7c9f4b2fe1fd83844e0e7143a9a5b99bdd8fab4958e01d739d3",
+        "reason": "Same business goal for the same actor: the source reconfirms the live federal tax estimate flow, its result breakdown, deduction rules, and display behavior without moving the current use-case content."
+      }
+    },
+    {
+      "temp_ref": "n4",
+      "title": "Move between the Open Account and Calculators pages",
+      "description": "A visitor uses the persistent bank header to move between the site’s main account-opening and calculator areas without relying on the browser’s back button, including reaching the Open Account page from the Calculators page through the header link.",
+      "summary": "Navigate between the site’s two main banking areas.",
+      "actors": [
+        "visitor"
+      ],
+      "value": "Supports exploration across related banking tools without forcing browser-back navigation.",
+      "risk": "low",
+      "cite": {
+        "anchor": "L153-L154",
+        "quote": "A persistent header lets a visitor move between the main areas of the site\nwithout using the browser's back button."
+      },
+      "cites": [
+        {
+          "anchor": "L153-L154",
+          "quote": "A persistent header lets a visitor move between the main areas of the site\nwithout using the browser's back button."
+        },
+        {
+          "anchor": "L160-L161",
+          "quote": "- **AC-E2** — From the Calculators page, the header link to Open Account\n  navigates to `/bank-clone-app/open-account`."
+        }
+      ],
+      "criteria": [
+        {
+          "text": "the bank header is present on both the Open Account page and the Calculators page",
+          "cite": {
+            "anchor": "L158-L159",
+            "quote": "- **AC-E1** — The bank header is present on both the Open Account page and\n  the Calculators page."
+          }
+        },
+        {
+          "text": "from the Calculators page, the header link to Open Account navigates to `/bank-clone-app/open-account`",
+          "cite": {
+            "anchor": "L160-L161",
+            "quote": "- **AC-E2** — From the Calculators page, the header link to Open Account\n  navigates to `/bank-clone-app/open-account`."
+          }
+        }
+      ],
+      "depends_on_hint": [],
+      "matches_existing": {
+        "cid": "sha256:ae2193caa90b2a779ba50025d19b653012bbaf94ba6897f3e705fdbb33a4b9d2",
+        "reason": "Same business goal for the same actor: the source reconfirms persistent header navigation between the two banking areas without changing the existing use-case meaning."
+      }
+    }
+  ]
+}
