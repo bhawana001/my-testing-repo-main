@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zoho-crm, crm, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zohoo CRM 32.3: Blueprint stage transition
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zoho CRM · Industry: CRM · Pattern: Form wizard -->
+Catalog objective: move a record through a blueprint transition with required inputs.
+Key assertion: the transition completes and the stage advances.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition?reset=true and verify the text "Use case 32.3" and "Blueprint stage transition" are visible at the top of the page.
+## Open the deal
+Go to https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition?reset=true and verify the deal "Globex · Annual platform deal" is in stage "Qualification" with a "Send proposal" transition button.
 
-## Objective
-Move a record through a blueprint transition with required inputs.
+## Try without required inputs
+Click "Send proposal", click "Save" without filling anything, and verify "Proposal Amount is required."
 
-## Key assertion
-Verify: Transition completes and stage advances.
+## Complete the inputs
+Type "52000" into Proposal Amount and set Expected Closing Date to 2026-10-30, click "Save", and verify the modal closes.
+
+## Verify the stage advanced
+Verify the stage badge reads "Proposal/Price Quote", Amount reads "$52,000.00", Expected close reads "2026-10-30", and the timeline's top entry reads "Transition “Send proposal” completed: Qualification → Proposal/Price Quote".

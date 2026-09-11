@@ -69,7 +69,7 @@ export function highlightText(text, term) {
 }
 
 /** Composer with optional attachment and send. */
-export function Composer({ onSend, placeholder = "Message", allowAttach, sendLabel = "Send", testIdPrefix = "composer", disabled }) {
+export function Composer({ onSend, placeholder = "Message", allowAttach, sampleFile, sendLabel = "Send", testIdPrefix = "composer", disabled }) {
   const [text, setText] = useState("");
   const [attachment, setAttachment] = useState(null);
   function send() {
@@ -87,6 +87,9 @@ export function Composer({ onSend, placeholder = "Message", allowAttach, sendLab
           📎 {attachment ? attachment.name : "Attach"}
           <input type="file" className="ee-sr" onChange={(e) => { const f = e.target.files?.[0]; if (f) setAttachment({ name: f.name, size: `${Math.max(1, Math.round(f.size / 1024))} KB`, kind: f.type.startsWith("image/") ? "image" : "file" }); }} aria-label="Attach file" />
         </label>
+      )}
+      {sampleFile && !attachment && (
+        <button type="button" className="ee-btn ee-btn--secondary ee-btn--sm" onClick={() => setAttachment(sampleFile)} data-testid={`${testIdPrefix}-sample`}>+ {sampleFile.name}</button>
       )}
       <Btn size="sm" onClick={send} disabled={disabled || (!text.trim() && !attachment)} data-testid={`${testIdPrefix}-send`} aria-label={sendLabel}>{sendLabel}</Btn>
     </div>

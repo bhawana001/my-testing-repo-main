@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zendesk/widget-ticket?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zendesk, support-saas, wizard]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zendeskly 30.1: Ticket submission via widget
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zendesk · Industry: Support SaaS · Pattern: Form wizard -->
+Catalog objective: submit a ticket through the web widget.
+Key assertion: the ticket is created with the correct fields.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zendesk/widget-ticket?reset=true and verify the text "Use case 30.1" and "Ticket submission via widget" are visible at the top of the page.
+## Open the widget
+Go to https://my-testing-repo-main.vercel.app/zendesk/widget-ticket?reset=true, click the "? Help" button in the bottom-right corner, and verify a "Leave us a message" form opens.
 
-## Objective
-Submit a ticket through the web widget.
+## Submit with an invalid email
+Type "Demo User" into Your name, "demo@evals" into Email address, "Cannot reset password" into Subject, "The reset email never arrives." into How can we help?, select "High" priority, click "Send", and verify the error "Enter a valid email address."
 
-## Key assertion
-Verify: Ticket created with correct fields.
+## Fix the email and send
+Change Email address to "demo@evals.dev", click "Send", and verify "Thanks for reaching out" with "Your request #1043 was received."
+
+## Verify the ticket fields
+Click "Agent view" in the top bar and verify the ticket list shows "#1043" with subject "Cannot reset password", requester "Demo User (demo@evals.dev)", priority "High", status "New" and channel "Web widget".

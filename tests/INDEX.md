@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 110 | 8 |
+| 209 | 127 | 10 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -25,8 +25,8 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
 | 2.1 | Storefront guest checkout | [/shopify/guest-checkout](https://my-testing-repo-main.vercel.app/shopify/guest-checkout) | [tests/shopify/guest-checkout_test.md](../tests/shopify/guest-checkout_test.md) | live | verified |
-| 2.2 | Discount code application | [/shopify/discount-code](https://my-testing-repo-main.vercel.app/shopify/discount-code) | [tests/shopify/discount-code_test.md](../tests/shopify/discount-code_test.md) | live | draft |
-| 2.3 | Checkout extension render | [/shopify/checkout-extension](https://my-testing-repo-main.vercel.app/shopify/checkout-extension) | [tests/shopify/checkout-extension_test.md](../tests/shopify/checkout-extension_test.md) | live | draft |
+| 2.2 | Discount code application | [/shopify/discount-code](https://my-testing-repo-main.vercel.app/shopify/discount-code) | [tests/shopify/discount-code_test.md](../tests/shopify/discount-code_test.md) | live | verified |
+| 2.3 | Checkout extension render | [/shopify/checkout-extension](https://my-testing-repo-main.vercel.app/shopify/checkout-extension) | [tests/shopify/checkout-extension_test.md](../tests/shopify/checkout-extension_test.md) | live | verified |
 | 2.4 | Admin order creation | [/shopify/admin-order-creation](https://my-testing-repo-main.vercel.app/shopify/admin-order-creation) | [tests/shopify/admin-order-creation_test.md](../tests/shopify/admin-order-creation_test.md) | day 14 | draft |
 | 2.5 | Theme update smoke | [/shopify/theme-update-smoke](https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke) | [tests/shopify/theme-update-smoke_test.md](../tests/shopify/theme-update-smoke_test.md) | day 14 | draft |
 
@@ -283,38 +283,38 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 30.1 | Ticket submission via widget | [/zendesk/widget-ticket](https://my-testing-repo-main.vercel.app/zendesk/widget-ticket) | [tests/zendesk/widget-ticket_test.md](../tests/zendesk/widget-ticket_test.md) | day 9 | draft |
-| 30.2 | Agent reply and status | [/zendesk/agent-reply-status](https://my-testing-repo-main.vercel.app/zendesk/agent-reply-status) | [tests/zendesk/agent-reply-status_test.md](../tests/zendesk/agent-reply-status_test.md) | day 9 | draft |
-| 30.3 | Macro application | [/zendesk/macro-application](https://my-testing-repo-main.vercel.app/zendesk/macro-application) | [tests/zendesk/macro-application_test.md](../tests/zendesk/macro-application_test.md) | day 9 | draft |
-| 30.4 | Help center search | [/zendesk/help-center-search](https://my-testing-repo-main.vercel.app/zendesk/help-center-search) | [tests/zendesk/help-center-search_test.md](../tests/zendesk/help-center-search_test.md) | day 9 | draft |
-| 30.5 | SLA breach indicator | [/zendesk/sla-breach-indicator](https://my-testing-repo-main.vercel.app/zendesk/sla-breach-indicator) | [tests/zendesk/sla-breach-indicator_test.md](../tests/zendesk/sla-breach-indicator_test.md) | day 9 | draft |
+| 30.1 | Ticket submission via widget | [/zendesk/widget-ticket](https://my-testing-repo-main.vercel.app/zendesk/widget-ticket) | [tests/zendesk/widget-ticket_test.md](../tests/zendesk/widget-ticket_test.md) | live | draft |
+| 30.2 | Agent reply and status | [/zendesk/agent-reply-status](https://my-testing-repo-main.vercel.app/zendesk/agent-reply-status) | [tests/zendesk/agent-reply-status_test.md](../tests/zendesk/agent-reply-status_test.md) | live | draft |
+| 30.3 | Macro application | [/zendesk/macro-application](https://my-testing-repo-main.vercel.app/zendesk/macro-application) | [tests/zendesk/macro-application_test.md](../tests/zendesk/macro-application_test.md) | live | draft |
+| 30.4 | Help center search | [/zendesk/help-center-search](https://my-testing-repo-main.vercel.app/zendesk/help-center-search) | [tests/zendesk/help-center-search_test.md](../tests/zendesk/help-center-search_test.md) | live | draft |
+| 30.5 | SLA breach indicator | [/zendesk/sla-breach-indicator](https://my-testing-repo-main.vercel.app/zendesk/sla-breach-indicator) | [tests/zendesk/sla-breach-indicator_test.md](../tests/zendesk/sla-breach-indicator_test.md) | live | draft |
 
 ## 31. Intercomm (Intercom) · Support SaaS
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 31.1 | Messenger conversation start | [/intercom/messenger-conversation](https://my-testing-repo-main.vercel.app/intercom/messenger-conversation) | [tests/intercom/messenger-conversation_test.md](../tests/intercom/messenger-conversation_test.md) | day 9 | draft |
-| 31.2 | Bot to human handoff | [/intercom/bot-handoff](https://my-testing-repo-main.vercel.app/intercom/bot-handoff) | [tests/intercom/bot-handoff_test.md](../tests/intercom/bot-handoff_test.md) | day 9 | draft |
-| 31.3 | Article suggestion in chat | [/intercom/article-suggestion](https://my-testing-repo-main.vercel.app/intercom/article-suggestion) | [tests/intercom/article-suggestion_test.md](../tests/intercom/article-suggestion_test.md) | day 9 | draft |
-| 31.4 | Outbound message display | [/intercom/outbound-message](https://my-testing-repo-main.vercel.app/intercom/outbound-message) | [tests/intercom/outbound-message_test.md](../tests/intercom/outbound-message_test.md) | day 9 | draft |
+| 31.1 | Messenger conversation start | [/intercom/messenger-conversation](https://my-testing-repo-main.vercel.app/intercom/messenger-conversation) | [tests/intercom/messenger-conversation_test.md](../tests/intercom/messenger-conversation_test.md) | live | draft |
+| 31.2 | Bot to human handoff | [/intercom/bot-handoff](https://my-testing-repo-main.vercel.app/intercom/bot-handoff) | [tests/intercom/bot-handoff_test.md](../tests/intercom/bot-handoff_test.md) | live | draft |
+| 31.3 | Article suggestion in chat | [/intercom/article-suggestion](https://my-testing-repo-main.vercel.app/intercom/article-suggestion) | [tests/intercom/article-suggestion_test.md](../tests/intercom/article-suggestion_test.md) | live | draft |
+| 31.4 | Outbound message display | [/intercom/outbound-message](https://my-testing-repo-main.vercel.app/intercom/outbound-message) | [tests/intercom/outbound-message_test.md](../tests/intercom/outbound-message_test.md) | live | draft |
 
 ## 32. Zohoo CRM (Zoho CRM) · CRM
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 32.1 | Lead import mapping | [/zoho-crm/lead-import-mapping](https://my-testing-repo-main.vercel.app/zoho-crm/lead-import-mapping) | [tests/zoho-crm/lead-import-mapping_test.md](../tests/zoho-crm/lead-import-mapping_test.md) | day 9 | draft |
-| 32.2 | Workflow rule trigger | [/zoho-crm/workflow-rule](https://my-testing-repo-main.vercel.app/zoho-crm/workflow-rule) | [tests/zoho-crm/workflow-rule_test.md](../tests/zoho-crm/workflow-rule_test.md) | day 9 | draft |
-| 32.3 | Blueprint stage transition | [/zoho-crm/blueprint-transition](https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition) | [tests/zoho-crm/blueprint-transition_test.md](../tests/zoho-crm/blueprint-transition_test.md) | day 9 | draft |
-| 32.4 | Dashboard KPI render | [/zoho-crm/dashboard-kpi](https://my-testing-repo-main.vercel.app/zoho-crm/dashboard-kpi) | [tests/zoho-crm/dashboard-kpi_test.md](../tests/zoho-crm/dashboard-kpi_test.md) | day 9 | draft |
+| 32.1 | Lead import mapping | [/zoho-crm/lead-import-mapping](https://my-testing-repo-main.vercel.app/zoho-crm/lead-import-mapping) | [tests/zoho-crm/lead-import-mapping_test.md](../tests/zoho-crm/lead-import-mapping_test.md) | live | draft |
+| 32.2 | Workflow rule trigger | [/zoho-crm/workflow-rule](https://my-testing-repo-main.vercel.app/zoho-crm/workflow-rule) | [tests/zoho-crm/workflow-rule_test.md](../tests/zoho-crm/workflow-rule_test.md) | live | draft |
+| 32.3 | Blueprint stage transition | [/zoho-crm/blueprint-transition](https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition) | [tests/zoho-crm/blueprint-transition_test.md](../tests/zoho-crm/blueprint-transition_test.md) | live | draft |
+| 32.4 | Dashboard KPI render | [/zoho-crm/dashboard-kpi](https://my-testing-repo-main.vercel.app/zoho-crm/dashboard-kpi) | [tests/zoho-crm/dashboard-kpi_test.md](../tests/zoho-crm/dashboard-kpi_test.md) | live | draft |
 
 ## 33. Freshdeskly (Freshdesk) · Support SaaS
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 33.1 | Email to ticket conversion | [/freshdesk/email-to-ticket](https://my-testing-repo-main.vercel.app/freshdesk/email-to-ticket) | [tests/freshdesk/email-to-ticket_test.md](../tests/freshdesk/email-to-ticket_test.md) | day 9 | draft |
-| 33.2 | Canned response insert | [/freshdesk/canned-response](https://my-testing-repo-main.vercel.app/freshdesk/canned-response) | [tests/freshdesk/canned-response_test.md](../tests/freshdesk/canned-response_test.md) | day 9 | draft |
-| 33.3 | Ticket merge | [/freshdesk/ticket-merge](https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge) | [tests/freshdesk/ticket-merge_test.md](../tests/freshdesk/ticket-merge_test.md) | day 9 | draft |
-| 33.4 | Customer portal ticket view | [/freshdesk/portal-ticket-view](https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view) | [tests/freshdesk/portal-ticket-view_test.md](../tests/freshdesk/portal-ticket-view_test.md) | day 9 | draft |
+| 33.1 | Email to ticket conversion | [/freshdesk/email-to-ticket](https://my-testing-repo-main.vercel.app/freshdesk/email-to-ticket) | [tests/freshdesk/email-to-ticket_test.md](../tests/freshdesk/email-to-ticket_test.md) | live | draft |
+| 33.2 | Canned response insert | [/freshdesk/canned-response](https://my-testing-repo-main.vercel.app/freshdesk/canned-response) | [tests/freshdesk/canned-response_test.md](../tests/freshdesk/canned-response_test.md) | live | draft |
+| 33.3 | Ticket merge | [/freshdesk/ticket-merge](https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge) | [tests/freshdesk/ticket-merge_test.md](../tests/freshdesk/ticket-merge_test.md) | live | draft |
+| 33.4 | Customer portal ticket view | [/freshdesk/portal-ticket-view](https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view) | [tests/freshdesk/portal-ticket-view_test.md](../tests/freshdesk/portal-ticket-view_test.md) | live | draft |
 
 ## 34. ServiceNowly (ServiceNow) · ITSM
 

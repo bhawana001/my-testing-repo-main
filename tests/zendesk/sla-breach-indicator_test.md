@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zendesk/sla-breach-indicator?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zendesk, support-saas, tracker]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zendeskly 30.5: SLA breach indicator
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zendesk · Industry: Support SaaS · Pattern: Tracker timeline -->
+Catalog objective: verify the SLA timer displays on a priority ticket.
+Key assertion: the timer is visible with the correct target.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zendesk/sla-breach-indicator?reset=true and verify the text "Use case 30.5" and "SLA breach indicator" are visible at the top of the page.
+## Open the SLA view
+Go to https://my-testing-repo-main.vercel.app/zendesk/sla-breach-indicator?reset=true and verify the ticket table lists #1050 (Urgent), #1049 (High) and #1047 (Normal) with a "Next SLA breach" column.
 
-## Objective
-Verify SLA timer displays on a priority ticket.
+## Verify the urgent ticket's SLA
+Verify the detail panel for "#1050 · Production API returning 500s" shows Priority "Urgent", SLA metric "First reply time", Target "1 hour", and a "Time remaining" countdown starting around "00:42".
 
-## Key assertion
-Verify: Timer visible with correct target.
+## Verify the countdown and breach state
+Verify the "Time remaining" value decreases after a few seconds, the status reads "Active · counting down", and ticket #1049 in the table shows a red "Breached" timer.

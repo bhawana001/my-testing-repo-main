@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view?reset=true
-max_steps: 30
+max_steps: 40
 tags: [freshdesk, support-saas, auth]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Freshdeskly 33.4: Customer portal ticket view
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Freshdesk · Industry: Support SaaS · Pattern: Auth engine -->
+Catalog objective: log in to the portal and view ticket status.
+Key assertion: status and replies are visible to the customer.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view?reset=true and verify the text "Use case 33.4" and "Customer portal ticket view" are visible at the top of the page.
+## Log in
+Go to https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view?reset=true, type "demo@evals.dev" into Email and "Demo123!" into Password, click "Sign in", and verify "My tickets" lists #2051 "Can't log in to the mobile app" (Pending) and #2032 "Change billing email" (Resolved).
 
-## Objective
-Log in to portal and view ticket status.
+## Open the ticket
+Click "#2051" and verify the status badge reads "Pending · awaiting your reply".
 
-## Key assertion
-Verify: Status and replies visible to customer.
+## Verify replies
+Verify the conversation shows your message "The mobile app says my password is wrong but web login works." and the agent reply from "Priya Nair (Support)" mentioning "version 4.2.1".

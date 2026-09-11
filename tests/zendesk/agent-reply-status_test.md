@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zendesk/agent-reply-status?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zendesk, support-saas, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zendeskly 30.2: Agent reply and status
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zendesk · Industry: Support SaaS · Pattern: CRUD table / board -->
+Catalog objective: reply as an agent and set the status to pending.
+Key assertion: the customer sees the reply and the status change.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zendesk/agent-reply-status?reset=true and verify the text "Use case 30.2" and "Agent reply and status" are visible at the top of the page.
+## Open the ticket as an agent
+Go to https://my-testing-repo-main.vercel.app/zendesk/agent-reply-status?reset=true and verify ticket "#1042 · Wrong billing address on invoice" with status "Open" and a message from Maria Chen.
 
-## Objective
-Reply as agent and set status pending.
+## Reply and submit as Pending
+Type "We've corrected the address and reissued the invoice." into the reply box, keep "Submit as Pending" selected, click "Submit as Pending", and verify the status badge reads "Pending".
 
-## Key assertion
-Verify: Customer sees reply and status change.
+## Check the customer view
+Click "Customer portal" in the top bar and verify request #1042 shows the status "Awaiting your reply" and the reply "We've corrected the address and reissued the invoice." from Demo User.

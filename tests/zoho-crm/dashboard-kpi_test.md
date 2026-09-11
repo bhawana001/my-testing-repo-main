@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zoho-crm/dashboard-kpi?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zoho-crm, crm, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zohoo CRM 32.4: Dashboard KPI render
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zoho CRM · Industry: CRM · Pattern: CRUD table / board -->
+Catalog objective: open a dashboard and verify the KPI cards match report values.
+Key assertion: numbers are consistent across widgets.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zoho-crm/dashboard-kpi?reset=true and verify the text "Use case 32.4" and "Dashboard KPI render" are visible at the top of the page.
+## Open the dashboard
+Go to https://my-testing-repo-main.vercel.app/zoho-crm/dashboard-kpi?reset=true and verify "Sep 2026" is selected and KPI cards show Revenue won "$70,000.00", Deals won "2", Open pipeline "$96,500.00" and Win rate "100%".
 
-## Objective
-Open a dashboard and verify KPI cards match report values.
+## Compare with the report
+Verify the report "Deals by stage · Sep 2026" shows "Sum of Closed Won amounts" "$70,000.00" and "Sum of open deal amounts" "$96,500.00", matching the KPI cards.
 
-## Key assertion
-Verify: Numbers consistent across widgets.
+## Switch period and re-compare
+Click "Aug 2026" and verify Revenue won reads "$68,500.00" and the report's "Sum of Closed Won amounts" also reads "$68,500.00".

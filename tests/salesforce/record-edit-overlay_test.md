@@ -17,7 +17,7 @@ Go to https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?res
 Click "Edit", wait for the "Loading record…" overlay to disappear, and verify the edit form with a Phone field is shown.
 
 ## Change and save
-Change Phone to "(555) 010-9999", select "Technology" for Industry, click "Save", wait for the "Saving…" and "Refreshing…" overlays to finish, and verify the message "Account \"Globex Corporation\" was saved."
+Change Phone to "(555) 010-9999", select "Technology" for Industry, click "Save", wait for the "Saving…" and "Refreshing…" overlays to finish, and verify a confirmation message saying the account Globex Corporation was saved.
 
 ## Verify after reload
 Reload the page without the reset parameter and verify Phone reads "(555) 010-9999" and Industry reads "Technology".

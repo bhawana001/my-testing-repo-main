@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/freshdesk/canned-response?reset=true
-max_steps: 30
+max_steps: 40
 tags: [freshdesk, support-saas, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Freshdeskly 33.2: Canned response insert
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Freshdesk · Industry: Support SaaS · Pattern: CRUD table / board -->
+Catalog objective: insert a canned response in a reply.
+Key assertion: the response text is inserted with placeholders resolved.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/freshdesk/canned-response?reset=true and verify the text "Use case 33.2" and "Canned response insert" are visible at the top of the page.
+## Open the ticket
+Go to https://my-testing-repo-main.vercel.app/freshdesk/canned-response?reset=true and verify ticket "#2044 · Order #A-7731 not delivered" from Maria Chen with an empty reply box.
 
-## Objective
-Insert a canned response in reply.
+## Insert the canned response
+Click "Insert canned response", click "Insert" next to "Delivery delay apology", and verify "Inserted canned response: Delivery delay apology".
 
-## Key assertion
-Verify: Response text inserted with placeholders resolved.
+## Verify resolved placeholders
+Verify the reply box starts with "Hi Maria,", contains "ticket #2044", ends with "Demo User", and contains no "{{" placeholder text.

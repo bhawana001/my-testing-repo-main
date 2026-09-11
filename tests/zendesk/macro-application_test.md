@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/zendesk/macro-application?reset=true
-max_steps: 30
+max_steps: 40
 tags: [zendesk, support-saas, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Zendeskly 30.3: Macro application
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Zendesk · Industry: Support SaaS · Pattern: CRUD table / board -->
+Catalog objective: apply a macro to a ticket.
+Key assertion: macro fields and reply text are applied.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/zendesk/macro-application?reset=true and verify the text "Use case 30.3" and "Macro application" are visible at the top of the page.
+## Open the ticket
+Go to https://my-testing-repo-main.vercel.app/zendesk/macro-application?reset=true and verify ticket "#1043 · Charged twice for September" with fields Type "-", Priority "Normal", Status "Open", Tags "web" and an empty reply box.
 
-## Objective
-Apply a macro to a ticket.
+## Apply the macro
+Select "Billing: Refund processed" in the "Apply macro…" dropdown, click "Apply", and verify the message "Macro applied: Billing: Refund processed".
 
-## Key assertion
-Verify: Macro fields and reply text applied.
+## Verify fields and reply
+Verify Type reads "Question", Priority "Low", Status "Solved", Tags "web, billing, refund", and the reply box begins with "Hi Maria," and mentions "a refund of $49.00".

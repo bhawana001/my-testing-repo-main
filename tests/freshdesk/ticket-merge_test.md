@@ -1,26 +1,23 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge?reset=true
-max_steps: 30
+max_steps: 40
 tags: [freshdesk, support-saas, crud]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Freshdeskly 33.3: Ticket merge
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Freshdesk · Industry: Support SaaS · Pattern: CRUD table / board -->
+Catalog objective: merge two tickets from the same requester.
+Key assertion: the merged ticket contains both threads.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge?reset=true and verify the text "Use case 33.3" and "Ticket merge" are visible at the top of the page.
+## Select two tickets
+Go to https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge?reset=true, check the boxes for #2044 "Order #A-7731 not delivered" and #2046 "Where is my package?" (both from Maria Chen), and verify "2 selected" with the "Merge" button enabled.
 
-## Objective
-Merge two tickets from same requester.
+## Merge
+Click "Merge", keep #2044 as the primary ticket, click "Merge" in the dialog, and verify "Merged #2046 into #2044."
 
-## Key assertion
-Verify: Merged ticket contains both threads.
+## Verify the merged thread
+Verify ticket #2044 shows "Contains merged ticket #2046" and both messages: "My order #A-7731 hasn't arrived." and "Following up: tracking hasn't updated in 3 days." (from #2046).
+
+## Verify the secondary ticket
+Click "All tickets" and verify #2046 shows status "Closed" and "Merged into #2044".

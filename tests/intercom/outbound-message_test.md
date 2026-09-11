@@ -1,26 +1,20 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/intercom/outbound-message?reset=true
-max_steps: 30
+max_steps: 40
 tags: [intercom, support-saas, custom]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Intercomm 31.4: Outbound message display
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Intercom · Industry: Support SaaS · Pattern: Custom -->
+Catalog objective: verify a targeted outbound message shows on a matching page.
+Key assertion: the message displays with a working CTA.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/intercom/outbound-message?reset=true and verify the text "Use case 31.4" and "Outbound message display" are visible at the top of the page.
+## Non-matching page
+Go to https://my-testing-repo-main.vercel.app/intercom/outbound-message?reset=true and verify the simulated page is "/home", the visitor plan is "Free", "Matches current visitor" reads "No", and no "Upgrade to Pro" message is shown.
 
-## Objective
-Verify a targeted outbound message shows on matching page.
+## Matching page
+Click "/pricing" and verify "Matches current visitor" reads "Yes" and a message "Upgrade to Pro and save 20% 🎉" with a "See Pro plans" button appears in the bottom-right.
 
-## Key assertion
-Verify: Message displays with working CTA.
+## Use the CTA
+Click "See Pro plans" and verify the message closes, the confirmation "You followed the message's CTA." appears, and the Pro plan card shows "20% discount applied: $23.20/mo".

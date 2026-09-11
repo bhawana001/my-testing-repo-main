@@ -1,26 +1,26 @@
 ---
 mode: testing
 url: https://my-testing-repo-main.vercel.app/intercom/messenger-conversation?reset=true
-max_steps: 30
+max_steps: 40
 tags: [intercom, support-saas, feed]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
-  card_success: { value: "4242 4242 4242 4242" }
-  card_decline: { value: "4000 0000 0000 0002" }
 ---
 
 # Intercomm 31.1: Messenger conversation start
 
-<!-- DRAFT generated from the catalog. Refined with concrete steps once the flow ships (day 9). -->
-<!-- Catalog entity: Intercom · Industry: Support SaaS · Pattern: Feed / messaging -->
+Catalog objective: open the messenger and start a conversation with an attachment.
+Key assertion: the message is sent and visible in the inbox.
 
-## Open the flow
-Go to https://my-testing-repo-main.vercel.app/intercom/messenger-conversation?reset=true and verify the text "Use case 31.1" and "Messenger conversation start" are visible at the top of the page.
+## Open the messenger
+Go to https://my-testing-repo-main.vercel.app/intercom/messenger-conversation?reset=true, click the chat launcher in the bottom-right corner, and verify "Hi Demo 👋" with a "New conversation" button.
 
-## Objective
-Open messenger and start a conversation with an attachment.
+## Start a conversation
+Click "New conversation" and verify the greeting "Hi Demo! How can we help today?"
 
-## Key assertion
-Verify: Message sent and visible in inbox.
+## Write and attach
+Type "Export fails with error 500" into the message box, click "+ error-screenshot.png" to attach the sample file, and verify "📎 error-screenshot.png" shows on the composer.
+
+## Send
+Click "Send" and verify your message "Export fails with error 500" with "📎 error-screenshot.png" appears with "Delivered".
+
+## Verify in the team inbox
+Click "Team inbox" in the top bar and verify the conversation from "Demo User · demo@evals.dev" shows "Export fails with error 500" and "📎 error-screenshot.png · 184 KB".
