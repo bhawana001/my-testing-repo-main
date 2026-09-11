@@ -1,6 +1,6 @@
 # Entity Evals: 14-day build plan
 
-Scope: catalog rows 2-209 (owner Bhawana) = **49 entities, 208 flows**. Day 1 = 2026-09-11, hard deadline day 14 = 2026-09-24.
+Scope: every catalog row with Owner = Bhawana (rows 2-210) = **50 entities, 209 flows**. Day 1 = 2026-09-11, hard deadline day 14 = 2026-09-24.
 
 ## Route namespace (confirmed free)
 
@@ -63,6 +63,7 @@ Scope: catalog rows 2-209 (owner Bhawana) = **49 entities, 208 flows**. Day 1 = 
 | 47 | Netflix | Netflixy | Streaming | 5 | `/netflix` |
 | 48 | Spotify | Spotifly | Streaming | 4 | `/spotify` |
 | 49 | YouTube | YouTubely | Streaming | 4 | `/youtube` |
+| 50 | Disney+ Hotstar | Hotstarry | Streaming | 1 | `/disney-hotstar` |
 
 ## Pattern engines (app/components/engines)
 
@@ -73,7 +74,7 @@ Scope: catalog rows 2-209 (owner Bhawana) = **49 entities, 208 flows**. Day 1 = 
 | Form wizard (`wizard`) | 46 |
 | CRUD table / board (`crud`) | 55 |
 | Tracker timeline (`tracker`) | 7 |
-| Media player (`media`) | 9 |
+| Media player (`media`) | 10 |
 | Booking calendar (`booking`) | 8 |
 | Feed / messaging (`feed`) | 12 |
 | Custom (`custom`) | 21 |
@@ -94,8 +95,8 @@ Scope: catalog rows 2-209 (owner Bhawana) = **49 entities, 208 flows**. Day 1 = 
 | 10 | 2026-09-20 | 17 | 144 | ITSM + work collab: incidents, approvals, catalog orders, Slacky feed, meetings, waiting rooms, recordings. |
 | 11 | 2026-09-21 | 17 | 161 | Docs and boards: Notionly blocks/databases, Airtably grid/kanban/automations, Asanah, Jirah. |
 | 12 | 2026-09-22 | 17 | 178 | Boards, e-sign and files: Mondayly, DocuSigned envelopes, Dropboxy and Drively sharing/versions. |
-| 13 | 2026-09-23 | 17 | 195 | Booking + media: Calendlee, Netflixy playback/profiles/cancel, Spotifly, YouTubely; Amazonia search and returns. |
-| 14 | 2026-09-24 | 13 | 208 | Remaining dashboards/admin flows, full verification pass of all 208 test.md against production, README route map, final deploy. |
+| 13 | 2026-09-23 | 18 | 196 | Booking + media: Calendlee, Netflixy playback/profiles/cancel, Spotifly, YouTubely; Amazonia search and returns. |
+| 14 | 2026-09-24 | 13 | 209 | Remaining dashboards/admin flows, full verification pass of all 209 test.md against production, README route map, final deploy. |
 
 ### Day 2 · 2026-09-12 · 8 flows
 
@@ -352,7 +353,7 @@ Boards, e-sign and files: Mondayly, DocuSigned envelopes, Dropboxy and Drively s
 | 45.3 | Drively | Search across drive | CRUD table / board | `/google-drive/drive-search` |
 | 45.4 | Drively | Offline mode edit sync | Custom | `/google-drive/offline-sync` |
 
-### Day 13 · 2026-09-23 · 17 flows
+### Day 13 · 2026-09-23 · 18 flows
 
 Booking + media: Calendlee, Netflixy playback/profiles/cancel, Spotifly, YouTubely; Amazonia search and returns.
 
@@ -375,10 +376,11 @@ Booking + media: Calendlee, Netflixy playback/profiles/cancel, Spotifly, YouTube
 | 49.2 | YouTubely | Comment and moderation | Feed / messaging | `/youtube/comment-pin` |
 | 49.3 | YouTubely | Premium background play | Auth engine | `/youtube/background-play-entitlement` |
 | 49.4 | YouTubely | Channel membership join | Checkout engine | `/youtube/channel-membership` |
+| 50.1 | Hotstarry | Live sports playback | Media player | `/disney-hotstar/live-sports-playback` |
 
 ### Day 14 · 2026-09-24 · 13 flows
 
-Remaining dashboards/admin flows, full verification pass of all 208 test.md against production, README route map, final deploy.
+Remaining dashboards/admin flows, full verification pass of all 209 test.md against production, README route map, final deploy.
 
 | UC | Skin | Use case | Engine | Route |
 |---|---|---|---|---|
@@ -398,4 +400,4 @@ Remaining dashboards/admin flows, full verification pass of all 208 test.md agai
 
 ## Industries
 
-E-commerce (8) · Payments infra (7) · Consumer fintech (7) · Banking (3) · Insurance (2) · CRM (3) · Support SaaS (3) · ITSM (1) · Work collab (8) · Docs productivity (4) · Streaming (3)
+E-commerce (8) · Payments infra (7) · Consumer fintech (7) · Banking (3) · Insurance (2) · CRM (3) · Support SaaS (3) · ITSM (1) · Work collab (8) · Docs productivity (4) · Streaming (4)

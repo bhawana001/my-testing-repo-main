@@ -23,13 +23,13 @@ const DAY_NOTES = {
   11: "Docs and boards: Notionly blocks/databases, Airtably grid/kanban/automations, Asanah, Jirah.",
   12: "Boards, e-sign and files: Mondayly, DocuSigned envelopes, Dropboxy and Drively sharing/versions.",
   13: "Booking + media: Calendlee, Netflixy playback/profiles/cancel, Spotifly, YouTubely; Amazonia search and returns.",
-  14: "Remaining dashboards/admin flows, full verification pass of all 208 test.md against production, README route map, final deploy.",
+  14: "Remaining dashboards/admin flows, full verification pass of all 209 test.md against production, README route map, final deploy.",
 };
 
 const L = [];
 L.push("# Entity Evals: 14-day build plan");
 L.push("");
-L.push(`Scope: catalog rows 2-209 (owner Bhawana) = **${ENTITIES.length} entities, ${FLOWS.length} flows**. Day 1 = ${dateOf(1)}, hard deadline day 14 = ${dateOf(14)}.`);
+L.push(`Scope: every catalog row with Owner = Bhawana (rows 2-210) = **${ENTITIES.length} entities, ${FLOWS.length} flows**. Day 1 = ${dateOf(1)}, hard deadline day 14 = ${dateOf(14)}.`);
 L.push("");
 L.push("## Route namespace (confirmed free)");
 L.push("");

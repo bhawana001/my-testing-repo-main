@@ -21,11 +21,11 @@ A living playground of realistic web-app clones for any kind of testing, and the
 
 ### Entity Evals (new)
 
-49 real-world entities, 208 business-critical flows, each a working fictional-skin clone driven by `lib/registry.js`.
+50 real-world entities, 209 business-critical flows, each a working fictional-skin clone driven by `lib/registry.js`.
 
 | Route | What |
 |---|---|
-| `/{entity-slug}` | Entity landing page listing its flows, e.g. `/amazon`, `/stripe`, `/netflix` |
+| `/{entity-slug}` | Entity landing page listing its flows, e.g. `/amazon`, `/stripe`, `/disney-hotstar` |
 | `/{entity-slug}/{flow-slug}` | One working flow per catalog use case, e.g. `/amazon/add-to-cart-variant`, `/stripe/3ds-challenge`, `/netflix/profile-pin` |
 | `?reset=true` | Restores the flow's seeded state (also available via the Reset button in the eval strip) |
 | `?chaos=true` | Slow skeletons, double-submit races and session-expiry paths where a flow supports them |

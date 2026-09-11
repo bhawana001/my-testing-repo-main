@@ -1,5 +1,5 @@
 import json, re
-import os; rows = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "catalog-rows.json")))[:208]
+import os; rows = [r for r in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "catalog-rows.json"))) if len(r) >= 9 and r[8] == "Bhawana"]
 import os; ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # slug, skin, icon, accent, accent2, mode(light|dark), tagline
@@ -53,6 +53,7 @@ ENT = {
  47:("netflix","Netflixy","🎬","#e50914","#141414","dark","Streaming"),
  48:("spotify","Spotifly","🎵","#1db954","#121212","dark","Music streaming"),
  49:("youtube","YouTubely","▶️","#ff0000","#0f0f0f","light","Video platform"),
+ 50:("disney-hotstar","Hotstarry","⭐","#1f80e0","#0f1014","dark","Live sports and streaming"),
 }
 
 # uc -> (flow slug, pattern, day)
@@ -106,8 +107,9 @@ FM = {
 "47.1":("signup-plan","checkout",13),"47.2":("playback-resume","media",2),"47.3":("profile-pin","auth",13),"47.4":("offline-download","media",13),"47.5":("cancel-rejoin","wizard",13),
 "48.1":("premium-upgrade","checkout",13),"48.2":("playlist-create","media",13),"48.3":("cross-device-continue","media",13),"48.4":("family-invite","wizard",13),
 "49.1":("video-upload","wizard",13),"49.2":("comment-pin","feed",13),"49.3":("background-play-entitlement","auth",13),"49.4":("channel-membership","checkout",13),
+"50.1":("live-sports-playback","media",13),
 }
-assert len(FM)==208, len(FM)
+assert len(FM)==209, len(FM)
 from collections import Counter
 days=Counter(v[2] for v in FM.values()); print(sorted(days.items()))
 pats=Counter(v[1] for v in FM.values()); print(pats)
@@ -121,7 +123,7 @@ cat=[]
 for r in rows:
     cat.append({"entityNo":int(r[0]),"entity":r[1],"industry":r[2],"uc":r[3],"useCase":r[4],"why":r[5],"objective":r[6],"assertion":r[7]})
 with open(f"{ROOT}/lib/catalog.js","w") as f:
-    f.write("// AUTO-GENERATED from the Kane CLI real-evals catalog sheet (rows 2-209, owner Bhawana).\n")
+    f.write("// AUTO-GENERATED from the Kane CLI real-evals catalog sheet (rows 2-210, every row with Owner = Bhawana).\n")
     f.write("// Do not edit by hand; regenerate with scripts/gen-registry.py if the sheet changes.\n")
     f.write("/** @typedef {{entityNo:number, entity:string, industry:string, uc:string, useCase:string, why:string, objective:string, assertion:string}} CatalogRow */\n")
     f.write("/** @type {CatalogRow[]} */\nexport const CATALOG = [\n")
@@ -129,7 +131,7 @@ with open(f"{ROOT}/lib/catalog.js","w") as f:
     f.write("];\n")
 
 with open(f"{ROOT}/lib/registry.js","w") as f:
-    f.write('''// Entity Evals registry: 49 entities / 208 flows (catalog rows 2-209).
+    f.write('''// Entity Evals registry: 50 entities / 209 flows (every catalog row with Owner = Bhawana, rows 2-210).
 // Merges the raw catalog (lib/catalog.js) with routing, skin, pattern-engine and
 // schedule metadata. Drives the homepage "Entity Evals" section, the
 // /{entity}/{flow} routes, entity landing pages and test.md generation.
@@ -186,7 +188,7 @@ const BRAND_MAP = [
   ["ServiceNow", "ServiceNowly"], ["RITM", "RITM"], ["Slack", "Slacky"], ["Teams", "Teamz"],
   ["Zoom", "Zoomly"], ["Notion", "Notionly"], ["Airtable", "Airtably"], ["Asana", "Asanah"],
   ["Jira", "Jirah"], ["JQL", "JQL"], ["Monday", "Mondayly"], ["DocuSign", "DocuSigned"],
-  ["Dropbox", "Dropboxy"], ["Google Drive", "Drively"], ["Calendly", "Calendlee"], ["Netflix", "Netflixy"],
+  ["Dropbox", "Dropboxy"], ["Google Drive", "Drively"], ["Calendly", "Calendlee"], ["Netflix", "Netflixy"], ["Disney+ Hotstar", "Hotstarry"], ["Hotstar", "Hotstarry"],
   ["Spotify", "Spotifly"], ["YouTube", "YouTubely"],
 ];
 const BRAND_RE = new RegExp(
