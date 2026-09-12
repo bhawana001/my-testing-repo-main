@@ -1,0 +1,18 @@
+{
+  "test_id": "010f9581-7f44-44e8-b40f-8ee993afc4df",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "movie-ticket",
+  "commit_id": "839fbff2-4ffb-4d3b-811b-cb961bd2f7a4",
+  "testcase_id": "01M2A7SK8XF00WVCMQXAQ50D7W",
+  "executions": [
+    {
+      "execution_id": "46c4d036-d764-4652-8bfd-4d097ce6063d",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:23:00.836Z"
+    }
+  ]
+}

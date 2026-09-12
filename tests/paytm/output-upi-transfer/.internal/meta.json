@@ -1,0 +1,18 @@
+{
+  "test_id": "6b89443d-dc9f-48b1-86ec-eca4d46532b5",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "upi-transfer",
+  "commit_id": "e00a9cb3-4931-4d49-ae3c-a1eebad78093",
+  "testcase_id": "01M2A6ZF43522498K579Q63Y9N",
+  "executions": [
+    {
+      "execution_id": "89d2ffe0-f99e-494a-8999-93574233d1d2",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:10:00.380Z"
+    }
+  ]
+}

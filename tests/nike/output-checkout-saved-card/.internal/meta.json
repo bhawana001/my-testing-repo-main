@@ -1,0 +1,18 @@
+{
+  "test_id": "7748ab86-9911-4c7e-a285-df0da023740a",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "checkout-saved-card",
+  "commit_id": "1814b1d3-2ffb-4a3d-a0ef-38474d21d0e5",
+  "testcase_id": "01M28P7S0DX22T6X64AR2CGG69",
+  "executions": [
+    {
+      "execution_id": "51830133-0dc9-4905-9d8f-dc633e57116b",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T16:57:00.993Z"
+    }
+  ]
+}

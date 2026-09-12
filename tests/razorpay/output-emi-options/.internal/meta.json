@@ -1,0 +1,18 @@
+{
+  "test_id": "c0a15193-a8fa-4ad6-8fc2-e0f6e0231e2d",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "emi-options",
+  "commit_id": "65319574-9fa4-480f-bcd6-9fdac29c7074",
+  "testcase_id": "01M28R4DRXXZ7P6T48F8KP8X5E",
+  "executions": [
+    {
+      "execution_id": "518d64a0-65ea-4556-8b6a-b99199f17286",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T18:17:02.669Z"
+    }
+  ]
+}

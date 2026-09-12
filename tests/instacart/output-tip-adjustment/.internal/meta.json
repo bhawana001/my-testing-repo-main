@@ -1,0 +1,18 @@
+{
+  "test_id": "2fc9bb1c-12a9-4387-b318-3c4ebfdeb5e3",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "tip-adjustment",
+  "commit_id": "33f9c9f4-ac1d-4709-8321-d456b16b4e45",
+  "testcase_id": "01M28NXKB809EHE1R0WZY9BYG5",
+  "executions": [
+    {
+      "execution_id": "b12d5ac3-8335-47a9-911d-3f7570f36874",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T16:53:38.370Z"
+    }
+  ]
+}

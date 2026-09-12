@@ -1,0 +1,18 @@
+{
+  "test_id": "3a5c09c6-4747-4209-902c-a825b33656ef",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "electricity-bill",
+  "commit_id": "883b73a3-ab49-4fd9-9052-f15e8f6e0571",
+  "testcase_id": "01M2A7E46QJRKZJWTHWDBYX6EV",
+  "executions": [
+    {
+      "execution_id": "ad3d414c-4b53-4839-a31c-7228b39c241d",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:17:04.992Z"
+    }
+  ]
+}

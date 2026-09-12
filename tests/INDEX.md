@@ -8,7 +8,7 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | Total flows | Live | Tests verified |
 |---|---|---|
-| 209 | 209 | 18 |
+| 209 | 209 | 36 |
 
 ## 1. Amazonia (Amazon) · E-commerce
 
@@ -72,8 +72,8 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 |---|---|---|---|---|---|
 | 7.1 | Multi-store cart | [/instacart/multi-store-cart](https://my-testing-repo-main.vercel.app/instacart/multi-store-cart) | [tests/instacart/multi-store-cart_test.md](../tests/instacart/multi-store-cart_test.md) | live | verified |
 | 7.2 | Replacement preferences | [/instacart/replacement-preferences](https://my-testing-repo-main.vercel.app/instacart/replacement-preferences) | [tests/instacart/replacement-preferences_test.md](../tests/instacart/replacement-preferences_test.md) | live | draft |
-| 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | live | draft |
-| 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | live | draft |
+| 7.3 | Delivery slot checkout | [/instacart/delivery-slot-checkout](https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout) | [tests/instacart/delivery-slot-checkout_test.md](../tests/instacart/delivery-slot-checkout_test.md) | live | failed |
+| 7.4 | Tip adjustment | [/instacart/tip-adjustment](https://my-testing-repo-main.vercel.app/instacart/tip-adjustment) | [tests/instacart/tip-adjustment_test.md](../tests/instacart/tip-adjustment_test.md) | live | verified |
 
 ## 8. Nyke (Nike) · E-commerce
 
@@ -82,15 +82,15 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 | 8.1 | Size guide and selection | [/nike/size-guide](https://my-testing-repo-main.vercel.app/nike/size-guide) | [tests/nike/size-guide_test.md](../tests/nike/size-guide_test.md) | live | draft |
 | 8.2 | Member exclusive access | [/nike/member-exclusive](https://my-testing-repo-main.vercel.app/nike/member-exclusive) | [tests/nike/member-exclusive_test.md](../tests/nike/member-exclusive_test.md) | live | draft |
 | 8.3 | SNKRS draw entry | [/nike/snkrs-draw](https://my-testing-repo-main.vercel.app/nike/snkrs-draw) | [tests/nike/snkrs-draw_test.md](../tests/nike/snkrs-draw_test.md) | live | draft |
-| 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | live | draft |
+| 8.4 | Checkout with saved card | [/nike/checkout-saved-card](https://my-testing-repo-main.vercel.app/nike/checkout-saved-card) | [tests/nike/checkout-saved-card_test.md](../tests/nike/checkout-saved-card_test.md) | live | verified |
 
 ## 9. Stripely (Stripe) · Payments infra
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 9.1 | Hosted Checkout session | [/stripe/hosted-checkout](https://my-testing-repo-main.vercel.app/stripe/hosted-checkout) | [tests/stripe/hosted-checkout_test.md](../tests/stripe/hosted-checkout_test.md) | live | draft |
-| 9.2 | 3DS challenge | [/stripe/3ds-challenge](https://my-testing-repo-main.vercel.app/stripe/3ds-challenge) | [tests/stripe/3ds-challenge_test.md](../tests/stripe/3ds-challenge_test.md) | live | draft |
-| 9.3 | Declined card recovery | [/stripe/declined-card-recovery](https://my-testing-repo-main.vercel.app/stripe/declined-card-recovery) | [tests/stripe/declined-card-recovery_test.md](../tests/stripe/declined-card-recovery_test.md) | live | draft |
+| 9.1 | Hosted Checkout session | [/stripe/hosted-checkout](https://my-testing-repo-main.vercel.app/stripe/hosted-checkout) | [tests/stripe/hosted-checkout_test.md](../tests/stripe/hosted-checkout_test.md) | live | verified |
+| 9.2 | 3DS challenge | [/stripe/3ds-challenge](https://my-testing-repo-main.vercel.app/stripe/3ds-challenge) | [tests/stripe/3ds-challenge_test.md](../tests/stripe/3ds-challenge_test.md) | live | verified |
+| 9.3 | Declined card recovery | [/stripe/declined-card-recovery](https://my-testing-repo-main.vercel.app/stripe/declined-card-recovery) | [tests/stripe/declined-card-recovery_test.md](../tests/stripe/declined-card-recovery_test.md) | live | verified |
 | 9.4 | Billing portal update | [/stripe/billing-portal](https://my-testing-repo-main.vercel.app/stripe/billing-portal) | [tests/stripe/billing-portal_test.md](../tests/stripe/billing-portal_test.md) | live | draft |
 | 9.5 | Dashboard payment lookup | [/stripe/dashboard-payment-lookup](https://my-testing-repo-main.vercel.app/stripe/dashboard-payment-lookup) | [tests/stripe/dashboard-payment-lookup_test.md](../tests/stripe/dashboard-payment-lookup_test.md) | live | draft |
 
@@ -98,8 +98,8 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 10.1 | Express checkout button | [/paypal/express-checkout](https://my-testing-repo-main.vercel.app/paypal/express-checkout) | [tests/paypal/express-checkout_test.md](../tests/paypal/express-checkout_test.md) | live | draft |
-| 10.2 | Guest card payment | [/paypal/guest-card-payment](https://my-testing-repo-main.vercel.app/paypal/guest-card-payment) | [tests/paypal/guest-card-payment_test.md](../tests/paypal/guest-card-payment_test.md) | live | draft |
+| 10.1 | Express checkout button | [/paypal/express-checkout](https://my-testing-repo-main.vercel.app/paypal/express-checkout) | [tests/paypal/express-checkout_test.md](../tests/paypal/express-checkout_test.md) | live | verified |
+| 10.2 | Guest card payment | [/paypal/guest-card-payment](https://my-testing-repo-main.vercel.app/paypal/guest-card-payment) | [tests/paypal/guest-card-payment_test.md](../tests/paypal/guest-card-payment_test.md) | live | verified |
 | 10.3 | Send money P2P | [/paypal/send-money](https://my-testing-repo-main.vercel.app/paypal/send-money) | [tests/paypal/send-money_test.md](../tests/paypal/send-money_test.md) | live | draft |
 | 10.4 | Dispute filing | [/paypal/dispute-filing](https://my-testing-repo-main.vercel.app/paypal/dispute-filing) | [tests/paypal/dispute-filing_test.md](../tests/paypal/dispute-filing_test.md) | live | draft |
 | 10.5 | Currency conversion display | [/paypal/currency-conversion](https://my-testing-repo-main.vercel.app/paypal/currency-conversion) | [tests/paypal/currency-conversion_test.md](../tests/paypal/currency-conversion_test.md) | live | draft |
@@ -108,46 +108,46 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 11.1 | Standard checkout modal | [/razorpay/checkout-modal](https://my-testing-repo-main.vercel.app/razorpay/checkout-modal) | [tests/razorpay/checkout-modal_test.md](../tests/razorpay/checkout-modal_test.md) | live | draft |
-| 11.2 | UPI intent flow | [/razorpay/upi-intent](https://my-testing-repo-main.vercel.app/razorpay/upi-intent) | [tests/razorpay/upi-intent_test.md](../tests/razorpay/upi-intent_test.md) | live | draft |
-| 11.3 | EMI option display | [/razorpay/emi-options](https://my-testing-repo-main.vercel.app/razorpay/emi-options) | [tests/razorpay/emi-options_test.md](../tests/razorpay/emi-options_test.md) | live | draft |
-| 11.4 | Payment link flow | [/razorpay/payment-link](https://my-testing-repo-main.vercel.app/razorpay/payment-link) | [tests/razorpay/payment-link_test.md](../tests/razorpay/payment-link_test.md) | live | draft |
+| 11.1 | Standard checkout modal | [/razorpay/checkout-modal](https://my-testing-repo-main.vercel.app/razorpay/checkout-modal) | [tests/razorpay/checkout-modal_test.md](../tests/razorpay/checkout-modal_test.md) | live | verified |
+| 11.2 | UPI intent flow | [/razorpay/upi-intent](https://my-testing-repo-main.vercel.app/razorpay/upi-intent) | [tests/razorpay/upi-intent_test.md](../tests/razorpay/upi-intent_test.md) | live | failed |
+| 11.3 | EMI option display | [/razorpay/emi-options](https://my-testing-repo-main.vercel.app/razorpay/emi-options) | [tests/razorpay/emi-options_test.md](../tests/razorpay/emi-options_test.md) | live | verified |
+| 11.4 | Payment link flow | [/razorpay/payment-link](https://my-testing-repo-main.vercel.app/razorpay/payment-link) | [tests/razorpay/payment-link_test.md](../tests/razorpay/payment-link_test.md) | live | verified |
 
 ## 12. Squarely (Square) · Payments infra
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 12.1 | Online checkout link | [/square/checkout-link](https://my-testing-repo-main.vercel.app/square/checkout-link) | [tests/square/checkout-link_test.md](../tests/square/checkout-link_test.md) | live | draft |
-| 12.2 | Invoice pay flow | [/square/invoice-pay](https://my-testing-repo-main.vercel.app/square/invoice-pay) | [tests/square/invoice-pay_test.md](../tests/square/invoice-pay_test.md) | live | draft |
-| 12.3 | Tip and receipt screen | [/square/tip-and-receipt](https://my-testing-repo-main.vercel.app/square/tip-and-receipt) | [tests/square/tip-and-receipt_test.md](../tests/square/tip-and-receipt_test.md) | live | draft |
+| 12.1 | Online checkout link | [/square/checkout-link](https://my-testing-repo-main.vercel.app/square/checkout-link) | [tests/square/checkout-link_test.md](../tests/square/checkout-link_test.md) | live | failed |
+| 12.2 | Invoice pay flow | [/square/invoice-pay](https://my-testing-repo-main.vercel.app/square/invoice-pay) | [tests/square/invoice-pay_test.md](../tests/square/invoice-pay_test.md) | live | failed |
+| 12.3 | Tip and receipt screen | [/square/tip-and-receipt](https://my-testing-repo-main.vercel.app/square/tip-and-receipt) | [tests/square/tip-and-receipt_test.md](../tests/square/tip-and-receipt_test.md) | live | failed |
 | 12.4 | Refund from dashboard | [/square/refund-dashboard](https://my-testing-repo-main.vercel.app/square/refund-dashboard) | [tests/square/refund-dashboard_test.md](../tests/square/refund-dashboard_test.md) | live | draft |
 
 ## 13. Adyenly (Adyen) · Payments infra
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 13.1 | Drop-in payment | [/adyen/drop-in-payment](https://my-testing-repo-main.vercel.app/adyen/drop-in-payment) | [tests/adyen/drop-in-payment_test.md](../tests/adyen/drop-in-payment_test.md) | live | draft |
-| 13.2 | Local method iDEAL | [/adyen/ideal-redirect](https://my-testing-repo-main.vercel.app/adyen/ideal-redirect) | [tests/adyen/ideal-redirect_test.md](../tests/adyen/ideal-redirect_test.md) | live | draft |
-| 13.3 | Stored card reuse | [/adyen/stored-card-reuse](https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse) | [tests/adyen/stored-card-reuse_test.md](../tests/adyen/stored-card-reuse_test.md) | live | draft |
+| 13.1 | Drop-in payment | [/adyen/drop-in-payment](https://my-testing-repo-main.vercel.app/adyen/drop-in-payment) | [tests/adyen/drop-in-payment_test.md](../tests/adyen/drop-in-payment_test.md) | live | failed |
+| 13.2 | Local method iDEAL | [/adyen/ideal-redirect](https://my-testing-repo-main.vercel.app/adyen/ideal-redirect) | [tests/adyen/ideal-redirect_test.md](../tests/adyen/ideal-redirect_test.md) | live | failed |
+| 13.3 | Stored card reuse | [/adyen/stored-card-reuse](https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse) | [tests/adyen/stored-card-reuse_test.md](../tests/adyen/stored-card-reuse_test.md) | live | failed |
 | 13.4 | Payment status webhook parity | [/adyen/webhook-status-parity](https://my-testing-repo-main.vercel.app/adyen/webhook-status-parity) | [tests/adyen/webhook-status-parity_test.md](../tests/adyen/webhook-status-parity_test.md) | live | draft |
 
 ## 14. Klarnah (Klarna) · Payments infra
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 14.1 | Pay in 4 selection | [/klarna/pay-in-4](https://my-testing-repo-main.vercel.app/klarna/pay-in-4) | [tests/klarna/pay-in-4_test.md](../tests/klarna/pay-in-4_test.md) | live | draft |
-| 14.2 | Credit decision decline path | [/klarna/credit-decline-fallback](https://my-testing-repo-main.vercel.app/klarna/credit-decline-fallback) | [tests/klarna/credit-decline-fallback_test.md](../tests/klarna/credit-decline-fallback_test.md) | live | draft |
-| 14.3 | Order in Klarna app | [/klarna/payment-schedule](https://my-testing-repo-main.vercel.app/klarna/payment-schedule) | [tests/klarna/payment-schedule_test.md](../tests/klarna/payment-schedule_test.md) | live | draft |
+| 14.1 | Pay in 4 selection | [/klarna/pay-in-4](https://my-testing-repo-main.vercel.app/klarna/pay-in-4) | [tests/klarna/pay-in-4_test.md](../tests/klarna/pay-in-4_test.md) | live | failed |
+| 14.2 | Credit decision decline path | [/klarna/credit-decline-fallback](https://my-testing-repo-main.vercel.app/klarna/credit-decline-fallback) | [tests/klarna/credit-decline-fallback_test.md](../tests/klarna/credit-decline-fallback_test.md) | live | failed |
+| 14.3 | Order in Klarna app | [/klarna/payment-schedule](https://my-testing-repo-main.vercel.app/klarna/payment-schedule) | [tests/klarna/payment-schedule_test.md](../tests/klarna/payment-schedule_test.md) | live | failed |
 | 14.4 | Return adjusts installments | [/klarna/return-adjusts-installments](https://my-testing-repo-main.vercel.app/klarna/return-adjusts-installments) | [tests/klarna/return-adjusts-installments_test.md](../tests/klarna/return-adjusts-installments_test.md) | live | draft |
 
 ## 15. Wyse (Wise) · Payments infra
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 15.1 | International transfer quote | [/wise/transfer-quote](https://my-testing-repo-main.vercel.app/wise/transfer-quote) | [tests/wise/transfer-quote_test.md](../tests/wise/transfer-quote_test.md) | live | draft |
-| 15.2 | Recipient add and verify | [/wise/add-recipient](https://my-testing-repo-main.vercel.app/wise/add-recipient) | [tests/wise/add-recipient_test.md](../tests/wise/add-recipient_test.md) | live | draft |
-| 15.3 | Transfer status tracking | [/wise/transfer-tracking](https://my-testing-repo-main.vercel.app/wise/transfer-tracking) | [tests/wise/transfer-tracking_test.md](../tests/wise/transfer-tracking_test.md) | live | draft |
-| 15.4 | Multi-currency balance conversion | [/wise/balance-conversion](https://my-testing-repo-main.vercel.app/wise/balance-conversion) | [tests/wise/balance-conversion_test.md](../tests/wise/balance-conversion_test.md) | live | draft |
+| 15.1 | International transfer quote | [/wise/transfer-quote](https://my-testing-repo-main.vercel.app/wise/transfer-quote) | [tests/wise/transfer-quote_test.md](../tests/wise/transfer-quote_test.md) | live | failed |
+| 15.2 | Recipient add and verify | [/wise/add-recipient](https://my-testing-repo-main.vercel.app/wise/add-recipient) | [tests/wise/add-recipient_test.md](../tests/wise/add-recipient_test.md) | live | failed |
+| 15.3 | Transfer status tracking | [/wise/transfer-tracking](https://my-testing-repo-main.vercel.app/wise/transfer-tracking) | [tests/wise/transfer-tracking_test.md](../tests/wise/transfer-tracking_test.md) | live | failed |
+| 15.4 | Multi-currency balance conversion | [/wise/balance-conversion](https://my-testing-repo-main.vercel.app/wise/balance-conversion) | [tests/wise/balance-conversion_test.md](../tests/wise/balance-conversion_test.md) | live | failed |
 
 ## 16. Robinhoot (Robinhood) · Consumer fintech
 
@@ -181,26 +181,26 @@ Status legend · **Flow**: `live` (deployed) or `day N` (scheduled). **Test**: `
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 19.1 | Card freeze unfreeze | [/revolut/card-freeze](https://my-testing-repo-main.vercel.app/revolut/card-freeze) | [tests/revolut/card-freeze_test.md](../tests/revolut/card-freeze_test.md) | live | draft |
-| 19.2 | Currency exchange | [/revolut/currency-exchange](https://my-testing-repo-main.vercel.app/revolut/currency-exchange) | [tests/revolut/currency-exchange_test.md](../tests/revolut/currency-exchange_test.md) | live | draft |
-| 19.3 | Payment split bill | [/revolut/split-bill](https://my-testing-repo-main.vercel.app/revolut/split-bill) | [tests/revolut/split-bill_test.md](../tests/revolut/split-bill_test.md) | live | draft |
-| 19.4 | Savings vault roundup | [/revolut/savings-vault](https://my-testing-repo-main.vercel.app/revolut/savings-vault) | [tests/revolut/savings-vault_test.md](../tests/revolut/savings-vault_test.md) | live | draft |
+| 19.1 | Card freeze unfreeze | [/revolut/card-freeze](https://my-testing-repo-main.vercel.app/revolut/card-freeze) | [tests/revolut/card-freeze_test.md](../tests/revolut/card-freeze_test.md) | live | failed |
+| 19.2 | Currency exchange | [/revolut/currency-exchange](https://my-testing-repo-main.vercel.app/revolut/currency-exchange) | [tests/revolut/currency-exchange_test.md](../tests/revolut/currency-exchange_test.md) | live | failed |
+| 19.3 | Payment split bill | [/revolut/split-bill](https://my-testing-repo-main.vercel.app/revolut/split-bill) | [tests/revolut/split-bill_test.md](../tests/revolut/split-bill_test.md) | live | verified |
+| 19.4 | Savings vault roundup | [/revolut/savings-vault](https://my-testing-repo-main.vercel.app/revolut/savings-vault) | [tests/revolut/savings-vault_test.md](../tests/revolut/savings-vault_test.md) | live | verified |
 
 ## 20. Paytum (Paytm) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 20.1 | UPI money transfer | [/paytm/upi-transfer](https://my-testing-repo-main.vercel.app/paytm/upi-transfer) | [tests/paytm/upi-transfer_test.md](../tests/paytm/upi-transfer_test.md) | live | draft |
-| 20.2 | Mobile recharge | [/paytm/mobile-recharge](https://my-testing-repo-main.vercel.app/paytm/mobile-recharge) | [tests/paytm/mobile-recharge_test.md](../tests/paytm/mobile-recharge_test.md) | live | draft |
-| 20.3 | Bill payment electricity | [/paytm/electricity-bill](https://my-testing-repo-main.vercel.app/paytm/electricity-bill) | [tests/paytm/electricity-bill_test.md](../tests/paytm/electricity-bill_test.md) | live | draft |
-| 20.4 | Wallet to bank transfer | [/paytm/wallet-to-bank](https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank) | [tests/paytm/wallet-to-bank_test.md](../tests/paytm/wallet-to-bank_test.md) | live | draft |
-| 20.5 | Movie ticket booking | [/paytm/movie-ticket](https://my-testing-repo-main.vercel.app/paytm/movie-ticket) | [tests/paytm/movie-ticket_test.md](../tests/paytm/movie-ticket_test.md) | live | draft |
+| 20.1 | UPI money transfer | [/paytm/upi-transfer](https://my-testing-repo-main.vercel.app/paytm/upi-transfer) | [tests/paytm/upi-transfer_test.md](../tests/paytm/upi-transfer_test.md) | live | verified |
+| 20.2 | Mobile recharge | [/paytm/mobile-recharge](https://my-testing-repo-main.vercel.app/paytm/mobile-recharge) | [tests/paytm/mobile-recharge_test.md](../tests/paytm/mobile-recharge_test.md) | live | verified |
+| 20.3 | Bill payment electricity | [/paytm/electricity-bill](https://my-testing-repo-main.vercel.app/paytm/electricity-bill) | [tests/paytm/electricity-bill_test.md](../tests/paytm/electricity-bill_test.md) | live | verified |
+| 20.4 | Wallet to bank transfer | [/paytm/wallet-to-bank](https://my-testing-repo-main.vercel.app/paytm/wallet-to-bank) | [tests/paytm/wallet-to-bank_test.md](../tests/paytm/wallet-to-bank_test.md) | live | verified |
+| 20.5 | Movie ticket booking | [/paytm/movie-ticket](https://my-testing-repo-main.vercel.app/paytm/movie-ticket) | [tests/paytm/movie-ticket_test.md](../tests/paytm/movie-ticket_test.md) | live | verified |
 
 ## 21. PhonePay (PhonePe) · Consumer fintech
 
 | UC | Use case | URL | test.md | Flow | Test |
 |---|---|---|---|---|---|
-| 21.1 | UPI QR scan pay | [/phonepe/qr-scan-pay](https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay) | [tests/phonepe/qr-scan-pay_test.md](../tests/phonepe/qr-scan-pay_test.md) | live | draft |
+| 21.1 | UPI QR scan pay | [/phonepe/qr-scan-pay](https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay) | [tests/phonepe/qr-scan-pay_test.md](../tests/phonepe/qr-scan-pay_test.md) | live | verified |
 | 21.2 | Autopay mandate setup | [/phonepe/autopay-mandate](https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate) | [tests/phonepe/autopay-mandate_test.md](../tests/phonepe/autopay-mandate_test.md) | live | draft |
 | 21.3 | Transaction history filter | [/phonepe/history-filter](https://my-testing-repo-main.vercel.app/phonepe/history-filter) | [tests/phonepe/history-filter_test.md](../tests/phonepe/history-filter_test.md) | live | draft |
 | 21.4 | Insurance purchase entry | [/phonepe/bike-insurance-quote](https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote) | [tests/phonepe/bike-insurance-quote_test.md](../tests/phonepe/bike-insurance-quote_test.md) | live | draft |

@@ -1,0 +1,18 @@
+{
+  "test_id": "7250045a-d101-4d5b-b2d5-4ba51adc8217",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "wallet-to-bank",
+  "commit_id": "9e01775e-7367-421b-98bd-10c790446ddc",
+  "testcase_id": "01M2A7MNRDQAAQZCZRAJEDFW95",
+  "executions": [
+    {
+      "execution_id": "d2a84349-2d2d-4d41-934e-8db15ca907ea",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:19:45.822Z"
+    }
+  ]
+}

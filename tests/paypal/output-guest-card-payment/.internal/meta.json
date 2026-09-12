@@ -1,0 +1,18 @@
+{
+  "test_id": "79143981-2b64-4eb0-b82a-50658bdd6153",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "guest-card-payment",
+  "commit_id": "ff89eeba-8c93-4c91-a761-2f29c5b0d926",
+  "testcase_id": "01M28Q8PEYCEW722CC06HX6N5J",
+  "executions": [
+    {
+      "execution_id": "85c67585-0eef-41cb-8e84-41a4c6502385",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-11T17:15:04.657Z"
+    }
+  ]
+}

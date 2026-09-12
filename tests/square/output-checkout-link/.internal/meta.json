@@ -1,0 +1,16 @@
+{
+  "test_id": "05f31854-3029-4c42-aa03-82046dd5a39a",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "checkout-link",
+  "executions": [
+    {
+      "execution_id": "52430ae2-b84b-495f-93c0-c42e600da5fe",
+      "run_kind": "author",
+      "status": "broken",
+      "valid": true,
+      "at": "2026-09-12T04:27:43.256Z"
+    }
+  ]
+}

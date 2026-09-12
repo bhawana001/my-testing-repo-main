@@ -1,0 +1,18 @@
+{
+  "test_id": "1dedd9bf-de77-4299-8765-77a8c9e314a0",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "savings-vault",
+  "commit_id": "a286f6e4-090c-49ff-910a-7817ce61c02b",
+  "testcase_id": "01M2A57CGZNY1G1TEQANWSBF15",
+  "executions": [
+    {
+      "execution_id": "c790248e-1f00-44af-bcff-54f8bac3eb24",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:05:29.054Z"
+    }
+  ]
+}
