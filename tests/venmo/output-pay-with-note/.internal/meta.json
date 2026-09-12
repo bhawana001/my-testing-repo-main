@@ -1,0 +1,18 @@
+{
+  "test_id": "73526673-020a-47ce-9042-2f66a32b58ef",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "pay-with-note",
+  "commit_id": "f8c0c1cc-3167-4dd8-a04a-075f919c704e",
+  "testcase_id": "01M2A8MTB66NR05T77JCFDWZ4Z",
+  "executions": [
+    {
+      "execution_id": "e23cd977-3b1b-4f37-ba92-a882cd6aa2cc",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T11:39:13.050Z"
+    }
+  ]
+}

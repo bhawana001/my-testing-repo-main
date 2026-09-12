@@ -1,0 +1,18 @@
+{
+  "test_id": "34497273-01b6-40b3-abe3-cc4173dcc585",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "autopay-mandate",
+  "commit_id": "d1a57365-5e80-4c5d-9da6-70eee9583829",
+  "testcase_id": "01M2A84Z6M6CE7WSSBJSWJX02W",
+  "executions": [
+    {
+      "execution_id": "f46147f3-f900-4f3f-908a-0c43581c9642",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-12T07:28:34.192Z"
+    }
+  ]
+}
