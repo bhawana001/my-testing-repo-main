@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/american-express/payment-scheduling?reset=true
-max_steps: 40
-tags: [american-express, banking, wizard]
+url: https://my-testing-repo-main.vercel.app/amex-clone-app/payments?reset=true
+max_steps: 45
+tags: [american-express, banking, payments]
 ---
 
-# Amerix 25.2: Card payment scheduling
+# Amrex 25.2: Card payment scheduling
 
 Catalog objective: schedule a payment for the statement balance.
-Key assertion: a scheduled payment with the correct amount.
+Key assertion: the scheduled payment carries the correct amount.
 
-## Open payments
-Go to https://my-testing-repo-main.vercel.app/american-express/payment-scheduling?reset=true and verify the "Make a payment" page shows "Statement balance" $1,284.60 selected, "Minimum payment due" $40.00, and an empty "Scheduled payments" table.
+## Choose the statement balance
+Choose "Statement balance" and verify "Payment amount" reads "$2,318.44".
 
-## Try a date after the due date
-Set "Payment date" to 2026-09-30, click "Schedule payment of $1,284.60", and verify the error about choosing a date between September 15 and September 25, 2026 is shown.
+## Verify a late date is refused
+Set "Payment date" to "2026-09-30", click "Schedule the payment", and verify a red banner says that date is after the 2026-09-28 due date.
 
-## Schedule for a valid date
-Set "Payment date" to 2026-09-22, click "Schedule payment of $1,284.60", and verify the message "Payment of $1,284.60 scheduled for 2026-09-22." appears.
+## Schedule it for a valid date
+Set "Payment date" back to "2026-09-26", click "Schedule the payment", and verify a green banner titled "Payment scheduled" says $2,318.44 is scheduled for 2026-09-26 with reference "PMT-31840".
 
-## Verify the scheduled list
-Verify the "Scheduled payments" table has a row with amount "$1,284.60", date "2026-09-22" and status "Scheduled".
+## Verify the scheduled payment
+Verify the "Scheduled payments" card lists "$2,318.44" against "Statement balance · 2026-09-26 · Chaise Bank ••••8841" with a "Scheduled" badge.

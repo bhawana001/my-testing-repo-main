@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/hubspot/sequence-enrollment?reset=true
+url: https://my-testing-repo-main.vercel.app/hubspot-clone-app/sequences?reset=true
 max_steps: 40
-tags: [hubspot, crm, crud]
+tags: [hubspot, crm, marketing]
 ---
 
-# HubSpotty 29.3: Email sequence enrollment
+# Hubsprout 29.3: Email sequence enrollment
 
-Catalog objective: enroll a contact in a sequence.
+Catalog objective: enrol a contact in a sequence.
 Key assertion: the sequence is active on the contact timeline.
 
-## Open the contact
-Go to https://my-testing-repo-main.vercel.app/hubspot/sequence-enrollment?reset=true and verify the contact "Maria Chen" shows "Not enrolled in any sequence." and a timeline starting with "Contact created".
+## Choose the contact and the sequence
+Select "Mira Shah — mira@northgate.test" in "Contact", select "New lead nurture — 4 steps over 12 days" in "Sequence".
 
-## Enroll
-Click "Enroll in sequence", keep "Inbound demo follow-up · 4 steps" selected, click "Enroll", and verify the badge "Sequence active" appears.
+## Enrol
+Click "Enrol" and verify a green banner reads "Mira enrolled in “New lead nurture”. It is now on their timeline."
 
-## Verify the timeline
-Verify the sequence panel shows "Inbound demo follow-up", step "1 of 4" and next email "Sep 15, 2026 · 9:00 AM", and the top timeline entry reads "Enrolled in sequence: Inbound demo follow-up".
+## Verify the enrolment is active
+Verify the Enrolments card shows "Active enrolments" of 1 with a "Mira Shah" row reading "New lead nurture · step 1 of 4" and an "Active" badge.
+
+## Verify it is on the contact timeline
+Verify the "Mira's timeline" card contains the entry "Enrolled in sequence “New lead nurture” — step 1 of 4".

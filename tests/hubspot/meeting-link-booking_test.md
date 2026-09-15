@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking?reset=true
+url: https://my-testing-repo-main.vercel.app/hubspot-clone-app/meetings?reset=true
 max_steps: 40
-tags: [hubspot, crm, booking]
+tags: [hubspot, crm, scheduling]
 ---
 
-# HubSpotty 29.4: Meeting link booking
+# Hubsprout 29.4: Meeting link booking
 
-Catalog objective: book a slot on a meeting link as a prospect.
-Key assertion: the meeting is created and a confirmation is shown.
+Catalog objective: book a slot on the meeting link as a prospect.
+Key assertion: a meeting is created and a confirmation is shown.
 
-## Pick a day
-Go to https://my-testing-repo-main.vercel.app/hubspot/meeting-link-booking?reset=true, click September 16 in the calendar, and verify the times "9:00am", "2:00pm" and "3:00pm" are offered (10:00 and 11:00 are busy).
+## Verify the open slots
+Verify the page title reads "Book time with Priya Nair" and "Times available" reads 4.
 
-## Pick a time
-Click "2:00pm" and verify a details form for "2:00pm · Wednesday, September 16, 2026".
+## Pick a slot
+Click the time button "2026-09-18 14:30" and verify "Selected" reads "2026-09-18 14:30".
 
-## Enter details and confirm
-Type "Sam" into First name, "Lee" into Last name, "sam@acme.test" into Email, click "Confirm", and verify the badge "Booking confirmed".
+## Enter your details and book
+Type "Sam Rivera" into "Name", "sam@riverfield.test" into "Email", and click "Confirm the meeting".
 
-## Verify the meeting
-Verify "You're booked with Priya Nair", "When" reading "2:00pm · Wednesday, September 16, 2026" and "Meeting ID" reading "MTG-161400".
+## Verify the confirmation
+Verify a green card titled "You are booked in" shows "Reference" of "MTG-20410", "When" of "2026-09-18 14:30", "With" of "Priya Nair", "Your email" of "sam@riverfield.test" and a "Scheduled" badge.

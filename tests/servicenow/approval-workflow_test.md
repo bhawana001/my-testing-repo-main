@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/servicenow/approval-workflow?reset=true
+url: https://my-testing-repo-main.vercel.app/servicenow-clone-app/changes?reset=true
 max_steps: 45
-tags: [servicenow, itsm, wizard]
+tags: [servicenow, itsm, change]
 ---
 
-# ServiceNowly 34.2: Approval workflow
+# ServiceNau 34.2: Approval workflow
 
 Catalog objective: submit a change request and approve it as the approver.
 Key assertion: the state moves to approved.
 
-## Submit a change
-Go to https://my-testing-repo-main.vercel.app/servicenow/approval-workflow?reset=true, type "Upgrade database to v16" into Short description and "Security patches and performance." into Justification, click "Request approval", and verify "CHG0030017" with Approval "Requested" and State "Assess".
+## Open the change request
+Click "CHG0030011" and verify the detail card shows "State" of "Assess" and "Approver" of "Dan Okafor".
 
-## Switch to the approver
-Click "As approver (Priya)" and verify "Approve" and "Reject" buttons appear.
+## Submit it for approval
+Click "Submit for approval" and verify a banner says it was sent to Dan Okafor, and "State" now reads "Awaiting approval".
 
-## Approve
-Click "Approve" and verify Approval reads "Approved", State reads "Scheduled", and the approval history's top entry reads "Approved by Priya Nair".
+## Verify the wrong approver is refused
+Select "Mira Shah" in "Acting as", click "Approve", and verify a red banner reads "Only Dan Okafor can approve this change. You are acting as Mira Shah." and "State" is still "Awaiting approval".
+
+## Approve as the named approver
+Select "Dan Okafor" in "Acting as", click "Approve", and verify a green banner reads "CHG0030011 is now Approved.", "State" reads "Approved", and the activity log contains "Approved by Dan Okafor".

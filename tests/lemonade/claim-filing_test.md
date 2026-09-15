@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/lemonade/claim-filing?reset=true
-max_steps: 40
-tags: [lemonade, insurance, wizard]
+url: https://my-testing-repo-main.vercel.app/lemonade-clone-app/quote?reset=true
+max_steps: 60
+tags: [lemonade, insurance, claims]
 ---
 
-# Lemonaid 26.3: Claim filing video flow
+# Limonade 26.3: Claim filing video flow
 
 Catalog objective: file a claim describing an incident.
-Key assertion: the claim is submitted with a claim ID.
+Key assertion: the claim is submitted with a claim id.
 
-## Open claims
-Go to https://my-testing-repo-main.vercel.app/lemonade/claim-filing?reset=true and verify the step "I'm Jim, I'll handle your claim. What happened?" is shown.
+## Get a policy in place
+Type "Priya" into "Your name", click "Next", click "Next", click "See my price", click "Buy this policy", type "4242 4242 4242 4242" into "Card number", click "Activate my policy", and verify the policy shows an "Active" badge.
 
-## What happened
-Choose "Theft", set "When did it happen?" to 2026-09-12, click "Continue", and verify the step "Tell me about it".
+## Describe the incident
+Go to https://my-testing-repo-main.vercel.app/lemonade-clone-app/claims, select "Theft" in "Type of claim", leave "Roughly what is it worth" as "850", type "My bike was taken from the building's bike store overnight." into "Tell us in your own words", and click "Next".
 
-## Details without a police report
-Type "My bike was stolen from the building garage overnight." into the description and "850" into Estimated loss, click "Continue", and verify the message "A police report is required for theft claims."
+## Record the statement
+Verify the recorder reads "Ready to record", click "Record statement", and verify it now reads "Statement recorded".
 
-## Confirm the report and statement
-Check "I filed a police report (required for theft)", click "Continue", check "I confirm the information I provided is true" on the video statement step, click "Continue", and verify the review step "Review your claim" lists "Theft" and "850".
-
-## Submit
-Click "Submit claim" and verify "Got it. Your claim is in." with a "Claim ID" reading "CLM-260912-THE" and status "Under review".
+## Submit and verify the claim id
+Click "Submit the claim" and verify a green card titled "Claim submitted" shows "Claim id" of "CLM-48120", "Type" of "Theft", "Claimed" of "$850.00", "Deductible" of "$500.00", "Expected payout" of "$350.00" and a "Submitted" badge.

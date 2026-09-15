@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoho-crm/workflow-rule?reset=true
-max_steps: 40
-tags: [zoho-crm, crm, crud]
+url: https://my-testing-repo-main.vercel.app/zoho-clone-app/workflows?reset=true
+max_steps: 45
+tags: [zoho-crm, crm, automation]
 ---
 
-# Zohoo CRM 32.2: Workflow rule trigger
+# Zohoe CRM 32.2: Workflow rule trigger
 
 Catalog objective: create a record that triggers a field update workflow.
-Key assertion: the field is auto-updated per the rule.
+Key assertion: the field is auto-updated according to the rule.
 
-## Review the rule
-Go to https://my-testing-repo-main.vercel.app/zoho-crm/workflow-rule?reset=true and verify the rule "Trade show leads" sets "Rating = Hot · Lead Owner = Priya Nair" when Lead Source = Trade Show, and the workflow log says "No rules have fired yet."
+## Verify the rules are active
+Verify the "Active rules" card lists "Flag high value leads" (when Deal Amount is 50,000 or more, set Rating to "Hot") and "Route web leads" (when Lead Source is Web, set owner to "Priya Nair").
 
-## Create a trade show lead
-Click "+ Create Lead", type "Park" into Last Name and "Vertex AI" into Company, select "Trade Show" for Lead Source, click "Create", and verify lead "LD-2" appears.
+## Create a record that matches both rules
+Leave "First name" as "Dana", "Last name" as "Ellery", "Company" as "Summit Royals", "Lead source" as "Web" and "Deal amount" as "62000".
 
-## Verify the auto-update
-Verify LD-2 shows Rating "Hot" with "updated by workflow", Owner "Priya Nair", and the workflow log reads "Rule “Trade show leads” fired on LD-2: Rating → Hot, Owner → Priya Nair".
+## Save it
+Click "Save the lead" and verify a green banner reads "2 rules fired: Flag high value leads, Route web leads."
+
+## Verify the fields were auto-updated
+Verify the saved record shows "Lead id" of "L2", "Deal Amount" of "$62,000.00", "Rating" of "Hot" and "Owner" of "Priya Nair", and the record log contains "Workflow “Flag high value leads” set rating to Hot".

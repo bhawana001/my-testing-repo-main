@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition?reset=true
-max_steps: 40
-tags: [zoho-crm, crm, wizard]
+url: https://my-testing-repo-main.vercel.app/zoho-clone-app/blueprint?reset=true
+max_steps: 45
+tags: [zoho-crm, crm, workflow]
 ---
 
-# Zohoo CRM 32.3: Blueprint stage transition
+# Zohoe CRM 32.3: Blueprint stage transition
 
 Catalog objective: move a record through a blueprint transition with required inputs.
 Key assertion: the transition completes and the stage advances.
 
-## Open the deal
-Go to https://my-testing-repo-main.vercel.app/zoho-crm/blueprint-transition?reset=true and verify the deal "Globex · Annual platform deal" is in stage "Qualification" with a "Send proposal" transition button.
+## Verify the starting stage
+With lead "L1 — Mira Shah" selected, verify "Current stage" reads "Qualification" and "Next stage" reads "Needs analysis".
 
-## Try without required inputs
-Click "Send proposal", click "Save" without filling anything, and verify "Proposal Amount is required."
+## Verify the transition is refused without its inputs
+Click "Move to Needs analysis" and verify a red banner reads "This transition needs: Confirmed budget, Decision maker name."
 
-## Complete the inputs
-Type "52000" into Proposal Amount and set Expected Closing Date to 2026-10-30, click "Save", and verify the modal closes.
+## Supply the required inputs
+Type "48000" into "Confirmed budget" and "Ravi Menon" into "Decision maker name", then click "Move to Needs analysis".
 
 ## Verify the stage advanced
-Verify the stage badge reads "Proposal/Price Quote", Amount reads "$52,000.00", Expected close reads "2026-10-30", and the timeline's top entry reads "Transition “Send proposal” completed: Qualification → Proposal/Price Quote".
+Verify a green banner reads "Moved to Needs analysis.", "Current stage" now reads "Needs analysis", the "Captured so far" card shows "budget" of "48000" and "authority" of "Ravi Menon", and the record log contains "Blueprint: Qualification → Needs analysis".

@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/freshdesk/canned-response?reset=true
-max_steps: 40
-tags: [freshdesk, support-saas, crud]
+url: https://my-testing-repo-main.vercel.app/freshdesk-clone-app/tickets?reset=true
+max_steps: 45
+tags: [freshdesk, support, productivity]
 ---
 
-# Freshdeskly 33.2: Canned response insert
+# Freshdesc 33.2: Canned response insert
 
 Catalog objective: insert a canned response in a reply.
-Key assertion: the response text is inserted with placeholders resolved.
+Key assertion: the response text is inserted with the placeholders resolved.
 
 ## Open the ticket
-Go to https://my-testing-repo-main.vercel.app/freshdesk/canned-response?reset=true and verify ticket "#2044 · Order #A-7731 not delivered" from Maria Chen with an empty reply box.
+Click "#1041" in the queue and verify the detail card title reads "#1041 — Cannot export my report" with a requester of "Sam Rivera".
 
 ## Insert the canned response
-Click "Insert canned response", click "Insert" next to "Delivery delay apology", and verify "Inserted canned response: Delivery delay apology".
+Select "Acknowledge receipt" in "Canned response", click "Insert canned response", and verify a green banner reads "“Acknowledge receipt” inserted with placeholders resolved."
 
-## Verify resolved placeholders
-Verify the reply box starts with "Hi Maria,", contains "ticket #2044", ends with "Demo User", and contains no "{{" placeholder text.
+## Verify the placeholders were resolved
+Verify the reply box begins "Hi Sam," and contains "Thanks for getting in touch about “Cannot export my report”. Your ticket is #1041 and I am looking into it now." and ends with "Priya from Acme Support".
+
+## Verify no raw placeholders remain
+Verify the reply box contains no "{{requester_first_name}}", "{{ticket_id}}" or "{{ticket_subject}}" text.

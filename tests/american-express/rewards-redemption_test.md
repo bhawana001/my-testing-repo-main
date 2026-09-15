@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/american-express/rewards-redemption?reset=true
+url: https://my-testing-repo-main.vercel.app/amex-clone-app/rewards?reset=true
 max_steps: 40
-tags: [american-express, banking, wizard]
+tags: [american-express, banking, rewards]
 ---
 
-# Amerix 25.1: Membership rewards redemption
+# Amrex 25.1: Membership rewards redemption
 
 Catalog objective: redeem points for a statement credit.
 Key assertion: points are deducted and the credit shows as pending.
 
-## Open rewards
-Go to https://my-testing-repo-main.vercel.app/american-express/rewards-redemption?reset=true and verify the points balance badge reads "48,200" and the wizard offers "10,000 points", "25,000 points" and "40,000 points" for statement credit.
+## Verify the starting balance
+Verify the page subtitle reads "84,200 points available" and "Rate" reads "0.6 cents per point".
 
-## Choose 10,000 points
-Choose "10,000 points" ($60.00 statement credit), click "Continue", and verify the confirm step lists "10,000 points".
+## Set the redemption
+Leave "Points to redeem" as "5000" and verify "Statement credit" reads "$30.00".
 
 ## Redeem
-Click "Redeem points" and verify the message "10,000 points redeemed" with the badge "Redemption submitted".
+Click "Redeem" and verify a green banner titled "Redemption submitted" says 5,000 points were redeemed for a $30.00 statement credit.
 
-## Verify deduction and pending credit
-Verify "Statement credit" reads "$60.00", the status reads "Pending · posts in 2–3 days", and the points balance badge in the top bar now reads "38,200".
+## Verify the deduction and the pending credit
+Verify "Points balance" now reads "79,200" and the "Statement credits" card lists "$30.00" from 5,000 points with a "Pending" badge.

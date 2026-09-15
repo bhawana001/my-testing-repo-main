@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/hdfc-bank/netbanking-login?reset=true
-max_steps: 40
+url: https://my-testing-repo-main.vercel.app/hdfc-clone-app/login?reset=true
+max_steps: 45
 tags: [hdfc-bank, banking, auth]
 ---
 
-# HDFB Bank 24.1: NetBanking login
+# Hindfirst Bank 24.1: NetBanking login
 
-Catalog objective: log in with customer ID and OTP in the test environment.
-Key assertion: the account summary renders balances.
+Catalog objective: log in with a customer id and an OTP in the test environment.
+Key assertion: the account summary renders the balances.
 
-## Open NetBanking login
-Go to https://my-testing-repo-main.vercel.app/hdfc-bank/netbanking-login?reset=true and verify the "NetBanking login" form with "Customer ID / User ID" and "Password" fields.
+## Enter the credentials
+Type "HF4471902" into "Customer id", type "Netbank@2026" into "Password", click "Continue", and verify the page moves to the step titled "Step 2 — one time password".
 
-## Enter credentials
-Type "DEMO12345" into Customer ID / User ID and "Demo123!" into Password, click "Continue", and verify the "Verify it's you" step asks for a Verification code.
+## Verify the second factor is required
+Verify the OTP step shows "Sent to" of "•••••• 4418" and an "OTP" field.
 
 ## Enter the OTP
-Type "123456" into Verification code, click "Verify and continue", and verify the "Account summary" page is shown with "Signed in as Demo User".
+Type "481902" into "OTP" and click "Verify and sign in", then verify the page moves to the account summary for "Priya Nair".
 
-## Verify balances
-Verify the balance cards show "Savings Account •••• 7712" with "₹1,84,250.40", "Current Account •••• 3301" with "₹52,110.00" and "Fixed Deposit" with "₹5,00,000.00", and the Accounts table lists the same three balances.
+## Verify the balances rendered
+Verify the "Deposit accounts" card shows "Savings Account" of "₹284,530.75", "Current Account" of "₹91,240.00" and "Total relationship value" of "₹375,770.75".

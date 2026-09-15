@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/lemonade/policy-purchase?reset=true
-max_steps: 40
-tags: [lemonade, insurance, checkout]
+url: https://my-testing-repo-main.vercel.app/lemonade-clone-app/quote?reset=true
+max_steps: 55
+tags: [lemonade, insurance, purchase]
 ---
 
-# Lemonaid 26.2: Policy purchase
+# Limonade 26.2: Policy purchase
 
 Catalog objective: buy the quoted policy with a test payment.
-Key assertion: the policy is active with its document available.
+Key assertion: the policy is active with a document available.
 
-## Open the quote
-Go to https://my-testing-repo-main.vercel.app/lemonade/policy-purchase?reset=true and verify "Your quote" shows "$15.00/month", quote "Q-RENT-2201" and "Policy starts September 15, 2026".
+## Get a quote first
+Type "Priya" into "Your name" and click "Next", click "Next" again on the place step, then click "See my price" and verify "Monthly premium" reads "$17.90".
 
-## Pay
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click "Pay $15.00 and activate", and verify the badge "Policy active" and the heading "You're covered, Demo!" appear.
+## Go to checkout
+Click "Buy this policy" and verify a "Confirm and pay" card appears showing "Monthly premium" of "$17.90".
 
-## Verify the policy
-Verify "Policy number" reads "LP-2201-0915", "Status" reads "Active from September 15, 2026", and a "Policy documents" row with a "Download PDF" button is shown.
+## Pay with the test card
+Type "4242 4242 4242 4242" into "Card number", click "Activate my policy", and verify the page shows "Your policy" with an "Active" badge.
 
-## Download the document
-Click "Download PDF" and verify the message "Downloaded lemonaid-policy-LP-2201-0915.pdf" with a byte count appears.
+## Verify the policy and its document
+Verify "Policy number" reads "LMN-770420" and "Monthly premium" reads "$17.90", then click "View policy document" and verify the document body contains "LIMONADE RENTERS POLICY", "Policy number: LMN-770420" and "Personal property .......... $20,000.00".

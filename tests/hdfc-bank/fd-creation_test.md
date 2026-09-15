@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/hdfc-bank/fd-creation?reset=true
-max_steps: 40
-tags: [hdfc-bank, banking, wizard]
+url: https://my-testing-repo-main.vercel.app/hdfc-clone-app/deposits?reset=true
+max_steps: 45
+tags: [hdfc-bank, banking, deposits]
 ---
 
-# HDFB Bank 24.3: FD creation
+# Hindfirst Bank 24.3: FD creation
 
-Catalog objective: open a fixed deposit choosing tenure and amount.
-Key assertion: the FD receipt shows the maturity amount.
+Catalog objective: open a fixed deposit, choosing a tenure and an amount.
+Key assertion: the receipt shows the maturity amount.
 
-## Open the FD wizard
-Go to https://my-testing-repo-main.vercel.app/hdfc-bank/fd-creation?reset=true and verify the step "Open a fixed deposit" with a "Deposit amount (INR)" field.
+## Set the deposit up
+Leave "Fund from" on the Savings Account, leave "Amount" as "100000", select "12 months — 7.10%" in "Tenure", and verify "Rate applied" reads "7.10% per annum".
 
-## Enter an amount below the minimum
-Type "1000" into Deposit amount (INR), click "Continue", and verify the validation message "Minimum ₹5,000, up to your available balance." is shown.
-
-## Enter a valid amount and tenure
-Clear the amount, type "100000", click "Continue", choose "12 months" (6.6% p.a.) and "Credit principal and interest to savings", click "Continue", and verify the review step lists "100000" and "12 months".
+## Check the projected maturity
+Verify "Maturity amount" in the preview reads "₹107,291.28".
 
 ## Open the deposit
-Click "Open deposit" and verify the "Fixed deposit receipt" with the badge "Deposit opened".
+Click "Open the deposit" and verify a green card titled "Fixed deposit opened" appears.
 
 ## Verify the receipt
-Verify "Principal" reads "₹1,00,000.00", "Tenure" reads "12 months at 6.6% p.a.", "Maturity date" reads "14 Sep 2027" and "Maturity amount" reads "₹1,06,765.15".
+Verify the receipt shows "Deposit number" of "FD770118", "Principal" of "₹100,000.00", "Tenure" of "12 months", "Rate" of "7.10% per annum", "Interest earned" of "₹7,291.28" and "Maturity amount" of "₹107,291.28".

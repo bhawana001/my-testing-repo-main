@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer?reset=true
-max_steps: 40
-tags: [hdfc-bank, banking, wizard]
+url: https://my-testing-repo-main.vercel.app/hdfc-clone-app/transfer?reset=true
+max_steps: 55
+tags: [hdfc-bank, banking, payments]
 ---
 
-# HDFB Bank 24.2: IMPS transfer
+# Hindfirst Bank 24.2: IMPS transfer
 
-Catalog objective: add a beneficiary and send IMPS after a cooling-period simulation.
-Key assertion: transfer success with a reference id.
+Catalog objective: add a beneficiary and send IMPS after the cooling period.
+Key assertion: the transfer succeeds with a reference id.
 
-## Open fund transfer
-Go to https://my-testing-repo-main.vercel.app/hdfc-bank/imps-transfer?reset=true and verify the "Savings Account" balance reads "₹1,84,250.40" and the Beneficiaries list shows "Meera Iyer" as "Active".
+## Add the beneficiary
+Type "Tom Alvarez" into "Name", type "50100338817001" into "Account number", click "Add beneficiary", and verify an amber banner says the beneficiary cannot be paid for 30 minutes.
 
-## Add a beneficiary
-Type "Karan Shah" into Beneficiary name, "998877665544" into Account number and "HDFC0009988" into IFSC, click "Add beneficiary", and verify "Karan Shah" appears in the list with the badge "Cooling period · 30 min".
+## Verify the cooling period blocks payment
+Verify the "Tom Alvarez" row carries a "Cooling period" badge, then select "Tom Alvarez" in "Beneficiary", type "481902" into "OTP", click "Send by IMPS", and verify a red banner reads "Tom Alvarez is still in the cooling period and cannot be paid yet."
 
-## Attempt IMPS during cooling
-Select "Karan Shah · 5544 (cooling)" in "To beneficiary", type "2500" into Amount (INR), click "Continue", and verify the error "This beneficiary is in the 30-minute cooling period. IMPS is not allowed yet." is shown.
+## Let the cooling period elapse
+Click "Simulate the 30 minute cooling period" and verify a green banner says the beneficiary is now active and the "Tom Alvarez" row carries an "Active" badge.
 
-## Simulate the cooling period
-Click "Simulate 30 min elapsed" next to Karan Shah and verify his badge reads "Active".
-
-## Send with OTP
-Click "Continue", type "123456" into the OTP field, click "Confirm transfer", and verify the message "Transfer successful" appears.
-
-## Verify the reference and balance
-Verify a "Reference ID" starting with "IMPS" is shown and the Savings Account balance now reads "₹1,81,750.40".
+## Send the transfer
+Type "481902" into "OTP", click "Send by IMPS", and verify a green card titled "Transfer successful" shows "Reference number" of "IMPS620041", "Beneficiary" of "Tom Alvarez", "Amount" of "₹2,500.00", "Mode" of "IMPS" and a "Success" badge.

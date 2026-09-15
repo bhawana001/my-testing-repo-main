@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge?reset=true
-max_steps: 40
-tags: [freshdesk, support-saas, crud]
+url: https://my-testing-repo-main.vercel.app/freshdesk-clone-app/tickets?reset=true
+max_steps: 45
+tags: [freshdesk, support, tickets]
 ---
 
-# Freshdeskly 33.3: Ticket merge
+# Freshdesc 33.3: Ticket merge
 
 Catalog objective: merge two tickets from the same requester.
 Key assertion: the merged ticket contains both threads.
 
-## Select two tickets
-Go to https://my-testing-repo-main.vercel.app/freshdesk/ticket-merge?reset=true, check the boxes for #2044 "Order #A-7731 not delivered" and #2046 "Where is my package?" (both from Maria Chen), and verify "2 selected" with the "Merge" button enabled.
+## Open the duplicate ticket
+Click "#1042" in the queue and verify the detail card title reads "#1042 — Export still failing" with "Messages in thread" of 1.
 
-## Merge
-Click "Merge", keep #2044 as the primary ticket, click "Merge" in the dialog, and verify "Merged #2046 into #2044."
+## Verify a cross-requester merge is refused
+Select "#1043 — Invoice address is wrong (Ana Okonkwo)" in "Merge this ticket into", click "Merge #1042", and verify a red banner reads "Freshdesc only merges tickets from the same requester."
 
-## Verify the merged thread
-Verify ticket #2044 shows "Contains merged ticket #2046" and both messages: "My order #A-7731 hasn't arrived." and "Following up: tracking hasn't updated in 3 days." (from #2046).
+## Merge into the same requester's ticket
+Select "#1041 — Cannot export my report (Sam Rivera)" in "Merge this ticket into" and click "Merge #1042", then verify a green banner reads "#1042 merged into #1041. Both threads are on the merged ticket."
 
-## Verify the secondary ticket
-Click "All tickets" and verify #2046 shows status "Closed" and "Merged into #2044".
+## Verify both threads are on the merged ticket
+Verify "Ticket count" reads 2, the detail card is now "#1041 — Cannot export my report" with "Merged from" of "#1042", and the thread contains both "The export button spins and nothing downloads." and "Tried again this morning, same thing."

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/american-express/dispute-charge?reset=true
-max_steps: 40
-tags: [american-express, banking, wizard]
+url: https://my-testing-repo-main.vercel.app/amex-clone-app/disputes?reset=true
+max_steps: 45
+tags: [american-express, banking, disputes]
 ---
 
-# Amerix 25.3: Dispute a charge
+# Amrex 25.3: Dispute a charge
 
 Catalog objective: start a dispute on a recent charge.
-Key assertion: a case is opened with confirmation.
+Key assertion: a case is opened with a confirmation.
 
-## Open the dispute wizard
-Go to https://my-testing-repo-main.vercel.app/american-express/dispute-charge?reset=true and verify the step "Select the charge to dispute" lists "GRAND HOTEL PLAZA · $612.00", "STREAMING SERVICE · $15.99" and "ELECTRONICS DEPOT · $249.00".
+## Pick the charge
+Select the "2026-09-02 — Skyline Airlines — $642.10" charge and verify "Amount" reads "$642.10".
 
-## Choose the charge and reason
-Choose "ELECTRONICS DEPOT · $249.00", click "Continue", choose "The amount is wrong", type "Charged $249 instead of $199." into Details, click "Continue", and verify the review step shows the charge and reason.
+## Give a reason
+Choose "I did not receive the goods or services" and type "The flight was cancelled and never rebooked or refunded." into "What happened".
 
 ## Open the dispute
-Click "Open dispute" and verify the confirmation "Your dispute has been opened" with the badge "Case opened".
+Click "Open the dispute" and verify a green card titled "Case opened" appears.
 
-## Verify the case number
-Verify a "Case number" starting with "INQ-" is shown and the text "You don't need to pay the disputed amount while we investigate." is displayed.
+## Verify the case details
+Verify the case shows "Case number" of "AMX-58210", "Merchant" of "Skyline Airlines", "Amount" of "$642.10", "Reason" of "I did not receive the goods or services", "Decision by" of "2026-10-16" and a badge reading "Under review".

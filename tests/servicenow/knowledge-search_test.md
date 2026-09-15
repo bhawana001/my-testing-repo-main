@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/servicenow/knowledge-search?reset=true
-max_steps: 45
-tags: [servicenow, itsm, crud]
+url: https://my-testing-repo-main.vercel.app/servicenow-clone-app/knowledge?reset=true
+max_steps: 40
+tags: [servicenow, itsm, knowledge]
 ---
 
-# ServiceNowly 34.4: Knowledge article search
+# ServiceNau 34.4: Knowledge article search
 
 Catalog objective: search the knowledge base and open an article.
-Key assertion: the article renders with a helpful-vote widget.
+Key assertion: the article renders with a helpful vote widget.
 
-## Search
-Go to https://my-testing-repo-main.vercel.app/servicenow/knowledge-search?reset=true, type "vpn" into "Search knowledge", click "Search", and verify "1 article found" listing "Connect to the corporate VPN".
+## Search the knowledge base
+Type "vpn" into the search box and verify "Articles found" reads 1 with a result for "KB0010044 — VPN drops every few minutes".
 
 ## Open the article
-Click "Connect to the corporate VPN" and verify the heading "Connect to the corporate VPN" with ID "KB0010021" and body text mentioning "client 5.4".
+Click "KB0010044 — VPN drops every few minutes" and verify the article card shows "Category" of "Network" and the body "Switch the tunnel profile from split to full, restart the client, and retest for ten minutes."
 
-## Vote
-Click "Yes" next to "Helpful?" and verify "Thanks! You rated this article helpful."
+## Verify the vote widget is present
+Verify a card titled "Was this article helpful?" shows "Helpful" of 51, "Not helpful" of 7 and buttons "Yes" and "No".
+
+## Cast a vote
+Click "Yes" and verify a green banner reads "Thanks — marked as helpful.", "Helpful" now reads 52, and a badge reads "You marked this helpful".

@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/intercom/outbound-message?reset=true
+url: https://my-testing-repo-main.vercel.app/intercom-clone-app/outbound?reset=true
 max_steps: 40
-tags: [intercom, support-saas, custom]
+tags: [intercom, support, marketing]
 ---
 
 # Intercomm 31.4: Outbound message display
 
-Catalog objective: verify a targeted outbound message shows on a matching page.
-Key assertion: the message displays with a working CTA.
+Catalog objective: verify a targeted outbound message shows on the matching page.
+Key assertion: the message displays with a working call to action.
 
-## Non-matching page
-Go to https://my-testing-repo-main.vercel.app/intercom/outbound-message?reset=true and verify the simulated page is "/home", the visitor plan is "Free", "Matches current visitor" reads "No", and no "Upgrade to Pro" message is shown.
+## Verify the message shows on the matching page
+With "Pricing page" selected and the plan on "Pro", verify "Messages shown on this page" reads 1 and the visitor view shows "Not sure which plan fits?" with the body "Book 15 minutes with us and we will size it with you."
 
-## Matching page
-Click "/pricing" and verify "Matches current visitor" reads "Yes" and a message "Upgrade to Pro and save 20% 🎉" with a "See Pro plans" button appears in the bottom-right.
+## Verify it does not show on a non-matching page
+Select "Home page" in "Page they are on" and verify "Messages shown on this page" reads 0 with the note that no outbound message targets this page and plan.
 
-## Use the CTA
-Click "See Pro plans" and verify the message closes, the confirmation "You followed the message's CTA." appears, and the Pro plan card shows "20% discount applied: $23.20/mo".
+## Verify the audience rule is respected
+Select "Pricing page" again, then select "Free" in "Their plan", and verify "Messages shown on this page" reads 0.
+
+## Verify the call to action works
+Select "Pro" in "Their plan", click the "Book a call" button, and verify a green banner reads "“Book a call” clicked — the click is recorded against Not sure which plan fits?" and the CTA clicks card shows "Clicks" of 1.

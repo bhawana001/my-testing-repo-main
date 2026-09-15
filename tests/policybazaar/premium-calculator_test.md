@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator?reset=true
+url: https://my-testing-repo-main.vercel.app/policybazaar-clone-app/calculator?reset=true
 max_steps: 40
-tags: [policybazaar, insurance, custom]
+tags: [policybazaar, insurance, calculator]
 ---
 
-# PolicyMart 27.4: Premium calculator
+# Policybaazar 27.4: Premium calculator
 
-Catalog objective: adjust age and cover in the calculator and verify the premium updates.
+Catalog objective: adjust the age and cover in the calculator and verify the premium updates.
 Key assertion: the premium recalculates on each change.
 
-## Open the calculator
-Go to https://my-testing-repo-main.vercel.app/policybazaar/premium-calculator?reset=true and verify age "30", cover "₹1Cr" and the premium "₹1,425.00" per year.
+## Verify the starting premium
+Verify "Age used" reads 30, "Cover" reads "₹10,000,000.00", "Insurer" reads "Meridian Life", "Annual premium" reads "₹6,100.00" and "Monthly equivalent" reads "₹508.00".
 
-## Increase age
-Click "+ Age" and verify the age reads "31" and the premium reads "₹1,475.00".
+## Change the age
+Set "Age (exact)" to "45" and verify "Annual premium" immediately recalculates to "₹11,500.00" with no Calculate button pressed.
 
-## Increase cover
-Click "₹2Cr" and verify the premium reads "₹2,950.00" and "Cover" reads "₹2,00,00,000.00".
+## Change the cover
+Select "₹5,000,000.00" in "Life cover" and verify "Annual premium" recalculates to "₹5,750.00".
 
-## Verify the recalculation log
-Verify "Recent recalculations" lists "Age 31, cover ₹100L → ₹1,475.00" and "Age 31, cover ₹200L → ₹2,950.00".
+## Apply the tobacco loading
+Tick "Tobacco user" and verify "Annual premium" recalculates to "₹8,913.00" with a badge reading "Tobacco loading applied".

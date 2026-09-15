@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/american-express/offers-enrollment?reset=true
+url: https://my-testing-repo-main.vercel.app/amex-clone-app/offers?reset=true
 max_steps: 40
-tags: [american-express, banking, crud]
+tags: [american-express, banking, offers]
 ---
 
-# Amerix 25.4: Offers enrollment
+# Amrex 25.4: Offers enrollment
 
 Catalog objective: add a merchant offer to the card.
 Key assertion: the offer shows as added.
 
-## Open offers
-Go to https://my-testing-repo-main.vercel.app/american-express/offers-enrollment?reset=true and verify four offers are listed including "Trailhead Outfitters" ("Get 10% back on purchases, up to $30") with an "Add to Card" button, and the text "0 offers added to Card".
+## Verify the starting state
+Verify the page subtitle reads "0 added to •••• •••••• 41008" and the "Harbour Grocers" offer shows an "Add to card" button.
 
-## Add an offer
-Click "Add to Card" on the "Trailhead Outfitters" offer and verify that offer now shows "✓ Added to Card" and the text reads "1 offer added to Card".
+## Add the offer
+Click "Add to card" on "Harbour Grocers" and verify a green banner reads "Harbour Grocers offer added to Amrex Platinum."
 
-## Verify it persists
-Reload the page without the reset parameter and verify "Trailhead Outfitters" still shows "✓ Added to Card".
+## Verify the offer is marked as added
+Verify the "Harbour Grocers" row in the catalogue now carries an "Added to card" badge instead of the button.
+
+## Verify it appears on the card
+Verify the "On your card" card shows "Offers added" of 1 with a "Harbour Grocers" row reading "Spend $50 or more, get $10 back · added 2026-09-16".

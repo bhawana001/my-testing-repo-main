@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view?reset=true
-max_steps: 40
-tags: [freshdesk, support-saas, auth]
+url: https://my-testing-repo-main.vercel.app/freshdesk-clone-app/tickets?reset=true
+max_steps: 50
+tags: [freshdesk, support, portal]
 ---
 
-# Freshdeskly 33.4: Customer portal ticket view
+# Freshdesc 33.4: Customer portal ticket view
 
-Catalog objective: log in to the portal and view ticket status.
-Key assertion: status and replies are visible to the customer.
+Catalog objective: log in to the portal and view the ticket status.
+Key assertion: the status and replies are visible to the customer.
 
-## Log in
-Go to https://my-testing-repo-main.vercel.app/freshdesk/portal-ticket-view?reset=true, type "demo@evals.dev" into Email and "Demo123!" into Password, click "Sign in", and verify "My tickets" lists #2051 "Can't log in to the mobile app" (Pending) and #2032 "Change billing email" (Resolved).
+## Reply publicly and leave a private note
+Click "#1041" in the queue, type "We have reproduced this and a fix is going out today." into the message box, click "Send", then type "Root cause is the 30 second gateway timeout." into the message box, tick "Private note" and click "Send".
 
-## Open the ticket
-Click "#2051" and verify the status badge reads "Pending · awaiting your reply".
+## Set the ticket status
+Select "Pending" in the status dropdown and verify the "#1041" row in the queue now shows "Pending".
 
-## Verify replies
-Verify the conversation shows your message "The mobile app says my password is wrong but web login works." and the agent reply from "Priya Nair (Support)" mentioning "version 4.2.1".
+## Open the customer portal
+Go to https://my-testing-repo-main.vercel.app/freshdesk-clone-app/portal, select "sam@riverfield.test" in "Email", and verify "Your tickets" reads 2 with a "#1041 — Cannot export my report" row.
+
+## Verify the customer sees status and public replies only
+Click "#1041 — Cannot export my report" and verify "Status" reads "Pending", "Replies you can see" reads 2, the public reply "We have reproduced this and a fix is going out today." is shown, and the private note "Root cause is the 30 second gateway timeout." is not.

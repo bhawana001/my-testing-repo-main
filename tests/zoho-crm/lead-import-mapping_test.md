@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoho-crm/lead-import-mapping?reset=true
-max_steps: 40
-tags: [zoho-crm, crm, wizard]
+url: https://my-testing-repo-main.vercel.app/zoho-clone-app/import?reset=true
+max_steps: 45
+tags: [zoho-crm, crm, import]
 ---
 
-# Zohoo CRM 32.1: Lead import mapping
+# Zohoe CRM 32.1: Lead import mapping
 
 Catalog objective: import a small CSV of leads with field mapping.
-Key assertion: leads are created with the mapped fields.
+Key assertion: the leads are created with the mapped fields.
 
-## Load the CSV
-Go to https://my-testing-repo-main.vercel.app/zoho-crm/lead-import-mapping?reset=true, click "Load sample leads.csv", and verify "3 rows · columns: Full Name, E-mail, Org, Phone".
+## Read the file
+Click "Read the file" and verify a "Map the columns" card appears with "Rows found" of 3.
 
-## Open the mapping step
-Click "Next" and verify the mapping step shows Full Name → Last Name, E-mail → Email, Org → "— Do not import —", Phone → Phone.
+## Verify the mapping
+Verify the mapping table maps "Given Name" to "First Name", "Surname" to "Last Name", "Organisation" to "Company", "Work Email" to "Email", "Channel" to "Lead Source" and "Value" to "Deal Amount".
 
-## Try to continue with a missing mandatory field
-Click "Next" and verify "Map the mandatory fields: Last Name and Company."
+## Run the import
+Click "Import 3 leads" and verify a green banner titled "Import complete" reads "3 leads created."
 
-## Fix the mapping
-Select "Company" for the Org column, click "Next", and verify the preview lists Priya Raman, Jon Park and Lena Ortiz with companies Nimbus Labs, Vertex AI and Quanta Foods.
-
-## Import
-Click "Import 3 leads" and verify "3 leads imported successfully. 0 skipped."
-
-## Verify the created leads
-Verify the Leads table shows LD-5001 "Priya Raman" (priya@nimbus.test, Nimbus Labs, 555-0101), LD-5002 "Jon Park" and LD-5003 "Lena Ortiz", each with source "Import".
+## Verify the mapped values landed on the record
+Verify the "First imported record" card shows "Lead id" of "L2", "First Name" of "Sam", "Last Name" of "Rivera", "Company" of "Riverfield FC", "Email" of "sam@riverfield.test", "Lead Source" of "Web" and "Deal Amount" of "52000".

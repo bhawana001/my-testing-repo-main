@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/freshdesk/email-to-ticket?reset=true
+url: https://my-testing-repo-main.vercel.app/freshdesk-clone-app/inbound?reset=true
 max_steps: 40
-tags: [freshdesk, support-saas, custom]
+tags: [freshdesk, support, tickets]
 ---
 
-# Freshdeskly 33.1: Email to ticket conversion
+# Freshdesc 33.1: Email to ticket conversion
 
 Catalog objective: send an email to the support address and verify a ticket is created.
-Key assertion: the ticket has the correct subject and requester.
+Key assertion: the ticket carries the correct subject and requester.
 
-## Compose the email
-Go to https://my-testing-repo-main.vercel.app/freshdesk/email-to-ticket?reset=true and verify the mail client shows From "Demo User <demo@evals.dev>" and To "support@acme.freshdeskly.test".
+## Verify the mail is addressed to support
+Verify the "To" field reads "support@acmerobotics.test".
 
-## Send
-Type "Refund not received for order A-7802" into Subject and "I returned the item two weeks ago." into Message, click "Send email", and verify "Auto-reply: ticket #2052 created."
+## Send the email
+Leave "From" as "Leo Marsh <leo@harbourfreight.test>" and "Subject" as "Login link never arrives", click "Send the email", and verify a green card titled "Ticket created" appears.
 
-## Verify the ticket
-Click "Helpdesk" and verify the ticket list shows "#2052" with subject "Refund not received for order A-7802", requester "Demo User <demo@evals.dev>", source "✉ Email" and status "Open".
+## Verify the ticket details
+Verify the card shows "Ticket id" of "#1044", "Subject" of "Login link never arrives", "Requester" of "Leo Marsh", "Requester email" of "leo@harbourfreight.test" and "Source" of "Email".
+
+## Verify it is in the queue
+Click "Open it in the ticket list" and verify the queue shows "Ticket count" of 4 with a "#1044" row whose subject is "Login link never arrives" and whose requester is "Leo Marsh".

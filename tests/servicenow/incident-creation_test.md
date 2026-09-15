@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/servicenow/incident-creation?reset=true
+url: https://my-testing-repo-main.vercel.app/servicenow-clone-app/incidents?reset=true
 max_steps: 45
-tags: [servicenow, itsm, crud]
+tags: [servicenow, itsm, incidents]
 ---
 
-# ServiceNowly 34.1: Incident creation
+# ServiceNau 34.1: Incident creation
 
-Catalog objective: create an incident with category and priority.
-Key assertion: an incident number is generated and assigned.
+Catalog objective: create an incident with a category and a priority.
+Key assertion: an incident number is generated and the incident is assigned.
 
-## Open a new incident
-Go to https://my-testing-repo-main.vercel.app/servicenow/incident-creation?reset=true, click "New", then click "Submit" with empty fields and verify "Category and Short description are mandatory."
+## Fill in the incident
+Type "Cannot connect to the warehouse portal" into "Short description", select "Software" in "Category", select "2 - Medium" in "Impact" and "1 - High" in "Urgency".
 
-## Fill the incident
-Select "Software" for Category, "1 - High" for Impact and "2 - Medium" for Urgency, and verify "Calculated priority" reads "2 - High".
+## Verify the priority is derived, not typed
+Verify "Priority (derived)" reads "2 - High" and "Routes to" reads "Application Support".
 
-## Submit
-Type "Email client crashes on launch" into Short description, click "Submit", and verify "Incident INC0010042 created and assigned to Application Support."
+## Submit it
+Click "Submit" and verify a green card titled "Incident created" appears.
 
-## Verify the list
-Verify the incident list's first row reads "INC0010042", "Email client crashes on launch", "Software", "2 - High", "Application Support", state "New".
+## Verify the number and the assignment
+Verify the card shows "Number" of "INC0024501", "Category" of "Software", "Priority" of "2 - High", "Assignment group" of "Application Support", "Assigned to" of "Mira Shah" and a state of "New".
