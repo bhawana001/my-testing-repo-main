@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/docusign/template-reuse?reset=true
+url: https://my-testing-repo-main.vercel.app/docusign-clone-app/templates?reset=true
 max_steps: 45
-tags: [docusign, docs-productivity, wizard]
+tags: [docusign, documents, templates]
 ---
 
-# DocuSigned 43.3: Template reuse
+# DocuSine 43.3: Template reuse
 
 Catalog objective: send a new envelope from a template.
-Key assertion: fields are prefilled from the template.
+Key assertion: the fields are prefilled from the template.
 
-## Use the template
-Go to https://my-testing-repo-main.vercel.app/docusign/template-reuse?reset=true, click "Use" on "Offer letter", and verify the prefilled panel shows Document "Offer-Letter.pdf", Email subject "Your offer from Acme Inc", Recipient role "Candidate", Title "Senior Engineer", Base salary "$165,000" and Start date "2026-10-05".
+## Verify the template
+Verify the "Mutual NDA" template card shows a subject of "Please sign: Mutual NDA" and fields of "Signature, Date signed, Company name".
 
-## Send
-Type "Sam Lee" into Name and "sam@acme.test" into Email, click "Send", and verify "Envelope sent from template “Offer letter”".
+## Start from the template
+Click the use button on "Mutual NDA" and verify the send page opens.
 
-## Verify the sent values
-Verify the sent envelope shows Base salary "$165,000", Start date "2026-10-05" and Manager "Priya Nair" from the template.
+## Verify the template prefilled the envelope
+Verify "Subject" reads "Please sign: Mutual NDA", the message reads "Standard two-way NDA — no changes from our usual terms.", and the field list already contains Signature, Date signed and Text fields.
+
+## Send it and confirm the template is recorded
+Type "Sam Rivera" into "Name", "sam@riverfield.test" into "Email", click "Send for signature", and verify the confirmation shows "Fields to complete" of 3 and "From template" of "Mutual NDA".

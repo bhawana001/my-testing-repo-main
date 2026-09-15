@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/docusign/signing-ceremony?reset=true
-max_steps: 45
-tags: [docusign, docs-productivity, wizard]
+url: https://my-testing-repo-main.vercel.app/docusign-clone-app/send?reset=true
+max_steps: 55
+tags: [docusign, documents, esign]
 ---
 
-# DocuSigned 43.2: Signing ceremony completion
+# DocuSine 43.2: Signing ceremony
 
 Catalog objective: open the signing link, adopt a signature and complete.
 Key assertion: the envelope is completed and the PDF sealed.
 
-## Agree to e-sign
-Go to https://my-testing-repo-main.vercel.app/docusign/signing-ceremony?reset=true, check "I agree to use electronic records and signatures.", click "Continue", and verify the document "Mutual Non-Disclosure Agreement" with a yellow "Sign" field.
+## Send an envelope first
+Type "Please sign: Service agreement" into "Subject", click "Signature" and "Date signed" to add fields, type "Sam Rivera" into "Name", "sam@riverfield.test" into "Email", and click "Send for signature".
 
-## Try to finish unsigned
-Click "Finish" and verify "Sign the Signature field before finishing."
+## Open the signing link
+Click through to the signing page and verify the page title reads "Please sign: Service agreement" with the subtitle naming envelope "ENV-7742".
 
 ## Adopt a signature
-Click the "Sign" field, keep the name "Demo User", click "Adopt and Sign", and verify the signature "Demo User" is placed and Date Signed reads "9/14/2026".
+Click "Adopt and sign", type "Sam Rivera" into "Full name" in the dialog, and click the adopt button, then verify the signature field now carries "Sam Rivera".
 
-## Finish
-Click "Finish" and verify "You're done signing" with status "Completed".
-
-## Download the sealed PDF
-Click "Download sealed PDF" and verify "Downloaded Mutual-NDA-completed.pdf" with "Certificate of Completion".
+## Complete and verify the sealed document
+Fill in the date field, click "Finish", and verify a green banner titled "You're done" says envelope "ENV-7742" is completed and a sealed PDF has been sent, with "Status" reading "completed".

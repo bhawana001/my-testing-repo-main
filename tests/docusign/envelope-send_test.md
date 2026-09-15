@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/docusign/envelope-send?reset=true
+url: https://my-testing-repo-main.vercel.app/docusign-clone-app/send?reset=true
 max_steps: 45
-tags: [docusign, docs-productivity, wizard]
+tags: [docusign, documents, esign]
 ---
 
-# DocuSigned 43.1: Envelope send for signature
+# DocuSine 43.1: Envelope send
 
 Catalog objective: send a document for signature with two fields.
 Key assertion: the recipient receives a signing link.
 
-## Add the document
-Go to https://my-testing-repo-main.vercel.app/docusign/envelope-send?reset=true, click "+ Add sample Mutual-NDA.pdf", and verify "Mutual-NDA.pdf · 2 pages" is added.
+## Set the document up
+Type "Please sign: Service agreement" into "Subject" and "Two-year agreement, standard terms." into "Message to signer".
+
+## Add two fields
+Click "Signature" and then "Date signed" in the add-field buttons, and verify the field list shows both a Signature and a Date signed field.
 
 ## Add the recipient
-Click "Continue", type "Sam Lee" into Recipient name and "sam@acme.test" into Recipient email, click "Continue", and verify the "Place fields on page 2" step.
+Type "Sam Rivera" into "Name" and "sam@riverfield.test" into "Email", then click "Send for signature".
 
-## Try without a signature field
-Click "Continue" and verify "Place a Signature field for the signer."
-
-## Place two fields
-Tick "Signature" and "Date Signed", click "Continue", and verify the "Email subject and message" step with subject "Please DocuSign: Mutual-NDA.pdf".
-
-## Send
-Click "Continue", then click "Send", and verify "Your envelope was sent" with status "Sent" and fields "Signature, Date Signed".
-
-## Verify the recipient's signing link
-Verify the recipient inbox for sam@acme.test shows "Please DocuSign: Mutual-NDA.pdf" with a "Review document" link.
+## Verify the signing link
+Verify a green banner titled "Envelope sent" names envelope "ENV-7742" sent to Sam Rivera (sam@riverfield.test), with "Fields to complete" of 2 and a link through to the signing page.

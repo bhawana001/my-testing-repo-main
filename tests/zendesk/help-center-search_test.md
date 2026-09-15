@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zendesk/help-center-search?reset=true
+url: https://my-testing-repo-main.vercel.app/zendesk-clone-app/help?reset=true
 max_steps: 40
-tags: [zendesk, support-saas, crud]
+tags: [zendesk, support, knowledge]
 ---
 
-# Zendeskly 30.4: Help center search
+# Zendisk 30.4: Help centre search
 
-Catalog objective: search the help center and open an article.
-Key assertion: a relevant article renders with a feedback widget.
+Catalog objective: search the help centre and open an article.
+Key assertion: the relevant article renders with a feedback widget.
 
-## Search
-Go to https://my-testing-repo-main.vercel.app/zendesk/help-center-search?reset=true, type "reset password" into the search box, click "Search", and verify "1 result for “reset password”" with the result "How to reset your password".
+## Search for a topic
+Type "refund" into "Search" and verify the result count narrows to the matching article.
 
 ## Open the article
-Click "How to reset your password" and verify the article heading "How to reset your password" with body text mentioning "Forgot password".
+Click "How refunds are processed" and verify the article body explains that refunds return to the original payment method and card refunds take 5 working days.
 
-## Use the feedback widget
-Click "Yes" next to "Was this article helpful?" and verify "Thanks for your feedback!"
+## Verify the feedback widget
+Verify a card titled "Was this article helpful?" is shown with "👍 Yes" and "👎 No" buttons and "Found helpful by" of "128 of 134 people".
+
+## Cast a vote
+Click "👍 Yes" and verify the Yes button becomes the selected option.
