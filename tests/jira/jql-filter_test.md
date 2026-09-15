@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/jira/jql-filter?reset=true
+url: https://my-testing-repo-main.vercel.app/jira-clone-app/search?reset=true
 max_steps: 45
-tags: [jira, work-collab, crud]
+tags: [jira, work-collab, search]
 ---
 
-# Jirah 41.3: JQL filter search
+# Jiira 41.3: JQL filter search
 
 Catalog objective: run a JQL query and save the filter.
-Key assertion: results match the query and the filter is saved.
+Key assertion: the results match the query and the filter is saved.
 
-## Invalid field
-Go to https://my-testing-repo-main.vercel.app/jira/jql-filter?reset=true, type "project = WEB AND prio = High" into the JQL box, click "Search", and verify "Field 'prio' does not exist".
+## Run a JQL query
+Replace the JQL box with "project = ACME AND type = Bug" and click "Run query", then verify the Results card shows "Issues matched" of 2.
 
-## Valid query
-Replace the query with "project = WEB AND priority = High AND status != Done", click "Search", and verify "2 issues": WEB-121 (High, To Do) and WEB-125 (High, In Progress).
+## Verify the results match the query
+Verify the results table lists "ACME-101" and "ACME-103" and that every row has a Type of "Bug".
 
 ## Save the filter
-Click "Save filter", type "High priority open", click "Save", and verify "Filter “High priority open” saved." and that it appears under Starred filters with that JQL.
+Type "Open bugs" into "Filter name", click "Save filter", and verify a green banner reads "Filter “Open bugs” saved."
+
+## Verify the saved filter
+Verify the "Saved filters" card shows "Saved" of 1 with a filter named "Open bugs", the query "project = ACME AND type = Bug" and a badge reading "2 issues".

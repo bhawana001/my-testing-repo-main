@@ -1,25 +1,25 @@
 ---
 test: ../discount-code_test.md
 status: passed
-started: 2026-09-11T15:55:36.042Z
+started: 2026-09-15T09:21:50.747Z
 duration_s: 174
-session_id: 20b5c980-1874-4bac-92f2-8397a8ce7781
+session_id: 2d3b01a6-5014-4bf3-9c3e-75d277a7f921
 ---
 
-# Shopifly 2.2: Discount code application — Result
+# Shoplify 2.2: Discount code application — Result
 
-## Open the cart ✓ passed (46.6s)
-md5: f0b67f5fa92815fbcbcc952eb9dacb15
-Go to https://my-testing-repo-main.vercel.app/shopify/discount-code?reset=true and verify the "Subtotal" row reads "$79.00" and the "Total" row reads "$85.00" (with $6.00 shipping) and no Discount row is shown.
+## Add a product and open checkout ✓ passed (60.1s)
+md5: e78d860c73d44fa658232026c1a1bde1
+Click "Add to cart" on "Heavyweight Cotton Tee", click "View cart", click "Checkout", and verify the order summary shows a Total of "$41.06".
 
-## Try an invalid code ✓ passed (35.8s)
-md5: 8a00387ce6c59777bbda410559c1f243
-Type "BOGUS" into the "Discount code" field, click "Apply", and verify the message "Code “BOGUS” is not valid." is shown.
+## Apply an invalid code first ✓ passed (33.1s)
+md5: 5eb4fb64e9a382ff46fe43df8f7cf2da
+Type "NOTACODE" into the "Discount code" field, click "Apply", and verify an error appears reading "Discount code NOTACODE isn't valid for this order."
 
-## Apply SAVE10 ✓ passed (36.2s)
-md5: 516801ec647ff6fc932542eea0c8b14c
-Type "SAVE10" into the "Discount code" field, click "Apply", and verify the badge "SAVE10 applied" is shown.
+## Apply the ten percent code ✓ passed (40.9s)
+md5: a0c09a7e6123d93a3b59d033832a9860
+Clear the discount field, type "WELCOME10", click "Apply", and verify a badge appears reading "WELCOME10 (10% off) applied".
 
-## Verify the discount math ✓ passed (50.7s)
-md5: 5ba5abeef15f200cc2623226a18a2399
-Verify a "Discount" row reads "−$7.90" (10% of $79.00) and the "Total" row now reads "$77.10".
+## Confirm the discounted total ✓ passed (35.9s)
+md5: cdd2b6341ec07546d92ac66b7fd1ae52
+Verify the summary shows a discount line "Discount (WELCOME10)" of "−$3.20" and a Total of "$37.60".

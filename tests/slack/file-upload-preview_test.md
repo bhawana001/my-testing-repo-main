@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/slack/file-upload-preview?reset=true
-max_steps: 45
-tags: [slack, work-collab, feed]
+url: https://my-testing-repo-main.vercel.app/slack-clone-app/files?reset=true
+max_steps: 40
+tags: [slack, work-collab, files]
 ---
 
-# Slacky 35.2: File upload and preview
+# Slaick 35.2: File upload and preview
 
 Catalog objective: upload an image and verify the inline preview.
 Key assertion: the preview renders and the file is downloadable.
 
+## Choose the destination channel
+Select "#design" in the "Channel" dropdown and verify the dropdown now reads "#design".
+
 ## Attach the image
-Go to https://my-testing-repo-main.vercel.app/slack/file-upload-preview?reset=true, click "+ team-offsite.svg" in the composer, type "Offsite group photo" into the message box, and verify the composer shows "📎 team-offsite.svg".
+Click "Attach checkout-spec.png" and verify a green banner reads "checkout-spec.png uploaded to #design".
 
-## Send
-Click "Send" and verify a new message from Demo User "Offsite group photo" with an inline image preview and the caption "team-offsite.svg · 2 KB".
+## Verify the inline preview
+Verify the "Uploaded files" card lists "checkout-spec.png" with a "#design" badge and an inline image preview rendered beneath the file name.
 
-## Download
-Click "Download" under the image and verify "Downloaded team-offsite.svg."
+## Verify the file is downloadable
+Verify a "Download" link is present on the "checkout-spec.png" row.

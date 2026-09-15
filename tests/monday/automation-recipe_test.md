@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/monday/automation-recipe?reset=true
+url: https://my-testing-repo-main.vercel.app/monday-clone-app/automations?reset=true
 max_steps: 45
-tags: [monday, work-collab, crud]
+tags: [monday, work-collab, automation]
 ---
 
-# Mondayly 42.2: Automation recipe
+# Mondee 42.2: Automation recipe
 
 Catalog objective: set a status-change notify automation and trigger it.
-Key assertion: a notification is generated on change.
+Key assertion: a notification is generated on the change.
 
-## Create the automation
-Go to https://my-testing-repo-main.vercel.app/monday/automation-recipe?reset=true, keep the recipe "When Status changes to Done, notify Priya Nair", click "Create automation", and verify it is listed as "Active".
+## Create the recipe
+Select "Launch plan" in "Board", select "Done" in "When status changes to", select "Priya Nair" in "Notify", click "Create automation", and verify a green banner reads "Recipe saved on Launch plan: When status changes to Done, notify Priya Nair".
 
-## Trigger it
-Change the Status of "Design review" to "Done" and verify the dropdown shows "Done".
+## Verify the recipe is active
+Verify the "Active recipes" card shows "Recipes" of 1 with an "active" badge on the "Launch plan" row.
 
-## Verify the notification
-Click "Priya" in the top bar and verify the bell shows "1" and "Automation: “Design review” status changed to Done".
+## Trigger it with a status change
+Select "Print the banners (Working on it)" in "Item", select "Done" in "New status", and click "Change the status".
+
+## Verify the notification was generated
+Verify a green banner reads "1 notification generated — Priya Nair notified." and the Notifications card shows "Notifications generated" of 1 with an entry for "Priya Nair" reading "“Print the banners” changed to Done on Launch plan".

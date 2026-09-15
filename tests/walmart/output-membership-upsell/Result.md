@@ -1,33 +1,25 @@
 ---
 test: ../membership-upsell_test.md
 status: passed
-started: 2026-09-13T10:17:42.264Z
-duration_s: 174
-session_id: b90495da-8b29-4496-a8c1-11707033201d
+started: 2026-09-15T09:59:50.856Z
+duration_s: 158
+session_id: b208f48d-4744-4992-97d1-80b870947ead
 ---
 
-# Walmartly 4.3: Membership upsell — Result
+# Wallmark 4.3: Membership upsell — Result
 
-## Open the cart ✓ passed (39.3s)
-md5: f54a410d4f0c9fe3cedf8da8d6ce878c
-Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true and verify a yellow banner "Walmartly+ members get free delivery on this order" is shown.
+## Add an item and open checkout ✓ passed (43.5s)
+md5: 9af6b6dbab7427b8cc54bc1d8096b985
+Click "Add to cart" on "Large Eggs, 12 ct", click "Continue to checkout", and verify the checkout page shows a "Pickup time" section.
 
-## Go to delivery ✓ passed (34.2s)
-md5: 558dbc9fb4bf85102f36a454848dc69b
-Click "Proceed to checkout" and verify the delivery step with a "Continue to payment" button is shown.
+## Trigger the upsell with a paid express slot ✓ passed (40s)
+md5: 9705338a67f954e80531ec6413f428b0
+Click "Tomorrow, 12pm – 1pm · Express" and verify a dialog appears titled "Save on this order with Wallmark+".
 
-## Go to payment ✓ passed (21.1s)
-md5: b44e355276406e2352a2a5e4a573b69e
-Click "Continue to payment" and verify the Payment card form and the "Try Walmartly+ free" banner button are shown.
+## Confirm plan pricing renders ✓ passed (30s)
+md5: e6732dac46d43a1831e0bcf9783aab02
+Verify the dialog shows "Annual — $98.00/year" and "Monthly — $12.95/month".
 
-## Open the signup modal ✓ passed (23.6s)
-md5: f012a5f4bf4e5e7784cb63028ee89331
-Click the "Try Walmartly+ free" button and verify a modal titled "Choose your Walmartly+ plan" opens.
-
-## Verify plan pricing ✓ passed (23.9s)
-md5: e865c9df8ea258b4fe47c8a7aa8c1862
-Verify the modal lists a "Monthly" plan at "$12.95/mo" and an "Annual" plan at "$98/yr".
-
-## Close the modal ✓ passed (30.6s)
-md5: c69e7cdd9463d184dc78fec16c881e0f
-Click "No thanks" and verify the modal is no longer visible and the "Payment" card form is still shown with the Pay button enabled.
+## Close the modal cleanly ✓ passed (40.5s)
+md5: 0638cfee5acba716d26f5f17850a6178
+Click "No thanks" and verify the dialog is no longer shown and the checkout page still shows the "Order summary" with a "Place order" button.

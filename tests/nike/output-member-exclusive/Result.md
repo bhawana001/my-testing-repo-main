@@ -1,29 +1,26 @@
 ---
 test: ../member-exclusive_test.md
-status: passed
-started: 2026-09-13T10:41:31.207Z
-duration_s: 157
-session_id: 6abcbc3a-dabd-4b3c-bf68-0335a6415177
+status: failed
+started: 2026-09-15T10:42:41.135Z
+duration_s: 122
+session_id: bc92a41e-5e7a-413c-932e-5fcf2fcdcf41
 ---
 
 # Nyke 8.2: Member exclusive access — Result
 
-## Open as a guest ✓ passed (17.4s)
-md5: 3e4dd8431263adce730e3f6b6514dc5d
-Go to https://my-testing-repo-main.vercel.app/nike/member-exclusive?reset=true and verify the product "Stride Runner 3 · Member Edition" shows the notice "This product is only available to Nyke Members" and the "Members only" button is disabled.
+## Confirm the product is gated when signed out ✓ passed (34.6s)
+md5: b04fc81c8762e035ad07a3906fcd4870
+Click "Nyke Flyknit Elite — Member Exclusive" and verify the page shows "Members only" and a "Sign in to unlock" button instead of sizes.
 
-## Sign in ✓ passed (56.1s)
-md5: 1e240d05a1ff59cba35a5b68dc7f1fa7
-Click "Sign in to unlock", type "demo@evals.dev" into Email and "Demo123!" into Password, click "Sign in", and verify the top bar shows the badge "Member · Demo".
+## Sign in as a member ✓ passed (40s)
+md5: 3ec81baf6b9a873407a1a66dd60594c5
+Click "Sign in to unlock", type "priya.nair@example.com" into Email, type "member2026" into Password, click "Sign in", and verify a welcome confirmation appears.
 
-## Verify access ✓ passed (30.9s)
-md5: 3624a3ce16ce8d523bcbbce0ae29b8bd
-Verify the members-only notice is gone, size chips "US 8", "US 9" and "US 10" are shown, and the button now reads "Add to Bag".
+## Confirm the product unlocked ✗ failed (43.2s)
+md5: d5402035508eca37177c312610d6a3a0
+Reason: Final verification failed: "the product page now shows a size grid and a "📏 Size guide" button rather than the members-only notice" — bug verdict: Final assertion misclassifies available member product [automation_bug/config_issue, confidence 0.93]
+Verify the product page now shows a size grid and a "📏 Size guide" button rather than the members-only notice.
 
-## Choose a size ✓ passed (27s)
+## Confirm it is buyable ✓ passed (—)
 md5: a7a8c18ac7e4280a0fd133a854a7724a
-Click "US 9" and verify the "Add to Bag" button is enabled.
-
-## Add to bag ✓ passed (23.5s)
-md5: 5f2c30f3b6a85492b54460f354d240ca
-Click "Add to Bag" and verify the message "Added Stride Runner 3 · Member Edition (US 9) to your bag." appears.
+Click size "US 10" and verify the "Add to Bag" button is enabled and a badge reads "Selected: US 10".

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/notion/share-to-web?reset=true
-max_steps: 45
-tags: [notion, work-collab, custom]
+url: https://my-testing-repo-main.vercel.app/notion-clone-app/page/home?reset=true
+max_steps: 40
+tags: [notion, work-collab, sharing]
 ---
 
-# Notionly 38.3: Share to web publish
+# Notiond 38.3: Share to web publish
 
 Catalog objective: publish a page to the web and open the public link.
-Key assertion: the public page renders without auth.
+Key assertion: the public page renders without authentication.
 
-## Open Share
-Go to https://my-testing-repo-main.vercel.app/notion/share-to-web?reset=true, click "Share", and verify a Publish panel with a "Publish to web" switch that is off.
+## Verify the page is private first
+Go to https://my-testing-repo-main.vercel.app/notion-clone-app/public/home and verify the page title reads "Not published" and says the owner has not published it to the web.
 
-## Publish
-Turn on "Publish to web" and verify the badge "🌐 Published" and the public link "https://demo.notionly.site/q3-roadmap-8a1f".
+## Publish the page
+Go to https://my-testing-repo-main.vercel.app/notion-clone-app/page/home, tick "Publish to web" in the Share card, and verify a "Public link" of "/notion-clone-app/public/home" now appears.
 
 ## Open the public link
-Click "Open public link" and verify the URL now contains "public=q3-roadmap-8a1f".
+Click "Open the public page" and verify the page shows the title "Team home" with the subtitle "Published to the web".
 
-## Verify the public page
-Verify the badge "Public page · viewing without signing in", the content "🚀 Q3 Roadmap" with "Self-serve onboarding", and that the workspace sidebar and Share button are not shown.
+## Verify it renders with no sign-in
+Verify the public page shows a badge reading "Public page — no sign-in required", "Blocks" of 2, and the text "Everything the team needs, in one place."

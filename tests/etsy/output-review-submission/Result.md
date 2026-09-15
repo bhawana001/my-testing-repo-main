@@ -1,29 +1,29 @@
 ---
 test: ../review-submission_test.md
 status: passed
-started: 2026-09-13T10:23:18.165Z
-duration_s: 155
-session_id: 60d9c37e-99d6-4174-b870-dc57a1370cb5
+started: 2026-09-15T10:12:47.326Z
+duration_s: 166
+session_id: 7a46efb7-1788-48b8-87e3-afc565782d6f
 ---
 
-# Etsily 5.4: Review submission — Result
+# Etsi 5.4: Review submission — Result
 
-## Open the review form ✓ passed (24.3s)
-md5: e7fda72f92660f0e066f185703d2d6a5
-Go to https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true, click "Leave a review" next to "Custom Name Ceramic Mug", and verify star buttons and a review text box.
+## Confirm a delivered order exists ✓ passed (29.8s)
+md5: f9c7bd800d5942d48a0bbc670ba7617a
+Verify the orders page shows order "ET-4471" with status "Delivered August 27, 2026" containing "Hand-thrown Speckled Mug".
 
-## Submit empty ✓ passed (29.6s)
-md5: 4d44c0b8f11c2cd4f8a71a51652b9b11
-Click "Post review" and verify "Choose a star rating."
+## Open the review form ✓ passed (25.5s)
+md5: e051eba8adcffd3fc52b4e8010104a1e
+Click "Leave a review" and verify a review form appears with a Rating dropdown and a "Your review" field.
 
-## Write the review ✓ passed (45.7s)
-md5: 5273c8967682a189f69339b4a2deb38e
-Click the 5th star, type "Perfect gift, the name print is crisp." into the review box, click "+ Add sample photo", and verify "📷 mug-photo.jpg attached".
+## Confirm the review text is required ✓ passed (27.6s)
+md5: 75d7f70f0cac60b97a367e891ad3b4f8
+Click "Post review" without entering text and verify an error appears reading "Write a few words about the item."
 
-## Post ✓ passed (30s)
-md5: 61342dfd3716db6ead4ec924b2f41fab
-Click "Post review" and verify the listing's Reviews section opens.
+## Write the review and attach a photo ✓ passed (30.6s)
+md5: 02995f9b26bbf5419f54fb83b13095e6
+Select "★★★★★ (5)" as the Rating, type "Beautiful glaze and it holds heat well." into "Your review", select "mug-on-shelf.jpg" as the photo, and verify the photo dropdown shows "mug-on-shelf.jpg".
 
-## Verify under the listing ✓ passed (23.8s)
-md5: adaee8f7663695577754377068627afc
-Verify the top review shows 5 stars, "Perfect gift, the name print is crisp.", a photo thumbnail, and "Demo U.".
+## Post the review ✓ passed (50s)
+md5: 853e170c363e1899eb02a4f16e7ba893
+Click "Post review" and verify the page shows "Review posted" and a review under the listing reading "Beautiful glaze and it holds heat well." with a photo badge "📷 mug-on-shelf.jpg".

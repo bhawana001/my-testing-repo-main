@@ -1,21 +1,26 @@
 ---
 test: ../multi-seller-cart_test.md
-status: passed
-started: 2026-09-11T16:28:38.436Z
-duration_s: 117
-session_id: 9fcc1126-d52c-4bb9-b6f0-442d74bc2efb
+status: failed
+started: 2026-09-15T10:10:40.292Z
+duration_s: 119
+session_id: 0c7b9821-1886-4e00-94c0-1b2a49e79b3a
 ---
 
-# Etsily 5.3: Cart with multiple sellers — Result
+# Etsi 5.3: Cart with multiple sellers — Result
 
-## Open the cart ✓ passed (48.2s)
-md5: 8fc8582dc99224c75217166231e1e8e3
-Go to https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart?reset=true and verify the cart lists "Custom Name Ceramic Mug" sold by "ClayWorks Studio" and "Botanical Art Print A3" sold by "Fernhouse Prints".
+## Add an item from the first shop ✓ passed (30.3s)
+md5: bda944dc178c8c025e7883288655a35a
+Click "Hand-thrown Speckled Mug", click "Add to cart", and verify the cart badge shows one item.
 
-## Verify per-shop shipping ✓ passed (35.1s)
-md5: 3eefa0fa6443703a9c4bca495c68767c
-Verify the order summary shows two separate shipping rows: "Shipping · ClayWorks Studio" at "$4.50" and "Shipping · Fernhouse Prints" at "$6.25".
+## Add an item from a second shop ✓ passed (41.3s)
+md5: a60a5a9156e6dc4b476f57a46d81d32e
+Click "Back to search", click "Letterpress Card Set of 6", click "Add to cart", and verify the cart now holds two items.
 
-## Verify the total ✓ passed (29.4s)
-md5: 7597db20c82cc780ccce95036d4f3f16
-Verify the "Subtotal" row reads "$57.00" and the "Order total" row reads "$67.75" ($57.00 + $4.50 + $6.25).
+## Open the cart ✗ failed (44.2s)
+md5: c3f6f2fa97a31b9d2e6acdd841332197
+Reason: AP produced no action for 3 consecutive steps — bug verdict: Agent stalled before completing cart verification [automation_bug/agent_misstep, confidence 0.98]
+Click the "Cart" link in the header and verify the cart shows "2 shops in this order" with groups for "KilnAndClay" and "PaperPressCo".
+
+## Confirm per-shop shipping ⏭ skipped
+
+## Confirm the combined totals ⏭ skipped

@@ -1,25 +1,29 @@
 ---
 test: ../size-guide_test.md
 status: passed
-started: 2026-09-13T10:39:07.758Z
-duration_s: 128
-session_id: 8e5a57dd-ebbe-494b-b1f1-0d9129023c3c
+started: 2026-09-15T10:39:14.068Z
+duration_s: 190
+session_id: 7e3db78a-761c-4617-9fde-c264d7fc13dc
 ---
 
 # Nyke 8.1: Size guide and selection — Result
 
-## Open the product ✓ passed (24.8s)
-md5: 1036185e29b8cf6fc0aca2b7a0d19490
-Go to https://my-testing-repo-main.vercel.app/nike/size-guide?reset=true and verify "Stride Runner 3" at "$89.00" with size chips US 7 to US 11 and a "Size guide" link.
+## Open a running shoe ✓ passed (55.4s)
+md5: e17fd5491c1a286889a061534d888082
+Click "Nyke Aeroglide 41" and verify the product page shows the colourway "Black / Volt" and the price "$139.99".
 
-## Open the size guide ✓ passed (30.8s)
-md5: c0f23d4895c99ba85158c66630dd01b4
-Click "Size guide" and verify a modal "Size guide · Men's shoes" shows a table with US, UK, EU and foot length columns, including the row "US 9", "UK 8", "EU 42.5", "27 cm".
+## Open the size guide ✓ passed (25.7s)
+md5: 9022f1e74f93e29ca92a8f4e9fde15a9
+Click "📏 Size guide" and verify a dialog appears titled "Size guide" showing a row where US "9" maps to UK "8", EU "42.5" and CM "27".
 
-## Select a size from the guide ✓ passed (39.7s)
-md5: 14c05a2e690d3cbaa8aeafe657411e63
-Click "Select US 9" in the guide and verify the modal closes and the text next to "Select size" reads "US 9".
+## Select a size from the guide ✓ passed (34.7s)
+md5: 37c37ce5e68f9443ee9f2f990577edfb
+Click "Select" on the US "9" row and verify the product page shows a badge reading "Selected: US 9".
 
-## Add to bag ✓ passed (30.6s)
-md5: 7fbe0c4029b5bdd0482968815b8d3f0e
-Click "Add to Bag" and verify the bag shows "Stride Runner 3" with "Size: US 9 · Color: Black" at "$89.00".
+## Confirm a sold-out size cannot be chosen ✓ passed (18.1s)
+md5: a74330e8d69635aeaa500f2794a1f6e7
+Verify the size "US 9.5 ✕" option is shown as disabled.
+
+## Add to bag and confirm the size carried ✓ passed (53.8s)
+md5: 4a669118bd7bb7ec611e4d326f68a91a
+Click "Add to Bag", click the "Bag" link in the header, and verify the bag shows "Nyke Aeroglide 41" with "Black / Volt · Size US 9".

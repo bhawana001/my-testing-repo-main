@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoom/cloud-recording?reset=true
+url: https://my-testing-repo-main.vercel.app/zoom-clone-app/m/91422005501?reset=true
 max_steps: 45
 tags: [zoom, work-collab, media]
 ---
 
-# Zoomly 37.4: Recording to cloud
+# Zuum 37.4: Recording to cloud
 
 Catalog objective: record a short session and verify the cloud recording is listed.
 Key assertion: the recording appears with playback.
 
-## Record
-Go to https://my-testing-repo-main.vercel.app/zoom/cloud-recording?reset=true, click "⏺ Record to the cloud", and verify "● Recording to the cloud…" is shown.
+## Start recording
+Click "Record to the cloud" and verify a banner reads "Recording — this meeting is being recorded to the cloud." and the stage shows a "● Recording" badge.
 
-## Stop
-Click "■ Stop recording" and verify "Recording stopped. It will appear in Recordings after processing."
+## Stop recording
+Click "Stop recording" and verify a green banner says the recording was saved to the cloud with "Quarterly product review" and "00:04:12".
 
-## Check recordings
-Click "Recordings" and verify a row "Weekly sync · Sep 14, 2026 · 0:32" with status "Processing".
+## Open the cloud recordings library
+Go to https://my-testing-repo-main.vercel.app/zoom-clone-app/recordings and verify the Library card reads "1 recording" with an entry titled "Quarterly product review".
 
-## Finish processing
-Click "Simulate processing complete" and verify the status reads "Ready".
-
-## Open the recording
-Click "▶ Play" and verify a player titled "Weekly sync · Sep 14, 2026" showing "0:00 / 0:32".
-
-## Play it
-Click the player's "Play" button and verify the time counter advances past 0:00.
+## Play it back
+Click "Play" on the "Quarterly product review" row and verify a Playback card appears showing "Playing Quarterly product review", "Duration" of "00:04:12" and "Stored in" of "Cloud".

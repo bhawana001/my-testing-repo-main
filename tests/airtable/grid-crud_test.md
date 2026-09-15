@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/airtable/grid-crud?reset=true
-max_steps: 40
-tags: [airtable, work-collab, crud]
+url: https://my-testing-repo-main.vercel.app/airtable-clone-app/grid?reset=true
+max_steps: 45
+tags: [airtable, work-collab, database]
 ---
 
-# Airtably 39.1: Grid record CRUD
+# Airtabel 39.1: Grid record CRUD
 
-Catalog objective: create, edit, and delete a record in grid view.
-Key assertion: changes persist across reload.
-
-## Open the grid
-Go to https://my-testing-repo-main.vercel.app/airtable/grid-crud?reset=true and verify the heading "Launch tasks" is visible and the grid lists 3 records: "Write launch blog post", "QA the checkout flow" and "Design onboarding email", with the count "3 of 3".
+Catalog objective: create, edit and delete a record in the grid view.
+Key assertion: the changes persist across a reload.
 
 ## Create a record
-Click "+ Add record", type "Ship pilot flows" into "Name", select "In progress" for "Status", and click "Create". Verify a new row "rec-4" with name "Ship pilot flows" and status "In progress" appears and the count reads "4 of 4".
+Type "Mobile nav polish" into "Name", select "Dan Okafor" in "Owner", select "Backlog" in "Stage", click "Create record", and verify a green banner reads "Record rec004 created." and "Record count" reads 4.
 
 ## Edit the record
-Click the "Edit" button on the "Ship pilot flows" row, change "Name" to "Ship pilot flows (edited)", and click "Save changes". Verify the row now reads "Ship pilot flows (edited)".
+Click "Edit" on the "rec004" row, replace the "Name" with "Mobile nav polish v2", click "Save", and verify a green banner reads "Record rec004 updated." and the rec004 row now reads "Mobile nav polish v2".
 
-## Delete a record
-Click the "Delete" button on the "Design onboarding email" row. Verify that row is gone and the count reads "3 of 3".
+## Verify the edit persists across a reload
+Reload https://my-testing-repo-main.vercel.app/airtable-clone-app/grid and verify "Record count" still reads 4 and the rec004 row still reads "Mobile nav polish v2".
 
-## Verify persistence after reload
-Reload the page (without the reset parameter). Verify the grid still shows "Ship pilot flows (edited)" and does not show "Design onboarding email", with the count "3 of 3".
+## Delete the record
+Click "Delete" on the "rec004" row and verify a banner reads "Record rec004 deleted." and "Record count" reads 3.

@@ -1,25 +1,30 @@
 ---
 test: ../delivery-slot-checkout_test.md
-status: passed
-started: 2026-09-13T10:37:32.864Z
-duration_s: 79
-session_id: 5f46fb6b-c696-40b8-8145-497f888a6640
+status: failed
+started: 2026-09-15T10:31:44.214Z
+duration_s: 202
+session_id: dcecb9df-8a72-4b19-94f5-56cadf924e96
 ---
 
-# Instakart 7.3: Delivery slot checkout — Result
+# Instacrate 7.3: Delivery slot checkout — Result
 
-## Open the cart and proceed ✓ passed (3.19s)
-md5: 0b39a4981c1ee3b68184201c378f3f47
-Go to https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true, click "Proceed to checkout", and verify a "Choose a delivery window" card lists "Priority", "Standard" and "Tomorrow morning" options.
+## Add an item and open checkout ✓ passed (43.9s)
+md5: ad9800a8437ef29922ce8a763c6ed14e
+Click "Add" on "Organic Strawberries, 1 lb", click "Go to checkout", and verify the checkout page shows "GreenLeaf Market".
 
-## Choose the priority slot ✓ passed (0.74s)
-md5: cd1bb44b5ee5f505688c4f03322b5938
-Click the "Priority" option ("Today, within 60 minutes (2:00–3:00 PM)") and verify the "Fees" row reads "$4.49" ($1.50 service fee + $2.99 priority fee) and the "Order total" reads "$21.74".
+## Choose the priority slot ✓ passed (31s)
+md5: 7cbd2b236ebbbf0f72edea91e0a2611d
+Click "Priority — within 1 hour · 2:00pm – 3:00pm" and verify the store card shows a priority fee of "$4.99".
 
-## Pay ✓ passed (1.85s)
-md5: 46906c8087613984acd7de67ef8b4174
-Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+## Pay with the test card ✓ passed (39.1s)
+md5: 44e8c7714ebe8b19b84c7df8479f5bbe
+Type "4242 4242 4242 4242" into the card number field, click "$5.00" for the tip, and verify the order total shows "$23.84".
 
-## Verify the window and fees ✓ passed (72s)
-md5: 242c9178c7e95bb7c697d76ad6623119
-Verify the confirmation's "Delivery window" row reads "Today, within 60 minutes (2:00–3:00 PM)" and its "Order total" row reads "$21.74".
+## Place the order ✓ passed (29.9s)
+md5: deaddda42da5310c9084a2574d2be2db
+Click "Place order" and verify the confirmation shows "Order placed" with an order number starting with "IC-".
+
+## Confirm the window and fees carried through ✗ failed (53s)
+md5: 73115b003857ed556bb04bcaa6037ee5
+Reason: AP produced no action for 3 consecutive steps — bug verdict: Automation stalled after confirmation criteria were met [automation_bug/state_transition_bug, confidence 0.98]
+Verify the confirmation shows a delivery window of "Priority — within 1 hour · 2:00pm – 3:00pm", a service fee of "$3.99" and a priority fee of "$4.99".

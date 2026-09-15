@@ -1,29 +1,30 @@
 ---
 test: ../store-pickup_test.md
-status: passed
-started: 2026-09-11T16:08:57.288Z
-duration_s: 312
-session_id: 48aa2ff1-5147-4f3b-9684-e635aaa3752a
+status: failed
+started: 2026-09-15T09:52:03.229Z
+duration_s: 256
+session_id: c34dff7c-bf10-4ee7-a9af-c267e5bf7512
 ---
 
-# Walmartly 4.1: Store pickup selection — Result
+# Wallmark 4.1: Store pickup selection — Result
 
-## Open the cart and proceed ✓ passed (81.3s)
-md5: 4f574dc1f638acdd383d42bfc758bf49
-Go to https://my-testing-repo-main.vercel.app/walmart/store-pickup?reset=true, verify the cart contains the Vista 55-inch 4K TV at "$449.00", then click "Proceed to checkout" and verify the card "How do you want to get your order?" is shown.
+## Add a grocery item ✓ passed (69.1s)
+md5: 52916693251f56a1a3150bdc9db2313b
+Click "Add to cart" on "Whole Milk, 1 gal" and verify the cart shows "Whole Milk, 1 gal" with a subtotal of "$3.64".
 
-## Choose free pickup ✓ passed (45.5s)
-md5: 61c840f3901b44af03657efbfa3eeee7
-Click the "Free pickup" option and verify a "Store" dropdown showing "Walmartly Supercenter, Market St · 1.2 mi" and "Pickup time" slots appear.
+## Open checkout ✓ passed (40.4s)
+md5: 9e41fffc775b251501385bf5341c6ab1
+Click "Continue to checkout" and verify the checkout page shows "Free pickup at store" selected and a "Pickup store" section.
 
-## Try continuing without a slot ✓ passed (31.9s)
-md5: e859f719f468440ec1c279491bdebd64
-Click "Continue to payment" and verify the message "Choose a pickup time." is shown.
+## Choose a nearby store ✓ passed (49.5s)
+md5: 3eba33ce8fcff3edd751eaa78f141602
+Select "Wallmark Neighborhood Market — Ben White · 3.8 mi" as the pickup store and verify the store address shows "710 E Ben White Blvd, Austin TX".
 
-## Pick a slot and continue ✓ passed (74.8s)
-md5: a81e6fd7bb5344befd5944c56f7ac272
-Click the "Today 6:00–7:00 PM" slot, click "Continue to payment", and verify the order summary shows "Pickup: Walmartly Supercenter, Market St · Today 6:00–7:00 PM" and the "Shipping" row reads "Free".
+## Choose a free pickup slot ✓ passed (41.3s)
+md5: b69f94fbd0ebbced667cff65d4c32d8c
+Click "Today, 4pm – 5pm" and verify the order summary shows a pickup fee of "Free".
 
-## Pay and verify the summary ✓ passed (76.7s)
-md5: 411686396a5afa716c89f1d0afb2fc23
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify the confirmation lists "Pickup store" as "Walmartly Supercenter, Market St" and "Pickup time" as "Today 6:00–7:00 PM".
+## Confirm the summary carries store and slot ✗ failed (47.2s)
+md5: 656e0647c18638f75b2f75a1df747496
+Reason: AP produced no action for 3 consecutive steps — bug verdict: Agent stalled after checkout summary met verification target [automation_bug/agent_misstep, confidence 0.98]
+Verify the order summary shows the pickup store "Wallmark Neighborhood Market — Ben White" and the pickup slot "Today, 4pm – 5pm".

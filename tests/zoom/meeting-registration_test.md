@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoom/meeting-registration?reset=true
+url: https://my-testing-repo-main.vercel.app/zoom-clone-app/schedule?reset=true
 max_steps: 45
-tags: [zoom, work-collab, booking]
+tags: [zoom, work-collab, meetings]
 ---
 
-# Zoomly 37.1: Meeting schedule with registration
+# Zuum 37.1: Meeting schedule with registration
 
-Catalog objective: schedule a meeting requiring registration.
+Catalog objective: schedule a meeting that requires registration.
 Key assertion: a registration link is generated and the form works.
 
-## Schedule
-Go to https://my-testing-repo-main.vercel.app/zoom/meeting-registration?reset=true, type "Product launch webinar" into Topic, keep "Registration required" checked, click "Save", and verify Registration "Required" and a registration link "https://zoomly.test/meeting/register/8512204".
+## Schedule the meeting
+Type "Partner onboarding" into "Topic", leave "When" as "2026-09-20 15:00", select "45 minutes" in "Duration", make sure "Required registration" is ticked, click "Save", and verify a green card titled "Meeting scheduled" appears.
 
-## Open the registration link
-Click "Open registration link" and verify a registration form for "Product launch webinar".
+## Verify the registration link was generated
+Verify the "Meeting scheduled" card shows "Topic" of "Partner onboarding", "Meeting ID" of "914 2200 5508", "Registration" of "Required" and a "Registration link" of "/zoom-clone-app/register/91422005508".
 
-## Incomplete registration
-Type "Sam" into First name, click "Register", and verify "First name, last name and a valid email are required."
+## Open the registration form
+Click "Open registration form" and verify the page title reads "Register — Partner onboarding" with the fields "Full name", "Email" and "Organisation".
 
-## Complete registration
-Type "Lee" into Last name and "sam@acme.test" into Email, click "Register", and verify "Registration approved" with "You're registered, Sam!" and a join link.
-
-## Verify on the host side
-Click "Back to meeting (host)" and verify "Registrants" reads 1.
+## Register and confirm
+Type "Sam Rivera" into "Full name", "sam@riverfield.test" into "Email", click "Register", and verify a green card titled "You are registered" shows "Name" of "Sam Rivera", "Email" of "sam@riverfield.test" and "Total registrants" of 1.

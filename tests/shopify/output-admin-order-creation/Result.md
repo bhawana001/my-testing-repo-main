@@ -1,33 +1,29 @@
 ---
 test: ../admin-order-creation_test.md
 status: passed
-started: 2026-09-13T10:07:04.572Z
-duration_s: 188
-session_id: 6656b15d-4918-49ba-a498-2c78cc2d4d67
+started: 2026-09-15T09:29:05.519Z
+duration_s: 282
+session_id: 2ea1605c-0d43-4eaf-a765-3d6254358e74
 ---
 
-# Shopifly 2.4: Admin order creation — Result
+# Shoplify 2.4: Admin order creation — Result
 
-## Open the orders list ✓ passed (0.84s)
-md5: 038abba8b011dae2e82f618e591641da
-Go to https://my-testing-repo-main.vercel.app/shopify/admin-order-creation?reset=true and verify the Orders list shows order #1004.
+## Confirm the starting orders list ✓ passed (24.7s)
+md5: c43aacb9be59680c1d7b598d24292982
+Verify the Orders tab shows "Orders (2)" listing order "#1001" and order "#1002".
 
-## Open create order ✓ passed (0.78s)
-md5: e69bd4977383f7c58c0d4a080df86161
-Click "Create order" and verify the Products and Customer panels.
+## Open the draft order builder ✓ passed (26.4s)
+md5: 2fc6d4ae7955cadd253a4a39ca631837
+Click "Draft orders" and verify a "Create draft order" card is shown with a "Customer name" field.
 
-## Add products ✓ passed (103.1s)
-md5: 5f08ab0a6ecce8abf53e652797188d6f
-Click "Add" to add "Botanical Art Print A3", then select "Custom Name Ceramic Mug · $22.00", set Quantity to 2, click "Add", and verify "Total" reads "$84.00".
+## Build the draft ✓ passed (141.8s)
+md5: 6e3842256d1b0f35a29c38af78d3d325
+Type "Marco Oduya" into "Customer name", "marco@example.com" into "Customer email", select "Canvas Market Tote" as the Product, type "2" into Quantity, click "Add line item", and verify a draft total of "$52.00" is shown.
 
-## Try without a customer ✓ passed (29s)
-md5: c4057ef8b58dc504152bf59a6bba7a4a
-Click "Collect payment · Mark as paid" and verify "Select a customer."
+## Save the draft ✓ passed (35.3s)
+md5: a1324382351d7fa70e8395eafae9f81c
+Click "Save draft order" and verify the draft orders list shows draft "D1" for "Marco Oduya" with status "open".
 
-## Choose customer and mark paid ✓ passed (29.3s)
-md5: 257ad47ab9fb503fdc70bc3df68d52f6
-Select "Maria Chen <maria@globex.test>" as Customer, click "Collect payment · Mark as paid", and verify "Order #1005 created and marked as paid."
-
-## Verify the orders list ✓ passed (23.1s)
-md5: c0767e6f42cc3a14da227ee052407557
-Verify the first row reads "#1005", customer "Maria Chen <maria@globex.test>", total "$84.00", Payment status "Paid" and Fulfillment "Unfulfilled".
+## Mark the draft paid ✓ passed (51.5s)
+md5: 3cf14160157131cede3968d7bb7782b2
+Click "Mark as paid" on draft "D1" and verify the Orders tab shows order "#1003" for "Marco Oduya" with channel "Draft order" and status "paid".

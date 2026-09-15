@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/monday/guest-board-sharing?reset=true
+url: https://my-testing-repo-main.vercel.app/monday-clone-app/sharing?reset=true
 max_steps: 45
-tags: [monday, work-collab, auth]
+tags: [monday, work-collab, permissions]
 ---
 
-# Mondayly 42.4: Guest board sharing
+# Mondee 42.4: Guest board sharing
 
 Catalog objective: invite a guest to one board only.
 Key assertion: the guest sees only the shared board.
 
-## Invite the guest
-Go to https://my-testing-repo-main.vercel.app/monday/guest-board-sharing?reset=true, type "sam@client.test" into Guest email, keep "Client project · Globex" selected, click "Invite as guest", and verify "sam@client.test invited as Guest to “Client project · Globex” only."
+## Invite the guest to a single board
+Type "guest@partner.test" into "Email", make sure only "Launch plan" is ticked under "Boards", click "Invite as guest", and verify a green banner reads "guest@partner.test invited as a guest on 1 of 2 boards."
 
-## View as the guest
-Click "View as guest" and verify "Boards (1)" lists only "Client project · Globex" (Marketing plan and Finance are not listed).
+## Verify the guest record
+Verify the Guests card lists "guest@partner.test" as a "Guest" with a single board badge reading "Launch plan".
 
-## Try a board that wasn't shared
-Click the direct link "/boards/finance-budget-2026" and verify "You don't have access to this board."
+## Verify what the owner sees
+Select "Priya Nair (owner)" in "View as" and verify "Boards visible" reads "2 of 2".
+
+## Verify the guest sees only that one board
+Select "guest@partner.test (guest)" in "View as" and verify "Boards visible" reads "1 of 2", the visible list shows only "Launch plan", and the hidden line reads "Hidden from this viewer: Hiring pipeline".

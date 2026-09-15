@@ -1,29 +1,29 @@
 ---
 test: ../multi-store-cart_test.md
 status: passed
-started: 2026-09-11T16:34:13.308Z
-duration_s: 318
-session_id: a7e5d02a-5155-4587-b974-439e061cb450
+started: 2026-09-15T10:27:01.603Z
+duration_s: 185
+session_id: 076d6b55-a2ab-4506-bb54-3403a893e9ea
 ---
 
-# Instakart 7.1: Multi-store cart — Result
+# Instacrate 7.1: Multi-store cart — Result
 
-## Open the carts ✓ passed (34.1s)
-md5: 5e43bac8209803b0eccdfd6531963e1b
-Go to https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true and verify items from two stores are listed: "Organic Whole Milk 1L" and "Bananas (bunch)" sold by "Green Grocer", and "Vitamin D3 1000 IU (90)" sold by "Corner Pharmacy".
+## Add an item from the first store ✓ passed (32.4s)
+md5: 450d503e242545989a75fd9902b8a431
+Click "Add" on "Organic Strawberries, 1 lb" and verify the carts panel shows "GreenLeaf Market".
 
-## Proceed and try to skip slots ✓ passed (35.9s)
-md5: 6a876b565c06cb197ef3f52370302d5b
-Click "Proceed to checkout", then click "Continue to payment" and verify the message "Pick a slot for every store." is shown.
+## Add an item from a second store ✓ passed (34.6s)
+md5: 86101415600e9682d8e8e27fcd4f985e
+Click "Add" on "Coffee Beans, 2 lb" and verify the carts panel shows "Your carts (2 stores)" with both "GreenLeaf Market" and "BulkBarn Wholesale".
 
-## Pick a slot per store ✓ passed (125.6s)
-md5: b72a2e45c2c7f7b7851d35826790b0db
-Click "Today 6pm–8pm" under "Green Grocer · delivery window" and "Tomorrow 10am–12pm" under "Corner Pharmacy · delivery window", and verify the summary shows "Green Grocer slot" as "Today 6pm–8pm", "Corner Pharmacy slot" as "Tomorrow 10am–12pm" and a "Fees" row of "$6.98" ($3.99 + $2.99).
+## Open checkout ✓ passed (34.3s)
+md5: 05fa0ba2ac5f998b9cf8fce0515b16c3
+Click "Go to checkout" and verify the checkout page shows "2 stores · each delivers separately".
 
-## Pay ✓ passed (54.5s)
-md5: 46906c8087613984acd7de67ef8b4174
-Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+## Confirm each store has its own fees ✓ passed (24.9s)
+md5: 83da1d4293dacf2d1d419240883b75a2
+Verify the GreenLeaf Market card shows a service fee of "$3.99" and the BulkBarn Wholesale card shows a service fee of "$5.49".
 
-## Verify per-store slots and fees ✓ passed (64.5s)
-md5: 24130feb6e25440524e4c287cd678532
-Verify the confirmation lists "Green Grocer" as "Today 6pm–8pm · fee $3.99" and "Corner Pharmacy" as "Tomorrow 10am–12pm · fee $2.99".
+## Confirm each store picks its own window ✓ passed (41.4s)
+md5: f0a043d3f22d0a0d71be2c43d1b0166f
+Click "Within 2 hours · 3:00pm – 5:00pm" in the GreenLeaf Market card, click "This evening · 6:00pm – 8:00pm" in the BulkBarn Wholesale card, and verify both options are selected in their own store cards.

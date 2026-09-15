@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/microsoft-teams/meeting-join?reset=true
-max_steps: 45
-tags: [microsoft-teams, work-collab, media]
+url: https://my-testing-repo-main.vercel.app/teams-clone-app/calendar?reset=true
+max_steps: 40
+tags: [microsoft-teams, work-collab, meetings]
 ---
 
-# Teamz 36.1: Meeting join from calendar
+# Teemz 36.1: Meeting join from calendar
 
-Catalog objective: join a scheduled meeting from a calendar entry.
-Key assertion: the in-meeting screen shows mic controls.
+Catalog objective: join a scheduled meeting from its calendar entry.
+Key assertion: the in-meeting screen appears with working mic controls.
 
-## Open the calendar entry
-Go to https://my-testing-repo-main.vercel.app/microsoft-teams/meeting-join?reset=true, click "Sprint planning" on Mon 14, and verify the details show "10:30–11:00 · Organizer Priya Nair" with a "Join" button.
+## Find the meeting on the calendar
+Verify the "Scheduled meetings" card lists "Launch readiness review" at "10:00 – 10:30" organised by "Mira Shah" with a "Join" button.
 
-## Pre-join
-Click "Join" and verify "Choose your video and audio options" with Camera and Microphone switches.
+## Join it
+Click the "Join" button on the "Launch readiness review" row and verify the page moves to the in-meeting screen titled "Launch readiness review" with a "You are in the meeting" card.
 
-## Join
-Click "Join now" and verify the badge "In meeting", a running timer, and participant tiles for Demo User, Priya Nair and Tom Alvarez.
+## Verify the meeting controls
+Verify the in-meeting card shows "Microphone" of "Muted", "Camera" of "Off", "Screen share" of "Not sharing", and buttons labelled "Unmute", "Start video", "Share screen" and "Leave".
 
-## Use the mic control
-Verify the control bar has "🎙️ Mute", "📷 Start video" and "Leave", click "🎙️ Mute", and verify "Microphone muted" and the button now reads "🔇 Unmute".
+## Unmute and confirm the control works
+Click "Unmute" and verify "Microphone" now reads "Unmuted" and the button is labelled "Mute".

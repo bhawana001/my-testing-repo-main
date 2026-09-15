@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/slack/workflow-form?reset=true
-max_steps: 45
-tags: [slack, work-collab, wizard]
+url: https://my-testing-repo-main.vercel.app/slack-clone-app/workflows?reset=true
+max_steps: 40
+tags: [slack, work-collab, automation]
 ---
 
-# Slacky 35.5: Workflow form submission
+# Slaick 35.5: Workflow form submission
 
 Catalog objective: trigger a workflow form and submit it.
-Key assertion: a confirmation message is posted.
+Key assertion: a confirmation message is posted to the channel.
 
-## Open the workflow
-Go to https://my-testing-repo-main.vercel.app/slack/workflow-form?reset=true, click "⚡ Request time off", and verify a "Request time off" form with Start date, End date, Type and Reason.
+## Trigger the workflow
+Click "Start" on the "Time off request" workflow and verify a form titled "Time off request" appears with the fields "Dates", "Type" and "Who is covering".
 
-## Invalid dates
-Set Start date to 2026-09-23 and End date to 2026-09-21, click "Submit", and verify "End date must be on or after the start date."
+## Fill the form
+Type "Oct 2 to Oct 6" into "Dates", select "Vacation" in "Type", type "Tom Alvarez" into "Who is covering", and verify "Dates" reads "Oct 2 to Oct 6" and "Type" reads "Vacation".
 
-## Submit
-Change End date to 2026-09-25, type "Family trip" into Reason, click "Submit", and verify the form closes.
+## Submit it
+Click "Submit" and verify a green banner titled "Confirmation posted" says the result was posted to "#general" and includes "Dates: Oct 2 to Oct 6 · Type: Vacation · Who is covering: Tom Alvarez".
 
-## Verify the posted confirmation
-Verify the newest message in #general is from "Workflow Bot" and reads "✅ Demo User requested time off: 2026-09-23 to 2026-09-25 (Vacation) · “Family trip”. Manager: Priya Nair has been notified."
+## Verify the submission is recorded
+Verify the "Submissions" card lists a row for "Time off request → #general" with the summary "Dates: Oct 2 to Oct 6 · Type: Vacation · Who is covering: Tom Alvarez".

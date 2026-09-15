@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/notion/comment-mention?reset=true
+url: https://my-testing-repo-main.vercel.app/notion-clone-app/page/home?reset=true
 max_steps: 45
-tags: [notion, work-collab, feed]
+tags: [notion, work-collab, collaboration]
 ---
 
-# Notionly 38.5: Comment and mention
+# Notiond 38.5: Comment and mention
 
-Catalog objective: comment on a block mentioning a teammate.
+Catalog objective: comment on a block, mentioning a teammate.
 Key assertion: the comment is saved and a notification is sent.
 
-## Start a comment
-Go to https://my-testing-repo-main.vercel.app/notion/comment-mention?reset=true, click "💬 Comment" on the block "Revenue target: $1.2M ARR by end of Q3", and verify a comment box appears.
+## Open the comment box on a block
+Click the "Comment" button under the block "Everything the team needs, in one place." and verify a "Comment" card appears.
 
 ## Mention a teammate
-Type "@Pri" into the comment box, click "Priya Nair" in the mention picker, then type "can you check the numbers?" at the end.
+Click "@Tom Alvarez" in the comment card and verify the Comment box now contains "@Tom Alvarez ".
 
-## Save
-Click "Comment" and verify the comment "@PriyaNair can you check the numbers?" by Demo User appears under the block.
+## Post the comment
+Type "can you add the on-call rota here?" at the end of the comment box, click "Post comment", and verify a green banner says the comment was saved and "Tom Alvarez" was notified.
 
-## Verify the notification
-Click "Priya" in the top bar and verify the Inbox shows badge "1" and "Demo User mentioned you in a comment on Q3 plan" on the block "Revenue target: $1.2M ARR by end of Q3".
+## Verify the comment and the notification
+Verify the block now shows a comment from "Priya Nair" reading "@Tom Alvarez can you add the on-call rota here?" with a "@Tom Alvarez" badge, then go to https://my-testing-repo-main.vercel.app/notion-clone-app and verify the Notifications card lists an entry for "Tom Alvarez — mentioned by Priya Nair".

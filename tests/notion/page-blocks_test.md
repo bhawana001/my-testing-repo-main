@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/notion/page-blocks?reset=true
+url: https://my-testing-repo-main.vercel.app/notion-clone-app/page/home?reset=true
 max_steps: 45
-tags: [notion, work-collab, custom]
+tags: [notion, work-collab, documents]
 ---
 
-# Notionly 38.1: Page creation with blocks
+# Notiond 38.1: Page creation with blocks
 
 Catalog objective: create a page with heading, to-do and table blocks.
-Key assertion: blocks render and persist after reload.
+Key assertion: the blocks render and persist after a reload.
 
-## Title
-Go to https://my-testing-repo-main.vercel.app/notion/page-blocks?reset=true, type "Launch plan" into the "Untitled" title, and verify the sidebar shows "Launch plan".
+## Add a heading block
+Select "Heading" in "Block type", type "Launch checklist" into "Content", click "Add block", and verify a green banner reads "Heading block added."
 
-## Heading block
-Click "+ Add block", choose "Heading 1", and type "Goals" into the heading.
+## Add a to-do block
+Select "To-do" in "Block type", type "Send the release note" into "Content", click "Add block", and verify the page body shows a checkbox labelled "Send the release note".
 
-## To-do block
-Click "+ Add block", choose "To-do list", type "Book venue", and check its checkbox so it shows as done.
+## Add a table block
+Select "Table" in "Block type", type "Freeze window" into "Content", click "Add block", and verify the page body contains a table whose header row reads "Item", "Owner", "Status".
 
-## Table block
-Click "+ Add block", choose "Table", type "Owner" into the first cell and "Priya" into the cell next to it.
-
-## Verify after reload
-Reload the page without the reset parameter and verify the title "Launch plan", the heading "Goals", the checked to-do "Book venue", and the table cells "Owner" and "Priya" are all still there.
+## Verify the blocks persist after a reload
+Verify "Block count" reads 5, then reload https://my-testing-repo-main.vercel.app/notion-clone-app/page/home and verify "Block count" still reads 5 and the text "Launch checklist" and "Send the release note" are both still on the page.

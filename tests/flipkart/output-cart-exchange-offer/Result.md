@@ -1,21 +1,29 @@
 ---
 test: ../cart-exchange-offer_test.md
 status: passed
-started: 2026-09-11T16:03:50.608Z
-duration_s: 119
-session_id: ba9f07ea-8cdb-4bcd-b04c-08b1c0c162e9
+started: 2026-09-15T09:42:15.328Z
+duration_s: 233
+session_id: 837d68e8-4441-4a32-b0bc-06722bc264c1
 ---
 
-# Flipmart 3.2: Cart with exchange offer — Result
+# Flipkort 3.2: Cart with exchange offer — Result
 
-## Open the cart ✓ passed (41.3s)
-md5: dd1484226510e6806861fa7c57d62046
-Go to https://my-testing-repo-main.vercel.app/flipkart/cart-exchange-offer?reset=true and verify the cart contains "Nova X2 Smartphone 128GB" at "₹24,999.00", an "Exchange offer" badge, and the "Total amount" row reads "₹25,039.00" (price + ₹40.00 delivery).
+## Find a phone with an exchange offer ✓ passed (43.2s)
+md5: bb81f5b6f1c8f91df6d192c9e842a031
+Type "phone" into the search box, click "Search", and verify the results list "Nexa 12 Pro 5G (256 GB)".
 
-## Choose the exchange phone ✓ passed (44.5s)
-md5: ed3a9dca996e801f5ea09c9ed9826682
-Select "Nova X1 (128GB) · good condition · ₹6,500.00 off" in the "Old phone for exchange" dropdown and verify the text "Exchange value: ₹6,500.00" appears under the item.
+## Open the phone and add it to the cart ✓ passed (72.2s)
+md5: 8089250181ae6ba5a273d504d35dc34d
+Click "Nexa 12 Pro 5G (256 GB)", click "Add to cart", and verify the cart shows "Nexa 12 Pro 5G (256 GB)" with a price of "₹48,999.00".
 
-## Verify the cart math ✓ passed (29.5s)
-md5: 72702890fb8bdf58c086af188f3b1ba1
-Verify an "Exchange deduction" row reads "−₹6,500.00" and the "Total amount" row reads "₹18,539.00" (₹24,999.00 − ₹6,500.00 + ₹40.00 delivery).
+## Open the exchange offer ✓ passed (30.2s)
+md5: 3ffa60077ac259762f98543eda46886b
+Click "Check exchange offer" and verify a dialog appears titled "Exchange your old phone" with a device dropdown.
+
+## Apply the exchange valuation ✓ passed (55.6s)
+md5: daf24c7b5031361f811046474c62e349
+Select "Nexa 10 (128 GB)" as the device, click the "Good — no cracks, all functions work" option, click the Apply button, and verify the cart shows an exchange value of "−₹9,500.00".
+
+## Confirm the cart arithmetic ✓ passed (28.7s)
+md5: 4d1ad0cbf19f5fb4fec9e5c80a773bd0
+Verify the price details show "₹48,999.00" for the item, an exchange discount of "−₹9,500.00", Delivery "Free", and a total payable of "₹39,499.00".

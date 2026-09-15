@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zoom/screen-share?reset=true
-max_steps: 45
+url: https://my-testing-repo-main.vercel.app/zoom-clone-app/m/91422005501?reset=true
+max_steps: 40
 tags: [zoom, work-collab, media]
 ---
 
-# Zoomly 37.3: Screen share
+# Zuum 37.3: Screen share
 
-Catalog objective: share a screen and verify viewers see it.
-Key assertion: the share indicator is active for participants.
+Catalog objective: share a screen and verify the viewers see it.
+Key assertion: the share indicator is active for the participants.
 
-## Open the meeting
-Go to https://my-testing-repo-main.vercel.app/zoom/screen-share?reset=true and verify the participant view says "No one is sharing".
+## Verify nothing is being shared yet
+Verify the Stage card shows "Gallery view — nobody is sharing".
 
 ## Start sharing
-Click "🖥️ Share screen", choose "Q3 Roadmap.pptx", click "Share", and verify the share picker closes.
+Click "Share screen" and verify the stage now shows "Priya Nair is sharing Screen 1".
 
-## Verify the host indicator
-Verify the host view shows a green bar "You are sharing: Q3 Roadmap.pptx" with "Stop share".
+## Verify the share indicator
+Verify a green badge reads "Screen sharing is active" and the button is now labelled "Stop share".
 
-## Verify the participant view
-Verify the participant view (Priya Nair) shows "Demo User is sharing" and the shared content "Q3 Roadmap.pptx".
+## Verify participants see the share
+Verify the Participants card shows the "Priya Nair" row carrying both a "sharing" badge and a "viewing shared screen" badge.

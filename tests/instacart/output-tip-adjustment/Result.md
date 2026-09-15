@@ -1,25 +1,29 @@
 ---
 test: ../tip-adjustment_test.md
 status: passed
-started: 2026-09-11T16:48:24.540Z
-duration_s: 312
-session_id: 33f9c9f4-ac1d-4709-8321-d456b16b4e45
+started: 2026-09-15T10:35:14.175Z
+duration_s: 222
+session_id: ff7d4b1e-ca95-40bf-bcd2-3fbbeca96def
 ---
 
-# Instakart 7.4: Tip adjustment — Result
+# Instacrate 7.4: Tip adjustment — Result
 
-## Check out with the default tip ✓ passed (99.5s)
-md5: 8f3715fa399c3a48c5707e772ef9f59f
-Go to https://my-testing-repo-main.vercel.app/instacart/tip-adjustment?reset=true, click "Proceed to checkout", click "Continue to payment", and verify the "Add a tip for your shopper" card has "$2.00" selected and the "Order total" reads "$19.46".
+## Place an order first ✓ passed (76.7s)
+md5: 79290b97ddb7ed7464f51faaf22e1479
+Click "Add" on "Oat Milk, 64 oz", click "Go to checkout", click "Within 2 hours · 3:00pm – 5:00pm", type "4242 4242 4242 4242" into the card number field, click "$5.00" for the tip, then click "Place order" and verify the confirmation shows "Order placed".
 
-## Pay ✓ passed (73.1s)
-md5: 55aeefd0ca134a414de9f90309928717
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify the confirmation shows "Order total" as "$19.46".
+## Open the order ✓ passed (53.2s)
+md5: aab8a2140ba2eda0a5441ff154ffc698
+Click "View order & adjust tip" and verify the orders page shows a tip of "$5.00".
 
-## Adjust the tip on the order page ✓ passed (38.1s)
-md5: 4ae2ef740d07a5a884e8d43f3d25d5ac
-In the "Shopper tip" card, click "$5.00" and verify "Tip included: $5.00" is shown.
+## Open the tip editor ✓ passed (22.4s)
+md5: 2647c21cfbefa8ce4b34152c36745cd5
+Click "Adjust tip" and verify a custom tip field appears.
 
-## Verify the updated total ✓ passed (97.6s)
-md5: 55faf6094f9d68bc510ffa5c47d2ec34
-Verify the "Updated order total" reads "$22.46" ($19.46 − $2.00 + $5.00).
+## Raise the tip ✓ passed (35s)
+md5: df9ddf6f3ade7db783966a77a8335539
+Click "$8.00" and verify a notice appears reading "Tip updated to $8.00".
+
+## Confirm the total moved with the tip ✓ passed (30.8s)
+md5: fdf4c9f71afba76318e434a9d13d7327
+Verify the order now shows a tip of "$8.00" and a badge reading "Tip adjusted after delivery".

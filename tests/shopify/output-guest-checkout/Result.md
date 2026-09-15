@@ -1,33 +1,29 @@
 ---
 test: ../guest-checkout_test.md
 status: passed
-started: 2026-09-11T15:51:10.438Z
-duration_s: 242
-session_id: 908b134c-a7de-4365-9cc0-4a50832ab3f5
+started: 2026-09-15T09:17:15.944Z
+duration_s: 257
+session_id: d98a48c0-d1d8-4ce3-9b71-30c9ae64d795
 ---
 
-# Shopifly 2.1: Storefront guest checkout — Result
+# Shoplify 2.1: Storefront guest checkout — Result
 
-## Open the cart ✓ passed (26.8s)
-md5: 6e815432ceb643399b873ee8c8fb9264
-Go to https://my-testing-repo-main.vercel.app/shopify/guest-checkout?reset=true and verify the cart contains "Botanical Art Print A3" at "$35.00" and the "Total" row reads "$42.80" ($35.00 + $5.00 shipping + $2.80 tax).
+## Add a product to the cart ✓ passed (32.7s)
+md5: 58762b11031975bad7857c925fc411f7
+Click "Add to cart" on "Heavyweight Cotton Tee" and verify the page shows a confirmation reading "Added Heavyweight Cotton Tee to cart".
 
-## Go to checkout ✓ passed (37.3s)
-md5: 5253eea5883fb80794f046168df645a1
-Click "Proceed to checkout" and verify the "Contact and shipping" form is shown.
+## Open the cart ✓ passed (40.7s)
+md5: 6d0e845154fea05ae67bb8f0ee5ee806
+Click "View cart" and verify the cart lists "Heavyweight Cotton Tee" with a subtotal of "$32.00".
 
-## Submit the empty form ✓ passed (33s)
-md5: 47325785a265349d58e11f8a17b3b92b
-Click "Continue to payment" without filling anything and verify the validation message "Enter a valid email address." appears.
+## Go to checkout ✓ passed (47.5s)
+md5: a756eb905a441072a940cb6004284df9
+Click "Checkout" and verify the checkout page shows "Guest checkout — no account required" and a "Contact" section.
 
-## Fill in guest details ✓ passed (61.2s)
-md5: c542095fd7a4efa1b7afe9e94e4c7b2e
-Type "demo@evals.dev" into Email, "Demo" into First name, "User" into Last name, "1200 Market St" into Address, "San Francisco" into City, "94103" into ZIP / Postal code, then click "Continue to payment" and verify the "Payment" card form is shown.
+## Fill in contact and shipping ✓ passed (46.2s)
+md5: d51fceaad20e7483e0dfc311f5dc7453
+Type "guest@example.com" into Email, "Dana Reyes" into "Full name", "9 Pine Lane" into Address, "Austin" into City, and "78701" into ZIP, then verify the order summary shows a Total of "$41.06".
 
-## Pay with the test card ✓ passed (44.8s)
-md5: d8ede1da6ac3bcf19c5b7c5f751d76af
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, then click the "Pay $42.80" button and verify the text "Order placed" appears.
-
-## Verify the thank-you page ✓ passed (35.2s)
-md5: 7e4593ba4c936a7f2b3f72803938bb1c
-Verify the heading "Thank you, Demo! Your order is confirmed" is shown with an Order number starting with "SF-" and the "Order total" reads "$42.80".
+## Pay with the test card ✓ passed (86s)
+md5: 1bd389db0092097ede958d01ecd83b19
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into Expiration, "123" into CVC, click the Pay button, and verify the page shows "Thank you for your order!" with order number "#1003" and a total paid of "$41.06".

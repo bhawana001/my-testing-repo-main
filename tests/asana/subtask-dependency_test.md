@@ -1,8 +1,8 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/asana/subtask-dependency?reset=true
+url: https://my-testing-repo-main.vercel.app/asana-clone-app/task/t1?reset=true
 max_steps: 45
-tags: [asana, work-collab, crud]
+tags: [asana, work-collab, tasks]
 ---
 
 # Asanah 40.3: Subtask and dependency
@@ -11,13 +11,13 @@ Catalog objective: add a subtask and mark a dependency.
 Key assertion: the dependency blocks completion correctly.
 
 ## Add a subtask
-Go to https://my-testing-repo-main.vercel.app/asana/subtask-dependency?reset=true, type "Schedule social posts" into "Add subtask", click "Add", and verify it appears under Subtasks.
+Type "Draft the copy" into "Add a subtask", click "Add subtask", and verify "Subtask count" reads 1 with a checkbox labelled "Draft the copy".
 
-## Set the dependency
-Select "Finalize ad copy" in "Mark as blocked by…", click "Set dependency", and verify "Blocked by: Finalize ad copy".
+## Set a dependency
+Select "Sign off the pricing page" in the "Blocked by" dropdown and verify "Blocked by" reads "Sign off the pricing page" and a red badge reads "Blocked by Sign off the pricing page".
 
 ## Try to complete the blocked task
-Click "Mark complete" on "Launch campaign" and verify "“Launch campaign” is blocked by “Finalize ad copy”. Complete it first." and that it is not completed.
+Click "Mark complete" and verify a red banner reads "Cannot complete — this task is blocked by “Sign off the pricing page”, which is still open."
 
-## Complete the blocker, then the task
-Click "Mark complete" on "Finalize ad copy", then click "Mark complete" on "Launch campaign", and verify "“Launch campaign” marked complete." and "Blocked by: Finalize ad copy (done)".
+## Verify the task is still open
+Verify "Status" still reads "Open".

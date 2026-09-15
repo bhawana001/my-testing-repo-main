@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/jira/transition-validation?reset=true
-max_steps: 45
-tags: [jira, work-collab, crud]
+url: https://my-testing-repo-main.vercel.app/jira-clone-app/browse/ACME-102?reset=true
+max_steps: 40
+tags: [jira, work-collab, workflow]
 ---
 
-# Jirah 41.4: Workflow transition validation
+# Jiira 41.4: Workflow transition validation
 
 Catalog objective: attempt to close an issue that is missing a required field.
-Key assertion: validation blocks it with a clear message.
+Key assertion: validation blocks the transition with a clear message.
 
-## Open the issue
-Go to https://my-testing-repo-main.vercel.app/jira/transition-validation?reset=true and verify WEB-123 has Status "In Review", Resolution "Unresolved" and Fix version/s "None".
+## Verify the issue is unresolved
+Verify the Details card shows "Status" of "To Do" and "Resolution" of "Unresolved".
 
-## Attempt Done without fields
-Click "Done", then click "Done" in the transition screen, and verify "Resolution is required.", "Fix version/s is required to close a Bug." and "This transition is blocked until the required fields are completed." with the status still "In Review".
+## Choose the closing transition
+Select "Done" in "Transition to" and verify a "Resolution" dropdown appears reading "None".
 
-## Complete the fields
-Select "Fixed" for Resolution and "2026.09" for Fix version/s, click "Done", and verify Status "Done" and Resolution "Fixed".
+## Verify the workflow warns before you try
+Verify an amber banner titled "This transition is blocked" reads "Resolution is required before this issue can be closed."
+
+## Attempt the transition and confirm it is refused
+Click "Apply transition" and verify a red banner reads "Resolution is required before this issue can be closed." and "Status" still reads "To Do".

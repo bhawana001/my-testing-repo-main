@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/asana/task-creation?reset=true
-max_steps: 45
-tags: [asana, work-collab, crud]
+url: https://my-testing-repo-main.vercel.app/asana-clone-app/tasks?reset=true
+max_steps: 40
+tags: [asana, work-collab, tasks]
 ---
 
 # Asanah 40.1: Task creation with assignee
 
-Catalog objective: create a task with an assignee and due date.
-Key assertion: the task is in the list and the assignee is notified.
+Catalog objective: create a task with an assignee and a due date.
+Key assertion: the task appears in the list and the assignee is notified.
 
-## Create the task
-Go to https://my-testing-repo-main.vercel.app/asana/task-creation?reset=true, type "Prepare launch email" into Task name, select "Priya Nair" as Assignee, set the due date to 2026-09-18, and click "Add task".
+## Fill in the task
+Type "Prepare the press kit" into "Task name", select "Mira Shah" in "Assignee", set "Due date" to "2026-09-17", select "To do" in "Section", and verify "Assignee" reads "Mira Shah".
 
-## Verify the list
-Verify the Tasks table shows "Prepare launch email" with assignee "Priya Nair" and due date "2026-09-18".
+## Create it
+Click "Create task" and verify a green banner reads "Task created and Mira Shah was notified."
 
-## Verify the notification
-Click "Priya" in the top bar and verify the Inbox badge shows 1 and the entry "Demo User assigned you a task: Prepare launch email" with "Due 2026-09-18".
+## Verify the task is in the list
+Verify "Task count" reads 5 and the table has a row "Prepare the press kit" with assignee "Mira Shah", due "2026-09-17" and section "To do".
+
+## Verify the assignee was notified
+Verify the Notifications card shows an entry for "Mira Shah" reading "Priya Nair assigned you “Prepare the press kit”, due 2026-09-17".

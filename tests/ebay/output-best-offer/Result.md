@@ -1,25 +1,25 @@
 ---
 test: ../best-offer_test.md
 status: passed
-started: 2026-09-13T10:28:31.136Z
-duration_s: 163
-session_id: 71a6d1f7-b4cd-4079-8f32-5dd469f38d1a
+started: 2026-09-15T10:19:44.434Z
+duration_s: 158
+session_id: 5d9be3d7-581b-4b00-b0db-96da29d812ab
 ---
 
-# eBidz 6.3: Best Offer flow — Result
+# eBid 6.3: Best Offer flow — Result
 
-## Open the listing ✓ passed (28.7s)
-md5: 9852edfff03010451e7bb28a56729dc9
-Go to https://my-testing-repo-main.vercel.app/ebay/best-offer?reset=true and verify "Analog Synthesizer · 37 keys · Boxed" with Buy It Now "$240.00", the text "or Best Offer", and an enabled "Make offer" button.
+## Open a listing that accepts offers ✓ passed (49.2s)
+md5: 31cad0dfc862beb1c222541bc9f3cb06
+Click "50mm f/1.8 Prime Lens" and verify the listing shows a price of "$219.00" and a "Send Best Offer" button.
 
-## Offer too low ✓ passed (36.3s)
-md5: f9146441f79649e9caf5850d62d281aa
-Click "Make offer", type "100" into "Your offer", click "Send offer", and verify the message "Offers below $150.00 are automatically declined by this seller."
+## Reject an offer at or above asking ✓ passed (30.3s)
+md5: d7e8d3ccff8e30b6d5e38361d921dca6
+Type "219" into the offer field, click "Send Best Offer", and verify an error appears reading "A Best Offer must be below the asking price."
 
-## Valid offer ✓ passed (38.7s)
-md5: 973870d6a40790468ede7358cfbc9617
-Clear the offer field, type "200", click "Send offer", and verify the modal closes and the message "Offer sent. The seller has until Sep 16, 2026 to respond." appears.
+## Send a lower offer ✓ passed (39.9s)
+md5: 599ee8cf3c85bea76f87b6d1aa6de060
+Clear the offer field, type "180", click "Send Best Offer", and verify the page shows "Offer sent" with an amount of "$180.00".
 
-## Verify the pending offer ✓ passed (57.9s)
-md5: be90238f495803628f4b50fa375870a6
-Verify "Your offer" reads "$200.00", the status badge reads "Pending", and the button now reads "Offer pending" and is disabled.
+## Confirm the pending state ✓ passed (36.8s)
+md5: 9d1bf563f863a297e297fd723a4e01ce
+Click "My eBid" and verify the Best Offers list shows "50mm f/1.8 Prime Lens" at "$180.00" with status "Pending seller response".

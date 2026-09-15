@@ -1,21 +1,24 @@
 ---
 test: ../replacement-preferences_test.md
-status: passed
-started: 2026-09-13T10:36:00.421Z
-duration_s: 74
-session_id: 5b7987b7-7331-4610-86e7-09bf2f8ef1a8
+status: failed
+started: 2026-09-15T10:30:25.130Z
+duration_s: 69
+session_id: 165d3aa8-e560-4c77-936b-c54655043371
 ---
 
-# Instakart 7.2: Replacement preferences — Result
+# Instacrate 7.2: Replacement preferences — Result
 
-## Open the cart ✓ passed (24.1s)
-md5: c2e8028e2164b9d57e98bf65aa1750eb
-Go to https://my-testing-repo-main.vercel.app/instacart/replacement-preferences?reset=true and verify "Organic Strawberries 1 lb" is marked "Often out of stock" with "If out of stock:" set to "Best match (shopper picks)".
+## Add a flaky item ✗ failed (64.5s)
+md5: 1bc961962eb3e1152fa2422740921465
+Reason: AP determined agent is stuck — no viable actions remain — bug verdict: Agent did not open the cart before verifying the item [automation_bug/agent_misstep, confidence 0.96]
+Click "Add" on "Baby Spinach, 5 oz" and verify the carts panel shows "Baby Spinach, 5 oz".
 
-## Set a specific replacement ✓ passed (19.1s)
+## Choose a specific replacement ✓ passed (—)
 md5: 6ed2dcbcea16a7dd747f222fdeda8e58
-Select "Specific replacement: Berry Farms Strawberries 1 lb" in the strawberries' "If out of stock" dropdown.
+Select "Choose a specific replacement" in the "If it's out of stock" dropdown for "Baby Spinach, 5 oz" and verify a "Backup item" dropdown appears.
 
-## Verify after reload ✓ passed (29.4s)
+## Pick the backup item ✓ passed (—)
 md5: fa5b745bb45e58a323dfc1a38656118b
-Reload the page without the reset parameter, click "Item details" under the strawberries, and verify the detail shows "If out of stock" as "Specific replacement: Berry Farms Strawberries 1 lb".
+Select "Spring Mix, 5 oz" as the backup and verify a badge appears reading "Saved: Choose a specific replacement → Spring Mix, 5 oz".
+
+## Confirm it persists after reload ⏭ skipped

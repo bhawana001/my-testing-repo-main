@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/microsoft-teams/mention-notification?reset=true
-max_steps: 45
-tags: [microsoft-teams, work-collab, feed]
+url: https://my-testing-repo-main.vercel.app/teams-clone-app/channel/eng?reset=true
+max_steps: 40
+tags: [microsoft-teams, work-collab, messaging]
 ---
 
-# Teamz 36.2: Channel post with mention
+# Teemz 36.2: Channel post with mention
 
 Catalog objective: post with an @ mention and verify the notification.
-Key assertion: the mentioned user's activity shows the post.
+Key assertion: the mentioned user's activity feed shows the post.
 
-## Mention a teammate
-Go to https://my-testing-repo-main.vercel.app/microsoft-teams/mention-notification?reset=true, type "@pri" into "Start a post", and verify a mention picker suggests "Priya Nair".
+## Compose a post with a mention
+Click the "@Mira Shah" button under the composer and verify the post box now contains "@Mira Shah ".
 
-## Pick and post
-Click "Priya Nair" in the picker, then type "please review the release notes" at the end of the post, click "Post", and verify the post "@PriyaNair please review the release notes" appears in General.
+## Add the message and post it
+Type "can you review the launch checklist today?" at the end of the post box, click "Post", and verify a green banner reads "Posted — Mira Shah notified in Activity."
 
-## Check Priya's activity
-Click "Priya" in the top bar and verify the Activity feed shows an unread badge "1" and the entry "Demo User mentioned you in General: @PriyaNair please review the release notes".
+## Verify the post carries the mention
+Verify the "Posts" card shows a post from "Priya Nair" containing "@Mira Shah can you review the launch checklist today?" with a "@Mira Shah" badge.
+
+## Check the mentioned person's Activity feed
+Go to https://my-testing-repo-main.vercel.app/teams-clone-app/activity, select "Mira Shah" in the "Person" dropdown, and verify the feed reads "1 item for Mira Shah" with an entry saying "Priya Nair mentioned you in Engineering".

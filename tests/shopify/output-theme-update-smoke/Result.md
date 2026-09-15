@@ -1,25 +1,25 @@
 ---
 test: ../theme-update-smoke_test.md
 status: passed
-started: 2026-09-14T09:59:27.628Z
-duration_s: 59
-session_id: 0febbf51-1978-48a1-b467-0597d5748654
+started: 2026-09-15T09:34:06.257Z
+duration_s: 187
+session_id: c76fff7d-0bd4-4ced-8bcb-eec76cb39ed7
 ---
 
-# Shopifly 2.5: Theme update smoke — Result
+# Shoplify 2.5: Theme update smoke — Result
 
-## Publish the theme ✓ passed (7.8s)
-md5: 6161c1f64db2f7a8b5fd96f814736852
-Go to https://my-testing-repo-main.vercel.app/shopify/theme-update-smoke?reset=true, click "Publish Dawn-ish 2.0", and verify "Dawn-ish 2.0 is now your live theme." and "Mobile layout check: no horizontal overflow ✓".
+## Confirm the live theme ✓ passed (30.4s)
+md5: c30a8daf82a957fadea7eda802c1d543
+Click "Themes" and verify the themes list shows "Dawn" marked "Live".
 
-## Homepage to product ✓ passed (6.84s)
-md5: 9afe50a0e9805d505c4fe07c1e3d7d24
-In the 390px mobile preview, click "Shop now" and verify the product "Botanical Art Print A3" at "$35.00".
+## Publish a different theme ✓ passed (64.4s)
+md5: 363c89c4f271de015ef8ffa2c781ec0a
+Click "Publish" on "Refresh", then click "Publish theme" in the confirmation dialog, and verify a notice appears reading "Refresh is now the live theme."
 
-## Add to cart ✓ passed (0.74s)
-md5: eabec583e652ef6724a0c718d7a252ef
-Click "Add to cart" and verify "Your cart" with "Botanical Art Print A3 × 1".
+## Confirm the storefront picked up the theme ✓ passed (36.9s)
+md5: 866a9cc9a70a713fb0ea5f2ab70231bd
+Click "View storefront" and verify the storefront shows "Storefront is running the Refresh theme" and the product grid lists "Heavyweight Cotton Tee".
 
-## Reach checkout ✓ passed (40.5s)
-md5: cd73510975cd80d475e15e1109a2d6fc
-Click "Check out" and verify the badge "Checkout reachable" with "Contact · Shipping · Payment" and "Total $40.00", and that the layout check still reads "no horizontal overflow ✓".
+## Walk through to checkout on the new theme ✓ passed (52.9s)
+md5: f68754786245759951c7e8b95f6f283c
+Click "Add to cart" on "Heavyweight Cotton Tee", click "View cart", click "Checkout", and verify the checkout page renders with a "Payment" section and a "Pay" button.

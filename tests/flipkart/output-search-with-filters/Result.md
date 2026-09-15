@@ -1,29 +1,29 @@
 ---
 test: ../search-with-filters_test.md
 status: passed
-started: 2026-09-13T10:11:29.169Z
-duration_s: 141
-session_id: 4cac445e-79c1-4ae7-8b0f-54fff13e003c
+started: 2026-09-15T09:37:30.270Z
+duration_s: 267
+session_id: 88afe998-569d-44a9-b338-2438c0668fba
 ---
 
-# Flipmart 3.1: Search with filters — Result
+# Flipkort 3.1: Search with filters — Result
 
-## Search ✓ passed (36.2s)
-md5: 3c65eb170d645439bb478bfb09d515be
-Go to https://my-testing-repo-main.vercel.app/flipkart/search-with-filters?reset=true, type "running shoes" into the search box, click "Search", and verify "Showing 5 results for “running shoes”".
+## Search for running shoes ✓ passed (52.3s)
+md5: 829741b25f9c4c5f47a9d88aaf2cb1db
+Type "running shoes" into the search box, click "Search", and verify the results page shows "4 results".
 
-## Filter by size ✓ passed (25.7s)
-md5: c6da7743ad31b99646abddc3ac76e866
-Check "UK 9" and verify the count text includes "UK 9".
+## Filter by size 8 ✓ passed (47.4s)
+md5: 85c7498ae7206c78719ef1aadf3d1969
+Click the "8" size filter and verify the result count line contains "size 8".
 
-## Filter by price ✓ passed (28.6s)
-md5: cd579a1eede8d6b04d3ef44e7f77d9b1
-Choose "₹1,500 – ₹3,000" and verify "Showing 2 results for “running shoes” · UK 9 · ₹1,500 – ₹3,000".
+## Narrow by price band ✓ passed (46.1s)
+md5: 5f9a5f3a4b9eb1bec636527abe782f53
+Click the "₹1,500 – ₹3,000" price filter and verify the results show "1 result" and list "Trailburst Running Shoes".
 
-## Open a result ✓ passed (26.4s)
-md5: 27e01e08c55103bc8fd9f96172321dfb
-Click the first result's title and verify the product "Stride Runner 3".
+## Open the filtered result ✓ passed (66.9s)
+md5: e61b486005c91977658793bffc167f3d
+Click "Trailburst Running Shoes" and verify the product page shows the price "₹2,499.00" and that size "8" can be selected.
 
-## Verify the filters are respected ✓ passed (22.2s)
-md5: e0ed59f8f3d779f059876af8c7cd8b9f
-Verify the price reads "₹2,499.00" (within ₹1,500–₹3,000) and available sizes "7, 8, 9, 10" include 9.
+## Confirm the size is genuinely available ✓ passed (51.7s)
+md5: c8e870c151a2095b906b0b34c1305555
+Click size "8" and verify a badge appears reading "Size 8 · 12 left".

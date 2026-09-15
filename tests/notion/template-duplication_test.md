@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/notion/template-duplication?reset=true
-max_steps: 45
-tags: [notion, work-collab, crud]
+url: https://my-testing-repo-main.vercel.app/notion-clone-app/templates?reset=true
+max_steps: 40
+tags: [notion, work-collab, templates]
 ---
 
-# Notionly 38.4: Template duplication
+# Notiond 38.4: Template duplication
 
 Catalog objective: duplicate a template into the workspace.
-Key assertion: the template content is copied to a new page.
+Key assertion: the template content is copied into a new page.
 
-## Browse templates
-Go to https://my-testing-repo-main.vercel.app/notion/template-duplication?reset=true and verify the gallery shows "Weekly meeting notes", "Project brief" and "Bug tracker".
+## Verify the workspace before duplicating
+Verify the Workspace card shows "Pages" of 1.
 
-## Preview
-Click "Preview" on "Project brief" and verify sections "Problem", "Goals" and "Timeline" with to-dos "Define success metrics" and "Align stakeholders".
+## Duplicate the template
+Click "Duplicate" on "Meeting notes" and verify a green banner titled "Template duplicated" says "Meeting notes" was copied into the workspace with 4 blocks.
 
-## Use the template
-Click "Use this template" and verify a new page "📋 Project brief (copy)" opens and appears in the sidebar.
+## Verify the workspace grew
+Verify the Workspace card now shows "Pages" of 2.
 
-## Verify copied content
-Verify the new page shows "Created from template: Project brief" and contains "Problem", "Goals", "Define success metrics", "Align stakeholders" and "Timeline".
+## Verify the copied content
+Click "Open the new page" and verify the page title reads "Meeting notes", "Block count" reads 4, and the page body contains "Attendees:", "Share the recording" and "File follow-up tickets".

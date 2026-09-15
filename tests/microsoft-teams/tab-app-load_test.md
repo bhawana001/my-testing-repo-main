@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load?reset=true
-max_steps: 45
-tags: [microsoft-teams, work-collab, custom]
+url: https://my-testing-repo-main.vercel.app/teams-clone-app/tabs?reset=true
+max_steps: 40
+tags: [microsoft-teams, work-collab, apps]
 ---
 
-# Teamz 36.4: Tab app load
+# Teemz 36.4: Tab app load
 
 Catalog objective: open a custom tab app in a channel.
 Key assertion: the app loads inside the tab without error.
 
-## Open the channel
-Go to https://my-testing-repo-main.vercel.app/microsoft-teams/tab-app-load?reset=true and verify tabs "Posts", "Files" and "Sprint Board" with Posts selected.
+## Pin the app as a tab
+Click "Add to channel" on "Task Board" and verify the "Engineering tabs" card now shows a tab button labelled "Task Board".
 
-## Open the app tab
-Click "Sprint Board" and wait until the status badge changes from "Loading app…" to "App loaded · v2.3.1".
+## Verify the tab surface loaded
+Verify the tab content shows a "Task Board loaded" badge with rows "Open" of 4, "In progress" of 2 and "Done this week" of 7.
 
-## Verify the app content
-Verify the tab shows "Sprint 38 · Sep 14 – Sep 25" with To do, In progress and Done columns, and the message "Connected to Teamz as Demo User. No errors."
+## Add and switch to a second tab
+Click "Add to channel" on "Team Wiki", then click the "Team Wiki" tab button, and verify the badge now reads "Team Wiki loaded".
+
+## Verify the second app renders its own content
+Verify the tab content shows "Onboarding" and "Runbooks" text and no error message.

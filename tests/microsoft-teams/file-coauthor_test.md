@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/microsoft-teams/file-coauthor?reset=true
-max_steps: 45
-tags: [microsoft-teams, work-collab, custom]
+url: https://my-testing-repo-main.vercel.app/teams-clone-app/files?reset=true
+max_steps: 40
+tags: [microsoft-teams, work-collab, documents]
 ---
 
-# Teamz 36.3: File coauthor open
+# Teemz 36.3: File coauthor open
 
-Catalog objective: open a shared doc in Teamz and type a line.
+Catalog objective: open a shared doc in Teemz and type a line.
 Key assertion: the edit persists and presence is shown.
 
-## Open the doc
-Go to https://my-testing-repo-main.vercel.app/microsoft-teams/file-coauthor?reset=true, click "Open in Teamz" next to "Q3 plan.docx", and verify the editor shows "Q3 plan" with two plan lines and presence "Priya Nair is editing".
+## Open the shared document
+Click "Open" on "Launch plan.docx" and verify an editor card titled "Launch plan.docx" appears with "Line count" of 2.
+
+## Verify presence
+Verify the editor shows "Editing now:" with badges for "Mira Shah" and "Priya Nair".
 
 ## Type a line
-Type "3. Expand to two new regions" into the new-line box, click "Add line", and verify the line appears and the save badge reads "Saved".
+Type "Freeze lifts Monday at 09:00" into the "Type a new line" box, click "Add line", and verify a green banner reads "Line saved to the document."
 
-## Verify persistence
-Reload the page without the reset parameter and verify the document still contains "3. Expand to two new regions" and still shows "Priya Nair is editing".
+## Verify the edit persisted
+Verify "Line count" now reads 3 and the document body contains the line "Freeze lifts Monday at 09:00".

@@ -8,11 +8,11 @@
   "session_name": "delivery-slot-checkout",
   "executions": [
     {
-      "execution_id": "7c88ca03-2f21-41fc-a933-1fffe5b73f75",
+      "execution_id": "a5196e5f-15f0-4544-b889-3e1a82a88227",
       "run_kind": "author",
-      "status": "passed",
+      "status": "broken",
       "valid": true,
-      "at": "2026-09-13T10:38:54.297Z"
+      "at": "2026-09-15T10:35:06.317Z"
     }
   ]
 }

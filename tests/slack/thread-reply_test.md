@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/slack/thread-reply?reset=true
-max_steps: 30
-tags: [slack, work-collab, feed]
+url: https://my-testing-repo-main.vercel.app/slack-clone-app/channel/general?reset=true
+max_steps: 40
+tags: [slack, work-collab, messaging]
 ---
 
-# Slacky 35.1: Message send with thread
+# Slaick 35.1: Message send with thread
 
-Catalog objective: send a channel message and reply in its thread.
+Catalog objective: send a channel message and reply to it in a thread.
 Key assertion: the thread count increments and the reply is nested under the message.
 
-## Open the channel
-Go to https://my-testing-repo-main.vercel.app/slack/thread-reply?reset=true and verify the channel heading "# general" is visible with messages from "Priya Nair" and "Tom Alvarez" and no message shows a reply count.
-
 ## Send a channel message
-Type "Deploy is green" into the "Message #general" box and click "Send". Verify a new message from "Demo User" with the text "Deploy is green" appears at the bottom of the channel.
+Type "Deploy freeze notes are in the doc" into the "Message #general" box and click "Send", then verify the message list shows a message from "Priya Nair" with the text "Deploy freeze notes are in the doc".
 
-## Reply in thread
-Click "Reply in thread" under the "Deploy is green" message. Verify a "Thread" panel opens on the right showing the message "Deploy is green" and the text "0 replies".
+## Open the thread on that message
+Click the "Reply in thread" button under the message "Deploy freeze notes are in the doc" and verify the Thread panel on the right shows that same message text and "0 replies".
 
-## Post the reply
-Type "Nice, thanks!" into the "Reply in thread" box and click "Reply".
+## Post a nested reply
+Type "Adding the rollback steps too" into the "Reply…" box in the Thread panel and click "Reply", then verify the Thread panel shows "1 reply" and a nested reply from "Priya Nair" reading "Adding the rollback steps too".
 
-## Verify the thread count and nesting
-Verify the thread panel now says "1 reply" with the reply "Nice, thanks!" shown nested under the original message, and that the "Deploy is green" message in the channel list shows a "1 reply" link.
+## Confirm the thread count on the message
+Verify the message "Deploy freeze notes are in the doc" in the main message list now shows a reply button labelled "1 reply".

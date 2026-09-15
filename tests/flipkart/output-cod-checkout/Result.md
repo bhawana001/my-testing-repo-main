@@ -1,29 +1,25 @@
 ---
 test: ../cod-checkout_test.md
 status: passed
-started: 2026-09-13T10:14:07.674Z
-duration_s: 146
-session_id: c20de6ed-8119-4c2e-905f-30ff0d4e9396
+started: 2026-09-15T09:46:31.154Z
+duration_s: 179
+session_id: 89f38865-4867-4cbb-86d6-71f84554dd1c
 ---
 
-# Flipmart 3.3: COD checkout — Result
+# Flipkort 3.3: COD checkout — Result
 
-## Open the cart ✓ passed (24.2s)
-md5: d8beb5cade749c52f39cbecfcd0681fe
-Go to https://my-testing-repo-main.vercel.app/flipkart/cod-checkout?reset=true and verify the cart shows "Stride Runner 3" at "₹2,499.00".
+## Add an item to the cart ✓ passed (51.4s)
+md5: ed5285972cd8255b8687e19c26b2bd3f
+Type "running shoes" into the search box, click "Search", click "Trailburst Running Shoes", click size "8", then click "Add to cart" and verify the cart shows "Trailburst Running Shoes".
 
-## Proceed to checkout ✓ passed (29.3s)
-md5: 0fb4559d80a573b704f9e42d6d098eb1
-Click "Proceed to checkout" and verify the Delivery step shows a "Shipping address" card.
+## Go to checkout ✓ passed (36.5s)
+md5: 5f6d47df5841d82aba28bb53e1bd2b50
+Click "Place order" and verify the checkout page shows a "Payment mode" section listing "Cash on Delivery".
 
-## Continue to payment ✓ passed (31s)
-md5: 8b5a251f2224de7ef9fbcc99bf7f392f
-Click "Continue to payment" and verify the payment options "UPI", "Credit / debit card" and "Cash on delivery" are listed.
+## Choose cash on delivery ✓ passed (47.1s)
+md5: 379f2002dacafed22440b6cbffee7418
+Click "Cash on Delivery" and verify the price details show a "COD handling fee" of "₹25.00" and a total payable of "₹2,564.00".
 
-## Choose cash on delivery ✓ passed (25.9s)
-md5: f7beb3a8dcbe719c27297212c1c66433
-Click the "Cash on delivery" option, click the "Place order" button, and verify "Order placed" is shown.
-
-## Verify the payment mode ✓ passed (33.7s)
-md5: d647728329587d087197754f1a3b72b9
-Verify the confirmation shows an Order number starting with "OD-", "Payment" as "Cash on delivery" and "Order total" as "₹2,499.00".
+## Confirm the order ✓ passed (40.6s)
+md5: 91b5ede54e61528b0b0f6c10a287bec1
+Click "Confirm COD order" and verify the page shows "Order confirmed" with a payment mode of "Cash on Delivery" and an order status of "Confirmed — pay on delivery".
