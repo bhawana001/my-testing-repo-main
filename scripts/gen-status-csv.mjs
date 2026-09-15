@@ -76,7 +76,7 @@ const slugEntity = (name) =>
   DIR_OVERRIDE[name] ||
   name.toLowerCase().replace(/\+/g, "").replace(/\./g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-const out = [["Row", "UseCase", "Entity", "UseCaseName", "AppBuilt", "EvalLink", "TestUpdated", "Command", "KaneStatus"]];
+const out = [["Row", "UseCase", "Entity", "UseCaseName", "AppBuilt", "EvalLink", "TestUpdated", "Command", "KaneStatus", "KaneStatusNote"]];
 const paste = [];
 
 rows.forEach((r, i) => {
@@ -96,9 +96,16 @@ rows.forEach((r, i) => {
     testUpdated = app && body.includes(app) ? "yes" : "no";
   }
   const key = flow ? `${entDir}/${flow}` : "";
-  const kane = (status[key] && status[key].status) || "";
+  // status.json holds either a bare string or an object with a status field.
+  const raw = status[key];
+  const kane = typeof raw === "string" ? raw : (raw && raw.status) || "";
+  // Every recorded result predates the rewrite, so a rewritten test's old
+  // verdict says nothing about the clone app it now drives.
+  const kaneNote = kane && testUpdated === "yes"
+    ? "stale — test rewritten against the clone app, needs a fresh run"
+    : "";
 
-  out.push([i + 2, uc, entity, ucName, app ? "DONE" : "", link, testUpdated, command, kane]);
+  out.push([i + 2, uc, entity, ucName, app ? "DONE" : "", link, testUpdated, command, kane, kaneNote]);
   paste.push([app ? "DONE" : "", command, link]);
 });
 

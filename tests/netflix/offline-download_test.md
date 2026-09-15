@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/netflix/offline-download?reset=true
-max_steps: 45
-tags: [netflix, streaming, media]
+url: https://my-testing-repo-main.vercel.app/stream-clone-app/signup?reset=true
+max_steps: 50
+tags: [netflix, streaming, offline]
 ---
 
-# Netflixy 47.4: Download for offline
+# StreamFlix 47.4: Offline download
 
-Catalog objective: download an episode on mobile viewport (mobile web equivalent).
-Key assertion: the download completes and is in a playable state.
+Catalog objective: download an episode and verify it reaches a playable state.
+Key assertion: the download completes and is listed on the device.
 
-## Download an episode
-Go to https://my-testing-repo-main.vercel.app/netflix/offline-download?reset=true, click "⬇ Download" on "1. Static", and wait until the label reads "Downloaded · available offline".
-
-## Go offline
-Turn on the ✈️ airplane-mode switch and verify "Offline · only downloads can play".
+## Start a membership first
+Choose "Standard — $15.49/month", type "priya@example.test" into "Email", type "4242 4242 4242 4242" into "Card number", and click "Start membership".
 
 ## Open downloads
-Click "Downloads" and verify "1. Static" is listed as "Downloaded" with a "▶ Play" button.
+Go to https://my-testing-repo-main.vercel.app/stream-clone-app/downloads and verify the page subtitle reads "Standard plan · 2 download devices".
 
-## Play offline
-Click "▶ Play" and verify the player shows "Signal Lost" and its time counter advances from 0:00 while offline.
+## Download an episode
+Click "Download" on "Brooklyn Nine-Nine · S1:E1 Pilot" and verify it moves into the on-device list.
+
+## Verify the device list and the plan limit
+Verify the "On this device (1/2)" card lists the Pilot episode with its size, and a remove control is offered for it.

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/netflix/profile-pin?reset=true
+url: https://my-testing-repo-main.vercel.app/stream-clone-app/profiles?reset=true
 max_steps: 45
-tags: [netflix, streaming, auth]
+tags: [netflix, streaming, profiles]
 ---
 
-# Netflixy 47.3: Profile switch with PIN
+# StreamFlix 47.3: PIN protected profile
 
-Catalog objective: switch to a PIN-protected profile.
-Key assertion: the PIN gate is enforced and the profile content loads.
+Catalog objective: switch to a PIN protected profile.
+Key assertion: the PIN gate is enforced and then the profile content loads.
 
-## Pick the locked profile
-Go to https://my-testing-repo-main.vercel.app/netflix/profile-pin?reset=true, verify "Who's watching?" with Demo, Kids and Priya 🔒, click "Priya", and verify "Profile Lock is on for Priya".
+## Switch to the protected profile
+Click the switch button on the "Marco" profile and verify a card titled "Enter PIN for Marco" appears.
 
-## Wrong PIN
-Type "0000" into the PIN box, click "Unlock", and verify "Incorrect PIN. Try again."
+## Verify a wrong PIN is refused
+Type "1111" into "Profile PIN", click "Unlock profile", and verify an error is shown and the profile content does not load.
 
-## Correct PIN
-Type "1234", click "Unlock", and verify "Profile: Priya".
+## Enter the correct PIN
+Replace the PIN with "4821" and click "Unlock profile".
 
-## Verify profile content
-Verify "Continue watching for Priya" lists "The Long Con", "Midnight Kitchen" and "Northern Line".
+## Verify the profile content loads
+Verify a card titled "Watching as Marco" appears with "Active profile" of "Marco" and title tiles rendered beneath it.

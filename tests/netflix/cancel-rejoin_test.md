@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin?reset=true
-max_steps: 45
-tags: [netflix, streaming, wizard]
+url: https://my-testing-repo-main.vercel.app/stream-clone-app/signup?reset=true
+max_steps: 55
+tags: [netflix, streaming, subscription]
 ---
 
-# Netflixy 47.5: Cancel and rejoin
+# StreamFlix 47.5: Cancel and rejoin
 
-Catalog objective: cancel the membership and verify the end date, then restart.
-Key assertion: access-until date is shown and restart works.
+Catalog objective: cancel the membership, verify the end date, then restart.
+Key assertion: access-until is shown and restarting works.
 
-## Cancel
-Go to https://my-testing-repo-main.vercel.app/netflix/cancel-rejoin?reset=true, verify Status "Active", click "Cancel Membership", and verify "Your membership will end on October 14, 2026."
+## Start a membership
+Choose "Standard — $15.49/month", type "priya@example.test" into "Email", type "4242 4242 4242 4242" into "Card number", and click "Start membership".
 
-## Finish cancellation
-Click "Finish Cancellation" and verify Status "Cancelled · access until October 14, 2026" and "You can still watch until October 14, 2026."
+## Open the account page
+Go to https://my-testing-repo-main.vercel.app/stream-clone-app/account and verify "Status" reads "active" with "Plan" of "Standard · $15.49/month".
 
-## Restart
-Click "Restart Membership" and verify Status "Active" and "Welcome back! Your membership continues. Next billing date: October 14, 2026."
+## Cancel it
+Click "Cancel membership", verify a dialog titled "Cancel your membership?" opens, and click the confirm button.
+
+## Verify the end date and restart
+Verify an amber banner titled "Your membership is ending" says you have access until "October 9, 2026", then click "Restart membership" and verify "Status" reads "active" again with the ending banner gone.
