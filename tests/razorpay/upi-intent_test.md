@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/razorpay/upi-intent?reset=true
-max_steps: 40
-tags: [razorpay, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/razorpay-clone-app?reset=true
+max_steps: 45
+tags: [razorpay, payments, upi]
 ---
 
-# Razorpaid 11.2: UPI intent flow
+# Razorpie 11.2: UPI intent
 
 Catalog objective: choose UPI and verify the intent screen with VPA entry works.
-Key assertion: VPA validation and success state render.
+Key assertion: VPA validation and the success state both render.
 
-## Open the payment page
-Go to https://my-testing-repo-main.vercel.app/razorpay/upi-intent?reset=true and verify "Pay QuickBite" with amount "₹349.00" and the "UPI" method selected with an "Enter UPI ID" option.
+## Open the UPI intent screen
+Click "Pay now" on "Cotton kurta set", make sure "UPI" is selected, and verify a "UPI ID" field with a "Verify UPI ID" button is shown.
 
-## Enter an invalid VPA
-Type "bad" into the UPI ID field, click "Verify UPI ID", and verify the error "Invalid UPI ID. Format: name@bank" is shown.
+## Verify a malformed VPA is rejected
+Type "priya" into "UPI ID", click "Verify UPI ID", and verify an inline error reads "Enter a valid UPI ID, for example name@bank."
 
-## Enter a valid VPA
-Clear the UPI ID field, type "demo@okbank", click "Verify UPI ID", and verify a "Verified" badge with "demo@okbank · DEMO USER" appears.
+## Verify an unknown VPA is rejected
+Replace the UPI ID with "nobody@okhdfb", click "Verify UPI ID", and verify an inline error reads "No account found for that UPI ID."
 
-## Pay
-Click the "Pay ₹349.00" button and verify the heading "Payment successful" appears with "Status" reading "captured" and "Payment method" reading "UPI · demo@okbank".
+## Verify a good VPA succeeds
+Replace the UPI ID with "priya@ybl", click "Verify UPI ID", verify a badge reads "UPI ID verified — request will be sent to priya@ybl", then click "Pay ₹1,899.00" and verify a green banner titled "Payment successful" appears.

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/square/tip-and-receipt?reset=true
-max_steps: 40
-tags: [square, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/square-clone-app/pos?reset=true
+max_steps: 45
+tags: [square, payments, pos]
 ---
 
-# Squarely 12.3: Tip and receipt screen
+# Squair 12.3: Tip and receipt
 
-Catalog objective: complete a payment with tip selection on web POS.
+Catalog objective: complete a payment with a tip selection on the web POS.
 Key assertion: the total includes the tip and a receipt is offered.
 
-## Open the POS
-Go to https://my-testing-repo-main.vercel.app/square/tip-and-receipt?reset=true and verify the register shows "Subtotal" of "$24.00" and the question "Add a tip?" with 15%, 20%, 25% and "No tip" options.
+## Ring up a sale
+Click "Oat Latte" and "Cardamom Bun" in the items list and verify the sale shows "Subtotal" of "$9.75".
 
-## Choose a 20% tip
-Click the "20%" tip option and verify "Tip" reads "$4.80" and "Total" reads "$28.80".
+## Go to the tip screen
+Click the charge button and verify a "Add a tip?" screen appears showing "Subtotal" of "$9.75".
 
-## Charge
-Click "Charge $28.80" and verify the message "Payment of $28.80 approved (includes $4.80 tip)" and the question "How would you like your receipt?" with "Email", "Text message" and "No receipt" options.
+## Choose a tip
+Click the "20%" tip option and verify "Tip" reads "$1.95" and "Total" reads "$11.70".
 
-## Choose an email receipt
-Click "Email" and verify the completion screen shows "Total charged" of "$28.80", "Tip" of "$4.80" and "Receipt" reading "Emailed to demo@evals.dev".
+## Charge and verify the receipt is offered
+Click "Charge $11.70" and verify a green banner says "$11.70" was charged including a tip of "$1.95", with a "Send a receipt?" card showing "Payment ID" of "pay_8813", "Tip" of "$1.95" and "Total" of "$11.70".

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/razorpay/emi-options?reset=true
-max_steps: 40
-tags: [razorpay, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/razorpay-clone-app?reset=true
+max_steps: 45
+tags: [razorpay, payments, emi]
 ---
 
-# Razorpaid 11.3: EMI option display
+# Razorpie 11.3: EMI options
 
-Catalog objective: open payment options on a high-value order and verify the EMI plans list.
-Key assertion: EMI tenures with interest are shown correctly.
+Catalog objective: open payment options on a high value order and verify the EMI plans list.
+Key assertion: the EMI tenures are shown with the correct interest.
 
-## Open the payment options
-Go to https://my-testing-repo-main.vercel.app/razorpay/emi-options?reset=true and verify "Pay Nova Store" with amount "₹60,000.00" and the "EMI" tab selected showing a plans table.
+## Verify EMI is offered only on the high value order
+Verify the "Nexa 12 Pro 5G (256 GB)" card at "₹48,999.00" carries an "EMI available" badge and the "Cotton kurta set" card does not.
 
-## Verify the tenures and interest math
-Verify the EMI table lists four tenures: "3 months" with "No cost" interest at "₹20,000.00" per month, "6 months" at "12% p.a." with "₹10,352.90" per month and total interest "₹2,117.40", "9 months" at "13% p.a." with "₹7,032.96" per month, and "12 months" at "14% p.a." with "₹5,387.23" per month and total "₹64,646.76".
+## Open the checkout for the high value order
+Click "Pay now" on "Nexa 12 Pro 5G (256 GB)" and verify the dialog title reads "Razorpie · ₹48,999.00" and an "EMI" method is listed.
 
-## Choose the 6-month plan
-Click the "6 × ₹10,352.90" option and verify the pay button reads "Pay ₹10,352.90/month for 6 months".
+## Open the EMI panel
+Choose "EMI" and verify the bank is "HDFB Bank" with a plans table.
 
-## Pay
-Click the pay button and verify "Payment successful" appears with "Monthly instalment" reading "₹10,352.90" and "Total payable" reading "₹62,117.40".
+## Verify the tenures and monthly amounts
+Verify the plans table lists 3 months at "13% p.a." with a monthly of "₹16,688.00", 6 months at "14% p.a." with "₹8,503.00", 9 months at "15% p.a." with "₹5,790.00" and 12 months at "16% p.a." with "₹4,446.00".

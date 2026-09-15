@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/square/checkout-link?reset=true
+url: https://my-testing-repo-main.vercel.app/square-clone-app/link?reset=true
 max_steps: 40
-tags: [square, payments-infra, checkout]
+tags: [square, payments, checkout]
 ---
 
-# Squarely 12.1: Online checkout link
+# Squair 12.1: Checkout link
 
-Catalog objective: complete a Squarely checkout link with a test card.
+Catalog objective: complete a Squair checkout link with a test card.
 Key assertion: the receipt page shows the correct amount.
 
-## Open the checkout link
-Go to https://my-testing-repo-main.vercel.app/square/checkout-link?reset=true and verify "Pay Bean There Coffee" with amount "$35.00" and the note "Squarely Online Checkout link".
+## Verify the checkout link
+Verify the page shows "KilnAndClay Studio" with the checkout link "chk_7K21", the item "Pottery workshop — single seat" and an amount of "$65.00".
+
+## Fill in the details
+Type "sam@riverfield.test" into "Email for receipt" and "4242 4242 4242 4242" into "Card number".
 
 ## Pay
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $35.00" button, and verify the heading "Receipt" appears.
+Click "Pay $65.00" and verify a green banner titled "Payment complete" says the payment of "$65.00" was received.
 
 ## Verify the receipt
-Verify "Amount paid" reads "$35.00", "Receipt #" reads "R-000731" and "Merchant" reads "Bean There Coffee".
+Verify the receipt shows "Payment ID" of "pay_8813", "Item" of "Pottery workshop — single seat", "Total paid" of "$65.00" and "Receipt sent to" of "sam@riverfield.test".

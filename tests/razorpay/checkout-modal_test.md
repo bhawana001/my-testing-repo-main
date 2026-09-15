@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/razorpay/checkout-modal?reset=true
-max_steps: 40
-tags: [razorpay, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/razorpay-clone-app?reset=true
+max_steps: 45
+tags: [razorpay, payments, checkout]
 ---
 
-# Razorpaid 11.1: Standard checkout modal
+# Razorpie 11.1: Checkout modal
 
-Catalog objective: trigger Razorpaid checkout and pay with the test UPI success flow.
-Key assertion: the payment success callback fires and a receipt is shown.
+Catalog objective: trigger the Razorpie checkout and pay with the UPI success flow.
+Key assertion: the payment succeeds and a receipt is shown.
 
-## Open the merchant page
-Go to https://my-testing-repo-main.vercel.app/razorpay/checkout-modal?reset=true and verify the page shows "Pay Chai Point" with amount "₹1,499.00" and a "Pay ₹1,499.00" button.
+## Open the checkout
+Click "Pay now" on "Cotton kurta set" and verify a dialog titled "Razorpie · ₹1,899.00" opens listing the "UPI" and "Card" methods.
 
-## Open the checkout modal
-Click "Pay ₹1,499.00" and verify a Razorpaid checkout modal opens showing "Chai Point", "₹1,499.00" and a "UPI ID / VPA" field.
+## Enter a UPI ID
+With "UPI" selected, type "priya@okhdfb" into "UPI ID" and click "Verify UPI ID", then verify a badge reads "UPI ID verified — request will be sent to priya@okhdfb".
 
-## Pay with the success VPA
-Type "success@razorpaid" into the UPI ID / VPA field, click the "Pay ₹1,499.00" button inside the modal, and verify the modal closes and the heading "Payment successful" appears.
+## Pay
+Click "Pay ₹1,899.00" and verify a green banner titled "Payment successful" appears.
 
-## Verify callback and receipt
-Verify "Callback" reads "handler(response) received", "Receipt" reads "rcpt_CP_1499" and "Payment method" reads "UPI · success@razorpaid".
+## Verify the receipt
+Verify the banner shows payment "pay_R701kLm8Xq" captured for "₹1,899.00" via UPI (priya@okhdfb), and the Payments card lists that payment at "₹1,899.00".
