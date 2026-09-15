@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/wise/transfer-tracking?reset=true
+url: https://my-testing-repo-main.vercel.app/wise-clone-app/transfers?reset=true
 max_steps: 40
-tags: [wise, payments-infra, tracker]
+tags: [wise, payments, tracking]
 ---
 
-# Wyse 15.3: Transfer status tracking
+# Wize 15.3: Transfer tracking
 
-Catalog objective: open an in-flight transfer and check the status steps.
+Catalog objective: open an in-flight transfer and check its status steps.
 Key assertion: the timeline shows the current step accurately.
 
-## Open activity
-Go to https://my-testing-repo-main.vercel.app/wise/transfer-tracking?reset=true and verify the Activity list shows a transfer "To Asha Rao" with status "In progress" and amount "−$1,000.00".
+## Open the in-flight transfer
+Click "Track" on the "TR-80114" row and verify the page title reads "Transfer TR-80114" with the subtitle "To Mira Shah".
 
-## Open the transfer
-Click the "To Asha Rao" row and verify the detail shows "$1,000.00 to Asha Rao", the status badge "In progress" and a timeline with the steps "Transfer set up", "We received your USD", "Your money's being processed", "Sent to Asha's bank" and "Asha received the money".
+## Verify the amounts
+Verify "You sent" reads "$500.00", "They receive" reads "₹41,481.29", "Fee" reads "$2.86" and "Estimated arrival" reads "by Wednesday, 17 September".
 
 ## Verify the current step
-Verify the first two steps are marked complete, the text "Current step: Your money's being processed" is shown, and that step displays "Converted at 1 USD = 83.20 INR".
+Verify the timeline lists "You set up the transfer", "We received your money", "We paid out your money" and "Money delivered", with a badge reading "Current step: We received your money".
 
-## Advance and re-verify
-Click "Simulate next update" and verify the text now reads "Current step: Sent to Asha's bank" and the status badge reads "Sent".
+## Advance the transfer
+Click "Simulate next step" and verify the badge now reads "Current step: We paid out your money".

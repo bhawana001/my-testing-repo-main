@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/wise/add-recipient?reset=true
-max_steps: 40
-tags: [wise, payments-infra, wizard]
+url: https://my-testing-repo-main.vercel.app/wise-clone-app/recipients?reset=true
+max_steps: 45
+tags: [wise, payments, recipients]
 ---
 
-# Wyse 15.2: Recipient add and verify
+# Wize 15.2: Add recipient
 
 Catalog objective: add a bank recipient with account details.
 Key assertion: the recipient is saved and selectable in a transfer.
 
 ## Open the recipient form
-Go to https://my-testing-repo-main.vercel.app/wise/add-recipient?reset=true and verify the "Add a recipient" wizard is on the step "Who are you sending to?" and the "Send money · choose recipient" dropdown lists only "Ravi Menon · ••••4410".
+Verify "Saved recipients (1)" lists "Mira Shah", then click "Add recipient".
 
-## Who step
-Choose "Someone else", type "Asha Rao" into "Full name of the account holder", click "Continue", and verify the step "Bank account details (INR)" is shown.
-
-## Bank details with an invalid IFSC
-Type "123456789012" into Account number and into Confirm account number, type "bad" into IFSC code, click "Continue", and verify the validation message "IFSC must look like HDFC0001234." is shown.
-
-## Fix the IFSC and review
-Clear the IFSC code field, type "HDFC0001234", click "Continue", and verify the review step "Check the details" lists "Asha Rao", "123456789012" and "HDFC0001234".
+## Fill in the details
+Type "Tom Alvarez" into "Full name", select "EUR" in "They receive", type "Banque Lumiere" into "Bank name", and type "FR7630006000011234567890189" into "Account number".
 
 ## Save
-Click "Save recipient" and verify the message "Recipient saved" with "Asha Rao (••••9012) can now receive transfers." appears.
+Click "Save recipient" and verify a green banner titled "Recipient saved" says "Tom Alvarez" can now receive EUR.
 
-## Verify selectable in a transfer
-In the "Send money · choose recipient" dropdown, select "Asha Rao · ••••9012" and verify the picked recipient shows Name "Asha Rao", Account "••••9012" and IFSC "HDFC0001234", with the note "2 saved recipients".
+## Verify the recipient is selectable in a transfer
+Verify the list now reads "Saved recipients (2)", then go to https://my-testing-repo-main.vercel.app/wise-clone-app/send, select "EUR" in "To currency", and verify "Tom Alvarez" is offered in the recipient dropdown.

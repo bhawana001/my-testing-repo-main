@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/adyen/ideal-redirect?reset=true
-max_steps: 40
-tags: [adyen, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/adyen-clone-app/checkout?reset=true
+max_steps: 45
+tags: [adyen, payments, redirect]
 ---
 
-# Adyenly 13.2: Local method iDEAL
+# Adyeen 13.2: iDEAL redirect
 
 Catalog objective: select iDEAL in test and complete the issuer simulation.
-Key assertion: the redirect returns with the authorised state.
+Key assertion: the redirect returns with an authorised state.
 
-## Open the iDEAL payment
-Go to https://my-testing-repo-main.vercel.app/adyen/ideal-redirect?reset=true and verify "Pay with iDEAL" with a "Select your bank" dropdown and amount "€58.90".
+## Choose iDEAL
+Choose "iDEAL" in the drop-in and verify a "Your bank" dropdown appears.
 
-## Choose the test issuer
-Select "Test Issuer (Success)" in the bank dropdown, click "Continue to Test Issuer (Success)", and verify an "Issuer simulation" page for "Test Issuer (Success)" shows "Pay to Nordic Home" and "Amount €58.90".
+## Pick the issuer
+Select "Rabbo Bank" in "Your bank" and verify the button reads "Continue to Rabbo Bank".
 
-## Confirm at the issuer
-Click "Confirm payment" and verify the merchant page shows the heading "Result: Authorised".
+## Complete the issuer simulation
+Click "Continue to Rabbo Bank" and verify a dialog titled "Rabbo Bank — issuer simulator" opens showing "Amount" of "€129.50", then click "Approve payment".
 
-## Verify the return
-Verify "Payment method" reads "iDEAL · Test Issuer (Success)", "Returned from" reads "issuer redirect" and "Payment ID" reads "IDL-7731".
+## Verify the redirect returned authorised
+Verify a green banner titled "Payment authorised" shows "Result code" of "Authorised", with "Method" of "iDEAL" and "Detail" of "Rabbo Bank".

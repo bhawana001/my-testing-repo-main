@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse?reset=true
+url: https://my-testing-repo-main.vercel.app/adyen-clone-app/checkout?reset=true
 max_steps: 40
-tags: [adyen, payments-infra, checkout]
+tags: [adyen, payments, tokenisation]
 ---
 
-# Adyenly 13.3: Stored card reuse
+# Adyeen 13.3: Stored card reuse
 
 Catalog objective: pay again using a previously stored card token.
 Key assertion: the one-click payment succeeds without card entry.
 
-## Open the payment methods
-Go to https://my-testing-repo-main.vercel.app/adyen/stored-card-reuse?reset=true and verify "Pay Nordic Home" with amount "€39.00" and a stored "Visa •••• 1111" option marked "Stored" that is already selected, with no card number field visible.
+## Verify the stored card is preselected
+Verify "Stored payment method" is selected and "Stored card" reads "Visa ending 1111 · exp 03/30".
 
-## Pay with the stored card
-Click "Pay €39.00 with stored card" and verify the heading "Result: Authorised" appears.
+## Verify no card entry is required
+Verify a badge reads "No card entry needed — paying with a stored token" and no card number field is shown.
 
-## Verify no card entry was needed
-Verify "Card entry" reads "Not required (token)", "Payment method" reads "Stored Visa •••• 1111" and "Amount paid" reads "€39.00".
+## Pay with the token
+Click "Pay €129.50" and verify a green banner titled "Payment authorised" appears.
+
+## Verify the token was used
+Verify the result shows "Method" of "Stored card", "Detail" of "Visa ending 1111 (token tok_8812)" and "Amount" of "€129.50".
