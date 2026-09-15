@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/revolut/card-freeze?reset=true
-max_steps: 40
-tags: [revolut, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/revolut-clone-app/card?reset=true
+max_steps: 45
+tags: [revolut, fintech, cards]
 ---
 
-# Revolute 19.1: Card freeze unfreeze
+# Revolat 19.1: Card freeze
 
-Catalog objective: freeze the virtual card and confirm declines, then unfreeze (mobile web equivalent).
+Catalog objective: freeze the virtual card, confirm declines, then unfreeze.
 Key assertion: the state toggles and the card is usable again.
 
-## Open the card
-Go to https://my-testing-repo-main.vercel.app/revolut/card-freeze?reset=true and verify the virtual card ending "8841" shows the status badge "Active" and a "Freeze card" switch that is off.
+## Freeze the card
+Verify the card badge reads that the card is active, then click the freeze button and verify a notice says the card is frozen and new payments will be declined.
 
-## Freeze
-Click the "Freeze card" switch and verify the status badge changes to "Frozen" and the help text says purchases will be declined.
+## Verify a payment is really declined
+Click "Simulate purchase" and verify a notice reads "Payment declined — the card is frozen." and the declined list shows a "Metro Grocer" entry at "$24.60" with a reason of "Card is frozen".
 
-## Attempt a purchase while frozen
-Click "Simulate a $23.50 purchase at Metro Grocer" and verify a new transaction "You paid Metro Grocer" appears at the top of Recent transactions tagged "Declined" with the note "Declined · card frozen".
-
-## Unfreeze
-Click the "Freeze card" switch again and verify the status badge reads "Active".
+## Unfreeze the card
+Click the unfreeze button and verify a notice says the card is unfrozen and payments work again.
 
 ## Verify the card works again
-Click "Simulate a $23.50 purchase at Metro Grocer" and verify the newest transaction is tagged "Approved" with the note "Card purchase".
+Click "Simulate purchase" and verify a notice reads "Payment approved — $24.60 at Metro Grocer." with no new declined entry added.

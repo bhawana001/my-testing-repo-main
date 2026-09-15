@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/coinbase/send-to-address?reset=true
-max_steps: 40
-tags: [coinbase, consumer-fintech, wizard]
+url: https://my-testing-repo-main.vercel.app/coinbase-clone-app/send?reset=true
+max_steps: 45
+tags: [coinbase, fintech, crypto]
 ---
 
-# Coinbayse 18.3: Send to address flow
+# Coinbaze 18.3: Send to address
 
 Catalog objective: initiate a send and verify address validation and warning states.
-Key assertion: an invalid address is blocked before confirm.
+Key assertion: an invalid address is blocked before confirming.
 
-## Invalid address
-Go to https://my-testing-repo-main.vercel.app/coinbase/send-to-address?reset=true, type "0x123" into "To (address)" and "0.1" into Amount, click "Check address", and verify the error "Invalid Ethereum address. It must start with 0x followed by 40 hex characters." and that "Continue" is disabled.
+## Verify a malformed address is rejected
+With "ETH" selected, type "not-an-address" into "Recipient address" and verify a red badge reads "Not a valid ETH address — 0x followed by 40 hex characters" and the send button is disabled.
 
-## Wrong-network address
-Replace the address with "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq", click "Check address", and verify the error "This looks like a Bitcoin address. Sending ETH to it would lose your funds." with "Continue" still disabled.
+## Verify the wrong-network warning
+Select "BTC" in "Asset", type "0x8Ba1f109551bD432803012645Ac136ddd64DBA72" into "Recipient address", and verify a red banner titled "Wrong network" says that looks like an ETH address and sending BTC to it would lose the funds.
 
-## New address warning
-Replace the address with "0x52908400098527886E0F7030069857D2E4169EE7", click "Check address", and verify the warning "You've never sent to this address before." and a confirmation checkbox, with "Continue" disabled until it is checked.
+## Verify a valid address is accepted
+Select "ETH" in "Asset", keep the address "0x8Ba1f109551bD432803012645Ac136ddd64DBA72", and verify a green badge reads "Valid ETH address" with the send button now enabled.
 
-## Acknowledge and review
-Check "I've checked the address and understand sends can't be reversed", click "Continue", and verify a "Send now" button with "Network fee 0.00042 ETH" is shown.
+## Complete the send
+Type "0.1" into "Amount in ETH", tick "I understand this transfer is irreversible", click "Send ETH", and verify a green banner titled "Send submitted" says "0.1 ETH" was sent.

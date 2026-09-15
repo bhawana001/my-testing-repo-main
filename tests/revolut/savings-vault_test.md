@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/revolut/savings-vault?reset=true
-max_steps: 40
-tags: [revolut, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/revolut-clone-app/vault?reset=true
+max_steps: 45
+tags: [revolut, fintech, savings]
 ---
 
-# Revolute 19.4: Savings vault roundup
+# Revolat 19.4: Savings vault
 
-Catalog objective: enable the round-up vault and verify the rule is active (mobile web equivalent).
+Catalog objective: enable the round-up vault and verify the rule is active.
 Key assertion: the vault shows the round-up toggle on.
 
-## Open the vault
-Go to https://my-testing-repo-main.vercel.app/revolut/savings-vault?reset=true and verify "Holiday Vault" shows "$240.50", the "Round-ups" switch is off and the status reads "Rule inactive".
+## Verify the vault starts off
+Verify the "Rainy day" vault shows a balance of "$0.00" with a badge saying the round-up rule is off.
 
-## Enable round-ups
-Click the "Round-ups" switch and verify the status reads "Rule active · round-ups to Holiday Vault" and a "Multiplier" selector appears.
+## Turn the round-up rule on
+Click the toggle button and verify the badge now reads that the round-up rule is on.
 
-## Simulate a purchase
-Click "Simulate a $3.40 card purchase" and verify the vault balance reads "$241.10" and "Round-ups saved so far" reads "1 purchase".
+## Choose a multiplier
+Choose "2× round-up" and verify "Current multiplier" reads "2×".
 
-## Verify the rule persists
-Reload the page without the reset parameter and verify the status still reads "Rule active · round-ups to Holiday Vault" and the switch is on.
+## Verify the rule actually collects a round-up
+Click the link through to the card page, click "Simulate purchase", then return to https://my-testing-repo-main.vercel.app/revolut-clone-app/vault and verify the vault balance reads "$0.80" with a round-up entry from "Metro Grocer".

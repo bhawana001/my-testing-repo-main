@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/revolut/split-bill?reset=true
+url: https://my-testing-repo-main.vercel.app/revolut-clone-app/split?reset=true
 max_steps: 40
-tags: [revolut, consumer-fintech, wizard]
+tags: [revolut, fintech, p2p]
 ---
 
-# Revolute 19.3: Payment split bill
+# Revolat 19.3: Split bill
 
-Catalog objective: split a transaction with a contact (mobile web equivalent).
+Catalog objective: split a transaction with a contact.
 Key assertion: a request is created for half the amount.
 
-## Open the transaction
-Go to https://my-testing-repo-main.vercel.app/revolut/split-bill?reset=true and verify the transaction "Trattoria Roma" for "−$84.00" is shown with a "Split bill with" list of contacts.
+## Open the split panel
+Click the split button on the "Metro Grocer" transaction and verify a panel titled "Split Metro Grocer · $42.15" appears.
 
-## Pick one contact
-Check "Priya Nair" and verify the line "Split 2 ways" reads "$42.00 each".
+## Choose one contact
+Tick "Tom Alvarez" and verify "Split between" reads "2 people (including you)".
 
-## Send the request
-Click "Request $42.00 from 1 person" and verify the message "Requests sent." appears.
+## Verify the share is half
+Verify "Each pays" reads "$21.07".
 
-## Verify the request amount
-Verify the requests list shows "Priya Nair" with "$42.00" (half of $84.00) and the status "Requested".
+## Request the money
+Click "Request money" and verify a green banner titled "Split requested" says "$21.07" was requested from "Tom Alvarez" for Metro Grocer, split 2 ways, and the transaction row now shows a badge reading "Split 2 ways · $21.07 each".
