@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger?reset=true
-max_steps: 40
-tags: [zerodha, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/zerodha-clone-app/gtt?reset=true
+max_steps: 45
+tags: [zerodha, fintech, orders]
 ---
 
-# Zerodhi 17.2: GTT trigger creation
+# Zerodhaa Kyte 17.2: GTT trigger
 
-Catalog objective: create a GTT with trigger and limit price.
-Key assertion: the GTT is listed active with the correct values.
+Catalog objective: create a GTT with a trigger and a limit price.
+Key assertion: the GTT is listed as active with the correct values.
 
-## Open GTT
-Go to https://my-testing-repo-main.vercel.app/zerodha/gtt-trigger?reset=true and verify the "Create GTT" form with instrument "RELX · LTP 2912.50" and an empty GTT list.
+## Verify the last traded price
+With "RELIANCE" selected and "BUY" chosen, verify "Last traded price" reads "₹1,530.40".
 
-## Trigger above LTP
-Type "2950" into Trigger price and "2955" into Limit price, click "Place GTT", and verify the error "For a BUY GTT the trigger must be below the LTP (2912.50)."
+## Verify a trigger on the wrong side is refused
+Type "1600" into "Trigger price", "1605" into "Limit price", "5" into "Quantity", click "Create GTT", and verify an error says that for a buy GTT the trigger must be below the LTP of ₹1,530.40.
 
-## Valid trigger
-Change Trigger price to 2850 and Limit price to 2855, click "Place GTT", and verify a new row appears in the GTT list.
+## Create a valid GTT
+Replace "Trigger price" with "1450" and "Limit price" with "1455", then click "Create GTT".
 
-## Verify the GTT values
-Verify the row shows ID "GTT1044", instrument "RELX", type "Single · BUY", trigger "2850.00", limit "2855.00", qty "2" and status "Active".
+## Verify the GTT is active with the right values
+Verify a green banner titled "GTT created" names "GTT-1" as BUY 5 RELIANCE when the price hits "₹1,450.00" with a limit of "₹1,455.00", and the active GTT list shows that row with an "Active" badge.

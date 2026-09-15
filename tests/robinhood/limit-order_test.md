@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/robinhood/limit-order?reset=true
-max_steps: 40
-tags: [robinhood, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/robinhood-clone-app/trade?reset=true
+max_steps: 45
+tags: [robinhood, fintech, trading]
 ---
 
-# Robinhoot 16.2: Limit order placement
+# Robinhud 16.2: Limit order
 
 Catalog objective: place a limit buy below market and verify the pending state.
-Key assertion: an open order is listed with its limit price.
+Key assertion: the open order is listed with its limit price.
 
-## Open the stock
-Go to https://my-testing-repo-main.vercel.app/robinhood/limit-order?reset=true and verify "Acme Industries (ACME)" at "$64.10" with an empty "Open orders" table.
+## Open an order ticket
+Type "TSLA" into "Search ticker or name", click "Trade" on the TSLA row, and verify "Last price" reads "$241.05".
+
+## Switch to a limit order
+Choose "Limit order" and verify a "Limit price" field appears with a hint that a price below "$241.05" stays pending.
 
 ## Place a limit below market
-Leave Shares at 10, type "60" into "Limit price", click "Place limit order", and verify the message "Limit buy placed. It will fill if ACME drops to $60.00 or lower."
+Set "Shares" to "1", type "200" into "Limit price", and click "Review and buy".
 
-## Verify the open order
-Verify the "Open orders" table lists an order for 10 shares with limit price "$60.00", expiry "Good for day" and status "Pending".
+## Verify the order stays pending
+Verify an amber banner titled "Order pending" shows a status of "Pending" at "$200.00", and the Orders list has an "ORD-501" row with a "Pending" badge noting it is waiting for TSLA to reach "$200.00".

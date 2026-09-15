@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/robinhood/instant-deposit?reset=true
+url: https://my-testing-repo-main.vercel.app/robinhood-clone-app/transfers?reset=true
 max_steps: 40
-tags: [robinhood, consumer-fintech, wizard]
+tags: [robinhood, fintech, funding]
 ---
 
-# Robinhoot 16.4: Instant deposit flow
+# Robinhud 16.4: Instant deposit
 
 Catalog objective: initiate a deposit and verify the instant buying power credit.
 Key assertion: buying power increases by the deposit amount.
 
-## Open deposit
-Go to https://my-testing-repo-main.vercel.app/robinhood/instant-deposit?reset=true and verify "Buying power" in the top bar reads "$250.00" and the "Deposit funds" step shows From "Chaise Checking •••• 4821".
+## Verify the starting buying power
+Verify "Buying power" reads "$250.00" and "Settled cash" reads "$250.00".
 
-## Enter the amount
-Type "500" into Amount, click "Continue", and verify the review step lists "500".
+## Deposit from the bank
+Type "500" into "Amount" and click "Deposit".
 
-## Deposit
-Click "Deposit" and verify "$500.00 available instantly" with the badge "Deposit initiated".
+## Verify the instant credit
+Verify a green banner titled "Deposit initiated" says "$500.00" is instantly available and buying power went from $250.00 to "$750.00".
 
-## Verify buying power
-Verify "Buying power before" reads "$250.00", "Buying power now" reads "$750.00", and the top bar "Buying power" reads "$750.00".
+## Verify the balance and the history
+Verify "Buying power" now reads "$750.00" and the deposit history lists "DEP-501" for "$500.00".

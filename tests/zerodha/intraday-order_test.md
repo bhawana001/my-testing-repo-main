@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/zerodha/intraday-order?reset=true
-max_steps: 40
-tags: [zerodha, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/zerodha-clone-app/orders?reset=true
+max_steps: 45
+tags: [zerodha, fintech, trading]
 ---
 
-# Zerodhi 17.1: Kyte order placement
+# Zerodhaa Kyte 17.1: Intraday order
 
-Catalog objective: place an intraday limit order on a stock in the sandbox.
-Key assertion: the order appears in the orderbook as open.
+Catalog objective: place an intraday limit order on a stock.
+Key assertion: the order appears in the order book as open.
 
-## Open the terminal
-Go to https://my-testing-repo-main.vercel.app/zerodha/intraday-order?reset=true and verify the Marketwatch lists INFX at 1540.00 and the Orders panel says "You haven't placed any orders today".
+## Set the order up
+With "RELIANCE" selected, choose "MIS — Intraday" as the product and "LIMIT" as the order type, set "Quantity" to "10" and "Price" to "1500".
 
-## Open the buy window
-Click the "B" button next to INFX and verify a window "Buy INFX · NSE · LTP 1540.00" with "Intraday MIS" and "LIMIT" selected.
+## Verify the margin benefit of intraday
+Verify "Order value" reads "₹15,000.00" and "Margin required" reads "₹3,000.00", which is a fifth of the value because MIS carries 5x leverage.
 
-## Enter a price outside the circuit
-Set Qty to 5 and Price to 1300, click "Buy", and verify the error "Price outside circuit limits (₹1,386.00 – ₹1,694.00). Order rejected."
+## Place the order
+Click "Buy RELIANCE" and verify a banner titled "Order OPEN" shows a placed price of "₹1,500.00", a status of "OPEN" and an order number of "26092601".
 
-## Enter a valid limit
-Change Price to 1530, click "Buy", and verify the window closes.
-
-## Verify the orderbook
-Verify the Orders table lists BUY INFX, product "MIS", order "LIMIT", qty 5, price "1530.00" with status "OPEN".
+## Verify it sits in the order book as open
+Verify the order book has a row for "26092601" carrying an "OPEN" badge, since the limit of ₹1,500.00 is below the last traded price of ₹1,530.40.

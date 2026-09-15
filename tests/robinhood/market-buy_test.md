@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/robinhood/market-buy?reset=true
-max_steps: 40
-tags: [robinhood, consumer-fintech, custom]
+url: https://my-testing-repo-main.vercel.app/robinhood-clone-app/trade?reset=true
+max_steps: 45
+tags: [robinhood, fintech, trading]
 ---
 
-# Robinhoot 16.1: Market buy order
+# Robinhud 16.1: Market buy
 
-Catalog objective: search a ticker and place a one-share market buy in the paper environment.
-Key assertion: the order is filled and the share count updates.
+Catalog objective: search a ticker and place a one share market buy.
+Key assertion: the order fills and the share count updates.
 
-## Search the ticker
-Go to https://my-testing-repo-main.vercel.app/robinhood/market-buy?reset=true, type "nova" into the search box, and verify a result "NOVA Nova Corp" at "$182.40" appears, with "Buying power" "$2,500.00" in the top bar.
+## Search for the ticker
+Type "NVDA" into "Search ticker or name" and verify a result row for "NVDA" appears.
 
-## Open the stock
-Click the NOVA result and verify the page "Nova Corp (NOVA)" shows "$182.40" and "Shares" "5" in Your position.
+## Open the order ticket
+Click "Trade" on the NVDA row and verify an order ticket titled "Buy NVDA" shows "Last price" of "$178.42".
 
-## Review a 1-share market order
-Leave Shares at 1, click "Review order", and verify the message "You're buying 1 share of NOVA at market price for about $182.40."
+## Place a one share market buy
+Make sure "Market order" is selected, set "Shares" to "1", verify "Estimated cost" reads "$178.42", and click "Review and buy".
 
-## Submit
-Click "Submit buy order" and verify the badge "Order filled" with "Bought 1 share of NOVA at $182.40".
-
-## Verify share count
-Verify "Shares owned" reads "6", the position "Shares" reads "6" and "Buying power" reads "$2,317.60".
+## Verify the fill and the position
+Verify a green banner titled "Order filled" shows a status of "Filled" at "$178.42", then go to https://my-testing-repo-main.vercel.app/robinhood-clone-app/portfolio and verify a "NVDA" position with 1 share is listed.
