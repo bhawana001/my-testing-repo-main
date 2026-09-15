@@ -1,0 +1,18 @@
+{
+  "commit_id": "eb9379b5-63bb-4539-b9bb-4bb27a721f53",
+  "test_id": "611085d1-eda9-4275-8bab-3d637d6fab67",
+  "testcase_id": "01M2D8EKR0NWMYWXMSYC6JBWNG",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "transfer-quote",
+  "executions": [
+    {
+      "execution_id": "378bec9b-f8f8-4b3f-821e-1c004f5344b1",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-14T10:15:03.388Z"
+    }
+  ]
+}

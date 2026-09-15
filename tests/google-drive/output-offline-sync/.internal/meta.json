@@ -1,0 +1,18 @@
+{
+  "commit_id": "667ecedd-d570-4304-bee4-2e8affd62cb1",
+  "test_id": "11499943-25e7-427e-a7e1-b96c57804af2",
+  "testcase_id": "01M2E28HD704PMH2Y84ZWQPRPG",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "offline-sync",
+  "executions": [
+    {
+      "execution_id": "6127d9f6-0a30-48cc-b214-fbb7cd5c5887",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-15T07:07:48.723Z"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "test_id": "6b6a91e8-b5a1-4f9a-a386-25f9f9280fe9",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "realtime-coedit",
+  "commit_id": "17bfdd78-c7dd-4647-b402-bcdb748ade26",
+  "testcase_id": "01M2E21CM3E7Y8KBMCZKRQFCGN",
+  "executions": [
+    {
+      "execution_id": "4acc9883-d666-487f-a4e8-b968bf9617ce",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T18:58:11.783Z"
+    }
+  ]
+}

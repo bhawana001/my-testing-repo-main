@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/ebay/buy-it-now?reset=true
+url: https://my-testing-repo-main.vercel.app/ebay-clone-app?reset=true
 max_steps: 40
-tags: [ebay, e-commerce, checkout]
+tags: [ebay, checkout]
 ---
 
-# eBidz 6.2: Buy It Now checkout
+# eBid 6.2: Buy It Now checkout
 
 Catalog objective: purchase a Buy It Now listing with saved payment.
-Key assertion: the order confirmation shows the correct item and price.
+Key assertion: order confirmation shows the correct item and price.
 
-## Open the listing
-Go to https://my-testing-repo-main.vercel.app/ebay/buy-it-now?reset=true and verify the listing "Vintage Film Camera · 35mm · Fully working" shows a Buy It Now price of "$185.00".
+## Open a Buy It Now listing
+Click "Studio Monitor Headphones" and verify the listing shows a price of "$129.99" and shipping of "Free".
 
-## Buy It Now
-Click the "Buy It Now" button and verify the review page shows the item, the "Subtotal" as "$185.00", "Shipping" as "$12.00" and "Order total" as "$197.00".
+## Confirm the saved payment method
+Verify the buy panel shows "Paying with Visa ending in 4242".
 
-## Confirm with the saved card
-Click "Confirm and pay" and verify the saved card "Visa •••• 4242" is selected.
+## Buy it now
+Click "Buy It Now — $129.99" and verify the page shows "Order confirmed" for "Studio Monitor Headphones" with a total paid of "$129.99".
 
-## Pay
-Click the "Pay $197.00" button and verify "Order placed" is shown.
-
-## Verify the confirmation
-Verify the confirmation shows an Order number starting with "EB-", the item "Vintage Film Camera · 35mm · Fully working" at "$185.00", "Payment" as "Visa •••• 4242" and "Order total" as "$197.00".
+## Confirm the purchase is recorded
+Click "My eBid" and verify the purchases list shows "Studio Monitor Headphones" at "$129.99" paid with "Visa ••••4242".

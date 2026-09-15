@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/shopify/checkout-extension?reset=true
-max_steps: 40
-tags: [shopify, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/shopify-clone-app?reset=true
+max_steps: 45
+tags: [shopify, e-commerce, extension]
 ---
 
-# Shopifly 2.3: Checkout extension render
+# Shoplify 2.3: Checkout extension render
 
 Catalog objective: proceed through checkout and confirm custom fields and the upsell block appear.
 Key assertion: the extension renders without breaking the payment step.
 
-## Open the cart and proceed
-Go to https://my-testing-repo-main.vercel.app/shopify/checkout-extension?reset=true, click "Proceed to checkout", and verify a "Custom fields" card labelled "Checkout extension" is shown with "Gift message (optional)" and "Delivery instructions" fields.
+## Reach the checkout
+Click "Add to cart" on "Enamel Camp Mug", click "View cart", click "Checkout", and verify the checkout page is shown with a "Payment" section.
 
-## Fill the custom fields
-Type "Happy birthday!" into Gift message and "Side door" into Delivery instructions, click "Continue to payment", and verify a "Complete the look" card labelled "Upsell block" offering "Everyday Crew Socks (3-pack)" is shown above the Payment form.
+## Confirm the extension block rendered
+Verify an "Order details" card is shown containing the badge "Checkout extension · Alder Add-ons v1.4" and a custom field labelled "Delivery instructions".
 
-## Add the upsell
-Click the "Add" button in the upsell block and verify the badge "Added" appears and the "Order total" row reads "$30.00" ($18.00 tee + $8.00 socks + $4.00 shipping).
+## Use the custom field
+Type "Leave at the side door" into "Delivery instructions" and verify the field contains "Leave at the side door".
 
-## Pay
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $30.00" button, and verify "Order placed" is shown.
+## Take the upsell
+Click the "Add gift wrapping — $4.50" checkbox and verify the order summary now lists "Gift wrapping × 1" at "$4.50".
 
-## Verify the extension data on the confirmation
-Verify the confirmation lists "Gift message" as "Happy birthday!", "Delivery instructions" as "Side door", and both items "Everyday Cotton Tee" and "Everyday Crew Socks (3-pack)".
+## Confirm payment still works after the extension
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into Expiration, "123" into CVC, click the Pay button, and verify the page shows "Thank you for your order!" with a "Delivery instructions" card reading "Leave at the side door".

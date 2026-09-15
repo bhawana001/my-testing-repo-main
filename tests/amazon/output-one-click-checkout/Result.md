@@ -1,25 +1,22 @@
 ---
 test: ../one-click-checkout_test.md
-status: passed
-started: 2026-09-11T15:45:42.819Z
-duration_s: 308
-session_id: ab80d0e5-a69e-4252-b881-068e4d5c917e
+status: failed
+started: 2026-09-15T09:10:11.407Z
+duration_s: 123
+session_id: f52c8b6e-729e-49e0-9e1d-b7113c294c48
 ---
 
-# Amazonia 1.3: One-click checkout — Result
+# ShopKart 1.3: One-click checkout — Result
 
-## Open the 1-Click page ✓ passed (41s)
-md5: 3751e94f83485524688c797529e5fe1c
-Go to https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true and verify the item "AuraBuds Pro Wireless Earbuds" is listed and the note reads "Product page price: $129.00".
+## Confirm the 1-Click settings are shown ✓ passed (44s)
+md5: 8e161c5cbee8dc6c1cdc4183b0f4d288
+Verify the buy box shows "📍 Home — 418 Maple Street, Austin" and "💳 Visa ending in 4242".
 
-## Check the saved address and payment ✓ passed (30.3s)
-md5: f8933375ca9f709004eef28132dde194
-Verify the summary shows "Ship to: Demo User, 1200 Market St, San Francisco", "Pay with: Visa •••• 4242" and the "Order total" row reads "$129.00".
+## Buy with one click ✗ failed (77.2s)
+md5: d0e061bc216ddffdbba5c975d84cc9aa
+Reason: AP determined agent is stuck — no viable actions remain — bug verdict: Buy Now leaves order submission permanently pending after null-reference exception [application_issue/script_error, confidence 0.98]
+Click "Buy Now" and verify the page shows "Order placed, thank you!" with a heading containing "Order placed".
 
-## Place the order ✓ passed (31.7s)
+## Confirm the order number and charge ✓ passed (—)
 md5: 1ff34c7274c2c8fd6bf9cea9b8f49708
-Click the "Place your order (1-Click)" button and verify the text "Order placed" is shown.
-
-## Verify the confirmation ✓ passed (200.8s)
-md5: 40c40d37cba2fd530142d0f52dc63d90
-Verify an "Order number" starting with "112-" is displayed and the "Order total" on the confirmation reads "$129.00", matching the product page price.
+Verify the confirmation shows an order number starting with "112-" and text reading "Charged" with "Visa ending in 4242".

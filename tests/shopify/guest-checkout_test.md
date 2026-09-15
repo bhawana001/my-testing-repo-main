@@ -1,29 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/shopify/guest-checkout?reset=true
-max_steps: 40
+url: https://my-testing-repo-main.vercel.app/shopify-clone-app?reset=true
+max_steps: 45
 tags: [shopify, e-commerce, checkout]
 ---
 
-# Shopifly 2.1: Storefront guest checkout
+# Shoplify 2.1: Storefront guest checkout
 
-Catalog objective: add a product to cart on the dev store and complete checkout as a guest with a test card.
-Key assertion: the thank-you page shows an order number and the correct total.
+Catalog objective: add a product to cart and complete checkout as a guest with a test card.
+Key assertion: thank-you page shows order number and correct total.
+
+## Add a product to the cart
+Click "Add to cart" on "Heavyweight Cotton Tee" and verify the page shows a confirmation reading "Added Heavyweight Cotton Tee to cart".
 
 ## Open the cart
-Go to https://my-testing-repo-main.vercel.app/shopify/guest-checkout?reset=true and verify the cart contains "Botanical Art Print A3" at "$35.00" and the "Total" row reads "$42.80" ($35.00 + $5.00 shipping + $2.80 tax).
+Click "View cart" and verify the cart lists "Heavyweight Cotton Tee" with a subtotal of "$32.00".
 
 ## Go to checkout
-Click "Proceed to checkout" and verify the "Contact and shipping" form is shown.
+Click "Checkout" and verify the checkout page shows "Guest checkout — no account required" and a "Contact" section.
 
-## Submit the empty form
-Click "Continue to payment" without filling anything and verify the validation message "Enter a valid email address." appears.
-
-## Fill in guest details
-Type "demo@evals.dev" into Email, "Demo" into First name, "User" into Last name, "1200 Market St" into Address, "San Francisco" into City, "94103" into ZIP / Postal code, then click "Continue to payment" and verify the "Payment" card form is shown.
+## Fill in contact and shipping
+Type "guest@example.com" into Email, "Dana Reyes" into "Full name", "9 Pine Lane" into Address, "Austin" into City, and "78701" into ZIP, then verify the order summary shows a Total of "$41.06".
 
 ## Pay with the test card
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, then click the "Pay $42.80" button and verify the text "Order placed" appears.
-
-## Verify the thank-you page
-Verify the heading "Thank you, Demo! Your order is confirmed" is shown with an Order number starting with "SF-" and the "Order total" reads "$42.80".
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into Expiration, "123" into CVC, click the Pay button, and verify the page shows "Thank you for your order!" with order number "#1003" and a total paid of "$41.06".

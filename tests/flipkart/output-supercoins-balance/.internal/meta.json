@@ -1,0 +1,18 @@
+{
+  "test_id": "55931f7f-d4e6-4bf4-8958-56fd84b446c3",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "supercoins-balance",
+  "commit_id": "34f2d9b5-eaef-4fcd-8dfc-bb1b46330ace",
+  "testcase_id": "01M2D4A23Y93JYWZE3WNPPDC1G",
+  "executions": [
+    {
+      "execution_id": "c3ce1b6f-d1af-4862-b4f5-1c20f0fadb0a",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T10:17:28.248Z"
+    }
+  ]
+}

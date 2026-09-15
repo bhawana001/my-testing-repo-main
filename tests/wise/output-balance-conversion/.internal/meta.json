@@ -1,0 +1,18 @@
+{
+  "test_id": "15e7f176-a715-4ba2-90bc-3e1e25ab5b28",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "balance-conversion",
+  "commit_id": "cf27a848-cf63-4034-a4b7-c654cd34436e",
+  "testcase_id": "01M2D8X0BGXV93D0R4GTJR4VHE",
+  "executions": [
+    {
+      "execution_id": "ed7b6017-109c-404c-8dff-e8b938804860",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:38:33.527Z"
+    }
+  ]
+}

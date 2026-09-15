@@ -1,32 +1,29 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true
+url: https://my-testing-repo-main.vercel.app/ebay-clone-app/sell?reset=true
 max_steps: 45
-tags: [ebay, e-commerce, wizard]
+tags: [ebay, seller, listing]
 ---
 
-# eBidz 6.4: Seller listing creation
+# eBid 6.4: Seller listing creation
 
-Catalog objective: create a listing with photos, condition and price, and publish it.
+Catalog objective: create a listing with photos, condition and price, then publish it.
 Key assertion: the listing is live and searchable by title.
 
-## Photos step validation
-Go to https://my-testing-repo-main.vercel.app/ebay/seller-listing?reset=true, click "Continue" on the "Add photos" step without adding photos, and verify "Add at least 2 photos."
+## Confirm required fields are enforced
+Click "Publish listing" without filling anything and verify errors appear reading "Give your listing a title." and "Add at least one photo."
+
+## Fill in the item details
+Type "Handbuilt Mechanical Keyboard" into the listing title, select "Open box" as the Condition, and verify the condition dropdown shows "Open box".
 
 ## Add photos
-Click "+ front.jpg" and "+ back.jpg", and verify both photos are listed.
+Click the "front.jpg" checkbox and the "detail.jpg" checkbox, then verify both are checked.
 
-## Continue to details
-Click "Continue" and verify the "Item details" step is shown.
+## Set the price
+Type "185" into the Price field, type "6.50" into the shipping cost field, and verify the price field contains "185".
 
-## Details
-Type "Mechanical Keyboard · Brown switches" into Title, choose "Used", type "Lightly used, all keys work." into Description, and click "Continue".
+## Publish and confirm it is live
+Click "Publish listing" and verify the page shows "Your listing is live" for "Handbuilt Mechanical Keyboard" with a price of "$185.00", condition "Open box" and "2 uploaded" photos.
 
-## Pricing
-Type "75" into "Buy It Now price (USD)", select "Free standard shipping", click "Continue", and verify the review step lists the title and "75".
-
-## Publish
-Click "List it" and verify "Your listing is live" with the title "Mechanical Keyboard · Brown switches" and price "$75.00".
-
-## Search for it
-Type "mechanical keyboard" into "Search for anything", click "Search", and verify "1 result for “mechanical keyboard”" showing "Mechanical Keyboard · Brown switches · Used" at "$75.00".
+## Confirm it is searchable
+Click "View it in listings" and verify the listings grid includes "Handbuilt Mechanical Keyboard" priced "$185.00".

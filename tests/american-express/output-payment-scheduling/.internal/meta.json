@@ -1,0 +1,18 @@
+{
+  "test_id": "8087c93c-6ec1-4821-a81f-387f70af4c46",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "payment-scheduling",
+  "commit_id": "564ec46b-b36a-4dcc-b8ed-5be85b086718",
+  "testcase_id": "01M2DC3KWQ1593H6Y4XP9EG3T1",
+  "executions": [
+    {
+      "execution_id": "c9848778-d302-4fff-aafb-a6ba62706820",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T12:35:07.575Z"
+    }
+  ]
+}

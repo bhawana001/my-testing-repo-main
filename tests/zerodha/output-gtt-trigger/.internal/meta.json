@@ -1,0 +1,18 @@
+{
+  "test_id": "1f298647-aea7-4aa9-8f55-e69dd8a5b8b8",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "gtt-trigger",
+  "commit_id": "a36147c2-fa2b-4bc4-9a67-d0a617955126",
+  "testcase_id": "01M2D9KMQRECXY8NWM8S3NDWB4",
+  "executions": [
+    {
+      "execution_id": "843d3b0f-b614-4734-9f20-58534e1bae99",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:51:32.056Z"
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true
-max_steps: 30
-tags: [amazon, e-commerce, tracker]
+url: https://my-testing-repo-main.vercel.app/shop-clone-app/orders?reset=true
+max_steps: 40
+tags: [amazon, e-commerce, tracking]
 ---
 
-# Amazonia 1.4: Order tracking
+# ShopKart 1.4: Order tracking
 
-Catalog objective: open recent orders and check the delivery status of the latest order.
-Key assertion: the status timeline renders with a valid date.
+Catalog objective: open recent orders and track a shipment.
+Key assertion: status timeline renders with the current stage.
 
-## Open recent orders
-Go to https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true and verify the heading "Your Orders" is visible with three order cards, the first one placed on "September 12, 2026" containing "AuraBuds Pro Wireless Earbuds".
+## Confirm the order list
+Verify the orders page lists "3 orders" including order "112-8830571-2094318" with status text containing "Arriving Tuesday, September 16".
 
-## Track the latest order
-Click the "Track package" button on the first (latest) order card. Verify the tracking view shows the status badge "Shipped" and the heading "Arriving Tuesday, September 15, 2026".
+## Open tracking for the in-transit order
+Click "Track package" on order "112-8830571-2094318" and verify the detail page shows "Arriving Tuesday, September 16" and "ShopKart Logistics · Tracking ID TBA304991285001".
 
-## Verify the timeline dates
-Verify the timeline lists the steps "Ordered", "Shipped", "Out for delivery" and "Delivered" in that order, that "Ordered" is marked complete, and that the "Shipped" step shows the date "Sunday, September 13, 2026 · 6:40 PM".
+## Confirm the timeline stage
+Verify the timeline lists the steps "Ordered", "Shipped", "Out for delivery" and "Delivered", and that "Shipped" is marked "Current status".

@@ -48,12 +48,16 @@ export default function AdminPage() {
   }
 
   // Converts a draft into a paid order in the orders list (2.4's assertion).
+  // The new order id is computed from the state we already hold, not inside the
+  // updater: a React state updater runs later, so a value assigned inside one is
+  // still null by the time the notice below reads it.
   function markPaid(draftId) {
-    let newId = null;
+    const draft = s.drafts.find((x) => x.id === draftId);
+    if (!draft) return;
+    const newId = nextOrderId(s.counter);
     update((st) => {
       const d = st.drafts.find((x) => x.id === draftId);
       if (!d) return st;
-      newId = nextOrderId(st.counter);
       st.counter += 1;
       st.orders.unshift({
         id: newId, email: d.email, customer: d.customer, total: d.total,

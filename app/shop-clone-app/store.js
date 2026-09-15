@@ -145,27 +145,31 @@ export function nextOrderId(orders) {
   return `112-${String(n).slice(0, 7)}-${String(n * 3).slice(0, 7)}`;
 }
 
-export function placeOrder(update, { items, total, addressId, cardId }) {
-  let placed = null;
+/**
+ * Builds the order from the state the caller already holds, then commits it.
+ * The order is built OUTSIDE the updater on purpose: a React state updater does
+ * not run synchronously, so returning a value assigned inside one hands the
+ * caller null and breaks the navigation that follows.
+ */
+export function placeOrder(account, update, { items, total, addressId, cardId }) {
+  const order = {
+    id: nextOrderId(account.orders),
+    placedAt: "2026-09-15",
+    status: "placed",
+    addressId: addressId || account.addresses.find((a) => a.default).id,
+    cardId: cardId || account.cards.find((c) => c.default).id,
+    carrier: "ShopKart Logistics",
+    trackingId: "TBA" + (305000000000 + account.orders.length * 7).toString().slice(0, 12),
+    eta: "Thursday, September 18",
+    items,
+    total,
+    returnable: false,
+  };
   update((s) => {
-    const order = {
-      id: nextOrderId(s.orders),
-      placedAt: "2026-09-15",
-      status: "placed",
-      addressId: addressId || s.addresses.find((a) => a.default).id,
-      cardId: cardId || s.cards.find((c) => c.default).id,
-      carrier: "ShopKart Logistics",
-      trackingId: "TBA" + (305000000000 + s.orders.length * 7).toString().slice(0, 12),
-      eta: "Thursday, September 18",
-      items,
-      total,
-      returnable: false,
-    };
-    placed = order;
     s.orders.unshift(order);
     return s;
   });
-  return placed;
+  return order;
 }
 
 export const RETURN_REASONS = [
@@ -181,27 +185,29 @@ export const RETURN_METHODS = [
   { id: "mail", label: "Mail it back yourself", detail: "$4.99 shipping deducted from refund" },
 ];
 
-export function createReturn(update, { orderId, reason, method, comment }) {
-  let created = null;
+/** Same rule as placeOrder: build from the caller's state, then commit. */
+export function createReturn(account, update, { orderId, reason, method, comment }) {
+  const order = account.orders.find((o) => o.id === orderId);
+  if (!order) return null;
+  const refund = Number(order.total.toFixed(2)) - (method === "mail" ? 4.99 : 0);
+  const ret = {
+    id: "RMA-" + (48210 + account.returns.length * 13),
+    orderId,
+    reason,
+    method,
+    comment: comment || "",
+    refund: Number(refund.toFixed(2)),
+    status: "Return started",
+    createdAt: "2026-09-15",
+  };
   update((s) => {
-    const order = s.orders.find((o) => o.id === orderId);
-    if (!order) return s;
-    const refund = Number(order.total.toFixed(2)) - (method === "mail" ? 4.99 : 0);
-    const ret = {
-      id: "RMA-" + (48210 + s.returns.length * 13),
-      orderId,
-      reason,
-      method,
-      comment: comment || "",
-      refund: Number(refund.toFixed(2)),
-      status: "Return started",
-      createdAt: "2026-09-15",
-    };
-    created = ret;
+    const o = s.orders.find((x) => x.id === orderId);
+    if (o) {
+      o.returnStatus = "Return started";
+      o.returnable = false;
+    }
     s.returns.unshift(ret);
-    order.returnStatus = "Return started";
-    order.returnable = false;
     return s;
   });
-  return created;
+  return ret;
 }

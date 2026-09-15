@@ -1,0 +1,18 @@
+{
+  "test_id": "7e2017ce-9479-4feb-a11f-6f280b8b6182",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "billing-portal",
+  "commit_id": "017fb769-9de5-4f92-8e9d-fbed92d9c77d",
+  "testcase_id": "01M2D62Z0Y59XRFZMAAR2YVT14",
+  "executions": [
+    {
+      "execution_id": "f22f4e7d-e06a-48c6-9b92-9eb8ee2d76f4",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T10:50:13.802Z"
+    }
+  ]
+}

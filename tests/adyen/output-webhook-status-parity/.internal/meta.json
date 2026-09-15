@@ -1,0 +1,18 @@
+{
+  "test_id": "d53b8619-63a2-4b22-8a78-20b518ea2876",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "webhook-status-parity",
+  "commit_id": "07a72f01-5dc0-4406-b20b-06cf031d4d31",
+  "testcase_id": "01M2D7T0S9291GCYNEKT2T9Z1J",
+  "executions": [
+    {
+      "execution_id": "3a173b19-748e-4add-9a87-c6a7a3e2461a",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:19:46.502Z"
+    }
+  ]
+}

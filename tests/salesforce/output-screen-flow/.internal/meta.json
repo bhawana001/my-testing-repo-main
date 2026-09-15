@@ -1,0 +1,18 @@
+{
+  "test_id": "04c42762-4bd8-4b46-9b60-ab2444453055",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "screen-flow",
+  "commit_id": "c7bffdf1-d97b-4137-8bf1-b7b0f1f16b6e",
+  "testcase_id": "01M2DDXTWKS760P118KXEDGYCH",
+  "executions": [
+    {
+      "execution_id": "ad16adf1-0e3e-4725-90cc-b53d470af445",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:07:37.812Z"
+    }
+  ]
+}

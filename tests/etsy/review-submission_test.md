@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true
+url: https://my-testing-repo-main.vercel.app/etsy-clone-app/orders?reset=true
 max_steps: 45
-tags: [etsy, e-commerce, feed]
+tags: [etsy, marketplace, reviews]
 ---
 
-# Etsily 5.4: Review submission
+# Etsi 5.4: Review submission
 
 Catalog objective: leave a review with a photo on a delivered order.
 Key assertion: the review appears under the listing.
 
+## Confirm a delivered order exists
+Verify the orders page shows order "ET-4471" with status "Delivered August 27, 2026" containing "Hand-thrown Speckled Mug".
+
 ## Open the review form
-Go to https://my-testing-repo-main.vercel.app/etsy/review-submission?reset=true, click "Leave a review" next to "Custom Name Ceramic Mug", and verify star buttons and a review text box.
+Click "Leave a review" and verify a review form appears with a Rating dropdown and a "Your review" field.
 
-## Submit empty
-Click "Post review" and verify "Choose a star rating."
+## Confirm the review text is required
+Click "Post review" without entering text and verify an error appears reading "Write a few words about the item."
 
-## Write the review
-Click the 5th star, type "Perfect gift, the name print is crisp." into the review box, click "+ Add sample photo", and verify "📷 mug-photo.jpg attached".
+## Write the review and attach a photo
+Select "★★★★★ (5)" as the Rating, type "Beautiful glaze and it holds heat well." into "Your review", select "mug-on-shelf.jpg" as the photo, and verify the photo dropdown shows "mug-on-shelf.jpg".
 
-## Post
-Click "Post review" and verify the listing's Reviews section opens.
-
-## Verify under the listing
-Verify the top review shows 5 stars, "Perfect gift, the name print is crisp.", a photo thumbnail, and "Demo U.".
+## Post the review
+Click "Post review" and verify the page shows "Review posted" and a review under the listing reading "Beautiful glaze and it holds heat well." with a photo badge "📷 mug-on-shelf.jpg".

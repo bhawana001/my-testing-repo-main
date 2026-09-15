@@ -1,0 +1,18 @@
+{
+  "test_id": "a3139fe8-d381-48f3-9f26-cb32d893436d",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "invoice-pay",
+  "commit_id": "025aaee2-7e3c-40b7-9d96-bfc5f7623a81",
+  "testcase_id": "01M2D74WVE0MM4NC56CZJY9K3M",
+  "executions": [
+    {
+      "execution_id": "74a4e5a1-6d43-44aa-84ce-c2add5b208ab",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:09:16.689Z"
+    }
+  ]
+}

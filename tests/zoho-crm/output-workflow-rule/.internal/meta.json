@@ -1,0 +1,18 @@
+{
+  "test_id": "3a0826f9-0de1-449b-950b-c52533936ad9",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "workflow-rule",
+  "commit_id": "630948f5-e0d4-4a1e-8ae8-c35a4b98be57",
+  "testcase_id": "01M2DFPRATHEECP034M4B2DHSN",
+  "executions": [
+    {
+      "execution_id": "923949ec-c8f6-4658-96c3-b84be63c0784",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:37:32.041Z"
+    }
+  ]
+}

@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true
-max_steps: 40
-tags: [walmart, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/walmart-clone-app?reset=true
+max_steps: 45
+tags: [walmart, membership, modal]
 ---
 
-# Walmartly 4.3: Membership upsell
+# Wallmark 4.3: Membership upsell
 
-Catalog objective: trigger the Walmartly+ banner during checkout and open the signup modal.
+Catalog objective: trigger the Wallmark+ banner during checkout and open the signup modal.
 Key assertion: plan pricing renders and the modal closes cleanly.
 
-## Open the cart
-Go to https://my-testing-repo-main.vercel.app/walmart/membership-upsell?reset=true and verify a yellow banner "Walmartly+ members get free delivery on this order" is shown.
+## Add an item and open checkout
+Click "Add to cart" on "Large Eggs, 12 ct", click "Continue to checkout", and verify the checkout page shows a "Pickup time" section.
 
-## Go to delivery
-Click "Proceed to checkout" and verify the delivery step with a "Continue to payment" button is shown.
+## Trigger the upsell with a paid express slot
+Click "Tomorrow, 12pm – 1pm · Express" and verify a dialog appears titled "Save on this order with Wallmark+".
 
-## Go to payment
-Click "Continue to payment" and verify the Payment card form and the "Try Walmartly+ free" banner button are shown.
+## Confirm plan pricing renders
+Verify the dialog shows "Annual — $98.00/year" and "Monthly — $12.95/month".
 
-## Open the signup modal
-Click the "Try Walmartly+ free" button and verify a modal titled "Choose your Walmartly+ plan" opens.
-
-## Verify plan pricing
-Verify the modal lists a "Monthly" plan at "$12.95/mo" and an "Annual" plan at "$98/yr".
-
-## Close the modal
-Click "No thanks" and verify the modal is no longer visible and the "Payment" card form is still shown with the Pay button enabled.
+## Close the modal cleanly
+Click "No thanks" and verify the dialog is no longer shown and the checkout page still shows the "Order summary" with a "Place order" button.

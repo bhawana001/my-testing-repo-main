@@ -1,23 +1,20 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true
+url: https://my-testing-repo-main.vercel.app/shop-clone-app/dp/sku_headset?reset=true
 max_steps: 40
 tags: [amazon, e-commerce, checkout]
 ---
 
-# Amazonia 1.3: One-click checkout
+# ShopKart 1.3: One-click checkout
 
-Catalog objective: buy an item with saved address and payment, reach order confirmation.
-Key assertion: an order number is shown and the total matches the product page price.
+Catalog objective: buy an item with saved payment details in one click.
+Key assertion: order number is shown without entering card details.
 
-## Open the 1-Click page
-Go to https://my-testing-repo-main.vercel.app/amazon/one-click-checkout?reset=true and verify the item "AuraBuds Pro Wireless Earbuds" is listed and the note reads "Product page price: $129.00".
+## Confirm the 1-Click settings are shown
+Verify the buy box shows "📍 Home — 418 Maple Street, Austin" and "💳 Visa ending in 4242".
 
-## Check the saved address and payment
-Verify the summary shows "Ship to: Demo User, 1200 Market St, San Francisco", "Pay with: Visa •••• 4242" and the "Order total" row reads "$129.00".
+## Buy with one click
+Click "Buy Now" and verify the page shows "Order placed, thank you!" with a heading containing "Order placed".
 
-## Place the order
-Click the "Place your order (1-Click)" button and verify the text "Order placed" is shown.
-
-## Verify the confirmation
-Verify an "Order number" starting with "112-" is displayed and the "Order total" on the confirmation reads "$129.00", matching the product page price.
+## Confirm the order number and charge
+Verify the confirmation shows an order number starting with "112-" and text reading "Charged" with "Visa ending in 4242".

@@ -1,0 +1,18 @@
+{
+  "test_id": "485b7142-6b13-4f32-bf41-f86638e38c46",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "kanban-drag",
+  "commit_id": "7fea583c-39d4-438b-8cd8-7396039ec02f",
+  "testcase_id": "01M2DVTJEX1VKJ8PDC0JCHC99A",
+  "executions": [
+    {
+      "execution_id": "87fd2056-684a-4b19-931c-3ece331a4bf5",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T17:09:21.929Z"
+    }
+  ]
+}

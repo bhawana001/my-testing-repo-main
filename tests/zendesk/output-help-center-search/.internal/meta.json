@@ -1,0 +1,18 @@
+{
+  "test_id": "16703c01-a0a8-413e-9fe9-1333f0670232",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "help-center-search",
+  "commit_id": "4fba08e7-2314-4443-8567-20db667d806d",
+  "testcase_id": "01M2DETSDV1BFWFW4HK1ASPTF8",
+  "executions": [
+    {
+      "execution_id": "e92c6a75-3ba2-48ad-8c21-4e2de1a0f86c",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:22:18.005Z"
+    }
+  ]
+}

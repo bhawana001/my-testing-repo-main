@@ -1,29 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/amazon/return-initiation?reset=true
+url: https://my-testing-repo-main.vercel.app/shop-clone-app/orders?reset=true
 max_steps: 45
-tags: [amazon, e-commerce, wizard]
+tags: [amazon, e-commerce, returns]
 ---
 
-# Amazonia 1.5: Return initiation
+# ShopKart 1.5: Return initiation
 
-Catalog objective: start a return on a delivered item, pick a reason, get the drop-off label step.
-Key assertion: the return confirmation and refund estimate are shown.
+Catalog objective: start a return on a delivered order.
+Key assertion: return confirmation with a return authorization number.
 
-## Choose the item
-Go to https://my-testing-repo-main.vercel.app/amazon/return-initiation?reset=true, choose "Everyday Cotton Tee (M, Black)", click "Continue", and verify the step "Why are you returning this?"
+## Open the delivered order
+Click "Return or replace items" on order "112-4419602-7831456" and verify the order detail page shows "Delivered Friday, September 5".
 
-## Reason needing comments
-Select "Item defective or doesn't work", click "Continue", and verify "Please describe the problem."
+## Start the return
+Click "Return or replace items" in the Returns section and verify a reason dropdown labelled "Why are you returning this?" is shown.
 
-## Add comments
-Type "Seam split after one wash." into Comments, click "Continue", and verify the step "How would you like your refund?"
+## Choose a reason and method
+Select "Item arrived damaged" as the reason, click "Schedule a pickup", and verify "Schedule a pickup" is selected.
 
-## Refund and drop-off
-Choose "Original payment · Visa •••• 4242", click "Continue", choose "Drop off at Parcel Point, Market St", click "Continue", and verify the "Confirm your return" review step.
-
-## Confirm
-Click "Confirm return" and verify "Your return is confirmed" with Return ID "RMA-D4471".
-
-## Verify refund estimate and label step
-Verify "Refund estimate" reads "$18.00 to Visa •••• 4242", the next step reads "Next step: Drop off at Parcel Point, Market St", and a return QR code is shown.
+## Submit the return
+Click "Submit return" and verify the page shows "Return started" with a return authorization starting with "RMA-" and a refund line containing "$86.39".

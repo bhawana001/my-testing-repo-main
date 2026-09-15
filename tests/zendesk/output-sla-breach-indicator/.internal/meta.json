@@ -1,0 +1,18 @@
+{
+  "commit_id": "25fa5d1d-b0ac-4eb6-aa32-a7215f241004",
+  "test_id": "de7a90b4-3a72-4507-8158-0c5b5acf7363",
+  "testcase_id": "01M2DEY3PAG02RGPJDRN8QH6FP",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "sla-breach-indicator",
+  "executions": [
+    {
+      "execution_id": "f375bace-8ded-44f8-9262-7ca4f5b0c873",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-15T06:49:14.309Z"
+    }
+  ]
+}

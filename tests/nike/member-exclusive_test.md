@@ -1,8 +1,8 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/nike/member-exclusive?reset=true
-max_steps: 40
-tags: [nike, e-commerce, auth]
+url: https://my-testing-repo-main.vercel.app/nike-clone-app?reset=true
+max_steps: 45
+tags: [nike, membership, gating]
 ---
 
 # Nyke 8.2: Member exclusive access
@@ -10,17 +10,14 @@ tags: [nike, e-commerce, auth]
 Catalog objective: log in as a member and open a member-only product.
 Key assertion: the product is accessible and the buy button is enabled.
 
-## Open as a guest
-Go to https://my-testing-repo-main.vercel.app/nike/member-exclusive?reset=true and verify the product "Stride Runner 3 · Member Edition" shows the notice "This product is only available to Nyke Members" and the "Members only" button is disabled.
+## Confirm the product is gated when signed out
+Click "Nyke Flyknit Elite — Member Exclusive" and verify the page shows "Members only" and a "Sign in to unlock" button instead of sizes.
 
-## Sign in
-Click "Sign in to unlock", type "demo@evals.dev" into Email and "Demo123!" into Password, click "Sign in", and verify the top bar shows the badge "Member · Demo".
+## Sign in as a member
+Click "Sign in to unlock", type "priya.nair@example.com" into Email, type "member2026" into Password, click "Sign in", and verify a welcome confirmation appears.
 
-## Verify access
-Verify the members-only notice is gone, size chips "US 8", "US 9" and "US 10" are shown, and the button now reads "Add to Bag".
+## Confirm the product unlocked
+Verify the product page now shows a size grid and a "📏 Size guide" button rather than the members-only notice.
 
-## Choose a size
-Click "US 9" and verify the "Add to Bag" button is enabled.
-
-## Add to bag
-Click "Add to Bag" and verify the message "Added Stride Runner 3 · Member Edition (US 9) to your bag." appears.
+## Confirm it is buyable
+Click size "US 10" and verify the "Add to Bag" button is enabled and a badge reads "Selected: US 10".

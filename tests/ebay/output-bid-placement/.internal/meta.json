@@ -1,0 +1,18 @@
+{
+  "test_id": "81fa4398-918a-4609-9fa2-080c4c9404fa",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "bid-placement",
+  "commit_id": "d81f46f4-eff9-47c4-a1e0-a174d9319550",
+  "testcase_id": "01M2D4V5ZHX6F2VDNAVE0BG923",
+  "executions": [
+    {
+      "execution_id": "c23f6e7c-ffdf-4157-b89b-a03df185a9bf",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T10:28:15.521Z"
+    }
+  ]
+}

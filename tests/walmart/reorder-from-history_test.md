@@ -1,20 +1,20 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/walmart/reorder-from-history?reset=true
+url: https://my-testing-repo-main.vercel.app/walmart-clone-app/orders?reset=true
 max_steps: 40
-tags: [walmart, e-commerce, crud]
+tags: [walmart, reorder]
 ---
 
-# Walmartly 4.4: Reorder from history
+# Wallmark 4.4: Reorder from history
 
 Catalog objective: reorder a past purchase in two clicks from order history.
 Key assertion: the cart is prefilled with the previous items.
 
-## Open purchase history
-Go to https://my-testing-repo-main.vercel.app/walmart/reorder-from-history?reset=true and verify the heading "Purchase history" is visible with order "WM-104466" listing "2× Organic Whole Milk 1L, 1× Bananas (bunch), 2× Sourdough Loaf" and the cart count in the top bar shows 0.
+## Confirm the purchase history
+Verify the history shows order "W-2208145" with status "Picked up" and a total of "$24.07".
 
-## Reorder
-Click the "Reorder" button on order WM-104466 and verify the banner "Cart prefilled from order WM-104466. Review and check out." is shown.
+## Reorder the past purchase
+Click "Reorder (3 items)" on order "W-2208145" and verify the storefront cart shows "Whole Milk, 1 gal", "Honey Wheat Bread" and "Large Eggs, 12 ct".
 
-## Verify the prefilled cart
-Verify the cart lists "Organic Whole Milk 1L" with quantity 2, "Bananas (bunch)" with quantity 1, and "Sourdough Loaf" with quantity 2, and the cart count in the top bar shows 5.
+## Confirm the quantities came across
+Verify the cart shows a quantity of "2" for "Whole Milk, 1 gal" and "3" for "Large Eggs, 12 ct", with a subtotal of "$19.12".

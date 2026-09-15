@@ -2,24 +2,24 @@
   "test_id": "8424829e-b060-494a-87da-2dc8ef54a321",
   "version": "v4",
   "auto_heal_version": "AH2",
-  "session_id": "dba32e68-44e1-4096-898c-6fced80bbc2d",
+  "session_id": "ff67f152-a685-4b80-92b4-a4f2e66add74",
   "org_id": "3034585",
   "user_id": "3183182",
   "url": "https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true",
-  "start_timestamp": "2026-09-12T07:31:28.208Z",
-  "end_timestamp": "2026-09-12T07:34:34.744Z",
-  "status": "error",
-  "commit_id": "dba32e68-44e1-4096-898c-6fced80bbc2d",
+  "start_timestamp": "2026-09-13T12:11:43.563Z",
+  "end_timestamp": "2026-09-13T12:12:58.030Z",
+  "status": "success",
+  "commit_id": "ff67f152-a685-4b80-92b4-a4f2e66add74",
   "instructions": [
     {
       "content_type": "generative_block",
-      "instruction_id": "generative_block_ccc454bb054c43a3a90ce0a86cd7be1e",
-      "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+      "instruction_id": "generative_block_bbc45ab047024054b5742506f44a5a4d",
+      "generative_id": "bbc45ab047024054b5742506f44a5a4d",
       "objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
       "status": "success",
       "children": [
         {
-          "instruction_id": "998db0ea-15d1-40bb-afba-5c92f3af20ae",
+          "instruction_id": "f9c80f88-e1e0-4a47-b0a9-b96963031854",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Navigate to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true",
@@ -31,11 +31,11 @@
           "operations": [
             {
               "operation_id": "4058fb17-5000-4d12-920a-479299cebfe4",
-              "instruction_id": "998db0ea-15d1-40bb-afba-5c92f3af20ae",
+              "instruction_id": "f9c80f88-e1e0-4a47-b0a9-b96963031854",
               "instruction": "Navigate to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true",
               "intent": "Navigate to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true",
-              "operation_start": "2026-09-12T07:31:35.032595+00:00",
-              "operation_end": "2026-09-12T07:31:35.746Z",
+              "operation_start": "2026-09-13T12:11:47.245023+00:00",
+              "operation_end": "2026-09-13T12:11:47.930Z",
               "status": "success",
               "command": "OPEN",
               "name": "",
@@ -121,6 +121,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -135,6 +137,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -149,8 +155,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:31:35.032595+00:00",
-          "end_timestamp": "2026-09-12T07:31:35.746Z",
+          "start_timestamp": "2026-09-13T12:11:47.245023+00:00",
+          "end_timestamp": "2026-09-13T12:11:47.930Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -176,7 +182,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -188,7 +194,7 @@
         },
         {
           "content_type": "until_block",
-          "instruction_id": "until_8a6b04f7",
+          "instruction_id": "until_e8139598",
           "condition": "x",
           "max_retries": 10,
           "settle_ms": 500,
@@ -196,7 +202,7 @@
           "condition_met": true,
           "children": [
             {
-              "instruction_id": "2a7da3d2-e5d5-4f95-9758-e2ea5d84ce4e",
+              "instruction_id": "69c39727-5e5a-4a85-a2f3-23e6abb63fc9",
               "instruction_class": "driver_action",
               "module_id": "",
               "instruction": "Entering the registration number",
@@ -208,11 +214,11 @@
               "operations": [
                 {
                   "operation_id": "f5a6de7a-df73-44ee-bf73-8a8d371dad06",
-                  "instruction_id": "2a7da3d2-e5d5-4f95-9758-e2ea5d84ce4e",
+                  "instruction_id": "69c39727-5e5a-4a85-a2f3-23e6abb63fc9",
                   "instruction": "Entering the registration number",
                   "intent": "Entering the registration number",
-                  "operation_start": "2026-09-12T07:32:15.351301+00:00",
-                  "operation_end": "2026-09-12T07:32:47.391Z",
+                  "operation_start": "2026-09-13T12:12:18.232483+00:00",
+                  "operation_end": "2026-09-13T12:12:49.162Z",
                   "status": "success",
                   "command": "SCROLL_PIXELS",
                   "name": "",
@@ -305,6 +311,8 @@
                   "network_throttle": {},
                   "is_mobile_offline": false,
                   "autoheal": false,
+                  "reprobe": false,
+                  "click_modifier": null,
                   "db_query": "",
                   "db_details": {},
                   "db_query_decoded": "",
@@ -319,6 +327,10 @@
                   "result_type": "",
                   "result_hint": "",
                   "drag_offset": {},
+                  "drag_displacement": {},
+                  "hold_duration_ms": null,
+                  "move_duration_ms": null,
+                  "hold_at_destination_ms": null,
                   "start_coordinates": {},
                   "end_coordinates": {},
                   "element_rect": null,
@@ -333,8 +345,8 @@
                 }
               ],
               "status": "success",
-              "start_timestamp": "2026-09-12T07:32:15.351301+00:00",
-              "end_timestamp": "2026-09-12T07:32:47.391Z",
+              "start_timestamp": "2026-09-13T12:12:18.232483+00:00",
+              "end_timestamp": "2026-09-13T12:12:49.162Z",
               "type": "agent_generated",
               "tags": [],
               "html_paths": [],
@@ -377,7 +389,7 @@
           "status": "success"
         },
         {
-          "instruction_id": "f8c09ad1-887a-4cca-8159-ca84cf7f2fd9",
+          "instruction_id": "4350c5a4-14b0-4a46-9d67-8141d30a6b44",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Selecting bike make and model in the selector",
@@ -389,11 +401,11 @@
           "operations": [
             {
               "operation_id": "0d24ca2a-980e-4472-be6c-9d2ea86ca85d",
-              "instruction_id": "f8c09ad1-887a-4cca-8159-ca84cf7f2fd9",
+              "instruction_id": "4350c5a4-14b0-4a46-9d67-8141d30a6b44",
               "instruction": "Selecting bike make and model in the selector",
               "intent": "Selecting bike make and model in the selector",
-              "operation_start": "2026-09-12T07:32:23.023024+00:00",
-              "operation_end": "2026-09-12T07:32:23.029Z",
+              "operation_start": "2026-09-13T12:12:18.299457+00:00",
+              "operation_end": "2026-09-13T12:12:18.312Z",
               "status": "success",
               "command": "SELECT",
               "name": "",
@@ -486,6 +498,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -500,6 +514,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -532,8 +550,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:23.023024+00:00",
-          "end_timestamp": "2026-09-12T07:32:23.029Z",
+          "start_timestamp": "2026-09-13T12:12:18.299457+00:00",
+          "end_timestamp": "2026-09-13T12:12:18.312Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -559,7 +577,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -570,7 +588,7 @@
           "reasoning": "PRIMARY: bike make and model selector; role=combobox; text=\"Make and model\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "5a58f14a-2aba-43ab-b749-f83313cce85d",
+          "instruction_id": "0f14e8ad-c208-42c7-a3dc-2a5f689e86d0",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Entering registration number 123",
@@ -582,11 +600,11 @@
           "operations": [
             {
               "operation_id": "f200bd57-20ad-4399-974b-a61ec139b554",
-              "instruction_id": "5a58f14a-2aba-43ab-b749-f83313cce85d",
+              "instruction_id": "0f14e8ad-c208-42c7-a3dc-2a5f689e86d0",
               "instruction": "Entering registration number 123",
               "intent": "Entering registration number 123",
-              "operation_start": "2026-09-12T07:32:30.510737+00:00",
-              "operation_end": "2026-09-12T07:32:30.544Z",
+              "operation_start": "2026-09-13T12:12:18.419629+00:00",
+              "operation_end": "2026-09-13T12:12:18.471Z",
               "status": "success",
               "command": "TYPE",
               "name": "",
@@ -679,6 +697,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -693,6 +713,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -725,8 +749,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:30.510737+00:00",
-          "end_timestamp": "2026-09-12T07:32:30.544Z",
+          "start_timestamp": "2026-09-13T12:12:18.419629+00:00",
+          "end_timestamp": "2026-09-13T12:12:18.471Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -752,7 +776,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -763,7 +787,7 @@
           "reasoning": "PRIMARY: Registration number input; role=textbox; text=\"Registration number\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "9a865822-d8b0-4514-8e93-13cc137ab3c7",
+          "instruction_id": "55e5426d-710b-4b36-9c22-ccaacdc16a8b",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Selecting registration year 2022",
@@ -775,11 +799,11 @@
           "operations": [
             {
               "operation_id": "25c35b58-5d65-4860-9a94-3b43f30d9fae",
-              "instruction_id": "9a865822-d8b0-4514-8e93-13cc137ab3c7",
+              "instruction_id": "55e5426d-710b-4b36-9c22-ccaacdc16a8b",
               "instruction": "Selecting registration year 2022",
               "intent": "Selecting registration year 2022",
-              "operation_start": "2026-09-12T07:32:35.602785+00:00",
-              "operation_end": "2026-09-12T07:32:35.607Z",
+              "operation_start": "2026-09-13T12:12:18.509782+00:00",
+              "operation_end": "2026-09-13T12:12:18.518Z",
               "status": "success",
               "command": "SELECT",
               "name": "",
@@ -872,6 +896,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -886,6 +912,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -918,8 +948,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:35.602785+00:00",
-          "end_timestamp": "2026-09-12T07:32:35.607Z",
+          "start_timestamp": "2026-09-13T12:12:18.509782+00:00",
+          "end_timestamp": "2026-09-13T12:12:18.518Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -945,7 +975,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -956,7 +986,7 @@
           "reasoning": "PRIMARY: registration year selector; role=combobox; text=\"Registration year\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "be3b46e0-b431-4746-b78f-affe6f34b9e1",
+          "instruction_id": "b9c4412e-a844-4023-848a-5f51db01e60f",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Clicking Continue button",
@@ -968,11 +998,11 @@
           "operations": [
             {
               "operation_id": "1c6a7ba6-2691-4f25-88c5-1d053eaa2763",
-              "instruction_id": "be3b46e0-b431-4746-b78f-affe6f34b9e1",
+              "instruction_id": "b9c4412e-a844-4023-848a-5f51db01e60f",
               "instruction": "Clicking Continue button",
               "intent": "Clicking Continue button",
-              "operation_start": "2026-09-12T07:32:41.719923+00:00",
-              "operation_end": "2026-09-12T07:32:41.739Z",
+              "operation_start": "2026-09-13T12:12:18.611376+00:00",
+              "operation_end": "2026-09-13T12:12:18.637Z",
               "status": "success",
               "command": "CLICK",
               "name": "",
@@ -1065,6 +1095,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -1079,6 +1111,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -1111,8 +1147,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:41.719923+00:00",
-          "end_timestamp": "2026-09-12T07:32:41.739Z",
+          "start_timestamp": "2026-09-13T12:12:18.611376+00:00",
+          "end_timestamp": "2026-09-13T12:12:18.637Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -1138,7 +1174,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -1149,7 +1185,7 @@
           "reasoning": "PRIMARY: Continue button; role=button; text=\"Continue\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "e3ebf2ab-fbd3-43cf-89d9-625214a4f0a0",
+          "instruction_id": "f4b52096-ef06-4854-ac39-8c2a4dbcbb30",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Checking whether the registration guidance message is present",
@@ -1161,11 +1197,11 @@
           "operations": [
             {
               "operation_id": "ed7119f4-7b44-40dd-a5dd-1ac95db65484",
-              "instruction_id": "e3ebf2ab-fbd3-43cf-89d9-625214a4f0a0",
+              "instruction_id": "f4b52096-ef06-4854-ac39-8c2a4dbcbb30",
               "instruction": "Checking whether the registration guidance message is present",
               "intent": "Checking whether the registration guidance message is present",
-              "operation_start": "2026-09-12T07:32:52.494970+00:00",
-              "operation_end": "",
+              "operation_start": "2026-09-13T12:12:19.210180+00:00",
+              "operation_end": "2026-09-13T12:12:19.222Z",
               "status": "success",
               "command": "TEXTUAL_ANALYZER",
               "name": "",
@@ -1251,6 +1287,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -1265,6 +1303,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -1281,8 +1323,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:52.494970+00:00",
-          "end_timestamp": "",
+          "start_timestamp": "2026-09-13T12:12:19.210180+00:00",
+          "end_timestamp": "2026-09-13T12:12:19.222Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -1308,7 +1350,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -1319,7 +1361,7 @@
           "reasoning": "whether the valid registration guidance message is shown"
         },
         {
-          "instruction_id": "3e5a7add-42a1-4a15-813f-dbbb9393b04d",
+          "instruction_id": "bfbfc0b7-d93b-4f30-89ed-75fedbfb0dcd",
           "instruction_class": "non_driver_action",
           "module_id": "",
           "instruction": "Assertion check",
@@ -1377,11 +1419,11 @@
           "operations": [
             {
               "operation_id": "cf440048-c155-4f0b-a923-bb2726a040c2",
-              "instruction_id": "3e5a7add-42a1-4a15-813f-dbbb9393b04d",
+              "instruction_id": "bfbfc0b7-d93b-4f30-89ed-75fedbfb0dcd",
               "instruction": "Assertion check",
               "intent": "Assertion check",
-              "operation_start": "2026-09-12T07:32:53.069464+00:00",
-              "operation_end": "",
+              "operation_start": "2026-09-13T12:12:19.255139+00:00",
+              "operation_end": "2026-09-13T12:12:19.255Z",
               "status": "success",
               "command": "ASSERTION",
               "name": "",
@@ -1411,7 +1453,7 @@
               "navigation_direction": "",
               "tagified_image_url": "",
               "query_variable_name": "",
-              "query_variable_value": "",
+              "query_variable_value": "{'status': 'passed', 'composite_operator': 'and', 'sub_results': [{'description': 'The message \"Enter a valid registration like KA01AB1234.\" is shown.', 'passed': True, 'operator': 'equals', 'transforms': ['strip'], 'expected': 'true', 'extracted_value': 'true'}]}",
               "query_variable_type": "",
               "expected_value": "",
               "queried_value": "",
@@ -1521,12 +1563,29 @@
                 "is_final": true,
                 "verification": "the page shows the message \"Enter a valid registration like KA01AB1234.\"",
                 "error_message": null,
-                "duration_ms": 0
+                "duration_ms": 0,
+                "sub_checks": [
+                  {
+                    "description": "The message \"Enter a valid registration like KA01AB1234.\" is shown.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [],
+                    "json_path": null,
+                    "extracted_value": "{{valid_registration_message_shown}}",
+                    "store_key": "valid_registration_message_shown",
+                    "variable_refs": {
+                      "{{valid_registration_message_shown}}": "true"
+                    },
+                    "expected_value": "true"
+                  }
+                ]
               },
               "assertion_tree_simplified": {},
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -1541,6 +1600,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -1555,8 +1618,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:32:53.069464+00:00",
-          "end_timestamp": "",
+          "start_timestamp": "2026-09-13T12:12:19.255139+00:00",
+          "end_timestamp": "2026-09-13T12:12:19.255Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -1582,7 +1645,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "ccc454bb054c43a3a90ce0a86cd7be1e",
+          "generative_id": "bbc45ab047024054b5742506f44a5a4d",
           "plan_id": "",
           "generative_objective": "Go to https://my-testing-repo-main.vercel.app/phonepe/bike-insurance-quote?reset=true, type \"123\" into \"Registration number\", select \"Honda-ish Activa 125\" and \"2022\", click \"Continue\", and verify the message \"Enter a valid registration like KA01AB1234.\" is shown.",
           "error_message": "",
@@ -1595,23 +1658,20 @@
       ],
       "error_message": null,
       "error_code": null,
-      "result_code": null,
+      "result_code": 100,
       "bifurcation_context": [],
-      "approach_reason": [
-        "Entered registration number \"123\", selected \"Honda-ish Activa 125\" and model year \"2022\", then clicked Continue.",
-        "The registration was rejected as invalid, and the page displayed: \"Enter a valid registration like KA01AB1234.\""
-      ],
+      "approach_reason": [],
       "one_liner": null
     },
     {
       "content_type": "generative_block",
-      "instruction_id": "generative_block_b2af2a1c92b14d1dae4dd5c953545b46",
-      "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+      "instruction_id": "generative_block_01228faef6af414794b75c8b0e38df39",
+      "generative_id": "01228faef6af414794b75c8b0e38df39",
       "objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
       "status": "success",
       "children": [
         {
-          "instruction_id": "25143bbf-caf0-464e-8678-68b349b98913",
+          "instruction_id": "173a2667-5157-4985-ad24-53d977b8f394",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Typing the registration number into the input field",
@@ -1623,11 +1683,11 @@
           "operations": [
             {
               "operation_id": "9388a492-afc0-4d67-bed6-f64a0cf74d3f",
-              "instruction_id": "25143bbf-caf0-464e-8678-68b349b98913",
+              "instruction_id": "173a2667-5157-4985-ad24-53d977b8f394",
               "instruction": "Typing the registration number into the input field",
               "intent": "Typing the registration number into the input field",
-              "operation_start": "2026-09-12T07:33:04.572324+00:00",
-              "operation_end": "2026-09-12T07:33:04.586Z",
+              "operation_start": "2026-09-13T12:12:19.352695+00:00",
+              "operation_end": "2026-09-13T12:12:19.402Z",
               "status": "success",
               "command": "TYPE",
               "name": "",
@@ -1720,6 +1780,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -1734,6 +1796,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -1766,8 +1832,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:04.572324+00:00",
-          "end_timestamp": "2026-09-12T07:33:04.586Z",
+          "start_timestamp": "2026-09-13T12:12:19.352695+00:00",
+          "end_timestamp": "2026-09-13T12:12:19.402Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -1793,7 +1859,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+          "generative_id": "01228faef6af414794b75c8b0e38df39",
           "plan_id": "",
           "generative_objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
           "error_message": "",
@@ -1804,7 +1870,7 @@
           "reasoning": "PRIMARY: registration number input; role=textbox; text=\"Registration number\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "fbde7930-7e85-4f6b-970f-d5ecfc7f2cdb",
+          "instruction_id": "cf91951b-4ee6-49f2-9835-a4b831e94bff",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Clicking Continue button",
@@ -1816,11 +1882,11 @@
           "operations": [
             {
               "operation_id": "5b60d3d7-ad40-46af-b390-cb57b39c362d",
-              "instruction_id": "fbde7930-7e85-4f6b-970f-d5ecfc7f2cdb",
+              "instruction_id": "cf91951b-4ee6-49f2-9835-a4b831e94bff",
               "instruction": "Clicking Continue button",
               "intent": "Clicking Continue button",
-              "operation_start": "2026-09-12T07:33:09.654850+00:00",
-              "operation_end": "2026-09-12T07:33:09.690Z",
+              "operation_start": "2026-09-13T12:12:19.461917+00:00",
+              "operation_end": "2026-09-13T12:12:19.487Z",
               "status": "success",
               "command": "CLICK",
               "name": "",
@@ -1913,6 +1979,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -1927,6 +1995,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -1959,8 +2031,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:09.654850+00:00",
-          "end_timestamp": "2026-09-12T07:33:09.690Z",
+          "start_timestamp": "2026-09-13T12:12:19.461917+00:00",
+          "end_timestamp": "2026-09-13T12:12:19.487Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -1986,7 +2058,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+          "generative_id": "01228faef6af414794b75c8b0e38df39",
           "plan_id": "",
           "generative_objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
           "error_message": "",
@@ -1997,7 +2069,7 @@
           "reasoning": "PRIMARY: continue button; role=button; text=\"Continue\" | HINTS: container=Tell us about your bike form"
         },
         {
-          "instruction_id": "f0fd0298-91fe-468a-8010-017b6e907d52",
+          "instruction_id": "9506968c-f2af-4af1-bc73-418966580926",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Waiting for the cover selection step to settle for 1000 ms",
@@ -2009,11 +2081,11 @@
           "operations": [
             {
               "operation_id": "1c25b6f0-1be8-4b34-8792-21a81cd5b9d7",
-              "instruction_id": "f0fd0298-91fe-468a-8010-017b6e907d52",
+              "instruction_id": "9506968c-f2af-4af1-bc73-418966580926",
               "instruction": "Waiting for the cover selection step to settle for 1000 ms",
               "intent": "Waiting for the cover selection step to settle for 1000 ms",
-              "operation_start": "2026-09-12T07:33:15.048672+00:00",
-              "operation_end": "2026-09-12T07:33:16.058Z",
+              "operation_start": "2026-09-13T12:12:21.030804+00:00",
+              "operation_end": "2026-09-13T12:12:22.036Z",
               "status": "success",
               "command": "WAIT",
               "name": "",
@@ -2099,6 +2171,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -2113,6 +2187,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -2127,8 +2205,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:15.048672+00:00",
-          "end_timestamp": "2026-09-12T07:33:16.058Z",
+          "start_timestamp": "2026-09-13T12:12:21.030804+00:00",
+          "end_timestamp": "2026-09-13T12:12:22.036Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -2154,7 +2232,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+          "generative_id": "01228faef6af414794b75c8b0e38df39",
           "plan_id": "",
           "generative_objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
           "error_message": "",
@@ -2165,7 +2243,7 @@
           "reasoning": "PRIMARY: wait 1000 ms for the cover selection step to settle"
         },
         {
-          "instruction_id": "31091a9d-8976-4424-95ba-a1aa14931429",
+          "instruction_id": "572261a7-4d2f-4d3d-8c28-27a5ebd7335c",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Checking whether the What cover do you need step is shown",
@@ -2177,11 +2255,11 @@
           "operations": [
             {
               "operation_id": "6560fd52-4d20-480c-9939-e4e789794fb5",
-              "instruction_id": "31091a9d-8976-4424-95ba-a1aa14931429",
+              "instruction_id": "572261a7-4d2f-4d3d-8c28-27a5ebd7335c",
               "instruction": "Checking whether the What cover do you need step is shown",
               "intent": "Checking whether the What cover do you need step is shown",
-              "operation_start": "2026-09-12T07:33:23.246471+00:00",
-              "operation_end": "",
+              "operation_start": "2026-09-13T12:12:21.096109+00:00",
+              "operation_end": "2026-09-13T12:12:21.105Z",
               "status": "success",
               "command": "TEXTUAL_ANALYZER",
               "name": "",
@@ -2267,6 +2345,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -2281,6 +2361,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -2297,8 +2381,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:23.246471+00:00",
-          "end_timestamp": "",
+          "start_timestamp": "2026-09-13T12:12:21.096109+00:00",
+          "end_timestamp": "2026-09-13T12:12:21.105Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -2324,7 +2408,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+          "generative_id": "01228faef6af414794b75c8b0e38df39",
           "plan_id": "",
           "generative_objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
           "error_message": "",
@@ -2335,7 +2419,7 @@
           "reasoning": "whether the What cover do you need step heading is present"
         },
         {
-          "instruction_id": "16de09ec-337b-403b-b004-274d135a4430",
+          "instruction_id": "c184aee5-fd26-41c4-85b6-1c24be85d5d3",
           "instruction_class": "non_driver_action",
           "module_id": "",
           "instruction": "Assertion check",
@@ -2393,11 +2477,11 @@
           "operations": [
             {
               "operation_id": "59df2442-ff35-44af-8e00-171ab2dcedf0",
-              "instruction_id": "16de09ec-337b-403b-b004-274d135a4430",
+              "instruction_id": "c184aee5-fd26-41c4-85b6-1c24be85d5d3",
               "instruction": "Assertion check",
               "intent": "Assertion check",
-              "operation_start": "2026-09-12T07:33:23.820007+00:00",
-              "operation_end": "",
+              "operation_start": "2026-09-13T12:12:21.134578+00:00",
+              "operation_end": "2026-09-13T12:12:21.134Z",
               "status": "success",
               "command": "ASSERTION",
               "name": "",
@@ -2427,7 +2511,7 @@
               "navigation_direction": "",
               "tagified_image_url": "",
               "query_variable_name": "",
-              "query_variable_value": "",
+              "query_variable_value": "{'status': 'passed', 'composite_operator': 'and', 'sub_results': [{'description': 'The step \"What cover do you need?\" is shown.', 'passed': True, 'operator': 'equals', 'transforms': ['strip'], 'expected': 'true', 'extracted_value': 'true'}]}",
               "query_variable_type": "",
               "expected_value": "",
               "queried_value": "",
@@ -2537,12 +2621,29 @@
                 "is_final": true,
                 "verification": "the page shows the step \"What cover do you need?\" after clicking \"Continue\".",
                 "error_message": null,
-                "duration_ms": 0
+                "duration_ms": 0,
+                "sub_checks": [
+                  {
+                    "description": "The step \"What cover do you need?\" is shown.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [],
+                    "json_path": null,
+                    "extracted_value": "{{what_cover_do_you_need_step_shown}}",
+                    "store_key": "what_cover_do_you_need_step_shown",
+                    "variable_refs": {
+                      "{{what_cover_do_you_need_step_shown}}": "true"
+                    },
+                    "expected_value": "true"
+                  }
+                ]
               },
               "assertion_tree_simplified": {},
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -2557,6 +2658,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -2571,8 +2676,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:23.820007+00:00",
-          "end_timestamp": "",
+          "start_timestamp": "2026-09-13T12:12:21.134578+00:00",
+          "end_timestamp": "2026-09-13T12:12:21.134Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -2598,7 +2703,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "b2af2a1c92b14d1dae4dd5c953545b46",
+          "generative_id": "01228faef6af414794b75c8b0e38df39",
           "plan_id": "",
           "generative_objective": "Clear the registration field, type \"KA01AB1234\", click \"Continue\", and verify the step \"What cover do you need?\" is shown.",
           "error_message": "",
@@ -2611,24 +2716,20 @@
       ],
       "error_message": null,
       "error_code": null,
-      "result_code": null,
+      "result_code": 100,
       "bifurcation_context": [],
-      "approach_reason": [
-        "Entered the registration number KA01AB1234 in the registration field.",
-        "Clicked Continue to proceed with the bike insurance quote.",
-        "The next step, “What cover do you need?”, was displayed successfully."
-      ],
+      "approach_reason": [],
       "one_liner": null
     },
     {
       "content_type": "generative_block",
-      "instruction_id": "generative_block_c2de96ddd83c45f2a6b709120e83e74c",
-      "generative_id": "c2de96ddd83c45f2a6b709120e83e74c",
+      "instruction_id": "generative_block_ca2e409f19534e06bf622e92302f3a73",
+      "generative_id": "ca2e409f19534e06bf622e92302f3a73",
       "objective": "Choose \"Comprehensive\" and click \"Get quotes\".",
       "status": "success",
       "children": [
         {
-          "instruction_id": "242a47c7-2019-4e3a-b1b4-0911853790e4",
+          "instruction_id": "133edc81-f67a-4099-825b-23b7a813e837",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Waiting for the queued plan to start",
@@ -2640,11 +2741,11 @@
           "operations": [
             {
               "operation_id": "590c7bbd-c4e9-47cd-9bf4-0de99aa76c69",
-              "instruction_id": "242a47c7-2019-4e3a-b1b4-0911853790e4",
+              "instruction_id": "133edc81-f67a-4099-825b-23b7a813e837",
               "instruction": "Waiting for the queued plan to start",
               "intent": "Waiting for the queued plan to start",
-              "operation_start": "2026-09-12T07:33:37.236404+00:00",
-              "operation_end": "2026-09-12T07:33:38.245Z",
+              "operation_start": "2026-09-13T12:12:22.188832+00:00",
+              "operation_end": "2026-09-13T12:12:23.193Z",
               "status": "success",
               "command": "WAIT",
               "name": "",
@@ -2730,6 +2831,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -2744,6 +2847,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -2758,8 +2865,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:37.236404+00:00",
-          "end_timestamp": "2026-09-12T07:33:38.245Z",
+          "start_timestamp": "2026-09-13T12:12:22.188832+00:00",
+          "end_timestamp": "2026-09-13T12:12:23.193Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -2785,7 +2892,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "c2de96ddd83c45f2a6b709120e83e74c",
+          "generative_id": "ca2e409f19534e06bf622e92302f3a73",
           "plan_id": "",
           "generative_objective": "Choose \"Comprehensive\" and click \"Get quotes\".",
           "error_message": "",
@@ -2796,7 +2903,7 @@
           "reasoning": "queued plan (2 steps): click \"Comprehensive Own damage + third party\"; click \"Get quotes\""
         },
         {
-          "instruction_id": "7046dd38-9660-4dc4-95eb-c08eaa8390a4",
+          "instruction_id": "177ff31f-87c0-4b90-a826-799754bc6eaa",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Click \"Comprehensive Own damage + third party\"",
@@ -2808,11 +2915,11 @@
           "operations": [
             {
               "operation_id": "64ce0fac-bae6-4dfc-9b4c-f0d769be0532",
-              "instruction_id": "7046dd38-9660-4dc4-95eb-c08eaa8390a4",
+              "instruction_id": "177ff31f-87c0-4b90-a826-799754bc6eaa",
               "instruction": "Click \"Comprehensive Own damage + third party\"",
               "intent": "Click \"Comprehensive Own damage + third party\"",
-              "operation_start": "2026-09-12T07:33:37.867436+00:00",
-              "operation_end": "2026-09-12T07:33:37.900Z",
+              "operation_start": "2026-09-13T12:12:22.275973+00:00",
+              "operation_end": "2026-09-13T12:12:22.312Z",
               "status": "success",
               "command": "CLICK",
               "name": "",
@@ -2905,6 +3012,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -2919,6 +3028,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -2951,8 +3064,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:37.867436+00:00",
-          "end_timestamp": "2026-09-12T07:33:37.900Z",
+          "start_timestamp": "2026-09-13T12:12:22.275973+00:00",
+          "end_timestamp": "2026-09-13T12:12:22.312Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -2978,7 +3091,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "c2de96ddd83c45f2a6b709120e83e74c",
+          "generative_id": "ca2e409f19534e06bf622e92302f3a73",
           "plan_id": "",
           "generative_objective": "Choose \"Comprehensive\" and click \"Get quotes\".",
           "error_message": "",
@@ -2989,7 +3102,7 @@
           "reasoning": "Select the Comprehensive radio option"
         },
         {
-          "instruction_id": "ce6f0ab8-52b6-4159-a56d-05e978b33335",
+          "instruction_id": "ac034277-36e1-48cf-89da-41dbbbfe932e",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Clicking Get quotes button",
@@ -3001,11 +3114,11 @@
           "operations": [
             {
               "operation_id": "b7ba45b4-1d73-406b-bcec-fd32a29e7a25",
-              "instruction_id": "ce6f0ab8-52b6-4159-a56d-05e978b33335",
+              "instruction_id": "ac034277-36e1-48cf-89da-41dbbbfe932e",
               "instruction": "Clicking Get quotes button",
               "intent": "Clicking Get quotes button",
-              "operation_start": "2026-09-12T07:33:45.983251+00:00",
-              "operation_end": "2026-09-12T07:33:45.994Z",
+              "operation_start": "2026-09-13T12:12:22.876424+00:00",
+              "operation_end": "2026-09-13T12:12:22.915Z",
               "status": "success",
               "command": "CLICK",
               "name": "",
@@ -3098,6 +3211,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -3112,6 +3227,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -3144,8 +3263,8 @@
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:33:45.983251+00:00",
-          "end_timestamp": "2026-09-12T07:33:45.994Z",
+          "start_timestamp": "2026-09-13T12:12:22.876424+00:00",
+          "end_timestamp": "2026-09-13T12:12:22.915Z",
           "type": "agent_generated",
           "tags": [],
           "html_paths": [],
@@ -3171,7 +3290,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "c2de96ddd83c45f2a6b709120e83e74c",
+          "generative_id": "ca2e409f19534e06bf622e92302f3a73",
           "plan_id": "",
           "generative_objective": "Choose \"Comprehensive\" and click \"Get quotes\".",
           "error_message": "",
@@ -3184,41 +3303,38 @@
       ],
       "error_message": null,
       "error_code": null,
-      "result_code": null,
+      "result_code": 100,
       "bifurcation_context": [],
-      "approach_reason": [
-        "Selected the Comprehensive insurance option as requested.",
-        "Clicked Get quotes and reached the bike insurance quote page."
-      ],
+      "approach_reason": [],
       "one_liner": null
     },
     {
       "content_type": "generative_block",
-      "instruction_id": "generative_block_1f22876c0f4e4cbba70d8b77cf1531c2",
-      "generative_id": "1f22876c0f4e4cbba70d8b77cf1531c2",
+      "instruction_id": "generative_block_e823ae3f23fd493c9b669be70a045327",
+      "generative_id": "e823ae3f23fd493c9b669be70a045327",
       "objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
       "status": "success",
       "children": [
         {
-          "instruction_id": "3461607a-acf2-4155-b3cb-5707bbaff191",
+          "instruction_id": "ab1dcc25-9786-43bc-960c-f74653d9512e",
           "instruction_class": "driver_action",
           "module_id": "",
-          "instruction": "Checking whether the vehicle quotes badge is present",
-          "command": "VISION_QUERY",
+          "instruction": "Reading the quotes badge text",
+          "command": "TEXTUAL_ANALYZER",
           "error": null,
           "parent_instruction_id": "",
           "classification_layer_resp": [],
           "classification_error": {},
           "operations": [
             {
-              "operation_id": "7a175965-4794-4761-8922-a323612e295d",
-              "instruction_id": "3461607a-acf2-4155-b3cb-5707bbaff191",
-              "instruction": "Checking whether the vehicle quotes badge is present",
-              "intent": "Checking whether the vehicle quotes badge is present",
-              "operation_start": "2026-09-12T07:34:26.866748+00:00",
+              "operation_id": "f0baf005-4542-45dd-8e18-decfe9dfcaee",
+              "instruction_id": "ab1dcc25-9786-43bc-960c-f74653d9512e",
+              "instruction": "Reading the quotes badge text",
+              "intent": "Reading the quotes badge text",
+              "operation_start": "2026-09-13T12:12:53.854181+00:00",
               "operation_end": "",
               "status": "success",
-              "command": "VISION_QUERY",
+              "command": "TEXTUAL_ANALYZER",
               "name": "",
               "target": "",
               "value": "",
@@ -3227,7 +3343,7 @@
               "frame": "",
               "error_message": "",
               "code_snippet": "",
-              "sub_instruction_obj": "{\"operation\":\"Checking whether the vehicle quotes badge is present\",\"agent\":\"Vision Agent\",\"operation_dict\":{\"operation_type\":\"VISION_QUERY\"},\"reasoning\":\"The current page shows the badge \\\"Quotes for KA01AB1234 · Honda-ish Activa 125\\\".\",\"variable\":{},\"secrets\":{},\"params\":{}}",
+              "sub_instruction_obj": "{\"operation\":\"Reading the quotes badge text\",\"agent\":\"Operation Agent\",\"operation_dict\":{\"operation_type\":\"TEXTUAL_ANALYZER\"},\"reasoning\":\"the quotes badge text for the insured vehicle\",\"variable\":{},\"secrets\":{},\"params\":{},\"code_js\":\"el(7).querySelector('.ee-badge')?.textContent ?? null\",\"wrapped_js\":\"(els) => {\\n  const __m = {7: 0};\\n  const el = (i) => els[__m[i]];\\n  const __v = (el(7).querySelector('.ee-badge')?.textContent ?? null);\\n  return (typeof __v === 'boolean' ? String(__v) : __v);\\n}\",\"locators\":[\"internal:text=\\\"mobile web equivalent · PhonePayBike insuranceQuotes for KA01AB1234 · Honda-ish\\\"i\"],\"operator\":\"equals\",\"transforms\":[\"strip\"],\"query\":\"the quotes badge text for the insured vehicle\",\"expected_value\":\"Quotes for KA01AB1234 · Honda-ish Activa 125\",\"needs_unit_conversion\":false,\"condition\":\"The badge displays \\\"Quotes for KA01AB1234 · Honda-ish Activa 125\\\".\"}",
               "test_id": "",
               "test_version": "",
               "action": "",
@@ -3238,7 +3354,7 @@
               "update_time_stamp": "",
               "locator_variable": "",
               "locator_variable_name": "",
-              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/7a175965-4794-4761-8922-a323612e295d.webp",
+              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/f0baf005-4542-45dd-8e18-decfe9dfcaee.webp",
               "alternative_xpaths": [],
               "attribute": "",
               "value_description": "",
@@ -3246,7 +3362,7 @@
               "navigation_direction": "",
               "tagified_image_url": "",
               "query_variable_name": "quotes_badge_check",
-              "query_variable_value": "true",
+              "query_variable_value": "Quotes for KA01AB1234 · Honda-ish Activa 125",
               "query_variable_type": "",
               "expected_value": "",
               "queried_value": "",
@@ -3302,6 +3418,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -3316,6 +3434,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -3325,14 +3447,14 @@
               "until_settle_ms": 0,
               "api_data": {},
               "output_variables": {
-                "quotes_badge_check": "true"
+                "quotes_badge_check": "Quotes for KA01AB1234 · Honda-ish Activa 125"
               },
               "visual_context": null,
-              "reasoning": "The current page shows the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\"."
+              "reasoning": "the quotes badge text for the insured vehicle"
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:34:26.866748+00:00",
+          "start_timestamp": "2026-09-13T12:12:53.854181+00:00",
           "end_timestamp": "",
           "type": "agent_generated",
           "tags": [],
@@ -3359,7 +3481,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "1f22876c0f4e4cbba70d8b77cf1531c2",
+          "generative_id": "e823ae3f23fd493c9b669be70a045327",
           "plan_id": "",
           "generative_objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
           "error_message": "",
@@ -3367,28 +3489,28 @@
           "reason": "",
           "title": "",
           "used_variables": [],
-          "reasoning": "The current page shows the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\"."
+          "reasoning": "the quotes badge text for the insured vehicle"
         },
         {
-          "instruction_id": "6bc17e20-e856-4f4e-9ad1-25f0e113f666",
+          "instruction_id": "8321a176-4976-45cf-ab76-560ce8d1d51d",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Reading the Basic plan annual price",
-          "command": "VISION_QUERY",
+          "command": "TEXTUAL_ANALYZER",
           "error": null,
           "parent_instruction_id": "",
           "classification_layer_resp": [],
           "classification_error": {},
           "operations": [
             {
-              "operation_id": "cc2c855b-65fd-41e2-ae3c-9cc0510208b9",
-              "instruction_id": "6bc17e20-e856-4f4e-9ad1-25f0e113f666",
+              "operation_id": "2c72e9ce-d518-48b9-9baf-1e2592bc0bc3",
+              "instruction_id": "8321a176-4976-45cf-ab76-560ce8d1d51d",
               "instruction": "Reading the Basic plan annual price",
               "intent": "Reading the Basic plan annual price",
-              "operation_start": "2026-09-12T07:34:26.867989+00:00",
+              "operation_start": "2026-09-13T12:12:53.854537+00:00",
               "operation_end": "",
               "status": "success",
-              "command": "VISION_QUERY",
+              "command": "TEXTUAL_ANALYZER",
               "name": "",
               "target": "",
               "value": "",
@@ -3397,7 +3519,7 @@
               "frame": "",
               "error_message": "",
               "code_snippet": "",
-              "sub_instruction_obj": "{\"operation\":\"Reading the Basic plan annual price\",\"agent\":\"Vision Agent\",\"operation_dict\":{\"operation_type\":\"VISION_QUERY\"},\"reasoning\":\"The current page shows the \\\"Basic\\\" plan at \\\"₹1,820.00\\\" per year.\",\"variable\":{},\"secrets\":{},\"params\":{}}",
+              "sub_instruction_obj": "{\"operation\":\"Reading the Basic plan annual price\",\"agent\":\"Operation Agent\",\"operation_dict\":{\"operation_type\":\"TEXTUAL_ANALYZER\"},\"reasoning\":\"the Basic plan annual premium amount\",\"variable\":{},\"secrets\":{},\"params\":{},\"code_js\":\"el(10).querySelector('[data-testid=\\\"premium-basic\\\"]')?.textContent ?? null\",\"wrapped_js\":\"(els) => {\\n  const __m = {10: 0};\\n  const el = (i) => els[__m[i]];\\n  const __v = (el(10).querySelector('[data-testid=\\\"premium-basic\\\"]')?.textContent ?? null);\\n  return (typeof __v === 'boolean' ? String(__v) : __v);\\n}\",\"locators\":[\"internal:text=\\\"Basic · ₹1,820.00/yearIDV ₹52,000₹\\\"i\"],\"operator\":\"equals\",\"transforms\":[\"strip\"],\"query\":\"the Basic plan annual premium amount\",\"expected_value\":\"₹1,820.00\",\"needs_unit_conversion\":false,\"condition\":\"The \\\"Basic\\\" plan is displayed at \\\"₹1,820.00\\\" per year.\"}",
               "test_id": "",
               "test_version": "",
               "action": "",
@@ -3408,7 +3530,7 @@
               "update_time_stamp": "",
               "locator_variable": "",
               "locator_variable_name": "",
-              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/cc2c855b-65fd-41e2-ae3c-9cc0510208b9.webp",
+              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/2c72e9ce-d518-48b9-9baf-1e2592bc0bc3.webp",
               "alternative_xpaths": [],
               "attribute": "",
               "value_description": "",
@@ -3472,6 +3594,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -3486,6 +3610,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -3498,11 +3626,11 @@
                 "basic_plan_price_check": "₹1,820.00"
               },
               "visual_context": null,
-              "reasoning": "The current page shows the \"Basic\" plan at \"₹1,820.00\" per year."
+              "reasoning": "the Basic plan annual premium amount"
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:34:26.867989+00:00",
+          "start_timestamp": "2026-09-13T12:12:53.854537+00:00",
           "end_timestamp": "",
           "type": "agent_generated",
           "tags": [],
@@ -3529,7 +3657,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "1f22876c0f4e4cbba70d8b77cf1531c2",
+          "generative_id": "e823ae3f23fd493c9b669be70a045327",
           "plan_id": "",
           "generative_objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
           "error_message": "",
@@ -3537,28 +3665,28 @@
           "reason": "",
           "title": "",
           "used_variables": [],
-          "reasoning": "The current page shows the \"Basic\" plan at \"₹1,820.00\" per year."
+          "reasoning": "the Basic plan annual premium amount"
         },
         {
-          "instruction_id": "2ffd76b5-9e6b-4a6e-ae12-7d6dd49eae0f",
+          "instruction_id": "9615403c-0f9a-471f-9d4a-f632a22dd7e2",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Reading the Plus plan annual price",
-          "command": "VISION_QUERY",
+          "command": "TEXTUAL_ANALYZER",
           "error": null,
           "parent_instruction_id": "",
           "classification_layer_resp": [],
           "classification_error": {},
           "operations": [
             {
-              "operation_id": "720633ba-de2c-4552-886c-2f00849cb48a",
-              "instruction_id": "2ffd76b5-9e6b-4a6e-ae12-7d6dd49eae0f",
+              "operation_id": "c8c341ee-513d-4716-af7c-2015835854bf",
+              "instruction_id": "9615403c-0f9a-471f-9d4a-f632a22dd7e2",
               "instruction": "Reading the Plus plan annual price",
               "intent": "Reading the Plus plan annual price",
-              "operation_start": "2026-09-12T07:34:26.868198+00:00",
+              "operation_start": "2026-09-13T12:12:53.854648+00:00",
               "operation_end": "",
               "status": "success",
-              "command": "VISION_QUERY",
+              "command": "TEXTUAL_ANALYZER",
               "name": "",
               "target": "",
               "value": "",
@@ -3567,7 +3695,7 @@
               "frame": "",
               "error_message": "",
               "code_snippet": "",
-              "sub_instruction_obj": "{\"operation\":\"Reading the Plus plan annual price\",\"agent\":\"Vision Agent\",\"operation_dict\":{\"operation_type\":\"VISION_QUERY\"},\"reasoning\":\"The current page shows the \\\"Plus\\\" plan at \\\"₹2,170.00\\\" per year.\",\"variable\":{},\"secrets\":{},\"params\":{}}",
+              "sub_instruction_obj": "{\"operation\":\"Reading the Plus plan annual price\",\"agent\":\"Operation Agent\",\"operation_dict\":{\"operation_type\":\"TEXTUAL_ANALYZER\"},\"reasoning\":\"the Plus plan annual premium amount\",\"variable\":{},\"secrets\":{},\"params\":{},\"code_js\":\"el(12).querySelector('[data-testid=\\\"premium-plus\\\"]')?.textContent ?? null\",\"wrapped_js\":\"(els) => {\\n  const __m = {12: 0};\\n  const el = (i) => els[__m[i]];\\n  const __v = (el(12).querySelector('[data-testid=\\\"premium-plus\\\"]')?.textContent ?? null);\\n  return (typeof __v === 'boolean' ? String(__v) : __v);\\n}\",\"locators\":[\"internal:text=\\\"Plus · ₹2,170.00/year+ Zero depreciation₹\\\"i\"],\"operator\":\"equals\",\"transforms\":[\"strip\"],\"query\":\"the Plus plan annual premium amount\",\"expected_value\":\"₹2,170.00\",\"needs_unit_conversion\":false,\"condition\":\"The \\\"Plus\\\" plan is displayed at \\\"₹2,170.00\\\" per year.\"}",
               "test_id": "",
               "test_version": "",
               "action": "",
@@ -3578,7 +3706,7 @@
               "update_time_stamp": "",
               "locator_variable": "",
               "locator_variable_name": "",
-              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/720633ba-de2c-4552-886c-2f00849cb48a.webp",
+              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/c8c341ee-513d-4716-af7c-2015835854bf.webp",
               "alternative_xpaths": [],
               "attribute": "",
               "value_description": "",
@@ -3642,6 +3770,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -3656,6 +3786,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -3668,11 +3802,11 @@
                 "plus_plan_price_check": "₹2,170.00"
               },
               "visual_context": null,
-              "reasoning": "The current page shows the \"Plus\" plan at \"₹2,170.00\" per year."
+              "reasoning": "the Plus plan annual premium amount"
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:34:26.868198+00:00",
+          "start_timestamp": "2026-09-13T12:12:53.854648+00:00",
           "end_timestamp": "",
           "type": "agent_generated",
           "tags": [],
@@ -3699,7 +3833,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "1f22876c0f4e4cbba70d8b77cf1531c2",
+          "generative_id": "e823ae3f23fd493c9b669be70a045327",
           "plan_id": "",
           "generative_objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
           "error_message": "",
@@ -3707,28 +3841,28 @@
           "reason": "",
           "title": "",
           "used_variables": [],
-          "reasoning": "The current page shows the \"Plus\" plan at \"₹2,170.00\" per year."
+          "reasoning": "the Plus plan annual premium amount"
         },
         {
-          "instruction_id": "f725dae4-ed5f-4672-b581-aa23ed2143e1",
+          "instruction_id": "cb296b5c-481c-4406-8db5-1f8f8b219b1b",
           "instruction_class": "driver_action",
           "module_id": "",
           "instruction": "Reading the Max plan annual price",
-          "command": "VISION_QUERY",
+          "command": "TEXTUAL_ANALYZER",
           "error": null,
           "parent_instruction_id": "",
           "classification_layer_resp": [],
           "classification_error": {},
           "operations": [
             {
-              "operation_id": "3c505de5-9317-4b58-ba24-1c6d95d05318",
-              "instruction_id": "f725dae4-ed5f-4672-b581-aa23ed2143e1",
+              "operation_id": "77b68810-f6e6-4dcf-b81b-6bf6e1af89e5",
+              "instruction_id": "cb296b5c-481c-4406-8db5-1f8f8b219b1b",
               "instruction": "Reading the Max plan annual price",
               "intent": "Reading the Max plan annual price",
-              "operation_start": "2026-09-12T07:34:26.868377+00:00",
+              "operation_start": "2026-09-13T12:12:53.854748+00:00",
               "operation_end": "",
               "status": "success",
-              "command": "VISION_QUERY",
+              "command": "TEXTUAL_ANALYZER",
               "name": "",
               "target": "",
               "value": "",
@@ -3737,7 +3871,7 @@
               "frame": "",
               "error_message": "",
               "code_snippet": "",
-              "sub_instruction_obj": "{\"operation\":\"Reading the Max plan annual price\",\"agent\":\"Vision Agent\",\"operation_dict\":{\"operation_type\":\"VISION_QUERY\"},\"reasoning\":\"The current page shows the \\\"Max\\\" plan at \\\"₹2,540.00\\\" per year.\",\"variable\":{},\"secrets\":{},\"params\":{}}",
+              "sub_instruction_obj": "{\"operation\":\"Reading the Max plan annual price\",\"agent\":\"Operation Agent\",\"operation_dict\":{\"operation_type\":\"TEXTUAL_ANALYZER\"},\"reasoning\":\"the Max plan annual premium amount\",\"variable\":{},\"secrets\":{},\"params\":{},\"code_js\":\"el(14).querySelector('[data-testid=\\\"premium-max\\\"]')?.textContent ?? null\",\"wrapped_js\":\"(els) => {\\n  const __m = {14: 0};\\n  const el = (i) => els[__m[i]];\\n  const __v = (el(14).querySelector('[data-testid=\\\"premium-max\\\"]')?.textContent ?? null);\\n  return (typeof __v === 'boolean' ? String(__v) : __v);\\n}\",\"locators\":[\"internal:text=\\\"Max · ₹2,540.00/year+ Zero dep + Roadside assistance₹\\\"i\"],\"operator\":\"equals\",\"transforms\":[\"strip\"],\"query\":\"the Max plan annual premium amount\",\"expected_value\":\"₹2,540.00\",\"needs_unit_conversion\":false,\"condition\":\"The \\\"Max\\\" plan is displayed at \\\"₹2,540.00\\\" per year.\"}",
               "test_id": "",
               "test_version": "",
               "action": "",
@@ -3748,7 +3882,7 @@
               "update_time_stamp": "",
               "locator_variable": "",
               "locator_variable_name": "",
-              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/3c505de5-9317-4b58-ba24-1c6d95d05318.webp",
+              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/77b68810-f6e6-4dcf-b81b-6bf6e1af89e5.webp",
               "alternative_xpaths": [],
               "attribute": "",
               "value_description": "",
@@ -3812,6 +3946,8 @@
               "network_throttle": {},
               "is_mobile_offline": false,
               "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
               "db_query": "",
               "db_details": {},
               "db_query_decoded": "",
@@ -3826,6 +3962,10 @@
               "result_type": "",
               "result_hint": "",
               "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
               "start_coordinates": {},
               "end_coordinates": {},
               "element_rect": null,
@@ -3838,11 +3978,11 @@
                 "max_plan_price_check": "₹2,540.00"
               },
               "visual_context": null,
-              "reasoning": "The current page shows the \"Max\" plan at \"₹2,540.00\" per year."
+              "reasoning": "the Max plan annual premium amount"
             }
           ],
           "status": "success",
-          "start_timestamp": "2026-09-12T07:34:26.868377+00:00",
+          "start_timestamp": "2026-09-13T12:12:53.854748+00:00",
           "end_timestamp": "",
           "type": "agent_generated",
           "tags": [],
@@ -3869,7 +4009,7 @@
           "network_assertion_content": {},
           "screenshot_command": "",
           "smartui_contents": {},
-          "generative_id": "1f22876c0f4e4cbba70d8b77cf1531c2",
+          "generative_id": "e823ae3f23fd493c9b669be70a045327",
           "plan_id": "",
           "generative_objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
           "error_message": "",
@@ -3877,7 +4017,492 @@
           "reason": "",
           "title": "",
           "used_variables": [],
-          "reasoning": "The current page shows the \"Max\" plan at \"₹2,540.00\" per year."
+          "reasoning": "the Max plan annual premium amount"
+        },
+        {
+          "instruction_id": "4abd8ff2-5ae0-41ec-acc2-d3bce3a0e61d",
+          "instruction_class": "non_driver_action",
+          "module_id": "",
+          "instruction": "Assertion check",
+          "command": "ASSERTION",
+          "error": null,
+          "parent_instruction_id": "",
+          "classification_layer_resp": [
+            {
+              "operation": "Assertion check",
+              "agent": "Operation Agent",
+              "operation_dict": {
+                "operation_type": "ASSERTION",
+                "assertion_tree": {
+                  "sub_results": [
+                    {
+                      "description": "The badge displays \"Quotes for KA01AB1234 · Honda-ish Activa 125\".",
+                      "passed": true,
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ],
+                      "json_path": null,
+                      "expected": "Quotes for KA01AB1234 · Honda-ish Activa 125",
+                      "extracted_value": "{{quotes_badge_check}}",
+                      "store_key": "quotes_badge_check",
+                      "variable_refs": {
+                        "{{quotes_badge_check}}": "Quotes for KA01AB1234 · Honda-ish Activa 125"
+                      }
+                    },
+                    {
+                      "description": "The \"Basic\" plan is displayed at \"₹1,820.00\" per year.",
+                      "passed": true,
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ],
+                      "json_path": null,
+                      "expected": "₹1,820.00",
+                      "extracted_value": "{{basic_plan_price_check}}",
+                      "store_key": "basic_plan_price_check",
+                      "variable_refs": {
+                        "{{basic_plan_price_check}}": "₹1,820.00"
+                      }
+                    },
+                    {
+                      "description": "The \"Plus\" plan is displayed at \"₹2,170.00\" per year.",
+                      "passed": true,
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ],
+                      "json_path": null,
+                      "expected": "₹2,170.00",
+                      "extracted_value": "{{plus_plan_price_check}}",
+                      "store_key": "plus_plan_price_check",
+                      "variable_refs": {
+                        "{{plus_plan_price_check}}": "₹2,170.00"
+                      }
+                    },
+                    {
+                      "description": "The \"Max\" plan is displayed at \"₹2,540.00\" per year.",
+                      "passed": true,
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ],
+                      "json_path": null,
+                      "expected": "₹2,540.00",
+                      "extracted_value": "{{max_plan_price_check}}",
+                      "store_key": "max_plan_price_check",
+                      "variable_refs": {
+                        "{{max_plan_price_check}}": "₹2,540.00"
+                      }
+                    }
+                  ],
+                  "sub_checks": [
+                    {
+                      "description": "The badge displays \"Quotes for KA01AB1234 · Honda-ish Activa 125\".",
+                      "store_key": "quotes_badge_check",
+                      "expected_value": "Quotes for KA01AB1234 · Honda-ish Activa 125",
+                      "extracted_value": "{{quotes_badge_check}}",
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ]
+                    },
+                    {
+                      "description": "The \"Basic\" plan is displayed at \"₹1,820.00\" per year.",
+                      "store_key": "basic_plan_price_check",
+                      "expected_value": "₹1,820.00",
+                      "extracted_value": "{{basic_plan_price_check}}",
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ]
+                    },
+                    {
+                      "description": "The \"Plus\" plan is displayed at \"₹2,170.00\" per year.",
+                      "store_key": "plus_plan_price_check",
+                      "expected_value": "₹2,170.00",
+                      "extracted_value": "{{plus_plan_price_check}}",
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ]
+                    },
+                    {
+                      "description": "The \"Max\" plan is displayed at \"₹2,540.00\" per year.",
+                      "store_key": "max_plan_price_check",
+                      "expected_value": "₹2,540.00",
+                      "extracted_value": "{{max_plan_price_check}}",
+                      "operator": "equals",
+                      "transforms": [
+                        "strip"
+                      ]
+                    }
+                  ],
+                  "composite_operator": "and",
+                  "verification": "",
+                  "claim": "the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year",
+                  "operator": [],
+                  "assertion_operands": [],
+                  "left_operand": null,
+                  "right_operand": null,
+                  "operands": []
+                }
+              },
+              "variable": {},
+              "secrets": {},
+              "params": {}
+            }
+          ],
+          "classification_error": {},
+          "operations": [
+            {
+              "operation_id": "eb983d42-1421-4b97-9bb8-f07e464846e8",
+              "instruction_id": "4abd8ff2-5ae0-41ec-acc2-d3bce3a0e61d",
+              "instruction": "Assertion check",
+              "intent": "Assertion check",
+              "operation_start": "2026-09-13T12:12:54.427930+00:00",
+              "operation_end": "",
+              "status": "success",
+              "command": "ASSERTION",
+              "name": "",
+              "target": "",
+              "value": "",
+              "message": "",
+              "operation_dict": "",
+              "frame": "",
+              "error_message": "",
+              "code_snippet": "",
+              "sub_instruction_obj": "{\"operation\":\"Assertion check\",\"agent\":\"Operation Agent\",\"operation_dict\":{\"operation_type\":\"ASSERTION\"},\"reasoning\":\"\",\"variable\":{},\"secrets\":{},\"params\":{}}",
+              "test_id": "",
+              "test_version": "",
+              "action": "",
+              "string_to_float": false,
+              "feedback_msg": "",
+              "time_taken": "",
+              "create_time_stamp": "",
+              "update_time_stamp": "",
+              "locator_variable": "",
+              "locator_variable_name": "",
+              "image_url": "https://prodauteurartefacts.blob.core.windows.net/test-screenshots/test_screenshots/untagged_screenshot/eb983d42-1421-4b97-9bb8-f07e464846e8.webp",
+              "alternative_xpaths": [],
+              "attribute": "",
+              "value_description": "",
+              "url": "",
+              "navigation_direction": "",
+              "tagified_image_url": "",
+              "query_variable_name": "",
+              "query_variable_value": "",
+              "query_variable_type": "",
+              "expected_value": "",
+              "queried_value": "",
+              "operator": "",
+              "assertion_status": true,
+              "query_info_dict": {},
+              "query_content_confidence": "none",
+              "debugging_logs": [],
+              "locator_index": 0,
+              "query_html": "",
+              "user_variables": "[]",
+              "optional_flag": false,
+              "max_retries": 0,
+              "retries_delay": 0,
+              "explicit_wait": 0,
+              "implicit_wait": 0,
+              "tab_index": "",
+              "tab_identifier": "",
+              "scroll_value": 1,
+              "scroll_direction": "",
+              "mi_scroll_payload": {},
+              "sleep_duration": 0,
+              "app_id": "",
+              "manual_interaction_tag": "",
+              "string_to_float_list": [],
+              "js_snippet": "",
+              "code_error": "",
+              "hide": false,
+              "dismiss_dialog": false,
+              "use_v2_mobile_tagging": false,
+              "multiple_inputs": false,
+              "dialog_action": "",
+              "dialog_type": "",
+              "is_coordinates_used_for_interaction": false,
+              "element_coordinates_ratio": [],
+              "element_bounds_ratio": [],
+              "x_coord": null,
+              "y_coord": null,
+              "target_x_coord": null,
+              "target_y_coord": null,
+              "source_description": null,
+              "target_description": null,
+              "use_coordinates": false,
+              "kaneaiMobileTaggingImageLimit": 1,
+              "clicks_order_code": "se_js_ac",
+              "selector": "",
+              "selector_target": "",
+              "math_result_variable_name": "",
+              "math_result_variable_value": "",
+              "expression_tree": {
+                "operator": [],
+                "assertion_operands": [],
+                "left_operand": null,
+                "right_operand": null,
+                "operands": [],
+                "sub_results": [
+                  {
+                    "description": "The badge displays \"Quotes for KA01AB1234 · Honda-ish Activa 125\".",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "Quotes for KA01AB1234 · Honda-ish Activa 125",
+                    "extracted_value": "{{quotes_badge_check}}",
+                    "store_key": "quotes_badge_check",
+                    "variable_refs": {
+                      "{{quotes_badge_check}}": "Quotes for KA01AB1234 · Honda-ish Activa 125"
+                    }
+                  },
+                  {
+                    "description": "The \"Basic\" plan is displayed at \"₹1,820.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹1,820.00",
+                    "extracted_value": "{{basic_plan_price_check}}",
+                    "store_key": "basic_plan_price_check",
+                    "variable_refs": {
+                      "{{basic_plan_price_check}}": "₹1,820.00"
+                    }
+                  },
+                  {
+                    "description": "The \"Plus\" plan is displayed at \"₹2,170.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹2,170.00",
+                    "extracted_value": "{{plus_plan_price_check}}",
+                    "store_key": "plus_plan_price_check",
+                    "variable_refs": {
+                      "{{plus_plan_price_check}}": "₹2,170.00"
+                    }
+                  },
+                  {
+                    "description": "The \"Max\" plan is displayed at \"₹2,540.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹2,540.00",
+                    "extracted_value": "{{max_plan_price_check}}",
+                    "store_key": "max_plan_price_check",
+                    "variable_refs": {
+                      "{{max_plan_price_check}}": "₹2,540.00"
+                    }
+                  }
+                ],
+                "sub_checks": [
+                  {
+                    "description": "The badge displays \"Quotes for KA01AB1234 · Honda-ish Activa 125\".",
+                    "store_key": "quotes_badge_check",
+                    "expected_value": "Quotes for KA01AB1234 · Honda-ish Activa 125",
+                    "extracted_value": "{{quotes_badge_check}}",
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ]
+                  },
+                  {
+                    "description": "The \"Basic\" plan is displayed at \"₹1,820.00\" per year.",
+                    "store_key": "basic_plan_price_check",
+                    "expected_value": "₹1,820.00",
+                    "extracted_value": "{{basic_plan_price_check}}",
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ]
+                  },
+                  {
+                    "description": "The \"Plus\" plan is displayed at \"₹2,170.00\" per year.",
+                    "store_key": "plus_plan_price_check",
+                    "expected_value": "₹2,170.00",
+                    "extracted_value": "{{plus_plan_price_check}}",
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ]
+                  },
+                  {
+                    "description": "The \"Max\" plan is displayed at \"₹2,540.00\" per year.",
+                    "store_key": "max_plan_price_check",
+                    "expected_value": "₹2,540.00",
+                    "extracted_value": "{{max_plan_price_check}}",
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ]
+                  }
+                ],
+                "composite_operator": "and",
+                "verification": "The current page displays the badge and all three named plans with their specified annual prices.",
+                "claim": "the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year"
+              },
+              "assertion_tree": {
+                "assertion_id": "assert_cp_1",
+                "status": "passed",
+                "description": "the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year",
+                "sub_results": [
+                  {
+                    "description": "The badge displays \"Quotes for KA01AB1234 · Honda-ish Activa 125\".",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "Quotes for KA01AB1234 · Honda-ish Activa 125",
+                    "extracted_value": "{{quotes_badge_check}}",
+                    "store_key": "quotes_badge_check",
+                    "variable_refs": {
+                      "{{quotes_badge_check}}": "Quotes for KA01AB1234 · Honda-ish Activa 125"
+                    }
+                  },
+                  {
+                    "description": "The \"Basic\" plan is displayed at \"₹1,820.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹1,820.00",
+                    "extracted_value": "{{basic_plan_price_check}}",
+                    "store_key": "basic_plan_price_check",
+                    "variable_refs": {
+                      "{{basic_plan_price_check}}": "₹1,820.00"
+                    }
+                  },
+                  {
+                    "description": "The \"Plus\" plan is displayed at \"₹2,170.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹2,170.00",
+                    "extracted_value": "{{plus_plan_price_check}}",
+                    "store_key": "plus_plan_price_check",
+                    "variable_refs": {
+                      "{{plus_plan_price_check}}": "₹2,170.00"
+                    }
+                  },
+                  {
+                    "description": "The \"Max\" plan is displayed at \"₹2,540.00\" per year.",
+                    "passed": true,
+                    "operator": "equals",
+                    "transforms": [
+                      "strip"
+                    ],
+                    "json_path": null,
+                    "expected": "₹2,540.00",
+                    "extracted_value": "{{max_plan_price_check}}",
+                    "store_key": "max_plan_price_check",
+                    "variable_refs": {
+                      "{{max_plan_price_check}}": "₹2,540.00"
+                    }
+                  }
+                ],
+                "composite_operator": "and",
+                "passed": true,
+                "step": 2,
+                "is_final": true,
+                "verification": "The current page displays the badge and all three named plans with their specified annual prices.",
+                "error_message": null,
+                "duration_ms": 0
+              },
+              "assertion_tree_simplified": {},
+              "network_throttle": {},
+              "is_mobile_offline": false,
+              "autoheal": false,
+              "reprobe": false,
+              "click_modifier": null,
+              "db_query": "",
+              "db_details": {},
+              "db_query_decoded": "",
+              "is_global_variable": false,
+              "is_global_variable_persist": false,
+              "global_variable_id": "",
+              "wait_for_element_timeout": 0,
+              "failure_condition": "Fail test immediately",
+              "screenshot_command": "",
+              "smartui_contents": {},
+              "smartui_results": {},
+              "result_type": "",
+              "result_hint": "",
+              "drag_offset": {},
+              "drag_displacement": {},
+              "hold_duration_ms": null,
+              "move_duration_ms": null,
+              "hold_at_destination_ms": null,
+              "start_coordinates": {},
+              "end_coordinates": {},
+              "element_rect": null,
+              "is_canvas": false,
+              "until_condition": "",
+              "until_max_retries": 0,
+              "until_settle_ms": 0,
+              "api_data": {},
+              "output_variables": {},
+              "visual_context": null,
+              "reasoning": ""
+            }
+          ],
+          "status": "success",
+          "start_timestamp": "2026-09-13T12:12:54.427930+00:00",
+          "end_timestamp": "",
+          "type": "agent_generated",
+          "tags": [],
+          "html_paths": [],
+          "optional_flag": false,
+          "max_retries": 0,
+          "retries_delay": 0,
+          "explicit_wait": 0,
+          "implicit_wait": 0,
+          "content_type": "instruction",
+          "js_snippet": "",
+          "user_variables": "[]",
+          "api_data": {},
+          "params_used": false,
+          "hard_assertion": false,
+          "expected_outcome": "",
+          "module_execution_index": 0,
+          "module_version": null,
+          "network_throttle": {},
+          "isEdited": false,
+          "use_query_assertion_v2": false,
+          "db_query": "",
+          "db_details": {},
+          "network_assertion_content": {},
+          "screenshot_command": "",
+          "smartui_contents": {},
+          "generative_id": "e823ae3f23fd493c9b669be70a045327",
+          "plan_id": "",
+          "generative_objective": "Verify the badge \"Quotes for KA01AB1234 · Honda-ish Activa 125\" and three plans: \"Basic\" at \"₹1,820.00\", \"Plus\" at \"₹2,170.00\" and \"Max\" at \"₹2,540.00\" per year.",
+          "error_message": "",
+          "error_code": "",
+          "reason": "",
+          "title": "",
+          "used_variables": [],
+          "reasoning": ""
         }
       ],
       "error_message": null,
@@ -3885,8 +4510,9 @@
       "result_code": null,
       "bifurcation_context": [],
       "approach_reason": [
-        "The verification screen was available and displayed the expected quote and plans. The run ended because the browser page or its session closed while the screenshot was being taken.",
-        "Check why the browser or test session is being closed during artifact capture, and keep the page open until screenshots and final verification complete."
+        "Reviewed bike insurance quotes for vehicle KA01AB1234, a Honda-ish Activa 125.",
+        "Confirmed that the available annual plans were Basic at ₹1,820.00, Plus at ₹2,170.00, and Max at ₹2,540.00.",
+        "The requested quote details were displayed successfully."
       ],
       "one_liner": null
     }
@@ -3894,7 +4520,7 @@
   "modules": [],
   "uploaded_files": [],
   "test_params": [],
-  "test_level_variables": "[{\"name\":\"valid_registration_message_shown\",\"value\":\"true\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"what_cover_do_you_need_step_shown\",\"value\":\"true\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"quotes_badge_check\",\"value\":\"true\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"basic_plan_price_check\",\"value\":\"₹1,820.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"plus_plan_price_check\",\"value\":\"₹2,170.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"max_plan_price_check\",\"value\":\"₹2,540.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"}]",
+  "test_level_variables": "[{\"name\":\"valid_registration_message_shown\",\"value\":\"true\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"what_cover_do_you_need_step_shown\",\"value\":\"true\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"quotes_badge_check\",\"value\":\"Quotes for KA01AB1234 · Honda-ish Activa 125\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"basic_plan_price_check\",\"value\":\"₹1,820.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"plus_plan_price_check\",\"value\":\"₹2,170.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"},{\"name\":\"max_plan_price_check\",\"value\":\"₹2,540.00\",\"value_type\":\"test_level\",\"variable_description\":\"ANALYZE result\"}]",
   "test_global_variables": [],
   "max_network_wait": 0,
   "wait_buffer": 0,

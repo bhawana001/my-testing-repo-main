@@ -1,29 +1,26 @@
 ---
 test: ../add-to-cart-variant_test.md
-status: passed
-started: 2026-09-11T14:03:21.907Z
-duration_s: 149
-session_id: 296e6fab-ec7a-4813-9baf-fd9bc0e311f2
+status: failed
+started: 2026-09-15T09:09:19.786Z
+duration_s: 44
+session_id: ff449fb0-293e-4735-be61-4647043ec5fb
 ---
 
-# Amazonia 1.2: Add to cart with variant — Result
+# ShopKart 1.2: Add to cart with variant — Result
 
-## Open the product page ✓ passed (2.17s)
-md5: 494db7e6bbcd38468c277fd52c32d104
-Go to https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant?reset=true and verify the product title "Everyday Cotton Tee" is visible and the cart count in the top right shows 0.
+## Confirm the default variant ✗ failed (42.2s)
+md5: 9bb78fad8bf7c18bf58ac7c087af929d
+Reason: AP produced no action for 3 consecutive steps — bug verdict: Agent failed to complete product-page verification [automation_bug/agent_misstep, confidence 0.98]
+Verify the product page shows "Wireless Gaming Headset 7.1", the price "$79.99" and "Selected: Midnight Black · Wireless".
 
-## Pick the variant ✓ passed (9.12s)
+## Switch colour to Arctic White ✓ passed (—)
 md5: 94f2f9a0e5eff24ed4e9a546e41299a4
-Click the size chip "XL", then click the color chip "Olive". Verify the text "Size: XL" and "Color: Olive" are visible and the price shown near the title reads "$20.00".
+Click "Arctic White" and verify the price changes to "$84.99" and the selection reads "Selected: Arctic White · Wireless".
 
-## Add to cart ✓ passed (33.3s)
+## Switch connection to Wired ✓ passed (—)
 md5: d94c24a7404d9d65c78f37577b9b87ba
-Click the "Add to Cart" button and verify a green banner says "Added to cart: Size XL, Color Olive".
+Click "Wired" and verify the price changes to "$69.99" and the selection reads "Selected: Arctic White · Wired".
 
-## Open the cart ✓ passed (47s)
+## Add the chosen variant to the cart ✓ passed (—)
 md5: a82269f65d26e0d03c965be7826bd30b
-Click the "Cart" button in the top bar and verify the heading "Shopping Cart (1 item)" is visible.
-
-## Verify the cart line ✓ passed (54s)
-md5: ee78fd83c5f786a6c6df531954ac194b
-Verify the cart line reads "Everyday Cotton Tee" with the variant text "Size: XL · Color: Olive", the line price "$20.00", and the "Cart total" row reads "$20.00".
+Click "Add to Cart" and verify a confirmation appears reading "Added to Cart: 1 × Wireless Gaming Headset 7.1 (Arctic White · Wired) at $69.99".

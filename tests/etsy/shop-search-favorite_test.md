@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite?reset=true
-max_steps: 45
-tags: [etsy, e-commerce, crud]
+url: https://my-testing-repo-main.vercel.app/etsy-clone-app?reset=true
+max_steps: 40
+tags: [etsy, marketplace, favorites]
 ---
 
-# Etsily 5.2: Shop search and favorite
+# Etsi 5.2: Shop search and favorite
 
-Catalog objective: search a shop, favorite an item, verify it in the favorites list.
+Catalog objective: search a shop, favorite an item, and verify it in the favorites list.
 Key assertion: the favorited item persists after reload.
 
-## Search the shop
-Go to https://my-testing-repo-main.vercel.app/etsy/shop-search-favorite?reset=true, type "ClayWorks" into "Search for shops", click "Search", and verify "ClayWorks Studio" is listed.
-
-## Open the shop
-Click "ClayWorks Studio" and verify items "Custom Name Ceramic Mug", "Speckled Pour-over Set" and "Mini Planter Trio".
+## Search for a shop
+Type "KilnAndClay" into the search box and verify the results show "2 listings" including "Hand-thrown Speckled Mug".
 
 ## Favorite an item
-Click the heart on "Speckled Pour-over Set" and verify it turns filled (♥) and the tab reads "♥ Favorites (1)".
+Click the "♡ Favorite" button on "Hand-thrown Speckled Mug" and verify the button now reads "♥ Favorited".
 
-## Verify after reload
-Reload the page without the reset parameter, click "♥ Favorites (1)", and verify "Speckled Pour-over Set · ClayWorks Studio" at "$58.00".
+## Open the favorites list
+Click the "Favorites" link in the header and verify the favorites page shows "1 favorite" and lists "Hand-thrown Speckled Mug".
+
+## Confirm it survives a reload
+Reload the page and verify the favorites page still shows "1 favorite" and still lists "Hand-thrown Speckled Mug".

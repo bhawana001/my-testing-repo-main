@@ -1,0 +1,18 @@
+{
+  "commit_id": "b05b9d35-86e1-44a1-a030-74a1db272e70",
+  "test_id": "1f163a08-d2e6-4f6e-bf4a-b64a29c0f94c",
+  "testcase_id": "01M2DF611WNR0WFP7WJH88GT8R",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "bot-handoff",
+  "executions": [
+    {
+      "execution_id": "dc173f20-8e25-4567-9bf5-40a51e8e336f",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-14T10:47:12.733Z"
+    }
+  ]
+}

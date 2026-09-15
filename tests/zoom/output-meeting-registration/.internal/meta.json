@@ -1,0 +1,18 @@
+{
+  "commit_id": "fb9a49ed-17e4-4ea2-b10c-110fe9ed9687",
+  "test_id": "af70a425-f095-460b-8a35-68366613da37",
+  "testcase_id": "01M2DSJVVGN683A3Z1XSYV61MP",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "meeting-registration",
+  "executions": [
+    {
+      "execution_id": "d1e68ddf-6a23-4472-abbd-aebf2c9f88ea",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-14T11:07:59.831Z"
+    }
+  ]
+}

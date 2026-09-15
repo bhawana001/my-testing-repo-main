@@ -1,0 +1,18 @@
+{
+  "test_id": "9e8d6103-a715-4ba5-8436-d3758961e4cb",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "funds-upi",
+  "commit_id": "b73b9bcc-4e52-4c88-9f6d-de3d461df62f",
+  "testcase_id": "01M2D9V4K7ETA6CTW17C950906",
+  "executions": [
+    {
+      "execution_id": "297985b0-a7d0-45f9-b5fb-f6425f39276b",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:55:24.974Z"
+    }
+  ]
+}

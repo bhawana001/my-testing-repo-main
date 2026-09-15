@@ -1,0 +1,18 @@
+{
+  "test_id": "5776a68f-3145-4d74-bdec-7e0015ecbbd4",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "credit-decline-fallback",
+  "commit_id": "76f6533b-0349-40a7-9f49-e38f3cb9f39e",
+  "testcase_id": "01M2D7ZBFXE57VGWE6EZ8K7VF0",
+  "executions": [
+    {
+      "execution_id": "3014c4e3-58fe-43fb-989d-1e7178538497",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:23:53.663Z"
+    }
+  ]
+}

@@ -1,23 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true
-max_steps: 40
-tags: [instacart, e-commerce, booking]
+url: https://my-testing-repo-main.vercel.app/instacart-clone-app?reset=true
+max_steps: 45
+tags: [instacart, grocery, checkout]
 ---
 
-# Instakart 7.3: Delivery slot checkout
+# Instacrate 7.3: Delivery slot checkout
 
 Catalog objective: choose a priority slot and complete checkout with a test card.
-Key assertion: the confirmation shows the chosen window and fees.
+Key assertion: confirmation shows the chosen window and fees.
 
-## Open the cart and proceed
-Go to https://my-testing-repo-main.vercel.app/instacart/delivery-slot-checkout?reset=true, click "Proceed to checkout", and verify a "Choose a delivery window" card lists "Priority", "Standard" and "Tomorrow morning" options.
+## Add an item and open checkout
+Click "Add" on "Organic Strawberries, 1 lb", click "Go to checkout", and verify the checkout page shows "GreenLeaf Market".
 
 ## Choose the priority slot
-Click the "Priority" option ("Today, within 60 minutes (2:00–3:00 PM)") and verify the "Fees" row reads "$4.49" ($1.50 service fee + $2.99 priority fee) and the "Order total" reads "$21.74".
+Click "Priority — within 1 hour · 2:00pm – 3:00pm" and verify the store card shows a priority fee of "$4.99".
 
-## Pay
-Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+## Pay with the test card
+Type "4242 4242 4242 4242" into the card number field, click "$5.00" for the tip, and verify the order total shows "$23.84".
 
-## Verify the window and fees
-Verify the confirmation's "Delivery window" row reads "Today, within 60 minutes (2:00–3:00 PM)" and its "Order total" row reads "$21.74".
+## Place the order
+Click "Place order" and verify the confirmation shows "Order placed" with an order number starting with "IC-".
+
+## Confirm the window and fees carried through
+Verify the confirmation shows a delivery window of "Priority — within 1 hour · 2:00pm – 3:00pm", a service fee of "$3.99" and a priority fee of "$4.99".

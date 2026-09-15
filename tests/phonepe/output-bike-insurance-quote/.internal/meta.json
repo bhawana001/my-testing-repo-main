@@ -1,18 +1,18 @@
 {
+  "commit_id": "ff67f152-a685-4b80-92b4-a4f2e66add74",
   "test_id": "8424829e-b060-494a-87da-2dc8ef54a321",
+  "testcase_id": "01M2A8EJZ8AB3X4QX421689SPH",
   "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
   "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
   "org_id": "3034585",
   "session_name": "bike-insurance-quote",
-  "commit_id": "dba32e68-44e1-4096-898c-6fced80bbc2d",
-  "testcase_id": "01M2A8EJZ8AB3X4QX421689SPH",
   "executions": [
     {
-      "execution_id": "3f8ef724-4676-4823-8542-7df65c10dea5",
+      "execution_id": "aaff6992-ee97-4d28-91af-922c4442e26b",
       "run_kind": "author",
-      "status": "broken",
+      "status": "passed",
       "valid": true,
-      "at": "2026-09-12T07:34:35.926Z"
+      "at": "2026-09-13T12:13:00.094Z"
     }
   ]
 }

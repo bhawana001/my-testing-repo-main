@@ -1,0 +1,18 @@
+{
+  "test_id": "ee576449-a750-407c-b371-13ee7e1fcac7",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "opportunity-kanban",
+  "commit_id": "75781c95-6f51-4e61-93e5-2c69220dd85b",
+  "testcase_id": "01M2DDHNTZNNG0HYMD4BYV5WWJ",
+  "executions": [
+    {
+      "execution_id": "853d31fd-f289-4889-a547-1640501702dd",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:00:08.330Z"
+    }
+  ]
+}

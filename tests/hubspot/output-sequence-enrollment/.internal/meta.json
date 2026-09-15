@@ -1,0 +1,18 @@
+{
+  "test_id": "bd0cc47a-ce9d-440e-8340-e19ab2b3aee2",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "sequence-enrollment",
+  "commit_id": "2a72ef35-bcb2-42a2-8617-c225d37a1a88",
+  "testcase_id": "01M2DEBGJE90PC86SDBVYRCZ8N",
+  "executions": [
+    {
+      "execution_id": "4b2ddaec-cba1-4e66-b7ba-c7eadb7c9c32",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:14:05.708Z"
+    }
+  ]
+}

@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/walmart/grocery-substitution?reset=true
-max_steps: 40
-tags: [walmart, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/walmart-clone-app?reset=true
+max_steps: 45
+tags: [walmart, e-commerce, grocery]
 ---
 
-# Walmartly 4.2: Grocery substitution
+# Wallmark 4.2: Grocery substitution
 
-Catalog objective: add groceries, enable substitutions on one item, place a test order.
-Key assertion: the substitution preference is saved on the item.
+Catalog objective: add groceries, set a substitution preference on one item, and place the order.
+Key assertion: the substitution preference is saved on that item.
 
-## Open the grocery cart
-Go to https://my-testing-repo-main.vercel.app/walmart/grocery-substitution?reset=true and verify the cart contains "Organic Whole Milk 1L", "Bananas (bunch)" and "Sourdough Loaf", each showing "No substitutions".
+## Add two grocery items
+Click "Add to cart" on "Whole Milk, 1 gal", click "Add to cart" on "Honey Wheat Bread", and verify the cart shows both items.
 
-## Enable substitutions on the milk
-Click the "Allow substitutions for Organic Whole Milk 1L" switch and verify the badge "Substitutions allowed" appears under the milk item only.
+## Set a substitution preference
+Select "Same brand only" in the "If this item is out of stock" dropdown for "Whole Milk, 1 gal" and verify a badge appears reading "Preference saved: Same brand only".
 
-## Reload and check persistence
-Reload the page without the reset parameter and verify the milk item still shows "Substitutions allowed".
+## Go to checkout and choose a slot
+Click "Continue to checkout", click "Today, 6pm – 7pm", and verify the order summary shows the pickup slot "Today, 6pm – 7pm".
 
-## Check out
-Click "Proceed to checkout", click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+## Place the order
+Click "Place order" and verify the confirmation shows "Order placed" with an order number starting with "W-".
 
-## Verify the preference on the order
-Verify the confirmation's item list shows "Substitutions allowed" under "Organic Whole Milk 1L" and "No substitutions" under "Sourdough Loaf".
+## Confirm the preference survived the order
+Verify the "Substitution preferences" card shows "Whole Milk, 1 gal" with "Same brand only" and "Honey Wheat Bread" with "Pick the best available match".

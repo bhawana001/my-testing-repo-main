@@ -1,0 +1,18 @@
+{
+  "test_id": "72f5d71c-6f42-4545-81e5-c7ac59fd8a44",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "health-plan-filter",
+  "commit_id": "75d0a501-927a-4d68-afa2-7892b0e52979",
+  "testcase_id": "01M2DD8P26SD94XRR1WDHBCTTR",
+  "executions": [
+    {
+      "execution_id": "fe6097dd-5dc9-49d9-b84c-d063af3c1e94",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T12:55:36.890Z"
+    }
+  ]
+}

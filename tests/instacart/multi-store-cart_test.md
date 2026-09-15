@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true
-max_steps: 40
-tags: [instacart, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/instacart-clone-app?reset=true
+max_steps: 45
+tags: [instacart, grocery, multi-store]
 ---
 
-# Instakart 7.1: Multi-store cart
+# Instacrate 7.1: Multi-store cart
 
 Catalog objective: add items from two stores and verify separate delivery slots.
 Key assertion: each store cart has its own slot and fee.
 
-## Open the carts
-Go to https://my-testing-repo-main.vercel.app/instacart/multi-store-cart?reset=true and verify items from two stores are listed: "Organic Whole Milk 1L" and "Bananas (bunch)" sold by "Green Grocer", and "Vitamin D3 1000 IU (90)" sold by "Corner Pharmacy".
+## Add an item from the first store
+Click "Add" on "Organic Strawberries, 1 lb" and verify the carts panel shows "GreenLeaf Market".
 
-## Proceed and try to skip slots
-Click "Proceed to checkout", then click "Continue to payment" and verify the message "Pick a slot for every store." is shown.
+## Add an item from a second store
+Click "Add" on "Coffee Beans, 2 lb" and verify the carts panel shows "Your carts (2 stores)" with both "GreenLeaf Market" and "BulkBarn Wholesale".
 
-## Pick a slot per store
-Click "Today 6pm–8pm" under "Green Grocer · delivery window" and "Tomorrow 10am–12pm" under "Corner Pharmacy · delivery window", and verify the summary shows "Green Grocer slot" as "Today 6pm–8pm", "Corner Pharmacy slot" as "Tomorrow 10am–12pm" and a "Fees" row of "$6.98" ($3.99 + $2.99).
+## Open checkout
+Click "Go to checkout" and verify the checkout page shows "2 stores · each delivers separately".
 
-## Pay
-Click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+## Confirm each store has its own fees
+Verify the GreenLeaf Market card shows a service fee of "$3.99" and the BulkBarn Wholesale card shows a service fee of "$5.49".
 
-## Verify per-store slots and fees
-Verify the confirmation lists "Green Grocer" as "Today 6pm–8pm · fee $3.99" and "Corner Pharmacy" as "Tomorrow 10am–12pm · fee $2.99".
+## Confirm each store picks its own window
+Click "Within 2 hours · 3:00pm – 5:00pm" in the GreenLeaf Market card, click "This evening · 6:00pm – 8:00pm" in the BulkBarn Wholesale card, and verify both options are selected in their own store cards.

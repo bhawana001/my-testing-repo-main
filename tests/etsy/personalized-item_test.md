@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/etsy/personalized-item?reset=true
-max_steps: 40
-tags: [etsy, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/etsy-clone-app?reset=true
+max_steps: 45
+tags: [etsy, marketplace, personalization]
 ---
 
-# Etsily 5.1: Personalized item purchase
+# Etsi 5.1: Personalized item purchase
 
-Catalog objective: buy an item requiring personalization text, enter custom text, check out.
+Catalog objective: buy an item requiring personalization text, enter the custom text, and check out.
 Key assertion: the personalization text is visible in the order details.
 
-## Open the listing
-Go to https://my-testing-repo-main.vercel.app/etsy/personalized-item?reset=true and verify the listing "Custom Name Ceramic Mug" from "ClayWorks Studio" is shown with a required "Add your personalization" field.
+## Open a personalizable listing
+Click "Custom Name Letterpress Print" and verify the listing page shows the price "$42.00" and a field labelled "Name to print (max 20 characters)".
 
-## Try adding without text
-Click "Add to cart" and verify the message "Personalization is required for this item." is shown.
+## Confirm personalization is required
+Click "Add to cart" without entering text and verify an error appears reading "This item requires personalization before it can be added."
 
-## Add with personalization
-Type "Grandma Jo" into the personalization field, click "Add to cart", and verify the cart shows "Custom Name Ceramic Mug" with "Personalization: “Grandma Jo”".
+## Enter the personalization
+Type "Priya & Marco" into the personalization field, click "Add to cart", and verify the cart shows a badge reading "Personalization: “Priya & Marco”".
 
 ## Check out
-Click "Proceed to checkout", click "Continue to payment", type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the Pay button, and verify "Order placed" is shown.
+Click "Proceed to checkout" and verify the confirmation shows "Order placed" with an order number starting with "ET-".
 
-## Verify order details
-Verify the confirmation shows "Personalization" as "Grandma Jo" and the item line also reads "Personalization: “Grandma Jo”".
+## Confirm the text carried into the order
+Verify the confirmation lists "Custom Name Letterpress Print" with "Personalization: “Priya & Marco”".

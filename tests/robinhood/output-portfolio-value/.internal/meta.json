@@ -1,0 +1,18 @@
+{
+  "test_id": "3cc1d04a-4c08-463f-9aee-cfc0249d9c0d",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "portfolio-value",
+  "commit_id": "fe6e7c59-0b48-49b7-8d3d-32bea45dc48b",
+  "testcase_id": "01M2D94TJ44Y7Q890Y9EQDEK0E",
+  "executions": [
+    {
+      "execution_id": "64351dce-4c74-4bea-af38-5ca356098b3d",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:43:11.427Z"
+    }
+  ]
+}

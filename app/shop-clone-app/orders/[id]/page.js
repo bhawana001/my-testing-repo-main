@@ -49,7 +49,7 @@ function OrderDetail({ id }) {
       return;
     }
     setError("");
-    setReceipt(createReturn(update, { orderId: order.id, reason, method, comment }));
+    setReceipt(createReturn(account, update, { orderId: order.id, reason, method, comment }));
   }
 
   return (

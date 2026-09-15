@@ -1,0 +1,18 @@
+{
+  "test_id": "58e1d3a0-c4a3-4926-b3af-5a5bb7a0fc35",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "paid-booking",
+  "commit_id": "135b9d3c-99a2-4e0b-9d09-48c70c81583e",
+  "testcase_id": "01M2E2N56H96N8V3CTJ4NA18ZT",
+  "executions": [
+    {
+      "execution_id": "24891964-0268-48b0-b910-a48657d68871",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T19:11:30.252Z"
+    }
+  ]
+}

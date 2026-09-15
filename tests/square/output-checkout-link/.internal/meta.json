@@ -4,13 +4,15 @@
   "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
   "org_id": "3034585",
   "session_name": "checkout-link",
+  "commit_id": "b01a4caa-beb2-4067-a7f5-fbbaae700df1",
+  "testcase_id": "01M29G626A28CV6WS8G9GE3AFE",
   "executions": [
     {
-      "execution_id": "52430ae2-b84b-495f-93c0-c42e600da5fe",
+      "execution_id": "f8844887-c7ef-427f-a167-45d6bcefd807",
       "run_kind": "author",
-      "status": "broken",
+      "status": "passed",
       "valid": true,
-      "at": "2026-09-12T04:27:43.256Z"
+      "at": "2026-09-13T11:02:53.994Z"
     }
   ]
 }

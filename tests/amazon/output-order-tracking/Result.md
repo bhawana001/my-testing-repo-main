@@ -1,21 +1,21 @@
 ---
 test: ../order-tracking_test.md
 status: passed
-started: 2026-09-11T11:24:43.992Z
-duration_s: 115
-session_id: 9f52443d-0898-4a00-8972-68903681dc66
+started: 2026-09-15T09:12:21.091Z
+duration_s: 101
+session_id: c30457ab-e1da-4e30-89ba-2d498ca92026
 ---
 
-# Amazonia 1.4: Order tracking — Result
+# ShopKart 1.4: Order tracking — Result
 
-## Open recent orders ✓ passed (40.2s)
-md5: 78ebf18a60f0134f88169f37cb920d73
-Go to https://my-testing-repo-main.vercel.app/amazon/order-tracking?reset=true and verify the heading "Your Orders" is visible with three order cards, the first one placed on "September 12, 2026" containing "AuraBuds Pro Wireless Earbuds".
+## Confirm the order list ✓ passed (34.2s)
+md5: 39d69838e2c9d76c77d9cfbb15cacdad
+Verify the orders page lists "3 orders" including order "112-8830571-2094318" with status text containing "Arriving Tuesday, September 16".
 
-## Track the latest order ✓ passed (40.6s)
-md5: 86826154ac7d1026ef1a5ee66b642a90
-Click the "Track package" button on the first (latest) order card. Verify the tracking view shows the status badge "Shipped" and the heading "Arriving Tuesday, September 15, 2026".
+## Open tracking for the in-transit order ✓ passed (43.5s)
+md5: 36cf0ed56714bbed68c838cec2c329c1
+Click "Track package" on order "112-8830571-2094318" and verify the detail page shows "Arriving Tuesday, September 16" and "ShopKart Logistics · Tracking ID TBA304991285001".
 
-## Verify the timeline dates ✓ passed (30s)
-md5: 8aa6e37b3a1fb117b9f310cfdc5e4e0c
-Verify the timeline lists the steps "Ordered", "Shipped", "Out for delivery" and "Delivered" in that order, that "Ordered" is marked complete, and that the "Shipped" step shows the date "Sunday, September 13, 2026 · 6:40 PM".
+## Confirm the timeline stage ✓ passed (21.7s)
+md5: dfbd93e8fad2ff55b0a13be74d844d24
+Verify the timeline lists the steps "Ordered", "Shipped", "Out for delivery" and "Delivered", and that "Shipped" is marked "Current status".

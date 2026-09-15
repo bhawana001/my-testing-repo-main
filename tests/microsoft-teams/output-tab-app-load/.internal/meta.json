@@ -1,0 +1,18 @@
+{
+  "test_id": "9dea2a9c-afd9-4216-a8a2-8384a264ee74",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "tab-app-load",
+  "commit_id": "0440603d-b34b-419f-a27e-335400a78822",
+  "testcase_id": "01M2FS7ZYX1536WCRAJK905074",
+  "executions": [
+    {
+      "execution_id": "e127adf8-b61d-4d3d-bbfc-e554e2c84613",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-14T11:03:07.967Z"
+    }
+  ]
+}

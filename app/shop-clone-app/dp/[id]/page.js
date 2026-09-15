@@ -58,7 +58,7 @@ export default function ProductPage({ params }) {
   // One-click: no card entry, no address entry, straight to a real order.
   function buyNow() {
     setPlacing(true);
-    const order = placeOrder(update, {
+    const order = placeOrder(account, update, {
       items: [{ productId: product.id, variant: label, qty, price }],
       total: Number((price * qty * 1.08).toFixed(2)),
       addressId: address.id,

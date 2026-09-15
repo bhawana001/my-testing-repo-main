@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/ebay/bid-placement?reset=true
+url: https://my-testing-repo-main.vercel.app/ebay-clone-app?reset=true
 max_steps: 40
-tags: [ebay, e-commerce, custom]
+tags: [ebay, auction, bidding]
 ---
 
-# eBidz 6.1: Bid placement
+# eBid 6.1: Bid placement
 
 Catalog objective: place a bid above the current price on an auction listing.
 Key assertion: the bid is registered and the user is shown as high bidder.
 
-## Open the auction
-Go to https://my-testing-repo-main.vercel.app/ebay/bid-placement?reset=true and verify the listing "Vintage Automatic Watch · 1974 · Serviced" shows "Current bid" "$120.00", "7 bids" and a high bidder other than you.
+## Open an auction listing
+Click "Vintage Rangefinder Camera 35mm" and verify the listing shows a current bid of "$82.00", "7" bids and high bidder "m_torres".
 
-## Bid below the minimum
-Type "121" into "Your max bid", click "Place bid", and verify the message "Enter $122.50 or more." is shown.
+## Reject a bid below the minimum
+Type "83" into the bid field, click "Place bid", and verify an error appears reading "Your bid must be at least $84.50."
 
-## Bid above the rival
-Clear the bid field, type "130", click "Place bid", and verify the message "You're the high bidder at $127.50. Your maximum bid is $130.00." appears.
+## Place a winning bid
+Clear the bid field, type "90", click "Place bid", and verify the page shows "Bid placed" with an amount of "$90.00".
 
-## Verify the bid registered
-Verify "Current bid" reads "$127.50", the count reads "8 bids", "High bidder" shows the badge "You", and the bid history lists "You" at "$127.50".
+## Confirm the bid is recorded
+Click "My eBid" and verify the bids list shows "Vintage Rangefinder Camera 35mm" at "$90.00" with status "High bidder".

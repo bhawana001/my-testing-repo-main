@@ -1,18 +1,18 @@
 {
+  "commit_id": "5f46fb6b-c696-40b8-8145-497f888a6640",
   "test_id": "460f305c-2536-4ca6-bc0b-2e603cb4072f",
+  "testcase_id": "01M28NE03V8JCQAXWC5VCEKEDF",
   "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
   "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
   "org_id": "3034585",
   "session_name": "delivery-slot-checkout",
-  "commit_id": "e72eca02-6dab-4f20-bc99-7e491ddba9cb",
-  "testcase_id": "01M28NE03V8JCQAXWC5VCEKEDF",
   "executions": [
     {
-      "execution_id": "408cb752-3306-4abf-b16c-f2fac1b88be2",
+      "execution_id": "7c88ca03-2f21-41fc-a933-1fffe5b73f75",
       "run_kind": "author",
-      "status": "broken",
+      "status": "passed",
       "valid": true,
-      "at": "2026-09-11T16:48:04.686Z"
+      "at": "2026-09-13T10:38:54.297Z"
     }
   ]
 }

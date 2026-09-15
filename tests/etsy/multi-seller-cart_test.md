@@ -1,20 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart?reset=true
-max_steps: 40
-tags: [etsy, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/etsy-clone-app?reset=true
+max_steps: 45
+tags: [etsy, marketplace, shipping]
 ---
 
-# Etsily 5.3: Cart with multiple sellers
+# Etsi 5.3: Cart with multiple sellers
 
 Catalog objective: add items from two shops and verify shipping is calculated per shop.
 Key assertion: two shipping lines with separate totals.
 
+## Add an item from the first shop
+Click "Hand-thrown Speckled Mug", click "Add to cart", and verify the cart badge shows one item.
+
+## Add an item from a second shop
+Click "Back to search", click "Letterpress Card Set of 6", click "Add to cart", and verify the cart now holds two items.
+
 ## Open the cart
-Go to https://my-testing-repo-main.vercel.app/etsy/multi-seller-cart?reset=true and verify the cart lists "Custom Name Ceramic Mug" sold by "ClayWorks Studio" and "Botanical Art Print A3" sold by "Fernhouse Prints".
+Click the "Cart" link in the header and verify the cart shows "2 shops in this order" with groups for "KilnAndClay" and "PaperPressCo".
 
-## Verify per-shop shipping
-Verify the order summary shows two separate shipping rows: "Shipping · ClayWorks Studio" at "$4.50" and "Shipping · Fernhouse Prints" at "$6.25".
+## Confirm per-shop shipping
+Verify the cart shows "Shipping from KilnAndClay" at "$5.50" and "Shipping from PaperPressCo" at "$3.25".
 
-## Verify the total
-Verify the "Subtotal" row reads "$57.00" and the "Order total" row reads "$67.75" ($57.00 + $4.50 + $6.25).
+## Confirm the combined totals
+Verify the order total panel shows Items "$52.00", Total shipping "$8.75" and a Total of "$60.75".

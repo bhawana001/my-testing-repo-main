@@ -1,0 +1,18 @@
+{
+  "test_id": "ab90c453-84c8-4b2c-a691-e5a6341c67cd",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "offers-enrollment",
+  "commit_id": "ddd833ab-3cc5-4d1e-bafa-c4d9f548df91",
+  "testcase_id": "01M2DCDPFGV3JA40RQJP2BDB38",
+  "executions": [
+    {
+      "execution_id": "1416e77b-97ae-4874-a21b-dbe3fcf65ea1",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T12:40:46.980Z"
+    }
+  ]
+}

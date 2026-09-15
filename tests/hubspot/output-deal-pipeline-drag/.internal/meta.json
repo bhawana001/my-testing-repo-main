@@ -1,0 +1,18 @@
+{
+  "test_id": "1160daa7-5bec-4495-a78e-6eda2ccdb6b9",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "deal-pipeline-drag",
+  "commit_id": "5592b016-dc02-4596-a0cb-326a4a34086a",
+  "testcase_id": "01M2DE7A2DZC1S8CRC08BDWGQ3",
+  "executions": [
+    {
+      "execution_id": "ee2dc8b1-b960-4805-bb36-5412c60401ac",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T13:12:10.331Z"
+    }
+  ]
+}

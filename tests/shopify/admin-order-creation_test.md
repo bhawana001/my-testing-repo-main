@@ -1,29 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/shopify/admin-order-creation?reset=true
+url: https://my-testing-repo-main.vercel.app/shopify-clone-app/admin?reset=true
 max_steps: 45
-tags: [shopify, e-commerce, crud]
+tags: [shopify, admin, orders]
 ---
 
-# Shopifly 2.4: Admin order creation
+# Shoplify 2.4: Admin order creation
 
-Catalog objective: in admin, create a draft order for a customer and mark it paid.
+Catalog objective: create a draft order for a customer in admin and mark it paid.
 Key assertion: the order appears in the orders list as paid.
 
-## Open the orders list
-Go to https://my-testing-repo-main.vercel.app/shopify/admin-order-creation?reset=true and verify the Orders list shows order #1004.
+## Confirm the starting orders list
+Verify the Orders tab shows "Orders (2)" listing order "#1001" and order "#1002".
 
-## Open create order
-Click "Create order" and verify the Products and Customer panels.
+## Open the draft order builder
+Click "Draft orders" and verify a "Create draft order" card is shown with a "Customer name" field.
 
-## Add products
-Click "Add" to add "Botanical Art Print A3", then select "Custom Name Ceramic Mug · $22.00", set Quantity to 2, click "Add", and verify "Total" reads "$84.00".
+## Build the draft
+Type "Marco Oduya" into "Customer name", "marco@example.com" into "Customer email", select "Canvas Market Tote" as the Product, type "2" into Quantity, click "Add line item", and verify a draft total of "$52.00" is shown.
 
-## Try without a customer
-Click "Collect payment · Mark as paid" and verify "Select a customer."
+## Save the draft
+Click "Save draft order" and verify the draft orders list shows draft "D1" for "Marco Oduya" with status "open".
 
-## Choose customer and mark paid
-Select "Maria Chen <maria@globex.test>" as Customer, click "Collect payment · Mark as paid", and verify "Order #1005 created and marked as paid."
-
-## Verify the orders list
-Verify the first row reads "#1005", customer "Maria Chen <maria@globex.test>", total "$84.00", Payment status "Paid" and Fulfillment "Unfulfilled".
+## Mark the draft paid
+Click "Mark as paid" on draft "D1" and verify the Orders tab shows order "#1003" for "Marco Oduya" with channel "Draft order" and status "paid".

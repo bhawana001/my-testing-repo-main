@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/instacart/replacement-preferences?reset=true
-max_steps: 45
-tags: [instacart, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/instacart-clone-app?reset=true
+max_steps: 40
+tags: [instacart, grocery, replacements]
 ---
 
-# Instakart 7.2: Replacement preferences
+# Instacrate 7.2: Replacement preferences
 
-Catalog objective: set a replacement choice on an out-of-stock-prone item.
+Catalog objective: set a replacement choice on an item that often goes out of stock.
 Key assertion: the preference persists in the cart item detail.
 
-## Open the cart
-Go to https://my-testing-repo-main.vercel.app/instacart/replacement-preferences?reset=true and verify "Organic Strawberries 1 lb" is marked "Often out of stock" with "If out of stock:" set to "Best match (shopper picks)".
+## Add a flaky item
+Click "Add" on "Baby Spinach, 5 oz" and verify the carts panel shows "Baby Spinach, 5 oz".
 
-## Set a specific replacement
-Select "Specific replacement: Berry Farms Strawberries 1 lb" in the strawberries' "If out of stock" dropdown.
+## Choose a specific replacement
+Select "Choose a specific replacement" in the "If it's out of stock" dropdown for "Baby Spinach, 5 oz" and verify a "Backup item" dropdown appears.
 
-## Verify after reload
-Reload the page without the reset parameter, click "Item details" under the strawberries, and verify the detail shows "If out of stock" as "Specific replacement: Berry Farms Strawberries 1 lb".
+## Pick the backup item
+Select "Spring Mix, 5 oz" as the backup and verify a badge appears reading "Saved: Choose a specific replacement → Spring Mix, 5 oz".
+
+## Confirm it persists after reload
+Reload the page and verify the cart still shows "Saved: Choose a specific replacement → Spring Mix, 5 oz".

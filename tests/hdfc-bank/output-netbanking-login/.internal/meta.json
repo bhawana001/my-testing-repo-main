@@ -1,0 +1,18 @@
+{
+  "test_id": "5871a0c9-1cc0-489b-9a35-d886663d5673",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "netbanking-login",
+  "commit_id": "611141df-aba4-4963-866a-ff1f8b95d8cc",
+  "testcase_id": "01M2DBEG02P5FPS1D4FT9TS824",
+  "executions": [
+    {
+      "execution_id": "00a95388-6969-4f7f-addb-f58a41dd7c69",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T12:24:03.188Z"
+    }
+  ]
+}

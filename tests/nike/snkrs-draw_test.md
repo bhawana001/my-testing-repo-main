@@ -1,26 +1,26 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/nike/snkrs-draw?reset=true
+url: https://my-testing-repo-main.vercel.app/nike-clone-app/launch?reset=true
 max_steps: 45
-tags: [nike, e-commerce, custom]
+tags: [nike, launch, draw]
 ---
 
-# Nyke 8.3: SNKRZ draw entry
+# Nyke 8.3: SNKRS draw entry
 
 Catalog objective: enter a draw on a launch product.
-Key assertion: the entry confirmed state is shown.
+Key assertion: the entry-confirmed state is shown.
 
-## Open the launch
-Go to https://my-testing-repo-main.vercel.app/nike/snkrs-draw?reset=true and verify "Air Stride '26 “Volt”" with the badge "Draw · Launches Sep 18" and an "Enter Draw" button.
+## Confirm the launch product
+Verify the launch page shows "Nyke Air Meridian 'First Light'" at "$210.00" with a badge reading "Draw closes September 20, 2026 at 9:00 AM".
 
-## Enter without a size
-Click "Enter Draw" and verify "Select a size to enter the draw."
+## Confirm entry requires membership
+Click "Enter draw" and verify an error appears reading "Sign in to your Nyke account to enter."
 
-## Pick a size and open confirmation
-Click "US 10", click "Enter Draw", and verify a "Confirm your entry" dialog showing Size "US 10" and "Visa •••• 4242".
+## Sign in
+Click "Sign in", type "priya.nair@example.com" into Email, type "member2026" into Password, and click "Sign in", then verify a "Member" badge is shown.
 
-## Submit the entry
-Click "Submit entry" and verify "You're in the draw" with Size "US 10".
+## Confirm a size is required
+Click "Enter draw" and verify an error appears reading "Choose the size you want."
 
-## Verify after reload
-Reload the page without the reset parameter and verify "You're in the draw" is still shown and the button reads "Entered" and is disabled.
+## Enter the draw
+Click "US 10", click "Enter draw", and verify the page shows "You're in the draw" with an entry id starting with "DRAW-", status "Entered — awaiting draw" and size "US 10".

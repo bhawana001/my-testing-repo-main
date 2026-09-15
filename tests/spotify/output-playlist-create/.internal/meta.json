@@ -1,0 +1,18 @@
+{
+  "test_id": "d4665d0a-32ef-4eb0-974b-684d15b30c13",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "playlist-create",
+  "commit_id": "965240c3-bae9-476e-aeb9-52812a9f023a",
+  "testcase_id": "01M2E3PPDB9K6WN2JC5PW0NBDE",
+  "executions": [
+    {
+      "execution_id": "e0ef93bd-7467-4d09-bf4a-a1f2bd4687db",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T19:28:04.306Z"
+    }
+  ]
+}

@@ -1,26 +1,20 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant?reset=true
-max_steps: 30
-tags: [amazon, e-commerce, checkout]
+url: https://my-testing-repo-main.vercel.app/shop-clone-app/dp/sku_headset?reset=true
+max_steps: 40
+tags: [amazon, e-commerce, variant]
 ---
 
-# Amazonia 1.2: Add to cart with variant
+# ShopKart 1.2: Add to cart with variant
 
-Catalog objective: pick a size and color variant, add to cart, open the cart.
-Key assertion: cart shows the exact variant and the correct price (XL costs $20.00, other sizes $18.00).
+Catalog objective: pick a size and colour variant and add to cart.
+Key assertion: cart shows the exact variant chosen.
 
-## Open the product page
-Go to https://my-testing-repo-main.vercel.app/amazon/add-to-cart-variant?reset=true and verify the product title "Everyday Cotton Tee" is visible and the cart count in the top right shows 0.
+## Switch colour to Arctic White
+Click "Arctic White" and verify the price reads "$84.99" and the selection reads "Selected: Arctic White · Wireless".
 
-## Pick the variant
-Click the size chip "XL", then click the color chip "Olive". Verify the text "Size: XL" and "Color: Olive" are visible and the price shown near the title reads "$20.00".
+## Switch connection to Wired
+Click "Wired" and verify the price reads "$69.99" and the selection reads "Selected: Arctic White · Wired".
 
-## Add to cart
-Click the "Add to Cart" button and verify a green banner says "Added to cart: Size XL, Color Olive".
-
-## Open the cart
-Click the "Cart" button in the top bar and verify the heading "Shopping Cart (1 item)" is visible.
-
-## Verify the cart line
-Verify the cart line reads "Everyday Cotton Tee" with the variant text "Size: XL · Color: Olive", the line price "$20.00", and the "Cart total" row reads "$20.00".
+## Add the chosen variant to the cart
+Click "Add to Cart" and verify a confirmation appears reading "Added to Cart: 1 × Wireless Gaming Headset 7.1 (Arctic White · Wired) at $69.99".

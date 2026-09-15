@@ -1,0 +1,18 @@
+{
+  "test_id": "637bbbe8-e08b-47d2-ac1c-26d62c681360",
+  "project_id": "01KJSH1ECPR455A3XRGBKR3NV3",
+  "folder_id": "01KJSH1EDR1244HSJ1CGJNNB6K",
+  "org_id": "3034585",
+  "session_name": "crypto-buy",
+  "commit_id": "212e775c-21db-4ec3-a289-51cab3d02680",
+  "testcase_id": "01M2D9Z03MYZPX9HB8BGH5Z7VY",
+  "executions": [
+    {
+      "execution_id": "a1a48ce2-fc5d-4c22-bfa8-fa5e7a784579",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-09-13T11:58:55.667Z"
+    }
+  ]
+}

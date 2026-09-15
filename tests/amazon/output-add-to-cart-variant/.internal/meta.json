@@ -8,11 +8,11 @@
   "session_name": "add-to-cart-variant",
   "executions": [
     {
-      "execution_id": "9f810907-8971-44f1-b891-781af7c9bcf5",
+      "execution_id": "c3aaa922-941b-42d2-9701-4acbc08294f6",
       "run_kind": "author",
-      "status": "passed",
+      "status": "broken",
       "valid": true,
-      "at": "2026-09-11T14:05:52.704Z"
+      "at": "2026-09-15T09:10:04.739Z"
     }
   ]
 }
