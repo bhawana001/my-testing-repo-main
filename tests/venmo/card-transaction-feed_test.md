@@ -17,7 +17,7 @@ Verify the transactions list shows "Corner Grocer" at "$42.18" in the Groceries 
 Verify the rewards card states "3% dining · 1% groceries · no cashback on transit".
 
 ## Make a card purchase
-Click the simulate purchase button and verify a new transaction appears at the top of the feed.
+Click "Simulate a $58.40 purchase at Nonna's Trattoria" and verify a new transaction appears at the top of the feed.
 
 ## Verify the new transaction carries the right merchant and cashback tag
-Verify the newest row names the simulated merchant with its amount and a cashback badge, and "Cashback earned" has increased from its starting value.
+Verify the newest row reads "Nonna's Trattoria" at "$58.40" in the Dining category with a cashback badge of "$1.75", which is 3% of the purchase.

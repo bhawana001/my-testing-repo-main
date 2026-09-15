@@ -1,30 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/chase/login-2fa?reset=true
-max_steps: 30
+url: https://my-testing-repo-main.vercel.app/chase-clone-app?reset=true
+max_steps: 45
 tags: [chase, banking, auth]
-variables:
-  demo_email: { value: "demo@evals.dev" }
-  demo_password: { value: "Demo123!", secret: true }
-  otp: { value: "123456" }
 ---
 
 # Chaise Bank 23.1: Login with 2FA
 
-Catalog objective: log in with an OTP challenge in the test environment.
-Key assertion: the dashboard loads with masked account numbers.
+Catalog objective: log in with an OTP challenge.
+Key assertion: the dashboard loads with masked accounts.
 
-## Open the sign-in page
-Go to https://my-testing-repo-main.vercel.app/chase/login-2fa?reset=true and verify the heading "Sign in to Chaise Online" is visible with Email and Password fields.
+## Enter the credentials
+Type "priya.nair" into "Username", type "Bank2026!" into "Password", and click "Sign in".
 
-## Try a wrong password
-Type {{demo_email}} into the Email field and "wrongpass" into the Password field, click "Continue", and verify an error message containing "Incorrect email or password" is shown.
-
-## Sign in with the correct password
-Clear the Password field, type {{demo_password}}, click "Continue", and verify the heading "Verify it's you" with a "Verification code" field is shown.
+## Verify the second step is required
+Verify a two-step verification banner appears with a "One-time code" field.
 
 ## Enter the one-time code
-Type {{otp}} into the Verification code field and click "Verify and continue".
+Type "483921" into "One-time code" and click "Verify and sign in".
 
-## Verify the dashboard
-Verify the heading "Welcome back, Demo" is visible, the text "Signed in as Demo User" is shown, and three account cards are listed with masked numbers "•••• 4821", "•••• 9930" and "•••• 1177" (no full account numbers are displayed).
+## Verify the dashboard and masked accounts
+Verify the dashboard greets Priya and the accounts card shows "Total Checking ••••8841" at "$4,210.55", "Premier Savings ••••2290" at "$18,740.12" and "Chaise Sapphire Card ••••9921" at "$-1,284.37".

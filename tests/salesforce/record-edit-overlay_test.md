@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?reset=true
-max_steps: 40
-tags: [salesforce, crm, crud]
+url: https://my-testing-repo-main.vercel.app/salesforce-clone-app/accounts?reset=true
+max_steps: 45
+tags: [salesforce, crm, records]
 ---
 
-# Salesforze 28.4: Record edit through overlay
+# Salesfource 28.4: Record edit through the overlay
 
-Catalog objective: edit an account field and save through loading overlays.
-Key assertion: the saved value persists after reload.
+Catalog objective: edit an account field and save through the loading overlay.
+Key assertion: the saved value persists after a reload.
 
-## Open the account
-Go to https://my-testing-repo-main.vercel.app/salesforce/record-edit-overlay?reset=true and verify the account "Globex Corporation" shows Phone "(555) 010-4400" and Industry "Manufacturing".
+## Open the record for editing
+Verify the "Northwind Labs" account shows "Employees" of "240", then click "Edit" on it.
 
-## Edit
-Click "Edit", wait for the "Loading record…" overlay to disappear, and verify the edit form with a Phone field is shown.
+## Change a field
+Replace "Employees" with "310" and select "Manufacturing" in "Industry".
 
-## Change and save
-Change Phone to "(555) 010-9999", select "Technology" for Industry, click "Save", wait for the "Saving…" and "Refreshing…" overlays to finish, and verify a confirmation message saying the account Globex Corporation was saved.
+## Save through the overlay
+Click "Save" and verify the button shows a saving state before the record returns to its read-only view.
 
-## Verify after reload
-Reload the page without the reset parameter and verify Phone reads "(555) 010-9999" and Industry reads "Technology".
+## Verify the value persisted after a reload
+Verify "Employees" now reads "310" and "Industry" reads "Manufacturing", then reload https://my-testing-repo-main.vercel.app/salesforce-clone-app/accounts and verify both values are still there.

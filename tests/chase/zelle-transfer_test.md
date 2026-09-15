@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/chase/zelle-transfer?reset=true
-max_steps: 40
-tags: [chase, banking, wizard]
+url: https://my-testing-repo-main.vercel.app/chase-clone-app?reset=true
+max_steps: 50
+tags: [chase, banking, payments]
 ---
 
 # Chaise Bank 23.2: Zelly transfer
 
 Catalog objective: send a Zelly payment to a saved contact.
-Key assertion: confirmation with a reference number.
+Key assertion: a confirmation with a reference number is shown.
 
-## Open Zelly
-Go to https://my-testing-repo-main.vercel.app/chase/zelle-transfer?reset=true and verify the "Total Checking" card shows "$4,210.55" and the wizard step "Send money with Zelly" lists the contacts "Priya Nair" and "Tom Alvarez".
+## Sign in
+Type "priya.nair" into "Username", "Bank2026!" into "Password", click "Sign in", type "483921" into "One-time code", and click "Verify and sign in".
 
-## Pick the recipient and amount
-Choose "Priya Nair", click "Continue", type "45" into Amount and "Dinner" into Memo, click "Continue", and verify the review step lists "Priya Nair", "45" and "Dinner".
+## Open Zelly and choose a recipient
+Go to https://my-testing-repo-main.vercel.app/chase-clone-app/zelle and choose "Tom Alvarez", then verify "Sending to" reads "Tom Alvarez".
 
-## Send
-Click "Send money" and verify the confirmation "You sent $45.00 to Priya Nair" with the badge "Sent".
+## Send the money
+Select the Total Checking account in "From account", type "120" into "Amount", type "Half of the tickets" into "Memo", and click "Send money".
 
-## Verify the reference and balance
-Verify a "Reference number" starting with "ZL-" is shown and the "Total Checking" balance now reads "$4,165.55".
+## Verify the confirmation and reference number
+Verify a green banner titled "Money sent" says "$120.00" was sent to "Tom Alvarez", with "Reference number" of "ZL-154800", "Amount" of "$120.00" and "Memo" of "Half of the tickets".

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/salesforce/lead-creation?reset=true
-max_steps: 40
-tags: [salesforce, crm, crud]
+url: https://my-testing-repo-main.vercel.app/salesforce-clone-app/leads?reset=true
+max_steps: 45
+tags: [salesforce, crm, leads]
 ---
 
-# Salesforze 28.1: Lead creation via LWC form
+# Salesfource 28.1: Lead creation
 
-Catalog objective: create a lead through the Lightning form with required fields.
+Catalog objective: create a lead through the form with its required fields.
 Key assertion: the lead appears in the list view with the correct owner.
 
-## Open leads
-Go to https://my-testing-repo-main.vercel.app/salesforce/lead-creation?reset=true and verify "Leads · All Open Leads" lists Maria Chen (Globex) and Ahmed Khan (Initech).
+## Open the new lead form
+Click "New Lead" and verify a "New Lead" form appears with "Last Name *" and "Company *" marked as required.
 
-## Save with missing fields
-Click "+ New Lead", click "Create" without filling anything, and verify the errors "*Last Name is required." and "*Company is required."
+## Verify the required fields are enforced
+Click "Save" with the form empty and verify inline errors appear on "Last Name *" and "Company *".
 
-## Fill required fields
-Type "Sam" into First Name, "Lee" into Last Name, "Acme Robotics" into Company, "sam@acme.test" into Email, then click "Create".
+## Fill in the lead
+Type "Rivera" into "Last Name *", "Riverfield FC" into "Company *", "sam@riverfield.test" into "Email", select "Partner Referral" in "Lead Source", and select "Marco Oduya" in "Lead Owner".
 
-## Verify list view and owner
-Verify the list view shows "Sam Lee" at the top with company "Acme Robotics", lead status "Open - Not Contacted" and Lead Owner "Demo User", and the count reads "3 of 3".
+## Verify the lead is in the list with the right owner
+Click "Save" and verify a green banner titled "Lead created" names lead "00Q101" for Rivera at Riverfield FC owned by Marco Oduya, and the "All Open Leads (2)" table shows that row with an owner of "Marco Oduya".
