@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit?reset=true
+url: https://my-testing-repo-main.vercel.app/drive-clone-app/coedit?reset=true
 max_steps: 45
-tags: [google-drive, docs-productivity, custom]
+tags: [google-drive, documents, collaboration]
 ---
 
-# Drively 45.2: Real-time coedit
+# Drivve 45.2: Real-time coedit
 
 Catalog objective: two sessions edit a doc and verify there is no conflict.
-Key assertion: both edits are present with cursors shown.
+Key assertion: both edits are present and cursors are shown.
 
-## Session A edits
-Go to https://my-testing-repo-main.vercel.app/google-drive/realtime-coedit?reset=true, type "Day 1: strategy" into the Session A input, click "Add line" in Session A, and verify both panes show "Day 1: strategy".
+## Edit from session A
+Type "Session A: freeze starts Friday" into the Session A input, click "Insert line" in Session A, and verify the document body now contains that line attributed to "Priya Nair".
 
-## Session B edits
-Type "Day 2: team building" into the Session B input, click "Add line" in Session B, and verify both panes show "Day 2: team building".
+## Edit from session B
+Type "Session B: rollback plan attached" into the Session B input, click "Insert line" in Session B, and verify the document body now contains that line attributed to "Mira Shah".
 
-## Verify no conflict and cursors
-Verify both panes contain "Offsite agenda", "Day 1: strategy" and "Day 2: team building", Session A shows Priya's cursor label "▏Priya", Session B shows "▏Demo", and the header says "0 conflicts".
+## Verify both edits survived
+Verify "Lines" reads 4 and both "Session A: freeze starts Friday" and "Session B: rollback plan attached" are present in the document.
+
+## Verify the cursors are shown
+Verify the cursors row shows a badge naming "Priya Nair cursor at line" and a badge naming "Mira Shah cursor at line".

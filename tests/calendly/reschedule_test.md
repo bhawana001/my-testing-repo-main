@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/calendly/reschedule?reset=true
-max_steps: 45
-tags: [calendly, docs-productivity, booking]
+url: https://my-testing-repo-main.vercel.app/calendly-clone-app?reset=true
+max_steps: 50
+tags: [calendly, scheduling, booking]
 ---
 
-# Calendlee 46.3: Reschedule flow
+# Calendari 46.3: Reschedule flow
 
-Catalog objective: reschedule a booking from the confirmation email link.
+Catalog objective: reschedule a booking from the confirmation link.
 Key assertion: the old slot is freed and the new one confirmed.
 
-## Open the confirmation email
-Go to https://my-testing-repo-main.vercel.app/calendly/reschedule?reset=true and verify the email "Confirmed: 30 Minute Meeting with Priya Nair" shows "9:00am · Tuesday, September 15, 2026 (Eastern)".
+## Book a slot first
+Select "Eastern Time (EDT)" in "Your timezone", click the time button "03:30 EDT", type "Sam Rivera" into "Name" and "sam@riverfield.test" into "Email", click "Schedule event", and verify a "Booking confirmed" card shows "Your time" of "03:30 EDT".
+
+## Open the confirmation link
+Click "Open the confirmation link" and verify the booking page shows "Reference CAL-4100" with a "Confirmed" badge and "Your time" of "03:30 EDT".
 
 ## Reschedule
-Click "Reschedule", click September 16, click the "2:00pm" slot, and verify a "Confirm new time" button appears.
+Click "Reschedule" and verify a "Pick a new time" card appears, then click the time button "04:00 EDT".
 
-## Confirm
-Click "Confirm new time" and verify "Rescheduled" with New time "2:00pm · Wednesday, September 16, 2026" and Previous time "9:00am · Tuesday, September 15, 2026".
-
-## Verify the old slot was freed
-Click "Check availability on the old day" and verify September 15 now offers the "9:00am" slot again.
+## Verify the old slot is freed and the new one confirmed
+Verify a green banner reads "Rescheduled — 03:30 EDT is free again and 04:00 EDT is confirmed.", "Your time" now reads "04:00 EDT", and the History card contains "Rescheduled from 03:30 EDT to 04:00 EDT".

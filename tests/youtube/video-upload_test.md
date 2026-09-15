@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/youtube/video-upload?reset=true
+url: https://my-testing-repo-main.vercel.app/youtube-clone-app/upload?reset=true
 max_steps: 45
-tags: [youtube, streaming, wizard]
+tags: [youtube, media, publishing]
 ---
 
-# YouTubely 49.1: Video upload and process
+# Yootube 49.1: Video upload and process
 
-Catalog objective: upload a short video with title and visibility.
-Key assertion: the video processes and plays at the set visibility.
+Catalog objective: upload a short video with a title and a visibility setting.
+Key assertion: the video processes and plays at the visibility set.
 
-## Select the file
-Go to https://my-testing-repo-main.vercel.app/youtube/video-upload?reset=true, click "Select sample demo-clip.mp4", and verify "demo-clip.mp4 · 00:42 · 18 MB".
+## Fill in the upload
+Type "Shop tour — September" into "Title", type "A walk through the build bay." into "Description", choose the "Unlisted" visibility, and verify "Unlisted" is selected.
 
-## Details
-Click "Continue", type "My first edge deploy" into Title, choose "No, it's not made for kids", click "Continue", and verify the "Visibility" step.
+## Upload it
+Click "Upload" and verify a card appears showing "Title" of "Shop tour — September", "Visibility" of "unlisted" and "Status" of "Processing".
 
-## Visibility
-Choose "Unlisted", click "Publish", and wait for "Processing complete. Your video is unlisted."
+## Wait for processing to finish
+Wait for the status to change and verify "Status" now reads "Ready" with a badge reading "Ready to play".
 
-## Play
-Click the player's "Play" button and verify the time advances past 0:00 and the badge reads "Unlisted" with an "Anyone with the link" note.
+## Verify it plays at the visibility set
+Click "Watch it" and verify the player shows "Playing — Shop tour — September", "Visibility" of "unlisted" and the note "A signed-out visitor can watch this only with the link".

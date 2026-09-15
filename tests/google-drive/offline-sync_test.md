@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/google-drive/offline-sync?reset=true
+url: https://my-testing-repo-main.vercel.app/drive-clone-app/offline?reset=true
 max_steps: 45
-tags: [google-drive, docs-productivity, custom]
+tags: [google-drive, documents, sync]
 ---
 
-# Drively 45.4: Offline mode edit sync
+# Drivve 45.4: Offline mode edit sync
 
-Catalog objective: edit offline and verify sync on reconnect.
+Catalog objective: edit offline and verify the change syncs on reconnect.
 Key assertion: the offline edit appears after reconnection.
 
 ## Go offline
-Go to https://my-testing-repo-main.vercel.app/google-drive/offline-sync?reset=true, click "Go offline", and verify the network badge reads "Offline".
+Click "Go offline" and verify the connection badge reads "Offline" with an amber banner saying edits are stored on this device.
 
-## Edit offline
-Add a new line "- Rain jacket" at the end of the document and verify the status "Offline · changes saved on this device" while the server copy does not contain "Rain jacket".
+## Make an edit while offline
+Type "Added while offline" into the line box, click "Save line", and verify an amber banner says the edit is queued and will sync when you reconnect.
 
-## Reconnect
-Click "Reconnect" and wait for the status to read "All changes saved in Drively".
+## Verify the edit is queued, not saved
+Verify "Queued edits" reads 1, the "Pending sync" card lists "Added while offline", and the Document card still shows "Lines saved to Drivve" of 2.
 
-## Verify sync
-Verify the Drively server copy now ends with "- Rain jacket" and "Last synced" reads "Sep 14, 10:05 AM".
+## Reconnect and verify the sync
+Click "Reconnect" and verify a green banner reads "Back online — 1 queued edit synced.", "Queued edits" reads 0, and "Lines saved to Drivve" reads 3 with the line "Added while offline" present.

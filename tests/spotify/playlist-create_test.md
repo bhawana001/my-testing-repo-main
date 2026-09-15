@@ -1,8 +1,8 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/spotify/playlist-create?reset=true
-max_steps: 45
-tags: [spotify, streaming, media]
+url: https://my-testing-repo-main.vercel.app/spotify-clone-app/playlists?reset=true
+max_steps: 50
+tags: [spotify, media, library]
 ---
 
 # Spotifly 48.2: Playlist create and add
@@ -10,14 +10,14 @@ tags: [spotify, streaming, media]
 Catalog objective: create a playlist and add three songs.
 Key assertion: the playlist persists with the correct tracks.
 
-## Create
-Go to https://my-testing-repo-main.vercel.app/spotify/playlist-create?reset=true, type "Road Trip" into the playlist name, click "Create", and verify "🎵 Road Trip" with "0 songs".
+## Create the playlist
+Type "Deep focus" into "Name", click "Create playlist", and verify a green banner reads "Playlist created." and a "Deep focus" playlist appears with "0 tracks".
 
-## Add three songs
-Click "Add" next to "Midnight Drive", "Glass Harbor" and "Slow Satellite", and verify "3 songs".
+## Add three tracks
+Select "Paper Lanterns — Hollow Coast" in the track picker and click "Add to this playlist", then select "Glass Corridor — Vela Nine" and click "Add to this playlist", then select "Winter Radio — Marlowe Grey" and click "Add to this playlist".
 
-## Try a duplicate
-Click "Add" next to "Midnight Drive" again and verify "“Midnight Drive” is already in this playlist." with the count still "3 songs".
+## Verify the tracks
+Verify the "Deep focus" card shows "Tracks" of 3 listing "Paper Lanterns", "Glass Corridor" and "Winter Radio" in that order.
 
-## Verify after reload
-Reload the page without the reset parameter and verify "Road Trip" still lists 1. Midnight Drive, 2. Glass Harbor, 3. Slow Satellite.
+## Verify the playlist persists
+Reload https://my-testing-repo-main.vercel.app/spotify-clone-app/playlists and verify the "Deep focus" playlist still shows "3 tracks".

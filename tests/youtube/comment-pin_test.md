@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/youtube/comment-pin?reset=true
+url: https://my-testing-repo-main.vercel.app/youtube-clone-app/watch/v1?reset=true
 max_steps: 45
-tags: [youtube, streaming, feed]
+tags: [youtube, media, moderation]
 ---
 
-# YouTubely 49.2: Comment and moderation
+# Yootube 49.2: Comment and moderation
 
-Catalog objective: comment on a video and pin a comment as the creator.
-Key assertion: the comment is pinned at the top.
+Catalog objective: comment on a video and pin it as the creator.
+Key assertion: the pinned comment sits at the top.
 
-## Comment as creator
-Go to https://my-testing-repo-main.vercel.app/youtube/comment-pin?reset=true, type "Thanks for watching! Part 2 drops Friday." into "Add a comment…", click "Comment", and verify it appears first from "Demo Channel ✓".
+## Verify the starting comments
+Verify "Commenting as" reads "Dan Okafor (channel owner)", "Comment count" reads 2, and the first comment is from "Mira Shah".
 
-## Pin a viewer comment
-Click "📌 Pin" under Sam Lee's comment "Could you do a follow-up on caching?"
+## Post a comment as the creator
+Type "Torque figures are in the description now." into the comment box, click "Comment", and verify "Comment count" reads 3 with a comment from "Dan Okafor" carrying that text.
 
-## Verify pinned at top
-Verify the first comment is now Sam Lee's "Could you do a follow-up on caching?" labelled "📌 Pinned by Demo Channel".
+## Pin it
+Click "Pin" on the "Torque figures are in the description now." comment and verify a green banner reads "Comment pinned to the top."
+
+## Verify it moved to the top
+Verify the first comment in the list is now from "Dan Okafor" reading "Torque figures are in the description now." with a badge reading "Pinned by the creator".

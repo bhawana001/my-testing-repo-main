@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/dropbox/upload-share-link?reset=true
+url: https://my-testing-repo-main.vercel.app/dropbox-clone-app/files?reset=true
 max_steps: 45
-tags: [dropbox, docs-productivity, crud]
+tags: [dropbox, documents, sharing]
 ---
 
-# Dropboxy 44.1: File upload and share link
+# Dropbaks 44.1: File upload and share link
 
 Catalog objective: upload a file and create a view-only link.
 Key assertion: the link opens for an anonymous viewer.
 
-## Upload
-Go to https://my-testing-repo-main.vercel.app/dropbox/upload-share-link?reset=true, click "⬆ Upload sample Q3-report.pdf", and verify "Q3-report.pdf" appears in All files.
+## Upload a file
+Type "press-release.txt" into "File name", select "Launch assets" in "Folder", type "Embargo lifts on Friday." into "Contents", click "Upload", and verify a green banner reads "press-release.txt uploaded to Launch assets."
 
-## Create a view-only link
-Click "Share" on Q3-report.pdf, keep "Can view", click "Create link", and verify the link "https://dropboxy.test/s/k3x9q2/Q3-report.pdf?dl=0" with the badge "Can view".
+## Create the view-only link
+Click "Create link" on the "launch-brief.txt" row and verify a green banner titled "Share link ready" shows the link "/dropbox-clone-app/s/s4820".
 
-## Open as anonymous
-Click "Open link as anonymous viewer" and verify the URL contains "s=k3x9q2".
+## Open the link as a visitor
+Click "Open it as a visitor" and verify the page title reads "launch-brief.txt" with the subtitle "Shared with you — you are not signed in".
 
-## Verify the anonymous view
-Verify "Viewing as guest · Can view", a preview of Q3-report.pdf, and "Editing and deleting are not available on view-only links."
+## Verify it is view only
+Verify the preview card shows a "View only" badge, "Owner" of "Priya Nair", the content "Launch brief — version 3", a "Download" button, and the note "Editing is not available on a view-only link."

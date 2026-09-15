@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/dropbox/version-history?reset=true
-max_steps: 45
-tags: [dropbox, docs-productivity, crud]
+url: https://my-testing-repo-main.vercel.app/dropbox-clone-app/versions?reset=true
+max_steps: 40
+tags: [dropbox, documents, versioning]
 ---
 
-# Dropboxy 44.4: Version history restore
+# Dropbaks 44.4: Version history restore
 
 Catalog objective: restore an older version of a file.
 Key assertion: the file content reverts to the selected version.
 
-## Open history
-Go to https://my-testing-repo-main.vercel.app/dropbox/version-history?reset=true and verify the current content (v3) reads "Starter: $12/mo", "Pro: $35/mo", "Business: $120/mo" and versions v3, v2, v1 are listed.
+## Verify the current content
+With "launch-brief.txt" selected, verify "Current version" reads 3 and the current content contains "Launch brief — version 3" and "Audience: existing customers".
 
-## Preview v1
-Click "Preview" on v1 and verify the preview shows "Starter: $9/mo".
+## Verify the version list
+Verify three versions are listed, with Version 1 reading "Audience: everyone", Version 2 reading "Audience: enterprise" and Version 3 marked "Current".
 
-## Restore v1
-Click "Restore" on v1 and verify "Restored version 1. It's now the current version (v4)."
+## Restore version 1
+Click "Restore" on Version 1 and verify a green banner reads "launch-brief.txt restored to version 1."
 
 ## Verify the content reverted
-Verify the current content reads "Starter: $9/mo", "Pro: $29/mo" and "Business: $99/mo".
+Verify "Current version" now reads 4, the current content contains "Launch brief — version 1" and "Audience: everyone", and Version 4 carries the note "Restored from version 1".

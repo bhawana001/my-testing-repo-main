@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/spotify/family-invite?reset=true
-max_steps: 45
-tags: [spotify, streaming, wizard]
+url: https://my-testing-repo-main.vercel.app/spotify-clone-app/family?reset=true
+max_steps: 40
+tags: [spotify, media, subscription]
 ---
 
 # Spotifly 48.4: Family plan invite
 
-Catalog objective: invite a member to the Family plan.
-Key assertion: the invite email is sent and a pending state is shown.
+Catalog objective: invite a member to the family plan.
+Key assertion: the invite is sent and shows as pending.
 
-## Open the family plan
-Go to https://my-testing-repo-main.vercel.app/spotify/family-invite?reset=true and verify "Premium Family · 1 of 6 accounts".
-
-## Invalid email
-Type "sam@acme" into Email address, click "Send invite", and verify "Enter a valid email address."
+## Verify the starting seats
+Verify the page subtitle reads "1 of 6 seats used" and the Members card shows "Members" of 1.
 
 ## Send the invite
-Change the email to "sam@acme.test", click "Send invite", and verify "2 of 6 accounts".
+Type "sam@home.test" into "Email", click "Send invite", and verify a green banner reads "Invite sent to sam@home.test — it stays pending until they accept."
 
-## Verify pending state and email
-Verify sam@acme.test is listed as "Invite sent · Pending" and Sent emails shows "To: sam@acme.test" with "Demo User invited you to Spotifly Premium Family".
+## Verify the pending state
+Verify the Invites card shows "Pending invites" of 1 with a row for "sam@home.test" carrying a "Pending" badge.
+
+## Verify the seat is reserved but not yet a member
+Verify the page subtitle now reads "2 of 6 seats used" while the Members card still shows "Members" of 1.

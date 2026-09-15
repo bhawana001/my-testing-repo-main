@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement?reset=true
-max_steps: 45
-tags: [youtube, streaming, auth]
+url: https://my-testing-repo-main.vercel.app/youtube-clone-app/premium?reset=true
+max_steps: 40
+tags: [youtube, media, entitlement]
 ---
 
-# YouTubely 49.3: Premium background play
+# Yootube 49.3: Premium background play
 
-Catalog objective: verify the background playback entitlement on a Premium test account (mobile web equivalent).
-Key assertion: the feature is active for Premium only.
+Catalog objective: verify the background playback entitlement flag on a premium account.
+Key assertion: the feature is active for premium only.
 
-## Free account
-Go to https://my-testing-repo-main.vercel.app/youtube/background-play-entitlement?reset=true and verify "Free test account" shows Membership "Free", entitlement "false", and Background play "Premium feature 🔒".
+## Verify the free account is not entitled
+Verify "Premium" reads "Not active" and the "Background play" row carries a "Not entitled" badge with "Background play entitlement" of "false".
 
-## Free account in background
-Click "Lock screen / switch app" and verify playback reads "Paused (app in background)".
+## Verify the free features that are still available
+Verify the "Comments" row carries an "Active" badge, since it is not premium only.
 
-## Premium account
-Click "Premium test account", turn on the "Background play" switch, and verify entitlement "true" and Membership "Premium".
+## Subscribe to Premium
+Type "4242 4242 4242 4242" into "Card number", click "Start Premium", and verify a green banner reads "Premium is active — background play is now entitled."
 
-## Premium in background
-Click "Lock screen / switch app" and verify playback reads "Playing (app in background)".
+## Verify the entitlement flipped
+Verify "Premium" reads "Active", the "Background play" row carries an "Active" badge, and "Background play entitlement" reads "true".
