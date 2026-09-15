@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Header from "./Header";
 import AmazonLogo from "./AmazonLogo";
-import { PRODUCTS, byCategory, GRID_CARDS, SLIDERS } from "./data";
+import { PRODUCTS, byCategory, GRID_CARDS, SLIDERS, findProduct } from "./data";
 import { BASE, usd } from "./lib";
+import { readCart, writeCart } from "./cart";
 
 const HERO = [
   { emoji: "🎮", bg: "#2b2f45", label: "Gaming Store" },
@@ -53,6 +55,33 @@ export default function ShopApp() {
     return () => clearInterval(t);
   }, []);
 
+  // The cart is shared with the product page and checkout. Hydrate from it on
+  // mount, then mirror every local change back so the header count stays right.
+  const hydrated = useRef(false);
+  useEffect(() => {
+    const lines = readCart();
+    if (lines.length) {
+      setCart(
+        lines
+          .map((l) => ({ product: findProduct(l.id), qty: l.qty }))
+          .filter((i) => i.product)
+      );
+    }
+    hydrated.current = true;
+  }, []);
+  useEffect(() => {
+    if (!hydrated.current) return;
+    writeCart(
+      cart.map((i) => ({
+        id: i.product.id,
+        title: i.product.title,
+        price: i.product.price,
+        emoji: i.product.emoji,
+        qty: i.qty,
+      }))
+    );
+  }, [cart]);
+
   async function addToCart(product) {
     setBusy(true);
     try {
@@ -92,18 +121,6 @@ export default function ShopApp() {
   // Hand the cart to the payment page. The checkout route reads it back from
   // sessionStorage, charges the card, and shows the confirmation.
   function goToCheckout() {
-    const payload = cart.map((i) => ({
-      id: i.product.id,
-      title: i.product.title,
-      price: i.product.price,
-      emoji: i.product.emoji,
-      qty: i.qty,
-    }));
-    try {
-      sessionStorage.setItem("shopkart_cart", JSON.stringify(payload));
-    } catch {
-      // storage blocked — the checkout page falls back to a demo cart
-    }
     setCartOpen(false);
     router.push(`${BASE}/checkout`);
   }
@@ -137,78 +154,12 @@ export default function ShopApp() {
   return (
     <>
       {/* ===== Header ===== */}
-      <header>
-        <div className="header-top">
-          <a href="#" className="header-logo" onClick={(e) => e.preventDefault()}>
-            <AmazonLogo />
-            <span className="slogan">.com</span>
-          </a>
-
-          <div className="header-location" onClick={() => setAddressOpen(true)}>
-            <div className="location-icon">📍</div>
-            <div className="location-text">
-              <span>Deliver to</span>
-              <span>{location}</span>
-            </div>
-          </div>
-
-          <div className="header-search">
-            <select className="search-select" aria-label="Category">
-              <option>All Departments</option>
-              <option>Gaming</option>
-              <option>Electronics</option>
-              <option>Home & Kitchen</option>
-              <option>Clothing & Fashion</option>
-            </select>
-            <input className="search-input" placeholder="Search ShopKart" aria-label="Search" />
-            <button className="search-button" aria-label="Search">🔍</button>
-          </div>
-
-          <div className="header-actions">
-            <div className="nav-item">
-              <span>EN</span>
-              <span>🇺🇸 ▾</span>
-            </div>
-            <div className="nav-item">
-              <span>Hello, sign in</span>
-              <span>Account &amp; Lists ▾</span>
-            </div>
-            <div className="nav-item">
-              <span>Returns</span>
-              <span>&amp; Orders</span>
-            </div>
-            <div className="header-cart" onClick={() => setCartOpen(true)}>
-              <div className="cart-icon-wrapper">
-                <span style={{ fontSize: 26 }}>🛒</span>
-                <span className={"cart-count" + (bounce ? " bounce" : "")}>
-                  {cartCount}
-                </span>
-              </div>
-              <span className="cart-text">Cart</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="header-sub-nav">
-          <button className="sub-nav-menu-btn" onClick={() => setDrawerOpen(true)}>
-            ☰ All
-          </button>
-          <div className="sub-nav-links">
-            {["Today's Deals", "Customer Service", "Registry", "Gift Cards", "Sell"].map(
-              (l) => (
-                <a key={l} href="#" className="sub-nav-link" onClick={(e) => e.preventDefault()}>
-                  {l}
-                </a>
-              )
-            )}
-          </div>
-          <div className="sub-nav-promo">
-            <a href="#" onClick={(e) => e.preventDefault()}>
-              Gaming Store: Upgrade your gaming gear
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header
+        onOpenCart={() => setCartOpen(true)}
+        onOpenDrawer={() => setDrawerOpen(true)}
+        onOpenAddress={() => setAddressOpen(true)}
+        location={location}
+      />
 
       {/* ===== Hero ===== */}
       <div className="hero-container">

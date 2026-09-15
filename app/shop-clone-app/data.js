@@ -74,3 +74,137 @@ export const SLIDERS = [
   { title: "Best Sellers in Beauty & Personal Care", link: "See details", category: "beauty" },
   { title: "Best Sellers in Toys & Games", link: "Shop toys", category: "toys" },
 ];
+
+// --- Search, brands and variants -----------------------------------------
+// Added so the storefront supports a real search -> results -> product page
+// journey with filters, and so the product page can offer buyable variants
+// (a variant changes price and stock, exactly like the real thing).
+
+// Brand per product. Kept as a lookup rather than edited into every literal
+// above so the original catalog stays readable.
+const BRANDS = {
+  sku_backpack: "Trailhead", sku_notebook: "Northbound", sku_pencils: "Northbound",
+  sku_calculator: "Cassio", sku_console: "NexPlay", sku_headset: "Aurex",
+  sku_keyboard: "Aurex", sku_mouse: "Vellum", sku_blocks: "Brickworks",
+  sku_teddy: "Cloudmane", sku_puzzle: "Brickworks", sku_car: "Vellum",
+  sku_mug: "Kilnwork", sku_lamp: "Lumio",
+};
+
+// Variant axes per product. Each option carries a price delta and its own stock
+// so choosing a variant genuinely changes what you are buying.
+const VARIANTS = {
+  sku_headset: {
+    axes: [
+      { name: "Color", options: [
+        { label: "Midnight Black", delta: 0, stock: 12 },
+        { label: "Arctic White", delta: 5, stock: 4 },
+        { label: "Forest Green", delta: 5, stock: 0 },
+      ] },
+      { name: "Connection", options: [
+        { label: "Wireless", delta: 0, stock: 12 },
+        { label: "Wired", delta: -15, stock: 7 },
+      ] },
+    ],
+  },
+  sku_keyboard: {
+    axes: [
+      { name: "Switch", options: [
+        { label: "Tactile Brown", delta: 0, stock: 9 },
+        { label: "Linear Red", delta: 0, stock: 5 },
+        { label: "Clicky Blue", delta: 4, stock: 0 },
+      ] },
+      { name: "Layout", options: [
+        { label: "Full size", delta: 0, stock: 9 },
+        { label: "Tenkeyless", delta: -8, stock: 6 },
+      ] },
+    ],
+  },
+  sku_mug: {
+    axes: [
+      { name: "Size", options: [
+        { label: "12 oz", delta: 0, stock: 20 },
+        { label: "16 oz", delta: 4, stock: 11 },
+      ] },
+      { name: "Glaze", options: [
+        { label: "Reactive Blue", delta: 0, stock: 20 },
+        { label: "Matte Charcoal", delta: 2, stock: 3 },
+        { label: "Sand", delta: 2, stock: 0 },
+      ] },
+    ],
+  },
+  sku_backpack: {
+    axes: [
+      { name: "Size", options: [
+        { label: "Standard", delta: 0, stock: 15 },
+        { label: "Large", delta: 8, stock: 6 },
+      ] },
+      { name: "Color", options: [
+        { label: "Slate", delta: 0, stock: 15 },
+        { label: "Crimson", delta: 0, stock: 2 },
+      ] },
+    ],
+  },
+  sku_lamp: {
+    axes: [
+      { name: "Finish", options: [
+        { label: "White", delta: 0, stock: 18 },
+        { label: "Black", delta: 0, stock: 9 },
+      ] },
+      { name: "Temperature", options: [
+        { label: "3000K Warm", delta: 0, stock: 18 },
+        { label: "5000K Daylight", delta: 3, stock: 4 },
+      ] },
+    ],
+  },
+};
+
+for (const p of PRODUCTS) {
+  p.brand = BRANDS[p.id] || "ShopKart Basics";
+  p.variants = VARIANTS[p.id] || null;
+  // Keywords broaden search beyond the literal title.
+  p.keywords = [p.title, p.brand, p.category, ...(p.about || [])].join(" ").toLowerCase();
+}
+
+export function findProduct(id) {
+  return PRODUCTS.find((p) => p.id === id) || null;
+}
+
+/** Price and stock for a chosen combination of variant options. */
+export function variantPrice(product, selection) {
+  if (!product.variants) return { price: product.price, stock: 25, label: "" };
+  let price = product.price;
+  let stock = 99;
+  const parts = [];
+  product.variants.axes.forEach((axis) => {
+    const chosen = axis.options.find((o) => o.label === selection[axis.name]);
+    if (!chosen) return;
+    price += chosen.delta;
+    stock = Math.min(stock, chosen.stock);
+    parts.push(chosen.label);
+  });
+  return { price: Number(price.toFixed(2)), stock, label: parts.join(" · ") };
+}
+
+/** Default selection = first option on each axis. */
+export function defaultSelection(product) {
+  const sel = {};
+  if (product.variants) product.variants.axes.forEach((a) => { sel[a.name] = a.options[0].label; });
+  return sel;
+}
+
+/**
+ * Full-text search over the catalog. Returns every product matching all of the
+ * query terms, so "wireless headset" narrows rather than widens.
+ */
+export function searchProducts(q) {
+  const terms = String(q || "").toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return [];
+  return PRODUCTS.filter((p) => terms.every((t) => p.keywords.includes(t)));
+}
+
+export const PRICE_BANDS = [
+  { id: "u25", label: "Under $25", min: 0, max: 24.99 },
+  { id: "25-50", label: "$25 to $50", min: 25, max: 50 },
+  { id: "50-100", label: "$50 to $100", min: 50.01, max: 100 },
+  { id: "100+", label: "$100 & above", min: 100.01, max: 1e9 },
+];

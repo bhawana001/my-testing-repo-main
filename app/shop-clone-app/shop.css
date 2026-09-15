@@ -1468,3 +1468,141 @@
   padding: 14px 16px;
   background: #fafafa;
 }
+
+/* ============================================================
+   Search results, product page, orders and returns.
+   Added for the Amazon use-case features; shares the header and
+   palette already defined above.
+   ============================================================ */
+
+.srp { display: grid; grid-template-columns: 240px 1fr; gap: 20px; max-width: 1500px; margin: 0 auto; padding: 16px; align-items: start; }
+.srp-rail { background: #fff; border-radius: 8px; padding: 14px 16px; }
+.srp-rail h3 { font-size: 15px; margin: 14px 0 6px; }
+.srp-rail h3:first-child { margin-top: 0; }
+.srp-check { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; cursor: pointer; }
+.srp-check input { width: 15px; height: 15px; flex: none; cursor: pointer; }
+.srp-muted, .ord-muted { color: #565959; font-size: 13px; }
+.srp-clear { margin-top: 12px; background: none; border: 0; color: #007185; cursor: pointer; padding: 0; font-size: 13px; }
+.srp-clear:hover { color: #c7511f; text-decoration: underline; }
+.srp-stars, .pdp-stars { color: #ffa41c; letter-spacing: 1px; }
+
+.srp-main { background: #fff; border-radius: 8px; padding: 14px 18px; min-width: 0; }
+.srp-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid #e7e7e7; padding-bottom: 10px; margin-bottom: 10px; font-size: 14px; }
+.srp-sort { font-size: 13px; color: #565959; display: flex; align-items: center; gap: 6px; }
+.srp-sort select { padding: 5px 8px; border-radius: 6px; border: 1px solid #d5d9d9; background: #f0f2f2; cursor: pointer; }
+.srp-list { list-style: none; margin: 0; padding: 0; }
+.srp-card { display: grid; grid-template-columns: 180px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid #e7e7e7; }
+.srp-card:last-child { border-bottom: 0; }
+.srp-thumb { display: flex; align-items: center; justify-content: center; font-size: 76px; background: #fff; border-radius: 8px; height: 170px; text-decoration: none; }
+.srp-info { min-width: 0; }
+.srp-title { font-size: 18px; color: #0f1111; text-decoration: none; display: block; line-height: 1.3; }
+.srp-title:hover { color: #c7511f; }
+.srp-brand { font-size: 13px; color: #565959; margin: 2px 0 4px; }
+.srp-rating { margin-bottom: 4px; font-size: 13px; }
+.srp-price { font-size: 22px; font-weight: 500; margin: 4px 0; }
+.srp-ship { font-size: 13px; color: #565959; margin-top: 4px; }
+.srp-empty { padding: 40px 0; text-align: center; color: #565959; }
+.srp-link { color: #007185; text-decoration: none; font-size: 14px; }
+.srp-link:hover { color: #c7511f; text-decoration: underline; }
+.srp-loading { padding: 40px; text-align: center; color: #565959; }
+
+/* ---- Product page ---- */
+.pdp-crumbs { max-width: 1500px; margin: 0 auto; padding: 10px 18px 0; font-size: 12px; color: #565959; display: flex; gap: 6px; flex-wrap: wrap; }
+.pdp-crumbs a { color: #007185; text-decoration: none; }
+.pdp { display: grid; grid-template-columns: 1fr 1.2fr 300px; gap: 24px; max-width: 1500px; margin: 0 auto; padding: 14px 18px 40px; align-items: start; }
+.pdp-gallery { background: #fff; border-radius: 8px; height: 420px; display: flex; align-items: center; justify-content: center; font-size: 180px; }
+.pdp-info { background: #fff; border-radius: 8px; padding: 18px; min-width: 0; }
+.pdp-title { font-size: 24px; font-weight: 500; line-height: 1.3; margin: 0 0 6px; }
+.pdp-brand { font-size: 14px; color: #007185; margin-bottom: 4px; }
+.pdp-rating { font-size: 13px; }
+.pdp-divider { border-top: 1px solid #e7e7e7; margin: 12px 0; }
+.pdp-price { font-size: 28px; font-weight: 400; }
+.pdp-axis { margin-top: 14px; }
+.pdp-axis-name { font-size: 14px; margin-bottom: 6px; }
+.pdp-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.pdp-swatch { background: #fff; border: 1px solid #d5d9d9; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 13px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 92px; }
+.pdp-swatch:hover { border-color: #007185; }
+.pdp-swatch.is-active { border-color: #e77600; box-shadow: 0 0 0 3px rgba(228, 121, 17, .25); background: #f0f8ff; }
+.pdp-swatch.is-soldout { opacity: .55; }
+.pdp-delta { color: #565959; font-size: 11px; }
+.pdp-about { margin: 6px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+.pdp-buybox { background: #fff; border: 1px solid #d5d9d9; border-radius: 8px; padding: 16px; position: sticky; top: 12px; }
+.pdp-ship { font-size: 13px; color: #565959; margin: 6px 0; }
+.pdp-stock { color: #007600; font-size: 17px; margin: 8px 0; }
+.pdp-stock.is-out { color: #b12704; }
+.pdp-qty { display: flex; align-items: center; gap: 8px; font-size: 14px; margin: 10px 0; }
+.pdp-qty select { padding: 5px 10px; border-radius: 8px; border: 1px solid #d5d9d9; background: #f0f2f2; cursor: pointer; }
+.pdp-btn { display: block; width: 100%; border: 0; border-radius: 20px; padding: 10px; font-size: 14px; cursor: pointer; margin-top: 8px; }
+.pdp-btn:disabled { opacity: .5; cursor: not-allowed; }
+.pdp-btn--cart { background: #ffd814; }
+.pdp-btn--cart:hover:not(:disabled) { background: #f7ca00; }
+.pdp-btn--buy { background: #ffa41c; }
+.pdp-btn--buy:hover:not(:disabled) { background: #fa8900; }
+.pdp-oneclick { margin-top: 14px; padding-top: 12px; border-top: 1px solid #e7e7e7; font-size: 13px; line-height: 1.8; }
+.pdp-added { margin-top: 12px; background: #f0fbf4; border: 1px solid #c3e6cd; border-radius: 8px; padding: 10px; font-size: 13px; color: #0f5132; }
+.pdp-added-link { display: block; margin-top: 6px; color: #007185; }
+.pdp-missing { max-width: 700px; margin: 60px auto; text-align: center; }
+
+/* ---- Orders, tracking, returns ---- */
+.ord { max-width: 1100px; margin: 0 auto; padding: 18px; }
+.ord-h1 { font-size: 26px; margin: 10px 0 14px; }
+.ord-h2 { font-size: 19px; margin: 0 0 4px; }
+.ord-tabs { display: flex; gap: 18px; border-bottom: 1px solid #d5d9d9; margin-bottom: 12px; }
+.ord-tab { background: none; border: 0; padding: 8px 2px; font-size: 14px; cursor: pointer; color: #007185; border-bottom: 3px solid transparent; }
+.ord-tab.is-active { color: #0f1111; font-weight: 700; border-bottom-color: #e77600; }
+.ord-count { font-size: 14px; color: #565959; margin-bottom: 10px; }
+.ord-card { background: #fff; border: 1px solid #d5d9d9; border-radius: 8px; margin-bottom: 18px; overflow: hidden; }
+.ord-card-head { display: flex; gap: 34px; flex-wrap: wrap; background: #f0f2f2; padding: 12px 18px; font-size: 12px; border-bottom: 1px solid #d5d9d9; }
+.ord-card-head > div { display: flex; flex-direction: column; gap: 2px; }
+.ord-card-id { margin-left: auto; text-align: right; }
+.ord-label { color: #565959; text-transform: uppercase; font-size: 11px; letter-spacing: .3px; }
+.ord-card-body { padding: 14px 18px; }
+.ord-status { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.ord-return-flag { color: #b12704; font-size: 14px; margin-bottom: 8px; }
+.ord-item { display: flex; gap: 14px; padding: 8px 0; }
+.ord-item-img { font-size: 46px; width: 70px; text-align: center; flex: none; }
+.ord-item-title { color: #007185; text-decoration: none; font-size: 15px; }
+.ord-item-title:hover { color: #c7511f; text-decoration: underline; }
+.ord-card-actions { display: flex; gap: 10px; flex-wrap: wrap; padding: 12px 18px; border-top: 1px solid #e7e7e7; }
+.ord-btn { display: inline-block; background: #fff; border: 1px solid #d5d9d9; border-radius: 20px; padding: 7px 16px; font-size: 13px; cursor: pointer; text-decoration: none; color: #0f1111; }
+.ord-btn:hover { background: #f7fafa; }
+.ord-btn--primary { background: #ffd814; border-color: #fcd200; }
+.ord-btn--primary:hover { background: #f7ca00; }
+.ord-meta { font-size: 13px; color: #565959; margin-bottom: 14px; }
+.ord-track { background: #fff; border: 1px solid #d5d9d9; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+.ord-timeline { list-style: none; display: flex; margin: 20px 0 0; padding: 0; }
+.ord-step { flex: 1; text-align: center; position: relative; font-size: 13px; color: #565959; }
+.ord-step::before { content: ""; position: absolute; top: 11px; left: -50%; width: 100%; height: 4px; background: #d5d9d9; z-index: 0; }
+.ord-step:first-child::before { display: none; }
+.ord-step.is-done::before { background: #067d62; }
+.ord-dot { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; margin: 0 auto 6px; border-radius: 50%; background: #d5d9d9; color: #fff; font-size: 14px; }
+.ord-step.is-done .ord-dot { background: #067d62; }
+.ord-step.is-done .ord-step-label { color: #0f1111; font-weight: 700; }
+.ord-step-now { display: block; color: #067d62; font-size: 11px; }
+.ord-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.ord-panel { background: #fff; border: 1px solid #d5d9d9; border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+.ord-panel h3 { font-size: 16px; margin: 0 0 8px; }
+.ord-panel p { font-size: 14px; line-height: 1.6; margin: 0 0 6px; }
+.ord-placed { display: flex; gap: 14px; background: #f0fbf4; border: 1px solid #c3e6cd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.ord-placed h2 { font-size: 20px; margin: 0 0 4px; color: #0f5132; }
+.ord-placed p { font-size: 14px; margin: 0 0 4px; }
+.ord-placed-tick { width: 34px; height: 34px; flex: none; border-radius: 50%; background: #067d62; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.ord-return-done { display: flex; gap: 14px; }
+.ord-return-done h4 { margin: 0 0 6px; font-size: 16px; }
+.ord-return-form { max-width: 520px; }
+.ord-field { display: block; margin-bottom: 14px; font-size: 14px; }
+.ord-field > span, .ord-field legend { display: block; margin-bottom: 5px; font-weight: 700; }
+.ord-field select, .ord-field textarea { width: 100%; padding: 8px; border: 1px solid #888c8c; border-radius: 6px; font: inherit; }
+.ord-field fieldset { border: 0; padding: 0; margin: 0; }
+.ord-error { background: #fff0f0; border: 1px solid #f5c6cb; color: #b12704; padding: 9px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 12px; }
+.ord-empty { background: #fff; border-radius: 8px; padding: 34px; text-align: center; color: #565959; }
+
+@media (max-width: 1000px) {
+  .srp { grid-template-columns: 1fr; }
+  .pdp { grid-template-columns: 1fr; }
+  .pdp-buybox { position: static; }
+  .srp-card { grid-template-columns: 110px 1fr; }
+  .srp-thumb { height: 110px; font-size: 48px; }
+  .ord-card-head { gap: 16px; }
+  .ord-card-id { margin-left: 0; text-align: left; }
+}
