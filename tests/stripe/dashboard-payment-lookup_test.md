@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/stripe/dashboard-payment-lookup?reset=true
+url: https://my-testing-repo-main.vercel.app/stripe-clone-app/checkout?reset=true
 max_steps: 45
-tags: [stripe, payments-infra, crud]
+tags: [stripe, payments, dashboard]
 ---
 
-# Stripely 9.5: Dashboard payment lookup
+# Stripey 9.5: Dashboard payment lookup
 
-Catalog objective: in the dashboard, find the latest payment and open its detail.
-Key assertion: the payment detail matches the amount and status paid.
+Catalog objective: find the latest payment in the dashboard and open its detail.
+Key assertion: the payment detail matches the amount and the paid status.
 
-## Open payments
-Go to https://my-testing-repo-main.vercel.app/stripe/dashboard-payment-lookup?reset=true and verify the first (latest) row is "$79.00 USD" "Succeeded" for "Pro plan + 2 seats" dated "Sep 14, 2026, 10:04 AM".
+## Take a payment first
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into "Expiry", "123" into "CVC", click "Pay $240.00", and verify the receipt shows "Payment ID" of "pi_3Qb101Mx03".
 
-## Open the latest payment
-Click "$79.00 USD" on the first row and verify the payment detail page.
+## Open the dashboard
+Go to https://my-testing-repo-main.vercel.app/stripe-clone-app/dashboard and verify the page subtitle reads "4 payments".
 
-## Verify the detail
-Verify the amount "$79.00 USD", status "Succeeded · Paid", Payment ID "pi_3Q9zLatest4242" and Payment method "Visa •••• 4242".
+## Find the latest payment
+Type "pi_3Qb101Mx03" into "Search payments" and verify a single row remains, showing "$240.00" with a "succeeded" status.
+
+## Open its detail
+Click "Open" on that row and verify the payment detail shows "$240.00", "Payment ID" of "pi_3Qb101Mx03", "Description" of "Pro plan — annual", "Payment method" of "Visa ••••4242" and a status of "succeeded".

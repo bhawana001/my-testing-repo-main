@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/paypal/guest-card-payment?reset=true
-max_steps: 40
-tags: [paypal, payments-infra, checkout]
+url: https://my-testing-repo-main.vercel.app/paypal-clone-app/checkout?reset=true
+max_steps: 45
+tags: [paypal, payments, checkout]
 ---
 
-# PayPally 10.2: Guest card payment
+# PayPaal 10.2: Guest card payment
 
-Catalog objective: choose pay by card without an account in the PayPally window.
+Catalog objective: choose pay by card without an account in the PayPaal window.
 Key assertion: the card form completes and the payment succeeds.
 
-## Open the merchant page and the PayPally window
-Go to https://my-testing-repo-main.vercel.app/paypal/guest-card-payment?reset=true, click "PayPally Checkout", and verify a popup shows "Pay $42.00 to Paper & Ink Studio" with a "Pay with Debit or Credit Card" button.
+## Open the PayPaal window
+Click "Pay with PayPaal" and verify the dialog titled "PayPaal" opens.
 
-## Choose guest card
-Click "Pay with Debit or Credit Card" and verify the popup shows "Pay with debit or credit card" with the note "No PayPally account needed." and card fields.
+## Switch to paying by card
+Click the "Pay by card" tab and verify a badge reads "Paying as a guest — no PayPaal account needed".
 
-## Pay
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, click the "Pay $42.00" button, and verify the popup closes and the merchant page shows the heading "Payment complete".
+## Fill in the card
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into "Expiry", "123" into "CVC", and click "Pay $41.06 as guest".
 
-## Verify guest payment
-Verify "Payment method" reads "Guest card · Visa •••• 4242" and "Account" reads "None (guest)".
+## Verify the payment succeeded without an account
+Verify a green banner titled "Payment complete" says "$41.06" was paid to Alder & Oak with "Guest card" and shows transaction "TX-9921".

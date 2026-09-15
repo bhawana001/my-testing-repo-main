@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/stripe/hosted-checkout?reset=true
+url: https://my-testing-repo-main.vercel.app/stripe-clone-app/checkout?reset=true
 max_steps: 40
-tags: [stripe, payments-infra, checkout]
+tags: [stripe, payments, checkout]
 ---
 
-# Stripely 9.1: Hosted Checkout session
+# Stripey 9.1: Hosted checkout
 
-Catalog objective: complete a Stripely Checkout payment with test card 4242.
+Catalog objective: complete a Stripey Checkout payment with test card 4242.
 Key assertion: the success page is reached and the amount is correct.
 
-## Open the hosted checkout
-Go to https://my-testing-repo-main.vercel.app/stripe/hosted-checkout?reset=true and verify the page shows "Pay Acme Cloud" with the amount "$79.00" and a "TEST MODE" badge.
+## Verify the checkout total
+Verify the order summary shows "Pro plan — annual" at "$240.00" and "Total due" of "$240.00".
 
-## Pay with the test card
-Type "4242 4242 4242 4242" into Card number, "12/29" into Expiry, "123" into CVC, then click the "Pay $79.00" button and verify the heading "Payment successful" appears.
+## Fill in the card
+Type "4242 4242 4242 4242" into "Card number", "12 / 34" into "Expiry", "123" into "CVC", and verify the pay button reads "Pay $240.00".
 
-## Verify the amount
-Verify "Amount paid" reads "$79.00", "Payment method" reads "Visa •••• 4242" and "Status" reads "Succeeded".
+## Pay
+Click "Pay $240.00" and verify a green banner titled "Payment successful" appears.
+
+## Verify the receipt
+Verify the receipt shows "Payment ID" of "pi_3Qb101Mx03", "Amount paid" of "$240.00", "Card" of "Visa ••••4242" and "Status" of "succeeded".

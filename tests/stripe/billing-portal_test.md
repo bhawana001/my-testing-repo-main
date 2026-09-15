@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/stripe/billing-portal?reset=true
+url: https://my-testing-repo-main.vercel.app/stripe-clone-app/portal?reset=true
 max_steps: 45
-tags: [stripe, payments-infra, crud]
+tags: [stripe, payments, billing]
 ---
 
-# Stripely 9.4: Billing portal update
+# Stripey 9.4: Billing portal
 
-Catalog objective: open the customer portal, update the card, verify the new default.
-Key assertion: the new payment method is shown as default.
+Catalog objective: open the customer portal, update the card and verify the new default.
+Key assertion: the new payment method is shown as the default.
 
-## Open the portal
-Go to https://my-testing-repo-main.vercel.app/stripe/billing-portal?reset=true and verify "Visa •••• 4242" is marked "Default".
+## Verify the current default
+Verify the "Payment methods" card shows "Visa ending in 4242" carrying a "Default" badge and "Current default" reads "Visa ending in 4242".
 
-## Declined card
-Click "+ Add payment method", type "4000 0000 0000 0002" into Card number, "12/29" into Expiry, "123" into CVC, click "Add and set as default", and verify "Your card was declined."
+## Add a new card
+Click "Add payment method" and verify a dialog titled "Add a payment method" opens, then type "4000 0566 5566 5556" into "New card number", type "09 / 30" into "New card expiry", and click "Add card".
 
-## Add a valid card
-Replace the card number with "5555 5555 5555 4444", click "Add and set as default", and verify "Mastercard •••• 4444" appears.
+## Verify the confirmation
+Verify a green banner reads "Card ending in 5556 added and set as default."
 
-## Verify the default
-Verify "Mastercard •••• 4444" shows "Default" and "Visa •••• 4242" now shows "Make default".
+## Verify the default moved
+Verify "Visa ending in 5556" now carries the "Default" badge, "Current default" reads "Visa ending in 5556", and the "Visa ending in 4242" row now offers a "Make default" button instead.
