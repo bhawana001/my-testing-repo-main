@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/venmo/request-and-remind?reset=true
+url: https://my-testing-repo-main.vercel.app/venmo-clone-app/requests?reset=true
 max_steps: 40
-tags: [venmo, consumer-fintech, feed]
+tags: [venmo, fintech, p2p]
 ---
 
 # Venmoo 22.2: Request and remind
 
-Catalog objective: request money and send a reminder (mobile web equivalent).
+Catalog objective: request money and send a reminder.
 Key assertion: the request is pending with a reminder-sent state.
 
-## Create a request
-Go to https://my-testing-repo-main.vercel.app/venmo/request-and-remind?reset=true, type "30" into Amount and "Dinner" into Note, click "Request", and verify an outgoing request "Priya Nair · $30.00 · Dinner" appears with status "Pending" and "No reminder sent".
+## Create the request
+Select "Mira Shah" in "From", type "65" into "Amount", type "Concert tickets" into "What's it for?", and click "Request".
 
-## Remind
-Click "Remind" on that request.
+## Verify the request is pending
+Verify the "Pending requests (1)" card shows a row reading "From Mira Shah" for "$65.00" with the note "Concert tickets" and a pending status badge.
 
-## Verify the reminder state
-Verify the request still shows status "Pending" and the reminder line reads "Reminder sent (1) · Just now".
+## Send a reminder
+Click "Send reminder" on that request and verify a badge appears reading "1 reminder sent".
+
+## Send a second reminder
+Click "Send reminder" again and verify the badge now reads "2 reminders sent" while the request is still pending.

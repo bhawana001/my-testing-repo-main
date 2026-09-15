@@ -1,26 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/paytm/upi-transfer?reset=true
-max_steps: 40
-tags: [paytm, consumer-fintech, wizard]
+url: https://my-testing-repo-main.vercel.app/paytm-clone-app/upi?reset=true
+max_steps: 45
+tags: [paytm, fintech, upi]
 ---
 
-# Paytum 20.1: UPI money transfer
+# Paytem 20.1: UPI transfer
 
-Catalog objective: send money to a UPI ID with a note in the test environment (mobile web equivalent).
-Key assertion: success screen and the transaction appears in history.
+Catalog objective: send money to a UPI id with a note.
+Key assertion: the success screen appears and the transaction is in the history.
 
-## Open send money
-Go to https://my-testing-repo-main.vercel.app/paytm/upi-transfer?reset=true and verify the "Send money · UPI" screen with UPI ID, Amount and note fields, and History showing one entry "Paid to ravi@okaxis".
+## Resolve the UPI ID
+Type "tom@okhdfb" into "UPI ID", click "Verify", and verify a badge reads "Paying Tom Alvarez".
 
-## Enter an invalid UPI ID
-Type "asha" into "Enter UPI ID", "500" into Amount, click "Proceed to pay", and verify the error "Enter a valid UPI ID like name@bank." is shown.
+## Enter the amount and note
+Type "500" into "Amount" and "Dinner share" into "Note", and verify "Wallet balance" reads "₹4,820.00".
 
-## Enter valid details
-Clear the UPI ID field, type "asha@okhdfc", type "Lunch" into "Add a note", click "Proceed to pay", and verify a "UPI PIN" field appears.
+## Send
+Click "Send" and verify a green banner titled "Payment successful" says "₹500.00" was sent to "Tom Alvarez".
 
-## Pay with the PIN
-Type "1234" into "Enter UPI PIN", click "Pay ₹500.00", and verify "Payment successful" with "Paid to" reading "asha@okhdfc", "Amount" "₹500.00" and "Note" "Lunch".
-
-## Verify history
-Verify the History list now shows at the top "Paid to asha@okhdfc · Lunch" with "−₹500.00".
+## Verify the receipt and the history
+Verify the receipt shows "Transaction ID" of "PTM9095900", "To" of "Tom Alvarez · tom@okhdfb", "Amount" of "₹500.00" and "Note" of "Dinner share", then go to https://my-testing-repo-main.vercel.app/paytm-clone-app and verify the wallet reads "₹4,320.00" with a transaction listed.

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/venmo/pay-with-note?reset=true
-max_steps: 40
-tags: [venmo, consumer-fintech, feed]
+url: https://my-testing-repo-main.vercel.app/venmo-clone-app/pay?reset=true
+max_steps: 45
+tags: [venmo, fintech, p2p]
 ---
 
-# Venmoo 22.1: P2P payment with emoji note
+# Venmoo 22.1: Pay with a note
 
-Catalog objective: pay a friend with a note and verify feed entry privacy (mobile web equivalent).
-Key assertion: the payment is visible per its privacy setting only.
+Catalog objective: pay a friend with a note and verify the feed entry privacy.
+Key assertion: the payment is visible only according to its privacy setting.
 
-## Open pay
-Go to https://my-testing-repo-main.vercel.app/venmo/pay-with-note?reset=true and verify the Pay form with To "Tom Alvarez" and a Feed containing one entry "You paid Priya Nair" marked "Friends".
+## Send a private payment
+Select "Tom Alvarez" in "To", type "40" into "Amount", type "Rent split" into "What's it for?", choose the "Private" privacy option, and click "Pay".
 
-## Pay privately with an emoji note
-Type "25" into Amount, "🍕 Pizza night" into "What's it for?", select "Private" in Privacy, click "Pay", and verify the message "You paid Tom Alvarez $25.00 · “🍕 Pizza night” · Private" appears.
+## Verify the payment went through with its note and privacy
+Verify a green banner titled "Payment sent" says you paid "Tom Alvarez" "$40.00" for "Rent split" with a privacy of "Private".
 
-## View as yourself
-Verify the feed note reads "Viewing as yourself (all entries) · 2 visible" and the "You paid Tom Alvarez" entry with "🍕 Pizza night" is listed.
+## Verify you can see it yourself
+Click "Yourself" in the feed viewer and note the visible count, then verify the "Rent split" entry is listed.
 
-## View as a friend
-Click "As a friend" and verify the note reads "Viewing as a friend (Public + Friends) · 1 visible" and the "🍕 Pizza night" entry is not shown, while the "Concert tix" entry to Priya Nair is still shown.
+## Verify the privacy setting hides it from others
+Click "The public" and verify the "Rent split" entry is not visible, then click "A friend" and verify it is still not visible — a Private payment is only visible to you.

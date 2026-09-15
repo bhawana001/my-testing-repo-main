@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/paytm/mobile-recharge?reset=true
+url: https://my-testing-repo-main.vercel.app/paytm-clone-app/recharge?reset=true
 max_steps: 40
-tags: [paytm, consumer-fintech, checkout]
+tags: [paytm, fintech, recharge]
 ---
 
-# Paytum 20.2: Mobile recharge
+# Paytem 20.2: Mobile recharge
 
-Catalog objective: recharge a prepaid number choosing a plan (mobile web equivalent).
+Catalog objective: recharge a prepaid number, choosing a plan.
 Key assertion: the plan amount is charged and a receipt is shown.
 
-## Enter the number
-Go to https://my-testing-repo-main.vercel.app/paytm/mobile-recharge?reset=true, type "9876543210" into "Prepaid mobile number", click "Browse plans", and verify three plans are listed: ₹239.00, ₹479.00 and ₹719.00.
+## Enter the number and operator
+Type "9876543210" into "Mobile number" and select "Jiofy" in "Operator".
 
 ## Choose a plan
-Select the "₹479.00" plan ("1.5 GB/day · 56 days") and click "Proceed to pay ₹479.00", then verify the "Amount" row reads "₹479.00".
+Choose the "₹299.00 · 2 GB/day" plan and verify "Selected plan" reads "₹299.00 · 28 days".
 
-## Pay
-Click "Pay ₹479.00" and verify "Recharge successful" is shown.
+## Recharge
+Click the recharge button and verify a green banner titled "Recharge successful" says "9876543210" was recharged with the "₹299.00" plan.
 
 ## Verify the receipt
-Verify "Receipt" reads "RC4790914", "Number" reads "9876543210" and "Amount charged" reads "₹479.00".
+Verify the receipt shows "Transaction ID" of "PTM9095900", "Operator" of "Jiofy", "Plan" of "₹299.00 · 2 GB/day · 28 days" and "Benefits" of "Unlimited calls + 100 SMS/day".

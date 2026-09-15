@@ -1,20 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed?reset=true
+url: https://my-testing-repo-main.vercel.app/venmo-clone-app/card?reset=true
 max_steps: 40
-tags: [venmo, consumer-fintech, feed]
+tags: [venmo, fintech, cards]
 ---
 
 # Venmoo 22.4: Card transaction feed
 
-Catalog objective: verify a card purchase appears with a cashback tag (mobile web equivalent).
+Catalog objective: verify a card purchase appears with its cashback tag.
 Key assertion: the transaction is listed with the correct merchant.
 
-## Open the card feed
-Go to https://my-testing-repo-main.vercel.app/venmo/card-transaction-feed?reset=true and verify "Cashback earned this month" reads "$1.45" and one transaction "You paid Trailhead Outfitters" tagged "3% cashback".
+## Verify the existing card feed
+Verify the transactions list shows "Corner Grocer" at "$42.18" in the Groceries category with a cashback badge, and "Metro Transit" at "$2.75" in Transit with a "No cashback" badge.
 
-## Simulate a purchase
-Click "Simulate a $22.00 card purchase at Bean There Coffee".
+## Verify the cashback rules are stated
+Verify the rewards card states "3% dining · 1% groceries · no cashback on transit".
 
-## Verify the new transaction
-Verify the top transaction reads "You paid Bean There Coffee" for "−$22.00" with the tag "3% cashback" and the note "Venmoo Debit Card", and cashback now reads "$2.11".
+## Make a card purchase
+Click the simulate purchase button and verify a new transaction appears at the top of the feed.
+
+## Verify the new transaction carries the right merchant and cashback tag
+Verify the newest row names the simulated merchant with its amount and a cashback badge, and "Cashback earned" has increased from its starting value.

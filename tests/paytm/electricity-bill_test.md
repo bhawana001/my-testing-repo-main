@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/paytm/electricity-bill?reset=true
+url: https://my-testing-repo-main.vercel.app/paytm-clone-app/bills?reset=true
 max_steps: 40
-tags: [paytm, consumer-fintech, checkout]
+tags: [paytm, fintech, bills]
 ---
 
-# Paytum 20.3: Bill payment electricity
+# Paytem 20.3: Electricity bill
 
-Catalog objective: fetch an electricity bill by consumer number and pay it (mobile web equivalent).
-Key assertion: the fetched amount matches the paid amount.
+Catalog objective: fetch an electricity bill by consumer number and pay it.
+Key assertion: the fetched amount matches the amount paid.
 
-## Try an unknown consumer number
-Go to https://my-testing-repo-main.vercel.app/paytm/electricity-bill?reset=true, type "1111111111" into "Consumer number", click "Fetch bill", and verify the message "No pending bill found for this consumer number." is shown.
+## Fetch the bill
+Select "Tata Power" in "Electricity board", type "100200300" into "Consumer number", and click "Fetch bill".
 
-## Fetch the demo bill
-Clear the Consumer number field, type "1002003004", click "Fetch bill", and verify the "Bill fetched" card shows "Demo User · 1002003004", due date "20 Sep 2026" and "Bill amount" "₹1,842.00".
+## Verify the fetched bill
+Verify the bill details show "Consumer name" of "Priya Nair", "Billing period" of "Aug 2026", "Units consumed" of "284", "Due date" of "2026-09-22" and "Amount due" of "₹1,842.50".
 
-## Pay
-Click "Pay ₹1,842.00" and verify "Bill paid" is shown.
+## Pay it
+Click "Pay ₹1,842.50" and verify a green banner titled "Bill paid" appears.
 
-## Verify amounts match
-Verify "Fetched amount" reads "₹1,842.00" and "Amount paid" reads "₹1,842.00".
+## Verify the amount paid matches the amount fetched
+Verify the banner says "₹1,842.50" was paid to Tata Power for consumer "100200300", with transaction "PTM9095900".

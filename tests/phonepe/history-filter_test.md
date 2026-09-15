@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/phonepe/history-filter?reset=true
+url: https://my-testing-repo-main.vercel.app/phonepe-clone-app/history?reset=true
 max_steps: 40
-tags: [phonepe, consumer-fintech, crud]
+tags: [phonepe, fintech, history]
 ---
 
-# PhonePay 21.3: Transaction history filter
+# PhonePey 21.3: History filter
 
-Catalog objective: filter history by month and category (mobile web equivalent).
-Key assertion: the filtered list matches the criteria.
+Catalog objective: filter the history by month and category.
+Key assertion: the filtered list matches both criteria.
 
-## Open history
-Go to https://my-testing-repo-main.vercel.app/phonepe/history-filter?reset=true and verify the text "7 transactions" with Month "All months" and Category "All categories".
+## Verify the unfiltered history
+With "All" selected for both filters, verify "Transactions shown" reads 6.
 
 ## Filter by month
-Select "August 2026" in Month and verify "3 transactions matching filters" with every row dated in August.
+Select "2026-08" in "Month" and verify "Transactions shown" reads 2 with a "Total" of "₹2,160.00", listing "Uber India" and "Adani Electricity".
 
-## Filter by category
-Select "Food" in Category and verify "1 transaction matching filters".
+## Add a category filter
+Select "2026-09" in "Month" and "Groceries" in "Category", then verify "Transactions shown" reads 1 with a "Total" of "₹2,140.00".
 
-## Verify the result
-Verify the only row is "Swiggly" dated "11 Aug" in category "Food" for "−₹299.00".
+## Verify the single row matches both criteria
+Verify the only row is "BigBazaar" at "₹2,140.00", which is both in 2026-09 and in Groceries.

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay?reset=true
-max_steps: 40
-tags: [phonepe, consumer-fintech, wizard]
+url: https://my-testing-repo-main.vercel.app/phonepe-clone-app/scan?reset=true
+max_steps: 45
+tags: [phonepe, fintech, upi]
 ---
 
-# PhonePay 21.1: UPI QR scan pay
+# PhonePey 21.1: QR scan to pay
 
-Catalog objective: simulate a scan-to-pay flow with amount entry (mobile web equivalent).
-Key assertion: payment success with the merchant name shown.
+Catalog objective: simulate the scan-to-pay flow with amount entry.
+Key assertion: the payment succeeds with the merchant name shown.
 
-## Scan
-Go to https://my-testing-repo-main.vercel.app/phonepe/qr-scan-pay?reset=true, click "Simulate scan of merchant QR", and verify the merchant "Fresh Mart Groceries" (freshmart@ybl · Verified merchant) is shown with an amount field.
+## Scan a QR code
+Click "Scan" on "Sunrise Chai Corner" and verify an "Enter amount" step appears.
 
-## Enter amount
-Type "240" into "Enter amount (₹)", click "Pay", and verify a "UPI PIN" field appears with "Paying Fresh Mart Groceries".
+## Enter the amount
+Type "120" into "Amount", type "Two cutting chai" into "Note", verify "Available balance" reads "₹12,480.00", then click "Continue".
 
-## Wrong PIN
-Type "0000" into UPI PIN, click "Confirm", and verify the error "Incorrect UPI PIN." is shown.
+## Enter the UPI PIN
+Verify the PIN step shows "Paying" of "Sunrise Chai Corner · ₹120.00", type "4321" into "UPI PIN", and click "Pay ₹120.00".
 
-## Correct PIN
-Clear the PIN, type "1234", click "Confirm", and verify "Payment successful" is shown with "Paid to" "Fresh Mart Groceries" and "Amount" "₹240.00".
+## Verify the success screen names the merchant
+Verify a green banner titled "Payment successful" says "₹120.00" was paid to "Sunrise Chai Corner", and the receipt shows "Transaction ID" of "T-9501", "Paid to" of "Sunrise Chai Corner · sunrisechai@ybl" and "Amount" of "₹120.00".

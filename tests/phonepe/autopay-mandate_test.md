@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate?reset=true
-max_steps: 40
-tags: [phonepe, consumer-fintech, wizard]
+url: https://my-testing-repo-main.vercel.app/phonepe-clone-app/autopay?reset=true
+max_steps: 45
+tags: [phonepe, fintech, mandates]
 ---
 
-# PhonePay 21.2: Autopay mandate setup
+# PhonePey 21.2: Autopay mandate
 
-Catalog objective: create a UPI autopay mandate for a service (mobile web equivalent).
+Catalog objective: create a UPI autopay mandate for a service.
 Key assertion: the mandate is active with its cap amount.
 
-## Open AutoPay
-Go to https://my-testing-repo-main.vercel.app/phonepe/autopay-mandate?reset=true and verify "Your mandates" lists "Spotifly Premium" (up to ₹119.00 · Monthly) and the form is prefilled with Service "Netflixy", maximum ₹649 and Monthly.
+## Choose the service
+Select "StreamFlix Premium" in "Service" and verify "Debit amount" reads "₹649.00" and "Frequency" reads "Monthly".
 
-## Continue
-Click "Continue" and verify the summary shows "Netflixy" and "₹649.00 · Monthly" with a UPI PIN field.
+## Verify the cap must cover the debit
+Type "500" into "Maximum limit per debit", type "4321" into "UPI PIN", click "Approve mandate", and verify an error says the limit must be at least ₹649.00.
 
-## Authorise
-Type "1234" into UPI PIN, click "Authorise mandate", and verify the message "AutoPay for Netflixy is active. Max ₹649.00 monthly." appears.
+## Set a valid cap and approve
+Replace "Maximum limit per debit" with "1000", type "4321" into "UPI PIN", and click "Approve mandate".
 
-## Verify the mandate
-Verify "Your mandates" now lists "Netflixy" with "Up to ₹649.00 · Monthly" and the status "Active".
+## Verify the mandate is active with its cap
+Verify a green banner titled "Mandate created" names the mandate for StreamFlix Premium at "₹649.00" monthly with a first debit of "2026-10-15", and the mandate list shows it with "Max ₹1,000.00" and an active status.

@@ -1,23 +1,23 @@
 ---
 mode: testing
-url: https://my-testing-repo-main.vercel.app/paytm/movie-ticket?reset=true
-max_steps: 40
-tags: [paytm, consumer-fintech, booking]
+url: https://my-testing-repo-main.vercel.app/paytm-clone-app/movies?reset=true
+max_steps: 45
+tags: [paytm, fintech, booking]
 ---
 
-# Paytum 20.5: Movie ticket booking
+# Paytem 20.5: Movie ticket
 
-Catalog objective: book a movie seat and reach payment (mobile web equivalent).
+Catalog objective: book a movie seat and reach payment.
 Key assertion: the seat is locked with the correct show and price.
 
-## Open the seat map
-Go to https://my-testing-repo-main.vercel.app/paytm/movie-ticket?reset=true and verify the "7:30 PM" show is selected and seat A3 is greyed out as taken.
+## Pick the movie
+Click the select button on "Kalkii 2898" and verify a "Showtimes · Kalkii 2898" card appears.
 
-## Pick a seat
-Click seat 4 in row B and verify "Selected" reads "Seat B4 · 7:30 PM" and the button reads "Pay ₹320.00".
+## Pick the showtime
+Click "6:20 PM" and verify a "Choose your seats" seat map appears.
 
-## Continue to payment
-Click "Pay ₹320.00" and verify the badge "Seat B4 locked for you until 10:10 AM" is shown.
+## Choose two seats
+Click seat "B2" and seat "B3", then verify "Seats selected" reads "B2, B3" and the price line reads "2 × ₹220.00" with a total of "₹440.00".
 
-## Verify show and price
-Verify "Show" reads "Sun 14 Sep · 7:30 PM", "Seat" reads "B4", "Ticket price" reads "₹320.00", "Convenience fee" reads "₹30.00" and "Total" reads "₹350.00".
+## Reach payment
+Click "Proceed to payment" and verify a green banner titled "Booking confirmed" names "Kalkii 2898" at "6:20 PM" with seats "B2, B3", and the ticket shows "Amount paid" of "₹440.00".
