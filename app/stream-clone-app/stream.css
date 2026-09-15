@@ -79,3 +79,13 @@
   .flx .flx-nav { display: none; }
 }
 .flx.flx-demo-visual .flx-btn--play { background: #141414; color: #141414; }
+
+/* Playback position + resume controls (Netflix 47.2). */
+.flx-resume { background: #141414; color: #e5e5e5; padding: 14px 20px 22px; font-size: 14px; }
+.flx-resume__prompt { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; background: #1f1f1f; border: 1px solid #333; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+.flx-resume__row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.flx-resume__track { flex: 1; min-width: 140px; height: 5px; background: #3a3a3a; border-radius: 3px; overflow: hidden; }
+.flx-resume__fill { height: 100%; background: #e50914; }
+.flx-resume__btn { background: #e50914; color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer; font: inherit; }
+.flx-resume__btn--ghost { background: transparent; border: 1px solid #555; }
+.flx-resume__hint { color: #9a9a9a; margin-top: 8px; font-size: 13px; }
