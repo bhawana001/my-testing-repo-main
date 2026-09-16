@@ -66,6 +66,11 @@ const registry = fs.readFileSync(path.join(ROOT, "lib/registry.js"), "utf8");
 const FLOW_META = {};
 for (const m of registry.matchAll(/"([\d.]+)"\s*:\s*\[\s*"([^"]+)"/g)) FLOW_META[m[1]] = m[2];
 
+const cloneStatus = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, "tests/status-clone.json"), "utf8")); }
+  catch { return {}; }
+})();
+
 const status = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(ROOT, "tests/status.json"), "utf8")); }
   catch { return {}; }
@@ -96,14 +101,15 @@ rows.forEach((r, i) => {
     testUpdated = app && body.includes(app) ? "yes" : "no";
   }
   const key = flow ? `${entDir}/${flow}` : "";
-  // status.json holds either a bare string or an object with a status field.
-  const raw = status[key];
-  const kane = typeof raw === "string" ? raw : (raw && raw.status) || "";
-  // Every recorded result predates the rewrite, so a rewritten test's old
-  // verdict says nothing about the clone app it now drives.
-  const kaneNote = kane && testUpdated === "yes"
-    ? "stale — test rewritten against the clone app, needs a fresh run"
-    : "";
+  // KaneStatus only reports runs against the clone app. The old mock-page result
+  // is kept in the note for reference, since it says nothing about the new app.
+  const fresh = cloneStatus[key];
+  const oldRaw = status[key];
+  const old = typeof oldRaw === "string" ? oldRaw : (oldRaw && oldRaw.status) || "";
+  const kane = fresh ? fresh.status : "not run yet";
+  const kaneNote = fresh
+    ? `run against the clone app on ${fresh.at}`
+    : old ? `old mock-page result was "${old}" — needs a run against the clone app` : "";
 
   out.push([i + 2, uc, entity, ucName, app ? "DONE" : "", link, testUpdated, command, kane, kaneNote]);
   paste.push([app ? "DONE" : "", command, link]);

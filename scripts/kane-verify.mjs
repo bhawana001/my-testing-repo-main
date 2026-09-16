@@ -11,6 +11,9 @@ import { hasFlow } from "../lib/flow-loaders.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STATUS = path.join(ROOT, "tests", "status.json");
+// Results since the tests were rewritten against the clone apps. Kept apart from
+// status.json because every entry there was earned against the old mock pages.
+const CLONE_STATUS = path.join(ROOT, "tests", "status-clone.json");
 const LOGDIR = process.env.KANE_LOG_DIR || path.join(ROOT, ".testmuai", "verify-logs");
 fs.mkdirSync(LOGDIR, { recursive: true });
 
@@ -86,6 +89,10 @@ for (const key of keys) {
   const st = readStatus();
   st[key] = passed ? "verified" : "failed";
   fs.writeFileSync(STATUS, JSON.stringify(Object.fromEntries(Object.entries(st).sort()), null, 2) + "\n");
+  let cs = {};
+  try { cs = JSON.parse(fs.readFileSync(CLONE_STATUS, "utf8")); } catch {}
+  cs[key] = { status: passed ? "verified" : "failed", at: new Date().toISOString().slice(0, 10) };
+  fs.writeFileSync(CLONE_STATUS, JSON.stringify(Object.fromEntries(Object.entries(cs).sort()), null, 2) + "\n");
   const secs = Math.round((Date.now() - started) / 1000);
   console.log(`DONE ${key} ${passed ? "PASS" : "FAIL"} exit=${r.status} ${secs}s${passed ? "" : capped ? " CAPPED (hard timeout)" : ` step=${failedStep} | ${reason || errTail.slice(0, 200)}`}`);
 }

@@ -1,21 +1,25 @@
 ---
 test: ../database-filter-sort_test.md
 status: passed
-started: 2026-09-13T16:42:39.680Z
-duration_s: 101
-session_id: 7634cce7-6733-4ccb-8a3d-b0a432ce9b96
+started: 2026-09-15T11:58:06.393Z
+duration_s: 140
+session_id: c927371d-cb8e-4a52-ab3e-261ee77c7717
 ---
 
-# Notionly 38.2: Database filter and sort — Result
+# Notiond 38.2: Database filter and sort — Result
 
-## Open the database ✓ passed (28.8s)
-md5: 4fd8741667ea9d542a00f2d390933311
-Go to https://my-testing-repo-main.vercel.app/notion/database-filter-sort?reset=true and verify "Launch tasks" shows "6 of 6" rows.
+## Verify the unfiltered view ✓ passed (24.8s)
+md5: efb5bc0e21844991952c245e20de3411
+Verify the View card shows "Rows shown" of "5 of 5".
 
-## Filter ✓ passed (34.3s)
-md5: b71fc577b91ab2a585e384aacb3a8e90
-Select "Status is In progress" and verify "3 of 6" with every row's status "In progress".
+## Filter by status ✓ passed (42.8s)
+md5: d2eb5e138d5567a9ed449f5dd84f3eb0
+Select "In progress" in "Filter by status" and verify "Rows shown" now reads "2 of 5" and the table lists only "Checkout redesign" and "Mobile nav polish".
 
-## Sort ✓ passed (35s)
-md5: 97214a5a249b335e472e45d937b117cf
-Select "Date ↑ ascending" and verify the rows appear in this order: "Onboarding emails" (2026-09-15), "Write launch blog" (2026-09-18), "Partner webinar" (2026-09-22).
+## Sort by due date ✓ passed (35.6s)
+md5: 94a07cc7817b75ad446e3e9602b45979
+Select "Due date, earliest first" in "Sort by due date" and verify the first row is "Checkout redesign" with a due date of "2026-09-18" and the second row is "Mobile nav polish" with "2026-09-25".
+
+## Reverse the sort ✓ passed (31.2s)
+md5: 062cc3ca125d187995339ebcda0134e1
+Select "Due date, latest first" and verify the first row is now "Mobile nav polish" with "2026-09-25".
