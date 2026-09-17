@@ -5,8 +5,9 @@ import { useState } from "react";
 import { Shell, TopBar, Page, Card, Btn, Row, Radio, Badge, Field, Input, Banner } from "../../clones/kit/ui";
 import { PLANS, findPlan, useStore } from "../account-store";
 import { BASE } from "../lib";
+import StreamFooter from "../StreamFooter";
 
-const BRAND = { name: "STREAMFLIX", slug: "netflix", mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
+const BRAND = { name: "STREAMFLIX", slug: "netflix", footer: false, mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
 const money = (n) => "$" + Number(n).toFixed(2);
 
 export default function SignupPage() {
@@ -48,6 +49,7 @@ export default function SignupPage() {
             <Badge tone="ok" testId="membership-status">Active</Badge>
           </Card>
         </Page>
+        <StreamFooter />
       </Shell>
     );
   }
@@ -78,6 +80,7 @@ export default function SignupPage() {
           </Card>
         </div>
       </Page>
+      <StreamFooter />
     </Shell>
   );
 }

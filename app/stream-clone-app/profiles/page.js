@@ -5,9 +5,10 @@ import { useState } from "react";
 import { Shell, TopBar, Page, Card, Btn, Badge, Field, Input, Banner, Row } from "../../clones/kit/ui";
 import { useStore } from "../account-store";
 import { BASE } from "../lib";
+import StreamFooter from "../StreamFooter";
 import { TITLES } from "../data";
 
-const BRAND = { name: "STREAMFLIX", slug: "netflix", mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
+const BRAND = { name: "STREAMFLIX", slug: "netflix", footer: false, mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
 
 export default function ProfilesPage() {
   const [s, update] = useStore();
@@ -80,6 +81,7 @@ export default function ProfilesPage() {
           </Card>
         )}
       </Page>
+      <StreamFooter />
     </Shell>
   );
 }

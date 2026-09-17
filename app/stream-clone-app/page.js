@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FlxHeader from "./FlxHeader";
+import StreamFooter from "./StreamFooter";
 import { BASE } from "./lib";
 import { ROWS, getTitle, titlesByIds } from "./data";
 
@@ -53,7 +54,7 @@ export default function StreamHome() {
         ))}
       </div>
 
-      <footer className="flx-footer">© 2026 StreamFlix, Inc. · Demo streaming clone</footer>
+      <StreamFooter />
     </>
   );
 }

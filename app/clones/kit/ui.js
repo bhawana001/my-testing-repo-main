@@ -15,7 +15,80 @@ export function Shell({ brand, children }) {
   return (
     <div className="ck" style={style} data-brand={brand.slug}>
       {children}
+      {brand.footer !== false && <Footer brand={brand} />}
     </div>
+  );
+}
+
+// Footer copy is grouped by kind of product so a bank reads like a bank and a
+// store like a store. Link labels avoid words the Kane tests click on
+// ("Help", "Support", "Status", "Returns"...) so they never compete with the
+// real controls on the page.
+const FINTECH = ["adyen", "amex", "chase", "coinbase", "hdfc", "klarna", "paypal", "paytm", "phonepe",
+  "razorpay", "revolut", "robinhood", "square", "stripe", "venmo", "wise", "zerodha"];
+const INSURANCE = ["lemonade", "policybazaar"];
+const COMMERCE = ["ebay", "etsy", "flipkart", "instacart", "nike", "shopify", "walmart"];
+const MEDIA = ["hotstar", "spotify", "youtube"];
+
+function footerFor(brand) {
+  const n = brand.name;
+  const company = { h: "Company", items: [`About ${n}`, "Careers", "Newsroom", "Investors"] };
+  const legal = { h: "Legal", items: ["Terms of Use", "Cookie preferences", "Accessibility", "Sitemap"] };
+  if (FINTECH.includes(brand.slug)) return {
+    cols: [company, { h: "Products", items: ["Personal", "Business", "Developers", "Partners"] },
+      { h: "Trust", items: ["Trust center", "Fraud awareness", "Fee schedule", "Disclosures"] }, legal],
+    note: `${n} is a fictional financial service. No real money moves and no account data is stored outside your browser.`,
+  };
+  if (INSURANCE.includes(brand.slug)) return {
+    cols: [company, { h: "Coverage", items: ["Renters", "Homeowners", "Term life", "Health"] },
+      { h: "Resources", items: ["Glossary", "Licensing", "Grievance redressal", "Disclosures"] }, legal],
+    note: `${n} is a fictional insurer. Quotes and premiums are illustrative and no policy is issued.`,
+  };
+  if (COMMERCE.includes(brand.slug)) return {
+    cols: [company, { h: "Shop with us", items: ["Gift ideas", "Student deals", "Store locator", "Sustainability"] },
+      { h: "Sell", items: ["Become a seller", "Affiliates", "Advertise", "Brand registry"] }, legal],
+    note: `${n} is a fictional store. Orders are simulated and nothing is shipped or charged.`,
+  };
+  if (MEDIA.includes(brand.slug)) return {
+    cols: [company, { h: "Watch & listen", items: ["Devices", "Gift cards", "Creators", "Ad choices"] },
+      { h: "Developers", items: ["Platform", "Brand assets", "Partners", "Blog"] }, legal],
+    note: `${n} is a fictional streaming service. All titles, artists and matches are made up.`,
+  };
+  return {
+    cols: [company, { h: "Product", items: ["Integrations", "Enterprise", "Templates gallery", "Changelog"] },
+      { h: "Developers", items: ["API docs", "App directory", "Partners", "Blog"] }, legal],
+    note: `${n} is a fictional workplace app. Workspaces, people and data are sample content.`,
+  };
+}
+
+export function Footer({ brand }) {
+  const { cols, note } = footerFor(brand);
+  const stop = (e) => e.preventDefault();
+  return (
+    <footer className="ck-foot" data-testid="site-footer">
+      <div className="ck-foot-inner">
+        <div className="ck-foot-cols">
+          {cols.map((c) => (
+            <div key={c.h}>
+              <h3 className="ck-foot-h">{c.h}</h3>
+              <ul className="ck-list">
+                {c.items.map((i) => (
+                  <li key={i}><a href="#" onClick={stop} className="ck-foot-link">{i}</a></li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="ck-foot-bar">
+          <span className="ck-foot-brand">
+            {brand.mark && <span aria-hidden="true">{brand.mark} </span>}{brand.name}
+          </span>
+          <span>🌐 English (US)</span>
+          <span>© 2026 {brand.name}, Inc.</span>
+        </div>
+        <p className="ck-foot-note">{note} Fictional clone built for testing; not affiliated with any real company.</p>
+      </div>
+    </footer>
   );
 }
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import TrvHeader from "../../TrvHeader";
+import TrvFooter from "../../TrvFooter";
 import { BASE, inr } from "../../lib";
 import { getListing } from "../../data";
 
@@ -77,6 +78,7 @@ export default async function ConfirmPay({ params }) {
           </div>
         </div>
       </div>
+      <TrvFooter />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import TelHeader from "../TelHeader";
+import TelFooter from "../TelFooter";
 import { BASE } from "../lib";
 
 const PACKS = [
@@ -97,6 +98,7 @@ export default function RechargePage() {
       <Suspense fallback={<div className="tel-section" />}>
         <RechargeInner />
       </Suspense>
+      <TelFooter />
     </>
   );
 }

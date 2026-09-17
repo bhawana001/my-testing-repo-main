@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import InsHeader from "../InsHeader";
+import InsFooter from "../InsFooter";
 
 export default function CreateAccount() {
   const [phone, setPhone] = useState("");
@@ -80,6 +81,7 @@ export default function CreateAccount() {
           )}
         </div>
       </div>
+      <InsFooter />
     </>
   );
 }

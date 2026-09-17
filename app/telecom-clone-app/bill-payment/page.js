@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import TelHeader from "../TelHeader";
+import TelFooter from "../TelFooter";
 import { BASE } from "../lib";
 
 export default function BillPayment() {
@@ -110,6 +111,7 @@ export default function BillPayment() {
           </div>
         </div>
       </div>
+      <TelFooter />
     </>
   );
 }

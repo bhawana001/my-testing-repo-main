@@ -3,6 +3,7 @@
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import InsHeader from "../InsHeader";
+import InsFooter from "../InsFooter";
 
 function QuoteForm() {
   const params = useSearchParams();
@@ -84,6 +85,7 @@ export default function QuotePage() {
       <Suspense fallback={<div className="ins-formpage" />}>
         <QuoteForm />
       </Suspense>
+      <InsFooter />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FlxHeader from "../../FlxHeader";
+import StreamFooter from "../../StreamFooter";
 import { BASE } from "../../lib";
 import { getTitle } from "../../data";
 
@@ -31,6 +32,7 @@ export default async function TitleDetail({ params }) {
           </Link>
         </div>
       </div>
+      <StreamFooter />
     </>
   );
 }

@@ -72,11 +72,27 @@
 .flx .flx-hint { background: #1c1c1c; border: 1px solid #333; border-radius: 8px; padding: 12px 16px; margin-top: 16px; color: var(--flx-muted); font-size: 13px; max-width: 620px; }
 .flx .flx-hint code { color: #fff; background: #333; padding: 1px 6px; border-radius: 4px; }
 
-.flx .flx-footer { padding: 40px; color: var(--flx-muted); font-size: 13px; }
+.flx .flx-footer { background: #000; border-top: 1px solid #222; padding: 48px 40px 40px; color: #737373; font-size: 13px; }
+.flx .flx-footer__inner { max-width: 1000px; margin: 0 auto; }
+.flx .flx-footer a { color: #737373; text-decoration: underline; }
+.flx .flx-footer a:hover { color: var(--flx-muted); }
+.flx .flx-footer__phone { margin: 0 0 24px; font-size: 16px; }
+.flx .flx-footer__links { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 24px; }
+.flx .flx-footer__links ul { list-style: none; margin: 0; padding: 0; }
+.flx .flx-footer__links li li { margin-bottom: 14px; }
+.flx .flx-footer__lang { background: transparent; color: var(--flx-muted); border: 1px solid #333; border-radius: 4px; padding: 8px 16px; font: inherit; font-size: 14px; cursor: pointer; }
+.flx .flx-footer__country { margin: 22px 0 8px; }
+.flx .flx-footer__note { margin: 0; font-size: 12px; }
+/* Kit pages (signup, profiles, account, downloads) show StreamFooter instead of the generic kit footer. */
+.flx .ck > .flx-footer { margin-top: auto; }
 
 @media (max-width: 820px) {
   .flx .flx-hero h1 { font-size: 44px; }
   .flx .flx-nav { display: none; }
+}
+@media (max-width: 700px) {
+  .flx .flx-footer { padding: 36px 16px 32px; }
+  .flx .flx-footer__links { grid-template-columns: repeat(2, 1fr); }
 }
 .flx.flx-demo-visual .flx-btn--play { background: #141414; color: #141414; }
 

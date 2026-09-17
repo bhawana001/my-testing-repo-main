@@ -1,6 +1,7 @@
 import "./shop.css";
 import { demo } from "./demo";
 import BackToEvals from "../BackToEvals";
+import ShopFooter from "./ShopFooter";
 
 export const metadata = {
   title: "ShopKart.com. Spend less. Smile more.",
@@ -16,6 +17,7 @@ export default function ShopLayout({ children }) {
     <div className={cls}>
       <BackToEvals />
       {children}
+      <ShopFooter />
     </div>
   );
 }

@@ -79,15 +79,7 @@ function Player() {
           <div className="flx-player__placeholder">
             <div className="big">▶</div>
             <h2 style={{ color: "#fff", marginTop: 10 }}>{t ? t.title : "Now Playing"}</h2>
-            <div className="flx-hint">
-              This player streams whatever video URL you give it. Append{" "}
-              <code>?v=&lt;video-url&gt;</code> to this page to stream any video — e.g. a{" "}
-              <b>kane-cli</b> demo recording:
-              <br />
-              <code>
-                {BASE}/watch/{id}?v=https://.../kane-demo.mp4
-              </code>
-            </div>
+            <div className="flx-hint">{t ? t.genre : "StreamFlix Original"}</div>
           </div>
         )}
       </div>

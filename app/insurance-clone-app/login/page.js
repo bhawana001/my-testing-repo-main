@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import InsHeader from "../InsHeader";
+import InsFooter from "../InsFooter";
 import { BASE } from "../lib";
 
 export default function InsLogin() {
@@ -87,6 +88,7 @@ export default function InsLogin() {
           </div>
         </div>
       </div>
+      <InsFooter />
     </>
   );
 }

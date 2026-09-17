@@ -1,6 +1,6 @@
 /* Shared styling for clone apps. Brand colour arrives as --ck-accent from the
    Shell, so one stylesheet serves every brand. Mobile-first at 700px. */
-.ck { background: var(--ck-bg); min-height: 100vh; color: #1a1a1a;
+.ck { background: var(--ck-bg); min-height: 100vh; display: flex; flex-direction: column; color: #1a1a1a;
   font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
 .ck * { box-sizing: border-box; }
 
@@ -102,7 +102,19 @@
 .ck-table th { color: #5c6672; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
 .ck-list { list-style: none; margin: 0; padding: 0; }
 
+.ck > .ck-foot { margin-top: auto; }
+.ck-foot { background: #1f2630; color: #c9d1da; font-size: 13px; }
+.ck-foot-inner { max-width: 1240px; margin: 0 auto; padding: 32px 16px 22px; }
+.ck-foot-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.ck-foot-h { color: #fff; font-size: 14px; margin: 0 0 10px; }
+.ck-foot-link { color: #c9d1da; text-decoration: none; line-height: 2; }
+.ck-foot-link:hover { color: #fff; text-decoration: underline; }
+.ck-foot-bar { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; border-top: 1px solid #3a4452; margin-top: 24px; padding-top: 16px; }
+.ck-foot-brand { color: #fff; font-weight: 700; font-size: 15px; margin-right: auto; }
+.ck-foot-note { color: #8e99a6; font-size: 12px; margin: 12px 0 0; }
+
 @media (max-width: 760px) {
+  .ck-foot-cols { grid-template-columns: repeat(2, 1fr); }
   .ck-split { grid-template-columns: 1fr; }
   .ck-top-inner { gap: 10px; }
   .ck-nav { width: 100%; margin-left: 0; gap: 12px; }

@@ -1,7 +1,8 @@
 // Start a stream — use case #12 (act on a filtered result). Drives the /watch player.
 // POST /api/stream/play  body: { titleId, videoUrl? }
 // Echoes back a play session; streamUrl is the caller-supplied videoUrl (so you
-// can stream ANY video, e.g. a kane-cli demo recording) or a stub manifest.
+// can stream ANY video, e.g. a kane-cli demo recording) or null, in which case
+// the player shows the title card instead of a broken <video>.
 import { TITLES } from "../../../stream-clone-app/data";
 
 export async function POST(request) {
@@ -20,7 +21,7 @@ export async function POST(request) {
       sessionId: "PLAY-" + Math.random().toString(36).slice(2, 10).toUpperCase(),
       titleId,
       title: title ? title.title : titleId,
-      streamUrl: videoUrl || `/streams/${titleId}/manifest.m3u8`,
+      streamUrl: videoUrl || null,
       status: "playing",
       startedAt: new Date().toISOString(),
     },

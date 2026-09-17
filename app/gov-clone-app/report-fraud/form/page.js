@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import IrsHeader from "../../IrsHeader";
+import GovFooter from "../../GovFooter";
 import { BASE } from "../../lib";
 
 const OPTIONS = [
@@ -105,6 +106,7 @@ export default function ReportForm() {
           </form>
         )}
       </div>
+      <GovFooter />
     </>
   );
 }

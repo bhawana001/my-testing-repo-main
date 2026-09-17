@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { Shell, TopBar, Page, Card, Btn, Row, Badge, Banner, Empty } from "../../clones/kit/ui";
 import { EPISODES, findPlan, useStore } from "../account-store";
 import { BASE } from "../lib";
+import StreamFooter from "../StreamFooter";
 
-const BRAND = { name: "STREAMFLIX", slug: "netflix", mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
+const BRAND = { name: "STREAMFLIX", slug: "netflix", footer: false, mark: "▶", home: BASE, accent: "#e50914", accentText: "#fff", bg: "#f5f5f5" };
 
 export default function DownloadsPage() {
   const [s, update] = useStore();
@@ -93,6 +94,7 @@ export default function DownloadsPage() {
           ))}
         </Card>
       </Page>
+      <StreamFooter />
     </Shell>
   );
 }

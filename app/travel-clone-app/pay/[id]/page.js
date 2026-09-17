@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import TrvHeader from "../../TrvHeader";
+import TrvFooter from "../../TrvFooter";
 import { BASE, inr } from "../../lib";
 import { getListing } from "../../data";
 
@@ -13,7 +14,13 @@ export default function PayPage() {
   const [result, setResult] = useState(null);
   const [busy, setBusy] = useState(false);
 
-  if (!l) return <TrvHeader showSearch={false} />;
+  if (!l)
+    return (
+      <>
+        <TrvHeader showSearch={false} />
+        <TrvFooter />
+      </>
+    );
 
   const subtotal = l.price;
   const discount = Math.round(subtotal * 0.2);
@@ -87,6 +94,7 @@ export default function PayPage() {
           </div>
         )}
       </div>
+      <TrvFooter />
     </>
   );
 }

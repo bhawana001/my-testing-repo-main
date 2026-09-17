@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import InsHeader from "../InsHeader";
+import InsFooter from "../InsFooter";
 import { BASE } from "../lib";
 
 export default function AccessClaim() {
@@ -82,6 +83,7 @@ export default function AccessClaim() {
           )}
         </div>
       </div>
+      <InsFooter />
     </>
   );
 }
