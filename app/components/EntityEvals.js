@@ -1,17 +1,20 @@
 "use client";
-// Homepage "Entity Evals" section: searchable, industry-filterable index of all
-// 49 entities and 208 flows. Lives below the untouched clones grid.
+// Homepage "Entity Evals" section: searchable, industry-filterable index of the
+// 50 entity clone apps and their 209 flows. Links come from lib/clone-map.json
+// (regenerate with `node scripts/gen-clone-map.mjs`), which is read off the
+// tests, so every link opens exactly the page its Kane test starts on.
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ENTITIES, FLOWS, INDUSTRIES, PATTERN_LABELS } from "@/lib/registry";
-import { hasFlow } from "@/lib/flow-loaders";
+import CLONE_MAP from "@/lib/clone-map.json";
+
+const appOf = (e) => CLONE_MAP.entities[e.slug];
+const pathOf = (f) => CLONE_MAP.flows[`${f.entitySlug}/${f.slug}`];
 
 export default function EntityEvals() {
   const [q, setQ] = useState("");
   const [industry, setIndustry] = useState("All");
   const [open, setOpen] = useState({});
-
-  const liveCount = useMemo(() => FLOWS.filter((f) => hasFlow(`${f.entitySlug}/${f.slug}`)).length, []);
 
   const filtered = useMemo(() => {
     const term = q.trim().toLowerCase();
@@ -19,7 +22,7 @@ export default function EntityEvals() {
       if (industry !== "All" && e.industry !== industry) return null;
       const flows = FLOWS.filter((f) => f.entitySlug === e.slug);
       if (!term) return { e, flows };
-      const entHit = (e.name + " " + e.skin + " " + e.industry).toLowerCase().includes(term);
+      const entHit = (e.name + " " + appOf(e).brand + " " + e.industry).toLowerCase().includes(term);
       const hits = flows.filter((f) => (f.uc + " " + f.useCase + " " + f.objective + " " + f.assertion + " " + f.pattern).toLowerCase().includes(term));
       if (!entHit && hits.length === 0) return null;
       return { e, flows: entHit ? flows : hits, forceOpen: !entHit };
@@ -30,12 +33,13 @@ export default function EntityEvals() {
 
   return (
     <section className="ee-home" id="entity-evals" aria-labelledby="entity-evals-h">
-      <div className="e-h2" id="entity-evals-h">Entity Evals</div>
+      <div className="e-h2" id="entity-evals-h">Entity Evals · 50 clone apps</div>
       <div className="ee-home__intro">
         <p>
-          {ENTITIES.length} real-world entities, {FLOWS.length} business-critical flows, each a working fictional-skin
-          clone with a deterministic Reset and a matching Kane CLI <code>_test.md</code>. Routes:{" "}
-          <code>/{"{entity}"}/{"{flow}"}</code>. {liveCount} of {FLOWS.length} flows live. Simulated emails land in <Link href="/inbox" style={{ textDecoration: "underline" }}>/inbox</Link>.
+          {ENTITIES.length} real-world entities, each rebuilt as one working clone app under a fictional name, with{" "}
+          {FLOWS.length} business-critical flows as features inside those apps. Every flow has a matching Kane CLI{" "}
+          <code>_test.md</code>, and adding <code>?reset=true</code> to any page restores the seeded data so runs are
+          deterministic. Each card opens its app; each flow opens the page its test starts on.
         </p>
       </div>
       <div className="ee-home__controls">
@@ -61,32 +65,31 @@ export default function EntityEvals() {
       <div className="ee-home__grid">
         {filtered.map(({ e, flows, forceOpen }) => {
           const isOpen = forceOpen || open[e.slug];
-          const live = flows.filter((f) => hasFlow(`${f.entitySlug}/${f.slug}`)).length;
+          const app = appOf(e);
           return (
             <article key={e.slug} className="ee-home__ent" data-entity={e.slug}>
               <div className="ee-home__ent-head">
                 <span className="ee-home__ic" aria-hidden="true">{e.icon}</span>
                 <div className="ee-home__ent-meta">
-                  <Link href={`/${e.slug}`} className="ee-home__ent-name">{e.skin}</Link>
+                  <Link href={app.app} className="ee-home__ent-name">{app.brand}</Link>
                   <span className="ee-home__ent-sub">
-                    #{e.no} · {e.name} · {e.industry}
+                    #{e.no} · clone of {e.name} · {app.app}
                   </span>
                 </div>
                 <button type="button" className="ee-home__toggle" onClick={() => setOpen((s) => ({ ...s, [e.slug]: !s[e.slug] }))} aria-expanded={isOpen ? "true" : "false"}>
-                  {flows.length} flows · {live} live {isOpen ? "▴" : "▾"}
+                  {flows.length} flows {isOpen ? "▴" : "▾"}
                 </button>
               </div>
               {isOpen && (
                 <ul className="ee-home__flows">
                   {flows.map((f) => {
-                    const isLive = hasFlow(`${f.entitySlug}/${f.slug}`);
                     return (
                       <li key={f.uc}>
-                        <Link href={f.path} className="ee-home__flow">
+                        <Link href={pathOf(f)} className="ee-home__flow">
                           <span className="ee-home__uc">{f.uc}</span>
                           <span className="ee-home__flow-name">{f.useCase}</span>
                           <span className="ee-home__pat">{PATTERN_LABELS[f.pattern]}</span>
-                          <span className={"ee-home__status" + (isLive ? " is-live" : "")}>{isLive ? "live" : `day ${f.day}`}</span>
+                          <span className="ee-home__route">{pathOf(f).split("?")[0].replace(app.app, "") || "/"}</span>
                         </Link>
                       </li>
                     );

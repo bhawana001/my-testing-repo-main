@@ -27,6 +27,7 @@
 .evals .ee-home__pat { font-size: 11.5px; color: var(--e-ink-soft); }
 .evals .ee-home__status { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; padding: 3px 8px; border-radius: 999px; background: rgba(42,26,62,.12); color: var(--e-ink-soft); }
 .evals .ee-home__status.is-live { background: #16a34a; color: #fff; }
+.evals .ee-home__route { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--e-ink-soft); white-space: nowrap; }
 .evals .ee-home__none { grid-column: 1 / -1; text-align: center; padding: 30px; color: #fff; font-weight: 700; }
 @media (max-width: 900px) { .evals .ee-home__grid { grid-template-columns: 1fr; } }
 @media (max-width: 600px) {

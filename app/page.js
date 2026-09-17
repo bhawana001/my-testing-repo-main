@@ -38,7 +38,9 @@ export default function RealEvals() {
             UI &amp; visual regression, browser automation, API, performance and accessibility.
           </p>
           <div className="e-stats">
-            <span className="e-stat">8 industries</span>
+            <span className="e-stat">50 entity clone apps</span>
+            <span className="e-stat">209 flows with Kane tests</span>
+            <span className="e-stat">8 industry clones</span>
             <span className="e-stat">1 interactive motion site</span>
             <span className="e-stat">Any testing type</span>
             <span className="e-stat">Realistic UI flows</span>
@@ -47,7 +49,9 @@ export default function RealEvals() {
           </div>
         </section>
 
-        <div className="e-h2">Explore the clones</div>
+        <EntityEvals />
+
+        <div className="e-h2">Industry clones</div>
         <div className="e-grid">
           {CLONES.map((c) => (
             <Link href={c.slug} key={c.slug} className="e-card">
@@ -61,13 +65,12 @@ export default function RealEvals() {
           ))}
         </div>
 
-        <EntityEvals />
-
         <div className="e-about">
           <h3>What is this?</h3>
           <p>
-            Real Evals is a set of production-looking clones across 8 industries, each with real
-            UI flows <em>and</em> live REST API endpoints, so anyone can practice real test
+            Real Evals is a set of production-looking clones: 50 entity apps (payments, banking,
+            CRM, ITSM, collaboration, streaming and more) plus 8 industry clones with real UI flows{" "}
+            <em>and</em> live REST API endpoints, so anyone can practice real test
             scenarios instead of toy pages. It isn&apos;t tied to one kind of testing: use it for{" "}
             <strong>functional &amp; end-to-end</strong> flows, <strong>UI / visual regression</strong>,{" "}
             <strong>browser automation</strong> (kane-cli, Playwright, Selenium, Cypress),{" "}

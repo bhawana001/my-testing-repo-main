@@ -1,0 +1,415 @@
+{
+ "entities": {
+  "amazon": {
+   "app": "/shop-clone-app",
+   "brand": "ShopKart"
+  },
+  "shopify": {
+   "app": "/shopify-clone-app",
+   "brand": "Shoplify"
+  },
+  "flipkart": {
+   "app": "/flipkart-clone-app",
+   "brand": "Flipkort"
+  },
+  "walmart": {
+   "app": "/walmart-clone-app",
+   "brand": "Wallmark"
+  },
+  "etsy": {
+   "app": "/etsy-clone-app",
+   "brand": "Etsi"
+  },
+  "ebay": {
+   "app": "/ebay-clone-app",
+   "brand": "eBid"
+  },
+  "instacart": {
+   "app": "/instacart-clone-app",
+   "brand": "Instacrate"
+  },
+  "nike": {
+   "app": "/nike-clone-app",
+   "brand": "Nyke"
+  },
+  "stripe": {
+   "app": "/stripe-clone-app",
+   "brand": "Stripey"
+  },
+  "paypal": {
+   "app": "/paypal-clone-app",
+   "brand": "PayPaal"
+  },
+  "razorpay": {
+   "app": "/razorpay-clone-app",
+   "brand": "Razorpie"
+  },
+  "square": {
+   "app": "/square-clone-app",
+   "brand": "Squair"
+  },
+  "adyen": {
+   "app": "/adyen-clone-app",
+   "brand": "Adyeen"
+  },
+  "klarna": {
+   "app": "/klarna-clone-app",
+   "brand": "Klarnah"
+  },
+  "wise": {
+   "app": "/wise-clone-app",
+   "brand": "Wize"
+  },
+  "robinhood": {
+   "app": "/robinhood-clone-app",
+   "brand": "Robinhud"
+  },
+  "zerodha": {
+   "app": "/zerodha-clone-app",
+   "brand": "Zerodhaa Kyte"
+  },
+  "coinbase": {
+   "app": "/coinbase-clone-app",
+   "brand": "Coinbaze"
+  },
+  "revolut": {
+   "app": "/revolut-clone-app",
+   "brand": "Revolat"
+  },
+  "paytm": {
+   "app": "/paytm-clone-app",
+   "brand": "Paytem"
+  },
+  "phonepe": {
+   "app": "/phonepe-clone-app",
+   "brand": "PhonePey"
+  },
+  "venmo": {
+   "app": "/venmo-clone-app",
+   "brand": "Venmoo"
+  },
+  "chase": {
+   "app": "/chase-clone-app",
+   "brand": "Chaise Bank"
+  },
+  "hdfc-bank": {
+   "app": "/hdfc-clone-app",
+   "brand": "Hindfirst Bank"
+  },
+  "american-express": {
+   "app": "/amex-clone-app",
+   "brand": "Amrex"
+  },
+  "lemonade": {
+   "app": "/lemonade-clone-app",
+   "brand": "Limonade"
+  },
+  "policybazaar": {
+   "app": "/policybazaar-clone-app",
+   "brand": "Policybaazar"
+  },
+  "salesforce": {
+   "app": "/salesforce-clone-app",
+   "brand": "Salesfource"
+  },
+  "hubspot": {
+   "app": "/hubspot-clone-app",
+   "brand": "Hubsprout"
+  },
+  "zendesk": {
+   "app": "/zendesk-clone-app",
+   "brand": "Zendisk"
+  },
+  "intercom": {
+   "app": "/intercom-clone-app",
+   "brand": "Intercomm"
+  },
+  "zoho-crm": {
+   "app": "/zoho-clone-app",
+   "brand": "Zohoe CRM"
+  },
+  "freshdesk": {
+   "app": "/freshdesk-clone-app",
+   "brand": "Freshdesc"
+  },
+  "servicenow": {
+   "app": "/servicenow-clone-app",
+   "brand": "ServiceNau"
+  },
+  "slack": {
+   "app": "/slack-clone-app",
+   "brand": "Slaick"
+  },
+  "microsoft-teams": {
+   "app": "/teams-clone-app",
+   "brand": "Teemz"
+  },
+  "zoom": {
+   "app": "/zoom-clone-app",
+   "brand": "Zuum"
+  },
+  "notion": {
+   "app": "/notion-clone-app",
+   "brand": "Notiond"
+  },
+  "airtable": {
+   "app": "/airtable-clone-app",
+   "brand": "Airtabel"
+  },
+  "asana": {
+   "app": "/asana-clone-app",
+   "brand": "Asanah"
+  },
+  "jira": {
+   "app": "/jira-clone-app",
+   "brand": "Jiira"
+  },
+  "monday": {
+   "app": "/monday-clone-app",
+   "brand": "Mondee"
+  },
+  "docusign": {
+   "app": "/docusign-clone-app",
+   "brand": "DocuSine"
+  },
+  "dropbox": {
+   "app": "/dropbox-clone-app",
+   "brand": "Dropbaks"
+  },
+  "google-drive": {
+   "app": "/drive-clone-app",
+   "brand": "Drivve"
+  },
+  "calendly": {
+   "app": "/calendly-clone-app",
+   "brand": "Calendari"
+  },
+  "netflix": {
+   "app": "/stream-clone-app",
+   "brand": "StreamFlix"
+  },
+  "spotify": {
+   "app": "/spotify-clone-app",
+   "brand": "Spotifly"
+  },
+  "youtube": {
+   "app": "/youtube-clone-app",
+   "brand": "Yootube"
+  },
+  "disney-hotstar": {
+   "app": "/hotstar-clone-app",
+   "brand": "Hotstarr"
+  }
+ },
+ "flows": {
+  "amazon/search-to-product": "/shop-clone-app",
+  "amazon/add-to-cart-variant": "/shop-clone-app/dp/sku_headset",
+  "amazon/one-click-checkout": "/shop-clone-app/dp/sku_headset",
+  "amazon/order-tracking": "/shop-clone-app/orders",
+  "amazon/return-initiation": "/shop-clone-app/orders",
+  "shopify/guest-checkout": "/shopify-clone-app",
+  "shopify/discount-code": "/shopify-clone-app",
+  "shopify/checkout-extension": "/shopify-clone-app",
+  "shopify/admin-order-creation": "/shopify-clone-app/admin",
+  "shopify/theme-update-smoke": "/shopify-clone-app/admin",
+  "flipkart/search-with-filters": "/flipkart-clone-app",
+  "flipkart/cart-exchange-offer": "/flipkart-clone-app",
+  "flipkart/cod-checkout": "/flipkart-clone-app",
+  "flipkart/supercoins-balance": "/flipkart-clone-app/rewards",
+  "walmart/store-pickup": "/walmart-clone-app",
+  "walmart/grocery-substitution": "/walmart-clone-app",
+  "walmart/membership-upsell": "/walmart-clone-app",
+  "walmart/reorder-from-history": "/walmart-clone-app/orders",
+  "etsy/personalized-item": "/etsy-clone-app",
+  "etsy/shop-search-favorite": "/etsy-clone-app",
+  "etsy/multi-seller-cart": "/etsy-clone-app",
+  "etsy/review-submission": "/etsy-clone-app/orders",
+  "ebay/bid-placement": "/ebay-clone-app",
+  "ebay/buy-it-now": "/ebay-clone-app",
+  "ebay/best-offer": "/ebay-clone-app",
+  "ebay/seller-listing": "/ebay-clone-app/sell",
+  "instacart/multi-store-cart": "/instacart-clone-app",
+  "instacart/replacement-preferences": "/instacart-clone-app",
+  "instacart/delivery-slot-checkout": "/instacart-clone-app",
+  "instacart/tip-adjustment": "/instacart-clone-app",
+  "nike/size-guide": "/nike-clone-app",
+  "nike/member-exclusive": "/nike-clone-app",
+  "nike/snkrs-draw": "/nike-clone-app/launch",
+  "nike/checkout-saved-card": "/nike-clone-app",
+  "stripe/hosted-checkout": "/stripe-clone-app/checkout",
+  "stripe/3ds-challenge": "/stripe-clone-app/checkout",
+  "stripe/declined-card-recovery": "/stripe-clone-app/checkout",
+  "stripe/billing-portal": "/stripe-clone-app/portal",
+  "stripe/dashboard-payment-lookup": "/stripe-clone-app/checkout",
+  "paypal/express-checkout": "/paypal-clone-app/checkout",
+  "paypal/guest-card-payment": "/paypal-clone-app/checkout",
+  "paypal/send-money": "/paypal-clone-app/send",
+  "paypal/dispute-filing": "/paypal-clone-app/activity",
+  "paypal/currency-conversion": "/paypal-clone-app/send",
+  "razorpay/checkout-modal": "/razorpay-clone-app",
+  "razorpay/upi-intent": "/razorpay-clone-app",
+  "razorpay/emi-options": "/razorpay-clone-app",
+  "razorpay/payment-link": "/razorpay-clone-app/link",
+  "square/checkout-link": "/square-clone-app/link",
+  "square/invoice-pay": "/square-clone-app/invoice",
+  "square/tip-and-receipt": "/square-clone-app/pos",
+  "square/refund-dashboard": "/square-clone-app/dashboard",
+  "adyen/drop-in-payment": "/adyen-clone-app/checkout",
+  "adyen/ideal-redirect": "/adyen-clone-app/checkout",
+  "adyen/stored-card-reuse": "/adyen-clone-app/checkout",
+  "adyen/webhook-status-parity": "/adyen-clone-app/checkout",
+  "klarna/pay-in-4": "/klarna-clone-app/checkout",
+  "klarna/credit-decline-fallback": "/klarna-clone-app/checkout",
+  "klarna/payment-schedule": "/klarna-clone-app/checkout",
+  "klarna/return-adjusts-installments": "/klarna-clone-app/checkout",
+  "wise/transfer-quote": "/wise-clone-app/send",
+  "wise/add-recipient": "/wise-clone-app/recipients",
+  "wise/transfer-tracking": "/wise-clone-app/transfers",
+  "wise/balance-conversion": "/wise-clone-app/balances",
+  "robinhood/market-buy": "/robinhood-clone-app/trade",
+  "robinhood/limit-order": "/robinhood-clone-app/trade",
+  "robinhood/portfolio-value": "/robinhood-clone-app/portfolio",
+  "robinhood/instant-deposit": "/robinhood-clone-app/transfers",
+  "robinhood/options-chain": "/robinhood-clone-app/options",
+  "zerodha/intraday-order": "/zerodha-clone-app/orders",
+  "zerodha/gtt-trigger": "/zerodha-clone-app/gtt",
+  "zerodha/holdings-pnl": "/zerodha-clone-app/holdings",
+  "zerodha/funds-upi": "/zerodha-clone-app/funds",
+  "coinbase/crypto-buy": "/coinbase-clone-app/buy",
+  "coinbase/recurring-buy": "/coinbase-clone-app/buy",
+  "coinbase/send-to-address": "/coinbase-clone-app/send",
+  "coinbase/price-alert": "/coinbase-clone-app/alerts",
+  "revolut/card-freeze": "/revolut-clone-app/card",
+  "revolut/currency-exchange": "/revolut-clone-app/exchange",
+  "revolut/split-bill": "/revolut-clone-app/split",
+  "revolut/savings-vault": "/revolut-clone-app/vault",
+  "paytm/upi-transfer": "/paytm-clone-app/upi",
+  "paytm/mobile-recharge": "/paytm-clone-app/recharge",
+  "paytm/electricity-bill": "/paytm-clone-app/bills",
+  "paytm/wallet-to-bank": "/paytm-clone-app/wallet",
+  "paytm/movie-ticket": "/paytm-clone-app/movies",
+  "phonepe/qr-scan-pay": "/phonepe-clone-app/scan",
+  "phonepe/autopay-mandate": "/phonepe-clone-app/autopay",
+  "phonepe/history-filter": "/phonepe-clone-app/history",
+  "phonepe/bike-insurance-quote": "/phonepe-clone-app/insurance",
+  "venmo/pay-with-note": "/venmo-clone-app/pay",
+  "venmo/request-and-remind": "/venmo-clone-app/requests",
+  "venmo/cash-out": "/venmo-clone-app/cashout",
+  "venmo/card-transaction-feed": "/venmo-clone-app/card",
+  "chase/login-2fa": "/chase-clone-app",
+  "chase/zelle-transfer": "/chase-clone-app",
+  "chase/bill-pay-scheduling": "/chase-clone-app",
+  "chase/statement-download": "/chase-clone-app",
+  "chase/card-dispute": "/chase-clone-app",
+  "hdfc-bank/netbanking-login": "/hdfc-clone-app/login",
+  "hdfc-bank/imps-transfer": "/hdfc-clone-app/transfer",
+  "hdfc-bank/fd-creation": "/hdfc-clone-app/deposits",
+  "hdfc-bank/card-statement": "/hdfc-clone-app/cards",
+  "american-express/rewards-redemption": "/amex-clone-app/rewards",
+  "american-express/payment-scheduling": "/amex-clone-app/payments",
+  "american-express/dispute-charge": "/amex-clone-app/disputes",
+  "american-express/offers-enrollment": "/amex-clone-app/offers",
+  "lemonade/instant-quote": "/lemonade-clone-app/quote",
+  "lemonade/policy-purchase": "/lemonade-clone-app/quote",
+  "lemonade/claim-filing": "/lemonade-clone-app/quote",
+  "lemonade/coverage-adjustment": "/lemonade-clone-app/quote",
+  "policybazaar/term-comparison": "/policybazaar-clone-app/term",
+  "policybazaar/lead-callback": "/policybazaar-clone-app/callback",
+  "policybazaar/health-plan-filter": "/policybazaar-clone-app/health",
+  "policybazaar/premium-calculator": "/policybazaar-clone-app/calculator",
+  "salesforce/lead-creation": "/salesforce-clone-app/leads",
+  "salesforce/opportunity-kanban": "/salesforce-clone-app/opportunities",
+  "salesforce/report-filter": "/salesforce-clone-app/reports",
+  "salesforce/record-edit-overlay": "/salesforce-clone-app/accounts",
+  "salesforce/screen-flow": "/salesforce-clone-app/flow",
+  "hubspot/form-to-contact": "/hubspot-clone-app/landing",
+  "hubspot/deal-pipeline-drag": "/hubspot-clone-app/deals",
+  "hubspot/sequence-enrollment": "/hubspot-clone-app/sequences",
+  "hubspot/meeting-link-booking": "/hubspot-clone-app/meetings",
+  "zendesk/widget-ticket": "/zendesk-clone-app/widget",
+  "zendesk/agent-reply-status": "/zendesk-clone-app/agent",
+  "zendesk/macro-application": "/zendesk-clone-app/agent",
+  "zendesk/help-center-search": "/zendesk-clone-app/help",
+  "zendesk/sla-breach-indicator": "/zendesk-clone-app/agent",
+  "intercom/messenger-conversation": "/intercom-clone-app/messenger",
+  "intercom/bot-handoff": "/intercom-clone-app/messenger",
+  "intercom/article-suggestion": "/intercom-clone-app/messenger",
+  "intercom/outbound-message": "/intercom-clone-app/outbound",
+  "zoho-crm/lead-import-mapping": "/zoho-clone-app/import",
+  "zoho-crm/workflow-rule": "/zoho-clone-app/workflows",
+  "zoho-crm/blueprint-transition": "/zoho-clone-app/blueprint",
+  "zoho-crm/dashboard-kpi": "/zoho-clone-app/dashboard",
+  "freshdesk/email-to-ticket": "/freshdesk-clone-app/inbound",
+  "freshdesk/canned-response": "/freshdesk-clone-app/tickets",
+  "freshdesk/ticket-merge": "/freshdesk-clone-app/tickets",
+  "freshdesk/portal-ticket-view": "/freshdesk-clone-app/tickets",
+  "servicenow/incident-creation": "/servicenow-clone-app/incidents",
+  "servicenow/approval-workflow": "/servicenow-clone-app/changes",
+  "servicenow/catalog-order": "/servicenow-clone-app/catalog",
+  "servicenow/knowledge-search": "/servicenow-clone-app/knowledge",
+  "slack/thread-reply": "/slack-clone-app/channel/general",
+  "slack/file-upload-preview": "/slack-clone-app/files",
+  "slack/search-channels": "/slack-clone-app/search",
+  "slack/huddle-start": "/slack-clone-app/huddle",
+  "slack/workflow-form": "/slack-clone-app/workflows",
+  "microsoft-teams/meeting-join": "/teams-clone-app/calendar",
+  "microsoft-teams/mention-notification": "/teams-clone-app/channel/eng",
+  "microsoft-teams/file-coauthor": "/teams-clone-app/files",
+  "microsoft-teams/tab-app-load": "/teams-clone-app/tabs",
+  "zoom/meeting-registration": "/zoom-clone-app/schedule",
+  "zoom/waiting-room": "/zoom-clone-app/join/91422005501",
+  "zoom/screen-share": "/zoom-clone-app/m/91422005501",
+  "zoom/cloud-recording": "/zoom-clone-app/m/91422005501",
+  "notion/page-blocks": "/notion-clone-app/page/home",
+  "notion/database-filter-sort": "/notion-clone-app/database",
+  "notion/share-to-web": "/notion-clone-app/page/home",
+  "notion/template-duplication": "/notion-clone-app/templates",
+  "notion/comment-mention": "/notion-clone-app/page/home",
+  "airtable/grid-crud": "/airtable-clone-app/grid",
+  "airtable/form-view-submission": "/airtable-clone-app/form",
+  "airtable/kanban-drag": "/airtable-clone-app/kanban",
+  "airtable/automation-run": "/airtable-clone-app/automations",
+  "asana/task-creation": "/asana-clone-app/tasks",
+  "asana/board-move": "/asana-clone-app/board",
+  "asana/subtask-dependency": "/asana-clone-app/task/t1",
+  "asana/my-tasks-sort": "/asana-clone-app/my-tasks",
+  "jira/issue-creation": "/jira-clone-app/create",
+  "jira/sprint-board-drag": "/jira-clone-app/board",
+  "jira/jql-filter": "/jira-clone-app/search",
+  "jira/transition-validation": "/jira-clone-app/browse/ACME-102",
+  "monday/board-item": "/monday-clone-app/board/launch",
+  "monday/automation-recipe": "/monday-clone-app/automations",
+  "monday/dashboard-widget": "/monday-clone-app/dashboard",
+  "monday/guest-board-sharing": "/monday-clone-app/sharing",
+  "docusign/envelope-send": "/docusign-clone-app/send",
+  "docusign/signing-ceremony": "/docusign-clone-app/send",
+  "docusign/template-reuse": "/docusign-clone-app/templates",
+  "docusign/decline-void": "/docusign-clone-app/send",
+  "dropbox/upload-share-link": "/dropbox-clone-app/files",
+  "dropbox/folder-permission": "/dropbox-clone-app/sharing",
+  "dropbox/file-request": "/dropbox-clone-app/requests",
+  "dropbox/version-history": "/dropbox-clone-app/versions",
+  "google-drive/share-permission-levels": "/drive-clone-app",
+  "google-drive/realtime-coedit": "/drive-clone-app/coedit",
+  "google-drive/drive-search": "/drive-clone-app/search",
+  "google-drive/offline-sync": "/drive-clone-app/offline",
+  "calendly/invitee-booking": "/calendly-clone-app",
+  "calendly/availability-rules": "/calendly-clone-app/availability",
+  "calendly/reschedule": "/calendly-clone-app",
+  "calendly/paid-booking": "/calendly-clone-app",
+  "netflix/signup-plan": "/stream-clone-app/signup",
+  "netflix/playback-resume": "/stream-clone-app/watch/b99",
+  "netflix/profile-pin": "/stream-clone-app/profiles",
+  "netflix/offline-download": "/stream-clone-app/signup",
+  "netflix/cancel-rejoin": "/stream-clone-app/signup",
+  "spotify/premium-upgrade": "/spotify-clone-app/premium",
+  "spotify/playlist-create": "/spotify-clone-app/playlists",
+  "spotify/cross-device-continue": "/spotify-clone-app/devices",
+  "spotify/family-invite": "/spotify-clone-app/family",
+  "youtube/video-upload": "/youtube-clone-app/upload",
+  "youtube/comment-pin": "/youtube-clone-app/watch/v1",
+  "youtube/background-play-entitlement": "/youtube-clone-app/premium",
+  "youtube/channel-membership": "/youtube-clone-app/memberships",
+  "disney-hotstar/live-sports-playback": "/hotstar-clone-app/watch/m1"
+ }
+}
