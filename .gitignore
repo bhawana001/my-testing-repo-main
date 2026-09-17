@@ -9,7 +9,10 @@ npm-debug.log*
 .vercel
 demo/loop/.runs/
 
-# kane-cli run artifacts (evidence packs are per-run; recordings in output-*/ are committed)
+# kane-cli run artifacts. output-*/ is kane-cli's replay cache and is bound to the
+# org that first ran the test, so committing it stops anyone in another org from
+# running the same _test.md. Each person keeps their own locally.
+tests/**/output-*/
 .testmuai/evidence/
 tests/variables.ci.json
 .testmuai/verify-logs/
