@@ -20,7 +20,7 @@ Click "Nexa 12 Pro 5G (256 GB)", click "Add to cart", and verify the cart shows 
 Click "Check exchange offer" and verify a dialog appears titled "Exchange your old phone" with a device dropdown.
 
 ## Apply the exchange valuation
-Select "Nexa 10 (128 GB)" as the device, click the "Good — no cracks, all functions work" option, click the Apply button, and verify the cart shows an exchange value of "−₹9,500.00".
+Select "Nexa 10 (128 GB)" in the "Your device" dropdown, click the "Good" condition option, click "Apply ₹9,500.00", and verify the cart shows an exchange value of "−₹9,500.00".
 
 ## Confirm the cart arithmetic
 Verify the price details show "₹48,999.00" for the item, an exchange discount of "−₹9,500.00", Delivery "Free", and a total payable of "₹39,499.00".

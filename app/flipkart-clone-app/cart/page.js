@@ -10,12 +10,15 @@ import { BRAND, BASE, EXCHANGE_MODELS, CONDITIONS, useStore, money, cartTotals, 
 export default function CartPage() {
   const [s, update] = useStore();
   const [open, setOpen] = useState(false);
-  const [modelId, setModelId] = useState(EXCHANGE_MODELS[0].id);
-  const [condition, setCondition] = useState("good");
+  // Nothing is pre-chosen: a real exchange quote makes you pick your device and
+  // its condition, and Apply stays disabled until both are set.
+  const [modelId, setModelId] = useState("");
+  const [condition, setCondition] = useState("");
 
   const hasExchangeable = s.cart.some((l) => findProduct(l.id)?.exchange);
   const t = cartTotals(s.cart, s.exchange, "prepaid");
-  const model = EXCHANGE_MODELS.find((m) => m.id === modelId);
+  const model = EXCHANGE_MODELS.find((m) => m.id === modelId) || null;
+  const quote = model && condition ? model[condition] : null;
 
   function applyExchange() {
     const value = model[condition];
@@ -24,6 +27,8 @@ export default function CartPage() {
       return st;
     });
     setOpen(false);
+    setModelId("");
+    setCondition("");
   }
   const removeExchange = () => update((st) => { st.exchange = null; return st; });
 
@@ -88,18 +93,24 @@ export default function CartPage() {
       <Modal open={open} title="Exchange your old phone" onClose={() => setOpen(false)} testId="exchange-modal"
              actions={<>
                <Btn variant="secondary" onClick={() => setOpen(false)}>Cancel</Btn>
-               <Btn onClick={applyExchange} data-testid="confirm-exchange">Apply {money(model[condition])}</Btn>
+               <Btn onClick={applyExchange} disabled={quote === null} data-testid="confirm-exchange">
+                 {quote === null ? "Apply exchange" : `Apply ${money(quote)}`}
+               </Btn>
              </>}>
         <Field label="Your device">
           <Select value={modelId} onChange={(e) => setModelId(e.target.value)} aria-label="Your device" data-testid="exchange-model">
+            <option value="">Select your device</option>
             {EXCHANGE_MODELS.map((m) => <option key={m.id} value={m.id}>{m.label}</option>)}
           </Select>
         </Field>
         <div className="ck-strong" style={{ margin: "8px 0 6px" }}>Condition</div>
         {CONDITIONS.map((c) => (
-          <Radio key={c.id} name="cond" label={`${c.label} — ${money(model[c.id])}`} testId={`cond-${c.id}`}
+          <Radio key={c.id} name="cond" label={model ? `${c.label} — ${money(model[c.id])}` : c.label} testId={`cond-${c.id}`}
                  checked={condition === c.id} onChange={() => setCondition(c.id)} />
         ))}
+        {quote === null && (
+          <p className="ck-muted" data-testid="exchange-hint">Choose your device and its condition to see the exchange value.</p>
+        )}
       </Modal>
     </Shell>
   );
