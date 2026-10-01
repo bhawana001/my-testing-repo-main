@@ -39,14 +39,14 @@
 .trv .trv-row__head { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
 .trv .trv-row__head h2 { font-size: 22px; }
 .trv .trv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px; }
-.trv .trv-card { cursor: pointer; }
-.trv .trv-card__img { position: relative; height: 200px; border-radius: 12px; background: linear-gradient(135deg,#f0f0f0,#e2e2e2); display: flex; align-items: center; justify-content: center; font-size: 66px; overflow: hidden; }
+.trv .trv-card, .trv .trv-stay { cursor: pointer; }
+.trv .trv-card__img, .trv .trv-stay__img { position: relative; height: 200px; border-radius: 12px; background: linear-gradient(135deg,#f0f0f0,#e2e2e2); display: flex; align-items: center; justify-content: center; font-size: 66px; overflow: hidden; }
 .trv .trv-badge { position: absolute; top: 12px; left: 12px; background: #fff; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700; }
 .trv .trv-heart { position: absolute; top: 12px; right: 12px; font-size: 20px; color: rgba(0,0,0,.5); }
-.trv .trv-card__title { font-weight: 600; margin-top: 8px; font-size: 15px; }
+.trv .trv-card__title, .trv .trv-stay__title { font-weight: 600; margin-top: 8px; font-size: 15px; }
 .trv .trv-card__meta { color: var(--trv-muted); font-size: 14px; }
-.trv .trv-card__price { margin-top: 4px; font-size: 14px; }
-.trv .trv-card__price b { font-weight: 700; }
+.trv .trv-card__price, .trv .trv-stay__price { margin-top: 4px; font-size: 14px; }
+.trv .trv-card__price b, .trv .trv-stay__price b { font-weight: 700; }
 
 /* Category strip */
 .trv .trv-cats { display: flex; gap: 26px; overflow-x: auto; padding: 18px 0; border-top: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; margin-top: 20px; }
@@ -104,7 +104,34 @@
 .trv .trv-footer h5 { color: #222; font-size: 14px; margin-bottom: 10px; }
 .trv .trv-footer div a { display: block; margin-bottom: 8px; }
 
+/* Demo flag travelRedesign: sidebar nav/search/filters + list layout */
+.trv .trv-rd { display: grid; grid-template-columns: 260px 1fr; gap: 36px; padding-top: 24px; padding-bottom: 20px; align-items: start; }
+.trv .trv-rd__side { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 22px; }
+.trv .trv-rd__nav { display: flex; flex-direction: column; gap: 4px; font-weight: 600; font-size: 15px; }
+.trv .trv-rd__nav a { padding: 8px 12px; border-radius: 8px; }
+.trv .trv-rd__nav a.is-active { background: #f2f2f2; }
+.trv .trv-rd__search { display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--trv-border); border-radius: 14px; padding: 14px; }
+.trv .trv-rd__search label small { display: block; font-size: 12px; font-weight: 700; }
+.trv .trv-rd__search input { width: 100%; border: 1px solid var(--trv-border); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+.trv .trv-rd__search .trv-btn { padding: 10px; font-size: 14px; }
+.trv .trv-rd__filters { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--trv-muted); }
+.trv .trv-rd__filters h3 { font-size: 15px; color: var(--trv-text); }
+.trv .trv-rd__section { margin-bottom: 28px; }
+.trv .trv-rd__section h2 { font-size: 20px; margin-bottom: 12px; }
+.trv .trv-list { display: flex; flex-direction: column; border: 1px solid #ebebeb; border-radius: 14px; overflow: hidden; }
+.trv .trv-lrow { display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 1px solid #ebebeb; }
+.trv .trv-lrow:last-child { border-bottom: none; }
+.trv .trv-lrow:hover { background: #fafafa; }
+.trv .trv-lrow__img { width: 96px; height: 72px; flex-shrink: 0; border-radius: 10px; background: linear-gradient(135deg,#f0f0f0,#e2e2e2); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+.trv .trv-lrow__body { flex: 1; min-width: 0; }
+.trv .trv-lrow__title { font-weight: 600; font-size: 15px; }
+.trv .trv-lrow__meta { color: var(--trv-muted); font-size: 13px; margin-top: 2px; }
+.trv .trv-lrow__price { text-align: right; font-size: 14px; display: flex; flex-direction: column; }
+.trv .trv-lrow__price span { color: var(--trv-muted); font-size: 12px; }
+
 @media (max-width: 900px) {
+  .trv .trv-rd { grid-template-columns: 1fr; }
+  .trv .trv-rd__side { position: static; }
   .trv .trv-detail__grid, .trv .trv-pay, .trv .trv-rzp, .trv .trv-footer__cols { grid-template-columns: 1fr; }
   .trv .trv-tabs, .trv .trv-header__right { display: none; }
 }

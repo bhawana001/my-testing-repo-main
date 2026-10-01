@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BASE, BRAND } from "./lib";
 
-export default function TrvHeader({ showSearch = true }) {
+export default function TrvHeader({ showSearch = true, showTabs = true }) {
   return (
     <header className="trv-header">
       <div className="trv-container">
@@ -9,13 +9,15 @@ export default function TrvHeader({ showSearch = true }) {
           <Link href={BASE} className="trv-logo">
             ⌂ {BRAND}
           </Link>
-          <nav className="trv-tabs">
-            <Link href={BASE} className="is-active">
-              Homes
-            </Link>
-            <Link href={BASE}>Experiences</Link>
-            <Link href={BASE}>Services</Link>
-          </nav>
+          {showTabs && (
+            <nav className="trv-tabs">
+              <Link href={BASE} className="is-active">
+                Homes
+              </Link>
+              <Link href={BASE}>Experiences</Link>
+              <Link href={BASE}>Services</Link>
+            </nav>
+          )}
           <div className="trv-header__right">
             <span>Become a host</span>
             <span>🌐</span>

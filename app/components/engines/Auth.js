@@ -11,8 +11,9 @@ export const SEED_SESSION = { user: null, attempts: 0, locked: false, stage: "lo
  * LoginForm
  * props: auth (state slice), setAuth, mode: "password" | "password+otp" | "customerid+otp" | "otp-only"
  *        onSuccess(user), title, subtitle, idLabel, extra
+ *        altSubmit: demo variant — "Log in" button above the password field with new locators
  */
-export function LoginForm({ auth, setAuth, mode = "password+otp", onSuccess, title = "Sign in", subtitle, idLabel, testIdPrefix = "login", extra }) {
+export function LoginForm({ auth, setAuth, mode = "password+otp", onSuccess, title = "Sign in", subtitle, idLabel, testIdPrefix = "login", extra, altSubmit = false }) {
   const delay = useDelay();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
@@ -93,13 +94,21 @@ export function LoginForm({ auth, setAuth, mode = "password+otp", onSuccess, tit
         <Field label={idLabel || (usesCustomerId ? "Customer ID" : "Email")} htmlFor={`${testIdPrefix}-id`}>
           <Input id={`${testIdPrefix}-id`} type={usesCustomerId ? "text" : "email"} autoComplete={usesCustomerId ? "username" : "email"} value={id} onChange={(e) => setId(e.target.value)} placeholder={usesCustomerId ? "e.g. DEMO12345" : "you@example.com"} disabled={auth.locked} />
         </Field>
+        {altSubmit && (
+          <div className="ee-login-cta-row">
+            <button type="submit" id="portal-access-btn" name="portal-access" className="ee-login-cta" disabled={auth.locked || busy} data-testid="portal-access-go">
+              {busy && <span className="ee-spinner" aria-hidden="true" />}
+              Log in
+            </button>
+          </div>
+        )}
         {mode !== "otp-only" && (
           <Field label="Password" htmlFor={`${testIdPrefix}-password`}>
             <Input id={`${testIdPrefix}-password`} type="password" autoComplete="current-password" value={pw} onChange={(e) => setPw(e.target.value)} disabled={auth.locked} />
           </Field>
         )}
         {err && <div className="ee-error" role="alert" data-testid={`${testIdPrefix}-error`}>{err}</div>}
-        <Btn type="submit" loading={busy} block disabled={auth.locked} data-testid={`${testIdPrefix}-submit`}>{mode.includes("otp") ? "Continue" : "Sign in"}</Btn>
+        {!altSubmit && <Btn type="submit" loading={busy} block disabled={auth.locked} data-testid={`${testIdPrefix}-submit`}>{mode.includes("otp") ? "Continue" : "Sign in"}</Btn>}
         {extra}
         <div className="ee-tiny ee-muted ee-center">Demo credentials: {usesCustomerId ? DEMO_USER.customerId : DEMO_USER.email}{mode !== "otp-only" ? ` / ${DEMO_USER.password}` : ""}{mode.includes("otp") ? ` · OTP ${OTP}` : ""}</div>
       </form>

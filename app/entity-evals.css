@@ -126,6 +126,11 @@
 .ee-btn:hover { filter: brightness(1.06); }
 .ee-btn:active { transform: translateY(1px); }
 .ee-btn:disabled, .ee-btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; filter: none; }
+/* Demo flag renameSignIn: restyled login button that deliberately avoids .ee-btn */
+.ee-login-cta-row { display: flex; justify-content: flex-end; }
+.ee-login-cta { display: inline-flex; align-items: center; gap: 8px; padding: 8px 22px; border-radius: 999px; border: 1px solid transparent; font-weight: 600; font-size: 14px; cursor: pointer; background: var(--ee-accent); color: var(--ee-accent-ink); }
+.ee-login-cta:hover { filter: brightness(1.06); }
+.ee-login-cta:disabled { opacity: 0.5; cursor: not-allowed; filter: none; }
 .ee-btn--secondary { background: var(--ee-surface); color: var(--ee-text); border-color: var(--ee-border); }
 .ee-btn--secondary:hover { background: var(--ee-surface-2); }
 .ee-btn--ghost { background: transparent; color: var(--ee-accent); }
