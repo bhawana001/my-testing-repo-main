@@ -199,6 +199,10 @@
   "disney-hotstar": {
    "app": "/hotstar-clone-app",
    "brand": "Hotstarr"
+  },
+  "splitwise": {
+   "app": "/splitwise-clone-app",
+   "brand": "Splitwyse"
   }
  },
  "flows": {
@@ -410,6 +414,7 @@
   "youtube/comment-pin": "/youtube-clone-app/watch/v1",
   "youtube/background-play-entitlement": "/youtube-clone-app/premium",
   "youtube/channel-membership": "/youtube-clone-app/memberships",
-  "disney-hotstar/live-sports-playback": "/hotstar-clone-app/watch/m1"
+  "disney-hotstar/live-sports-playback": "/hotstar-clone-app/watch/m1",
+  "splitwise/split-expense-equally": "/splitwise-clone-app"
  }
 }
