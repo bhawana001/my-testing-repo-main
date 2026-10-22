@@ -1,0 +1,51 @@
+/* Splitwyse dark theme. Scoped to this brand so the shared kit stays light for
+   every other clone. Text/background pairs are chosen for WCAG AA or better:
+   body text ~14:1, muted text ~7:1, mint button with near-black text ~7:1. */
+.ck[data-brand="splitwise"] {
+  --sw-bg: #0f1514;
+  --sw-surface: #18211f;
+  --sw-surface-2: #1f2a28;
+  --sw-border: #2f3d3a;
+  --sw-text: #e8efed;
+  --sw-muted: #a3b4af;
+  --sw-mint: #1cc29f;
+  --sw-mint-soft: rgba(28, 194, 159, .14);
+  --sw-error: #ff9b91;
+  color-scheme: dark;
+  accent-color: var(--sw-mint);
+  background: var(--sw-bg);
+  color: var(--sw-text);
+}
+.ck[data-brand="splitwise"] .ck-top { background: var(--sw-surface); color: var(--sw-text); border-bottom: 1px solid var(--sw-border); }
+.ck[data-brand="splitwise"] .ck-logo { color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .ck-sub,
+.ck[data-brand="splitwise"] .ck-muted,
+.ck[data-brand="splitwise"] .ck-field-hint,
+.ck[data-brand="splitwise"] .ck-choice-detail { color: var(--sw-muted); }
+.ck[data-brand="splitwise"] .ck-card { background: var(--sw-surface); border-color: var(--sw-border); }
+.ck[data-brand="splitwise"] .ck-card-title { color: var(--sw-text); }
+.ck[data-brand="splitwise"] .ck-row--strong { border-top-color: var(--sw-border); }
+.ck[data-brand="splitwise"] .ck-input { background: var(--sw-bg); border-color: #3e4f4b; color: var(--sw-text); }
+.ck[data-brand="splitwise"] .ck-input:focus { outline: 2px solid var(--sw-mint); outline-offset: 1px; border-color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .ck-input[aria-invalid="true"] { border-color: var(--sw-error); }
+.ck[data-brand="splitwise"] .ck-field-error { color: var(--sw-error); }
+.ck[data-brand="splitwise"] .ck-choice { background: var(--sw-surface-2); border-color: var(--sw-border); }
+.ck[data-brand="splitwise"] .ck-choice.is-active { border-color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .ck-empty { background: transparent; border-color: var(--sw-border); color: var(--sw-muted); }
+.ck[data-brand="splitwise"] .ck-btn--primary { background: var(--sw-mint); color: #04211a; font-weight: 700; }
+.ck[data-brand="splitwise"] .ck-btn--primary:hover:not(:disabled) { background: #3dd6b4; }
+.ck[data-brand="splitwise"] .ck-btn--primary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.ck[data-brand="splitwise"] .ck-btn--secondary { background: var(--sw-surface-2); border-color: #3e4f4b; color: var(--sw-text); }
+.ck[data-brand="splitwise"] .ck-btn--secondary:hover:not(:disabled) { background: #263331; }
+.ck[data-brand="splitwise"] .ck-btn--ghost { color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .ck-badge--ok { background: var(--sw-mint-soft); color: #7eebd1; }
+.ck[data-brand="splitwise"] .ck-banner--ok { background: #0f2a23; border-color: #1f5c4c; color: #bff3e4; }
+.ck[data-brand="splitwise"] a { color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .ck-foot { background: #0a0f0e; border-top: 1px solid var(--sw-border); }
+
+/* Balances is the answer people come for, so it gets an accent edge and larger type. */
+.ck[data-brand="splitwise"] .sw-balances { border-color: #2a6b5b; border-left: 4px solid var(--sw-mint); }
+.ck[data-brand="splitwise"] .sw-balances .ck-card-title { color: var(--sw-mint); }
+.ck[data-brand="splitwise"] .sw-balance-line { font-size: 16px; font-weight: 600; color: var(--sw-text); padding: 8px 0; }
+.ck[data-brand="splitwise"] .sw-balance-line + .sw-balance-line { border-top: 1px solid var(--sw-border); }
+.ck[data-brand="splitwise"] .sw-expense { border-top: 1px solid var(--sw-border); padding-top: 8px; margin-top: 8px; }

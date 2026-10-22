@@ -25,7 +25,7 @@ export function Shell({ brand, children }) {
 // ("Help", "Support", "Status", "Returns"...) so they never compete with the
 // real controls on the page.
 const FINTECH = ["adyen", "amex", "chase", "coinbase", "hdfc", "klarna", "paypal", "paytm", "phonepe",
-  "razorpay", "revolut", "robinhood", "square", "stripe", "venmo", "wise", "zerodha"];
+  "razorpay", "revolut", "robinhood", "splitwise", "square", "stripe", "venmo", "wise", "zerodha"];
 const INSURANCE = ["lemonade", "policybazaar"];
 const COMMERCE = ["ebay", "etsy", "flipkart", "instacart", "nike", "shopify", "walmart"];
 const MEDIA = ["hotstar", "spotify", "youtube"];
