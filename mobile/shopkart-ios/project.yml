@@ -1,0 +1,30 @@
+name: ShopKart
+options:
+  bundleIdPrefix: com.shopkart
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  ShopKart:
+    type: application
+    platform: iOS
+    sources: [ShopKart]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shopkart.demo
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: ShopKart
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        # Set your Apple team ID here (or pass DEVELOPMENT_TEAM=... to build.sh) for device builds.
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+    info:
+      path: ShopKart/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleURLName: com.shopkart.demo
+            CFBundleURLSchemes: [shopkart]

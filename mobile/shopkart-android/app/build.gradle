@@ -1,0 +1,45 @@
+plugins {
+    id "com.android.application"
+}
+
+// Release signing comes from keystore.properties (not committed). Without it,
+// release builds fall back to the debug key so the project still builds.
+def keystoreProps = new Properties()
+def keystoreFile = rootProject.file("keystore.properties")
+if (keystoreFile.exists()) keystoreFile.withInputStream { keystoreProps.load(it) }
+
+android {
+    namespace = "com.shopkart.demo"
+    compileSdk = 35
+
+    defaultConfig {
+        applicationId = "com.shopkart.demo"
+        minSdk = 26
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0.0"
+    }
+
+    signingConfigs {
+        release {
+            if (keystoreFile.exists()) {
+                storeFile = rootProject.file(keystoreProps["storeFile"])
+                storePassword = keystoreProps["storePassword"]
+                keyAlias = keystoreProps["keyAlias"]
+                keyPassword = keystoreProps["keyPassword"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            signingConfig = keystoreFile.exists() ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}

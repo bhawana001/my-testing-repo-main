@@ -1,0 +1,21 @@
+name: ShopKart iOS build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mobile/shopkart-ios/**"
+      - ".github/workflows/shopkart-ios.yml"
+
+jobs:
+  simulator:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build simulator app
+        working-directory: mobile/shopkart-ios
+        run: ./build.sh simulator
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ShopKart-ios-simulator
+          path: mobile/shopkart-ios/dist/ShopKart-simulator.zip
