@@ -1,0 +1,83 @@
+# Comment "@kane-cli" on a PR: Kane CLI tests that PR's code and replies with what it found.
+name: Kane CLI on comment
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  kane:
+    # Only on PRs, only when @kane-cli is mentioned, only by the owner or collaborators
+    if: |
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@kane-cli') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      BASE_URL: http://localhost:4321
+    steps:
+      - name: React so you know it was picked up
+        run: gh api repos/$REPO/issues/comments/${{ github.event.comment.id }}/reactions -f content=eyes
+
+      # Test the PR's own code, not main
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ github.event.issue.number }}/head
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+
+      - run: npm ci
+      - run: npm install -g @testmuai/kane-cli
+      - run: npm run build
+
+      - name: Start the app
+        run: |
+          npm run start -- -p 4321 > app.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf -o /dev/null "$BASE_URL/bank-clone-app/open-account" && exit 0; sleep 1; done
+          cat app.log; exit 1
+
+      - name: Run Kane CLI checks
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        run: |
+          check() {
+            local name="$1" url="$2" goal="$3"
+            kane-cli run "$goal" --url "$url" --username "$LT_USERNAME" --access-key "$LT_ACCESS_KEY" \
+              --agent --headless --timeout 240 --max-steps 20 > out.ndjson 2>&1 || true
+            local end; end=$(grep '"type":"run_end"' out.ndjson | tail -1)
+            local status; status=$(echo "$end" | jq -r '.status // "error"')
+            local line; line=$(echo "$end" | jq -r '.verdict.bug_title // .one_liner // "No result"')
+            local why; why=$(echo "$end" | jq -r '.verdict.family // empty' | tr '_' ' ')
+            local link; link=$(echo "$end" | jq -r '.test_url // empty')
+            if [ "$status" = "passed" ]; then icon="✅"; else icon="❌"; echo fail > failed; fi
+            echo "| $icon $name | $line${why:+ ($why)} | ${link:+[evidence]($link)} |" >> rows.md
+          }
+          check "Tax calculator" "$BASE_URL/bank-clone-app/calculators" \
+            "Enter 85000 as the Annual income and assert the Gross income in the estimate shows \$85,000"
+          check "Savings products" "$BASE_URL/bank-clone-app/open-account" \
+            "Assert High-Yield Savings is listed with 4.34% APY"
+
+      - name: Post result on the PR
+        if: always()
+        run: |
+          RUN="${{ github.server_url }}/$REPO/actions/runs/${{ github.run_id }}"
+          if [ -f failed ] || [ ! -f rows.md ]; then HEAD="❌ **Kane CLI found a problem in this PR**"; else HEAD="✅ **Kane CLI: all checks passed on this PR**"; fi
+          {
+            echo "$HEAD"; echo
+            echo "| Check | What Kane CLI saw | Evidence |"
+            echo "|---|---|---|"
+            cat rows.md 2>/dev/null
+            echo; echo "Full logs: $RUN"
+          } > body.md
+          gh pr comment $PR --body-file body.md
+          [ ! -f failed ]
