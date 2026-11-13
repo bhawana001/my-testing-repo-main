@@ -16,3 +16,6 @@ tests/**/output-*/
 .testmuai/evidence/
 tests/variables.ci.json
 .testmuai/verify-logs/
+
+course/test-results/
+course/playwright-report/

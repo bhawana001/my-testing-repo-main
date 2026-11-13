@@ -76,9 +76,7 @@ export default function CalculatorPage() {
     // Bug Diagnosis demo: the "$" is prepended BEFORE Number(), so gross
     // becomes NaN and the whole estimate reads "$NaN". A real, diagnosable
     // logic bug that Playwright reports only as a bare failure.
-    const gross = demo.bug
-      ? Number("$" + income)
-      : Number(income) || 0;
+const gross = Number("$" + income);
     const deduction =
       deductionType === "standard"
         ? STANDARD_DEDUCTION[status]
