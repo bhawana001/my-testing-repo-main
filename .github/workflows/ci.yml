@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Get the code
+      - uses: actions/checkout@v4
+      # Node 20 with npm cache
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      # Install dependencies
+      - run: npm ci
+      # Build the app
+      - run: npm run build
+      # Start the app in the background
+      - run: npm run start -- -p 4321 &
+      # Wait up to 60s for the app to answer
+      - run: timeout 60 bash -c 'until curl -sf http://localhost:4321/bank-clone-app/open-account > /dev/null; do sleep 2; done'
+      # Install Chromium and its system dependencies
+      - run: npx playwright install --with-deps chromium
+      # Run the Playwright suite
+      - run: npm run course:test
+        env:
+          BASE_URL: http://localhost:4321
+      # Upload the HTML report, even on failure
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: course/playwright-report
+
+  kane-cli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LT_USERNAME: ${{ secrets.LT_USERNAME }}
+      LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+    steps:
+      # Get the code
+      - uses: actions/checkout@v4
+      # Node 20 with npm cache
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      # Install dependencies
+      - run: npm ci
+      # Build the app
+      - run: npm run build
+      # Start the app in the background
+      - run: npm run start -- -p 4321 &
+      # Wait up to 60s for the app to answer
+      - run: timeout 60 bash -c 'until curl -sf http://localhost:4321/bank-clone-app/open-account > /dev/null; do sleep 2; done'
+      # Install Kane CLI
+      - run: npm install -g @testmuai/kane-cli
+      # Check the income calculator
+      - run: >
+          kane-cli run "Enter 85000 as the Annual income and assert the Gross income in the estimate shows \$85,000"
+          --url http://localhost:4321/bank-clone-app/calculators
+          --username "$LT_USERNAME" --access-key "$LT_ACCESS_KEY"
+          --agent --headless --timeout 240 --max-steps 20
+      # Check the savings APY listing
+      - run: >
+          kane-cli run "Assert High-Yield Savings is listed with 4.34% APY"
+          --url http://localhost:4321/bank-clone-app/open-account
+          --username "$LT_USERNAME" --access-key "$LT_ACCESS_KEY"
+          --agent --headless --timeout 240 --max-steps 20
