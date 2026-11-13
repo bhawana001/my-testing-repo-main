@@ -10,7 +10,9 @@
     "gen:registry": "python3 scripts/gen-registry.py",
     "gen:tests": "node scripts/gen-tests.mjs",
     "gen:plan": "node scripts/gen-plan.mjs",
-    "kane:verify": "node scripts/kane-verify.mjs"
+    "kane:verify": "node scripts/kane-verify.mjs",
+    "course:test": "playwright test --config course/playwright.config.js",
+    "course:report": "playwright show-report course/playwright-report"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.1",
